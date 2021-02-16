@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02000428_bf {
     public static class _main {
         public class StateReady : TriggerState {
@@ -6,7 +8,7 @@ namespace Maple2.Trigger._02000428_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6010, 6011}, arg2: true, arg3: 1, arg4: 1);
                 context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005}, arg2: false);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -202,7 +204,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                     context.DungeonFail();
                     return new StateEnd(context);
                 }
@@ -253,7 +255,7 @@ namespace Maple2.Trigger._02000428_bf {
             internal StateSuccessCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene5.usm", duration: 0);
+                context.SideNpcTalk(type: SideNpcTalkType.Movie, usm: @"Common/WorldInvasionScene5.usm", duration: 0);
                 context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 8000, script: "$02000410_BF__ClearCheck__3$", voice: @"ko/Npc/00002177");
             }
 
@@ -290,13 +292,13 @@ namespace Maple2.Trigger._02000428_bf {
             internal StateSuccessCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: @"common\WorldInvasionScene6.usm", movieId: 1, skipType: "needAll");
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new StateFinalSuccess처리(context);
                 }
 
@@ -317,7 +319,7 @@ namespace Maple2.Trigger._02000428_bf {
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAchievement(arg1: 750, arg2: "trigger", arg3: "ClearBalrogMagicBurster");
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.DungeonClear();
             }
 

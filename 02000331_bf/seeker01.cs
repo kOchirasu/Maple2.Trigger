@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetInteractObject(arg1: new[] {10000766, 10000767, 10000768, 10000769, 10000771, 10000772, 10000773, 10000774, 10000775, 10000784, 10000792, 10000793, 10000794, 10000795, 10000785, 10000796, 10000797, 10000798, 10000799, 10000776}, arg2: 2);
                 context.CreateMonster(arg1: new[] {401, 610}, arg2: false);
                 context.SetEffect(arg1: new[] {99999, 7771, 7772, 777401, 777402, 777403, 777404, 777405, 777501, 777502, 7776, 777701, 777702, 777801, 777802, 777803, 777901, 777902, 777903, 777904}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State술래말풍선01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__0$", arg4: 2, arg5: 0);
                 context.SetMesh(arg1: new[] {90000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateMonsterSpawn01_Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__1$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__1$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {901, 902}, arg2: false);
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__801$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__801$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -262,7 +262,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {902, 904}, arg2: false);
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__801$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__801$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {903, 905}, arg2: false);
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__801$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__801$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -302,7 +302,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {901, 905}, arg2: false);
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__801$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__801$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -521,7 +521,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateMonsterSpawn01_종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__2$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__2$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -557,8 +557,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째무너짐StartCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__900$");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__900$");
                 context.CameraSelect(arg1: 802, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_999");
             }
@@ -603,8 +603,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {777801}, arg2: false);
                 context.CameraSelect(arg1: 802, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetSkip();
             }
 
@@ -624,8 +624,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 16, key: "FirstBridgeOff", value: 1);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__3$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__4$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__3$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__4$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -644,8 +644,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1001");
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__5$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__24$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__5$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__24$", arg4: 2, arg5: 2);
                 context.CreateMonster(arg1: new[] {91002}, arg2: false);
             }
 
@@ -688,7 +688,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetActor(arg1: 92220, arg2: true, arg3: "Dead_A");
                 context.SetMesh(arg1: new[] {90002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__6$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__6$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -756,7 +756,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째힌트발견01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.SetRandomMesh(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016}, arg2: true, arg3: 16, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777501}, arg2: true);
@@ -780,7 +780,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째힌트수색01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__10$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__10$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -802,7 +802,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {201}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$02000331_BF__Seeker01__11$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$02000331_BF__Seeker01__11$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -820,7 +820,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째꼬마만남01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__12$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__12$", arg4: 2, arg5: 1);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_2201");
             }
 
@@ -857,8 +857,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 201, arg2: 200);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_998");
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__13$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__14$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__13$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__14$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -876,7 +876,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째힌트발견02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.SetRandomMesh(arg1: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117}, arg2: true, arg3: 17, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777501}, arg2: true);
@@ -900,7 +900,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째힌트수색02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__10$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__10$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -922,7 +922,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {202}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 202, arg3: "$02000331_BF__Seeker01__15$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 202, script: "$02000331_BF__Seeker01__15$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -940,7 +940,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째꼬마만남02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__12$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__12$", arg4: 2, arg5: 1);
                 context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_2202");
             }
 
@@ -977,8 +977,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 202, arg2: 200);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_998");
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__18$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__19$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__18$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__19$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -996,7 +996,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째힌트발견03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.SetRandomMesh(arg1: new[] {2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220}, arg2: true, arg3: 20, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777501}, arg2: true);
@@ -1020,7 +1020,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째힌트수색03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__10$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__10$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1042,7 +1042,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {203}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 203, arg3: "$02000331_BF__Seeker01__16$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 203, script: "$02000331_BF__Seeker01__16$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1060,7 +1060,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째꼬마만남03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__12$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__12$", arg4: 2, arg5: 1);
                 context.MoveNpc(arg1: 203, arg2: "MS2PatrolData_2203");
             }
 
@@ -1097,8 +1097,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 203, arg2: 200);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_998");
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__20$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__21$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__20$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__21$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -1116,7 +1116,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째힌트발견04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.SetRandomMesh(arg1: new[] {2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315}, arg2: true, arg3: 15, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777501}, arg2: true);
@@ -1140,7 +1140,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째힌트수색04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__10$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__10$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1162,7 +1162,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {204}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 204, arg3: "$02000331_BF__Seeker01__17$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 204, script: "$02000331_BF__Seeker01__17$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1180,7 +1180,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째꼬마만남04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__12$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__12$", arg4: 2, arg5: 1);
                 context.MoveNpc(arg1: 204, arg2: "MS2PatrolData_2204");
             }
 
@@ -1217,8 +1217,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 204, arg2: 200);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_998");
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__22$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__23$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__22$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__23$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -1340,7 +1340,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003312, textId: 20003312);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__24$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__24$", arg4: 3, arg5: 0);
                 context.CreateMonster(arg1: new[] {91003}, arg2: false);
             }
 
@@ -1381,7 +1381,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마찾기시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__25$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__25$", arg4: 3, arg5: 0);
                 context.SetEffect(arg1: new[] {777402}, arg2: false);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1004");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2003");
@@ -1404,9 +1404,9 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째Monster발견01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__30$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__30$", arg4: 2, arg5: 0);
                 context.SetAgent(arg1: new[] {13001, 13002, 13003, 13004, 13005, 13006}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__31$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__31$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -1456,7 +1456,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째힌트발견01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_997");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2013");
@@ -1482,7 +1482,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {311}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__32$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__32$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1500,7 +1500,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마도움01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 311, arg3: "$02000331_BF__Seeker01__33$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 311, script: "$02000331_BF__Seeker01__33$", arg4: 2, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000771}, arg2: 1);
             }
 
@@ -1539,7 +1539,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 311, arg2: 301);
-                context.SetConversation(arg1: 1, arg2: 301, arg3: "$02000331_BF__Seeker01__38$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 301, script: "$02000331_BF__Seeker01__38$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1575,7 +1575,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마만남01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 301, arg3: "$02000331_BF__Seeker01__39$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 301, script: "$02000331_BF__Seeker01__39$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1593,7 +1593,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__40$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__40$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1611,7 +1611,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마교체Delay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__41$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__41$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -1631,7 +1631,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 301, arg2: 300);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_996");
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__42$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__42$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -1649,7 +1649,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째힌트발견02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_997");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2013");
@@ -1675,7 +1675,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {312}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__32$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__32$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1693,7 +1693,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마도움02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 312, arg3: "$02000331_BF__Seeker01__34$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 312, script: "$02000331_BF__Seeker01__34$", arg4: 2, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000772}, arg2: 1);
             }
 
@@ -1732,7 +1732,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 312, arg2: 302);
-                context.SetConversation(arg1: 1, arg2: 302, arg3: "$02000331_BF__Seeker01__43$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 302, script: "$02000331_BF__Seeker01__43$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1768,7 +1768,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마만남02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 302, arg3: "$02000331_BF__Seeker01__44$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 302, script: "$02000331_BF__Seeker01__44$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1786,7 +1786,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마대화02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__45$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__45$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1804,7 +1804,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마교체Delay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__46$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__46$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -1824,7 +1824,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 302, arg2: 300);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_996");
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__47$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__47$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -1842,7 +1842,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째힌트발견03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_997");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2013");
@@ -1868,7 +1868,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {313}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__32$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__32$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1886,7 +1886,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마도움03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 313, arg3: "$02000331_BF__Seeker01__35$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 313, script: "$02000331_BF__Seeker01__35$", arg4: 2, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000773}, arg2: 1);
             }
 
@@ -1925,7 +1925,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 313, arg2: 303);
-                context.SetConversation(arg1: 1, arg2: 303, arg3: "$02000331_BF__Seeker01__48$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 303, script: "$02000331_BF__Seeker01__48$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1961,7 +1961,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마만남03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 303, arg3: "$02000331_BF__Seeker01__49$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 303, script: "$02000331_BF__Seeker01__49$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1979,7 +1979,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마대화03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__50$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__50$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1997,7 +1997,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마교체Delay03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__51$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__51$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -2017,7 +2017,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 303, arg2: 300);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_996");
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__52$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__52$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -2035,7 +2035,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째힌트발견04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_997");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2013");
@@ -2061,7 +2061,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {314}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__32$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__32$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2080,7 +2080,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000774}, arg2: 1);
-                context.SetConversation(arg1: 1, arg2: 314, arg3: "$02000331_BF__Seeker01__36$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 314, script: "$02000331_BF__Seeker01__36$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2153,7 +2153,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마만남04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 304, arg3: "$02000331_BF__Seeker01__54$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 304, script: "$02000331_BF__Seeker01__54$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2171,7 +2171,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마대화04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__55$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__55$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2189,7 +2189,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마교체Delay04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__56$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__56$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -2209,7 +2209,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 304, arg2: 300);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_996");
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__57$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__57$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -2229,7 +2229,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_997");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2013");
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.SetRandomMesh(arg1: new[] {3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416, 3417, 3418, 3419}, arg2: true, arg3: 19, arg4: 50, arg5: 50);
                 context.SetEffect(arg1: new[] {777502}, arg2: true);
@@ -2253,7 +2253,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {315}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__32$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__32$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2272,7 +2272,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000775}, arg2: 1);
-                context.SetConversation(arg1: 1, arg2: 315, arg3: "$02000331_BF__Seeker01__37$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 315, script: "$02000331_BF__Seeker01__37$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2306,7 +2306,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 315, arg2: 305);
-                context.SetConversation(arg1: 1, arg2: 305, arg3: "$02000331_BF__Seeker01__58$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 305, script: "$02000331_BF__Seeker01__58$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2342,7 +2342,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마만남05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 305, arg3: "$02000331_BF__Seeker01__59$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 305, script: "$02000331_BF__Seeker01__59$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2360,7 +2360,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마대화05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__60$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__60$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2378,7 +2378,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째꼬마교체Delay05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__61$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__61$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -2398,7 +2398,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 305, arg2: 300);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_996");
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__62$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__62$", arg4: 3, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -2436,7 +2436,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State세명패트롤02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__70$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__70$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2478,7 +2478,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1006");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2005");
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_3003");
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__71$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__71$", arg4: 2, arg5: 0);
                 context.CreateMonster(arg1: new[] {91005}, arg2: false);
                 context.SetMesh(arg1: new[] {90004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 94440, arg2: true, arg3: "Dead_A");
@@ -2502,7 +2502,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State세번째덤불Spawn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__72$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__72$", arg4: 2, arg5: 0);
                 context.SetMesh(arg1: new[] {90005}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 94450, arg2: true, arg3: "Dead_A");
             }
@@ -2523,7 +2523,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {777403, 777404}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__73$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__73$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1016");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2015");
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_3013");
@@ -2547,7 +2547,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State꼬마셋대화Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__74$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__74$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2627,8 +2627,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StartCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__901$");
                 context.CameraSelect(arg1: 804, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
@@ -2652,8 +2652,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 804, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetSkip(state: new State구출안내01_01(context));
             }
 
@@ -2672,7 +2672,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내01_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__802$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__802$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -2693,7 +2693,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내01_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__80$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__80$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2711,7 +2711,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내01_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__81$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__81$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2729,7 +2729,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내01_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__82$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__82$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2763,8 +2763,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StartCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__901$");
                 context.CameraSelect(arg1: 804, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
@@ -2788,8 +2788,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 804, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetSkip(state: new State구출안내02_01(context));
             }
 
@@ -2808,7 +2808,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내02_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__802$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__802$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -2829,7 +2829,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내02_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__80$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__80$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2847,7 +2847,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내02_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__81$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__81$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2865,7 +2865,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내02_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__82$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__82$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2899,8 +2899,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StartCinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__901$");
                 context.CameraSelect(arg1: 804, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
@@ -2924,8 +2924,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 804, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetSkip(state: new State구출안내03_01(context));
             }
 
@@ -2944,7 +2944,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내03_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__802$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__802$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -2965,7 +2965,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내03_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__80$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__80$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2983,7 +2983,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내03_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__81$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__81$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3001,7 +3001,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내03_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__82$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__82$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3035,8 +3035,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StartCinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__901$");
                 context.CameraSelect(arg1: 804, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
@@ -3060,8 +3060,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 804, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetSkip(state: new State구출안내04_01(context));
             }
 
@@ -3080,7 +3080,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내04_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__802$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__802$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -3101,7 +3101,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내04_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__80$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__80$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3119,7 +3119,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내04_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__81$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__81$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3137,7 +3137,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내04_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__82$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__82$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3171,8 +3171,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StartCinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__901$");
                 context.CameraSelect(arg1: 804, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
@@ -3196,8 +3196,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 804, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetSkip(state: new State구출안내05_01(context));
             }
 
@@ -3216,7 +3216,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내05_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__802$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__802$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -3237,7 +3237,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내05_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__80$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__80$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3255,7 +3255,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내05_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__81$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__81$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3273,7 +3273,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State구출안내05_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__82$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__82$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3311,7 +3311,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State세번째꼬마탈출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 400, arg3: "$02000331_BF__Seeker01__83$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 400, script: "$02000331_BF__Seeker01__83$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 400, arg2: "MS2PatrolData_4001");
             }
 
@@ -3333,7 +3333,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1008");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2007");
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_3005");
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__84$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__84$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3351,7 +3351,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State세번째꼬마만남02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 400, arg3: "$02000331_BF__Seeker01__85$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 400, script: "$02000331_BF__Seeker01__85$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3369,7 +3369,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State세번째꼬마만남03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__86$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__86$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3387,7 +3387,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State네명패트롤01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__87$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__87$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1009");
             }
 
@@ -3409,7 +3409,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2008");
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_3006");
                 context.MoveNpc(arg1: 400, arg2: "MS2PatrolData_4002");
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__88$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__88$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3468,8 +3468,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State네번째꼬마찾기시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "401", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__89$", arg4: 2, arg5: 0);
+                context.SetTimer(id: "401", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__89$", arg4: 2, arg5: 0);
                 context.SetEffect(arg1: new[] {777405}, arg2: false);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1010");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2009");
@@ -3628,7 +3628,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateMonsterSpawn05_1번자코Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5001", arg2: 1);
+                context.SetTimer(id: "5001", arg2: 1);
                 context.CreateMonster(arg1: new[] {930}, arg2: false);
                 context.MoveNpc(arg1: 930, arg2: "MS2PatrolData_901");
                 context.CreateMonster(arg1: new[] {935}, arg2: false);
@@ -3652,7 +3652,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateMonsterSpawn05_2번자코Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5002", arg2: 1);
+                context.SetTimer(id: "5002", arg2: 1);
                 context.CreateMonster(arg1: new[] {931}, arg2: false);
                 context.MoveNpc(arg1: 931, arg2: "MS2PatrolData_902");
                 context.CreateMonster(arg1: new[] {936}, arg2: false);
@@ -3676,7 +3676,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateMonsterSpawn05_3번자코Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5003", arg2: 1);
+                context.SetTimer(id: "5003", arg2: 1);
                 context.CreateMonster(arg1: new[] {932}, arg2: false);
                 context.MoveNpc(arg1: 932, arg2: "MS2PatrolData_903");
                 context.CreateMonster(arg1: new[] {938}, arg2: false);
@@ -3700,7 +3700,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateMonsterSpawn05_4번자코Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5004", arg2: 1);
+                context.SetTimer(id: "5004", arg2: 1);
                 context.CreateMonster(arg1: new[] {932}, arg2: false);
                 context.MoveNpc(arg1: 932, arg2: "MS2PatrolData_905");
                 context.CreateMonster(arg1: new[] {934}, arg2: false);
@@ -3933,8 +3933,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7776}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__902$");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__902$");
                 context.CameraSelect(arg1: 800, arg2: true);
                 context.SetSkip(state: new State추격StopCinematic01(context));
             }
@@ -3954,14 +3954,14 @@ namespace Maple2.Trigger._02000331_bf {
             internal State추격StopCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__803$", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__803$", arg3: 2000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.CameraSelect(arg1: 800, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__90$", arg4: 2);
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__91$", arg4: 2);
-                context.SetConversation(arg1: 1, arg2: 500, arg3: "$02000331_BF__Seeker01__92$", arg4: 3);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__90$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__91$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 500, script: "$02000331_BF__Seeker01__92$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -3980,7 +3980,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7776}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 500, arg3: "$02000331_BF__Seeker01__93$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 500, script: "$02000331_BF__Seeker01__93$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -3998,7 +3998,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State네번째꼬마만남02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__94$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__94$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -4016,7 +4016,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State네번째꼬마만남03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__95$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__95$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -4034,7 +4034,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State네번째꼬마만남04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 400, arg3: "$02000331_BF__Seeker01__96$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 400, script: "$02000331_BF__Seeker01__96$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -4052,7 +4052,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State다섯명패트롤01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__97$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__97$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1011");
             }
 
@@ -4092,8 +4092,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째무너짐StartCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__903$");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__903$");
                 context.CameraSelect(arg1: 806, arg2: true);
             }
 
@@ -4134,8 +4134,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 806, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetSkip(state: new State술래말풍선06(context));
             }
 
@@ -4174,8 +4174,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State술래말풍선07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__100$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__101$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__100$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000331_BF__Seeker01__101$", arg4: 2, arg5: 1);
                 context.MoveNpc(arg1: 500, arg2: "MS2PatrolData_5003");
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_3009");
                 context.MoveNpc(arg1: 400, arg2: "MS2PatrolData_4005");
@@ -4196,7 +4196,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State술래말풍선08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 500, arg3: "$02000331_BF__Seeker01__102$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 500, script: "$02000331_BF__Seeker01__102$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -4214,7 +4214,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State술래말풍선09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__103$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__103$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -4232,8 +4232,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State술래말풍선10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 400, arg3: "$02000331_BF__Seeker01__104$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__105$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 400, script: "$02000331_BF__Seeker01__104$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 300, script: "$02000331_BF__Seeker01__105$", arg4: 2, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -4285,7 +4285,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000785}, arg2: 0);
                 context.SetInteractObject(arg1: new[] {10000785}, arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__804$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__804$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -4326,7 +4326,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000796}, arg2: 0);
                 context.SetInteractObject(arg1: new[] {10000796}, arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__804$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__804$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -4367,7 +4367,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000797}, arg2: 0);
                 context.SetInteractObject(arg1: new[] {10000797}, arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__804$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__804$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -4408,7 +4408,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000798}, arg2: 0);
                 context.SetInteractObject(arg1: new[] {10000798}, arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__804$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__804$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -4449,7 +4449,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000799}, arg2: 0);
                 context.SetInteractObject(arg1: new[] {10000799}, arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__804$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__804$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -4508,7 +4508,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State다리건너갈Prepare01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__805$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__805$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1013");
             }
@@ -4528,7 +4528,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State다리건너갈Prepare02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__110$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__110$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -4555,7 +4555,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_3010");
                 context.MoveNpc(arg1: 400, arg2: "MS2PatrolData_4006");
                 context.MoveNpc(arg1: 500, arg2: "MS2PatrolData_5004");
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__111$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000331_BF__Seeker01__111$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -4589,7 +4589,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State다리건너가기03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 610, arg3: "$02000331_BF__Seeker01__112$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 610, script: "$02000331_BF__Seeker01__112$", arg4: 3, arg5: 0);
                 context.SetMesh(arg1: new[] {90008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -4625,8 +4625,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {990}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__904$");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__904$");
                 context.SetEffect(arg1: new[] {777901}, arg2: true);
                 context.CameraSelect(arg1: 808, arg2: true);
                 context.SetSkip(state: new StateBossSpawnCinematic중01(context));
@@ -4647,7 +4647,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBossSpawnCinematic중01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__905$");
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__905$");
                 context.SetSkip(state: new StateBossSpawnCinematic중01Skip(context));
             }
 
@@ -4680,7 +4680,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBossSpawnCinematic중02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__906$");
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__906$");
                 context.ChangeMonster(arg1: 100, arg2: 601);
                 context.ChangeMonster(arg1: 200, arg2: 602);
                 context.ChangeMonster(arg1: 300, arg2: 603);
@@ -4755,7 +4755,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 809, arg2: false);
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__907$");
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__907$");
                 context.SetEffect(arg1: new[] {777901}, arg2: false);
                 context.SetEffect(arg1: new[] {777902}, arg2: true);
                 context.SetSkip(state: new StateBossSpawnEndCinematic01(context));
@@ -4778,8 +4778,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 808, arg2: false);
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetEffect(arg1: new[] {777802}, arg2: false);
                 context.SetUserValue(triggerId: 15, key: "SecondBridgeOff", value: 1);
             }
@@ -4799,7 +4799,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State마지막웨이브알림01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__806$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__806$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
 
@@ -4886,7 +4886,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateMonsterSpawn06_3TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "6003", arg2: 1);
+                context.SetTimer(id: "6003", arg2: 1);
                 context.CreateMonster(arg1: new[] {944, 945, 954, 955}, arg2: false);
             }
 
@@ -6421,8 +6421,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBossCombatSetup02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 811, arg2: true);
                 context.SetSkip(state: new StateBossCombatSetup04(context));
             }
@@ -6442,7 +6442,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBossCombatSetup03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__908$");
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__908$");
                 context.SetEffect(arg1: new[] {777902}, arg2: false);
                 context.SetEffect(arg1: new[] {777903}, arg2: true);
             }
@@ -6463,8 +6463,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 811, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -6483,7 +6483,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {990});
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__807$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__807$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.CreateMonster(arg1: new[] {999}, arg2: false);
             }
@@ -6523,8 +6523,8 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetInteractObject(arg1: new[] {10000776}, arg2: 0);
                 context.SetInteractObject(arg1: new[] {10000776}, arg2: 1);
                 context.SetActor(arg1: 97770, arg2: false, arg3: "Closed");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__909$");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__909$");
                 context.CameraSelect(arg1: 812, arg2: true);
                 context.SetSkip(state: new StateBoss도망Cinematic03(context));
             }
@@ -6544,7 +6544,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBoss도망Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__910$");
+                context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__910$");
                 context.SetEffect(arg1: new[] {777903}, arg2: false);
                 context.SetEffect(arg1: new[] {777904}, arg2: true);
                 context.SetSkip(state: new StateBoss도망Cinematic03(context));
@@ -6566,8 +6566,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 812, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.ChangeMonster(arg1: 610, arg2: 600);
             }
 
@@ -6586,8 +6586,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBossCombatEnd01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__808$", arg3: 3000, arg4: "0");
-                context.SetConversation(arg1: 1, arg2: 600, arg3: "$02000331_BF__Seeker01__120$", arg4: 2, arg5: 1);
+                context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__808$", arg3: 3000, arg4: "0");
+                context.SetConversation(arg1: 1, arg2: 600, script: "$02000331_BF__Seeker01__120$", arg4: 2, arg5: 1);
                 context.DestroyMonster(arg1: new[] {1000});
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
             }
@@ -6628,7 +6628,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State마지막Cinematic_포털출현01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 7, arg2: "$02000331_BF__Seeker01__809$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 7, script: "$02000331_BF__Seeker01__809$", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -6665,7 +6665,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State마지막Cinematic_포털출현03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 600, arg3: "$02000331_BF__Seeker01__130$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 600, script: "$02000331_BF__Seeker01__130$", arg4: 2, arg5: 0);
                 context.SetEffect(arg1: new[] {99999, 7772}, arg2: true);
             }
 
@@ -6730,10 +6730,10 @@ namespace Maple2.Trigger._02000331_bf {
             internal State마지막Cinematic_시작02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000331_BF__Seeker01__131$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 310, arg3: "$02000331_BF__Seeker01__132$", arg4: 2, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 410, arg3: "$02000331_BF__Seeker01__133$", arg4: 2, arg5: 4);
-                context.SetConversation(arg1: 1, arg2: 600, arg3: "$02000331_BF__Seeker01__136$", arg4: 2, arg5: 6);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000331_BF__Seeker01__131$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 310, script: "$02000331_BF__Seeker01__132$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 410, script: "$02000331_BF__Seeker01__133$", arg4: 2, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 600, script: "$02000331_BF__Seeker01__136$", arg4: 2, arg5: 6);
             }
 
             public override TriggerState Execute() {
@@ -6766,7 +6766,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() {
                 context.DungeonClear();
                 context.SetAchievement(arg1: 99998, arg2: "trigger", arg3: "ClearHideandSeek");
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
         }
 
@@ -6774,9 +6774,9 @@ namespace Maple2.Trigger._02000331_bf {
             internal State퇴장시작01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 210, arg3: "$02000331_BF__Seeker01__134$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 510, arg3: "$02000331_BF__Seeker01__135$", arg4: 2, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 111, arg3: "$02000331_BF__Seeker01__137$", arg4: 2, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 210, script: "$02000331_BF__Seeker01__134$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 510, script: "$02000331_BF__Seeker01__135$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 111, script: "$02000331_BF__Seeker01__137$", arg4: 2, arg5: 3);
             }
 
             public override TriggerState Execute() {

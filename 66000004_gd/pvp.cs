@@ -4,7 +4,7 @@ namespace Maple2.Trigger._66000004_gd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "60", arg2: 30, arg3: false, arg4: true);
+                context.SetTimer(id: "60", arg2: 30, arg3: false, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -20,7 +20,7 @@ namespace Maple2.Trigger._66000004_gd {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "60");
+                context.ResetTimer(id: "60");
             }
         }
 
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._66000004_gd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
 
             public override TriggerState Execute() {
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._66000004_gd {
             internal StatePvP(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1, arg3: false);
+                context.SetTimer(id: "1", arg2: 1, arg3: false);
                 context.SetPvpZone(arg1: 104, arg2: 3, arg3: 600, arg4: 90001002, arg5: 3, arg6: new byte[] {1, 2, 101, 102, 103});
             }
 
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._66000004_gd {
             internal State게임종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {
@@ -119,12 +119,12 @@ namespace Maple2.Trigger._66000004_gd {
             internal State비김(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3, arg3: false);
+                context.SetTimer(id: "3", arg2: 3, arg3: false);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.SetEventUI(arg1: 5, arg2: "$65000002_BD__PVP__5$", arg3: 3000, arg4: "0");
+                    context.SetEventUI(arg1: 5, script: "$65000002_BD__PVP__5$", arg3: 3000, arg4: "0");
                     return new State완료(context);
                 }
 
@@ -138,8 +138,8 @@ namespace Maple2.Trigger._66000004_gd {
             internal State완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

@@ -1,17 +1,19 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02000393_bf {
     public static class _vip_dungeon_main {
         public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {601, 602, 603}, arg2: false);
                 context.MoveUser(arg1: 02000393, arg2: 1);
                 context.SetInteractObject(arg1: new[] {10001083, 10001084, 10001085}, arg2: 1);
                 context.CameraSelect(arg1: 299, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -48,8 +50,8 @@ namespace Maple2.Trigger._02000393_bf {
             internal State캐릭터선택Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.ShowGuideSummary(entityId: 20003851, textId: 20003851);
             }
 
@@ -140,8 +142,8 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_UI_Start_01");
-                context.CreateWidget(arg1: "ScoreBoard");
-                context.WidgetAction(arg1: "ScoreBoard", arg2: "OpenBoard", arg3: "1");
+                context.CreateWidget(type: WidgetType.ScoreBoard);
+                context.WidgetAction(type: WidgetType.ScoreBoard, name: "OpenBoard", args: "1");
                 context.CameraSelect(arg1: 301, arg2: true);
             }
 
@@ -160,9 +162,9 @@ namespace Maple2.Trigger._02000393_bf {
             internal State게임시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WidgetAction(arg1: "ScoreBoard", arg2: "SetScore", arg3: "0"); // 점수 강제 설정
+                context.WidgetAction(type: WidgetType.ScoreBoard, name: "SetScore", args: "0"); // 점수 강제 설정
                 context.ShowCountUI(text: "$02000385_BF__VIP_DUNGEON_MAIN__0$", stage: 1, count: 3);
-                context.SetEventUI(arg1: 0, arg2: "1,5");
+                context.SetEventUI(arg1: 0, script: "1,5");
                 context.CameraSelect(arg1: 302, arg2: true);
             }
 
@@ -182,7 +184,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 9991001, key: "round1start", value: 1);
-                context.SetTimer(arg1: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
+                context.SetTimer(id: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
             }
 
             public override TriggerState Execute() {
@@ -201,7 +203,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override void OnEnter() {
                 context.ShowCountUI(text: "$02000385_BF__VIP_DUNGEON_MAIN__1$", stage: 2, count: 3);
-                context.SetEventUI(arg1: 0, arg2: "2,5");
+                context.SetEventUI(arg1: 0, script: "2,5");
             }
 
             public override TriggerState Execute() {
@@ -220,7 +222,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 9991001, key: "round2start", value: 1);
-                context.SetTimer(arg1: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
+                context.SetTimer(id: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
             }
 
             public override TriggerState Execute() {
@@ -239,7 +241,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override void OnEnter() {
                 context.ShowCountUI(text: "$02000385_BF__VIP_DUNGEON_MAIN__2$", stage: 3, count: 3);
-                context.SetEventUI(arg1: 0, arg2: "3,5");
+                context.SetEventUI(arg1: 0, script: "3,5");
             }
 
             public override TriggerState Execute() {
@@ -258,7 +260,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 9991001, key: "round3start", value: 1);
-                context.SetTimer(arg1: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
+                context.SetTimer(id: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
             }
 
             public override TriggerState Execute() {
@@ -277,7 +279,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override void OnEnter() {
                 context.ShowCountUI(text: "$02000385_BF__VIP_DUNGEON_MAIN__3$", stage: 4, count: 3);
-                context.SetEventUI(arg1: 0, arg2: "4,5");
+                context.SetEventUI(arg1: 0, script: "4,5");
             }
 
             public override TriggerState Execute() {
@@ -296,7 +298,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 9991001, key: "round4start", value: 1);
-                context.SetTimer(arg1: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
+                context.SetTimer(id: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
             }
 
             public override TriggerState Execute() {
@@ -315,7 +317,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override void OnEnter() {
                 context.ShowCountUI(text: "$02000385_BF__VIP_DUNGEON_MAIN__4$", stage: 5, count: 3);
-                context.SetEventUI(arg1: 0, arg2: "5,5");
+                context.SetEventUI(arg1: 0, script: "5,5");
             }
 
             public override TriggerState Execute() {
@@ -334,7 +336,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 9991001, key: "round5start", value: 1);
-                context.SetTimer(arg1: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
+                context.SetTimer(id: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
             }
 
             public override TriggerState Execute() {
@@ -353,7 +355,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetEventUI(arg1: 0, arg2: "0,0");
+                context.SetEventUI(arg1: 0, script: "0,0");
                 context.MoveUser(arg1: 02000393, arg2: 2);
             }
 
@@ -373,7 +375,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {0});
-                context.WidgetAction(arg1: "ScoreBoard", arg2: "CloseBoard");
+                context.WidgetAction(type: WidgetType.ScoreBoard, name: "CloseBoard");
                 context.RemoveBuff(arg1: 199, arg2: 99910090);
                 context.RemoveBuff(arg1: 199, arg2: 99910100);
                 context.RemoveBuff(arg1: 199, arg2: 99910110);
@@ -381,14 +383,14 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override TriggerState Execute() {
                 // "비교 연산 (연산자,대상값)"
-                if (context.WidgetCondition(arg1: "ScoreBoard", arg2: "Compare", arg3: ">=,1500")) {
-                    context.DebugString(value: "1500점 이상");
+                if (context.WidgetCondition(type: WidgetType.ScoreBoard, arg2: "Compare", arg3: ">=,1500")) {
+                    context.DebugString(message: "1500점 이상");
                     return new State보상(context);
                 }
 
                 // "비교 연산 (연산자,대상값)"
-                if (context.WidgetCondition(arg1: "ScoreBoard", arg2: "Compare", arg3: ">=,1000")) {
-                    context.DebugString(value: "1000점 이상");
+                if (context.WidgetCondition(type: WidgetType.ScoreBoard, arg2: "Compare", arg3: ">=,1000")) {
+                    context.DebugString(message: "1000점 이상");
                     return new State보상(context);
                 }
 
@@ -406,7 +408,7 @@ namespace Maple2.Trigger._02000393_bf {
             internal State보상(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
                 context.DungeonClear();
             }
 

@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000351_bf {
             internal StateLeverCheck완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02000351_bf {
             internal State열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
                 context.SetMesh(arg1: new[] {6005}, arg2: false, arg4: 0, arg5: 10f);
             }
 
@@ -109,9 +109,9 @@ namespace Maple2.Trigger._02000351_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._02000351_bf {
             internal State열림_끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {

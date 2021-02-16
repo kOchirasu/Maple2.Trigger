@@ -57,7 +57,7 @@ namespace Maple2.Trigger._99999876 {
             internal StateChatchUpNpc(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "1", arg2: 30, arg3: true, arg4: false, arg5: 0);
                 context.ChangeMonster(arg1: 17101, arg2: 17102);
             }
 
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._99999876 {
             internal StateChatchUpNpc_Quit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
                 context.DestroyMonster(arg1: new[] {17101, 17102});
             }
 

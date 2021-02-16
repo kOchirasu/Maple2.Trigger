@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20000060);
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {

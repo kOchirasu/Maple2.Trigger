@@ -5,9 +5,9 @@ namespace Maple2.Trigger._02000383_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 111, 112, 113, 114, 115, 116, 121, 122, 123, 124, 125, 126, 201, 202, 203, 204, 205, 206, 207, 211, 212, 213, 214, 215, 216, 221, 222, 223, 224, 225, 226, 301, 302, 303, 304, 305, 306, 307, 311, 312, 313, 314, 315, 316, 321, 322, 323, 324, 325, 326, 401, 402, 403, 404, 405, 406, 407, 408, 411, 412, 413, 414, 415, 416, 421, 422, 423, 424, 425, 426, 501, 502, 503, 504, 505, 506, 507, 508, 509, 511, 512, 513, 514, 515, 516, 521, 522, 523, 524, 525, 526});
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 4001, arg2: true, arg3: "Closed");
@@ -295,9 +295,9 @@ namespace Maple2.Trigger._02000383_bf {
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {8600, 8601, 8602, 8603, 8604, 8605, 8606, 8607, 8608, 8609, 8610, 8611, 8612}, arg2: false);
                 context.SetEffect(arg1: new[] {5007, 5008, 5009}, arg2: true);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: false);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: false);
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

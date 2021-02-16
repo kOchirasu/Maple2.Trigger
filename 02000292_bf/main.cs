@@ -41,8 +41,8 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.SetSkip(state: new StateCameraWalk03(context));
             }
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateCameraWalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1110, arg3: "$02000292_BF__MAIN__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1110, script: "$02000292_BF__MAIN__0$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new StateCameraWalk03(context));
             }
 
@@ -105,8 +105,8 @@ namespace Maple2.Trigger._02000292_bf {
                 context.SetSkip();
                 context.CameraSelect(arg1: 601, arg2: false);
                 context.CameraSelect(arg1: 600, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

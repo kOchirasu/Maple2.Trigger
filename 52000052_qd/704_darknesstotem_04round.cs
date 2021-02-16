@@ -44,7 +44,7 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateJuntaReady01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2304, arg3: "$52000052_QD__702_DARKNESSTOTEM_02ROUND__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 2304, script: "$52000052_QD__702_DARKNESSTOTEM_02ROUND__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {

@@ -15,9 +15,9 @@ namespace Maple2.Trigger._02000282_bf {
                 context.SetLadder(arg1: 361, arg2: false, arg3: false);
                 context.SetLadder(arg1: 362, arg2: false, arg3: false);
                 context.SetLadder(arg1: 363, arg2: false, arg3: false);
-                context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 4, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02000282_bf {
                     context.SetLadder(arg1: 341, arg2: true, arg3: true);
                     context.SetLadder(arg1: 342, arg2: true, arg3: true);
                     context.SetLadder(arg1: 343, arg2: true, arg3: true);
-                    context.SetPortal(arg1: 4, arg2: false, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 4, visible: false, enabled: true, minimapVisible: true);
                     return new StateWaitDestroy(context);
                 }
 
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._02000282_bf {
                     context.SetLadder(arg1: 351, arg2: true, arg3: true);
                     context.SetLadder(arg1: 352, arg2: true, arg3: true);
                     context.SetLadder(arg1: 353, arg2: true, arg3: true);
-                    context.SetPortal(arg1: 5, arg2: false, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 5, visible: false, enabled: true, minimapVisible: true);
                     return new StateWaitDestroy(context);
                 }
 
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._02000282_bf {
                     context.SetLadder(arg1: 361, arg2: true, arg3: true);
                     context.SetLadder(arg1: 362, arg2: true, arg3: true);
                     context.SetLadder(arg1: 363, arg2: true, arg3: true);
-                    context.SetPortal(arg1: 6, arg2: false, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 6, visible: false, enabled: true, minimapVisible: true);
                     return new StateWaitDestroy(context);
                 }
 
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._02000282_bf {
             internal StateWaitDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {

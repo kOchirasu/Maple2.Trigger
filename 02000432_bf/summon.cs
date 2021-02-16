@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02000432_bf {
             internal State셀린Dead(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2002, arg3: "$02000432_BF__SUMMON__1$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 2002, script: "$02000432_BF__SUMMON__1$", arg4: 4, arg5: 0);
                 context.AddBuff(arg1: new[] {2002}, arg2: 40500011, arg3: 1, arg4: true, arg5: false);
             }
 
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000432_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {603}, arg2: true);
                 context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "BigSisterFirst");
-                context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000432_BF__SUMMON__0$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 2001, script: "$02000432_BF__SUMMON__0$", arg4: 4, arg5: 0);
                 context.AddBuff(arg1: new[] {2001}, arg2: 40500011, arg3: 1, arg4: true, arg5: false);
             }
 

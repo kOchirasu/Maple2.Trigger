@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000386_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000386_BF__MAIN_02__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 901, script: "$02000386_BF__MAIN_02__0$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 901, arg2: "MS2PatrolData_2002");
             }
 

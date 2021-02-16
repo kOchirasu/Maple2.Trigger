@@ -24,7 +24,7 @@ namespace Maple2.Trigger._03000181_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003}, arg2: false, arg3: 0, arg4: 300, arg5: 3f);
-                context.SetTimer(arg1: "25", arg2: 25);
+                context.SetTimer(id: "25", arg2: 25);
             }
 
             public override TriggerState Execute() {

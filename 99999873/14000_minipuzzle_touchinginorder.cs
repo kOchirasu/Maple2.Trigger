@@ -64,7 +64,7 @@ namespace Maple2.Trigger._99999873 {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000077}, arg2: 0)) {
-                    context.SetTimer(arg1: "1", arg2: 90, arg3: true, arg4: false, arg5: 0);
+                    context.SetTimer(id: "1", arg2: 90, arg3: true, arg4: false, arg5: 0);
                     return new StateTouchingInNumericalOrder_Start_Delay(context);
                 }
 
@@ -302,7 +302,7 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 61, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "10", arg2: 61, arg3: true, arg4: false, arg5: 0);
                 context.AddBuff(arg1: new[] {140001}, arg2: 71001042, arg3: 1, arg4: false, arg5: false);
                 context.SetEffect(arg1: new[] {14200}, arg2: true);
                 context.SetInteractObject(arg1: new[] {12000069}, arg2: 1);
@@ -344,8 +344,8 @@ namespace Maple2.Trigger._99999873 {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 14000, key: "TimeEventOn", value: 0);
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "10");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "10");
             }
 
             public override TriggerState Execute() {
@@ -430,7 +430,7 @@ namespace Maple2.Trigger._99999873 {
             internal StateResetTimer(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
 
             public override TriggerState Execute() {

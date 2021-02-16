@@ -433,7 +433,7 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 9330, arg2: "trigger", arg3: "ddstop_gamble");
-                context.MiniGameGiveExp(boxId: 9330, expRate: 0.1f, isOutSide: "false");
+                context.MiniGameGiveExp(boxId: 9330, expRate: 0.1f, isOutSide: false);
                 context.SetUserValue(key: "Box33Check", value: 10);
             }
 
@@ -453,7 +453,7 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 9330, arg2: "trigger", arg3: "ddstop_gamble");
-                context.MiniGameGiveExp(boxId: 9330, expRate: 0.3f, isOutSide: "false");
+                context.MiniGameGiveExp(boxId: 9330, expRate: 0.3f, isOutSide: false);
                 context.SetUserValue(key: "Box33Check", value: 10);
             }
 

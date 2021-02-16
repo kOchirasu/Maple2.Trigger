@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02010051_bf {
             internal State음성Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
                 context.SetEffect(arg1: new[] {900}, arg2: true);
             }
 

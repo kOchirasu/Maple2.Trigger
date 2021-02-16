@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000301_bf {
                 context.CreateMonster(arg1: new[] {2005}, arg2: false);
                 context.ShowGuideSummary(entityId: 20003002, textId: 20003002);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetConversation(arg1: 1, arg2: 1003, arg3: "$02000301_BF__TRAP_04__1$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 1003, script: "$02000301_BF__TRAP_04__1$", arg4: 2);
                 context.SetMesh(arg1: new[] {4401, 4402, 4403, 4404, 4405, 4406, 4407, 4408, 4409, 4410, 4411, 4412, 4413, 4414}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                 context.SetMesh(arg1: new[] {3047, 3048}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }

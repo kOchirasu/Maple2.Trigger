@@ -50,9 +50,9 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.CameraSelectPath(arg1: new[] {802, 800}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.CameraSelectPath(pathIds: new[] {802, 800}, arg2: false);
                 context.SetSkip(state: new StateCameraWalk01(context));
             }
 
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateCameraWalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {800, 802}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {800, 802}, arg2: true);
                 context.SetSkip();
             }
 
@@ -90,10 +90,10 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000290_BF__MAIN__4$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000290_BF__MAIN__4$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {

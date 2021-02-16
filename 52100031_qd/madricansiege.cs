@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52100031_qd {
     public static class _madricansiege {
         public class StateWait : TriggerState {
@@ -6,7 +8,7 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006, 8101, 8102, 8103, 8104, 8105, 8106, 8201, 8202, 8203, 8204, 8205, 8206}, arg2: true);
                 context.CameraSelect(arg1: 300, arg2: true);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3101, 3102, 3103, 3104, 3105, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3801, 3802, 3803, 3804}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 2000, 2001}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -38,10 +40,10 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateStopCinematic(context));
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52100031_QD__MADRICANSIEGE__0$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000015, script: "$52100031_QD__MADRICANSIEGE__0$", arg4: 4, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -61,8 +63,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnEnter() {
                 context.SetSkip();
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 300, arg2: false);
             }
 
@@ -83,7 +85,7 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetAgent(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52100031_QD__MADRICANSIEGE__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1001, script: "$52100031_QD__MADRICANSIEGE__1$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -250,8 +252,8 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetActor(arg1: 209, arg2: true, arg3: "Dead_A");
                 context.SetActor(arg1: 210, arg2: true, arg3: "Dead_A");
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.MoveUser(arg1: 52100031, arg2: 3);
                 context.SetUserValue(triggerId: 99999099, key: "DungeonClear", value: 1);
                 context.SetUserValue(triggerId: 99999098, key: "DungeonClear", value: 1);
@@ -259,7 +261,7 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetUserValue(triggerId: 99999096, key: "DungeonClear", value: 1);
                 context.DestroyMonster(arg1: new[] {2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2099, 2901, 2902, 2903, 2904, 2905}, arg2: false);
                 context.SpawnNpcRange(rangeId: new[] {1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919, 1920, 1921, 1922}, isAutoTargeting: false);
-                context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: false, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -280,7 +282,7 @@ namespace Maple2.Trigger._52100031_qd {
                 context.CameraSelect(arg1: 305, arg2: true);
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(arg1: 1922, arg2: "Talk_A", arg3: 3000f);
-                context.AddCinematicTalk(npcId: 11001567, illustId: "11001567", msg: "$52100031_QD__MADRICANSIEGE__2$", duration: 3000, align: "Right");
+                context.AddCinematicTalk(npcId: 11001567, illustId: "11001567", script: "$52100031_QD__MADRICANSIEGE__2$", duration: 3000, align: Align.Right);
                 context.SetSkip(state: new State던전종료StopCinematic(context));
             }
 
@@ -303,7 +305,7 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 304, arg2: true);
                 context.SetNpcEmotionLoop(arg1: 1921, arg2: "Talk_A", arg3: 3000f);
-                context.AddCinematicTalk(npcId: 11001566, illustId: "11001566", msg: "$52100031_QD__MADRICANSIEGE__3$", duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11001566, illustId: "11001566", script: "$52100031_QD__MADRICANSIEGE__3$", duration: 3000, align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -323,7 +325,7 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnEnter() {
                 context.SetNpcRotation(arg1: 1920, arg2: 180);
                 context.SetNpcEmotionLoop(arg1: 1920, arg2: "Talk_A", arg3: 3000f);
-                context.AddCinematicTalk(npcId: 11001568, illustId: "11001568", msg: "$52100031_QD__MADRICANSIEGE__4$", duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11001568, illustId: "11001568", script: "$52100031_QD__MADRICANSIEGE__4$", duration: 3000, align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -363,8 +365,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1920, 1921, 1922}, arg2: false);
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
@@ -383,7 +385,7 @@ namespace Maple2.Trigger._52100031_qd {
             internal StateQuestDungeon종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

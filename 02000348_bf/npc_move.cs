@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000348_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000348_BF__NPC_MOVE__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$02000348_BF__NPC_MOVE__0$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {

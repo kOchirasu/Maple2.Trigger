@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._84000021_wd {
     public static class _84000021_wait {
         public class StateReset : TriggerState {
@@ -18,7 +20,7 @@ namespace Maple2.Trigger._84000021_wd {
             internal StateStart_타이머설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "4000", arg2: 2100, arg3: true, arg4: false);
+                context.SetTimer(id: "4000", arg2: 2100, arg3: true, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -32,11 +34,11 @@ namespace Maple2.Trigger._84000021_wd {
             internal State위치세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WeddingMoveUser(entryType: "Guest", arg1: 84000021, arg2: new byte[] {22, 23}, arg3: 701);
+                context.WeddingMoveUser(type: WeddingEntryType.Guest, arg1: 84000021, arg2: new byte[] {22, 23}, arg3: 701);
             }
 
             public override TriggerState Execute() {
-                if (context.WeddingEntryInField(entryType: "GroomBride", isInField: true)) {
+                if (context.WeddingEntryInField(type: WeddingEntryType.Groom) && context.WeddingEntryInField(type: WeddingEntryType.Bride)) {
                     return new State둘다입장(context);
                 }
 
@@ -54,7 +56,7 @@ namespace Maple2.Trigger._84000021_wd {
             internal State위치돌림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WeddingMoveUser(entryType: "Guest", arg1: 84000021, arg2: new byte[] {22, 23}, arg3: 701);
+                context.WeddingMoveUser(type: WeddingEntryType.Guest, arg1: 84000021, arg2: new byte[] {22, 23}, arg3: 701);
             }
 
             public override TriggerState Execute() {
@@ -72,7 +74,7 @@ namespace Maple2.Trigger._84000021_wd {
             }
 
             public override TriggerState Execute() {
-                if (context.WeddingEntryInField(entryType: "GroomBride", isInField: true)) {
+                if (context.WeddingEntryInField(type: WeddingEntryType.Groom) && context.WeddingEntryInField(type: WeddingEntryType.Bride)) {
                     return new State둘다입장(context);
                 }
 
@@ -117,7 +119,7 @@ namespace Maple2.Trigger._84000021_wd {
             internal State결혼확인띄우기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WeddingMutualAgree(agreeType: "startActing");
+                context.WeddingMutualAgree(type: WeddingAgreeType.StartActing);
                 context.SetUserValue(triggerId: 4002, key: "Weddingceremonystartsready", value: 1);
             }
 
@@ -134,15 +136,15 @@ namespace Maple2.Trigger._84000021_wd {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                if (context.WeddingEntryInField(entryType: "GroomBride", isInField: false)) {
+                if (!context.WeddingEntryInField(type: WeddingEntryType.Groom) || !context.WeddingEntryInField(type: WeddingEntryType.Bride)) {
                     return new StateWait01(context);
                 }
 
-                if (context.WeddingMutualAgreeResult(agreeType: "startActing", success: true)) {
+                if (context.WeddingMutualAgreeResult(type: WeddingAgreeType.StartActing) == true) {
                     return new State결혼식Cinematic진행중(context);
                 }
 
-                if (context.WeddingMutualAgreeResult(agreeType: "startActing", success: false)) {
+                if (context.WeddingMutualAgreeResult(type: WeddingAgreeType.StartActing) == true == false) {
                     return new StateWait01(context);
                 }
 
@@ -154,7 +156,7 @@ namespace Maple2.Trigger._84000021_wd {
             }
 
             public override void OnExit() {
-                context.WeddingMoveUser(entryType: "Guest", arg1: 84000021, arg2: new byte[] {22, 23}, arg3: 701);
+                context.WeddingMoveUser(type: WeddingEntryType.Guest, arg1: 84000021, arg2: new byte[] {22, 23}, arg3: 701);
             }
         }
 

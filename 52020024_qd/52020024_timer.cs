@@ -20,7 +20,7 @@ namespace Maple2.Trigger._52020024_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5, arg3: true, arg4: true);
+                context.SetTimer(id: "1", arg2: 5, arg3: true, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._52020024_qd {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "TimerStart", value: 2);
                 context.SetUserValue(triggerId: 99990003, key: "FinalPhase", value: 2);
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
 
             public override TriggerState Execute() {

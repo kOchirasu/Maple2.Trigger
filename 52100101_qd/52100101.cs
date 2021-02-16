@@ -79,7 +79,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal StateWait_01_02_003(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
                 context.MoveUser(arg1: 52100101, arg2: 2);
             }
 
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal State구릉도착_01_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4001, 4002, 4003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4001, 4002, 4003}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._52100101_qd {
             internal State구릉도착_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__0$", duration: 4000);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 0, script: "$52100101_QD__52100101__0$", duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -155,8 +155,8 @@ namespace Maple2.Trigger._52100101_qd {
             internal State검은군단들(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
-                context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__1$", duration: 4000);
+                context.CameraSelectPath(pathIds: new[] {4004}, arg2: false);
+                context.AddCinematicTalk(npcId: 0, script: "$52100101_QD__52100101__1$", duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -174,8 +174,8 @@ namespace Maple2.Trigger._52100101_qd {
             internal State검은군단들2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4005, 4007}, arg2: false);
-                context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__2$", duration: 4000);
+                context.CameraSelectPath(pathIds: new[] {4005, 4007}, arg2: false);
+                context.AddCinematicTalk(npcId: 0, script: "$52100101_QD__52100101__2$", duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal State검은군단들3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__3$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$52100101_QD__52100101__3$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -230,8 +230,8 @@ namespace Maple2.Trigger._52100101_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetSceneSkip();
             }
 
@@ -252,8 +252,8 @@ namespace Maple2.Trigger._52100101_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -290,7 +290,7 @@ namespace Maple2.Trigger._52100101_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal StateWait_01_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
                 context.MoveUser(arg1: 52100101, arg2: 3);
                 context.CreateMonster(arg1: new[] {109, 110, 111, 112, 113}, arg2: false);
             }
@@ -346,10 +346,10 @@ namespace Maple2.Trigger._52100101_qd {
             internal State클라디아바라봄_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4009}, arg2: false);
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__4$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11004422, msg: "$52100101_QD__52100101__5$", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4009}, arg2: false);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 0, script: "$52100101_QD__52100101__4$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004422, script: "$52100101_QD__52100101__5$", duration: 3000);
                 context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
             }
 
@@ -368,13 +368,13 @@ namespace Maple2.Trigger._52100101_qd {
             internal State게오르크_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4011, 4013}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4011, 4013}, arg2: false);
                 context.MoveNpc(arg1: 109, arg2: "MS2PatrolData_3002");
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_3003");
                 context.MoveNpc(arg1: 111, arg2: "MS2PatrolData_3004");
                 context.MoveNpc(arg1: 112, arg2: "MS2PatrolData_3005");
                 context.MoveNpc(arg1: 113, arg2: "MS2PatrolData_3006");
-                context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__6$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$52100101_QD__52100101__6$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -392,7 +392,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal State게오르크_04_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11004422, msg: "$52100101_QD__52100101__7$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004422, script: "$52100101_QD__52100101__7$", duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -410,7 +410,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal State게오르크_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__8$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$52100101_QD__52100101__8$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -428,12 +428,12 @@ namespace Maple2.Trigger._52100101_qd {
             internal State게오르크_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4014}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3007");
-                context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__9$", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004422, msg: "$52100101_QD__52100101__10$", duration: 4000);
-                context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__11$", duration: 4500);
-                context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__12$", duration: 4000);
+                context.AddCinematicTalk(npcId: 0, script: "$52100101_QD__52100101__9$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004422, script: "$52100101_QD__52100101__10$", duration: 4000);
+                context.AddCinematicTalk(npcId: 0, script: "$52100101_QD__52100101__11$", duration: 4500);
+                context.AddCinematicTalk(npcId: 0, script: "$52100101_QD__52100101__12$", duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -451,11 +451,11 @@ namespace Maple2.Trigger._52100101_qd {
             internal State게오르크_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11004422, msg: "$52100101_QD__52100101__13$", duration: 4500);
-                context.AddCinematicTalk(npcId: 11004422, msg: "$52100101_QD__52100101__14$", duration: 4500);
-                context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__15$", duration: 4500);
-                context.AddCinematicTalk(npcId: 11004422, msg: "$52100101_QD__52100101__16$", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004422, msg: "$52100101_QD__52100101__17$", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004422, script: "$52100101_QD__52100101__13$", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004422, script: "$52100101_QD__52100101__14$", duration: 4500);
+                context.AddCinematicTalk(npcId: 0, script: "$52100101_QD__52100101__15$", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004422, script: "$52100101_QD__52100101__16$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004422, script: "$52100101_QD__52100101__17$", duration: 4500);
             }
 
             public override TriggerState Execute() {
@@ -491,8 +491,8 @@ namespace Maple2.Trigger._52100101_qd {
             internal State잠시후_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: "$52100101_QD__52100101__18$");
-                context.CameraSelectPath(arg1: new[] {4015}, arg2: false);
+                context.SetCinematicUI(type: 9, script: "$52100101_QD__52100101__18$");
+                context.CameraSelectPath(pathIds: new[] {4015}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -511,9 +511,9 @@ namespace Maple2.Trigger._52100101_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {109, 110, 111, 112, 113, 114});
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.VisibleMyPc(isVisible: false);
             }
 
@@ -550,12 +550,12 @@ namespace Maple2.Trigger._52100101_qd {
             internal State잠시후_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4016}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4016}, arg2: false);
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.AddCinematicTalk(npcId: 11004421, msg: "$52100101_QD__52100101__19$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11004421, msg: "$52100101_QD__52100101__20$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11004421, msg: "$52100101_QD__52100101__21$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11004421, msg: "$52100101_QD__52100101__22$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004421, script: "$52100101_QD__52100101__19$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004421, script: "$52100101_QD__52100101__20$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004421, script: "$52100101_QD__52100101__21$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004421, script: "$52100101_QD__52100101__22$", duration: 3000);
                 context.SetSceneSkip();
             }
 

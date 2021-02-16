@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52100053_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: false);
                 context.SetUserValue(key: "PortalOn", value: 0);
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -178,7 +178,7 @@ namespace Maple2.Trigger._52100053_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

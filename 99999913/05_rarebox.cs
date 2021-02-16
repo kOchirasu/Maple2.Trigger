@@ -42,7 +42,7 @@ namespace Maple2.Trigger._99999913 {
             internal StateBoxOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"머쉬룸 타워 근처에 황금 상자가 나타났습니다!\n황금 상자를 차지해보세요!", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: @"머쉬룸 타워 근처에 황금 상자가 나타났습니다!\n황금 상자를 차지해보세요!", arg3: 5000, arg4: "0");
                 context.SetInteractObject(arg1: new[] {11000038}, arg2: 1);
             }
 

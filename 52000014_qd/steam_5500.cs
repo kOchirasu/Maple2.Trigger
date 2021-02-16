@@ -20,7 +20,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State발사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetTimer(id: "1", arg2: 3);
                 context.CreateMonster(arg1: new[] {550}, arg2: false);
             }
 

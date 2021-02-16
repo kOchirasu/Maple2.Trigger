@@ -85,8 +85,8 @@ namespace Maple2.Trigger._52000043_qd {
                 context.CreateMonster(arg1: new[] {1002, 2002}, arg2: false);
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.CameraSelect(arg1: 304, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -124,8 +124,8 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 304, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002B");
                 context.MoveNpc(arg1: 2002, arg2: "MS2PatrolData_2002B");
                 context.SetInteractObject(arg1: new[] {10001017, 10001018, 10001019}, arg2: 1);
@@ -150,8 +150,8 @@ namespace Maple2.Trigger._52000043_qd {
                 context.SetInteractObject(arg1: new[] {10001020}, arg2: 1);
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
                 context.CameraSelect(arg1: 306, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new State향로반응Wait(context));
             }
 
@@ -165,8 +165,8 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnExit() {
                 context.CameraSelect(arg1: 306, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 

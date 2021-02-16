@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02020101_bf {
             internal State힌트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020101_BF__GIMMICK2__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02020101_BF__GIMMICK2__0$", arg3: 3000);
             }
 
             public override TriggerState Execute() {

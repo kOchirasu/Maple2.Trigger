@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52000073_qd {
                 context.SetBreakable(arg1: new[] {4000}, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10001082}, arg2: 1);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 3000, arg2: true, arg3: "Opened");
-                context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: true, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52000073_qd {
             internal StateDoorOpen02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 3000, arg2: true, arg3: "Closed");
-                context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: true, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._52000073_qd {
                 context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
                 context.SetMesh(arg1: new[] {2000}, arg2: true, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetInteractObject(arg1: new[] {10001082}, arg2: 1);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

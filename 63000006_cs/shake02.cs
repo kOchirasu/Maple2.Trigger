@@ -34,7 +34,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal StateActivateSkill01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 42);
+                context.SetTimer(id: "1", arg2: 42);
                 context.SetSkill(arg1: new[] {910, 911, 912, 913}, arg2: true);
             }
 

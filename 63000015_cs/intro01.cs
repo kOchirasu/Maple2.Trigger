@@ -1,12 +1,14 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._63000015_cs {
     public static class _intro01 {
         public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "Guide");
+                context.CreateWidget(type: WidgetType.Guide);
                 context.SetSound(arg1: 10000, arg2: false);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {5100, 5101, 5000, 5001, 5002, 5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 6000, 8000, 8001, 8002, 8003, 8004, 8005}, arg2: false);
                 context.CreateMonster(arg1: new[] {101, 201, 202, 203, 204, 205, 206}, arg2: false);
@@ -28,8 +30,8 @@ namespace Maple2.Trigger._63000015_cs {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 10000, arg2: true);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
@@ -74,8 +76,8 @@ namespace Maple2.Trigger._63000015_cs {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 10000, arg2: true);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
@@ -119,9 +121,9 @@ namespace Maple2.Trigger._63000015_cs {
             internal StatePlayOpeningMovie01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -147,13 +149,13 @@ namespace Maple2.Trigger._63000015_cs {
             internal StatePlayOpeningMovie02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: @"common\Common_Opening.usm", movieId: 2);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "2")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "2")) {
                     return new StatePlayMovie01(context);
                 }
 
@@ -187,13 +189,13 @@ namespace Maple2.Trigger._63000015_cs {
             internal StatePlayMovie02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: "Cut_Blackstar_Crash.swf", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new StateWeiHongTalk01(context);
                 }
 
@@ -212,8 +214,8 @@ namespace Maple2.Trigger._63000015_cs {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 10000, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
             }
@@ -236,7 +238,7 @@ namespace Maple2.Trigger._63000015_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 601, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000015_CS__INTRO01__0$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000015_CS__INTRO01__0$", arg4: 6);
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
                 context.SetSkip(state: new StateWeiHongTalk03(context));
             }
@@ -272,7 +274,7 @@ namespace Maple2.Trigger._63000015_cs {
             internal StateWeiHongTalk04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000015_CS__INTRO01__1$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000015_CS__INTRO01__1$", arg4: 6);
                 context.SetEffect(arg1: new[] {8001}, arg2: true);
                 context.SetSkip(state: new StateWeiHongTalk05(context));
             }
@@ -308,7 +310,7 @@ namespace Maple2.Trigger._63000015_cs {
             internal StateWeiHongTalk06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000015_CS__INTRO01__2$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000015_CS__INTRO01__2$", arg4: 5);
                 context.SetEffect(arg1: new[] {8002}, arg2: true);
                 context.SetSkip(state: new StateWeiHongTalk07(context));
             }
@@ -331,8 +333,8 @@ namespace Maple2.Trigger._63000015_cs {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.SetEffect(arg1: new[] {8002}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 601, arg2: false);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
@@ -392,8 +394,8 @@ namespace Maple2.Trigger._63000015_cs {
             internal StateStandAside03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -415,7 +417,7 @@ namespace Maple2.Trigger._63000015_cs {
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "Guide", arg2: "IsTriggerEvent", arg3: "10020009")) {
+                if (context.WidgetCondition(type: WidgetType.Guide, arg2: "IsTriggerEvent", arg3: "10020009")) {
                     return new StateMeetWeiHong01(context);
                 }
 
@@ -468,8 +470,8 @@ namespace Maple2.Trigger._63000015_cs {
             internal StateWeiHongTalk10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 602, arg2: true);
             }
 
@@ -488,7 +490,7 @@ namespace Maple2.Trigger._63000015_cs {
             internal StateWeiHongTalk11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000015_CS__INTRO01__3$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000015_CS__INTRO01__3$", arg4: 5);
                 context.SetEffect(arg1: new[] {8005}, arg2: true);
                 context.SetSkip(state: new StateWeiHongTalk12(context));
             }
@@ -511,8 +513,8 @@ namespace Maple2.Trigger._63000015_cs {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.SetEffect(arg1: new[] {8005}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -526,7 +528,7 @@ namespace Maple2.Trigger._63000015_cs {
             internal StateWeiHongTalk13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000015_CS__INTRO01__4$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000015_CS__INTRO01__4$", arg4: 5);
                 context.SetEffect(arg1: new[] {8003}, arg2: true);
                 context.SetSkip(state: new StateWeiHongTalk14(context));
             }
@@ -549,8 +551,8 @@ namespace Maple2.Trigger._63000015_cs {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.SetEffect(arg1: new[] {8003}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -565,7 +567,7 @@ namespace Maple2.Trigger._63000015_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$63000015_CS__INTRO01__5$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$63000015_CS__INTRO01__5$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
             }
 
@@ -585,7 +587,7 @@ namespace Maple2.Trigger._63000015_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Idle_A");
-                context.SetConversation(arg1: 1, arg2: 202, arg3: "$63000015_CS__INTRO01__6$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 202, script: "$63000015_CS__INTRO01__6$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Talk_A");
             }
 
@@ -605,7 +607,7 @@ namespace Maple2.Trigger._63000015_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Idle_A");
-                context.SetConversation(arg1: 1, arg2: 206, arg3: "$63000015_CS__INTRO01__7$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 206, script: "$63000015_CS__INTRO01__7$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 206, arg2: "Talk_A");
             }
 
@@ -627,7 +629,7 @@ namespace Maple2.Trigger._63000015_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 206, arg2: "Idle_A");
-                context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000015_CS__INTRO01__8$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000015_CS__INTRO01__8$", arg4: 6);
                 context.SetEffect(arg1: new[] {8004}, arg2: true);
                 context.SetSkip(state: new StateWeiHongQuest01(context));
             }
@@ -652,8 +654,8 @@ namespace Maple2.Trigger._63000015_cs {
                 context.SetEffect(arg1: new[] {8004}, arg2: false);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 602, arg2: false);
             }
 
@@ -712,7 +714,7 @@ namespace Maple2.Trigger._63000015_cs {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 10020021);
-                context.SetPortal(arg1: 1, arg2: true, arg3: false, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: false, minimapVisible: true);
                 context.SetEffect(arg1: new[] {5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207}, arg2: true);
                 context.ShowGuideSummary(entityId: 10020012, textId: 10020012);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
@@ -734,7 +736,7 @@ namespace Maple2.Trigger._63000015_cs {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 10020012);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.ShowGuideSummary(entityId: 10020011, textId: 10020011);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
             }

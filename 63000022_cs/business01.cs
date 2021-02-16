@@ -4,7 +4,7 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {5000, 5001, 5002, 5200, 5201, 5202, 5203, 5204, 5205, 8000, 8001, 8002}, arg2: false);
                 context.CreateMonster(arg1: new[] {101, 201, 301, 401}, arg2: false);
             }
@@ -24,9 +24,9 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateLodingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.CameraSelect(arg1: 500, arg2: true);
             }
 
@@ -73,8 +73,8 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateQuestOngoing02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -108,8 +108,8 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateQuestOngoing12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -141,8 +141,8 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateTalkWeiHong02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -160,8 +160,8 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateTalkWeiHong03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 501, arg2: true);
             }
 
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._63000022_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000022_CS__BUSINESS01__0$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000022_CS__BUSINESS01__0$", arg4: 6);
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
                 context.SetSkip(state: new StateTalkWeiHong05(context));
             }
@@ -223,7 +223,7 @@ namespace Maple2.Trigger._63000022_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000022_CS__BUSINESS01__1$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000022_CS__BUSINESS01__1$", arg4: 6);
                 context.SetEffect(arg1: new[] {8001}, arg2: true);
                 context.SetSkip(state: new StateTalkWeiHong07(context));
             }
@@ -259,7 +259,7 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateTalkWeiHong08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001547, arg3: "$63000022_CS__BUSINESS01__3$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001547, script: "$63000022_CS__BUSINESS01__3$", arg4: 3);
                 context.SetSkip(state: new StateTalkWeiHong09(context));
             }
 
@@ -293,7 +293,7 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateTalkWeiHong10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000022_CS__BUSINESS01__2$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000022_CS__BUSINESS01__2$", arg4: 6);
                 context.SetEffect(arg1: new[] {8002}, arg2: true);
                 context.SetSkip(state: new StateTalkWeiHong11(context));
             }
@@ -315,8 +315,8 @@ namespace Maple2.Trigger._63000022_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 501, arg2: false);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
@@ -395,7 +395,7 @@ namespace Maple2.Trigger._63000022_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

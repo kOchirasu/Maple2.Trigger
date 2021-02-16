@@ -36,7 +36,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateMonsterSpawnWait1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "첫 번째 상대가 곧 출현합니다. 전투 준비를 하세요!!", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "첫 번째 상대가 곧 출현합니다. 전투 준비를 하세요!!", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateCount1_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "3", arg3: 1000);
+                context.SetEventUI(arg1: 1, script: "3", arg3: 1000);
             }
 
             public override TriggerState Execute() {
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateCount1_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "2", arg3: 1000);
+                context.SetEventUI(arg1: 1, script: "2", arg3: 1000);
             }
 
             public override TriggerState Execute() {
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateCount1_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "1", arg3: 1000);
+                context.SetEventUI(arg1: 1, script: "1", arg3: 1000);
             }
 
             public override TriggerState Execute() {
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateMonsterSpawn1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "시작!!", arg3: 1000);
+                context.SetEventUI(arg1: 1, script: "시작!!", arg3: 1000);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateMonsterSpawnWait2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "첫 전투에서 승리하셨습니다. 잠시만 기다려주세요 다음전투가 기다리고 있습니다!!", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "첫 전투에서 승리하셨습니다. 잠시만 기다려주세요 다음전투가 기다리고 있습니다!!", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateCount2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "3", arg3: 1000);
+                context.SetEventUI(arg1: 1, script: "3", arg3: 1000);
             }
 
             public override TriggerState Execute() {
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateCount2_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "2", arg3: 1000);
+                context.SetEventUI(arg1: 1, script: "2", arg3: 1000);
             }
 
             public override TriggerState Execute() {
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateCount2_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "1", arg3: 1000);
+                context.SetEventUI(arg1: 1, script: "1", arg3: 1000);
             }
 
             public override TriggerState Execute() {
@@ -218,7 +218,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateMonsterSpawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "시작!!", arg3: 1000);
+                context.SetEventUI(arg1: 1, script: "시작!!", arg3: 1000);
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
@@ -256,7 +256,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateMonsterSpawnWait3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "두 번째 전투에서 승리하셨습니다. 잠시만 기다려주세요 마지막 전투가 기다리고 있습니다!!", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "두 번째 전투에서 승리하셨습니다. 잠시만 기다려주세요 마지막 전투가 기다리고 있습니다!!", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateCount3_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "3", arg3: 1000);
+                context.SetEventUI(arg1: 1, script: "3", arg3: 1000);
             }
 
             public override TriggerState Execute() {
@@ -292,7 +292,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateCount3_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "2", arg3: 1000);
+                context.SetEventUI(arg1: 1, script: "2", arg3: 1000);
             }
 
             public override TriggerState Execute() {
@@ -310,7 +310,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateCount3_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "1", arg3: 1000);
+                context.SetEventUI(arg1: 1, script: "1", arg3: 1000);
             }
 
             public override TriggerState Execute() {
@@ -328,7 +328,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateMonsterSpawn3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "시작!!", arg3: 1000);
+                context.SetEventUI(arg1: 1, script: "시작!!", arg3: 1000);
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
             }
 
@@ -382,7 +382,7 @@ namespace Maple2.Trigger._99999895 {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 7, arg2: "SUCCESS", arg3: 3000);
+                context.SetEventUI(arg1: 7, script: "SUCCESS", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -400,7 +400,7 @@ namespace Maple2.Trigger._99999895 {
             internal State안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "곧 다시 전투가 시작됩니다. 준비하세요!!", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "곧 다시 전투가 시작됩니다. 준비하세요!!", arg3: 3000);
             }
 
             public override TriggerState Execute() {

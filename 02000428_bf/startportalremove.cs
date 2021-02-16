@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000428_bf {
             internal StateStartingPortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02000428_bf {
             internal StateStartingPortal_RemoveNotification(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000428_BF__BARRICADE__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000428_BF__BARRICADE__0$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02000428_bf {
             internal StateStartingPortalRemove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

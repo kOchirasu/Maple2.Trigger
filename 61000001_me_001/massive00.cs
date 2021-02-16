@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._61000001_me_001 {
     public static class _massive00 {
         public class StateWait : TriggerState {
@@ -34,9 +36,9 @@ namespace Maple2.Trigger._61000001_me_001 {
                 context.SetActor(arg1: 260, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 261, arg2: true, arg3: "Eff_MassiveEvent_Door_Opened");
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
-                context.SetPortal(arg1: 777, arg2: false, arg3: true, arg4: true);
-                context.SetPortal(arg1: 778, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 779, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 777, visible: false, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 778, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 779, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -60,8 +62,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnEnter() {
                 context.SetMiniGameAreaForHack(boxId: 301);
                 context.SetActor(arg1: 261, arg2: true, arg3: "Eff_MassiveEvent_Door_Vanished");
-                context.SetPortal(arg1: 777, arg2: false, arg3: false, arg4: false);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetPortal(portalId: 777, visible: false, enabled: false, minimapVisible: false);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -73,7 +75,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -88,7 +90,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                 context.SetActor(arg1: 259, arg2: true, arg3: "Eff_MassiveEvent_Stair_Closed");
                 context.SetActor(arg1: 260, arg2: true, arg3: "Eff_MassiveEvent_Stair_Closed");
                 context.SetActor(arg1: 261, arg2: false, arg3: "Eff_MassiveEvent_Door_Vanished");
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -100,7 +102,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -120,7 +122,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                 context.SetActor(arg1: 258, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
                 context.SetActor(arg1: 259, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
                 context.SetActor(arg1: 260, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -132,7 +134,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -140,10 +142,10 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal StateMassiveEvent0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
                 context.PlaySystemSoundInBox(arg2: "ME_001_Massive00_00");
-                context.SetEventUI(arg1: 1, arg2: "$61000001_ME_001__MASSIVE00__0$", arg3: 6000);
-                context.StartMiniGame(boxId: 301, round: 5, gameName: "trapmaster");
+                context.SetEventUI(arg1: 1, script: "$61000001_ME_001__MASSIVE00__0$", arg3: 6000);
+                context.StartMiniGame(boxId: 301, round: 5, type: MiniGame.TrapMaster);
                 context.SetAchievement(arg1: 301, arg2: "trigger", arg3: "trapmaster_start");
                 context.SetAchievement(arg1: 301, arg2: "trigger", arg3: "dailyquest_start");
                 context.GiveGuildExp(boxId: false, type: 2);
@@ -158,7 +160,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -166,9 +168,9 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal StateMassiveEvent1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 11);
+                context.SetTimer(id: "1", arg2: 11);
                 context.PlaySystemSoundInBox(arg2: "ME_001_Massive00_01");
-                context.SetEventUI(arg1: 1, arg2: "$61000001_ME_001__MASSIVE00__1$", arg3: 11000);
+                context.SetEventUI(arg1: 1, script: "$61000001_ME_001__MASSIVE00__1$", arg3: 11000);
             }
 
             public override TriggerState Execute() {
@@ -180,7 +182,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -188,9 +190,9 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal StateMassiveEvent2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
                 context.PlaySystemSoundInBox(arg2: "ME_001_Massive00_02");
-                context.SetEventUI(arg1: 1, arg2: "$61000001_ME_001__MASSIVE00__2$", arg3: 10000);
+                context.SetEventUI(arg1: 1, script: "$61000001_ME_001__MASSIVE00__2$", arg3: 10000);
             }
 
             public override TriggerState Execute() {
@@ -202,7 +204,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -210,8 +212,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal StateMassiveEvent3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 6);
-                context.SetEventUI(arg1: 0, arg2: "1,5");
+                context.SetTimer(id: "1", arg2: 6);
+                context.SetEventUI(arg1: 0, script: "1,5");
                 context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__3$", stage: 1, count: 5);
             }
 
@@ -224,7 +226,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -232,7 +234,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐단계1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "99", arg2: 14);
+                context.SetTimer(id: "99", arg2: 14);
                 context.UseState(arg1: 1, arg2: false);
                 context.StartMiniGameRound(boxId: 301, round: 1);
             }
@@ -246,7 +248,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "99");
+                context.ResetTimer(id: "99");
             }
         }
 
@@ -255,7 +257,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 301, expRate: 0.2f);
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetTimer(id: "1", arg2: 3);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
             }
 
@@ -272,7 +274,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -283,7 +285,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    context.SetEventUI(arg1: 0, arg2: "2,5");
+                    context.SetEventUI(arg1: 0, script: "2,5");
                     context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__4$", stage: 2, count: 5);
                     return new State퍼즐단계2Wait(context);
                 }
@@ -298,7 +300,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐단계2Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 6);
+                context.SetTimer(id: "1", arg2: 6);
             }
 
             public override TriggerState Execute() {
@@ -310,7 +312,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -319,7 +321,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override void OnEnter() {
                 context.StartMiniGameRound(boxId: 301, round: 2);
-                context.SetTimer(arg1: "99", arg2: 14);
+                context.SetTimer(id: "99", arg2: 14);
                 context.UseState(arg1: 1, arg2: false);
             }
 
@@ -332,7 +334,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "99");
+                context.ResetTimer(id: "99");
             }
         }
 
@@ -341,7 +343,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 301, expRate: 0.2f);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
             }
 
@@ -358,7 +360,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -369,7 +371,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    context.SetEventUI(arg1: 0, arg2: "3,5");
+                    context.SetEventUI(arg1: 0, script: "3,5");
                     context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__5$", stage: 3, count: 5);
                     return new State퍼즐단계3Wait(context);
                 }
@@ -384,7 +386,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐단계3Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 6);
+                context.SetTimer(id: "1", arg2: 6);
             }
 
             public override TriggerState Execute() {
@@ -396,7 +398,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -405,7 +407,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override void OnEnter() {
                 context.StartMiniGameRound(boxId: 301, round: 3);
-                context.SetTimer(arg1: "99", arg2: 14);
+                context.SetTimer(id: "99", arg2: 14);
                 context.UseState(arg1: 1, arg2: false);
             }
 
@@ -418,7 +420,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "99");
+                context.ResetTimer(id: "99");
             }
         }
 
@@ -427,7 +429,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 301, expRate: 0.2f);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
             }
 
@@ -444,7 +446,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -455,7 +457,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    context.SetEventUI(arg1: 0, arg2: "4,5");
+                    context.SetEventUI(arg1: 0, script: "4,5");
                     context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__6$", stage: 4, count: 5);
                     return new State퍼즐단계4Wait(context);
                 }
@@ -470,7 +472,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐단계4Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 6);
+                context.SetTimer(id: "1", arg2: 6);
             }
 
             public override TriggerState Execute() {
@@ -482,7 +484,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -491,7 +493,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override void OnEnter() {
                 context.StartMiniGameRound(boxId: 301, round: 4);
-                context.SetTimer(arg1: "99", arg2: 14);
+                context.SetTimer(id: "99", arg2: 14);
                 context.UseState(arg1: 1, arg2: false);
             }
 
@@ -504,7 +506,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "99");
+                context.ResetTimer(id: "99");
             }
         }
 
@@ -513,7 +515,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 301, expRate: 0.2f);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
             }
 
@@ -530,7 +532,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -541,7 +543,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    context.SetEventUI(arg1: 0, arg2: "5,5");
+                    context.SetEventUI(arg1: 0, script: "5,5");
                     context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__7$", stage: 5, count: 5);
                     return new State퍼즐단계5Wait(context);
                 }
@@ -556,7 +558,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐단계5Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 6);
+                context.SetTimer(id: "1", arg2: 6);
             }
 
             public override TriggerState Execute() {
@@ -568,7 +570,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -577,7 +579,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override void OnEnter() {
                 context.StartMiniGameRound(boxId: 301, round: 5);
-                context.SetTimer(arg1: "99", arg2: 14);
+                context.SetTimer(id: "99", arg2: 14);
                 context.UseState(arg1: 1, arg2: false);
             }
 
@@ -590,7 +592,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "99");
+                context.ResetTimer(id: "99");
             }
         }
 
@@ -599,7 +601,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 301, expRate: 0.2f);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -615,7 +617,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -645,10 +647,10 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override void OnEnter() {
                 context.MiniGameCameraDirection(boxId: 301, cameraId: 901);
-                context.SetEventUI(arg1: 0, arg2: "0,0");
+                context.SetEventUI(arg1: 0, script: "0,0");
                 context.PlaySystemSoundInBox(arg1: new[] {301}, arg2: "ME_001_Massive00_08");
-                context.SetEventUI(arg1: 3, arg2: "$61000001_ME_001__MASSIVE00__8$", arg3: 7000, arg4: "301");
-                context.SetEventUI(arg1: 6, arg2: "$61000001_ME_001__MASSIVE00__9$", arg3: 7000, arg4: "!301");
+                context.SetEventUI(arg1: 3, script: "$61000001_ME_001__MASSIVE00__8$", arg3: 7000, arg4: "301");
+                context.SetEventUI(arg1: 6, script: "$61000001_ME_001__MASSIVE00__9$", arg3: 7000, arg4: "!301");
             }
 
             public override TriggerState Execute() {
@@ -669,10 +671,10 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {301}, arg2: 70000019, arg3: 1);
                 context.PlaySystemSoundInBox(arg1: new[] {301}, arg2: "ME_001_Massive00_10");
-                context.SetEventUI(arg1: 3, arg2: "$61000001_ME_001__MASSIVE00__10$", arg3: 5000, arg4: "301");
-                context.SetEventUI(arg1: 6, arg2: "$61000001_ME_001__MASSIVE00__11$", arg3: 5000, arg4: "!301");
+                context.SetEventUI(arg1: 3, script: "$61000001_ME_001__MASSIVE00__10$", arg3: 5000, arg4: "301");
+                context.SetEventUI(arg1: 6, script: "$61000001_ME_001__MASSIVE00__11$", arg3: 5000, arg4: "!301");
                 context.MiniGameGiveReward(winnerBoxId: 301, contentType: "miniGame");
-                context.EndMiniGame(winnerBoxId: 301, gameName: "trapmaster");
+                context.EndMiniGame(winnerBoxId: 301, type: MiniGame.TrapMaster);
                 context.SetAchievement(arg1: 301, arg2: "trigger", arg3: "trapmaster_win");
             }
 
@@ -691,14 +693,14 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐종료계단보이기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 0, arg2: "0,0");
+                context.SetEventUI(arg1: 0, script: "0,0");
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 201, 202, 203, 204, 205}, arg2: true);
                 context.SetActor(arg1: 251, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 252, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 253, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 254, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 255, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -710,7 +712,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -724,7 +726,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                 context.SetActor(arg1: 258, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 259, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 260, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -736,7 +738,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -747,8 +749,8 @@ namespace Maple2.Trigger._61000001_me_001 {
                 context.UnSetMiniGameAreaForHack();
                 context.SetMesh(arg1: new[] {211}, arg2: true);
                 context.SetActor(arg1: 261, arg2: true, arg3: "Eff_MassiveEvent_Door_Opened");
-                context.SetEventUI(arg1: 0, arg2: "0,0");
-                context.SetPortal(arg1: 777, arg2: false, arg3: true, arg4: true);
+                context.SetEventUI(arg1: 0, script: "0,0");
+                context.SetPortal(portalId: 777, visible: false, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -762,7 +764,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐종료2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -780,7 +782,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -795,7 +797,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 12, 13, 14, 15, 16, 17, 18, 19, 29, 39, 49, 59, 69, 79, 89, 88, 87, 86, 85, 84, 83, 82, 72, 62, 52, 42, 32, 22, 23, 24, 25, 26, 27, 28, 38, 48, 58, 68, 78, 77, 76, 75, 74, 73, 63, 53, 43, 33, 34, 35, 36, 37, 47, 57, 67, 66, 65, 64, 54, 44}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -810,7 +812,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 31, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 60, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 71, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 100}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -825,7 +827,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -840,7 +842,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -855,7 +857,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {23, 24, 25, 26, 27, 28, 38, 48, 58, 68, 78, 77, 76, 75, 74, 73, 63, 53, 43, 33}, arg2: false, arg3: 3600, arg4: 100);
                 context.SetMesh(arg1: new[] {45, 46, 55, 56}, arg2: false, arg3: 5600, arg4: 100);
@@ -872,7 +874,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 19, 28, 37, 46, 55, 64, 73, 82, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 89, 78, 67, 56, 45, 34, 23, 12, 11, 21, 31, 41, 51, 61, 71, 81, 83, 84, 85, 86, 87, 88, 90, 80, 70, 60, 50, 40, 30, 20, 18, 17, 16, 15, 14, 13, 22, 32, 42, 52, 62, 72, 74, 75, 76, 77, 79, 69, 59, 49, 39, 29, 27, 26, 25, 24}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -887,7 +889,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 19, 28, 37, 46, 55, 64, 73, 82, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 90, 80, 70, 60, 50, 40, 30, 20, 18, 17, 16, 15, 14, 13, 12, 11, 21, 31, 41, 51, 61, 71, 81, 83, 84, 85, 86, 87, 88, 89, 79, 69, 59, 49, 39, 29, 27, 26, 25, 24, 23, 22, 32, 42, 52, 62, 72, 74, 75, 76, 77, 78, 68, 58, 48, 38, 36, 35, 34, 33, 43, 53, 63, 65, 66, 67}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -902,7 +904,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true, arg3: 1200, arg4: 100);
             }
@@ -918,7 +920,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90}, arg2: false, arg3: 0, arg4: 100);
             }
@@ -934,7 +936,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 40, 30, 20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11, 21, 31, 32, 33, 34, 35, 36, 37, 38, 39, 29, 19, 18, 17, 16, 15, 14, 13, 12, 22}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 61, 71, 81, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 90, 80, 70, 69, 68, 67, 66, 65, 64, 63, 62, 72, 82, 83, 84, 85, 86, 87, 88, 89, 79}, arg2: false, arg3: 0, arg4: 100);
             }
@@ -950,7 +952,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 40, 30, 20, 10, 9, 19, 29, 39, 38, 28, 18, 8, 7, 17, 27, 37, 36, 26, 16, 6, 5, 15, 25, 35, 34, 24, 14, 4, 3, 13, 23, 33, 32, 22, 12, 2}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 61, 71, 81, 91, 92, 82, 72, 62, 63, 73, 83, 93, 94, 84, 74, 64, 65, 75, 85, 95, 96, 86, 76, 66, 67, 77, 87, 97, 98, 88, 78, 68, 69, 79, 89, 99}, arg2: false, arg3: 0, arg4: 100);
             }
@@ -966,7 +968,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 40, 30, 20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11, 12, 13, 14, 15, 16, 17, 18, 19, 29, 28, 27, 26, 25, 24, 23, 22, 21, 31}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 61, 71, 81, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 90, 89, 88, 87, 86, 85, 84, 83, 82, 72, 73, 74, 75, 76, 77, 78, 79, 80, 70}, arg2: false, arg3: 0, arg4: 100);
             }
@@ -982,7 +984,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81}, arg2: false, arg3: 0, arg4: 100);
             }
@@ -998,7 +1000,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern24(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}, arg2: true, arg3: 1200, arg4: 100);
                 context.SetMesh(arg1: new[] {60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91}, arg2: false, arg3: 0, arg4: 100);
@@ -1016,8 +1018,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern25(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 10);
                 context.SetMesh(arg1: new[] {10}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {8, 19, 30}, arg2: false, arg3: 500, arg4: 0);
                 context.SetMesh(arg1: new[] {6, 17, 28, 39, 50}, arg2: false, arg3: 1000, arg4: 0);
@@ -1041,7 +1043,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern26(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10, 30, 50, 70, 90}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {19, 39, 59, 79, 99}, arg2: false, arg3: 500, arg4: 0);
                 context.SetMesh(arg1: new[] {8, 28, 48, 68, 88}, arg2: false, arg3: 1000, arg4: 0);
@@ -1065,7 +1067,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern27(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10, 30, 50, 70, 90}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {19, 39, 59, 79, 99}, arg2: false, arg3: 500, arg4: 0);
                 context.SetMesh(arg1: new[] {8, 28, 48, 68, 88}, arg2: false, arg3: 1000, arg4: 0);
@@ -1089,7 +1091,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern28(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {9, 20}, arg2: false, arg3: 500, arg4: 0);
                 context.SetMesh(arg1: new[] {8, 19, 30}, arg2: false, arg3: 1000, arg4: 0);
@@ -1141,7 +1143,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern29(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {9, 20}, arg2: false, arg3: 500, arg4: 0);
                 context.SetMesh(arg1: new[] {8, 19, 30}, arg2: false, arg3: 1000, arg4: 0);
@@ -1173,7 +1175,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {9, 8, 7, 6, 5, 4, 3, 2, 1}, arg2: false, arg3: 100, arg4: 100);
                 context.SetMesh(arg1: new[] {20, 30, 40, 50, 60, 70, 80, 90, 100}, arg2: false, arg3: 100, arg4: 100);
@@ -1211,7 +1213,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern31(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {9, 8, 7, 6, 5, 4, 3, 2, 1}, arg2: false, arg3: 100, arg4: 100);
                 context.SetMesh(arg1: new[] {20, 30, 40, 50, 60, 70, 80, 90, 100}, arg2: false, arg3: 100, arg4: 100);
@@ -1249,7 +1251,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern32(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {9, 8, 7, 6, 5, 4, 3, 2, 1}, arg2: false, arg3: 100, arg4: 100);
                 context.SetMesh(arg1: new[] {20, 30, 40, 50, 60, 70, 80, 90, 100}, arg2: false, arg3: 100, arg4: 100);
@@ -1281,7 +1283,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern33(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {20, 30, 40, 50, 60, 70, 80, 90, 100}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {9, 29, 39, 49, 59, 69, 79, 89, 99}, arg2: false, arg3: 500, arg4: 0);
                 context.SetMesh(arg1: new[] {8, 18, 38, 48, 58, 68, 78, 88, 98}, arg2: false, arg3: 1000, arg4: 0);
@@ -1305,7 +1307,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern34(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {46, 56, 55, 45, 35, 36, 37, 47, 57, 67, 66, 65, 64, 54, 44, 34, 24, 25, 26, 27, 28, 38, 48, 58, 68, 78, 77, 76, 75, 74, 73, 63, 53, 43, 33, 23, 13, 14, 15, 16, 17, 18, 19, 29, 39, 49, 59, 69, 79, 89, 88, 87, 86, 85, 84, 83, 82, 72, 62, 52, 42, 32, 22, 12}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -1320,7 +1322,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern35(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {46, 56, 55, 45, 25, 26, 27, 28, 38, 48, 58, 68, 78, 77, 76, 75, 74, 73, 63, 53, 43, 33, 23, 24, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -1335,7 +1337,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern36(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {46, 56, 55, 45, 35, 25, 15, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 12, 13, 14, 15, 16, 17, 18, 19, 29, 39, 49, 59, 69, 79, 89, 88, 87, 86, 85, 84, 83, 82, 72, 62, 52, 42, 32, 22, 23, 24, 25, 26, 27, 28, 38, 48, 58, 68, 78, 77, 76, 75, 74, 73, 63, 53, 43, 33, 34, 35, 36, 37, 47, 57, 67, 66, 65, 64, 54, 44}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -1350,7 +1352,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern37(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {46, 56, 55, 45, 64, 54, 44, 34, 35, 36, 37, 47, 57, 67, 28, 38, 48, 58, 68, 78, 77, 76, 75, 74, 73, 63, 53, 43, 33, 23, 82, 72, 62, 52, 42, 32, 22, 12, 13, 14, 15, 16, 17, 18, 19, 29, 39, 49, 59, 69, 79, 89, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 1}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -1365,7 +1367,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern38(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {45, 34, 23, 12, 1}, arg2: false, arg3: 0, arg4: 200);
                 context.SetMesh(arg1: new[] {46, 37, 28, 19, 10}, arg2: false, arg3: 0, arg4: 200);
                 context.SetMesh(arg1: new[] {56, 67, 78, 89, 100}, arg2: false, arg3: 0, arg4: 200);
@@ -1407,7 +1409,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern39(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {45}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {35, 25, 15, 5}, arg2: false, arg3: 100, arg4: 100);
                 context.SetMesh(arg1: new[] {44, 43, 42, 41}, arg2: false, arg3: 100, arg4: 100);
@@ -1469,7 +1471,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern40(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10, 19, 28, 37, 46, 55, 64, 73, 82, 91}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {9, 18, 27, 36, 45, 54, 63, 72, 81, 20, 29, 38, 47, 56, 65, 74, 83, 92}, arg2: false, arg3: 1000, arg4: 0);
                 context.SetMesh(arg1: new[] {8, 17, 26, 35, 44, 53, 62, 71, 30, 39, 48, 57, 66, 75, 84, 93}, arg2: false, arg3: 1500, arg4: 0);
@@ -1492,7 +1494,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern41(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10, 19, 28, 37, 46, 55, 64, 73, 82, 91}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {81, 71, 61, 51, 41, 31, 21, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 18, 27, 36, 45, 54, 63, 72, 62, 52, 42, 32, 22, 12, 13, 14, 15, 16, 17, 26, 35, 44, 53, 43, 33, 23}, arg2: false, arg3: 1000, arg4: 100);
                 context.SetMesh(arg1: new[] {92, 93, 94, 95, 96, 97, 98, 99, 100, 90, 80, 70, 60, 50, 40, 30, 20, 29, 38, 47, 56, 65, 74, 83, 84, 85, 86, 87, 88, 89, 79, 69, 59, 49, 39, 48, 57, 66, 75, 76, 77, 78}, arg2: false, arg3: 1000, arg4: 100);
@@ -1509,7 +1511,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern42(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10, 19, 28, 37, 46, 55, 64, 73, 82, 91}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {81, 71, 61, 51, 41, 31, 21, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 72, 62, 52, 42, 32, 22, 12, 13, 14, 15, 16, 17, 18, 29, 39, 49, 59, 69, 79, 89, 88, 87, 86, 85, 84, 83, 63, 53, 43, 33, 23, 24, 25, 26, 27, 38, 48, 58, 68, 78, 77, 76, 75, 74, 54, 44, 34, 35, 36, 47, 57, 67, 66, 65}, arg2: false, arg3: 1000, arg4: 100);
             }
@@ -1525,7 +1527,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern43(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {91}, arg2: false, arg3: 100, arg4: 0);
                 context.SetMesh(arg1: new[] {9, 20}, arg2: false, arg3: 200, arg4: 100);
@@ -1557,7 +1559,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern44(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {9, 8, 7, 6, 5, 4, 3, 2, 1}, arg2: false, arg3: 100, arg4: 100);
                 context.SetMesh(arg1: new[] {20, 30, 40, 50, 60, 70, 80, 90, 100}, arg2: false, arg3: 1000, arg4: 100);
@@ -1595,7 +1597,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern45(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {34, 33, 23, 24}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {77, 78, 68, 67}, arg2: false, arg3: 400, arg4: 100);
                 context.SetMesh(arg1: new[] {37, 38, 28, 27}, arg2: false, arg3: 800, arg4: 100);
@@ -1618,7 +1620,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern46(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {33, 23, 24, 34}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {44, 43, 42, 32, 22, 12, 13, 14, 15, 25, 35, 45}, arg2: false, arg3: 400, arg4: 100);
                 context.SetMesh(arg1: new[] {67, 77, 78, 68, 58, 57, 56, 66, 76, 86, 87, 88, 89, 79, 69, 59}, arg2: false, arg3: 1600, arg4: 100);
@@ -1637,7 +1639,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern47(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {33, 23, 24, 34}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {44, 43, 42, 32, 22, 12, 13, 14, 15, 25, 35, 45}, arg2: false, arg3: 400, arg4: 100);
                 context.SetMesh(arg1: new[] {55, 54, 53, 52, 51, 41, 31, 21, 11, 1, 2, 3, 4, 5, 6, 16, 26, 36, 46, 56}, arg2: false, arg3: 1600, arg4: 100);
@@ -1657,7 +1659,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern48(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {33, 23, 24, 34}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {44, 43, 42, 32, 22, 12, 13, 14, 15, 25, 35, 45}, arg2: false, arg3: 400, arg4: 100);
                 context.SetMesh(arg1: new[] {55, 54, 53, 52, 51, 41, 31, 21, 11, 1, 2, 3, 4, 5, 6, 16, 26, 36, 46, 56}, arg2: false, arg3: 1600, arg4: 100);
@@ -1677,7 +1679,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern49(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {34, 33, 23, 24}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {77, 78, 68, 67}, arg2: false, arg3: 400, arg4: 100);
                 context.SetMesh(arg1: new[] {45, 44, 43, 42, 32, 22, 12, 13, 14, 15, 25, 35, 56, 57, 58, 59, 69, 79, 89, 88, 87, 86, 76, 66}, arg2: false, arg3: 800, arg4: 100);
@@ -1707,7 +1709,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern50(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {34, 33, 23, 24}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {77, 78, 68, 67}, arg2: false, arg3: 400, arg4: 100);
                 context.SetMesh(arg1: new[] {37, 38, 28, 27, 64, 63, 73, 74}, arg2: false, arg3: 1000, arg4: 100);
@@ -1729,7 +1731,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern51(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {34, 33, 23, 24}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {77, 78, 68, 67}, arg2: false, arg3: 400, arg4: 100);
                 context.SetMesh(arg1: new[] {37, 38, 28, 27, 64, 63, 73, 74}, arg2: false, arg3: 1000, arg4: 100);
@@ -1752,7 +1754,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern52(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {13, 12, 2, 3}, arg2: false, arg3: 100, arg4: 100);
                 context.SetMesh(arg1: new[] {15, 16, 26, 25, 24, 14, 4, 5, 6}, arg2: false, arg3: 500, arg4: 100);
@@ -1775,7 +1777,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern53(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {13, 12, 2, 3}, arg2: false, arg3: 100, arg4: 100);
                 context.SetMesh(arg1: new[] {15, 16, 26, 25, 24, 14, 4, 5, 6}, arg2: false, arg3: 500, arg4: 100);
@@ -1798,7 +1800,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern54(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 100}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {13, 12, 2, 3, 88, 89, 99, 98}, arg2: false, arg3: 200, arg4: 100);
                 context.SetMesh(arg1: new[] {15, 16, 26, 25, 24, 14, 4, 5, 6, 86, 85, 75, 76, 77, 87, 97, 96, 95}, arg2: false, arg3: 1000, arg4: 100);
@@ -1819,7 +1821,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern55(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 100}, arg2: false, arg3: 0, arg4: 100);
                 context.SetMesh(arg1: new[] {13, 12, 2, 3, 88, 89, 99, 98}, arg2: false, arg3: 200, arg4: 100);
                 context.SetMesh(arg1: new[] {15, 16, 26, 25, 24, 14, 4, 5, 6, 86, 85, 75, 76, 77, 87, 97, 96, 95}, arg2: false, arg3: 1000, arg4: 100);
@@ -1840,7 +1842,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern56(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 12, 13, 14, 15, 16, 17, 18, 19, 29, 69, 79, 89, 88, 87, 84, 83, 82, 72, 62, 22, 25, 26, 38, 48, 58, 78, 76, 75, 73, 53, 43, 33, 34, 37, 47, 57, 67, 66, 65, 64, 54, 44, 45, 46, 56, 55}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -1855,7 +1857,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern57(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 8, 9, 10, 20, 30, 40, 50, 90, 100, 99, 92, 91, 81, 41, 31, 21, 11, 12, 13, 14, 17, 18, 19, 29, 39, 59, 69, 79, 88, 87, 86, 85, 84, 83, 72, 62, 52, 32, 22, 23, 26, 27, 28, 48, 58, 68, 78, 77, 74, 73, 63, 53, 43, 34, 35, 47, 67, 66, 65, 64, 44, 45, 46, 56, 55}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -1870,7 +1872,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern58(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 12, 13, 14, 15, 16, 17, 18, 29, 39, 49, 59, 69, 79, 89, 88, 87, 86, 85, 84, 83, 72, 62, 52, 42, 32, 22, 23, 25, 26, 48, 58, 78, 77, 76, 75, 53, 43, 33, 34, 37, 67, 66, 64, 44, 46, 55}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -1885,7 +1887,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern59(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {1, 2, 6, 7, 8, 9, 10, 20, 30, 40, 50, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 13, 14, 15, 17, 18, 19, 29, 39, 59, 69, 79, 78, 77, 76, 75, 74, 73, 23, 24, 25, 27, 28, 38, 58, 68, 67, 66, 65, 64, 63, 53, 43, 33, 34, 35, 37, 57, 67, 66, 65, 64, 54, 44, 45, 56, 55}, arg2: false, arg3: 0, arg4: 100);
             }
 
@@ -1900,7 +1902,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State퍼즐Pattern60(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14);
+                context.SetTimer(id: "1", arg2: 14);
                 context.SetMesh(arg1: new[] {10}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {9, 20}, arg2: false, arg3: 500, arg4: 0);
                 context.SetMesh(arg1: new[] {8, 19, 30}, arg2: false, arg3: 1000, arg4: 0);
@@ -1934,14 +1936,14 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 301);
-                context.EndMiniGame(winnerBoxId: 301, gameName: "trapmaster");
+                context.EndMiniGame(winnerBoxId: 301, type: MiniGame.TrapMaster);
                 context.UnSetMiniGameAreaForHack();
-                context.SetTimer(arg1: "1", arg2: 1);
-                context.SetEventUI(arg1: 0, arg2: "0,0");
+                context.SetTimer(id: "1", arg2: 1);
+                context.SetEventUI(arg1: 0, script: "0,0");
                 context.PlaySystemSoundInBox(arg1: new[] {301}, arg2: "ME_001_Massive00_14");
-                context.SetEventUI(arg1: 5, arg2: "$61000001_ME_001__MASSIVE00__14$", arg3: 5000);
+                context.SetEventUI(arg1: 5, script: "$61000001_ME_001__MASSIVE00__14$", arg3: 5000);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
-                context.SetPortal(arg1: 777, arg2: false, arg3: true, arg4: true);
+                context.SetPortal(portalId: 777, visible: false, enabled: true, minimapVisible: true);
                 context.SetMesh(arg1: new[] {201, 202, 203, 204, 205}, arg2: true);
                 context.SetActor(arg1: 251, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 252, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
@@ -1959,7 +1961,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -1967,7 +1969,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State실패계단보이기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetMesh(arg1: new[] {206, 207, 208, 209, 210}, arg2: true);
                 context.SetActor(arg1: 256, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 257, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
@@ -1985,7 +1987,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -2024,7 +2026,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             internal State유저이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000007_ME__MAINPROCESS_SPRINGBEACH__23$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$61000007_ME__MAINPROCESS_SPRINGBEACH__23$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {

@@ -26,9 +26,9 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateLodingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.CameraSelect(arg1: 500, arg2: true);
             }
 
@@ -75,8 +75,8 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateQuestOngoing02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -114,8 +114,8 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateQuestOngoing12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -133,8 +133,8 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateWalkWithJacey01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
@@ -172,8 +172,8 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateWalkWithJacey03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._63000023_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7000}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000023_CS__GOTOTRIA01__0$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$63000023_CS__GOTOTRIA01__0$", arg4: 6);
                 context.SetSkip(state: new StateDialogue02(context));
             }
 
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._63000023_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7100}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000023_CS__GOTOTRIA01__1$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$63000023_CS__GOTOTRIA01__1$", arg4: 6);
                 context.SetSkip(state: new StateDialogue04(context));
             }
 
@@ -270,7 +270,7 @@ namespace Maple2.Trigger._63000023_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7001}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000023_CS__GOTOTRIA01__2$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$63000023_CS__GOTOTRIA01__2$", arg4: 6);
                 context.SetSkip(state: new StateDialogue06(context));
             }
 
@@ -307,7 +307,7 @@ namespace Maple2.Trigger._63000023_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000023_CS__GOTOTRIA01__3$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$63000023_CS__GOTOTRIA01__3$", arg4: 4);
                 context.SetSkip(state: new StateDialogue08(context));
             }
 
@@ -344,7 +344,7 @@ namespace Maple2.Trigger._63000023_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7101}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000023_CS__GOTOTRIA01__4$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$63000023_CS__GOTOTRIA01__4$", arg4: 5);
                 context.SetSkip(state: new StateDialogue10(context));
             }
 
@@ -382,7 +382,7 @@ namespace Maple2.Trigger._63000023_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7002}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000023_CS__GOTOTRIA01__5$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$63000023_CS__GOTOTRIA01__5$", arg4: 5);
                 context.SetSkip(state: new StateDialogue12(context));
             }
 
@@ -420,7 +420,7 @@ namespace Maple2.Trigger._63000023_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7102}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000023_CS__GOTOTRIA01__6$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$63000023_CS__GOTOTRIA01__6$", arg4: 5);
                 context.SetSkip(state: new StateDialogue14(context));
             }
 
@@ -458,7 +458,7 @@ namespace Maple2.Trigger._63000023_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7003}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000023_CS__GOTOTRIA01__7$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$63000023_CS__GOTOTRIA01__7$", arg4: 5);
                 context.SetSkip(state: new StateDialogue16(context));
             }
 
@@ -494,7 +494,7 @@ namespace Maple2.Trigger._63000023_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000023_CS__GOTOTRIA01__8$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$63000023_CS__GOTOTRIA01__8$", arg4: 4);
                 context.SetSkip(state: new StateDialogue18(context));
             }
 
@@ -532,7 +532,7 @@ namespace Maple2.Trigger._63000023_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7103}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000023_CS__GOTOTRIA01__9$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$63000023_CS__GOTOTRIA01__9$", arg4: 5);
                 context.SetSkip(state: new StateDialogue20(context));
             }
 
@@ -568,7 +568,7 @@ namespace Maple2.Trigger._63000023_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000023_CS__GOTOTRIA01__10$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$63000023_CS__GOTOTRIA01__10$", arg4: 4);
                 context.SetSkip(state: new StateDialogue22(context));
             }
 
@@ -612,8 +612,8 @@ namespace Maple2.Trigger._63000023_cs {
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_301");
                 context.SetEffect(arg1: new[] {7200}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$63000023_CS__GOTOTRIA01__11$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 301, arg3: "$63000023_CS__GOTOTRIA01__12$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$63000023_CS__GOTOTRIA01__11$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 301, script: "$63000023_CS__GOTOTRIA01__12$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -688,7 +688,7 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateJaceyTalk04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000023_CS__GOTOTRIA01__13$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001620, script: "$63000023_CS__GOTOTRIA01__13$", arg4: 5);
                 context.SetSkip(state: new StateJaceyTalk05(context));
             }
 
@@ -757,7 +757,7 @@ namespace Maple2.Trigger._63000023_cs {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_1002");
-                context.CameraSelectPath(arg1: new[] {701, 702}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {701, 702}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -775,7 +775,7 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateJaceyLeave04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000023_CS__GOTOTRIA01__14$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000023_CS__GOTOTRIA01__14$", arg4: 4, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -813,8 +813,8 @@ namespace Maple2.Trigger._63000023_cs {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 702, arg2: false);
             }
 
@@ -923,9 +923,9 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetBreakable(arg1: new[] {4000}, arg2: true);
                 context.HideGuideSummary(entityId: 10028040);
                 context.SetEffect(arg1: new[] {5000, 5002, 5001, 5200, 5100, 5101, 5102, 5103, 5104, 5300}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -964,8 +964,8 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateGetInTheCar03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -1000,9 +1000,9 @@ namespace Maple2.Trigger._63000023_cs {
 
             public override void OnEnter() {
                 context.SetBreakable(arg1: new[] {4000}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.CameraSelect(arg1: 800, arg2: false);
             }
 
@@ -1040,8 +1040,8 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

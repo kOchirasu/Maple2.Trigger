@@ -42,10 +42,10 @@ namespace Maple2.Trigger._52000045_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {902}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.MoveUserPath(arg1: "MS2PatrolData_2010");
-                context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8004}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._52000045_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 902, arg2: "MS2PatrolData_2004");
                 context.MoveUserPath(arg1: "MS2PatrolData_2003");
-                context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8010}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal StateSetup_userscript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000045_QD__MAIN_02__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000045_QD__MAIN_02__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -101,9 +101,9 @@ namespace Maple2.Trigger._52000045_qd {
             internal StateStart_A_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8010, 8013}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000045_QD__MAIN_02__3$", arg4: 3);
-                context.SetConversation(arg1: 1, arg2: 902, arg3: "$52000045_QD__MAIN_02__4$", arg4: 3);
+                context.CameraSelectPath(pathIds: new[] {8010, 8013}, arg2: false);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000045_QD__MAIN_02__3$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 902, script: "$52000045_QD__MAIN_02__4$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal StateStart_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 902, arg3: "$52000045_QD__MAIN_02__1$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 902, script: "$52000045_QD__MAIN_02__1$", arg4: 3, arg5: 1);
                 context.SetNpcEmotionLoop(arg1: 902, arg2: "Talk_A", arg3: 3000f);
             }
 
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._52000045_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7003}, arg2: true);
                 context.CreateMonster(arg1: new[] {887, 886, 888}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 902, arg3: "$52000045_QD__MAIN_02__5$", arg4: 1, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 902, script: "$52000045_QD__MAIN_02__5$", arg4: 1, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -160,8 +160,8 @@ namespace Maple2.Trigger._52000045_qd {
             internal StateStart_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8014}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000045_QD__MAIN_02__6$", arg4: 1);
+                context.CameraSelectPath(pathIds: new[] {8014}, arg2: false);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000045_QD__MAIN_02__6$", arg4: 1);
             }
 
             public override TriggerState Execute() {
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal StateStart_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8014, 8015}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8014, 8015}, arg2: false);
                 context.CreateMonster(arg1: new[] {871, 876}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Down_Idle_A", arg2: 80000f);
             }

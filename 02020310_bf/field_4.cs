@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020310_bf {
     public static class _field_4 {
         public class StateWait : TriggerState {
@@ -471,7 +473,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020310_BF__FIELD_4__0$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$02020310_BF__FIELD_4__0$", arg3: 3000);
                     return new StateCableDelay_19_2(context);
                 }
 
@@ -488,7 +490,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020310_BF__FIELD_4__1$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$02020310_BF__FIELD_4__1$", arg3: 3000);
                     return new StateCableDelay_20_2(context);
                 }
 
@@ -505,7 +507,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020310_BF__FIELD_4__2$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$02020310_BF__FIELD_4__2$", arg3: 3000);
                     return new StateCableDelay_21_2(context);
                 }
 
@@ -522,7 +524,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020310_BF__FIELD_4__3$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$02020310_BF__FIELD_4__3$", arg3: 1000);
                     return new StateCableDelay_19_3(context);
                 }
 
@@ -539,7 +541,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020310_BF__FIELD_4__4$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$02020310_BF__FIELD_4__4$", arg3: 1000);
                     return new StateCableDelay_20_3(context);
                 }
 
@@ -556,7 +558,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020310_BF__FIELD_4__5$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$02020310_BF__FIELD_4__5$", arg3: 1000);
                     return new StateCableDelay_21_3(context);
                 }
 
@@ -573,7 +575,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020310_BF__FIELD_4__6$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$02020310_BF__FIELD_4__6$", arg3: 1000);
                     return new StateCableDelay_19_4(context);
                 }
 
@@ -590,7 +592,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020310_BF__FIELD_4__7$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$02020310_BF__FIELD_4__7$", arg3: 1000);
                     return new StateCableDelay_20_4(context);
                 }
 
@@ -607,7 +609,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020310_BF__FIELD_4__8$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$02020310_BF__FIELD_4__8$", arg3: 1000);
                     return new StateCableDelay_21_4(context);
                 }
 
@@ -624,7 +626,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020310_BF__FIELD_4__9$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$02020310_BF__FIELD_4__9$", arg3: 1000);
                     return new StateCableDelay_19_5(context);
                 }
 
@@ -641,7 +643,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020310_BF__FIELD_4__10$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$02020310_BF__FIELD_4__10$", arg3: 1000);
                     return new StateCableDelay_20_5(context);
                 }
 
@@ -658,7 +660,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020310_BF__FIELD_4__11$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$02020310_BF__FIELD_4__11$", arg3: 1000);
                     return new StateCableDelay_21_5(context);
                 }
 
@@ -675,7 +677,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004582, illust: "Eone_serious", script: "$02020310_BF__FIELD_4__12$", duration: 5000);
+                    context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004582, illust: "Eone_serious", script: "$02020310_BF__FIELD_4__12$", duration: 5000);
                     context.SetBreakable(arg1: new[] {1019}, arg2: true);
                     return new StateCableOff_19(context);
                 }
@@ -693,7 +695,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004582, illust: "Eone_serious", script: "$02020310_BF__FIELD_4__13$", duration: 5000);
+                    context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004582, illust: "Eone_serious", script: "$02020310_BF__FIELD_4__13$", duration: 5000);
                     context.SetBreakable(arg1: new[] {1020}, arg2: true);
                     return new StateCableOff_20(context);
                 }
@@ -711,7 +713,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004582, illust: "Eone_serious", script: "$02020310_BF__FIELD_4__14$", duration: 5000);
+                    context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004582, illust: "Eone_serious", script: "$02020310_BF__FIELD_4__14$", duration: 5000);
                     context.SetBreakable(arg1: new[] {1021}, arg2: true);
                     return new StateCableOff_21(context);
                 }

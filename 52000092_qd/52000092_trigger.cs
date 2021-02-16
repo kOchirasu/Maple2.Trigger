@@ -118,7 +118,7 @@ namespace Maple2.Trigger._52000092_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._52000092_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 800, arg2: "MS2PatrolData_ordeMove");
-                context.CameraSelectPath(arg1: new[] {2000, 2001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {2000, 2001}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._52000092_qd {
             internal State20002277완료시04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {2002, 2003, 2004}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {2002, 2003, 2004}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._52000092_qd {
             internal State20002277완료시05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {2005, 2006}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {2005, 2006}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -210,7 +210,7 @@ namespace Maple2.Trigger._52000092_qd {
             internal State20002277완료시06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {2007, 2008}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {2007, 2008}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 800, arg2: "IceSphere_A");
             }
 
@@ -229,7 +229,7 @@ namespace Maple2.Trigger._52000092_qd {
             internal State20002277완료시07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {2009, 2010}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {2009, 2010}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -265,8 +265,8 @@ namespace Maple2.Trigger._52000092_qd {
             internal State20002277완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.MoveUser(arg1: 52000092, arg2: 0);
             }
 
@@ -281,8 +281,8 @@ namespace Maple2.Trigger._52000092_qd {
             internal State52000091이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.MoveUser(arg1: 52000091, arg2: 0);
             }
 

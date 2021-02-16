@@ -144,7 +144,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {403}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {404}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -226,7 +226,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {401}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {402}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {403}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -307,7 +307,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {404}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -362,7 +362,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {405, 406}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -389,7 +389,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {407, 408}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -416,7 +416,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {410, 411}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -443,7 +443,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {412, 413}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -498,7 +498,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {408}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -525,7 +525,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {406}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -552,7 +552,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {403}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -579,7 +579,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {405}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -634,7 +634,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {408}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -661,7 +661,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {406}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -688,7 +688,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {403}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -715,7 +715,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {405}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -771,7 +771,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {421}, arg2: true, arg3: 0);
                 context.CreateMonster(arg1: new[] {422}, arg2: true, arg3: 2000);
-                context.SetTimer(arg1: "7", arg2: 7);
+                context.SetTimer(id: "7", arg2: 7);
             }
 
             public override TriggerState Execute() {
@@ -800,7 +800,7 @@ namespace Maple2.Trigger._51000003_dg {
                 context.CreateMonster(arg1: new[] {423}, arg2: true, arg3: 0);
                 context.CreateMonster(arg1: new[] {424}, arg2: true, arg3: 2000);
                 context.CreateMonster(arg1: new[] {425}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "7", arg2: 7);
+                context.SetTimer(id: "7", arg2: 7);
             }
 
             public override TriggerState Execute() {
@@ -828,7 +828,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {426}, arg2: true, arg3: 0);
                 context.CreateMonster(arg1: new[] {427}, arg2: true, arg3: 2000);
-                context.SetTimer(arg1: "7", arg2: 7);
+                context.SetTimer(id: "7", arg2: 7);
             }
 
             public override TriggerState Execute() {
@@ -856,7 +856,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {428}, arg2: true, arg3: 0);
                 context.CreateMonster(arg1: new[] {429}, arg2: true, arg3: 2000);
-                context.SetTimer(arg1: "7", arg2: 7);
+                context.SetTimer(id: "7", arg2: 7);
             }
 
             public override TriggerState Execute() {

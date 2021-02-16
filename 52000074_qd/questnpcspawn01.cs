@@ -147,8 +147,8 @@ namespace Maple2.Trigger._52000074_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateTalkEnd01(context), arg2: "exit");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._52000074_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001962, arg3: "$52000074_QD__QUESTNPCSPAWN01__0$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001962, script: "$52000074_QD__QUESTNPCSPAWN01__0$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -202,7 +202,7 @@ namespace Maple2.Trigger._52000074_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001961, arg3: "$52000074_QD__QUESTNPCSPAWN01__1$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001961, script: "$52000074_QD__QUESTNPCSPAWN01__1$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -236,7 +236,7 @@ namespace Maple2.Trigger._52000074_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001962, arg3: "$52000074_QD__QUESTNPCSPAWN01__2$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001962, script: "$52000074_QD__QUESTNPCSPAWN01__2$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -275,8 +275,8 @@ namespace Maple2.Trigger._52000074_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.CameraSelect(arg1: 600, arg2: false);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 0);
             }
 
             public override TriggerState Execute() {

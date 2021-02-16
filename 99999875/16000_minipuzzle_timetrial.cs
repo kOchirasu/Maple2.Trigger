@@ -50,8 +50,8 @@ namespace Maple2.Trigger._99999875 {
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000079}, arg2: 0)) {
-                    context.SetTimer(arg1: "10", arg2: 90, arg3: true, arg4: false, arg5: 0);
-                    context.SetTimer(arg1: "1", arg2: 15, arg3: true, arg4: false, arg5: 0);
+                    context.SetTimer(id: "10", arg2: 90, arg3: true, arg4: false, arg5: 0);
+                    context.SetTimer(id: "1", arg2: 15, arg3: true, arg4: false, arg5: 0);
                     return new StateTimeTrial_StartDelay(context);
                 }
 
@@ -86,9 +86,9 @@ namespace Maple2.Trigger._99999875 {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 16100, additionalEffectId: 71001271, level: true)) {
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 16100, additionalEffectId: 71001271, level: 1)) {
                     context.AddBuff(arg1: new[] {160001}, arg2: 71001062, arg3: 1, arg4: false, arg5: false);
-                    context.SetTimer(arg1: "100", arg2: 60, arg3: true, arg4: false, arg5: 0);
+                    context.SetTimer(id: "100", arg2: 60, arg3: true, arg4: false, arg5: 0);
                     return new StateTimeTrial_Success(context);
                 }
 
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._99999875 {
 
                 if (context.TimeExpired(arg1: "10")) {
                     context.SetInteractObject(arg1: new[] {12000098}, arg2: 0);
-                    context.ResetTimer(arg1: "10");
+                    context.ResetTimer(id: "10");
                     return new StateSetting(context);
                 }
 
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._99999875 {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {16201}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 15, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "1", arg2: 15, arg3: true, arg4: false, arg5: 0);
                 context.SetInteractObject(arg1: new[] {12000098}, arg2: 0);
             }
 
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._99999875 {
             internal StateTimeTrial_Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
                 context.SetEffect(arg1: new[] {16200}, arg2: true);
                 context.SetInteractObject(arg1: new[] {12000071}, arg2: 1);
             }
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._99999875 {
 
                 if (context.TimeExpired(arg1: "100")) {
                     context.SetInteractObject(arg1: new[] {12000071}, arg2: 0);
-                    context.ResetTimer(arg1: "100");
+                    context.ResetTimer(id: "100");
                     return new StateTimeTrial_SuccessDelay(context);
                 }
 
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._99999875 {
             internal StateTimeTrial_Fail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
 
             public override TriggerState Execute() {
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._99999875 {
 
                 if (context.TimeExpired(arg1: "10")) {
                     context.SetInteractObject(arg1: new[] {12000098}, arg2: 0);
-                    context.ResetTimer(arg1: "10");
+                    context.ResetTimer(id: "10");
                     return new StateSetting(context);
                 }
 

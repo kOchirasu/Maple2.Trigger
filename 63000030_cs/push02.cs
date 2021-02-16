@@ -83,10 +83,10 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateJuntaTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetEffect(arg1: new[] {6107}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000030_CS__PUSH02__0$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$63000030_CS__PUSH02__0$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -104,10 +104,10 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateTinChaiTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetEffect(arg1: new[] {6006}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__PUSH02__1$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000030_CS__PUSH02__1$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateReset01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

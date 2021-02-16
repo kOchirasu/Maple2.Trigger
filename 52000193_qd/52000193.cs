@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000193_qd {
     public static class _52000193 {
         public class StateStart : TriggerState {
@@ -40,7 +42,7 @@ namespace Maple2.Trigger._52000193_qd {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {202});
                 context.VisibleMyPc(isVisible: false);
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -86,7 +88,7 @@ namespace Maple2.Trigger._52000193_qd {
             internal StateCameraEffect02_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: "$52000193_QD__52000193__0$");
+                context.SetCinematicUI(type: 9, script: "$52000193_QD__52000193__0$");
             }
 
             public override TriggerState Execute() {
@@ -105,9 +107,9 @@ namespace Maple2.Trigger._52000193_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -125,8 +127,8 @@ namespace Maple2.Trigger._52000193_qd {
             internal StateCameraEffect03_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$52000193_QD__52000193__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
+                context.CameraSelectPath(pathIds: new[] {4001, 4002}, arg2: false);
+                context.ShowCaption(type: CaptionType.Vertical, title: "$52000193_QD__52000193__1$", align: Align.Bottom | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
 
             public override TriggerState Execute() {
@@ -228,8 +230,8 @@ namespace Maple2.Trigger._52000193_qd {
             internal StateCameraEffect03_8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

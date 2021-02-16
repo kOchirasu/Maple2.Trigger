@@ -20,9 +20,9 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateCannonSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 190, arg3: "$02000334_BF__WAVE__12$", arg4: 3, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 199, arg3: "$02000334_BF__MAIN__12$", arg4: 3, arg5: 3);
-                context.SetTimer(arg1: "3", arg2: 3, arg4: true);
+                context.SetConversation(arg1: 1, arg2: 190, script: "$02000334_BF__WAVE__12$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 199, script: "$02000334_BF__MAIN__12$", arg4: 3, arg5: 3);
+                context.SetTimer(id: "3", arg2: 3, arg4: true);
             }
 
             public override TriggerState Execute() {

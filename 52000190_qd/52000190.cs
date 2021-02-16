@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000190_qd {
     public static class _52000190 {
         public class StateWait : TriggerState {
@@ -21,7 +23,7 @@ namespace Maple2.Trigger._52000190_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
                 context.MoveUser(arg1: 52000190, arg2: 5001);
             }
 
@@ -40,12 +42,12 @@ namespace Maple2.Trigger._52000190_qd {
             internal State영상재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
+                context.CreateWidget(type: WidgetType.SceneMovie);
                 context.PlaySceneMovie(fileName: "the_empress_of_a_dungeon.swf", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new State영상재생_end(context);
                 }
 
@@ -81,8 +83,8 @@ namespace Maple2.Trigger._52000190_qd {
             internal State영상재생_end02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

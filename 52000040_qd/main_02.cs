@@ -4,8 +4,8 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 4, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -45,8 +45,8 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 401, arg3: "$52000040_QD__MAIN_02__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 401, script: "$52000040_QD__MAIN_02__0$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -82,15 +82,15 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateStart_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 401, arg3: "$52000040_QD__MAIN_02__1$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 401, arg3: "$52000040_QD__MAIN_02__2$", arg4: 2, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 401, script: "$52000040_QD__MAIN_02__1$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 401, script: "$52000040_QD__MAIN_02__2$", arg4: 2, arg5: 3);
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_4001");
-                    context.SetCinematicUI(arg1: 0);
-                    context.SetCinematicUI(arg1: 2);
+                    context.SetCinematicUI(type: 0);
+                    context.SetCinematicUI(type: 2);
                     return new StateStart_04(context);
                 }
 
@@ -159,8 +159,8 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {501});
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 4, arg2: true, arg3: false, arg4: false);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

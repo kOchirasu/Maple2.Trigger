@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {5101}, arg2: false);
                 context.DestroyMonster(arg1: new[] {1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019});
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {6003, 6004, 6005, 6006}, arg2: false);
             }
 
@@ -245,7 +245,7 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateCinematicWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -263,10 +263,10 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 801, arg2: true);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504}, arg2: false, arg3: 0, arg4: 300, arg5: 3f);
                 context.SetSkip(state: new StateStopCinematic(context));
             }
@@ -286,9 +286,9 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {801}, arg2: true);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.CameraSelectPath(pathIds: new[] {801}, arg2: true);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -324,7 +324,7 @@ namespace Maple2.Trigger._02000290_bf {
             internal State완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 7, arg2: "$02000290_BF__MAIN_2__2$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 7, script: "$02000290_BF__MAIN_2__2$", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -440,7 +440,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetConversation(arg1: 1, arg2: 910, arg3: "$02000290_BF__MAIN_2__4$", arg4: 3);
+                    context.SetConversation(arg1: 1, arg2: 910, script: "$02000290_BF__MAIN_2__4$", arg4: 3);
                     context.SetEffect(arg1: new[] {6003}, arg2: true);
                     return new StateNPCScript02(context);
                 }
@@ -458,7 +458,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetConversation(arg1: 1, arg2: 911, arg3: "$02000290_BF__MAIN_2__5$", arg4: 3);
+                    context.SetConversation(arg1: 1, arg2: 911, script: "$02000290_BF__MAIN_2__5$", arg4: 3);
                     context.SetEffect(arg1: new[] {6004}, arg2: true);
                     return new StateNPCScript03(context);
                 }
@@ -476,7 +476,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetConversation(arg1: 1, arg2: 912, arg3: "$02000290_BF__MAIN_2__6$", arg4: 3);
+                    context.SetConversation(arg1: 1, arg2: 912, script: "$02000290_BF__MAIN_2__6$", arg4: 3);
                     context.SetEffect(arg1: new[] {6005}, arg2: true);
                     return new StateNPCScript04(context);
                 }
@@ -494,7 +494,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetConversation(arg1: 1, arg2: 913, arg3: "$02000290_BF__MAIN_2__7$", arg4: 3);
+                    context.SetConversation(arg1: 1, arg2: 913, script: "$02000290_BF__MAIN_2__7$", arg4: 3);
                     context.SetEffect(arg1: new[] {6006}, arg2: true);
                     context.HideGuideSummary(entityId: 20002905);
                     return new StateEndWait(context);
@@ -529,7 +529,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 99999, arg2: "trigger", arg3: "ClearYomiprincess");
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

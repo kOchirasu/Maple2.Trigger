@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02000329_bf {
             internal State섹터개방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 102, textId: 40011);
                 context.SetMesh(arg1: new[] {19991}, arg2: false);

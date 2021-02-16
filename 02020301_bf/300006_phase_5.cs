@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020301_bf {
     public static class _300006_phase_5 {
         public class StateWait : TriggerState {
@@ -21,7 +23,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {111});
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300006_PHASE_5__0$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300006_PHASE_5__0$", duration: 3176);
                 context.SetEffect(arg1: new[] {200021, 200022, 200023, 200024, 200025, 200026, 200027, 200028}, arg2: false);
                 context.SetUserValue(key: "AI_Phase", value: 0);
             }
@@ -62,8 +64,8 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetUserValue(triggerId: 3000053, key: "Phase_4_Interect_03", value: 0);
                 context.SetUserValue(triggerId: 3000054, key: "Phase_4_Interect_04", value: 0);
                 context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005, 200006, 200007, 200008}, arg2: false);
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300006_PHASE_5__1$", duration: 3176);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300006_PHASE_5__1$", duration: 3176);
             }
 
             public override TriggerState Execute() {
@@ -104,7 +106,7 @@ namespace Maple2.Trigger._02020301_bf {
             internal State택스트_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300006_PHASE_5__2$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300006_PHASE_5__2$", duration: 3176);
             }
 
             public override TriggerState Execute() {
@@ -122,7 +124,7 @@ namespace Maple2.Trigger._02020301_bf {
             internal State택스트_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_normal", script: "$02020301_BF__300006_PHASE_5__3$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_normal", script: "$02020301_BF__300006_PHASE_5__3$", duration: 3176);
             }
 
             public override TriggerState Execute() {
@@ -179,7 +181,7 @@ namespace Maple2.Trigger._02020301_bf {
             internal State아르케온_탈것_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020301_BF__300006_PHASE_5__4$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02020301_BF__300006_PHASE_5__4$", arg3: 4000);
                 context.SetUserValue(triggerId: 3000061, key: "Phase_5_Interect_01", value: 1);
                 context.SetUserValue(triggerId: 3000062, key: "Phase_5_Interect_02", value: 1);
                 context.SetUserValue(triggerId: 3000063, key: "Phase_5_Interect_03", value: 1);

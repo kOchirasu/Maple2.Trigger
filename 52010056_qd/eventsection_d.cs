@@ -32,10 +32,10 @@ namespace Maple2.Trigger._52010056_qd {
             internal StateSetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
-                context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
+                context.CameraSelectPath(pathIds: new[] {4006}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -53,10 +53,10 @@ namespace Maple2.Trigger._52010056_qd {
             internal State경비병_외침(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetNpcEmotionSequence(arg1: 999, arg2: "Attack_01_B");
-                context.AddCinematicTalk(npcId: 11003816, msg: "$52010056_QD__EventSection_D__0$", duration: 3727);
+                context.AddCinematicTalk(npcId: 11003816, script: "$52010056_QD__EventSection_D__0$", duration: 3727);
             }
 
             public override TriggerState Execute() {
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._52010056_qd {
             internal State크림슨스피어_출동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4007}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4007}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -95,8 +95,8 @@ namespace Maple2.Trigger._52010056_qd {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
                 context.RemoveBuff(arg1: 2001, arg2: 70000107);
             }

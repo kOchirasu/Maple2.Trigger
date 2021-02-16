@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02000420_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 7, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 8, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 4, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 7, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 8, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -25,10 +25,10 @@ namespace Maple2.Trigger._02000420_bf {
             internal StateTeleportationPortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 5, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 7, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 8, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 5, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 7, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 8, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

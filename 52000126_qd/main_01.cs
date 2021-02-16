@@ -34,8 +34,8 @@ namespace Maple2.Trigger._52000126_qd {
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000126, arg2: 6001);
                 context.SetSound(arg1: 7002, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
                 context.SetSceneSkip(state: new StateEndwaiting(context), arg2: "exit");
             }
@@ -111,9 +111,9 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateEndwaiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.DestroyMonster(arg1: new[] {201});
                 context.CreateMonster(arg1: new[] {202}, arg2: true);
             }
@@ -133,8 +133,8 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

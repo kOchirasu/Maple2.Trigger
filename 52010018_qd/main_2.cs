@@ -36,8 +36,8 @@ namespace Maple2.Trigger._52010018_qd {
             internal State미카이동02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.DestroyMonster(arg1: new[] {1005});
                 context.CreateMonster(arg1: new[] {1007}, arg2: false);
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._52010018_qd {
             internal State미카Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010018_QD__MAIN_2__0$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010018_QD__MAIN_2__0$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._52010018_qd {
             internal State에레브Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010018_QD__MAIN_2__1$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000075, script: "$52010018_QD__MAIN_2__1$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._52010018_qd {
             internal State미카Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010018_QD__MAIN_2__2$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010018_QD__MAIN_2__2$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -164,8 +164,8 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.SetCinematicUI(arg1: 0);
-                    context.SetCinematicUI(arg1: 2);
+                    context.SetCinematicUI(type: 0);
+                    context.SetCinematicUI(type: 2);
                     context.CameraSelect(arg1: 302, arg2: false);
                     context.DestroyMonster(arg1: new[] {1007});
                     context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "BacktoDrakenheim");

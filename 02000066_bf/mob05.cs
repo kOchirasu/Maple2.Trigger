@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State2차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "13", arg2: 13);
+                context.SetTimer(id: "13", arg2: 13);
             }
 
             public override TriggerState Execute() {
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State5차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "11", arg2: 11);
+                context.SetTimer(id: "11", arg2: 11);
             }
 
             public override TriggerState Execute() {
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State7차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {
@@ -114,7 +114,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State8차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "9", arg2: 9);
+                context.SetTimer(id: "9", arg2: 9);
             }
 
             public override TriggerState Execute() {
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State9차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "8", arg2: 8);
+                context.SetTimer(id: "8", arg2: 8);
             }
 
             public override TriggerState Execute() {
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State10차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "7", arg2: 7);
+                context.SetTimer(id: "7", arg2: 7);
             }
 
             public override TriggerState Execute() {
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State11차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "6", arg2: 6);
+                context.SetTimer(id: "6", arg2: 6);
             }
 
             public override TriggerState Execute() {
@@ -202,7 +202,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State12차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {

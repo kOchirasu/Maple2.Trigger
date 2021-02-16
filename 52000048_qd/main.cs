@@ -26,8 +26,8 @@ namespace Maple2.Trigger._52000048_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {600}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.MoveNpc(arg1: 1101, arg2: "MS2PatrolData_A");
                 context.MoveNpc(arg1: 1102, arg2: "MS2PatrolData_A");
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._52000048_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_PC");
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000048_QD__MAIN__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000048_QD__MAIN__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._52000048_qd {
             internal State라오즈Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001768, arg3: "$52000048_QD__MAIN__1$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001768, script: "$52000048_QD__MAIN__1$", arg4: 3);
                 context.SetSkip(state: new State라오즈Script01스킵(context));
             }
 
@@ -238,7 +238,7 @@ namespace Maple2.Trigger._52000048_qd {
             internal State라오즈Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001768, arg3: "$52000048_QD__MAIN__2$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001768, script: "$52000048_QD__MAIN__2$", arg4: 6);
                 context.SetSkip(state: new State라오즈Script02스킵(context));
             }
 
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._52000048_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 304, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001768, arg3: "$52000048_QD__MAIN__3$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001768, script: "$52000048_QD__MAIN__3$", arg4: 6);
                 context.SetSkip(state: new State라오즈Script03스킵(context));
             }
 
@@ -327,8 +327,8 @@ namespace Maple2.Trigger._52000048_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 304, arg2: false);
                 context.MoveUser(arg1: 52000050, arg2: 1);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

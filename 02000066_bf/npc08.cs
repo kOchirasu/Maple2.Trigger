@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.CreateMonster(arg1: new[] {2008}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000376}, arg2: 0);
             }
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.DestroyMonster(arg1: new[] {2008});
             }
 
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State부활(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.CreateMonster(arg1: new[] {2008}, arg2: false);
             }
 
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 208, arg2: false, arg3: "Dead_A");
-                context.SetConversation(arg1: 1, arg2: 2008, arg3: "$02000066_BF__NPC08__1$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 2008, script: "$02000066_BF__NPC08__1$", arg4: 2);
             }
 
             public override TriggerState Execute() {

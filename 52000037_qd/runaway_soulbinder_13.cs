@@ -20,8 +20,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 603, arg2: true);
                 context.MoveUser(arg1: 52000037, arg2: 11);
             }
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000037_QD__RUNAWAY_SOULBINDER_13__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000037_QD__RUNAWAY_SOULBINDER_13__1$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__2$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000037_QD__RUNAWAY_SOULBINDER_13__2$", arg4: 4, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__3$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000037_QD__RUNAWAY_SOULBINDER_13__3$", arg4: 4, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__4$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000037_QD__RUNAWAY_SOULBINDER_13__4$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -184,7 +184,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateNPCScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001727, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__5$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001727, script: "$52000037_QD__RUNAWAY_SOULBINDER_13__5$", arg4: 2);
                 context.SetSkip(state: new StateNPCScript01스킵(context));
             }
 
@@ -218,7 +218,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateNPCScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001725, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__6$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001725, script: "$52000037_QD__RUNAWAY_SOULBINDER_13__6$", arg4: 2);
                 context.SetSkip(state: new StateNPCScript02스킵(context));
             }
 
@@ -252,7 +252,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC도주(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.CameraSelect(arg1: 605, arg2: true);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC1102C");
             }
@@ -275,7 +275,7 @@ namespace Maple2.Trigger._52000037_qd {
                 context.MoveNpc(arg1: 211, arg2: "MS2PatrolData_NPC1102");
                 context.MoveNpc(arg1: 212, arg2: "MS2PatrolData_NPC1102");
                 context.MoveNpc(arg1: 213, arg2: "MS2PatrolData_NPC1102");
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__7$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000037_QD__RUNAWAY_SOULBINDER_13__7$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -294,8 +294,8 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000043, arg2: 5);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

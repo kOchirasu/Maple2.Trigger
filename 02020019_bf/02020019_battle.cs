@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.SetUserValue(key: "Success", value: 0);
                 context.SetUserValue(triggerId: 99990001, key: "End", value: 0);
                 context.SetUserValue(triggerId: 99990003, key: "5Phase", value: 0);
-                context.DebugString(feature: "Develop", value: "이건 Develop 환경에서 나오는 스트링 입니다.");
+                context.DebugString(feature: "Develop", message: "이건 Develop 환경에서 나오는 스트링 입니다.");
             }
 
             public override TriggerState Execute() {
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02020019_bf {
             public override void OnEnter() {
                 context.DungeonResetTime(seconds: 300);
                 context.ShowRoundUI(round: 1, duration: 3000);
-                context.SetEventUI(arg1: 0, arg2: "1,5");
+                context.SetEventUI(arg1: 0, script: "1,5");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__0$", voice: @"ko/Npc/00002116");
             }
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.ShowRoundUI(round: 2, duration: 3000);
-                context.SetEventUI(arg1: 0, arg2: "2,5");
+                context.SetEventUI(arg1: 0, script: "2,5");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__1$", voice: @"ko/Npc/00002121");
             }
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.ShowRoundUI(round: 3, duration: 3000);
-                context.SetEventUI(arg1: 0, arg2: "3,5");
+                context.SetEventUI(arg1: 0, script: "3,5");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__2$", voice: @"ko/Npc/00002241");
             }
@@ -293,7 +293,7 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.ShowRoundUI(round: 4, duration: 3000);
-                context.SetEventUI(arg1: 0, arg2: "4,5");
+                context.SetEventUI(arg1: 0, script: "4,5");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__4$", voice: @"ko/Npc/00002242");
             }
@@ -404,7 +404,7 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.ShowRoundUI(round: 5, duration: 3000);
-                context.SetEventUI(arg1: 0, arg2: "5,5");
+                context.SetEventUI(arg1: 0, script: "5,5");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__7$", voice: @"ko/Npc/00002122");
             }
@@ -513,7 +513,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
                 context.SetAiExtraData(key: "Autofire", value: 0);
-                context.SetEventUI(arg1: 0, arg2: "0,0");
+                context.SetEventUI(arg1: 0, script: "0,0");
                 context.InitNpcRotation(arg1: new[] {102, 103});
                 context.DestroyMonster(arg1: new[] {201, 211, 221, 222, 223, 224, 225, 226, 227, 231, 232, 233, 234, 235, 236, 237, 241, 242, 243, 244, 245, 246, 247, 248});
             }

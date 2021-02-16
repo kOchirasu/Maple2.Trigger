@@ -27,7 +27,7 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 100);
-                context.SetTimer(arg1: "1200", arg2: 1200, arg3: false, arg4: true);
+                context.SetTimer(id: "1200", arg2: 1200, arg3: false, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._61000009_me {
             internal StateEndGame(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 5, arg2: "$61000004_ME__TRIGGER_01__2$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 5, script: "$61000004_ME__TRIGGER_01__2$", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {

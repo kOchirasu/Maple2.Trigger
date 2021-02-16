@@ -6,7 +6,7 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10001337}, arg2: 1);
                 context.SetInteractObject(arg1: new[] {10001338}, arg2: 2);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3002, 3003, 3004, 3101, 3102, 3201, 3202, 3301, 3302, 3401, 3402, 3601, 3602, 3603, 3604}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._80000014_bonus {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$80000014_bonus__main__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$80000014_bonus__main__0$", arg3: 5000);
                 context.ScoreBoardCreate(type: "ScoreBoardTopCenter", maxScore: 0);
                 context.ScoreBoardSetScore(score: false);
                 context.SpawnItemRange(rangeId: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019}, randomPickCount: 10);
@@ -198,14 +198,14 @@ namespace Maple2.Trigger._80000014_bonus {
 
             public override TriggerState Execute() {
                 if (context.GetScoreBoardScore() >= 18000) {
-                    context.DebugString(value: "18000 이상");
+                    context.DebugString(message: "18000 이상");
                     context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "HighScoreTreasureMap01");
                     context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "TimerunTreasureMap01");
                     return new State반응Wait(context);
                 }
 
                 if (context.GetScoreBoardScore() < 18000) {
-                    context.DebugString(value: "18000 미만");
+                    context.DebugString(message: "18000 미만");
                     context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "TimerunTreasureMap01");
                     return new State반응Wait(context);
                 }
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._80000014_bonus {
                     context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "TreasureMap01");
                     context.DungeonClear();
                     context.ScoreBoardRemove();
-                    context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     return new StateEnd(context);
                 }
 

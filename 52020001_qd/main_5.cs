@@ -54,7 +54,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State알림_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "에너지가 50%충전 되었습니다.", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "에너지가 50%충전 되었습니다.", arg3: 4000);
             }
 
             public override TriggerState Execute() {
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State알림_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "에너지가 100%충전 되었습니다.", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "에너지가 100%충전 되었습니다.", arg3: 4000);
             }
 
             public override TriggerState Execute() {
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State알림_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "곧 최대 출력으로 돌진 합니다.", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "곧 최대 출력으로 돌진 합니다.", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -130,9 +130,9 @@ namespace Maple2.Trigger._52020001_qd {
             internal State마지막_Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 4);
-                context.CameraSelectPath(arg1: new[] {2000009}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 4);
+                context.CameraSelectPath(pathIds: new[] {2000009}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -169,8 +169,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State마지막_Cinematic_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -188,9 +188,9 @@ namespace Maple2.Trigger._52020001_qd {
             internal StateAICinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 1);
-                context.CameraSelectPath(arg1: new[] {2000013}, arg2: false);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 1);
+                context.CameraSelectPath(pathIds: new[] {2000013}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal StateAICinematic_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 0, arg3: "준비완료! 크리티아스로 돌진!", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 0, script: "준비완료! 크리티아스로 돌진!", arg4: 3, arg5: 0);
                 context.SetAiExtraData(key: "wing", value: 1, boxId: 4);
             }
 
@@ -245,8 +245,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State끝_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {

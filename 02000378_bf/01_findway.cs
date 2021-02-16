@@ -4,14 +4,14 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 44, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 45, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 46, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 47, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 48, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 49, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 50, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 51, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 44, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 45, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 46, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 47, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 48, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 49, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 50, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 51, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {4100, 4101, 4102, 4103, 4104, 4105, 4106}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_100");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_200");
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000378_BF__01_FINDWAY__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000378_BF__01_FINDWAY__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -94,8 +94,8 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateReadyToWalkIn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000378_BF__01_FINDWAY__1$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000378_BF__01_FINDWAY__2$", arg4: 2, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000378_BF__01_FINDWAY__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000378_BF__01_FINDWAY__2$", arg4: 2, arg5: 3);
             }
 
             public override TriggerState Execute() {
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetMesh(arg1: new[] {3101}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMeshAnimation(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMeshAnimation(arg1: new[] {3101}, arg2: true, arg3: 0, arg4: 0);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000378_BF__01_FINDWAY__3$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$02000378_BF__01_FINDWAY__3$", arg4: 2, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -291,7 +291,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
-                context.SetPortal(arg1: 44, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 44, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -330,7 +330,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
-                context.SetPortal(arg1: 45, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 45, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -369,7 +369,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
-                context.SetPortal(arg1: 46, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 46, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -408,7 +408,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
-                context.SetPortal(arg1: 47, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 47, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -447,7 +447,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
-                context.SetPortal(arg1: 48, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 48, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -486,7 +486,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
-                context.SetPortal(arg1: 49, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 49, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -525,7 +525,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
-                context.SetPortal(arg1: 50, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 50, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -564,7 +564,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
-                context.SetPortal(arg1: 51, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 51, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

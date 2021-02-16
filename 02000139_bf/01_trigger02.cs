@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000139_bf {
                 context.SetEffect(arg1: new[] {711}, arg2: true);
                 context.SetLadder(arg1: 612, arg2: true, arg3: true);
                 context.SetEffect(arg1: new[] {713}, arg2: true);
-                context.SetTimer(arg1: "4", arg2: 18);
+                context.SetTimer(id: "4", arg2: 18);
             }
 
             public override TriggerState Execute() {

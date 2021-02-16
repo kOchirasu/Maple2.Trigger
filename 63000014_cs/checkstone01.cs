@@ -4,7 +4,7 @@ namespace Maple2.Trigger._63000014_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10001004}, arg2: 2);
                 context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {5000, 5001, 5002, 5100, 5101, 5102, 5103, 5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5210, 5300, 5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311, 5312, 5313, 5400}, arg2: false);
@@ -307,7 +307,7 @@ namespace Maple2.Trigger._63000014_cs {
             internal StateMoveToNextMap01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: false, minimapVisible: true);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.ShowGuideSummary(entityId: 10032030, textId: 10032030);
                 context.SetEffect(arg1: new[] {5300, 5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311, 5312, 5313}, arg2: true);
@@ -329,7 +329,7 @@ namespace Maple2.Trigger._63000014_cs {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 10032030);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.SetEffect(arg1: new[] {5002, 5000}, arg2: true);
                 context.ShowGuideSummary(entityId: 1060, textId: 1060);
             }

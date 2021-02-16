@@ -23,7 +23,7 @@ namespace Maple2.Trigger._61000006_me {
             internal State다리01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetMesh(arg1: new[] {307, 308}, arg2: true);
             }
 
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._61000006_me {
             internal State다리02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 1);
+                context.SetTimer(id: "2", arg2: 1);
                 context.SetMesh(arg1: new[] {309, 310, 311}, arg2: true);
             }
 
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._61000006_me {
             internal State다리03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 1);
+                context.SetTimer(id: "3", arg2: 1);
                 context.SetMesh(arg1: new[] {312, 313, 314}, arg2: true);
             }
 
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._61000006_me {
             internal State다리04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "4", arg2: 1);
+                context.SetTimer(id: "4", arg2: 1);
                 context.SetMesh(arg1: new[] {315, 316, 317}, arg2: true);
             }
 
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._61000006_me {
             internal State다리05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 1);
+                context.SetTimer(id: "5", arg2: 1);
                 context.SetMesh(arg1: new[] {318, 319}, arg2: true);
             }
 
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._61000006_me {
             internal State다리06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "6", arg2: 5);
+                context.SetTimer(id: "6", arg2: 5);
             }
 
             public override TriggerState Execute() {

@@ -206,7 +206,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State미래엘리니아(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {604}, arg2: true);
                 context.ShowGuideSummary(entityId: 20002989, textId: 20002989);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -229,7 +229,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000299, arg2: 2, arg3: 104);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {601, 602, 604}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Opened_A");
                 context.ShowCountUI(text: "$02000299_BF__MAIN__3$", stage: 1, count: 3);
@@ -260,7 +260,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State미래엘리니아이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
                 context.SetEffect(arg1: new[] {603, 601}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Closed_A");
                 context.SetEffect(arg1: new[] {605}, arg2: true);
@@ -296,7 +296,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State미래커닝시티(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {604}, arg2: true);
                 context.ShowGuideSummary(entityId: 20002989, textId: 20002989);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -319,7 +319,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000299, arg2: 2, arg3: 104);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {601, 602}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Opened_A");
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -351,7 +351,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State미래커닝시티이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
                 context.SetEffect(arg1: new[] {603, 601}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Closed_A");
                 context.SetEffect(arg1: new[] {605}, arg2: true);
@@ -387,7 +387,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State과거헤네니스(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {604}, arg2: true);
                 context.ShowGuideSummary(entityId: 20002989, textId: 20002989);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -410,7 +410,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000299, arg2: 2, arg3: 104);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {601, 602}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Opened_A");
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -442,7 +442,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State과거헤네니스이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
                 context.SetEffect(arg1: new[] {603, 601}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Closed_A");
                 context.SetEffect(arg1: new[] {605}, arg2: true);
@@ -478,7 +478,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State과거페리온(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {604}, arg2: true);
                 context.ShowGuideSummary(entityId: 20002989, textId: 20002989);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -501,7 +501,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000299, arg2: 2, arg3: 104);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {601, 602}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Opened_A");
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -533,7 +533,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State과거페리온이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
                 context.SetEffect(arg1: new[] {603, 601}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Closed_A");
                 context.SetEffect(arg1: new[] {605}, arg2: true);
@@ -569,7 +569,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State그런거없음(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {604}, arg2: true);
                 context.ShowGuideSummary(entityId: 20002989, textId: 20002989);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -593,7 +593,7 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {606, 607}, arg2: false);
                 context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetTimer(arg1: "4", arg2: 4);
+                context.SetTimer(id: "4", arg2: 4);
                 context.ShowGuideSummary(entityId: 20002994, textId: 20002994);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
@@ -659,7 +659,7 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20002996, textId: 20002996);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -694,7 +694,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal StateBoss방이동Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
                 context.SetEffect(arg1: new[] {603, 610}, arg2: true);
                 context.ShowGuideSummary(entityId: 20002997, textId: 20002997);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -727,7 +727,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal StateBoss방이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "4", arg2: 4);
+                context.SetTimer(id: "4", arg2: 4);
                 context.SetEffect(arg1: new[] {603}, arg2: true);
                 context.ShowCountUI(text: "$02000299_BF__MAIN__15$", stage: 1, count: 3);
             }
@@ -748,7 +748,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State반복체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
                 context.SetEffect(arg1: new[] {603}, arg2: true);
                 context.ShowGuideSummary(entityId: 20002997, textId: 20002997);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");

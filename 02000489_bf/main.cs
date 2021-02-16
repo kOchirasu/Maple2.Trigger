@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000489_bf {
 
             public override void OnEnter() {
                 context.DungeonClear();
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

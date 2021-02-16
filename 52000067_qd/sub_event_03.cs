@@ -25,8 +25,8 @@ namespace Maple2.Trigger._52000067_qd {
                 context.CreateMonster(arg1: new[] {537, 538, 539}, arg2: true);
                 context.SetNpcEmotionLoop(arg1: 591, arg2: "Emotion_Failure_Idle_A", arg3: 600000f);
                 context.SetNpcEmotionLoop(arg1: 592, arg2: "Emotion_Failure_Idle_A", arg3: 600000f);
-                context.SetConversation(arg1: 1, arg2: 591, arg3: "$52000067_QD__SUB_EVENT_03__0$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 592, arg3: "$52000067_QD__SUB_EVENT_03__1$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 591, script: "$52000067_QD__SUB_EVENT_03__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 592, script: "$52000067_QD__SUB_EVENT_03__1$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52000067_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 591, arg2: "Talk_A");
                 context.SetNpcEmotionSequence(arg1: 592, arg2: "Idle_A");
-                context.SetConversation(arg1: 1, arg2: 591, arg3: "$52000067_QD__SUB_EVENT_03__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 591, script: "$52000067_QD__SUB_EVENT_03__2$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {

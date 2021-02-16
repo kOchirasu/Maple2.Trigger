@@ -1,4 +1,5 @@
 using System.Numerics;
+using Maple2.Trigger.Enum;
 
 namespace Maple2.Trigger._02020111_bf {
     public static class _lapenta_attack {
@@ -25,7 +26,7 @@ namespace Maple2.Trigger._02020111_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__LAPENTA_ATTACK__0$", duration: 3432, voice: @"ko/Npc/00002199");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__LAPENTA_ATTACK__0$", duration: 3432, voice: @"ko/Npc/00002199");
                 context.SetAmbientLight(arg1: new Vector3(52f, 48f, 38f));
                 context.SetDirectionalLight(arg1: new Vector3(0f, 0f, 0f), arg2: new Vector3(206f, 174f, 84f));
             }

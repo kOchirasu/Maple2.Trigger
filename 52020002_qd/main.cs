@@ -115,8 +115,8 @@ namespace Maple2.Trigger._52020002_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52020002, arg2: 1);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.VisibleMyPc(isVisible: false);
             }
 
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._52020002_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8000}, arg2: false);
                 context.SetSceneSkip(state: new State제이든보고_스킵완료(context), arg2: "nextState");
             }
 
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._52020002_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcId: 11003540, illustId: "Jaiden_normal", msg: @"안녕하세요? 제가 나타났습니다.\n연출은 제작 중이니 기다려 주세요.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003540, illustId: "Jaiden_normal", script: @"안녕하세요? 제가 나타났습니다.\n연출은 제작 중이니 기다려 주세요.", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 120, arg2: "Talk_A", arg3: 3000f);
                 context.SetSkip(state: new State01_skip(context));
             }
@@ -190,8 +190,8 @@ namespace Maple2.Trigger._52020002_qd {
             internal State제이든보고_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 4);
                 context.DestroyMonster(arg1: new[] {120});
                 context.CreateMonster(arg1: new[] {121}, arg2: false);
             }
@@ -215,8 +215,8 @@ namespace Maple2.Trigger._52020002_qd {
                 context.CameraReset(interpolationTime: 2.0f);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.VisibleMyPc(isVisible: true);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

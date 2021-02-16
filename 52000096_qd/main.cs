@@ -24,9 +24,9 @@ namespace Maple2.Trigger._52000096_qd {
             internal State몹소환01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.CameraSelectPath(pathIds: new[] {8001}, arg2: false);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: false);
             }
 
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52000096_qd {
             internal State위협당함01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52000096_QD__MAIN__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1001, script: "$52000096_QD__MAIN__0$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._52000096_qd {
             internal State위협당함02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1002, arg3: "$52000096_QD__MAIN__1$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1002, script: "$52000096_QD__MAIN__1$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._52000096_qd {
             internal State위협당함03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1003, arg3: "$52000096_QD__MAIN__2$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1003, script: "$52000096_QD__MAIN__2$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._52000096_qd {
             internal State위협당함04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1004, arg3: "$52000096_QD__MAIN__3$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1004, script: "$52000096_QD__MAIN__3$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._52000096_qd {
             internal State시점이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8002}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._52000096_qd {
             internal State경로이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000096_QD__MAIN__4$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000096_QD__MAIN__4$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._52000096_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 3.0f);
-                context.SetConversation(arg1: 1, arg2: 1003, arg3: "$52000096_QD__MAIN__5$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1003, script: "$52000096_QD__MAIN__5$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -173,8 +173,8 @@ namespace Maple2.Trigger._52000096_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_01");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.DestroyMonster(arg1: new[] {-1});
             }
 

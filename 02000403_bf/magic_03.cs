@@ -63,10 +63,10 @@ namespace Maple2.Trigger._02000403_bf {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 168, arg2: "MS2PatrolData_2138");
                 context.SetNpcEmotionLoop(arg1: 165, arg2: "Down_Idle_A", arg3: 600000f);
-                context.SetConversation(arg1: 1, arg2: 165, arg3: "$02000403_BF__MAGIC_03__0$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 169, arg3: "$02000403_BF__MAGIC_03__1$", arg4: 3, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 168, arg3: "$02000403_BF__MAGIC_03__2$", arg4: 3, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 168, arg3: "$02000403_BF__MAGIC_03__3$", arg4: 3, arg5: 6);
+                context.SetConversation(arg1: 1, arg2: 165, script: "$02000403_BF__MAGIC_03__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 169, script: "$02000403_BF__MAGIC_03__1$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 168, script: "$02000403_BF__MAGIC_03__2$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 168, script: "$02000403_BF__MAGIC_03__3$", arg4: 3, arg5: 6);
             }
 
             public override TriggerState Execute() {

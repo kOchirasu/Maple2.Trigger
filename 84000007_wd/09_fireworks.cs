@@ -24,7 +24,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateVolley_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$84000007_WD__09_FIREWORKS__0$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$84000007_WD__09_FIREWORKS__0$", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateVolley_Ready2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$84000007_WD__09_FIREWORKS__1$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$84000007_WD__09_FIREWORKS__1$", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {

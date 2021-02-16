@@ -47,7 +47,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1200}, arg2: false);
                 context.DestroyMonster(arg1: new[] {1201});
-                context.SetConversation(arg1: 1, arg2: 1200, arg3: "$52010038_QD__EVENT__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1200, script: "$52010038_QD__EVENT__0$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 1200, arg2: "MS2PatrolData_1200");
             }
 
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1200, arg3: "$52010038_QD__EVENT__2$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 1200, script: "$52010038_QD__EVENT__2$", arg4: 3, arg5: 2);
             }
 
             public override TriggerState Execute() {

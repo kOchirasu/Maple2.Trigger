@@ -20,15 +20,15 @@ namespace Maple2.Trigger._02020142_bf {
             internal State던전시간체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 41, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 42, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 43, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 44, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 45, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 46, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 47, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 48, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 49, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 41, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 42, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 43, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 44, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 45, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 46, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 47, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 48, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 49, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -53,15 +53,15 @@ namespace Maple2.Trigger._02020142_bf {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
                 context.DestroyMonster(arg1: new[] {-1});
-                context.SetPortal(arg1: 41, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 42, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 43, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 44, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 45, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 46, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 47, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 48, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 49, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 41, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 42, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 43, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 44, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 45, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 46, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 47, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 48, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 49, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

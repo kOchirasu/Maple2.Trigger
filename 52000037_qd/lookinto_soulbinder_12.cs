@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4000, arg2: false, arg3: "Dead_A");
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10000175}, arg2: 0);
             }
 
@@ -72,8 +72,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateCinematic01시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.MoveUser(arg1: 52000037, arg2: 10);
             }
 
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000037_QD__LOOKINTO_SOULBINDER_12__0$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -111,7 +111,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000037_QD__LOOKINTO_SOULBINDER_12__1$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000037_QD__LOOKINTO_SOULBINDER_12__2$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__3$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000037_QD__LOOKINTO_SOULBINDER_12__3$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__4$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000037_QD__LOOKINTO_SOULBINDER_12__4$", arg4: 5, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__5$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000037_QD__LOOKINTO_SOULBINDER_12__5$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -235,8 +235,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

@@ -56,7 +56,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "LimitTimer", arg2: 180, arg3: true);
+                context.SetTimer(id: "LimitTimer", arg2: 180, arg3: true);
             }
 
             public override TriggerState Execute() {
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "LimitTimer2", arg2: 180, arg3: true);
+                context.SetTimer(id: "LimitTimer2", arg2: 180, arg3: true);
             }
 
             public override TriggerState Execute() {
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "LimitTimer3", arg2: 180, arg3: true);
+                context.SetTimer(id: "LimitTimer3", arg2: 180, arg3: true);
             }
 
             public override TriggerState Execute() {
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "LimitTimer4", arg2: 180, arg3: true);
+                context.SetTimer(id: "LimitTimer4", arg2: 180, arg3: true);
             }
 
             public override TriggerState Execute() {
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "LimitTimer5", arg2: 180, arg3: true);
+                context.SetTimer(id: "LimitTimer5", arg2: 180, arg3: true);
             }
 
             public override TriggerState Execute() {
@@ -234,7 +234,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "LimitTimer6", arg2: 180, arg3: true);
+                context.SetTimer(id: "LimitTimer6", arg2: 180, arg3: true);
             }
 
             public override TriggerState Execute() {
@@ -269,7 +269,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage7(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "LimitTimer7", arg2: 180, arg3: true);
+                context.SetTimer(id: "LimitTimer7", arg2: 180, arg3: true);
             }
 
             public override TriggerState Execute() {
@@ -304,7 +304,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "LimitTimer8", arg2: 300, arg3: true);
+                context.SetTimer(id: "LimitTimer8", arg2: 300, arg3: true);
             }
 
             public override TriggerState Execute() {
@@ -339,7 +339,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage9(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "LimitTimer9", arg2: 300, arg3: true);
+                context.SetTimer(id: "LimitTimer9", arg2: 300, arg3: true);
             }
 
             public override TriggerState Execute() {
@@ -374,7 +374,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "LimitTimer10", arg2: 300, arg3: true);
+                context.SetTimer(id: "LimitTimer10", arg2: 300, arg3: true);
             }
 
             public override TriggerState Execute() {
@@ -409,16 +409,16 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "LimitTimer");
-                context.ResetTimer(arg1: "LimitTimer2");
-                context.ResetTimer(arg1: "LimitTimer3");
-                context.ResetTimer(arg1: "LimitTimer4");
-                context.ResetTimer(arg1: "LimitTimer5");
-                context.ResetTimer(arg1: "LimitTimer6");
-                context.ResetTimer(arg1: "LimitTimer7");
-                context.ResetTimer(arg1: "LimitTimer8");
-                context.ResetTimer(arg1: "LimitTimer9");
-                context.ResetTimer(arg1: "LimitTimer10");
+                context.ResetTimer(id: "LimitTimer");
+                context.ResetTimer(id: "LimitTimer2");
+                context.ResetTimer(id: "LimitTimer3");
+                context.ResetTimer(id: "LimitTimer4");
+                context.ResetTimer(id: "LimitTimer5");
+                context.ResetTimer(id: "LimitTimer6");
+                context.ResetTimer(id: "LimitTimer7");
+                context.ResetTimer(id: "LimitTimer8");
+                context.ResetTimer(id: "LimitTimer9");
+                context.ResetTimer(id: "LimitTimer10");
             }
 
             public override TriggerState Execute() {

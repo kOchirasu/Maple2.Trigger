@@ -1,18 +1,20 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52100302_qd {
     public static class _main {
         public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10000, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10001, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10002, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10003, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10004, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10005, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10006, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10007, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10008, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10000, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10001, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10002, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10003, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10004, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10005, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10006, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10007, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10008, visible: false, enabled: false, minimapVisible: false);
                 context.EnableSpawnPointPc(spawnPointId: 101, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 102, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 103, isEnable: false);
@@ -55,9 +57,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateCamera종료(context), arg2: "exit");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.CameraSelectPath(arg1: new[] {100001, 100002, 100003, 100004, 100005}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.CameraSelectPath(pathIds: new[] {100001, 100002, 100003, 100004, 100005}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -75,8 +77,8 @@ namespace Maple2.Trigger._52100302_qd {
             internal State마를레네대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11004582, msg: "$52100302_QD__MAIN__0$", align: "left", illustId: "Eone_normal", duration: 5000);
-                context.AddCinematicTalk(npcId: 11004582, msg: "$52100302_QD__MAIN__1$", align: "left", illustId: "Eone_serious", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004582, script: "$52100302_QD__MAIN__0$", align: Align.Left, illustId: "Eone_normal", duration: 5000);
+                context.AddCinematicTalk(npcId: 11004582, script: "$52100302_QD__MAIN__1$", align: Align.Left, illustId: "Eone_serious", duration: 4500);
             }
 
             public override TriggerState Execute() {
@@ -96,12 +98,12 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.CameraReset(interpolationTime: 0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
-                context.SideNpcTalk(type: "talk", npcId: 11004582, illust: "Eone_normal", script: "$52100302_QD__MAIN__2$", duration: 6000);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004582, illust: "Eone_normal", script: "$52100302_QD__MAIN__2$", duration: 6000);
                     return new StateStartDelay(context);
             }
 
@@ -132,7 +134,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1101, 1001, 1002, 1005, 1006, 1009, 1010, 1011, 1012, 1015, 1016, 1017, 1018, 1019, 1020})) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004582, illust: "Eone_normal", script: "$52100302_QD__MAIN__3$", duration: 8000);
+                    context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004582, illust: "Eone_normal", script: "$52100302_QD__MAIN__3$", duration: 8000);
                     context.EnableSpawnPointPc(spawnPointId: 101, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 102, isEnable: true);
                     context.SetInteractObject(arg1: new[] {12000501, 12000502, 12000503}, arg2: 1);
@@ -183,7 +185,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__MAIN__4$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__MAIN__4$", arg3: 3000);
                     return new StateCableDelay_02_1(context);
                 }
 
@@ -200,7 +202,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__MAIN__5$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__MAIN__5$", arg3: 3000);
                     return new StateCableDelay_02_2(context);
                 }
 
@@ -217,7 +219,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__MAIN__6$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__MAIN__6$", arg3: 3000);
                     return new StateCableDelay_02_3(context);
                 }
 
@@ -234,7 +236,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__MAIN__7$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__MAIN__7$", arg3: 1000);
                     return new StateCableDelay_03_1(context);
                 }
 
@@ -251,7 +253,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__MAIN__8$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__MAIN__8$", arg3: 1000);
                     return new StateCableDelay_03_2(context);
                 }
 
@@ -268,7 +270,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__MAIN__9$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__MAIN__9$", arg3: 1000);
                     return new StateCableDelay_03_3(context);
                 }
 
@@ -285,7 +287,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__MAIN__10$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__MAIN__10$", arg3: 1000);
                     return new StateCableDelay_04_1(context);
                 }
 
@@ -302,7 +304,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__MAIN__11$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__MAIN__11$", arg3: 1000);
                     return new StateCableDelay_04_2(context);
                 }
 
@@ -319,7 +321,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__MAIN__12$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__MAIN__12$", arg3: 1000);
                     return new StateCableDelay_04_3(context);
                 }
 
@@ -336,7 +338,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__MAIN__13$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__MAIN__13$", arg3: 1000);
                     return new StateCableDelay_05_1(context);
                 }
 
@@ -353,7 +355,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__MAIN__14$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__MAIN__14$", arg3: 1000);
                     return new StateCableDelay_05_2(context);
                 }
 
@@ -370,7 +372,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__MAIN__15$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__MAIN__15$", arg3: 1000);
                     return new StateCableDelay_05_3(context);
                 }
 

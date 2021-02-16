@@ -144,7 +144,7 @@ namespace Maple2.Trigger._02020141_bf {
             internal State탈것_Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020141_BF__INTERACTMESH_PHASE_3_INTERECT_01__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020141_BF__INTERACTMESH_PHASE_3_INTERECT_01__0$", arg3: 5000);
                 context.SetInteractObject(arg1: new[] {10003154}, arg2: 1);
                 context.DestroyMonster(arg1: new[] {914100});
             }

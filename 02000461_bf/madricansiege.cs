@@ -16,7 +16,7 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SetUserValue(triggerId: 99999105, key: "Bosscannon05", value: 0);
                 context.SetAgent(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006, 8101, 8102, 8103, 8104, 8105, 8106, 8201, 8202, 8203, 8204, 8205, 8206}, arg2: true);
                 context.CameraSelect(arg1: 300, arg2: true);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.CreateMonster(arg1: new[] {2000, 2001}, arg2: false);
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3101, 3102, 3103, 3104, 3105, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3801, 3802, 3803, 3804}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 201, arg2: false, arg3: "Dead_A");
@@ -212,7 +212,7 @@ namespace Maple2.Trigger._02000461_bf {
             internal StateBoss_BuffPattern(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000461_BF__MADRICANSIEGE__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02000461_BF__MADRICANSIEGE__0$", arg3: 5000);
                 context.SetUserValue(triggerId: 99999102, key: "Bosscannon02", value: 1);
                 context.SetUserValue(triggerId: 99999103, key: "Bosscannon03", value: 1);
                 context.SetUserValue(triggerId: 99999104, key: "Bosscannon04", value: 1);
@@ -255,7 +255,7 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SetUserValue(triggerId: 99999103, key: "DungeonClear", value: 1);
                 context.SetUserValue(triggerId: 99999104, key: "DungeonClear", value: 1);
                 context.SetUserValue(triggerId: 99999105, key: "DungeonClear", value: 1);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

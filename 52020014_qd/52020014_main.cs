@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52020014_qd {
             internal State감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false);
                 context.SetEffect(arg1: new[] {5001}, arg2: false);
                 context.SetMesh(arg1: new[] {9101, 9102}, arg2: true);
                 context.SetVisibleBreakableObject(arg1: new[] {1}, arg2: false);
@@ -182,8 +182,8 @@ namespace Maple2.Trigger._52020014_qd {
             public override void OnEnter() {
                 context.SetSceneSkip(state: new State이공간1차전투(context), arg2: "nextState");
                 context.CameraSelect(arg1: 502, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -201,7 +201,7 @@ namespace Maple2.Trigger._52020014_qd {
             internal StateLever힌트_Camera대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg3: "저 레버를 작동시키면 되는건가...?", arg4: 3000);
+                context.SetConversation(arg1: 2, script: "저 레버를 작동시키면 되는건가...?", arg4: 3000);
             }
 
             public override TriggerState Execute() {
@@ -219,11 +219,11 @@ namespace Maple2.Trigger._52020014_qd {
             internal State이공간1차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1f);
                 context.CreateMonster(arg1: new[] {121, 122, 123}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "에고 웨폰을 모두 처치하고 레버를 작동시키세요.", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "에고 웨폰을 모두 처치하고 레버를 작동시키세요.", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -285,12 +285,12 @@ namespace Maple2.Trigger._52020014_qd {
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateCamera리셋(context), arg2: "nextState");
                 context.CameraSelect(arg1: 501, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetBreakable(arg1: new[] {10001}, arg2: true);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.SetMesh(arg1: new[] {9101}, arg2: false, arg3: 0, arg4: 0, arg5: 30f);
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "Success이야!", arg4: 3000);
+                context.SetConversation(arg1: 1, arg2: 0, script: "Success이야!", arg4: 3000);
             }
 
             public override TriggerState Execute() {
@@ -308,8 +308,8 @@ namespace Maple2.Trigger._52020014_qd {
             internal StateCamera리셋(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1f);
             }
 

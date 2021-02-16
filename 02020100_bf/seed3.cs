@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02020100_bf {
                     return new StateSeed3_중보(context);
                 }
 
-                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 0, additionalEffectId: 70002109, level: true)) {
+                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 0, additionalEffectId: 70002109, level: 1)) {
                     return new StateStart(context);
                 }
 

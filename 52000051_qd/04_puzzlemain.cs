@@ -202,7 +202,7 @@ namespace Maple2.Trigger._52000051_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$52000051_QD__04_PUZZLEMAIN__0$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52000051_QD__04_PUZZLEMAIN__0$", arg3: 3000, arg4: "0");
                 context.SetUserValue(key: "CorrectFirstPiece", value: 0);
                 context.SetUserValue(key: "CorrectSecondPiece", value: 0);
                 context.SetUserValue(key: "CorrectThirdPiece", value: 0);

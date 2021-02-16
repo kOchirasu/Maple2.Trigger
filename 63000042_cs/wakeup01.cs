@@ -5,7 +5,7 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -23,10 +23,10 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateLodingDelay00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -83,8 +83,8 @@ namespace Maple2.Trigger._63000042_cs {
             internal StatePCDownIdle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StatePCDownIdle02(context));
             }
 
@@ -103,9 +103,9 @@ namespace Maple2.Trigger._63000042_cs {
             internal StatePCDownIdle02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.SetSkip();
             }
 
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateDoctorTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000038, arg3: "$63000042_CS__WAKEUP01__0$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000038, script: "$63000042_CS__WAKEUP01__0$", arg4: 4);
                 context.SetSkip(state: new StateDoctorTalk01Skip(context));
             }
 
@@ -179,8 +179,8 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateLookAround02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 5000f);
-                context.SetConversation(arg1: 2, arg2: 11000038, arg3: "$63000042_CS__WAKEUP01__1$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000038, script: "$63000042_CS__WAKEUP01__1$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -218,7 +218,7 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 5000f);
-                context.SetConversation(arg1: 2, arg2: 11000038, arg3: "$63000042_CS__WAKEUP01__2$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000038, script: "$63000042_CS__WAKEUP01__2$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 5000f);
-                context.SetConversation(arg1: 2, arg2: 11000038, arg3: "$63000042_CS__WAKEUP01__3$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000038, script: "$63000042_CS__WAKEUP01__3$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -256,9 +256,9 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Idle_A");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -295,9 +295,9 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

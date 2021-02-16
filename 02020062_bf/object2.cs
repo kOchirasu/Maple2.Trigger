@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02020062_bf {
                 }
 
                 if (context.UserDetected(arg1: new[] {9012})) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020062_BF__OBJECT2__0$", arg3: 5000, arg4: "9012");
+                    context.SetEventUI(arg1: 1, script: "$02020062_BF__OBJECT2__0$", arg3: 5000, arg4: "9012");
                     return new StateLever2_체크(context);
                 }
 
@@ -69,7 +69,7 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5101}, arg2: true);
                 context.SetInteractObject(arg1: new[] {12000108}, arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02020062_BF__OBJECT2__1$", arg3: 5000, arg4: "9012");
+                context.SetEventUI(arg1: 1, script: "$02020062_BF__OBJECT2__1$", arg3: 5000, arg4: "9012");
             }
 
             public override TriggerState Execute() {

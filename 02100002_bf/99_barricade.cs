@@ -7,10 +7,10 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetUserValue(key: "PortalOn", value: 0);
                 context.SetUserValue(key: "MissionStart", value: 0);
                 context.SetUserValue(key: "DungeonClear", value: 0);
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 20, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 21, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 20, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 21, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -44,10 +44,10 @@ namespace Maple2.Trigger._02100002_bf {
             internal StatePortalOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 21, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 20, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 21, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateCountDown(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02100002_BF__99_BARRICADE__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02100002_BF__99_BARRICADE__0$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -83,10 +83,10 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateShutDown(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 20, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 21, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 20, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 21, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateRelease(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

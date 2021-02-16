@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetTimer(id: "1", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateDelay2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetTimer(id: "1", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02000252_bf {
             internal State벨라(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
                 context.CreateMonster(arg1: new[] {1002}, arg2: false);
             }
 
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._02000252_bf {
             internal State벨라2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
                 context.CreateMonster(arg1: new[] {1002}, arg2: false);
             }
 
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._02000252_bf {
             internal State벨라대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 3);
-                context.SetConversation(arg1: 1, arg2: 1002, arg3: "$02000252_BF__ELITE_01__0$", arg4: 2);
+                context.SetTimer(id: "1", arg2: 3);
+                context.SetConversation(arg1: 1, arg2: 1002, script: "$02000252_BF__ELITE_01__0$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._02000252_bf {
             internal State벨라Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 3);
-                context.SetConversation(arg1: 1, arg2: 1002, arg3: "$02000252_BF__ELITE_01__1$", arg4: 2);
+                context.SetTimer(id: "1", arg2: 3);
+                context.SetConversation(arg1: 1, arg2: 1002, script: "$02000252_BF__ELITE_01__1$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._02000252_bf {
             internal State벨라스킬(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_2");
             }
 
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._02000252_bf {
             internal State벨라스킬2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_2");
             }
 
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._02000252_bf {
             internal State이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.CreateMonster(arg1: new[] {201, 1093, 1094, 1095, 1096, 1097, 1098, 1099, 1100, 1101}, arg2: false);
                 context.SetMesh(arg1: new[] {2146, 2147, 2148, 2149, 2150, 2151, 2152, 2153, 2154, 2155, 2156, 2157, 2158, 2159, 2160, 2161, 2162, 2163, 2164, 2165, 2166}, arg2: false);
             }
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._02000252_bf {
             internal State이동2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetMesh(arg1: new[] {2146, 2147, 2148, 2149, 2150, 2151, 2152, 2153, 2154, 2155, 2156, 2157, 2158, 2159, 2160, 2161, 2162, 2163, 2164, 2165, 2166}, arg2: true);
             }
 

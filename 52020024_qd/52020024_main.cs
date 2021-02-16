@@ -11,8 +11,8 @@ namespace Maple2.Trigger._52020024_qd {
                 context.SetActor(arg1: 10002, arg2: true, arg3: "ks_quest_movewall_A02_off");
                 context.SetActor(arg1: 10003, arg2: true, arg3: "ks_quest_fusiondevice_A01_off");
                 context.SetMesh(arg1: new[] {1001, 2001}, arg2: true);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10002006, 10002007, 10002008, 10002009}, arg2: 2);
             }
 
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._52020024_qd {
             internal State1차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "방 안을 수색하세요", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "방 안을 수색하세요", arg3: 5000, arg4: "0");
                 context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: true);
             }
 
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._52020024_qd {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002009}, arg2: 1);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "중앙으로 가보자!", duration: 3000, delayTick: 0);
-                context.SetEventUI(arg1: 1, arg2: "융합장치 전원 활성화.", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "융합장치 전원 활성화.", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -265,8 +265,8 @@ namespace Maple2.Trigger._52020024_qd {
                 context.CreateMonster(arg1: new[] {201}, arg2: false);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_Michael");
                 context.CameraSelect(arg1: 501, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._52020024_qd {
             internal StateCamera_미카엘Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "아주 좋아!", arg4: 5);
+                context.SetConversation(arg1: 1, arg2: 201, script: "아주 좋아!", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -303,7 +303,7 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 502, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "파편이 어쩌구~ 저쩌구~", arg4: 5);
+                context.SetConversation(arg1: 1, arg2: 201, script: "파편이 어쩌구~ 저쩌구~", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -322,7 +322,7 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 503, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "왜...왜 이러지?", arg4: 4);
+                context.SetConversation(arg1: 1, arg2: 0, script: "왜...왜 이러지?", arg4: 4);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG\Common\Eff_Com_Vibrate_Lowamp.xml");
             }
 
@@ -341,7 +341,7 @@ namespace Maple2.Trigger._52020024_qd {
             internal StateCamera_바닥부서짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "으아아악!!!", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 0, script: "으아아악!!!", arg4: 2);
                 context.CameraSelect(arg1: 504, arg2: true);
                 context.SetSkill(arg1: new[] {1}, arg2: true);
             }

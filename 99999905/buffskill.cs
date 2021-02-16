@@ -23,7 +23,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$99999905__BUFFSKILL__0$", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$99999905__BUFFSKILL__0$", arg3: 2000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7001}, arg2: true);
-                context.SetTimer(arg1: "120", arg2: 120);
+                context.SetTimer(id: "120", arg2: 120);
             }
 
             public override TriggerState Execute() {
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7002}, arg2: true);
-                context.SetTimer(arg1: "120", arg2: 120);
+                context.SetTimer(id: "120", arg2: 120);
             }
 
             public override TriggerState Execute() {
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7003}, arg2: true);
-                context.SetTimer(arg1: "120", arg2: 120);
+                context.SetTimer(id: "120", arg2: 120);
             }
 
             public override TriggerState Execute() {
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._99999905 {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetSkill(arg1: new[] {7001, 7002, 7003}, arg2: false);
             }
 

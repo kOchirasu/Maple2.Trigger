@@ -34,7 +34,7 @@ namespace Maple2.Trigger._81000003_item {
             public override void OnEnter() {
                 context.SetState(arg1: 1, arg2: "미로패턴01,미로패턴02,미로패턴03", arg3: false);
                 context.SetState(arg1: 2, arg2: "점프패턴01,점프패턴02", arg3: false);
-                context.SetTimer(arg1: "89", arg2: 5);
+                context.SetTimer(id: "89", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._81000003_item {
             public override void OnEnter() {
                 context.UseState(arg1: 1, arg2: true);
                 context.UseState(arg1: 2, arg2: true);
-                context.SetTimer(arg1: "12", arg2: 240);
+                context.SetTimer(id: "12", arg2: 240);
             }
 
             public override TriggerState Execute() {

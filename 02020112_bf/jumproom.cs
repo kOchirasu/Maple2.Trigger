@@ -55,7 +55,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990021, key: "Reconnect", value: 2);
-                context.SetEventUI(arg1: 1, arg2: "$02020112_BF__JUMPROOM__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020112_BF__JUMPROOM__0$", arg3: 5000);
                 context.SetGravity(gravity: 0f);
                 context.SetEffect(arg1: new[] {8005, 8006, 8007, 8008}, arg2: false);
                 context.AddBuff(arg1: new[] {931}, arg2: 70002112, arg3: 1, arg5: false);

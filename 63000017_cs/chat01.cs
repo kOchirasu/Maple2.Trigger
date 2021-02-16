@@ -38,11 +38,11 @@ namespace Maple2.Trigger._63000017_cs {
             internal StateChat01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000017_CS__CHAT01__0$", arg4: 4, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000017_CS__CHAT01__1$", arg4: 4, arg5: 5);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000017_CS__CHAT01__2$", arg4: 4, arg5: 10);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000017_CS__CHAT01__3$", arg4: 4, arg5: 16);
-                context.SetConversation(arg1: 1, arg2: 103, arg3: "$63000017_CS__CHAT01__4$", arg4: 4, arg5: 20);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000017_CS__CHAT01__0$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$63000017_CS__CHAT01__1$", arg4: 4, arg5: 5);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000017_CS__CHAT01__2$", arg4: 4, arg5: 10);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$63000017_CS__CHAT01__3$", arg4: 4, arg5: 16);
+                context.SetConversation(arg1: 1, arg2: 103, script: "$63000017_CS__CHAT01__4$", arg4: 4, arg5: 20);
             }
 
             public override TriggerState Execute() {
@@ -76,8 +76,8 @@ namespace Maple2.Trigger._63000017_cs {
             internal StateChat02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000017_CS__CHAT01__5$", arg4: 4, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000017_CS__CHAT01__6$", arg4: 4, arg5: 6);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000017_CS__CHAT01__5$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$63000017_CS__CHAT01__6$", arg4: 4, arg5: 6);
             }
 
             public override TriggerState Execute() {

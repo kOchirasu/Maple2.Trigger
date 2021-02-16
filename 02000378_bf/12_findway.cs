@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "or_fi_struc_stonegate_A01_off");
                 context.SetEffect(arg1: new[] {5012, 5013}, arg2: false);
                 context.SetMesh(arg1: new[] {331200, 331201, 331202, 331203, 331204, 331205, 331206, 331207, 331208, 331209, 331210, 331211, 331212, 331213, 331214, 331215, 331216, 331217, 331218, 331219, 331220, 331221, 331222, 331223, 331224, 331225, 331226, 331227, 331228, 331229, 331230, 331231, 331232, 331233, 331234, 331235, 331236, 331237, 331238, 331239, 331240, 331241, 331242, 331243, 331244, 331245, 331246, 331247, 331248, 331249, 331250, 331251, 331252, 331253, 331254, 331255, 331256, 331257, 331258, 331259, 331260, 331261, 331262, 331263, 331264, 331265, 331266, 331267, 331268, 331269, 331270, 331271, 331272, 331273, 331274, 331275, 331276, 331277}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetMesh(arg1: new[] {4032}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.MoveNpc(arg1: 112, arg2: "MS2PatrolData_112");
                 context.MoveNpc(arg1: 212, arg2: "MS2PatrolData_212");
-                context.SetConversation(arg1: 1, arg2: 212, arg3: "$02000378_BF__12_FINDWAY__0$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 212, script: "$02000378_BF__12_FINDWAY__0$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateReadyToWalkIn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 112, arg3: "$02000378_BF__12_FINDWAY__1$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 112, script: "$02000378_BF__12_FINDWAY__1$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {112, 212});
                 context.CreateMonster(arg1: new[] {1012, 2012}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1012, arg3: "$02000378_BF__12_FINDWAY__2$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 1012, script: "$02000378_BF__12_FINDWAY__2$", arg4: 3, arg5: 2);
                 context.SetUserValue(triggerId: 912, key: "MobWaveStart", value: 1);
             }
 
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {2213, 2212});
                 context.CreateMonster(arg1: new[] {213}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 113, arg3: "$02000378_BF__12_FINDWAY__3$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 113, script: "$02000378_BF__12_FINDWAY__3$", arg4: 3, arg5: 0);
                 context.MoveNpc(arg1: 113, arg2: "MS2PatrolData_199");
                 context.MoveNpc(arg1: 213, arg2: "MS2PatrolData_299");
             }
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._02000378_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4000, arg2: true, arg3: "or_fi_struc_stonegate_A01_on");
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

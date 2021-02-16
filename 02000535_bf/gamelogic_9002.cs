@@ -1,14 +1,16 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02000535_bf {
     public static class _gamelogic_9002 {
         public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "TypingGame");
-                context.CreateWidget(arg1: "Round");
-                context.WidgetAction(arg1: "Round", arg2: "SettingFinalRound", arg3: "1");
-                context.WidgetAction(arg1: "Round", arg2: "SettingAllowedFailCount", arg3: "3");
-                context.WidgetAction(arg1: "Round", arg2: "SettingRoundInitIfFail", arg3: "0");
+                context.CreateWidget(type: WidgetType.TypingGame);
+                context.CreateWidget(type: WidgetType.Round);
+                context.WidgetAction(type: WidgetType.Round, name: "SettingFinalRound", args: "1");
+                context.WidgetAction(type: WidgetType.Round, name: "SettingAllowedFailCount", args: "3");
+                context.WidgetAction(type: WidgetType.Round, name: "SettingRoundInitIfFail", args: "0");
                 context.LockMyPc(isLock: false);
             }
 
@@ -45,11 +47,11 @@ namespace Maple2.Trigger._02000535_bf {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "Round", arg2: "GameClear")) {
+                if (context.WidgetCondition(type: WidgetType.Round, arg2: "GameClear")) {
                     return new State게임Success종료(context);
                 }
 
-                if (context.WidgetCondition(arg1: "Round", arg2: "GameFail")) {
+                if (context.WidgetCondition(type: WidgetType.Round, arg2: "GameFail")) {
                     return new State게임실패종료(context);
                 }
 
@@ -69,15 +71,15 @@ namespace Maple2.Trigger._02000535_bf {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "Round", arg2: "CurrentRound", arg3: "= 1")) {
+                if (context.WidgetCondition(type: WidgetType.Round, arg2: "CurrentRound", arg3: "= 1")) {
                     return new State라운드1시작전UI(context);
                 }
 
-                if (context.WidgetCondition(arg1: "Round", arg2: "CurrentRound", arg3: "= 2")) {
+                if (context.WidgetCondition(type: WidgetType.Round, arg2: "CurrentRound", arg3: "= 2")) {
                     return new State라운드2시작전UI(context);
                 }
 
-                if (context.WidgetCondition(arg1: "Round", arg2: "CurrentRound", arg3: "= 3")) {
+                if (context.WidgetCondition(type: WidgetType.Round, arg2: "CurrentRound", arg3: "= 3")) {
                     return new State라운드3시작전UI(context);
                 }
 
@@ -91,14 +93,14 @@ namespace Maple2.Trigger._02000535_bf {
             internal State라운드1시작전UI(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__GAMELOGIC_9002__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__GAMELOGIC_9002__0$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.LockMyPc(isLock: true);
-                    context.SetEventUI(arg1: 1, arg2: "$02000535_BF__GAMELOGIC_9002__1$", arg3: 6000);
-                    context.WidgetAction(arg1: "TypingGame", arg2: "Start", widgetArgNum: 7, arg3: "6000");
+                    context.SetEventUI(arg1: 1, script: "$02000535_BF__GAMELOGIC_9002__1$", arg3: 6000);
+                    context.WidgetAction(type: WidgetType.TypingGame, name: "Start", widgetArgNum: 7, args: "6000");
                     return new State라운드1진행(context);
                 }
 
@@ -114,15 +116,15 @@ namespace Maple2.Trigger._02000535_bf {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "TypingGame", arg2: "Result", arg3: "1")) {
-                    context.WidgetAction(arg1: "Round", arg2: "RoundResult", arg3: "1");
-                    context.SetEventUI(arg1: 1, arg2: "$02000535_BF__GAMELOGIC_9002__2$", arg3: 3000);
+                if (context.WidgetCondition(type: WidgetType.TypingGame, arg2: "Result", arg3: "1")) {
+                    context.WidgetAction(type: WidgetType.Round, name: "RoundResult", args: "1");
+                    context.SetEventUI(arg1: 1, script: "$02000535_BF__GAMELOGIC_9002__2$", arg3: 3000);
                     return new State라운드종료(context);
                 }
 
-                if (context.WidgetCondition(arg1: "TypingGame", arg2: "Result", arg3: "0")) {
-                    context.WidgetAction(arg1: "Round", arg2: "RoundResult", arg3: "0");
-                    context.SetEventUI(arg1: 1, arg2: "$02000535_BF__GAMELOGIC_9002__3$", arg3: 3000);
+                if (context.WidgetCondition(type: WidgetType.TypingGame, arg2: "Result", arg3: "0")) {
+                    context.WidgetAction(type: WidgetType.Round, name: "RoundResult", args: "0");
+                    context.SetEventUI(arg1: 1, script: "$02000535_BF__GAMELOGIC_9002__3$", arg3: 3000);
                     return new State라운드종료(context);
                 }
 
@@ -136,14 +138,14 @@ namespace Maple2.Trigger._02000535_bf {
             internal State라운드2시작전UI(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__GAMELOGIC_9002__4$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__GAMELOGIC_9002__4$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.LockMyPc(isLock: true);
-                    context.SetEventUI(arg1: 1, arg2: "$02000535_BF__GAMELOGIC_9002__5$", arg3: 4000);
-                    context.WidgetAction(arg1: "TypingGame", arg2: "Start", widgetArgNum: 6, arg3: "4000");
+                    context.SetEventUI(arg1: 1, script: "$02000535_BF__GAMELOGIC_9002__5$", arg3: 4000);
+                    context.WidgetAction(type: WidgetType.TypingGame, name: "Start", widgetArgNum: 6, args: "4000");
                     return new State라운드2진행(context);
                 }
 
@@ -159,15 +161,15 @@ namespace Maple2.Trigger._02000535_bf {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "TypingGame", arg2: "Result", arg3: "1")) {
-                    context.SetEventUI(arg1: 1, arg2: "$02000535_BF__GAMELOGIC_9002__6$", arg3: 3000);
-                    context.WidgetAction(arg1: "Round", arg2: "RoundResult", arg3: "1");
+                if (context.WidgetCondition(type: WidgetType.TypingGame, arg2: "Result", arg3: "1")) {
+                    context.SetEventUI(arg1: 1, script: "$02000535_BF__GAMELOGIC_9002__6$", arg3: 3000);
+                    context.WidgetAction(type: WidgetType.Round, name: "RoundResult", args: "1");
                     return new State라운드종료(context);
                 }
 
-                if (context.WidgetCondition(arg1: "TypingGame", arg2: "Result", arg3: "0")) {
-                    context.SetEventUI(arg1: 1, arg2: "$02000535_BF__GAMELOGIC_9002__7$", arg3: 3000);
-                    context.WidgetAction(arg1: "Round", arg2: "RoundResult", arg3: "0");
+                if (context.WidgetCondition(type: WidgetType.TypingGame, arg2: "Result", arg3: "0")) {
+                    context.SetEventUI(arg1: 1, script: "$02000535_BF__GAMELOGIC_9002__7$", arg3: 3000);
+                    context.WidgetAction(type: WidgetType.Round, name: "RoundResult", args: "0");
                     return new State라운드종료(context);
                 }
 
@@ -181,14 +183,14 @@ namespace Maple2.Trigger._02000535_bf {
             internal State라운드3시작전UI(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__GAMELOGIC_9002__8$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__GAMELOGIC_9002__8$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.LockMyPc(isLock: true);
-                    context.SetEventUI(arg1: 1, arg2: "$02000535_BF__GAMELOGIC_9002__9$", arg3: 3000);
-                    context.WidgetAction(arg1: "TypingGame", arg2: "Start", widgetArgNum: 7, arg3: "3000");
+                    context.SetEventUI(arg1: 1, script: "$02000535_BF__GAMELOGIC_9002__9$", arg3: 3000);
+                    context.WidgetAction(type: WidgetType.TypingGame, name: "Start", widgetArgNum: 7, args: "3000");
                     return new State라운드3진행(context);
                 }
 
@@ -204,16 +206,16 @@ namespace Maple2.Trigger._02000535_bf {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "TypingGame", arg2: "Result", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.TypingGame, arg2: "Result", arg3: "1")) {
                     context.LockMyPc(isLock: true);
-                    context.SetEventUI(arg1: 1, arg2: "$02000535_BF__GAMELOGIC_9002__10$", arg3: 3000);
-                    context.WidgetAction(arg1: "Round", arg2: "RoundResult", arg3: "1");
+                    context.SetEventUI(arg1: 1, script: "$02000535_BF__GAMELOGIC_9002__10$", arg3: 3000);
+                    context.WidgetAction(type: WidgetType.Round, name: "RoundResult", args: "1");
                     return new State라운드종료(context);
                 }
 
-                if (context.WidgetCondition(arg1: "TypingGame", arg2: "Result", arg3: "0")) {
-                    context.SetEventUI(arg1: 1, arg2: "$02000535_BF__GAMELOGIC_9002__11$", arg3: 3000);
-                    context.WidgetAction(arg1: "Round", arg2: "RoundResult", arg3: "0");
+                if (context.WidgetCondition(type: WidgetType.TypingGame, arg2: "Result", arg3: "0")) {
+                    context.SetEventUI(arg1: 1, script: "$02000535_BF__GAMELOGIC_9002__11$", arg3: 3000);
+                    context.WidgetAction(type: WidgetType.Round, name: "RoundResult", args: "0");
                     return new State라운드종료(context);
                 }
 

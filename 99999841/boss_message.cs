@@ -20,7 +20,7 @@ namespace Maple2.Trigger._99999841 {
             internal State메시지1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "A팀의Boss가 Appear했습니다!", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "A팀의Boss가 Appear했습니다!", arg3: 4000);
             }
 
             public override TriggerState Execute() {

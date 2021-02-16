@@ -33,9 +33,9 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {401, 402, 403, 404, 405, 406});
-                context.SetConversation(arg1: 1, arg2: 401, arg3: "$02020027_BF__battle_1__1$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 403, arg3: "$02020027_BF__battle_1__2$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 405, arg3: "$02020027_BF__battle_1__3$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 401, script: "$02020027_BF__battle_1__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 403, script: "$02020027_BF__battle_1__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 405, script: "$02020027_BF__battle_1__3$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {

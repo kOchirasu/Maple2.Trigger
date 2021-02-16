@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000316_bf {
             internal StateCount(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 20);
+                context.SetTimer(id: "5", arg2: 20);
             }
 
             public override TriggerState Execute() {

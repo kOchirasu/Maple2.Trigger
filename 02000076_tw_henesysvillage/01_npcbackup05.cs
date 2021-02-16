@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {105});
-                context.SetTimer(arg1: "5", arg2: 90);
+                context.SetTimer(id: "5", arg2: 90);
             }
 
             public override TriggerState Execute() {

@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000376_BF__11_INNERLIGHTGUIdE__0$", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000376_BF__11_INNERLIGHTGUIdE__0$", arg3: 4000, arg4: "0");
                 context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5104}, arg2: true);
             }
 

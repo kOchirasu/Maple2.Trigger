@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02020097_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 28, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 4, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 28, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 201, 202, 203, 204, 205, 206, 207, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._02020097_bf {
 
             public override void OnEnter() {
                 context.SetAiExtraData(key: "3PhaseSetOk", value: 1);
-                context.SetPortal(arg1: 28, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 28, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -203,9 +203,9 @@ namespace Maple2.Trigger._02020097_bf {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
                 context.DungeonClear();
             }
 

@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000026_qd {
     public static class _seperategroup_01 {
         public class StateWait : TriggerState {
@@ -23,9 +25,9 @@ namespace Maple2.Trigger._52000026_qd {
             internal StateSetupCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.CameraSelect(arg1: 3000, arg2: true);
             }
 
@@ -38,8 +40,8 @@ namespace Maple2.Trigger._52000026_qd {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -47,8 +49,8 @@ namespace Maple2.Trigger._52000026_qd {
             internal StateSetupCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -109,7 +111,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
-                context.CameraSelectPath(arg1: new[] {3003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {3003}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -127,7 +129,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State1차입장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000026_QD__SEPERATEGROUP_01__0$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000601, script: "$52000026_QD__SEPERATEGROUP_01__0$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State2차입장01(context));
             }
 
@@ -210,7 +212,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6101}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000026_QD__SEPERATEGROUP_01__1$", arg4: 6, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000026_QD__SEPERATEGROUP_01__1$", arg4: 6, arg5: 0);
                 context.SetSkip(state: new State2차입장05(context));
             }
 
@@ -295,7 +297,7 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 3102, arg2: true);
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_01__2$", arg4: 7, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000026_QD__SEPERATEGROUP_01__2$", arg4: 7, arg5: 0);
                 context.SetSkip(state: new State4차입장01(context));
             }
 
@@ -357,7 +359,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State4차입장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001581, arg3: "$52000026_QD__SEPERATEGROUP_01__3$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001581, script: "$52000026_QD__SEPERATEGROUP_01__3$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State4차입장04(context));
             }
 
@@ -398,7 +400,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State4차입장05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000026_QD__SEPERATEGROUP_01__4$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000076, script: "$52000026_QD__SEPERATEGROUP_01__4$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State4차입장06(context));
             }
 
@@ -475,7 +477,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001583, arg3: "$52000026_QD__SEPERATEGROUP_01__5$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001583, script: "$52000026_QD__SEPERATEGROUP_01__5$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State5차입장04(context));
             }
 
@@ -516,7 +518,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000026_QD__SEPERATEGROUP_01__6$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001584, script: "$52000026_QD__SEPERATEGROUP_01__6$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State5차입장06(context));
             }
 
@@ -557,7 +559,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000026_QD__SEPERATEGROUP_01__7$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000015, script: "$52000026_QD__SEPERATEGROUP_01__7$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State5차입장08(context));
             }
 
@@ -617,7 +619,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001586, arg3: "$52000026_QD__SEPERATEGROUP_01__8$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001586, script: "$52000026_QD__SEPERATEGROUP_01__8$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State5차입장11(context));
             }
 
@@ -657,7 +659,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000026_QD__SEPERATEGROUP_01__9$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000076, script: "$52000026_QD__SEPERATEGROUP_01__9$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State입장완료01(context));
             }
 
@@ -679,7 +681,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.SetSound(arg1: 10000, arg2: true);
-                context.CameraSelectPath(arg1: new[] {3400, 3401, 3402, 3403}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {3400, 3401, 3402, 3403}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -698,7 +700,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6002}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_01__10$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000026_QD__SEPERATEGROUP_01__10$", arg4: 5, arg5: 0);
                 context.SetSkip(state: new State정렬02(context));
             }
 
@@ -819,7 +821,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6003}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_01__11$", arg4: 10, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000026_QD__SEPERATEGROUP_01__11$", arg4: 10, arg5: 0);
                 context.SetSkip(state: new State본론02(context));
             }
 
@@ -859,7 +861,7 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6003}, arg2: false);
                 context.SetEffect(arg1: new[] {6004}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_01__12$", arg4: 6, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000026_QD__SEPERATEGROUP_01__12$", arg4: 6, arg5: 0);
                 context.SetSkip(state: new State본론04(context));
             }
 
@@ -937,7 +939,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6102}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000026_QD__SEPERATEGROUP_01__13$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000026_QD__SEPERATEGROUP_01__13$", arg4: 5, arg5: 0);
                 context.SetSkip(state: new State영상01(context));
             }
 
@@ -958,9 +960,9 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.SetEffect(arg1: new[] {6102}, arg2: false);
             }
 
@@ -979,13 +981,13 @@ namespace Maple2.Trigger._52000026_qd {
             internal State영상02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: "Royal_IshuraRemember.swf", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new State영상03(context);
                 }
 
@@ -999,8 +1001,8 @@ namespace Maple2.Trigger._52000026_qd {
             internal State영상03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -1018,8 +1020,8 @@ namespace Maple2.Trigger._52000026_qd {
             internal State영상04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -1039,7 +1041,7 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 3600, arg2: true);
                 context.SetEffect(arg1: new[] {6103}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000026_QD__SEPERATEGROUP_01__14$", arg4: 8, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000026_QD__SEPERATEGROUP_01__14$", arg4: 8, arg5: 0);
                 context.SetSkip(state: new State정리02(context));
             }
 
@@ -1078,7 +1080,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State반대01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000026_QD__SEPERATEGROUP_01__15$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000076, script: "$52000026_QD__SEPERATEGROUP_01__15$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State반대02(context));
             }
 
@@ -1117,7 +1119,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State반대03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001586, arg3: "$52000026_QD__SEPERATEGROUP_01__16$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001586, script: "$52000026_QD__SEPERATEGROUP_01__16$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State반대04(context));
             }
 
@@ -1174,7 +1176,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State반대06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000026_QD__SEPERATEGROUP_01__17$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001584, script: "$52000026_QD__SEPERATEGROUP_01__17$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State반대07(context));
             }
 
@@ -1215,7 +1217,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 3604, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000026_QD__SEPERATEGROUP_01__18$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000015, script: "$52000026_QD__SEPERATEGROUP_01__18$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State반대09(context));
             }
 
@@ -1292,7 +1294,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1101, 901});
-                context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000026_QD__SEPERATEGROUP_01__19$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000601, script: "$52000026_QD__SEPERATEGROUP_01__19$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State요약03(context));
             }
 
@@ -1330,7 +1332,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State요약04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000026_QD__SEPERATEGROUP_01__20$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000601, script: "$52000026_QD__SEPERATEGROUP_01__20$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State요약05(context));
             }
 
@@ -1370,7 +1372,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6005}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_01__21$", arg4: 9, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000026_QD__SEPERATEGROUP_01__21$", arg4: 9, arg5: 0);
                 context.SetSkip(state: new State요약07(context));
             }
 
@@ -1406,7 +1408,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6006}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_01__22$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000026_QD__SEPERATEGROUP_01__22$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new StateStopCinematic01(context));
             }
 
@@ -1427,8 +1429,8 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetEffect(arg1: new[] {6006}, arg2: false);
                 context.CameraSelect(arg1: 3801, arg2: true);
                 context.SetSkip();
@@ -1449,8 +1451,8 @@ namespace Maple2.Trigger._52000026_qd {
             internal StateStopCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 3801, arg2: false);
             }
 

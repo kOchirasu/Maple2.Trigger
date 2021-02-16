@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6011, 6012}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "다크스크림의 새로운 차원의 틈으로 진입 했습니다.", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "다크스크림의 새로운 차원의 틈으로 진입 했습니다.", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6021, 6024}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "더 가까이 다가가십시오.", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "더 가까이 다가가십시오.", arg3: 3000);
                 context.SetEffect(arg1: new[] {500, 501}, arg2: false);
             }
 

@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000047_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {10, 11}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000047_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {12, 13}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02000047_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {14, 15}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02000047_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {16, 17}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._02000047_bf {
             internal State다리Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "99", arg2: 6);
+                context.SetTimer(id: "99", arg2: 6);
             }
 
             public override TriggerState Execute() {
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._02000047_bf {
             internal StateTriggerReset2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 4);
+                context.SetTimer(id: "1", arg2: 4);
             }
 
             public override TriggerState Execute() {

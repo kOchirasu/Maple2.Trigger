@@ -118,8 +118,8 @@ namespace Maple2.Trigger._02000390_bf {
             internal StateScene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000390_BF__MAIN__0$", arg4: 2, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000390_BF__MAIN__1$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$02000390_BF__MAIN__0$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$02000390_BF__MAIN__1$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._02000390_bf {
             internal StateScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000390_BF__MAIN__2$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000390_BF__MAIN__3$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$02000390_BF__MAIN__2$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$02000390_BF__MAIN__3$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2005");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2006");
             }

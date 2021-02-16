@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02000552_bf {
             internal StateDefaultSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 20, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 20, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 12, visible: false, enabled: false, minimapVisible: false);
                 context.SetUserValue(key: "NextPortal", value: 0);
                 context.SetUserValue(key: "SmallRemove", value: 0);
                 context.SetUserValue(key: "VacuumMessage", value: 0);
@@ -180,8 +180,8 @@ namespace Maple2.Trigger._02000552_bf {
             internal StateNextMovePortalSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 20, visible: true, enabled: true, minimapVisible: true);
                 context.AddBuff(arg1: new[] {702}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
                 context.AddBuff(arg1: new[] {701}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
                 context.SetUserValue(key: "NextPortal", value: 0);
@@ -282,9 +282,9 @@ namespace Maple2.Trigger._02000552_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 12, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 13, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 12, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 13, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

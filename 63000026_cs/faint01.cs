@@ -64,9 +64,9 @@ namespace Maple2.Trigger._63000026_cs {
             internal StateOnTheBridge01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.CameraSelect(arg1: 500, arg2: true);
             }
 
@@ -121,8 +121,8 @@ namespace Maple2.Trigger._63000026_cs {
             internal StateOnTheBridge04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._63000026_cs {
             internal StateTinChaiComeIn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000026_CS__FAINT01__5$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000026_CS__FAINT01__5$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
             }
 
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._63000026_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000026_CS__FAINT01__0$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000026_CS__FAINT01__0$", arg4: 5);
                 context.SetSkip(state: new StateTinChaiTalk02(context));
             }
 
@@ -252,7 +252,7 @@ namespace Maple2.Trigger._63000026_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6001, 5400}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000026_CS__FAINT01__1$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000026_CS__FAINT01__1$", arg4: 3);
                 context.CreateMonster(arg1: new[] {900, 901, 902, 903, 904, 905, 910, 911, 912, 913, 914, 915});
                 context.MoveNpc(arg1: 900, arg2: "MS2PatrolData_900");
                 context.MoveNpc(arg1: 901, arg2: "MS2PatrolData_901");
@@ -341,7 +341,7 @@ namespace Maple2.Trigger._63000026_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6002}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000026_CS__FAINT01__2$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000026_CS__FAINT01__2$", arg4: 5);
                 context.SetSkip(state: new StateReadyToBattle02(context));
             }
 
@@ -362,7 +362,7 @@ namespace Maple2.Trigger._63000026_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CameraSelectPath(arg1: new[] {700, 701}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {700, 701}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_102");
             }
 
@@ -383,7 +383,7 @@ namespace Maple2.Trigger._63000026_cs {
             public override void OnEnter() {
                 context.MoveUser(arg1: 63000026, arg2: 30, arg3: 9900);
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000026_CS__FAINT01__3$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000026_CS__FAINT01__3$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -475,7 +475,7 @@ namespace Maple2.Trigger._63000026_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6003}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000026_CS__FAINT01__4$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000026_CS__FAINT01__4$", arg4: 5);
                 context.DestroyMonster(arg1: new[] {900, 901, 902, 903, 904, 905, 910, 911, 912, 913, 914, 915});
                 context.CreateMonster(arg1: new[] {920, 921, 922}, arg2: false);
                 context.SetSkip(state: new StatePCFaint04(context));
@@ -536,8 +536,8 @@ namespace Maple2.Trigger._63000026_cs {
             internal StateTinChaiGoToFight02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -575,7 +575,7 @@ namespace Maple2.Trigger._63000026_cs {
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {8100, 8101}, arg2: true);
-                context.CameraSelectPath(arg1: new[] {720, 721}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {720, 721}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -593,9 +593,9 @@ namespace Maple2.Trigger._63000026_cs {
             internal StatePCTeleport02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -613,8 +613,8 @@ namespace Maple2.Trigger._63000026_cs {
             internal StatePCTeleport03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 721, arg2: false);
                 context.MoveUser(arg1: 63000027, arg2: 1, arg3: 9900);
             }

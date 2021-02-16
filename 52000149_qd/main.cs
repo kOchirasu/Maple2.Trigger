@@ -88,8 +88,8 @@ namespace Maple2.Trigger._52000149_qd {
             internal State전경_SetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.MoveUser(arg1: 52000149, arg2: 10);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._52000149_qd {
             internal State전경_StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8000, 8010}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8000, 8010}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_pc");
                 context.SetSceneSkip(state: new State아노스아파_스킵완료(context), arg2: "nextState");
             }
@@ -129,8 +129,8 @@ namespace Maple2.Trigger._52000149_qd {
             internal StateCamera_아노스줌인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003436, msg: "$52000149_QD__MAIN__0$", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {8001}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003436, script: "$52000149_QD__MAIN__0$", duration: 3000);
                 context.SetSkip(state: new State아노스아파_스킵완료(context));
             }
 
@@ -165,8 +165,8 @@ namespace Maple2.Trigger._52000149_qd {
             internal StateCamera_케이틀린01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8002, 8004}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003436, msg: "$52000149_QD__MAIN__1$", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {8002, 8004}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003436, script: "$52000149_QD__MAIN__1$", duration: 3000);
                 context.SetSkip(state: new State아노스아파_스킵완료(context));
             }
 
@@ -201,9 +201,9 @@ namespace Maple2.Trigger._52000149_qd {
             internal StateCamera_케이틀린02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8003}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Idle_A", arg3: 3000f);
-                context.AddCinematicTalk(npcId: 11003436, msg: "$52000149_QD__MAIN__2$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003436, script: "$52000149_QD__MAIN__2$", duration: 3000);
                 context.AddBalloonTalk(spawnPointId: 102, msg: "$52000149_QD__MAIN__3$", duration: 3000, delayTick: 0);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_katelyn");
                 context.SetSkip(state: new State아노스아파_스킵완료(context));
@@ -224,7 +224,7 @@ namespace Maple2.Trigger._52000149_qd {
             internal State호르헤이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8003}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Jorge");
             }
 
@@ -262,8 +262,8 @@ namespace Maple2.Trigger._52000149_qd {
             internal State아노스아파_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 4);
                 context.MoveUser(arg1: 52000149, arg2: 11);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Jorge");
             }
@@ -285,8 +285,8 @@ namespace Maple2.Trigger._52000149_qd {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 3.0f);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "AnosReturns");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

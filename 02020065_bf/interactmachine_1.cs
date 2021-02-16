@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02020065_bf {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 9101, additionalEffectId: 99910370, level: true)) {
+                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 9101, additionalEffectId: 99910370, level: 1)) {
                     return new StateStart(context);
                 }
 

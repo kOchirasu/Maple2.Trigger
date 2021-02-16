@@ -64,7 +64,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State4초간격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 4);
+                context.SetTimer(id: "1", arg2: 4);
             }
 
             public override TriggerState Execute() {
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State5초간격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 5);
+                context.SetTimer(id: "2", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State6초간격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 6);
+                context.SetTimer(id: "3", arg2: 6);
             }
 
             public override TriggerState Execute() {
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State7초간격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "4", arg2: 7);
+                context.SetTimer(id: "4", arg2: 7);
             }
 
             public override TriggerState Execute() {

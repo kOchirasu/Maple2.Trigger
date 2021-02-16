@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52000002_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.ShowGuideSummary(entityId: 25200201, textId: 25200201);
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {

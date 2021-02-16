@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000326_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02000326_bf {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 99999, arg2: "trigger", arg3: "ClearDeborak");
-                context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

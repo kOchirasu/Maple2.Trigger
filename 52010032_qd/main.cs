@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52010032_qd {
     public static class _main {
         public class StateIdle : TriggerState {
@@ -23,10 +25,10 @@ namespace Maple2.Trigger._52010032_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
-                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
+                context.CameraSelectPath(pathIds: new[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52010032, arg2: 7001);
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
             }
@@ -46,10 +48,10 @@ namespace Maple2.Trigger._52010032_qd {
             internal State치유의식_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003389, msg: "$52010032_QD__MAIN__0$", duration: 3000, illustId: "0", align: "Left");
+                context.AddCinematicTalk(npcId: 11003389, script: "$52010032_QD__MAIN__0$", duration: 3000, illustId: "0", align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -67,10 +69,10 @@ namespace Maple2.Trigger._52010032_qd {
             internal State치유의식_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4002, 4003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4002, 4003}, arg2: false);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_3001");
                 context.MoveUserPath(arg1: "MS2PatrolData_3002");
-                context.AddCinematicTalk(npcId: 11003389, msg: "$52010032_QD__MAIN__1$", duration: 3000, illustId: "0", align: "Left");
+                context.AddCinematicTalk(npcId: 11003389, script: "$52010032_QD__MAIN__1$", duration: 3000, illustId: "0", align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -91,7 +93,7 @@ namespace Maple2.Trigger._52010032_qd {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Bore_B");
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.SetPcEmotionSequence(arg1: "Emotion_Cry_A");
-                context.AddCinematicTalk(npcId: 11003389, msg: "$52010032_QD__MAIN__2$", duration: 3000, illustId: "0", align: "Left");
+                context.AddCinematicTalk(npcId: 11003389, script: "$52010032_QD__MAIN__2$", duration: 3000, illustId: "0", align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -128,7 +130,7 @@ namespace Maple2.Trigger._52010032_qd {
             internal State치유의식_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003390, msg: "$52010032_QD__MAIN__3$", duration: 3000, illustId: "0", align: "Left");
+                context.AddCinematicTalk(npcId: 11003390, script: "$52010032_QD__MAIN__3$", duration: 3000, illustId: "0", align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -147,7 +149,7 @@ namespace Maple2.Trigger._52010032_qd {
             internal State의식종료01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -184,8 +186,8 @@ namespace Maple2.Trigger._52010032_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020301_bf {
     public static class _300005_phase_4 {
         public class StateWait : TriggerState {
@@ -28,7 +30,7 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetInteractObject(arg1: new[] {10003122, 10003121}, arg2: 2);
                 context.SetUserValue(triggerId: 3000041, key: "Phase_3_Interect_01", value: 0);
                 context.SetUserValue(triggerId: 3000042, key: "Phase_3_Interect_02", value: 0);
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300005_PHASE_4__0$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300005_PHASE_4__0$", duration: 3176);
             }
 
             public override TriggerState Execute() {
@@ -46,7 +48,7 @@ namespace Maple2.Trigger._02020301_bf {
             internal State추가대화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Angry", script: "$02020301_BF__300005_PHASE_4__1$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 29500101, illust: "ArcheonBlack_Angry", script: "$02020301_BF__300005_PHASE_4__1$", duration: 3176);
             }
 
             public override TriggerState Execute() {
@@ -64,7 +66,7 @@ namespace Maple2.Trigger._02020301_bf {
             internal State추가대화_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300005_PHASE_4__2$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300005_PHASE_4__2$", duration: 3176);
             }
 
             public override TriggerState Execute() {
@@ -83,7 +85,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {101}, arg2: 62100108, arg3: 1, arg4: true);
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300005_PHASE_4__3$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300005_PHASE_4__3$", duration: 3176);
                 context.SetUserValue(key: "AI_Phase", value: 0);
                 context.SetVisibleBreakableObject(arg1: new[] {5351, 5352, 5353, 5354, 5355, 5356, 5357, 5358, 5359, 5360, 5361, 5362, 5363, 5364, 5371, 5372, 5373, 5374, 5375, 5376, 5377, 5378, 5379, 5380, 5381, 5382, 5383, 5384}, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new[] {5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114, 5115, 5116, 5117, 5118, 5119, 5120, 5121, 5122, 5123, 5124, 5125, 5126, 5127, 5128, 5129, 5130, 5131, 5132, 5133, 5134, 5135, 5136, 5137, 5138, 5139, 5140}, arg2: true);
@@ -131,10 +133,10 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {111}, arg2: true);
-                context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 14, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 15, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 16, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 14, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 15, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 16, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -152,7 +154,7 @@ namespace Maple2.Trigger._02020301_bf {
             internal State길막열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020301_BF__300005_PHASE_4__4$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02020301_BF__300005_PHASE_4__4$", arg3: 4000);
                 context.SetMesh(arg1: new[] {5241, 5242, 5243, 5244}, arg2: false);
                 context.SetAgent(arg1: new[] {1800000, 1800001, 1800002, 1800003, 1800004, 1800005, 1800006, 1800007, 1800008, 1800009, 1800010, 1800011}, arg2: false);
             }

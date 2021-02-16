@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002106, 10002107}, arg2: 1);
                 context.SetMesh(arg1: new[] {1207, 1208}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARPCHECK__0$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000471_BF__WARPCHECK__0$", arg3: 5000, arg4: "0");
                 context.AddBuff(arg1: new[] {720}, arg2: 70002061, arg3: 1, arg4: false, arg5: false);
             }
 
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002106, 10002107}, arg2: 0);
                 context.SetMesh(arg1: new[] {1207, 1208}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARPCHECK__1$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000471_BF__WARPCHECK__1$", arg3: 5000, arg4: "0");
                 context.AddBuff(arg1: new[] {720}, arg2: 70002062, arg3: 1, arg4: false, arg5: false);
             }
 
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002106, 10002107}, arg2: 1);
                 context.SetMesh(arg1: new[] {1207, 1208}, arg2: true, arg3: 0, arg4: 0, arg5: 10f);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARPCHECK__0$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000471_BF__WARPCHECK__0$", arg3: 5000, arg4: "0");
                 context.AddBuff(arg1: new[] {720}, arg2: 70002061, arg3: 1, arg4: false, arg5: false);
             }
 
@@ -161,7 +161,7 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002106, 10002107}, arg2: 0);
                 context.SetMesh(arg1: new[] {1207, 1208}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARPCHECK__1$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000471_BF__WARPCHECK__1$", arg3: 5000, arg4: "0");
                 context.AddBuff(arg1: new[] {720}, arg2: 70002062, arg3: 1, arg4: false, arg5: false);
             }
 

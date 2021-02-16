@@ -8,8 +8,8 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetActor(arg1: 202, arg2: false, arg3: "Closed_A");
                 context.SetActor(arg1: 203, arg2: true, arg3: "sf_functobj_monitor_C01_On");
                 context.SetEffect(arg1: new[] {602, 603}, arg2: false);
-                context.SetPortal(arg1: 98, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 99, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 98, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 99, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10000646}, arg2: 2);
             }
 
@@ -29,8 +29,8 @@ namespace Maple2.Trigger._02000304_bf {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._02000304_bf {
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003041, textId: 20003041, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 301, arg2: false);
             }
 
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000304_BF__MAIN__1$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 2001, script: "$02000304_BF__MAIN__1$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override void OnEnter() {
                 context.DungeonClear();
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -153,9 +153,9 @@ namespace Maple2.Trigger._02000304_bf {
             public override void OnEnter() {
                 context.SetActor(arg1: 201, arg2: true, arg3: "Closed_A");
                 context.SetActor(arg1: 202, arg2: true, arg3: "Closed_A");
-                context.SetPortal(arg1: 99, arg2: false, arg3: true, arg4: true);
-                context.SetPortal(arg1: 98, arg2: false, arg3: true, arg4: true);
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetPortal(portalId: 99, visible: false, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 98, visible: false, enabled: true, minimapVisible: true);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {

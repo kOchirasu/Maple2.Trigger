@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52100205_qd {
     public static class _52100205 {
         public class StateStart : TriggerState {
@@ -39,9 +41,9 @@ namespace Maple2.Trigger._52100205_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {201});
-                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4001}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
                 context.MoveUser(arg1: 52100205, arg2: 5001);
             }
 
@@ -60,7 +62,7 @@ namespace Maple2.Trigger._52100205_qd {
             internal StateCameraEffect02_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: "$52100205_QD__52100205__0$");
+                context.SetCinematicUI(type: 9, script: "$52100205_QD__52100205__0$");
             }
 
             public override TriggerState Execute() {
@@ -79,9 +81,9 @@ namespace Maple2.Trigger._52100205_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -99,7 +101,7 @@ namespace Maple2.Trigger._52100205_qd {
             internal StateCameraEffect03_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4002, 4003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4002, 4003}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -117,8 +119,8 @@ namespace Maple2.Trigger._52100205_qd {
             internal StateCameraEffect03_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$52100205_QD__52100205__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
+                context.CameraSelectPath(pathIds: new[] {4004}, arg2: false);
+                context.ShowCaption(type: CaptionType.Vertical, title: "$52100205_QD__52100205__1$", align: Align.Bottom | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
 
             public override TriggerState Execute() {
@@ -195,8 +197,8 @@ namespace Maple2.Trigger._52100205_qd {
             internal StateCameraEffect03_7(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11004612, msg: "$52100205_QD__52100205__2$", align: "left", illustId: "cladia_normal", duration: 4000);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 11004612, script: "$52100205_QD__52100205__2$", align: Align.Left, illustId: "cladia_normal", duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -214,8 +216,8 @@ namespace Maple2.Trigger._52100205_qd {
             internal StateCameraEffect03_8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -234,7 +236,7 @@ namespace Maple2.Trigger._52100205_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -252,7 +254,7 @@ namespace Maple2.Trigger._52100205_qd {
             internal State제시카_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4005}, arg2: false);
                 context.CreateMonster(arg1: new[] {101});
             }
 
@@ -289,7 +291,7 @@ namespace Maple2.Trigger._52100205_qd {
             internal State제시카_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4006}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -307,8 +309,8 @@ namespace Maple2.Trigger._52100205_qd {
             internal State제시카_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11004575, msg: "$52100205_QD__52100205__3$", align: "left", illustId: "Jessica_normal", duration: 4000);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 11004575, script: "$52100205_QD__52100205__3$", align: Align.Left, illustId: "Jessica_normal", duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -345,8 +347,8 @@ namespace Maple2.Trigger._52100205_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 

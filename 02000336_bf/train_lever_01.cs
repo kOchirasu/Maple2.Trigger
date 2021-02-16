@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02000336_bf {
                 context.SetMesh(arg1: new[] {8111, 8112, 8113, 8114}, arg2: true, arg4: 300, arg5: 10f);
                 context.SetMesh(arg1: new[] {8101, 8102, 8103, 8104}, arg2: false, arg4: 300, arg5: 10f);
                 context.SetEffect(arg1: new[] {7010}, arg2: true);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {

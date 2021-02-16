@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02000386_bf {
     public static class _main {
         public class StateIdle : TriggerState {
@@ -65,11 +67,11 @@ namespace Maple2.Trigger._02000386_bf {
             internal StateMain(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "ScoreBoard");
-                context.WidgetAction(arg1: "ScoreBoard", arg2: "OpenBoard", arg3: "1");
+                context.CreateWidget(type: WidgetType.ScoreBoard);
+                context.WidgetAction(type: WidgetType.ScoreBoard, name: "OpenBoard", args: "1");
                 context.CreateMonster(arg1: new[] {901}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000386_BF__MAIN__0$", arg4: 2, arg5: 5);
-                context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000386_BF__MAIN__1$", arg4: 2, arg5: 7);
+                context.SetConversation(arg1: 1, arg2: 901, script: "$02000386_BF__MAIN__0$", arg4: 2, arg5: 5);
+                context.SetConversation(arg1: 1, arg2: 901, script: "$02000386_BF__MAIN__1$", arg4: 2, arg5: 7);
                 context.HideGuideSummary(entityId: 20003861);
                 context.SetMesh(arg1: new[] {3002, 3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetLocalCamera(cameraId: 8001, enable: false);
@@ -134,7 +136,7 @@ namespace Maple2.Trigger._02000386_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

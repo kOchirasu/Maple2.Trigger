@@ -4,7 +4,7 @@ namespace Maple2.Trigger._03000145_bf {
             internal StateTriggerReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 1);
+                context.SetTimer(id: "10", arg2: 1);
                 context.SetMesh(arg1: new[] {1001}, arg2: false, arg5: 1f);
             }
 
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._03000145_bf {
             internal State문열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetMesh(arg1: new[] {1001}, arg2: true, arg5: 1f);
                 context.DestroyMonster(arg1: new[] {101, 102, 103});
                 context.CreateMonster(arg1: new[] {111, 112, 113}, arg2: false);
@@ -63,8 +63,8 @@ namespace Maple2.Trigger._03000145_bf {
             internal State도망갈Prepare1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 111, arg3: "$03000145_BF__SAVE_01__0$", arg4: 2, arg5: 0);
+                context.SetTimer(id: "2", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 111, script: "$03000145_BF__SAVE_01__0$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -82,8 +82,8 @@ namespace Maple2.Trigger._03000145_bf {
             internal State도망갈Prepare2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
-                context.SetConversation(arg1: 1, arg2: 112, arg3: "$03000145_BF__SAVE_01__1$", arg4: 2, arg5: 0);
+                context.SetTimer(id: "3", arg2: 3);
+                context.SetConversation(arg1: 1, arg2: 112, script: "$03000145_BF__SAVE_01__1$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -101,8 +101,8 @@ namespace Maple2.Trigger._03000145_bf {
             internal State도망갈Prepare3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "4", arg2: 1);
-                context.SetConversation(arg1: 1, arg2: 113, arg3: "$03000145_BF__SAVE_01__2$", arg4: 2, arg5: 0);
+                context.SetTimer(id: "4", arg2: 1);
+                context.SetConversation(arg1: 1, arg2: 113, script: "$03000145_BF__SAVE_01__2$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -136,10 +136,10 @@ namespace Maple2.Trigger._03000145_bf {
             internal State도망중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "6", arg2: 3);
-                context.SetConversation(arg1: 1, arg2: 111, arg3: "$03000145_BF__SAVE_01__3$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 112, arg3: "$03000145_BF__SAVE_01__4$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 113, arg3: "$03000145_BF__SAVE_01__5$", arg4: 2, arg5: 2);
+                context.SetTimer(id: "6", arg2: 3);
+                context.SetConversation(arg1: 1, arg2: 111, script: "$03000145_BF__SAVE_01__3$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 112, script: "$03000145_BF__SAVE_01__4$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 113, script: "$03000145_BF__SAVE_01__5$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._03000145_bf {
             internal State도망끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "7", arg2: 10);
+                context.SetTimer(id: "7", arg2: 10);
                 context.DestroyMonster(arg1: new[] {111, 112, 113});
             }
 

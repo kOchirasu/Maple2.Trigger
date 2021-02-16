@@ -382,7 +382,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__0$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__0$", arg3: 3000);
                     return new StateCableDelay_13_2(context);
                 }
 
@@ -399,7 +399,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__1$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__1$", arg3: 3000);
                     return new StateCableDelay_14_2(context);
                 }
 
@@ -416,7 +416,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__2$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__2$", arg3: 3000);
                     return new StateCableDelay_15_2(context);
                 }
 
@@ -433,7 +433,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__3$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__3$", arg3: 3000);
                     return new StateCableDelay_16_2(context);
                 }
 
@@ -450,7 +450,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__4$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__4$", arg3: 3000);
                     return new StateCableDelay_17_2(context);
                 }
 
@@ -467,7 +467,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__5$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__5$", arg3: 3000);
                     return new StateCableDelay_18_2(context);
                 }
 
@@ -484,7 +484,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__6$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__6$", arg3: 1000);
                     return new StateCableDelay_13_3(context);
                 }
 
@@ -501,7 +501,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__7$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__7$", arg3: 1000);
                     return new StateCableDelay_14_3(context);
                 }
 
@@ -518,7 +518,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__8$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__8$", arg3: 1000);
                     return new StateCableDelay_15_3(context);
                 }
 
@@ -535,7 +535,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__9$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__9$", arg3: 1000);
                     return new StateCableDelay_16_3(context);
                 }
 
@@ -552,7 +552,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__10$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__10$", arg3: 1000);
                     return new StateCableDelay_17_3(context);
                 }
 
@@ -569,7 +569,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__11$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__11$", arg3: 1000);
                     return new StateCableDelay_18_3(context);
                 }
 
@@ -586,7 +586,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__12$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__12$", arg3: 1000);
                     return new StateCableDelay_13_4(context);
                 }
 
@@ -603,7 +603,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__13$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__13$", arg3: 1000);
                     return new StateCableDelay_14_4(context);
                 }
 
@@ -620,7 +620,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__14$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__14$", arg3: 1000);
                     return new StateCableDelay_15_4(context);
                 }
 
@@ -637,7 +637,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__15$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__15$", arg3: 1000);
                     return new StateCableDelay_16_4(context);
                 }
 
@@ -654,7 +654,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__16$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__16$", arg3: 1000);
                     return new StateCableDelay_17_4(context);
                 }
 
@@ -671,7 +671,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__17$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__17$", arg3: 1000);
                     return new StateCableDelay_18_4(context);
                 }
 
@@ -688,7 +688,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__18$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__18$", arg3: 1000);
                     return new StateCableDelay_13_5(context);
                 }
 
@@ -705,7 +705,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__19$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__19$", arg3: 1000);
                     return new StateCableDelay_14_5(context);
                 }
 
@@ -722,7 +722,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__20$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__20$", arg3: 1000);
                     return new StateCableDelay_15_5(context);
                 }
 
@@ -739,7 +739,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__21$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__21$", arg3: 1000);
                     return new StateCableDelay_16_5(context);
                 }
 
@@ -756,7 +756,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__22$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__22$", arg3: 1000);
                     return new StateCableDelay_17_5(context);
                 }
 
@@ -773,7 +773,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__23$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__23$", arg3: 1000);
                     return new StateCableDelay_18_5(context);
                 }
 

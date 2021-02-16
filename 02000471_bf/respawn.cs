@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn_timer1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "respawntimer1", arg2: 120, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "respawntimer1", arg2: 120, arg3: true, arg4: false, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "respawntimer1");
+                context.ResetTimer(id: "respawntimer1");
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: false);
             }
 
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn_timer2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "respawntimer2", arg2: 120, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "respawntimer2", arg2: 120, arg3: true, arg4: false, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "respawntimer2");
+                context.ResetTimer(id: "respawntimer2");
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: false);
             }
 
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn_timer3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "respawntimer3", arg2: 120, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "respawntimer3", arg2: 120, arg3: true, arg4: false, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "respawntimer3");
+                context.ResetTimer(id: "respawntimer3");
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: false);
             }
 
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn_timer4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "respawntimer4", arg2: 120, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "respawntimer4", arg2: 120, arg3: true, arg4: false, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -177,7 +177,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "respawntimer4");
+                context.ResetTimer(id: "respawntimer4");
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: false);
             }
 
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn_timer5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "respawntimer5", arg2: 120, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "respawntimer5", arg2: 120, arg3: true, arg4: false, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -222,7 +222,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "respawntimer5");
+                context.ResetTimer(id: "respawntimer5");
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: false);
             }
 

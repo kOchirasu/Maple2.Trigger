@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateJuntaReady01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2307, arg3: "$02000378_BF__707_DARKNESSTOTEM_07ROUND__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 2307, script: "$02000378_BF__707_DARKNESSTOTEM_07ROUND__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {

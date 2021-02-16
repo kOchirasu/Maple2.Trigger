@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52010064_qd {
     public static class _main {
         public class StateStart : TriggerState {
@@ -57,8 +59,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetSceneSkip(state: new StateQuit01(context), arg2: "nextState");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "flyingtristan");
             }
 
@@ -78,7 +80,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8000}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -96,8 +98,8 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__0$", duration: 3000, align: "right");
+                context.CameraSelectPath(pathIds: new[] {8010}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", script: "$52010064_QD__main__0$", duration: 3000, align: Align.Right);
             }
 
             public override TriggerState Execute() {
@@ -115,7 +117,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__1$", duration: 3000, align: "right");
+                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", script: "$52010064_QD__main__1$", duration: 3000, align: Align.Right);
             }
 
             public override TriggerState Execute() {
@@ -133,8 +135,8 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__2$", duration: 3000, align: "right");
+                context.CameraSelectPath(pathIds: new[] {8001}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", script: "$52010064_QD__main__2$", duration: 3000, align: Align.Right);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Tristan_walking");
             }
 
@@ -153,7 +155,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__3$", duration: 3000, align: "right");
+                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", script: "$52010064_QD__main__3$", duration: 3000, align: Align.Right);
             }
 
             public override TriggerState Execute() {
@@ -171,8 +173,8 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__4$", duration: 3000, align: "right");
+                context.CameraSelectPath(pathIds: new[] {8002}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", script: "$52010064_QD__main__4$", duration: 3000, align: Align.Right);
             }
 
             public override TriggerState Execute() {
@@ -190,7 +192,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄Script06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__5$", duration: 3000, align: "right");
+                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", script: "$52010064_QD__main__5$", duration: 3000, align: Align.Right);
             }
 
             public override TriggerState Execute() {
@@ -208,8 +210,8 @@ namespace Maple2.Trigger._52010064_qd {
             internal State마무리줌아웃(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
-                context.SetCinematicUI(arg1: 0);
+                context.CameraSelectPath(pathIds: new[] {8003}, arg2: false);
+                context.SetCinematicUI(type: 0);
                 context.SetSceneSkip();
             }
 
@@ -228,8 +230,8 @@ namespace Maple2.Trigger._52010064_qd {
             internal StateQuit01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
             }
 

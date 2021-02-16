@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal State타이머시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "SpecialTimer", arg2: 180, arg3: true, arg4: false);
+                context.SetTimer(id: "SpecialTimer", arg2: 180, arg3: true, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02020021_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990002, key: "SpecialTimer", value: 0);
-                context.ResetTimer(arg1: "SpecialTimer");
+                context.ResetTimer(id: "SpecialTimer");
             }
 
             public override TriggerState Execute() {

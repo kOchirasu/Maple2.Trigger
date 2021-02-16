@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52010068_qd {
     public static class _main {
         public class StateReady : TriggerState {
@@ -68,8 +70,8 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateOrde_In_Effect(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
@@ -109,7 +111,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.SetNpcRotation(arg1: 101, arg2: -45);
-                context.AddCinematicTalk(npcId: 11004033, illustId: "Orde_normal", msg: "$52010068_QD__MAIN__0$", align: "left");
+                context.AddCinematicTalk(npcId: 11004033, illustId: "Orde_normal", script: "$52010068_QD__MAIN__0$", align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -128,7 +130,7 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "IceSphere_A");
-                context.AddCinematicTalk(npcId: 11004033, illustId: "Orde_normal", msg: "$52010068_QD__MAIN__1$", align: "left");
+                context.AddCinematicTalk(npcId: 11004033, illustId: "Orde_normal", script: "$52010068_QD__MAIN__1$", align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -147,8 +149,8 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.CameraReset();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -228,8 +230,8 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 10, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -248,7 +250,7 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetCinematicUI(arg1: 9, arg2: @"큰 희생이 있었지만, 우리는 $npc:11001698$를 상대로 승리를 얻었다.\n메이플월드를 공격한 그들에게 죄값을 치르게 만든것이다.");
+                context.SetCinematicUI(type: 9, script: @"큰 희생이 있었지만, 우리는 $npc:11001698$를 상대로 승리를 얻었다.\n메이플월드를 공격한 그들에게 죄값을 치르게 만든것이다.");
                 context.SetSkip(state: new State챕터10에필로그Cinematic02스킵(context));
             }
 
@@ -282,7 +284,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: @"비록 $npc:11001698$는 무사히 도망쳤지만, \n그녀 스스로의 의지로 도망친것은 아니었다.");
+                context.SetCinematicUI(type: 9, script: @"비록 $npc:11001698$는 무사히 도망쳤지만, \n그녀 스스로의 의지로 도망친것은 아니었다.");
                 context.SetSkip(state: new State챕터10에필로그Cinematic03스킵(context));
             }
 
@@ -316,7 +318,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: "오히려 $npc:11001698$는 이번 전투에서 자신의 요새를 잃고 말았다.");
+                context.SetCinematicUI(type: 9, script: "오히려 $npc:11001698$는 이번 전투에서 자신의 요새를 잃고 말았다.");
                 context.SetSkip(state: new State챕터10에필로그Cinematic05스킵(context));
             }
 
@@ -350,8 +352,8 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic05b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -370,7 +372,7 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 90000, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__3$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__3$", arg4: 6);
                 context.SetOnetimeEffect(id: 2007, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_01_00002007.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic06스킵(context));
             }
@@ -405,7 +407,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__4$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__4$", arg4: 6);
                 context.SetOnetimeEffect(id: 2008, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_02_00002008.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic07스킵(context));
             }
@@ -440,7 +442,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__5$", arg4: 9);
+                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__5$", arg4: 9);
                 context.SetOnetimeEffect(id: 2009, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_03_00002009.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic08스킵(context));
             }
@@ -475,7 +477,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__6$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__6$", arg4: 5);
                 context.SetOnetimeEffect(id: 2009, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_03_00002009.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic9스킵(context));
             }
@@ -510,10 +512,10 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__7$", arg4: 5);
+                context.SetCinematicUI(type: 9);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__7$", arg4: 5);
                 context.SetOnetimeEffect(id: 2010, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_04_00002010.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic10스킵(context));
             }
@@ -548,7 +550,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__8$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__8$", arg4: 5);
                 context.SetOnetimeEffect(id: 2011, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_05_00002011.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic11스킵(context));
             }
@@ -583,7 +585,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__9$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__9$", arg4: 5);
                 context.SetOnetimeEffect(id: 2011, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_05_00002011.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic12스킵(context));
             }
@@ -618,7 +620,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__10$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__10$", arg4: 5);
                 context.SetOnetimeEffect(id: 2011, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_05_00002011.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic13스킵(context));
             }
@@ -653,10 +655,10 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic13_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__11$", arg4: 5);
+                context.SetCinematicUI(type: 9);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__11$", arg4: 5);
                 context.SetOnetimeEffect(id: 2012, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_06_00002012.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic13b스킵(context));
             }
@@ -691,7 +693,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__12$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__12$", arg4: 5);
                 context.SetOnetimeEffect(id: 2013, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_07_00002013.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic14스킵(context));
             }
@@ -726,7 +728,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__13$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__13$", arg4: 6);
                 context.SetOnetimeEffect(id: 2014, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_08_00002014.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic15스킵(context));
             }
@@ -761,7 +763,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__14$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__14$", arg4: 5);
                 context.SetOnetimeEffect(id: 2015, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_09_00002015.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic16스킵(context));
             }
@@ -812,7 +814,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: @"$npc:11001698$는 그녀의 용을 타고 날아올랐다\n그리고 이 것이 마드라칸 요새의 최후였다.");
+                context.SetCinematicUI(type: 9, script: @"$npc:11001698$는 그녀의 용을 타고 날아올랐다\n그리고 이 것이 마드라칸 요새의 최후였다.");
                 context.SetSkip(state: new State챕터10에필로그Cinematic18스킵(context));
             }
 
@@ -846,7 +848,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic18b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: @"$npc:11001698$는 분명 다시 돌아올 것이다.\n그리고 또다시 서로에게 소중한 존재들을 빼앗을지도 모른다.");
+                context.SetCinematicUI(type: 9, script: @"$npc:11001698$는 분명 다시 돌아올 것이다.\n그리고 또다시 서로에게 소중한 존재들을 빼앗을지도 모른다.");
                 context.SetSkip(state: new State챕터10에필로그Cinematic18b스킵(context));
             }
 
@@ -880,7 +882,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: @"그렇지만, 할 수 있다면 $npc:11001698$와 싸우지 않아도 될 방법을 찾고자 한다.\n복수의 나선은 결국 서로의 모든것을 파괴할것이기 때문이다.");
+                context.SetCinematicUI(type: 9, script: @"그렇지만, 할 수 있다면 $npc:11001698$와 싸우지 않아도 될 방법을 찾고자 한다.\n복수의 나선은 결국 서로의 모든것을 파괴할것이기 때문이다.");
                 context.SetSkip(state: new State챕터10에필로그Cinematic19스킵(context));
             }
 
@@ -914,7 +916,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: @"그리고 나는 어떤 방법으로든 테룬칼리브들이 살아있다고 굳게 믿고 있다.\n그들이 나를 살렸듯 그들 스스로 어떻게 살아날 방법을 찾았을거라 믿고 싶다.");
+                context.SetCinematicUI(type: 9, script: @"그리고 나는 어떤 방법으로든 테룬칼리브들이 살아있다고 굳게 믿고 있다.\n그들이 나를 살렸듯 그들 스스로 어떻게 살아날 방법을 찾았을거라 믿고 싶다.");
                 context.SetSkip(state: new State챕터10에필로그Cinematic20스킵(context));
             }
 
@@ -948,7 +950,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: @"하여, 나는 블랙 샤드의 폭심지, '아이 오브 라펜타'의 수색과\n라펜샤드의 조사에 최선을 다할 것이라고 다짐했다.");
+                context.SetCinematicUI(type: 9, script: @"하여, 나는 블랙 샤드의 폭심지, '아이 오브 라펜타'의 수색과\n라펜샤드의 조사에 최선을 다할 것이라고 다짐했다.");
                 context.SetSkip(state: new State챕터10에필로그Cinematic22(context));
             }
 
@@ -987,8 +989,8 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 10, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.MoveUser(arg1: 52010068, arg2: 2);
             }
 

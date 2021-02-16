@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             internal StateMoveReinforcements(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 104, arg3: "$02000076_TW_HenesysVillage__01_NPCBACKUP07__0$", arg4: 1);
+                context.SetConversation(arg1: 1, arg2: 104, script: "$02000076_TW_HenesysVillage__01_NPCBACKUP07__0$", arg4: 1);
                 context.MoveNpc(arg1: 107, arg2: "MS2PatrolData_107");
             }
 
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {107});
-                context.SetTimer(arg1: "3", arg2: 90);
+                context.SetTimer(id: "3", arg2: 90);
             }
 
             public override TriggerState Execute() {

@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52010020_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 4);
                 context.CreateMonster(arg1: new[] {101, 102});
             }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52010020_qd {
             internal StateEvent_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -44,8 +44,8 @@ namespace Maple2.Trigger._52010020_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2001");
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52010020_QD__MAIN__0$", arg4: 5);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52010020_QD__MAIN__0$", arg4: 5);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._52010020_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2002");
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52010020_QD__MAIN__1$", arg4: 5);
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52010020_QD__MAIN__1$", arg4: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -87,13 +87,13 @@ namespace Maple2.Trigger._52010020_qd {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2004");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2001");
                 context.MoveUser(arg1: 52010020, arg2: 1, arg3: 701);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.CreateMonster(arg1: new[] {103});
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2003");
-                context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
-                context.SetTimer(arg1: "4", arg2: 4);
+                context.CameraSelectPath(pathIds: new[] {8001, 8002}, arg2: false);
+                context.SetTimer(id: "4", arg2: 4);
             }
 
             public override TriggerState Execute() {
@@ -111,9 +111,9 @@ namespace Maple2.Trigger._52010020_qd {
             internal StateEvent_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001502, arg3: "$52010020_QD__MAIN__2$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001502, script: "$52010020_QD__MAIN__2$", arg4: 4);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2001");
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._52010020_qd {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 4);
             }
         }
 
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._52010020_qd {
             internal StateEvent_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {

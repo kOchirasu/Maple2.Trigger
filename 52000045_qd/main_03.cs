@@ -22,8 +22,8 @@ namespace Maple2.Trigger._52000045_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000095, arg3: 1);
             }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal State자베스Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000045_QD__MAIN_03__0$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000045_QD__MAIN_03__0$", arg4: 3);
                 context.SetSkip(state: new State자베스Script01스킵(context));
             }
 
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal State브라보Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000045_QD__MAIN_03__1$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000045_QD__MAIN_03__1$", arg4: 3);
                 context.SetSkip(state: new State브라보Script01스킵(context));
             }
 
@@ -111,7 +111,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal State제이시Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000515, arg3: "$52000045_QD__MAIN_03__2$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000515, script: "$52000045_QD__MAIN_03__2$", arg4: 5);
                 context.SetSkip(state: new State제이시Script01스킵(context));
             }
 
@@ -149,8 +149,8 @@ namespace Maple2.Trigger._52000045_qd {
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000096, arg3: 1);
                 context.MoveUser(arg1: 52000046, arg2: 2);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 301, arg2: false);
             }
 

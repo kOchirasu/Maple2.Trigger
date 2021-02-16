@@ -38,8 +38,8 @@ namespace Maple2.Trigger._52000201_qd {
             internal StateCameraEffect02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.CameraSelectPath(pathIds: new[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52000201, arg2: 5001);
             }
 
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._52000201_qd {
             internal StateCameraEffect04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4002}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -114,8 +114,8 @@ namespace Maple2.Trigger._52000201_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

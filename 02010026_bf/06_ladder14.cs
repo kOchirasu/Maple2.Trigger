@@ -138,7 +138,7 @@ namespace Maple2.Trigger._02010026_bf {
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 207, arg2: true, arg3: true, arg4: 5);
-                context.SetTimer(arg1: "1", arg2: 10, arg3: false);
+                context.SetTimer(id: "1", arg2: 10, arg3: false);
             }
 
             public override TriggerState Execute() {

@@ -67,10 +67,10 @@ namespace Maple2.Trigger._02020111_bf {
                 context.SetUserValue(triggerId: 900105, key: "SkillBreakSuccess_7", value: 0);
                 context.SetUserValue(triggerId: 900105, key: "SkillBreakSuccess_8", value: 0);
                 context.SetUserValue(triggerId: 900102, key: "Phase", value: 1);
-                context.SetPortal(arg1: 5, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 7, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 8, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 5, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 7, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 8, visible: false, enabled: false, minimapVisible: false);
                 context.SetUserValue(triggerId: 900301, key: "Light_On_1", value: 1);
                 context.SetUserValue(triggerId: 900301, key: "Light_On_2", value: 1);
                 context.SetUserValue(triggerId: 900301, key: "Light_On_3", value: 1);

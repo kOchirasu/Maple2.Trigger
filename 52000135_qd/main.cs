@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000135_qd {
     public static class _main {
         public class StateStart : TriggerState {
@@ -57,8 +59,8 @@ namespace Maple2.Trigger._52000135_qd {
             internal StateCinematicWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.MoveUser(arg1: 52000135, arg2: 10);
             }
 
@@ -77,7 +79,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8000}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -96,9 +98,9 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8001}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_01");
-                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__0$", duration: 4000, align: "right");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", script: "$52000135_QD__MAIN__0$", duration: 4000, align: Align.Right);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 8500f);
                 context.SetSceneSkip(state: new State오브젝트조사전_스킵완료(context), arg2: "nextState");
             }
@@ -118,7 +120,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__1$", duration: 4000, align: "right");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", script: "$52000135_QD__MAIN__1$", duration: 4000, align: Align.Right);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 6800f);
                 context.SetSkip(state: new State아노스Script02_skip(context));
             }
@@ -153,8 +155,8 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8002}, arg2: true);
-                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__2$", duration: 3000, align: "right");
+                context.CameraSelectPath(pathIds: new[] {8002}, arg2: true);
+                context.AddCinematicTalk(npcId: 11003251, illustId: "0", script: "$52000135_QD__MAIN__2$", duration: 3000, align: Align.Right);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "ChatUp_A", arg3: 5400f);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_03");
                 context.SetSceneSkip();
@@ -175,8 +177,8 @@ namespace Maple2.Trigger._52000135_qd {
             internal State오브젝트조사전_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 4);
                 context.MoveUser(arg1: 52000135, arg2: 10);
             }
 
@@ -196,8 +198,8 @@ namespace Maple2.Trigger._52000135_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 3.0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -215,9 +217,9 @@ namespace Maple2.Trigger._52000135_qd {
             internal StateInteractObject이후(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8003, 8004}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.CameraSelectPath(pathIds: new[] {8003, 8004}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetMesh(arg1: new[] {3000}, arg2: true);
                 context.SetMeshAnimation(arg1: new[] {3000}, arg2: true);
                 context.SetEffect(arg1: new[] {3011}, arg2: true);
@@ -240,7 +242,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__3$", duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", script: "$52000135_QD__MAIN__3$", duration: 3000, align: Align.Left);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 7000f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_0201");
                 context.SetSceneSkip(state: new State오브젝트조사후_스킵완료(context), arg2: "nextState");
@@ -261,7 +263,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__4$", duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", script: "$52000135_QD__MAIN__4$", duration: 3000, align: Align.Left);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 8300f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_0202");
                 context.SetSkip(state: new State아노스Script05_skip(context));
@@ -297,7 +299,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스Script06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__5$", duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", script: "$52000135_QD__MAIN__5$", duration: 3000, align: Align.Left);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 6500f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_0203");
                 context.SetSkip(state: new State아노스Script06_skip(context));
@@ -333,7 +335,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스Script07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__6$", duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", script: "$52000135_QD__MAIN__6$", duration: 3000, align: Align.Left);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Chatup_A", arg3: 7900f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_0204");
                 context.SetSkip(state: new State아노스Script07_skip(context));
@@ -387,7 +389,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State크리스탈꺼짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8005}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8005}, arg2: false);
                 context.SetMesh(arg1: new[] {3000}, arg2: false);
                 context.SetMesh(arg1: new[] {3001}, arg2: true);
                 context.SetMeshAnimation(arg1: new[] {3001}, arg2: true);
@@ -410,7 +412,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스Script08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__7$", duration: 3000, align: "right");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "0", script: "$52000135_QD__MAIN__7$", duration: 3000, align: Align.Right);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 11000f);
                 context.SetEffect(arg1: new[] {3012}, arg2: false);
                 context.SetSkip(state: new State아노스Script08_skip(context));
@@ -446,8 +448,8 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아시모프Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003250, illustId: "0", msg: "$52000135_QD__MAIN__8$", duration: 3000, align: "right");
+                context.CameraSelectPath(pathIds: new[] {8010}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003250, illustId: "0", script: "$52000135_QD__MAIN__8$", duration: 3000, align: Align.Right);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 5100f);
                 context.SetSkip(state: new State아시모프Script01_skip(context));
             }
@@ -482,7 +484,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스Script09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__9$", duration: 3000, align: "right");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "0", script: "$52000135_QD__MAIN__9$", duration: 3000, align: Align.Right);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3800f);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_0302");
                 context.SetSkip(state: new State아노스Script09_skip(context));
@@ -518,7 +520,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal StatePC크리스탈접근(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000135_QD__MAIN__10$", duration: 2000, align: "right");
+                context.AddCinematicTalk(npcId: 0, illustId: "0", script: "$52000135_QD__MAIN__10$", duration: 2000, align: Align.Right);
                 context.SetPcEmotionLoop(arg1: "Object_React_H", arg2: 1500f);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 2000f);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 2000f);
@@ -539,7 +541,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State크리스탈켜짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8011}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8011}, arg2: false);
                 context.SetMesh(arg1: new[] {3001}, arg2: false);
                 context.SetMeshAnimation(arg1: new[] {3001}, arg2: false);
                 context.SetMesh(arg1: new[] {3000}, arg2: true);
@@ -564,7 +566,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State마법사들접근(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8012}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8012}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_Asimov_05");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_04");
                 context.SetEffect(arg1: new[] {3011}, arg2: true);
@@ -588,7 +590,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스Script10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__14$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003251, illustId: "0", script: "$52000135_QD__MAIN__14$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3400f);
                 context.SetSkip(state: new State아노스Script10_skip(context));
             }
@@ -623,7 +625,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal StatePC대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000135_QD__MAIN__15$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, illustId: "0", script: "$52000135_QD__MAIN__15$", duration: 3000);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_06");
                 context.SetPcEmotionSequence(arg1: "Talk_A");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
@@ -644,7 +646,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State크리스탈다시꺼짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8003}, arg2: false);
                 context.SetMesh(arg1: new[] {3000}, arg2: false);
                 context.SetMeshAnimation(arg1: new[] {3000}, arg2: false);
                 context.SetMesh(arg1: new[] {3001}, arg2: true);
@@ -667,7 +669,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스Script11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__16$", duration: 5000, align: "right");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "0", script: "$52000135_QD__MAIN__16$", duration: 5000, align: Align.Right);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_07");
                 context.SetSkip(state: new State아노스Script11_skip(context));
             }
@@ -702,8 +704,8 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아시모프Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003250, illustId: "Asimov_normal", msg: "$52000135_QD__MAIN__17$", duration: 3000, align: "left");
+                context.CameraSelectPath(pathIds: new[] {8010}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003250, illustId: "Asimov_normal", script: "$52000135_QD__MAIN__17$", duration: 3000, align: Align.Left);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 8600f);
                 context.SetSceneSkip();
             }
@@ -723,8 +725,8 @@ namespace Maple2.Trigger._52000135_qd {
             internal State오브젝트조사후_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 4);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_Asimov_05");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_07");
                 context.SetMesh(arg1: new[] {3000}, arg2: false);
@@ -751,8 +753,8 @@ namespace Maple2.Trigger._52000135_qd {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 3.0f);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "Studyindarkness");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

@@ -24,8 +24,8 @@ namespace Maple2.Trigger._02000350_bf {
             internal StateBeginWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 0, arg2: "21,25,21");
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetEventUI(arg1: 0, script: "21,25,21");
+                context.SetTimer(id: "3", arg2: 3);
                 context.DarkStreamStartRound(round: 21, uiDuration: 3000, damagePenalty: 100);
             }
 
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000350_bf {
             internal State21라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000350_BF__MAIN_5__0$", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000350_BF__MAIN_5__0$", arg3: 4000, arg4: "0");
                 context.DarkStreamSpawnMonster(spawnId: new[] {121001}, score: 110000);
             }
 
@@ -65,9 +65,9 @@ namespace Maple2.Trigger._02000350_bf {
             internal State22라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 0, arg2: "22,25,21");
+                context.SetEventUI(arg1: 0, script: "22,25,21");
                 context.DarkStreamStartRound(round: 22, uiDuration: 3000, damagePenalty: 100);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -105,8 +105,8 @@ namespace Maple2.Trigger._02000350_bf {
             internal State23라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
-                context.SetEventUI(arg1: 0, arg2: "23,25,21");
+                context.SetTimer(id: "3", arg2: 3);
+                context.SetEventUI(arg1: 0, script: "23,25,21");
                 context.DarkStreamStartRound(round: 23, uiDuration: 3000, damagePenalty: 100);
             }
 
@@ -145,10 +145,10 @@ namespace Maple2.Trigger._02000350_bf {
             internal State24라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 0, arg2: "24,25,21");
+                context.SetEventUI(arg1: 0, script: "24,25,21");
                 context.DarkStreamStartRound(round: 24, uiDuration: 3000, damagePenalty: 100);
-                context.SetEventUI(arg1: 1, arg2: "$02000350_BF__MAIN_5__1$", arg3: 2000, arg4: "0");
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetEventUI(arg1: 1, script: "$02000350_BF__MAIN_5__1$", arg3: 2000, arg4: "0");
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -166,14 +166,14 @@ namespace Maple2.Trigger._02000350_bf {
             internal State24라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "30", arg2: 30, arg3: true, arg4: true, arg5: 80);
+                context.SetTimer(id: "30", arg2: 30, arg3: true, arg4: true, arg5: 80);
                 context.CreateMonster(arg1: new[] {124099}, arg2: false);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "30")) {
                     context.DestroyMonster(arg1: new[] {124099});
-                    context.ResetTimer(arg1: "30");
+                    context.ResetTimer(id: "30");
                     context.DarkStreamClearRound(round: 24);
                     context.SetAchievement(arg1: 105, arg2: "trigger", arg3: "24roundpass");
                     return new State25라운드Wait(context);
@@ -189,10 +189,10 @@ namespace Maple2.Trigger._02000350_bf {
             internal State25라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 0, arg2: "25,25,21");
+                context.SetEventUI(arg1: 0, script: "25,25,21");
                 context.SetEffect(arg1: new[] {6501, 6502}, arg2: true);
                 context.DarkStreamStartRound(round: 25, uiDuration: 3000, damagePenalty: 100);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._02000350_bf {
             internal State바닥부심(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {600}, arg2: true);
             }
 

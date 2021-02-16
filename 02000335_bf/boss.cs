@@ -54,7 +54,7 @@ namespace Maple2.Trigger._02000335_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362);
                 context.SetMesh(arg1: new[] {7991, 7992, 7993}, arg2: false, arg4: 0, arg5: 0f);
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -94,9 +94,9 @@ namespace Maple2.Trigger._02000335_bf {
             internal StateBossSpawnCinematic_00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000335_BF__BOSS__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000335_BF__BOSS__0$", arg3: 3000);
                 context.SetEffect(arg1: new[] {6921}, arg2: true);
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._02000335_bf {
                 context.SetEffect(arg1: new[] {6911, 6912}, arg2: true);
                 context.CreateMonster(arg1: new[] {199}, arg2: false);
                 context.MoveNpc(arg1: 199, arg2: "MS2PatrolData_1003");
-                context.SetTimer(arg1: "1", arg2: 1, arg4: false);
+                context.SetTimer(id: "1", arg2: 1, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -143,7 +143,7 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {5803, 5804}, arg2: true);
                 context.SetEffect(arg1: new[] {6913, 6914}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1, arg4: false);
+                context.SetTimer(id: "1", arg2: 1, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {5805, 5806}, arg2: true);
                 context.SetEffect(arg1: new[] {6915, 6916}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1, arg4: false);
+                context.SetTimer(id: "1", arg2: 1, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -188,7 +188,7 @@ namespace Maple2.Trigger._02000335_bf {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 112, textId: 40009);
                 context.SetMesh(arg1: new[] {6311, 6312, 6313, 6314, 6315}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

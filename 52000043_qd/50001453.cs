@@ -47,8 +47,8 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {2100, 2101}, arg2: false);
                 context.CameraSelect(arg1: 303, arg2: true);
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1004A");
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 29000121, arg3: "$52000043_QD__50001453__0$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 29000121, script: "$52000043_QD__50001453__0$", arg4: 3);
                 context.SetSkip(state: new StateNPCScript01스킵(context));
             }
 
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001453__1$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001453__1$", arg4: 3);
                 context.SetSkip(state: new State준타Script01스킵(context));
             }
 
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001453__2$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001453__2$", arg4: 2);
                 context.SetSkip(state: new State준타Script02스킵(context));
             }
 
@@ -177,7 +177,7 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {605}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000043_QD__50001453__3$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$52000043_QD__50001453__3$", arg4: 4);
                 context.SetSkip(state: new State틴차이Script01스킵(context));
             }
 
@@ -215,8 +215,8 @@ namespace Maple2.Trigger._52000043_qd {
                 context.DestroyMonster(arg1: new[] {1003, 2003});
                 context.CreateMonster(arg1: new[] {1004, 2004}, arg2: false);
                 context.SetAgent(arg1: new[] {9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 303, arg2: false);
             }
 
@@ -235,8 +235,8 @@ namespace Maple2.Trigger._52000043_qd {
             internal StateCinematic02시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetInteractObject(arg1: new[] {10001021}, arg2: 2);
             }
 
@@ -312,8 +312,8 @@ namespace Maple2.Trigger._52000043_qd {
             internal StateStopCinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

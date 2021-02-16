@@ -4,9 +4,9 @@ namespace Maple2.Trigger._02000419_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02000419_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2000}, arg2: false);
                 context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015}, arg2: false, arg3: 0, arg4: 200, arg5: 0.5f);
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: true);
                 context.SetMesh(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025}, arg2: false, arg3: 0, arg4: 200, arg5: 0.5f);
             }
 
@@ -84,9 +84,9 @@ namespace Maple2.Trigger._02000419_bf {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025}, arg2: true, arg3: 1, arg4: 1, arg5: 1f);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015}, arg2: true, arg3: 1, arg4: 120, arg5: 0.5f);

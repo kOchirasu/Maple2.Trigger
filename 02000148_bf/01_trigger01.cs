@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000148_bf {
             internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
             }
 
             public override TriggerState Execute() {

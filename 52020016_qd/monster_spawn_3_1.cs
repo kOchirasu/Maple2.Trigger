@@ -58,7 +58,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State전투Phase_2_대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 4000301, arg3: "하하하!!내가 돌아왔다!", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 4000301, script: "하하하!!내가 돌아왔다!", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "카...카트반? 어떻게?!", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "카...카트반? 어떻게?!", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -97,9 +97,9 @@ namespace Maple2.Trigger._52020016_qd {
             internal State대화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 1);
-                context.SetConversation(arg1: 2, arg2: 4000201, arg3: "제법이군요! 그렇다면 이건 어떤가요?", arg4: 5);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetConversation(arg1: 2, arg2: 4000201, script: "제법이군요! 그렇다면 이건 어떤가요?", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52020016_qd {
             }
 
             public override void OnExit() {
-                context.CameraSelectPath(arg1: new[] {2000001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {2000001}, arg2: false);
             }
         }
 
@@ -139,14 +139,14 @@ namespace Maple2.Trigger._52020016_qd {
             internal State조디Spawn_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 0, arg3: "!!!!!!!??????", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 2, arg2: 0, arg3: "조...조디?!", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 2, arg2: 0, arg3: "조디...살아있었던거야?", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 2, arg2: 300001, arg3: "헤헤...오랫만에 뵙네요. 보고싶었어요.", arg4: 5);
-                context.SetConversation(arg1: 2, arg2: 300001, arg3: "그런데 저를...왜 죽게 내버려 두었나요?", arg4: 5);
-                context.SetConversation(arg1: 2, arg2: 0, arg3: "그...그게 아니야!!", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 2, arg2: 300001, arg3: "당신을...저주해요..가만두지 않겠어요!!", arg4: 5);
-                context.SetConversation(arg1: 2, arg2: 0, arg3: "아...안돼 그만둬!! 조디!!", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 0, script: "!!!!!!!??????", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 0, script: "조...조디?!", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 0, script: "조디...살아있었던거야?", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 300001, script: "헤헤...오랫만에 뵙네요. 보고싶었어요.", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 300001, script: "그런데 저를...왜 죽게 내버려 두었나요?", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 0, script: "그...그게 아니야!!", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 300001, script: "당신을...저주해요..가만두지 않겠어요!!", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 0, script: "아...안돼 그만둬!! 조디!!", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State마지막전투(context));
             }
 
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnExit() {
                 context.DestroyMonster(arg1: new[] {4000401}, arg2: false);
-                context.CameraSelectPath(arg1: new[] {2000001}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {2000001}, arg2: true);
             }
         }
 
@@ -168,8 +168,8 @@ namespace Maple2.Trigger._52020016_qd {
             internal State마지막전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 0);
                 context.DestroyMonster(arg1: new[] {4000401});
                 context.SetEffect(arg1: new[] {70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010, 70011, 70012, 70013, 70014, 70015, 70016, 70017, 70018, 70019, 70020, 70021, 70022, 70023, 70024}, arg2: true);
             }
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(180f, 180f, 149f));
                 context.SetDirectionalLight(arg1: new Vector3(219f, 204f, 182f), arg2: new Vector3(219f, 204f, 182f));
-                context.SetPortal(arg1: 95, arg2: true, arg3: true);
+                context.SetPortal(portalId: 95, visible: true, enabled: true);
                 context.SetUserValue(triggerId: 911, key: "respawn_phase_4", value: 1);
             }
 
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._52020016_qd {
                 context.SetUserValue(triggerId: 914, key: "respawn_phase_4", value: 1);
                 context.SetUserValue(triggerId: 915, key: "respawn_phase_4", value: 1);
                 context.SetUserValue(triggerId: 916, key: "respawn_phase_4", value: 1);
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "조디!! 제발 맘춰!!", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "조디!! 제발 맘춰!!", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -273,10 +273,10 @@ namespace Maple2.Trigger._52020016_qd {
             internal State긴급대화_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 1);
                 context.SetPcEmotionSequence(arg1: "Emotion_Disappoint_A,Emotion_Disappoint_Idle_A");
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "이젠...더이상은...힘들어....", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "이젠...더이상은...힘들어....", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -294,8 +294,8 @@ namespace Maple2.Trigger._52020016_qd {
             internal State긴급대화_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -337,9 +337,9 @@ namespace Maple2.Trigger._52020016_qd {
             internal State마지막_Cinematic_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.CameraSelectPath(arg1: new[] {2000005}, arg2: false);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.CameraSelectPath(pathIds: new[] {2000005}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -357,8 +357,8 @@ namespace Maple2.Trigger._52020016_qd {
             internal State마지막_Cinematic_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 1);
                 context.CreateMonster(arg1: new[] {320001}, arg2: false);
                 context.MoveNpc(arg1: 320001, arg2: "MS2PatrolData0_320001_1");
             }
@@ -378,10 +378,10 @@ namespace Maple2.Trigger._52020016_qd {
             internal State마지막_Cinematic_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 320001, arg3: "하하하하! 느껴지시나요? 나와 당신의 높이가!!", arg4: 5);
-                context.SetConversation(arg1: 2, arg2: 0, arg3: "헉헉...제발 그만둬!!", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 2, arg2: 320001, arg3: "이 몽환의 무대 안에서는 어떠한 존재라도 저를 이길 수 없습니다!", arg4: 5);
-                context.SetConversation(arg1: 2, arg2: 320001, arg3: "그럼 이제 마무리를 지어 볼까요?", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 320001, script: "하하하하! 느껴지시나요? 나와 당신의 높이가!!", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 0, script: "헉헉...제발 그만둬!!", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 320001, script: "이 몽환의 무대 안에서는 어떠한 존재라도 저를 이길 수 없습니다!", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 320001, script: "그럼 이제 마무리를 지어 볼까요?", arg4: 5);
                 context.SetSkip(state: new State마지막_Cinematic_4_2(context));
             }
 
@@ -400,9 +400,9 @@ namespace Maple2.Trigger._52020016_qd {
             internal State마지막_Cinematic_4_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {2000006}, arg2: false);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 1);
+                context.CameraSelectPath(pathIds: new[] {2000006}, arg2: false);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -450,7 +450,7 @@ namespace Maple2.Trigger._52020016_qd {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 4);
             }
         }
 

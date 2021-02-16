@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State침몰01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 17);
+                context.SetTimer(id: "1", arg2: 17);
                 context.SetBreakable(arg1: new[] {6300}, arg2: true);
             }
 

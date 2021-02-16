@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000107_qd {
     public static class _52000107 {
         public class StateWait : TriggerState {
@@ -5,7 +7,7 @@ namespace Maple2.Trigger._52000107_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311, 5312, 5313, 5314, 5315, 5316, 5317, 5318, 5319, 5320, 5321, 5322, 5323, 5324, 5325, 5326}, arg2: false);
             }
 
@@ -24,7 +26,7 @@ namespace Maple2.Trigger._52000107_qd {
             internal State영상Prepare_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
                 context.MoveUser(arg1: 52000107, arg2: 2);
             }
 
@@ -43,12 +45,12 @@ namespace Maple2.Trigger._52000107_qd {
             internal State영상재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
+                context.CreateWidget(type: WidgetType.SceneMovie);
                 context.PlaySceneMovie(fileName: @"common\JobIntro_HeavyGunner.usm", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new State에델슈타인전경씬01(context);
                 }
 
@@ -68,8 +70,8 @@ namespace Maple2.Trigger._52000107_qd {
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new[] {1000, 1001}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
+                context.CameraSelectPath(pathIds: new[] {1000, 1001}, arg2: false);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -106,8 +108,8 @@ namespace Maple2.Trigger._52000107_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new[] {1002, 1003, 1004, 1005}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
+                context.CameraSelectPath(pathIds: new[] {1002, 1003, 1004, 1005}, arg2: false);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -125,7 +127,7 @@ namespace Maple2.Trigger._52000107_qd {
             internal State에델슈타인전경씬03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(type: "VerticalCaption", title: "$52000107_QD__52000107__0$", desc: "$52000107_QD__52000107__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 7000, scale: 2.5f);
+                context.ShowCaption(type: CaptionType.Vertical, title: "$52000107_QD__52000107__0$", script: "$52000107_QD__52000107__1$", align: Align.Bottom | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 7000, scale: 2.5f);
             }
 
             public override TriggerState Execute() {
@@ -180,7 +182,7 @@ namespace Maple2.Trigger._52000107_qd {
             internal StateSkip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 4);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
@@ -200,8 +202,8 @@ namespace Maple2.Trigger._52000107_qd {
             internal StateQuit02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetEffect(arg1: new[] {5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311, 5312, 5313, 5314, 5315, 5316, 5317, 5318, 5319, 5320, 5321, 5322, 5323, 5324, 5325, 5326}, arg2: true);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$52000107_QD__52000107__2$", duration: 6000, delayTick: 1000);
@@ -224,7 +226,7 @@ namespace Maple2.Trigger._52000107_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
                 context.CreateMonster(arg1: new[] {2000}, arg2: false);
             }
 
@@ -246,7 +248,7 @@ namespace Maple2.Trigger._52000107_qd {
                 context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveNpc(arg1: 2000, arg2: "MS2PatrolData_Ayesha_go");
-                context.CameraSelectPath(arg1: new[] {1006, 1007}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {1006, 1007}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -264,8 +266,8 @@ namespace Maple2.Trigger._52000107_qd {
             internal State아이샤Spawn씬04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003291, illustId: "Ayesha_normal", msg: "$52000107_QD__52000107__3$", duration: 4000, align: "right");
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 11003291, illustId: "Ayesha_normal", script: "$52000107_QD__52000107__3$", duration: 4000, align: Align.Right);
                 context.SetOnetimeEffect(id: 3000970, enable: true, path: @"BG/Common/Sound/Eff_Ayesha_IntroMovie_03000970.xml");
             }
 
@@ -285,7 +287,7 @@ namespace Maple2.Trigger._52000107_qd {
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 200, emotionName: "hello_Cait");
-                context.ShowCaption(type: "NameCaption", title: "$52000107_QD__52000107__4$", desc: "$52000107_QD__52000107__5$", align: "center", offsetRateX: -0.15f, offsetRateY: 0.15f, duration: 10000, scale: 2.0f);
+                context.ShowCaption(type: CaptionType.Name, title: "$52000107_QD__52000107__4$", script: "$52000107_QD__52000107__5$", align: Align.Center, offsetRateX: -0.15f, offsetRateY: 0.15f, duration: 10000, scale: 2.0f);
                 context.SetSceneSkip();
             }
 
@@ -304,7 +306,7 @@ namespace Maple2.Trigger._52000107_qd {
             internal StateSkip_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 4);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
@@ -323,8 +325,8 @@ namespace Maple2.Trigger._52000107_qd {
             internal State아이샤Spawn씬06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
                 context.SetEffect(arg1: new[] {5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311, 5312, 5313, 5314, 5315, 5316, 5317, 5318, 5319, 5320, 5321, 5322, 5323, 5324, 5325, 5326}, arg2: false);
                 context.FaceEmotion(spawnPointId: 200);
@@ -367,7 +369,7 @@ namespace Maple2.Trigger._52000107_qd {
             internal State아이샤와떠남02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.DestroyMonster(arg1: new[] {2000});
             }
 

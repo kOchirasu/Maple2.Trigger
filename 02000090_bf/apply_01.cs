@@ -35,7 +35,7 @@ namespace Maple2.Trigger._02000090_bf {
             internal StateWait1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetTimer(id: "1", arg2: 3);
                 context.SetEffect(arg1: new[] {1000}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000360}, arg2: 1);
             }
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000090_bf {
             internal StateWait2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 7);
+                context.SetTimer(id: "2", arg2: 7);
                 context.SetEffect(arg1: new[] {1000, 1001}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000360}, arg2: 1);
             }
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02000090_bf {
             internal StateWait3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 1);
+                context.SetTimer(id: "3", arg2: 1);
                 context.SetEffect(arg1: new[] {1000, 1001}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000360}, arg2: 1);
             }
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._02000090_bf {
             internal State이펙트1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 1);
+                context.SetTimer(id: "10", arg2: 1);
                 context.SetEffect(arg1: new[] {1000, 1001, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007}, arg2: true);
                 context.SetEffect(arg1: new[] {1000, 1001}, arg2: false);
             }
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02000090_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {1000, 1001, 2000, 2001, 2002, 2003, 2004}, arg2: false);
-                context.SetTimer(arg1: "20", arg2: 2);
+                context.SetTimer(id: "20", arg2: 2);
             }
 
             public override TriggerState Execute() {

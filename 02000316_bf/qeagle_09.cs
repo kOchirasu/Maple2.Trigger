@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02000316_bf {
             public override void OnEnter() {
                 context.SetActor(arg1: 917, arg2: true, arg3: "Attack_Idle_A");
                 context.SetEffect(arg1: new[] {918}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000316_bf {
             internal State그리폰Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 600);
+                context.SetTimer(id: "1", arg2: 600);
             }
 
             public override TriggerState Execute() {

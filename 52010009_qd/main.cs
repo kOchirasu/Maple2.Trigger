@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52010009_qd {
             internal StateEvent_01_Idle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._52010009_qd {
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 111);
                 context.CreateMonster(arg1: new[] {111}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 111, arg3: "$52010009_QD__MAIN__0$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 111, script: "$52010009_QD__MAIN__0$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 111, arg2: "MS2PatrolData0_1001");
             }
         }
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._52010009_qd {
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 111);
                 context.CreateMonster(arg1: new[] {112}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 112, arg3: "$52010009_QD__MAIN__1$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 112, script: "$52010009_QD__MAIN__1$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 112, arg2: "MS2PatrolData0_1001");
             }
         }
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._52010009_qd {
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 111);
                 context.CreateMonster(arg1: new[] {113}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 113, arg3: "$52010009_QD__MAIN__2$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 113, script: "$52010009_QD__MAIN__2$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 113, arg2: "MS2PatrolData0_1001");
             }
         }

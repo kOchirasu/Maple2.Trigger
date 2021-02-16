@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02000545_bf {
     public static class _main {
         public class StateIdle : TriggerState {
@@ -7,7 +9,7 @@ namespace Maple2.Trigger._02000545_bf {
                 context.SetMesh(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058, 2059, 2060, 2061, 2062, 2063, 2064, 2065, 2066, 2067, 2068, 2069, 2070, 2071, 2072, 2073, 2074, 2075, 2076, 2077, 2078, 2079, 2080, 2081, 2082, 2083, 2084, 2085, 2086, 2087, 2088, 2089, 2090, 2091, 2092, 2093, 2094, 2095, 2096, 2097, 2098, 2099, 2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119, 2120, 2121, 2122, 2123, 2124, 2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2141, 2142}, arg2: true);
                 context.SetMesh(arg1: new[] {2133, 2134, 2150, 2151, 2999}, arg2: false);
                 context.SetEffect(arg1: new[] {5001, 5002, 5003}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015}, arg2: false);
                 context.SetSkill(arg1: new[] {3000}, arg2: false);
                 context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -101,11 +103,11 @@ namespace Maple2.Trigger._02000545_bf {
             internal State물가보여주기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.CameraSelectPath(arg1: new[] {7001}, arg2: false);
-                context.AddCinematicTalk(npcId: 11004687, msg: "$02000545_BF__MAIN__6$", align: "left", duration: 4000);
+                context.CameraSelectPath(pathIds: new[] {7001}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004687, script: "$02000545_BF__MAIN__6$", align: Align.Left, duration: 4000);
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.SetSceneSkip(state: new StateMonster웨이브1(context), arg2: "nextState");
             }
@@ -125,10 +127,10 @@ namespace Maple2.Trigger._02000545_bf {
             internal StateMonster웨이브1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 2f);
-                context.SetEventUI(arg1: 1, arg2: "$02000545_BF__MAIN__7$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000545_BF__MAIN__7$", arg3: 3000);
                 context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.CreateMonster(arg1: new[] {401, 402, 403, 404, 405}, arg2: true);
                 context.DestroyMonster(arg1: new[] {602, 603, 604, 605});
@@ -167,8 +169,8 @@ namespace Maple2.Trigger._02000545_bf {
             internal StateMonster웨이브2시작안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SideNpcTalk(npcId: 11004706, illust: "PuppetBunnyBlue_normal", duration: 3000, script: "$02000545_BF__MAIN__9$");
                 context.SetEffect(arg1: new[] {5004, 5005, 5006, 5007, 5008}, arg2: false);
             }
@@ -188,7 +190,7 @@ namespace Maple2.Trigger._02000545_bf {
             internal StateEliteSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000545_BF__MAIN__10$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000545_BF__MAIN__10$", arg3: 3000);
                 context.SetOnetimeEffect(id: 104, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.CreateMonster(arg1: new[] {202}, arg2: true);
                 context.SetEffect(arg1: new[] {5009}, arg2: true);
@@ -265,11 +267,11 @@ namespace Maple2.Trigger._02000545_bf {
             internal StateBoss시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.MoveUser(arg1: 02000545, arg2: 3);
                 context.SetSceneSkip(state: new State거미여왕기어올라오기(context), arg2: "nextState");
-                context.CameraSelectPath(arg1: new[] {7004}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {7004}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -287,10 +289,10 @@ namespace Maple2.Trigger._02000545_bf {
             internal State거미여왕Spawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {608}, arg2: true);
-                context.AddCinematicTalk(npcId: 11004687, msg: "$02000545_BF__MAIN__14$", align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004687, script: "$02000545_BF__MAIN__14$", align: Align.Left, duration: 3000);
                 context.SetMesh(arg1: new[] {2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058, 2059, 2060, 2061, 2062, 2063, 2064, 2065, 2066, 2067, 2068, 2069, 2070, 2071, 2072, 2073, 2074, 2075, 2076, 2077, 2078, 2079, 2080, 2081, 2082, 2083, 2084, 2085, 2086, 2087, 2088, 2089, 2090, 2091, 2092, 2093, 2094, 2095, 2096, 2097, 2098, 2099, 2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119, 2120, 2121, 2122, 2123, 2124, 2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140, 2141, 2142, 2143, 2144, 2145, 2146, 2147}, arg2: false);
             }
 
@@ -312,7 +314,7 @@ namespace Maple2.Trigger._02000545_bf {
                 context.SetMesh(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2141, 2142}, arg2: false);
                 context.SetEffect(arg1: new[] {5001, 5012, 5013, 5014, 5015}, arg2: true);
                 context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.AddCinematicTalk(npcId: 11004687, msg: "$02000545_BF__MAIN__15$", align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004687, script: "$02000545_BF__MAIN__15$", align: Align.Left, duration: 3000);
                 context.SetMesh(arg1: new[] {2999}, arg2: true);
                 context.SetEffect(arg1: new[] {5010}, arg2: true);
                 context.DestroyMonster(arg1: new[] {606, 607});
@@ -353,10 +355,10 @@ namespace Maple2.Trigger._02000545_bf {
             internal State거미여왕기어올라오기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {7004, 7005}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {7004, 7005}, arg2: false);
                 context.SetEffect(arg1: new[] {5011}, arg2: true);
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
-                context.AddCinematicTalk(npcId: 23300010, msg: "$02000545_BF__MAIN__16$", align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 23300010, script: "$02000545_BF__MAIN__16$", align: Align.Left, duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -375,8 +377,8 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5011}, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1f);
                 context.SetEffect(arg1: new[] {5001, 5012, 5013, 5014, 5015}, arg2: false);
                 context.DestroyMonster(arg1: new[] {101});
@@ -529,7 +531,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override void OnEnter() {
                 context.DungeonClear();
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

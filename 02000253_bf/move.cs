@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State벨라소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State벨라이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
             }
 
             public override TriggerState Execute() {
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State1번(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002523, textId: 20002523);
                 context.SetEffect(arg1: new[] {8041}, arg2: true);
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8041}, arg2: false);
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.CreateMonster(arg1: new[] {3001});
             }
 
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State12번(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.SetInteractObject(arg1: new[] {10001052}, arg2: 1);
             }
 
@@ -258,7 +258,7 @@ namespace Maple2.Trigger._02000253_bf {
                 context.SetEffect(arg1: new[] {8042}, arg2: true);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002523, textId: 20002523);
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
                 context.SetBreakable(arg1: new[] {905, 906, 907, 908, 1905, 1906, 1907, 1908, 2905, 2906, 2907, 2908, 3905, 3906, 3907, 3908}, arg2: true);
                 context.SetBreakable(arg1: new[] {901, 902, 903, 904, 909, 910, 911, 912, 913, 914, 915, 916, 1901, 1902, 1903, 1904, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 2901, 2902, 2903, 2904, 2909, 2910, 2911, 2912, 2913, 2914, 2915, 2916, 3901, 3902, 3903, 3904, 3909, 3910, 3911, 3912, 3913, 3914, 3915, 3916}, arg2: false);
             }
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8042}, arg2: false);
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.CreateMonster(arg1: new[] {3002});
             }
 
@@ -305,7 +305,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State22번(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.SetInteractObject(arg1: new[] {10001051}, arg2: 1);
             }
 
@@ -333,7 +333,7 @@ namespace Maple2.Trigger._02000253_bf {
                 context.SetEffect(arg1: new[] {8044}, arg2: true);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002523, textId: 20002523);
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
                 context.SetBreakable(arg1: new[] {909, 910, 911, 912, 1909, 1910, 1911, 1912, 2909, 2910, 2911, 2912, 3909, 3910, 3911, 3912}, arg2: true);
                 context.SetBreakable(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 913, 914, 915, 916, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1913, 1914, 1915, 1916, 2901, 2902, 2903, 2904, 2905, 2906, 2907, 2908, 2913, 2914, 2915, 2916, 3901, 3902, 3903, 3904, 3905, 3906, 3907, 3908, 3913, 3914, 3915, 3916}, arg2: false);
             }
@@ -355,7 +355,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8044}, arg2: false);
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.CreateMonster(arg1: new[] {3003});
             }
 
@@ -380,7 +380,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State32번(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.SetInteractObject(arg1: new[] {10001050}, arg2: 1);
             }
 
@@ -408,7 +408,7 @@ namespace Maple2.Trigger._02000253_bf {
                 context.SetEffect(arg1: new[] {8043}, arg2: true);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002523, textId: 20002523);
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
                 context.SetBreakable(arg1: new[] {913, 914, 915, 916, 1913, 1914, 1915, 1916, 2913, 2914, 2915, 2916, 3913, 3914, 3915, 3916}, arg2: true);
                 context.SetBreakable(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 2901, 2902, 2903, 2904, 2905, 2906, 2907, 2908, 2909, 2910, 2911, 2912, 3901, 3902, 3903, 3904, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912}, arg2: false);
             }
@@ -430,7 +430,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8043}, arg2: false);
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.CreateMonster(arg1: new[] {3004});
             }
 
@@ -455,7 +455,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State42번(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.SetInteractObject(arg1: new[] {10001053}, arg2: 1);
             }
 
@@ -480,7 +480,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State끝1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.SetInteractObject(arg1: new[] {10001050, 10001051, 10001052, 10001053}, arg2: 2);
                 context.SetBreakable(arg1: new[] {901, 902, 903, 904, 1901, 1902, 1903, 1904, 2901, 2902, 2903, 2904, 3901, 3902, 3903, 3904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 2905, 2906, 2907, 2908, 2909, 2910, 2911, 2912, 2913, 2914, 2915, 2916, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913, 3914, 3915, 3916}, arg2: false);
             }
@@ -500,7 +500,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State끝2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.SetInteractObject(arg1: new[] {10001050, 10001051, 10001052, 10001053}, arg2: 2);
                 context.SetBreakable(arg1: new[] {901, 902, 903, 904, 1901, 1902, 1903, 1904, 2901, 2902, 2903, 2904, 3901, 3902, 3903, 3904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 2905, 2906, 2907, 2908, 2909, 2910, 2911, 2912, 2913, 2914, 2915, 2916, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913, 3914, 3915, 3916}, arg2: false);
             }
@@ -520,7 +520,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State끝3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.SetInteractObject(arg1: new[] {10001050, 10001051, 10001052, 10001053}, arg2: 2);
                 context.SetBreakable(arg1: new[] {901, 902, 903, 904, 1901, 1902, 1903, 1904, 2901, 2902, 2903, 2904, 3901, 3902, 3903, 3904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 2905, 2906, 2907, 2908, 2909, 2910, 2911, 2912, 2913, 2914, 2915, 2916, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913, 3914, 3915, 3916}, arg2: false);
             }
@@ -540,7 +540,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State끝4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.SetInteractObject(arg1: new[] {10001050, 10001051, 10001052, 10001053}, arg2: 2);
                 context.SetBreakable(arg1: new[] {901, 902, 903, 904, 1901, 1902, 1903, 1904, 2901, 2902, 2903, 2904, 3901, 3902, 3903, 3904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 2905, 2906, 2907, 2908, 2909, 2910, 2911, 2912, 2913, 2914, 2915, 2916, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913, 3914, 3915, 3916}, arg2: false);
             }

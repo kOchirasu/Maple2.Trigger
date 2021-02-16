@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020301_bf {
     public static class _main {
         public class StateWait : TriggerState {
@@ -15,10 +17,10 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetInteractObject(arg1: new[] {10003131, 10003121, 10003122, 10003111, 10003112, 10003113, 10003114, 10003101, 10003102, 10003103, 10003104}, arg2: 2);
                 context.SetAgent(arg1: new[] {1800000, 1800001, 1800002, 1800003, 1800004, 1800005, 1800006, 1800007, 1800008, 1800009, 1800010, 1800011, 1810000, 1810001, 1810002, 1810003, 1810004, 1810005, 1810006, 1810007, 1810008, 1810009, 1810010, 1810011}, arg2: true);
                 context.AddBuff(arg1: new[] {1003}, arg2: 62100168, arg3: 1);
-                context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 14, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 15, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 16, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 14, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 15, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 16, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -37,13 +39,13 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {5241, 5242, 5243, 5244}, arg2: true);
-                context.SideNpcTalk(type: "talk", npcId: 23503003, illust: "ArcheonBlack_Normal", script: "$02020301_BF__MAIN__0$", duration: 5684);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23503003, illust: "ArcheonBlack_Normal", script: "$02020301_BF__MAIN__0$", duration: 5684);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.CreateMonster(arg1: new[] {112, 113, 114, 115, 121, 122, 123, 124}, arg2: true);
-                context.SetPortal(arg1: 13, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 14, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 15, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 16, arg2: false, arg3: true, arg4: false);
+                context.SetPortal(portalId: 13, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 14, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 15, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 16, visible: false, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -80,7 +82,7 @@ namespace Maple2.Trigger._02020301_bf {
                 context.AddBuff(arg1: new[] {1003}, arg2: 62100169, arg3: 1);
                 context.DungeonMissionComplete(missionId: 23039005);
                 context.DungeonSetEndTime();
-                context.SideNpcTalk(type: "talk", npcId: 23503003, illust: "ArcheonBlack_Die", script: "$02020301_BF__MAIN__1$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23503003, illust: "ArcheonBlack_Die", script: "$02020301_BF__MAIN__1$", duration: 3176);
             }
 
             public override TriggerState Execute() {
@@ -98,7 +100,7 @@ namespace Maple2.Trigger._02020301_bf {
             internal State추가대화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_normal", script: "$02020301_BF__MAIN__2$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_normal", script: "$02020301_BF__MAIN__2$", duration: 3176);
             }
 
             public override TriggerState Execute() {
@@ -118,8 +120,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});
                 context.DungeonClear();
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 7, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 7, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

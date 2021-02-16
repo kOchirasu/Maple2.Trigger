@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000346_bf {
                 context.SetLadder(arg1: 9001, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 9002, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 9003, arg2: false, arg3: false, arg4: 0);
-                context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 4, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10000791}, arg2: 0);
                 context.SetMesh(arg1: new[] {6001, 6010}, arg2: true);
                 context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009}, arg2: false);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02000346_bf {
             internal StateObjective_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2, arg4: false);
+                context.SetTimer(id: "2", arg2: 2, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -46,11 +46,11 @@ namespace Maple2.Trigger._02000346_bf {
             internal StateObjective_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
+                context.CameraSelectPath(pathIds: new[] {8001, 8002}, arg2: true);
+                context.SetCinematicUI(type: 1);
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.SetCinematicUI(arg1: 3, arg2: "$02000346_BF__MAIN1__0$");
-                context.SetTimer(arg1: "5", arg2: 5, arg4: false);
+                context.SetCinematicUI(type: 3, script: "$02000346_BF__MAIN1__0$");
+                context.SetTimer(id: "5", arg2: 5, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -62,9 +62,9 @@ namespace Maple2.Trigger._02000346_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02000346_bf {
 
             public override void OnEnter() {
                 context.ShowCountUI(text: "$02000346_BF__MAIN1__2$", stage: 0, count: 3);
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
                 context.SetMesh(arg1: new[] {6001}, arg2: false);
             }
 
@@ -112,12 +112,12 @@ namespace Maple2.Trigger._02000346_bf {
             internal StateClear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SetEventUI(arg1: 7, arg2: "$02000346_BF__MAIN1__1$", arg3: 3000);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
+                context.SetEventUI(arg1: 7, script: "$02000346_BF__MAIN1__1$", arg3: 3000);
                 context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009}, arg2: true, arg4: 0, arg5: 10f);
                 context.SetMesh(arg1: new[] {6010}, arg2: false, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000791}, arg2: 1);
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {

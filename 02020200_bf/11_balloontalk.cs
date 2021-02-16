@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020200_bf {
     public static class _11_balloontalk {
         public class StateWait : TriggerState {
@@ -20,7 +22,7 @@ namespace Maple2.Trigger._02020200_bf {
             internal StateScript1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020200_BF__11_BALLOONTALK__0$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020200_BF__11_BALLOONTALK__0$");
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02020200_BF__11_BALLOONTALK__1$", duration: 5000, delayTick: 1000);
             }
 
@@ -69,7 +71,7 @@ namespace Maple2.Trigger._02020200_bf {
             internal StateScript3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020200_BF__11_BALLOONTALK__3$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020200_BF__11_BALLOONTALK__3$");
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02020200_BF__11_BALLOONTALK__4$", duration: 5000, delayTick: 0);
             }
 

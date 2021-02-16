@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000088_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {204}, arg2: false);
                 context.CreateMonster(arg1: new[] {104}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000088_bf {
             internal State대화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 90);
+                context.SetTimer(id: "1", arg2: 90);
             }
 
             public override TriggerState Execute() {
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02000088_bf {
             internal StateTriggerReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.DestroyMonster(arg1: new[] {104});
             }
 

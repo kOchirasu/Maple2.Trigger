@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._84000026_wd {
     public static class _84000026_moveguest {
         public class StateReset : TriggerState {
@@ -65,7 +67,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State방금입장한하객은하객석으로위치이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WeddingMoveUser(entryType: "Guest", arg1: 84000026, arg2: new byte[] {22, 23}, arg3: 701);
+                context.WeddingMoveUser(type: WeddingEntryType.Guest, arg1: 84000026, arg2: new byte[] {22, 23}, arg3: 701);
             }
 
             public override TriggerState Execute() {
@@ -79,7 +81,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State하객은버진로드밖으로위치이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WeddingMoveUser(entryType: "Guest", arg1: 84000026, arg2: new byte[] {22, 23}, arg3: 701);
+                context.WeddingMoveUser(type: WeddingEntryType.Guest, arg1: 84000026, arg2: new byte[] {22, 23}, arg3: 701);
             }
 
             public override TriggerState Execute() {

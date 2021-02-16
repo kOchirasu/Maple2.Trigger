@@ -20,9 +20,9 @@ namespace Maple2.Trigger._02100009_bf {
             internal State타이머설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: true);
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SetTimer(arg1: "10000", arg2: 300, arg3: true, arg4: true, arg5: 0);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
+                context.SetTimer(id: "10000", arg2: 300, arg3: true, arg4: true, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02100009_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "10000");
+                context.ResetTimer(id: "10000");
             }
         }
 
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02100009_bf {
             }
 
             public override void OnExit() {
-                context.SetEventUI(arg1: 1, arg2: "$02100009_BF__text__0$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02100009_BF__text__0$", arg3: 4000);
             }
         }
 
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02100009_bf {
             }
 
             public override void OnExit() {
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
         }
 
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._02100009_bf {
                 context.AddBuff(arg1: new[] {101}, arg2: 50000230, arg3: 1, arg4: false, arg5: false);
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "Find02100009");
-                context.SetEventUI(arg1: 7, arg2: "$02100009_BF__MAIN__1$", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 7, script: "$02100009_BF__MAIN__1$", arg3: 2000, arg4: "0");
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "02100009_2");
             }
 
@@ -119,9 +119,9 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {101}, arg2: 50000230, arg3: 1, arg4: false, arg5: false);
-                context.SetEventUI(arg1: 5, arg2: "$02100009_BF__MAIN__0$", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 5, script: "$02100009_BF__MAIN__0$", arg3: 2000, arg4: "0");
                 context.DestroyMonster(arg1: new[] {-1});
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

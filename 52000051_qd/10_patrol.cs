@@ -133,7 +133,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StatePatrol05Air(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$52000051_QD__10_PATROL__0$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$52000051_QD__10_PATROL__0$", arg4: 2, arg5: 1);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_105");
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_205");
             }

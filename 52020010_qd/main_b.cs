@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52020010_qd {
     public static class _main_b {
         public class StateIdle : TriggerState {
@@ -36,9 +38,9 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -74,10 +76,10 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetPcEmotionSequence(arg1: "Object_React_H");
-                context.AddCinematicTalk(npcId: 0, msg: "왜 아무일도 일어나지 않는거지?", duration: 2800);
+                context.AddCinematicTalk(npcId: 0, script: "왜 아무일도 일어나지 않는거지?", duration: 2800);
                 context.SetSceneSkip(state: new StateNext(context), arg2: "nextState");
             }
 
@@ -97,7 +99,7 @@ namespace Maple2.Trigger._52020010_qd {
 
             public override void OnEnter() {
                 context.SetPcEmotionSequence(arg1: "Object_React_G");
-                context.AddCinematicTalk(npcId: 0, msg: "두들겨 볼까?", duration: 2800);
+                context.AddCinematicTalk(npcId: 0, script: "두들겨 볼까?", duration: 2800);
             }
 
             public override TriggerState Execute() {
@@ -115,7 +117,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003610, msg: "으으으.... 시끄럽구나!", duration: 2800);
+                context.AddCinematicTalk(npcId: 11003610, script: "으으으.... 시끄럽구나!", duration: 2800);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "!!!", duration: 2000, delayTick: 1000);
             }
 
@@ -152,9 +154,9 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003610, msg: "네 놈이냐! 내 잠을 깨운 녀석이!", duration: 2800);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 11003610, script: "네 놈이냐! 내 잠을 깨운 녀석이!", duration: 2800);
             }
 
             public override TriggerState Execute() {
@@ -172,9 +174,9 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003610, msg: "감히 내 시간을 방해하다니 가만두지 않겠다!", duration: 2800);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 11003610, script: "감히 내 시간을 방해하다니 가만두지 않겠다!", duration: 2800);
             }
 
             public override TriggerState Execute() {
@@ -207,8 +209,8 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateBattle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -248,9 +250,9 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003603, illustId: "0", msg: "인간! 파편이 돌아왔다! 어서 이리 와라!", duration: 2800, align: "Left");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 11003603, illustId: "0", script: "인간! 파편이 돌아왔다! 어서 이리 와라!", duration: 2800, align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -268,8 +270,8 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

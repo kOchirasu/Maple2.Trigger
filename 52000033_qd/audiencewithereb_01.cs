@@ -23,9 +23,9 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateLodingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -55,8 +55,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateQuestOngoing01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateQuestOngoing02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -93,8 +93,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal StatePCWalkIn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000033_QD__AUDIENCEWITHEREB_01__0$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000075, script: "$52000033_QD__AUDIENCEWITHEREB_01__0$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new StateErebTalk03(context));
             }
 
@@ -282,8 +282,8 @@ namespace Maple2.Trigger._52000033_qd {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -339,9 +339,9 @@ namespace Maple2.Trigger._52000033_qd {
             internal StatePCGoCenter02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -396,8 +396,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal StatePCGoCenter05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -470,7 +470,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000033_QD__AUDIENCEWITHEREB_01__1$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000075, script: "$52000033_QD__AUDIENCEWITHEREB_01__1$", arg4: 5, arg5: 0);
                 context.SetSkip(state: new StateErebTalk12(context));
             }
 
@@ -528,8 +528,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal StatePCtoLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

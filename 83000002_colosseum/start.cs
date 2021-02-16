@@ -1,4 +1,5 @@
 using System.Numerics;
+using Maple2.Trigger.Enum;
 
 namespace Maple2.Trigger._83000002_colosseum {
     public static class _start {
@@ -23,7 +24,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
                 context.DestroyMonster(arg1: new[] {202, 203});
                 context.CreateMonster(arg1: new[] {203}, arg2: false);
             }
@@ -61,7 +62,7 @@ namespace Maple2.Trigger._83000002_colosseum {
             internal StateCinematic_01_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4001, 4002}, arg2: false);
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
@@ -80,7 +81,7 @@ namespace Maple2.Trigger._83000002_colosseum {
             internal StateCinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4003, 4004}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4003, 4004}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -117,7 +118,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new[] {4005, 4006}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4005, 4006}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -135,14 +136,14 @@ namespace Maple2.Trigger._83000002_colosseum {
             internal StateCinematic_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4007, 4008}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$83000002_COLOSSEUM__START__0$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
+                context.CameraSelectPath(pathIds: new[] {4007, 4008}, arg2: false);
+                context.ShowCaption(type: CaptionType.Vertical, title: "$83000002_COLOSSEUM__START__0$", align: Align.Bottom | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
                 context.SetSceneSkip();
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SetCinematicUI(arg1: 0);
+                    context.SetCinematicUI(type: 0);
                     context.CameraReset(interpolationTime: 0f);
                     return new StateEndCinematic_01(context);
                 }
@@ -159,12 +160,12 @@ namespace Maple2.Trigger._83000002_colosseum {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new[] {4009}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4009}, arg2: false);
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetCinematicUI(arg1: 0);
+                    context.SetCinematicUI(type: 0);
                     context.CameraReset(interpolationTime: 0f);
                     return new State대화Delay(context);
                 }

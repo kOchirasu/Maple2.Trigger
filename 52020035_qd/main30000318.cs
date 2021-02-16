@@ -38,8 +38,8 @@ namespace Maple2.Trigger._52020035_qd {
             internal StateStartCinematic3_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.VisibleMyPc(isVisible: false);
                 context.DestroyMonster(arg1: new[] {117, 118, 119, 120, 121});
                 context.CreateMonster(arg1: new[] {110}, arg2: false, arg3: 0);
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52020035_qd {
                 context.CreateMonster(arg1: new[] {119}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new[] {120}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new[] {121}, arg2: false, arg3: 0);
-                context.CameraSelectPath(arg1: new[] {4026}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4026}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._52020035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 8, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcId: 11003754, msg: "크크큭... 착한 연기 잘 하는군. 라딘.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003754, script: "크크큭... 착한 연기 잘 하는군. 라딘.", duration: 3000);
                 context.SetSceneSkip(state: new State끝(context), arg2: "exit");
             }
 
@@ -86,8 +86,8 @@ namespace Maple2.Trigger._52020035_qd {
             internal State뒷이야기_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4028}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003753, msg: "...", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4028}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003753, script: "...", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -105,10 +105,10 @@ namespace Maple2.Trigger._52020035_qd {
             internal State뒷이야기01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4030}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4030}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 119, arg2: "Bore_A");
-                context.AddCinematicTalk(npcId: 11003756, msg: "훗. 생각보다 잘 넘어간 것 같군요.", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003759, msg: "쳇, 복잡하게 만들지 말고 그냥 죽어버리면 되잖아?", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003756, script: "훗. 생각보다 잘 넘어간 것 같군요.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003759, script: "쳇, 복잡하게 만들지 말고 그냥 죽어버리면 되잖아?", duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -126,8 +126,8 @@ namespace Maple2.Trigger._52020035_qd {
             internal State뒷이야기02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4026}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003754, msg: "하렌. 그럼 우리도 다음 작전을 이야기 해 볼까.", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4026}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003754, script: "하렌. 그럼 우리도 다음 작전을 이야기 해 볼까.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -145,9 +145,9 @@ namespace Maple2.Trigger._52020035_qd {
             internal State뒷이야기02_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4031}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4031}, arg2: false);
                 context.MoveNpc(arg1: 119, arg2: "MS2PatrolData_3008");
-                context.AddCinematicTalk(npcId: 11003756, msg: "...후훗.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003756, script: "...후훗.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -184,8 +184,8 @@ namespace Maple2.Trigger._52020035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 9, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0f);
                 context.VisibleMyPc(isVisible: true);
                 context.MoveUser(arg1: 02020012, arg2: 1);

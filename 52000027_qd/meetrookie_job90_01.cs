@@ -95,8 +95,8 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.CameraSelect(arg1: 600, arg2: true);
             }
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1011");
-                context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001610, script: "$52000027_QD__MEETROOKIE01__0$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State루키Spawn03(context));
             }
 
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키Spawn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001584, script: "$52000027_QD__MEETROOKIE01__1$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new StateLadderCreation01(context));
             }
 
@@ -159,8 +159,8 @@ namespace Maple2.Trigger._52000027_qd {
             internal StateLadderCreation01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {8001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1012");
-                context.CameraSelectPath(arg1: new[] {600, 601}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {600, 601}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -236,8 +236,8 @@ namespace Maple2.Trigger._52000027_qd {
             internal StateLadderCreation05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -255,7 +255,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000027_QD__MEETROOKIE01__2$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000027_QD__MEETROOKIE01__2$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1013");
             }
 
@@ -276,7 +276,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__MEETROOKIE01__3$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__MEETROOKIE01__3$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -350,7 +350,7 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_1015");
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__MEETROOKIE01__4$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__MEETROOKIE01__4$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -384,9 +384,9 @@ namespace Maple2.Trigger._52000027_qd {
             internal State상황Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__5$", arg4: 3, arg5: 0);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11001610, script: "$52000027_QD__MEETROOKIE01__5$", arg4: 3, arg5: 0);
                 context.CameraSelect(arg1: 700, arg2: true);
             }
 
@@ -460,7 +460,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키경고01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__6$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001584, script: "$52000027_QD__MEETROOKIE01__6$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State루키경고02(context));
             }
 
@@ -499,7 +499,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키경고03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__7$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001610, script: "$52000027_QD__MEETROOKIE01__7$", arg4: 5, arg5: 0);
                 context.SetSkip(state: new State루키경고04(context));
             }
 
@@ -521,8 +521,8 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 701, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -541,7 +541,7 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "TrapOpen", value: 0);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__MEETROOKIE01__8$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__MEETROOKIE01__8$", arg4: 3, arg5: 1);
                 context.ShowGuideSummary(entityId: 25200272, textId: 25200272);
                 context.SetUserValue(triggerId: 2, key: "SetLever", value: 1);
             }
@@ -575,9 +575,9 @@ namespace Maple2.Trigger._52000027_qd {
             internal State함정Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__9$", arg4: 3, arg5: 0);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11001610, script: "$52000027_QD__MEETROOKIE01__9$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -642,8 +642,8 @@ namespace Maple2.Trigger._52000027_qd {
             internal State함정Cinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 800, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new[] {6201, 6202, 6203}, arg2: false);
             }
@@ -685,7 +685,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키이동21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__MEETROOKIE01__10$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__MEETROOKIE01__10$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_1017");
             }
 
@@ -736,8 +736,8 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키미션01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 801, arg2: true);
             }
 
@@ -752,7 +752,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키미션02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__11$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001584, script: "$52000027_QD__MEETROOKIE01__11$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State루키미션03(context));
             }
 
@@ -773,7 +773,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키미션03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__12$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001584, script: "$52000027_QD__MEETROOKIE01__12$", arg4: 4, arg5: 0);
                 context.SetMesh(arg1: new[] {8500}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000420}, arg2: 1);
                 context.SetSkip(state: new State루키미션04(context));
@@ -796,8 +796,8 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키미션04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 801, arg2: false);
             }
 

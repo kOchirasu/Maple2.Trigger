@@ -8,7 +8,7 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(17f, 196f, 181f), arg2: new Vector3(0f, 0f, 0f));
                 context.SetMesh(arg1: new[] {5000, 5001}, arg2: true);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
                 context.SetEffect(arg1: new[] {3000, 3002, 3001, 3003, 3004, 3005}, arg2: false);
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State게임안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {7000}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {7000}, arg2: false);
                 context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000, script: "$02000543_BF__MAIN__1$");
                 context.LockMyPc(isLock: true);
                 context.SetMesh(arg1: new[] {5000, 5001}, arg2: true);
@@ -97,7 +97,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State게임안내2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {7000}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {7000}, arg2: true);
                 context.LockMyPc(isLock: false);
                 context.AddBalloonTalk(spawnPointId: 104, msg: "$02000543_BF__MAIN__2$", duration: 3500, delayTick: 0);
                 context.AddBalloonTalk(spawnPointId: 105, msg: "$02000543_BF__MAIN__3$", duration: 3500, delayTick: 500);
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {110});
-                context.SetEventUI(arg1: 1, arg2: "$02000543_BF__MAIN__6$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000543_BF__MAIN__6$", arg3: 3000);
                 context.SetOnetimeEffect(id: 104, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
@@ -231,7 +231,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State2단계가기전2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000543_BF__MAIN__7$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000543_BF__MAIN__7$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -339,7 +339,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State3단계(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000543_BF__MAIN__9$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000543_BF__MAIN__9$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -395,7 +395,7 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(201f, 38f, 70f), arg2: new Vector3(0f, 0f, 0f));
                 context.SetOnetimeEffect(id: 106, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetEventUI(arg1: 1, arg2: "$02000543_BF__MAIN__11$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000543_BF__MAIN__11$", arg3: 3000);
                 context.DestroyMonster(arg1: new[] {106, 107});
             }
 
@@ -454,7 +454,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State응접실문열기31(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000543_BF__MAIN__14$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000543_BF__MAIN__14$", arg3: 3000);
                 context.DestroyMonster(arg1: new[] {111, 112});
                 context.SetEffect(arg1: new[] {3004, 3005}, arg2: false);
                 context.LockMyPc(isLock: false);
@@ -556,7 +556,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal StatePortal열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

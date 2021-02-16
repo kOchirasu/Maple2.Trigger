@@ -78,8 +78,8 @@ namespace Maple2.Trigger._52000075_qd {
             internal StateMobChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -152,9 +152,9 @@ namespace Maple2.Trigger._52000075_qd {
             internal StateMobTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001960, arg3: "$52000075_QD__QUESTNPCSPAWN01__0$", arg4: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11001960, script: "$52000075_QD__QUESTNPCSPAWN01__0$", arg4: 4);
                 context.SetSkip(state: new StateMobTalk02(context));
             }
 
@@ -175,8 +175,8 @@ namespace Maple2.Trigger._52000075_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

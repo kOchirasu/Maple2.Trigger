@@ -24,11 +24,11 @@ namespace Maple2.Trigger._02000252_bf {
             internal State열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
                 context.SetEffect(arg1: new[] {8031, 8032}, arg2: false);
                 context.SetMesh(arg1: new[] {169, 170}, arg2: false);
                 context.CreateMonster(arg1: new[] {1012}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 1012, arg3: "$02000252_BF__DOOR_01__0$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 1012, script: "$02000252_BF__DOOR_01__0$", arg4: 2);
                 context.MoveNpc(arg1: 1012, arg2: "MS2PatrolData_3");
             }
 

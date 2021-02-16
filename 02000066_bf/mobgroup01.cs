@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State1차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "51", arg2: 51);
+                context.SetTimer(id: "51", arg2: 51);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
             }
 
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State3차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "42", arg2: 42);
+                context.SetTimer(id: "42", arg2: 42);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
             }
 
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State4차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "37", arg2: 37);
+                context.SetTimer(id: "37", arg2: 37);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
             }
 
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State6차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "33", arg2: 33);
+                context.SetTimer(id: "33", arg2: 33);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
             }
 
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State7차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "30", arg2: 30);
+                context.SetTimer(id: "30", arg2: 30);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
             }
 
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State9차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "27", arg2: 27);
+                context.SetTimer(id: "27", arg2: 27);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
             }
 
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State10차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "25", arg2: 25);
+                context.SetTimer(id: "25", arg2: 25);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
             }
 
@@ -227,7 +227,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State12차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "20", arg2: 20);
+                context.SetTimer(id: "20", arg2: 20);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
             }
 

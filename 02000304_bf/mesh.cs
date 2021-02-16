@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4204}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4313}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4416}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4214}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4303}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4402}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4307}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4406}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -183,7 +183,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4213}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4304}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4401}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern01종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -236,7 +236,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern02시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {
@@ -294,7 +294,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4216}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4301}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4404}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -328,7 +328,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4212}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4312}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4412}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -362,7 +362,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4216}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4304}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4416}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -396,7 +396,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4206}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4307}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4406}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -426,7 +426,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern02종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -449,7 +449,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern03시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "15", arg2: 15);
+                context.SetTimer(id: "15", arg2: 15);
             }
 
             public override TriggerState Execute() {
@@ -507,7 +507,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4204, 4213}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4304, 4313}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4401, 4416}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -541,7 +541,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4207, 4210}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4307, 4310}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4406, 4411}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -575,7 +575,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4202, 4215}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4302, 4315}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4403, 4414}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -609,7 +609,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4205, 4211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4306, 4312}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4407, 4409}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -639,7 +639,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern03종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -662,7 +662,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern04시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "15", arg2: 15);
+                context.SetTimer(id: "15", arg2: 15);
             }
 
             public override TriggerState Execute() {
@@ -720,7 +720,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4209, 4214}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4303, 4308}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4402, 4415}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -754,7 +754,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4201, 4216}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4301, 4316}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4404, 4413}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -788,7 +788,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4203, 4215}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4302, 4314}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4403, 4415}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -822,7 +822,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4209, 4213}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4304, 4308}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4401, 4405}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -852,7 +852,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern04종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -875,7 +875,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern05시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "15", arg2: 15);
+                context.SetTimer(id: "15", arg2: 15);
             }
 
             public override TriggerState Execute() {
@@ -933,7 +933,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4204, 4207, 4210}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4307, 4310, 4313}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4406, 4411, 4416}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -967,7 +967,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4201, 4206, 4211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4306, 4311, 4316}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4407, 4410, 4413}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1001,7 +1001,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4201, 4204, 4216}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4301, 4313, 4316}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4404, 4413, 4416}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1035,7 +1035,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4202, 4205, 4207}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4310, 4312, 4315}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4409, 4411, 4414}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1065,7 +1065,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern05종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -1088,7 +1088,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern06시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "15", arg2: 15);
+                context.SetTimer(id: "15", arg2: 15);
             }
 
             public override TriggerState Execute() {
@@ -1146,7 +1146,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4201, 4206, 4209}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4308, 4311, 4316}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4405, 4410, 4413}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1180,7 +1180,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4209, 4213, 4214}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4303, 4304, 4308}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4401, 4402, 4405}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1214,7 +1214,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4203, 4204, 4208}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4309, 4313, 4314}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4412, 4415, 4416}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1248,7 +1248,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4206, 4212, 4214}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4308, 4310, 4316}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4405, 4411, 4413}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1278,7 +1278,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern06종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -1301,7 +1301,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern07시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "15", arg2: 15);
+                context.SetTimer(id: "15", arg2: 15);
             }
 
             public override TriggerState Execute() {
@@ -1383,7 +1383,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4204, 4207, 4210, 4213}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4304, 4307, 4310, 4313}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4401, 4406, 4411, 4416}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1417,7 +1417,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4201, 4206, 4211, 4216}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4301, 4306, 4311, 4316}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4404, 4407, 4410, 4413}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1451,7 +1451,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4203, 4206, 4208, 4211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4302, 4305, 4307, 4310}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4403, 4406, 4408, 4411}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1485,7 +1485,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4209, 4211, 4214, 4216}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4309, 4311, 4314, 4316}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4409, 4411, 4414, 4416}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1519,7 +1519,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4201, 4204, 4213, 4216}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4301, 4304, 4313, 4316}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4401, 4404, 4413, 4416}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1553,7 +1553,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4206, 4207, 4210, 4211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4306, 4307, 4310, 4311}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4406, 4407, 4410, 4411}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1587,7 +1587,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4209, 4210, 4213, 4214}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4303, 4304, 4307, 4308}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4401, 4402, 4405, 4406}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1621,7 +1621,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4202, 4203, 4214, 4215}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4302, 4303, 4314, 4315}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4402, 4403, 4414, 4415}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1655,7 +1655,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4201, 4205, 4209, 4213}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4304, 4308, 4312, 4316}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4401, 4405, 4409, 4413}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1689,7 +1689,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetMesh(arg1: new[] {4205, 4210, 4213, 4215}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4302, 4304, 4307, 4312}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {4401, 4403, 4406, 4409}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -1719,7 +1719,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StatePattern07종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -1743,7 +1743,7 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetTimer(arg1: "1800000", arg2: 1800000);
+                context.SetTimer(id: "1800000", arg2: 1800000);
             }
 
             public override TriggerState Execute() {

@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02000300_bf {
             internal State40초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "45", arg2: 45);
+                context.SetTimer(id: "45", arg2: 45);
             }
 
             public override TriggerState Execute() {
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000300_bf {
             internal State35초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "50", arg2: 50);
+                context.SetTimer(id: "50", arg2: 50);
             }
 
             public override TriggerState Execute() {
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02000300_bf {
             internal State30초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "55", arg2: 55);
+                context.SetTimer(id: "55", arg2: 55);
             }
 
             public override TriggerState Execute() {
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._02000300_bf {
             internal State45초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "60", arg2: 60);
+                context.SetTimer(id: "60", arg2: 60);
             }
 
             public override TriggerState Execute() {
@@ -140,8 +140,8 @@ namespace Maple2.Trigger._02000300_bf {
             internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1099, arg3: "$02000300_BF__MOBSPAWN__0$", arg4: 2);
-                context.SetConversation(arg1: 1, arg2: 1001, arg3: "$02000300_BF__MOBSPAWN__1$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 1099, script: "$02000300_BF__MOBSPAWN__0$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 1001, script: "$02000300_BF__MOBSPAWN__1$", arg4: 3);
                 context.CreateMonster(arg1: new[] {1097, 1098}, arg2: true);
             }
 

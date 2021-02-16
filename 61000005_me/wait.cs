@@ -4,7 +4,7 @@ namespace Maple2.Trigger._61000005_me {
             internal State입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "90", arg2: 90, arg3: true, arg4: false);
+                context.SetTimer(id: "90", arg2: 90, arg3: true, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._61000005_me {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000005_ME__WAIT__0$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$61000005_ME__WAIT__0$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._61000005_me {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000005_ME__WAIT__1$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$61000005_ME__WAIT__1$", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {

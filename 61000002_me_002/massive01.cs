@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._61000002_me_002 {
     public static class _massive01 {
         public class StateWait : TriggerState {
@@ -33,9 +35,9 @@ namespace Maple2.Trigger._61000002_me_002 {
                 context.SetActor(arg1: 260, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 261, arg2: true, arg3: "Eff_MassiveEvent_Door_Opened");
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
-                context.SetPortal(arg1: 777, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 778, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 779, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 777, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 778, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 779, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -52,7 +54,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnExit() {
                 context.SetActor(arg1: 261, arg2: true, arg3: "Eff_MassiveEvent_Door_Vanished");
-                context.SetPortal(arg1: 777, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 777, visible: false, enabled: false, minimapVisible: false);
             }
         }
 
@@ -61,7 +63,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.SetMiniGameAreaForHack(boxId: 301);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -80,7 +82,7 @@ namespace Maple2.Trigger._61000002_me_002 {
                 context.SetActor(arg1: 259, arg2: true, arg3: "Eff_MassiveEvent_Stair_Closed");
                 context.SetActor(arg1: 260, arg2: true, arg3: "Eff_MassiveEvent_Stair_Closed");
                 context.SetActor(arg1: 261, arg2: false, arg3: "Eff_MassiveEvent_Door_Vanished");
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -88,7 +90,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal State계단없애기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -111,7 +113,7 @@ namespace Maple2.Trigger._61000002_me_002 {
                 context.SetActor(arg1: 258, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
                 context.SetActor(arg1: 259, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
                 context.SetActor(arg1: 260, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -119,7 +121,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal StateBeginWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -131,7 +133,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -139,10 +141,10 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal StateMassiveEvent0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
                 context.PlaySystemSoundInBox(arg2: "ME_002_Massive01_00");
-                context.SetEventUI(arg1: 1, arg2: "$61000002_ME_002__MASSIVE01__0$", arg3: 6000);
-                context.StartMiniGame(boxId: 301, round: 4, gameName: "finalsurvivor");
+                context.SetEventUI(arg1: 1, script: "$61000002_ME_002__MASSIVE01__0$", arg3: 6000);
+                context.StartMiniGame(boxId: 301, round: 4, type: MiniGame.SoleSurvivor);
                 context.SetAchievement(arg1: 301, arg2: "trigger", arg3: "finalsurvivor_start");
                 context.SetAchievement(arg1: 301, arg2: "trigger", arg3: "dailyquest_start");
                 context.GiveGuildExp(boxId: false, type: 2);
@@ -157,7 +159,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -165,9 +167,9 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal StateMassiveEvent1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 11);
+                context.SetTimer(id: "1", arg2: 11);
                 context.PlaySystemSoundInBox(arg2: "ME_002_Massive01_01");
-                context.SetEventUI(arg1: 1, arg2: "$61000002_ME_002__MASSIVE01__1$", arg3: 11000);
+                context.SetEventUI(arg1: 1, script: "$61000002_ME_002__MASSIVE01__1$", arg3: 11000);
             }
 
             public override TriggerState Execute() {
@@ -179,7 +181,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -187,9 +189,9 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal StateMassiveEvent2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 9);
+                context.SetTimer(id: "1", arg2: 9);
                 context.PlaySystemSoundInBox(arg2: "ME_002_Massive01_02");
-                context.SetEventUI(arg1: 1, arg2: "$61000002_ME_002__MASSIVE01__2$", arg3: 9000);
+                context.SetEventUI(arg1: 1, script: "$61000002_ME_002__MASSIVE01__2$", arg3: 9000);
             }
 
             public override TriggerState Execute() {
@@ -201,7 +203,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -209,8 +211,8 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal StateMassiveEvent3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 6);
-                context.SetEventUI(arg1: 0, arg2: "1,4");
+                context.SetTimer(id: "1", arg2: 6);
+                context.SetEventUI(arg1: 0, script: "1,4");
                 context.ShowCountUI(text: "$61000002_ME_002__MASSIVE01__3$", stage: 1, count: 5);
             }
 
@@ -223,7 +225,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -231,7 +233,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal State퍼즐단계1Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -243,7 +245,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -252,7 +254,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.StartMiniGameRound(boxId: 301, round: 1);
-                context.SetTimer(arg1: "1", arg2: 40);
+                context.SetTimer(id: "1", arg2: 40);
                 context.SetRandomMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: false, arg3: 20, arg4: 0, arg5: 2000);
             }
 
@@ -265,7 +267,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -274,7 +276,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 301, expRate: 0.25f);
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetTimer(id: "1", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -286,7 +288,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -297,7 +299,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    context.SetEventUI(arg1: 0, arg2: "2,4");
+                    context.SetEventUI(arg1: 0, script: "2,4");
                     context.ShowCountUI(text: "$61000002_ME_002__MASSIVE01__4$", stage: 2, count: 5);
                     return new State퍼즐단계2Wait(context);
                 }
@@ -316,7 +318,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal State퍼즐단계2Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 6);
+                context.SetTimer(id: "1", arg2: 6);
             }
 
             public override TriggerState Execute() {
@@ -328,7 +330,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -337,7 +339,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.StartMiniGameRound(boxId: 301, round: 2);
-                context.SetTimer(arg1: "1", arg2: 30);
+                context.SetTimer(id: "1", arg2: 30);
                 context.SetRandomMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: false, arg3: 30, arg4: 0, arg5: 1000);
             }
 
@@ -350,7 +352,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -359,7 +361,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 301, expRate: 0.25f);
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetTimer(id: "1", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -371,7 +373,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -382,7 +384,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    context.SetEventUI(arg1: 0, arg2: "3,4");
+                    context.SetEventUI(arg1: 0, script: "3,4");
                     context.ShowCountUI(text: "$61000002_ME_002__MASSIVE01__5$", stage: 3, count: 5);
                     return new State퍼즐단계3Wait(context);
                 }
@@ -401,7 +403,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal State퍼즐단계3Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 6);
+                context.SetTimer(id: "1", arg2: 6);
             }
 
             public override TriggerState Execute() {
@@ -413,7 +415,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -422,7 +424,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.StartMiniGameRound(boxId: 301, round: 3);
-                context.SetTimer(arg1: "1", arg2: 15);
+                context.SetTimer(id: "1", arg2: 15);
                 context.SetRandomMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: false, arg3: 30, arg4: 0, arg5: 500);
             }
 
@@ -435,7 +437,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -444,7 +446,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 301, expRate: 0.25f);
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetTimer(id: "1", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -456,7 +458,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -467,7 +469,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    context.SetEventUI(arg1: 0, arg2: "4,4");
+                    context.SetEventUI(arg1: 0, script: "4,4");
                     context.ShowCountUI(text: "$61000002_ME_002__MASSIVE01__6$", stage: 4, count: 5);
                     return new State퍼즐단계4Wait(context);
                 }
@@ -486,7 +488,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal State퍼즐단계4Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 6);
+                context.SetTimer(id: "1", arg2: 6);
             }
 
             public override TriggerState Execute() {
@@ -498,7 +500,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -507,7 +509,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.StartMiniGameRound(boxId: 301, round: 4);
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
                 context.SetRandomMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: false, arg3: 15, arg4: 0, arg5: 200);
             }
 
@@ -520,7 +522,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -529,7 +531,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 301, expRate: 0.25f);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -541,7 +543,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -571,10 +573,10 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.MiniGameCameraDirection(boxId: 301, cameraId: 901);
-                context.SetEventUI(arg1: 0, arg2: "0,0");
+                context.SetEventUI(arg1: 0, script: "0,0");
                 context.PlaySystemSoundInBox(arg2: "ME_002_Massive01_07");
-                context.SetEventUI(arg1: 3, arg2: "$61000002_ME_002__MASSIVE01__7$", arg3: 7000, arg4: "301");
-                context.SetEventUI(arg1: 6, arg2: "$61000002_ME_002__MASSIVE01__8$", arg3: 7000, arg4: "!301");
+                context.SetEventUI(arg1: 3, script: "$61000002_ME_002__MASSIVE01__7$", arg3: 7000, arg4: "301");
+                context.SetEventUI(arg1: 6, script: "$61000002_ME_002__MASSIVE01__8$", arg3: 7000, arg4: "!301");
             }
 
             public override TriggerState Execute() {
@@ -594,11 +596,11 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {301}, arg2: "ME_001_Massive00_10");
-                context.SetEventUI(arg1: 3, arg2: "$61000002_ME_002__MASSIVE01__9$", arg3: 5000, arg4: "301");
-                context.SetEventUI(arg1: 6, arg2: "$61000002_ME_002__MASSIVE01__10$", arg3: 5000, arg4: "!301");
+                context.SetEventUI(arg1: 3, script: "$61000002_ME_002__MASSIVE01__9$", arg3: 5000, arg4: "301");
+                context.SetEventUI(arg1: 6, script: "$61000002_ME_002__MASSIVE01__10$", arg3: 5000, arg4: "!301");
                 context.AddBuff(arg1: new[] {301}, arg2: 70000019, arg3: 1);
                 context.MiniGameGiveReward(winnerBoxId: 301, contentType: "miniGame");
-                context.EndMiniGame(winnerBoxId: 301, gameName: "finalsurvivor");
+                context.EndMiniGame(winnerBoxId: 301, type: MiniGame.SoleSurvivor);
                 context.SetAchievement(arg1: 301, arg2: "trigger", arg3: "finalsurvivor_win");
             }
 
@@ -617,14 +619,14 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal State퍼즐종료계단보이기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 0, arg2: "0,0");
+                context.SetEventUI(arg1: 0, script: "0,0");
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 201, 202, 203, 204, 205}, arg2: true);
                 context.SetActor(arg1: 251, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 252, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 253, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 254, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 255, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -636,7 +638,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -650,7 +652,7 @@ namespace Maple2.Trigger._61000002_me_002 {
                 context.SetActor(arg1: 258, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 259, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 260, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -664,7 +666,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             public override void OnExit() {
                 context.SetMesh(arg1: new[] {211}, arg2: true);
                 context.SetActor(arg1: 261, arg2: true, arg3: "Eff_MassiveEvent_Door_Opened");
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -673,8 +675,8 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.UnSetMiniGameAreaForHack();
-                context.SetEventUI(arg1: 0, arg2: "0,0");
-                context.SetPortal(arg1: 777, arg2: false, arg3: true, arg4: false);
+                context.SetEventUI(arg1: 0, script: "0,0");
+                context.SetPortal(portalId: 777, visible: false, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -693,20 +695,20 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 301);
-                context.EndMiniGame(winnerBoxId: 301, gameName: "finalsurvivor");
+                context.EndMiniGame(winnerBoxId: 301, type: MiniGame.SoleSurvivor);
                 context.UnSetMiniGameAreaForHack();
-                context.SetEventUI(arg1: 0, arg2: "0,0");
+                context.SetEventUI(arg1: 0, script: "0,0");
                 context.PlaySystemSoundInBox(arg1: new[] {301}, arg2: "ME_001_Massive00_14");
-                context.SetEventUI(arg1: 5, arg2: "$61000002_ME_002__MASSIVE01__13$", arg3: 5000);
+                context.SetEventUI(arg1: 5, script: "$61000002_ME_002__MASSIVE01__13$", arg3: 5000);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
-                context.SetPortal(arg1: 777, arg2: false, arg3: true, arg4: false);
+                context.SetPortal(portalId: 777, visible: false, enabled: true, minimapVisible: false);
                 context.SetMesh(arg1: new[] {201, 202, 203, 204, 205}, arg2: true);
                 context.SetActor(arg1: 251, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 252, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 253, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 254, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 255, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -718,7 +720,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -732,7 +734,7 @@ namespace Maple2.Trigger._61000002_me_002 {
                 context.SetActor(arg1: 258, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 259, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 260, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -746,7 +748,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             public override void OnExit() {
                 context.SetMesh(arg1: new[] {211}, arg2: true);
                 context.SetActor(arg1: 261, arg2: true, arg3: "Eff_MassiveEvent_Door_Opened");
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -754,7 +756,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal State유저이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000007_ME__MAINPROCESS_SPRINGBEACH__23$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$61000007_ME__MAINPROCESS_SPRINGBEACH__23$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {

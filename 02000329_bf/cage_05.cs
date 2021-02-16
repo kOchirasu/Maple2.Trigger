@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 205, arg2: true, arg3: "Opened");
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetEffect(arg1: new[] {605}, arg2: false);
                 context.SetEffect(arg1: new[] {6805}, arg2: true);
             }
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1005, arg2: "MS2PatrolData_1005");
-                context.SetTimer(arg1: "4", arg2: 4);
+                context.SetTimer(id: "4", arg2: 4);
             }
 
             public override TriggerState Execute() {

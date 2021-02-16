@@ -136,7 +136,7 @@ namespace Maple2.Trigger._99999841 {
             internal State지역선택2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "추가 병력 Appear", arg3: 4000, arg4: "9201");
+                context.SetEventUI(arg1: 1, script: "추가 병력 Appear", arg3: 4000, arg4: "9201");
             }
 
             public override TriggerState Execute() {
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._99999841 {
             internal State지역선택2_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "추가 병력 Appear", arg3: 4000, arg4: "9201");
+                context.SetEventUI(arg1: 1, script: "추가 병력 Appear", arg3: 4000, arg4: "9201");
             }
 
             public override TriggerState Execute() {
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._99999841 {
             internal State지역선택2_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "추가 병력 Appear", arg3: 4000, arg4: "9201");
+                context.SetEventUI(arg1: 1, script: "추가 병력 Appear", arg3: 4000, arg4: "9201");
             }
 
             public override TriggerState Execute() {

@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10000, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 10000, visible: true, enabled: true, minimapVisible: true);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
                 context.SetInteractObject(arg1: new[] {12000319, 12000320}, arg2: 0);

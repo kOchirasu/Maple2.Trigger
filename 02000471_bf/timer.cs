@@ -22,8 +22,8 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "Timer", arg2: 420, arg3: true, arg4: true, arg5: 0);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__TIMER__0$", arg3: 5000, arg4: "0");
+                context.SetTimer(id: "Timer", arg2: 420, arg3: true, arg4: true, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000471_BF__TIMER__0$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 2040301, key: "TimerEnd", value: 1);
-                context.ResetTimer(arg1: "Timer");
+                context.ResetTimer(id: "Timer");
             }
 
             public override TriggerState Execute() {
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 2040301, key: "InteractClear", value: 1);
-                context.ResetTimer(arg1: "Timer");
+                context.ResetTimer(id: "Timer");
             }
 
             public override TriggerState Execute() {

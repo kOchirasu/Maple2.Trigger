@@ -86,7 +86,7 @@ namespace Maple2.Trigger._61000022_me {
             internal StateGambleBonus(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MiniGameGiveExp(boxId: 9001, expRate: 0.1f, isOutSide: "false");
+                context.MiniGameGiveExp(boxId: 9001, expRate: 0.1f, isOutSide: false);
             }
 
             public override TriggerState Execute() {
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._61000022_me {
             internal StateJackpotBonus(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MiniGameGiveExp(boxId: 9001, expRate: 0.1f, isOutSide: "false");
+                context.MiniGameGiveExp(boxId: 9001, expRate: 0.1f, isOutSide: false);
             }
 
             public override TriggerState Execute() {

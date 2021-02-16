@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52000064_qd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1101, 1102, 1103}, arg2: false);
             }
 
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52000064_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000650}, arg3: new byte[] {3})) {
-                    context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     return new StateEnd(context);
                 }
 

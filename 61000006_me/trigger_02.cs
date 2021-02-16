@@ -23,7 +23,7 @@ namespace Maple2.Trigger._61000006_me {
             internal State바닥열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "8", arg2: 200);
+                context.SetTimer(id: "8", arg2: 200);
                 context.SetMesh(arg1: new[] {530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550}, arg2: false);
             }
 

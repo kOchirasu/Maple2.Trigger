@@ -6,7 +6,7 @@ namespace Maple2.Trigger._02000099_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3101, 3102, 3103, 3104, 3105, 3106, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -143,7 +143,7 @@ namespace Maple2.Trigger._02000099_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2000})) {
-                    context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                     context.ShowGuideSummary(entityId: 20000993, textId: 20000993, duration: 5000);
                     context.SetMesh(arg1: new[] {3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);

@@ -4,8 +4,8 @@ namespace Maple2.Trigger._65000001_bd {
             internal State시간표확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetTimer(arg1: "60", arg2: 60, arg3: false, arg4: true);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
+                context.SetTimer(id: "60", arg2: 60, arg3: false, arg4: true);
                 context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._65000001_bd {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "60");
+                context.ResetTimer(id: "60");
             }
         }
 
@@ -50,9 +50,9 @@ namespace Maple2.Trigger._65000001_bd {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "6", arg2: 6, arg3: false);
+                context.SetTimer(id: "6", arg2: 6, arg3: false);
                 context.PlaySystemSoundInBox(arg2: "BD_Enter_00");
-                context.SetEventUI(arg1: 1, arg2: "$65000001_BD__ENTER__0$", arg3: 6000, arg4: "101");
+                context.SetEventUI(arg1: 1, script: "$65000001_BD__ENTER__0$", arg3: 6000, arg4: "101");
             }
 
             public override TriggerState Execute() {
@@ -70,9 +70,9 @@ namespace Maple2.Trigger._65000001_bd {
             internal State어나운스1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3, arg3: false);
+                context.SetTimer(id: "3", arg2: 3, arg3: false);
                 context.PlaySystemSoundInBox(arg2: "BD_Enter_01");
-                context.SetEventUI(arg1: 1, arg2: "$65000001_BD__ENTER__1$", arg3: 3000, arg4: "101");
+                context.SetEventUI(arg1: 1, script: "$65000001_BD__ENTER__1$", arg3: 3000, arg4: "101");
             }
 
             public override TriggerState Execute() {
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._65000001_bd {
             internal StatePvP(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3, arg3: false);
+                context.SetTimer(id: "3", arg2: 3, arg3: false);
             }
 
             public override TriggerState Execute() {
@@ -127,12 +127,12 @@ namespace Maple2.Trigger._65000001_bd {
             internal State비김(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3, arg3: false);
+                context.SetTimer(id: "3", arg2: 3, arg3: false);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.SetEventUI(arg1: 5, arg2: "$65000001_BD__ENTER__2$", arg3: 3000, arg4: "0");
+                    context.SetEventUI(arg1: 5, script: "$65000001_BD__ENTER__2$", arg3: 3000, arg4: "0");
                     return new State완료(context);
                 }
 
@@ -146,9 +146,9 @@ namespace Maple2.Trigger._65000001_bd {
             internal State게임종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "6", arg2: 6);
-                context.SetEventUI(arg1: 0, arg2: "0,0");
-                context.SetEventUI(arg1: 3, arg2: "$65000001_BD__ENTER__3$", arg3: 5000, arg4: "102");
+                context.SetTimer(id: "6", arg2: 6);
+                context.SetEventUI(arg1: 0, script: "0,0");
+                context.SetEventUI(arg1: 3, script: "$65000001_BD__ENTER__3$", arg3: 5000, arg4: "102");
                 context.AddBuff(arg1: new[] {102}, arg2: 70000063, arg3: 1);
             }
 
@@ -167,11 +167,11 @@ namespace Maple2.Trigger._65000001_bd {
             internal State보상(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "15", arg2: 15);
+                context.SetTimer(id: "15", arg2: 15);
                 context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "BD_Enter_04");
                 context.PlaySystemSoundInBox(arg1: new[] {103}, arg2: "BD_Enter_05");
-                context.SetEventUI(arg1: 3, arg2: "$65000001_BD__ENTER__4$", arg3: 5000, arg4: "102");
-                context.SetEventUI(arg1: 6, arg2: "$65000001_BD__ENTER__5$", arg3: 5000, arg4: "!102");
+                context.SetEventUI(arg1: 3, script: "$65000001_BD__ENTER__4$", arg3: 5000, arg4: "102");
+                context.SetEventUI(arg1: 6, script: "$65000001_BD__ENTER__5$", arg3: 5000, arg4: "!102");
                 context.CreateItem(arg1: new[] {9001, 9002, 9003});
                 context.CreateItem(arg1: new[] {9004}, arg2: 104);
             }
@@ -191,8 +191,8 @@ namespace Maple2.Trigger._65000001_bd {
             internal State완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

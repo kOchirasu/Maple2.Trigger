@@ -63,8 +63,8 @@ namespace Maple2.Trigger._02000403_bf {
             internal StateEvent_02_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1122, arg3: "$02000403_BF__MAGIC_02__0$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 1121, arg3: "$02000403_BF__MAGIC_02__1$", arg4: 3, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 1122, script: "$02000403_BF__MAGIC_02__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1121, script: "$02000403_BF__MAGIC_02__1$", arg4: 3, arg5: 3);
             }
 
             public override TriggerState Execute() {

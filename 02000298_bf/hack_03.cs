@@ -133,8 +133,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_1279(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__0$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__0$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -152,8 +152,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_1238(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__1$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__1$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -171,8 +171,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_1358(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 3);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__2$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 3);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__2$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -190,8 +190,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_1489(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__3$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__3$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -209,8 +209,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_1567(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__4$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__4$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -228,8 +228,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_1679(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__5$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__5$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -247,8 +247,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_2389(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__6$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__6$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -266,8 +266,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_2347(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__7$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__7$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -285,8 +285,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_2478(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__8$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__8$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -304,8 +304,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_2456(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__9$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__9$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -323,8 +323,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_2569(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__10$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__10$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -342,8 +342,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_2678(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__11$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__11$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -361,8 +361,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_3458(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__12$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__12$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -380,8 +380,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_3589(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__13$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__13$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -399,8 +399,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_3679(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__14$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__14$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -418,8 +418,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_3789(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__15$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__15$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -437,8 +437,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_4567(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__16$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__16$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -456,8 +456,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_4578(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__17$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__17$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -475,8 +475,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_4689(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__18$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__18$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -494,8 +494,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State코드_4789(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_03__19$", arg3: 2000);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetEventUI(arg1: 1, script: "$02000298_BF__HACK_03__19$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -513,7 +513,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1800000", arg2: 1800000);
+                context.SetTimer(id: "1800000", arg2: 1800000);
             }
 
             public override TriggerState Execute() {

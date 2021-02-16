@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000118_bf {
             internal StateSkill동작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetSkill(arg1: new[] {2005, 2006, 2007, 2008}, arg2: true);
             }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000118_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 10);
+                context.SetTimer(id: "2", arg2: 10);
                 context.SetSkill(arg1: new[] {2005, 2006, 2007, 2008}, arg2: false);
             }
 

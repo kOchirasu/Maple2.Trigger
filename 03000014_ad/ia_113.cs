@@ -39,7 +39,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 91, arg2: "MS2PatrolData401");
-                context.SetConversation(arg1: 1, arg2: 91, arg3: "$03000014_AD__IA_113__0$", arg4: 4);
+                context.SetConversation(arg1: 1, arg2: 91, script: "$03000014_AD__IA_113__0$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {91});
-                context.SetTimer(arg1: "301", arg2: 10);
+                context.SetTimer(id: "301", arg2: 10);
             }
 
             public override TriggerState Execute() {

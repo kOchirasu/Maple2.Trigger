@@ -36,7 +36,7 @@ namespace Maple2.Trigger._02000014_ad {
                 context.SetEffect(arg1: new[] {201, 202}, arg2: true);
                 context.SetLadder(arg1: 101, arg2: true, arg3: true);
                 context.SetLadder(arg1: 102, arg2: true, arg3: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000014_ad {
                 context.SetEffect(arg1: new[] {211, 212}, arg2: true);
                 context.SetLadder(arg1: 111, arg2: true, arg3: true);
                 context.SetLadder(arg1: 112, arg2: true, arg3: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000014_ad {
                 context.SetEffect(arg1: new[] {221, 222}, arg2: true);
                 context.SetLadder(arg1: 121, arg2: true, arg3: true);
                 context.SetLadder(arg1: 122, arg2: true, arg3: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._02000014_ad {
                 context.SetEffect(arg1: new[] {231, 232}, arg2: true);
                 context.SetLadder(arg1: 131, arg2: true, arg3: true);
                 context.SetLadder(arg1: 132, arg2: true, arg3: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._02000014_ad {
                 context.SetEffect(arg1: new[] {241, 242}, arg2: true);
                 context.SetLadder(arg1: 141, arg2: true, arg3: true);
                 context.SetLadder(arg1: 142, arg2: true, arg3: true);
-                context.SetTimer(arg1: "1", arg2: 60);
+                context.SetTimer(id: "1", arg2: 60);
             }
 
             public override TriggerState Execute() {
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._02000014_ad {
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 122, arg2: true, arg3: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._02000014_ad {
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 131, arg2: true, arg3: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -177,7 +177,7 @@ namespace Maple2.Trigger._02000014_ad {
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 132, arg2: true, arg3: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._02000014_ad {
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 141, arg2: true, arg3: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._02000014_ad {
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 142, arg2: true, arg3: true);
-                context.SetTimer(arg1: "1", arg2: 120);
+                context.SetTimer(id: "1", arg2: 120);
             }
 
             public override TriggerState Execute() {

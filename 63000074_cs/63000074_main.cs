@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._63000074_cs {
     public static class _63000074_main {
         public class StateSetup : TriggerState {
@@ -32,8 +34,8 @@ namespace Maple2.Trigger._63000074_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -73,7 +75,7 @@ namespace Maple2.Trigger._63000074_cs {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateSceneskip_1(context), arg2: "exit");
-                context.SetCinematicUI(arg1: 9, arg2: "$63000074_CS__63000074_MAIN__0$");
+                context.SetCinematicUI(type: 9, script: "$63000074_CS__63000074_MAIN__0$");
             }
 
             public override TriggerState Execute() {
@@ -91,7 +93,7 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateEvelyn_monologue_00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -109,9 +111,9 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateEvelyn_monologue_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11004354, msg: "$63000074_CS__63000074_MAIN__1$", duration: 4000, illustId: "Evelyn_normal", align: "center");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 11004354, script: "$63000074_CS__63000074_MAIN__1$", duration: 4000, illustId: "Evelyn_normal", align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -130,8 +132,8 @@ namespace Maple2.Trigger._63000074_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
-                context.AddCinematicTalk(npcId: 11004354, msg: "$63000074_CS__63000074_MAIN__2$", duration: 4000, illustId: "Evelyn_sad", align: "right");
+                context.CameraSelectPath(pathIds: new[] {8000}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004354, script: "$63000074_CS__63000074_MAIN__2$", duration: 4000, illustId: "Evelyn_sad", align: Align.Right);
             }
 
             public override TriggerState Execute() {
@@ -149,8 +151,8 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateEvelyn_monologue_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
-                context.AddCinematicTalk(npcId: 11004354, msg: "$63000074_CS__63000074_MAIN__3$", duration: 5000, illustId: "Evelyn_sad", align: "right");
+                context.CameraSelectPath(pathIds: new[] {8001}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004354, script: "$63000074_CS__63000074_MAIN__3$", duration: 5000, illustId: "Evelyn_sad", align: Align.Right);
             }
 
             public override TriggerState Execute() {
@@ -168,8 +170,8 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateEvelyn_monologue_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8005}, arg2: false);
-                context.AddCinematicTalk(npcId: 11004354, msg: "$63000074_CS__63000074_MAIN__4$", duration: 3500);
+                context.CameraSelectPath(pathIds: new[] {8005}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004354, script: "$63000074_CS__63000074_MAIN__4$", duration: 3500);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData");
             }
 
@@ -206,7 +208,7 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateBobos_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: "$63000074_CS__63000074_MAIN__5$");
+                context.SetCinematicUI(type: 9, script: "$63000074_CS__63000074_MAIN__5$");
             }
 
             public override TriggerState Execute() {
@@ -224,9 +226,9 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateBobos_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: "$63000074_CS__63000074_MAIN__6$");
+                context.SetCinematicUI(type: 9, script: "$63000074_CS__63000074_MAIN__6$");
                 context.SetMesh(arg1: new[] {4001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8002}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -245,9 +247,9 @@ namespace Maple2.Trigger._63000074_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.CameraSelectPath(pathIds: new[] {8003}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -285,8 +287,8 @@ namespace Maple2.Trigger._63000074_cs {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -351,8 +353,8 @@ namespace Maple2.Trigger._63000074_cs {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

@@ -22,8 +22,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {103}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {1601, 1602, 1603, 1604}, arg2: false);
                 context.SetSkip(state: new StateStopCinematic(context));
             }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateCinematic진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__PATO__0$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11000068, script: "$02000066_BF__PATO__0$", arg4: 2);
                 context.SetSkip(state: new StateStopCinematic(context));
             }
 
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 103, arg2: 70000107);
                 context.CameraSelect(arg1: 301, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

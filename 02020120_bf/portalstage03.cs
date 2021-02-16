@@ -63,8 +63,8 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateStage3_왼쪽_왼쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3101, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 3102, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3101, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 3102, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -82,8 +82,8 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateStage3_왼쪽_가운데진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3103, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 3104, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3103, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 3104, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateStage3_가운데_왼쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3201, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3201, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateStage3_가운데_가운데진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3202, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3202, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateStage3_가운데_오른쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3203, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3203, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -155,9 +155,9 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateStage3_오른쪽_가운데진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3301, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 3302, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 3303, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3301, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 3302, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 3303, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -175,9 +175,9 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateStage3_오른쪽_오른쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3304, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 3305, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 3306, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3304, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 3305, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 3306, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

@@ -22,7 +22,7 @@ namespace Maple2.Trigger._99999841 {
                     return new StateEnd(context);
                 }
 
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 9001, additionalEffectId: 70002541, level: true)) {
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 9001, additionalEffectId: 70002541, level: 1)) {
                     return new State유저이동확률(context);
                 }
 

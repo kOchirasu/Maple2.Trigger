@@ -1,11 +1,13 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._63000016_cs {
     public static class _meetjacey01 {
         public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "Guide");
-                context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: true);
+                context.CreateWidget(type: WidgetType.Guide);
+                context.SetPortal(portalId: 2, visible: true, enabled: false, minimapVisible: true);
                 context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {5000, 6000}, arg2: false);
@@ -45,8 +47,8 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateMoveToJacey02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -64,9 +66,9 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateWalkIn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -88,8 +90,8 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateWalkIn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.MoveUserPath(arg1: "MS2PatrolData_1000");
             }
@@ -128,7 +130,7 @@ namespace Maple2.Trigger._63000016_cs {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__0$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001620, script: "$63000016_CS__MEETJACEY01__0$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -146,8 +148,8 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateMeetJacey02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 602, arg2: true);
             }
 
@@ -186,7 +188,7 @@ namespace Maple2.Trigger._63000016_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__1$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001620, script: "$63000016_CS__MEETJACEY01__1$", arg4: 5);
                 context.SetSkip(state: new StateJaceyTalk02(context));
             }
 
@@ -226,7 +228,7 @@ namespace Maple2.Trigger._63000016_cs {
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_1002");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_102");
-                context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__2$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001620, script: "$63000016_CS__MEETJACEY01__2$", arg4: 4);
                 context.SetSkip(state: new StateJaceyTalk04(context));
             }
 
@@ -264,7 +266,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateJaceyTalk05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__3$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001620, script: "$63000016_CS__MEETJACEY01__3$", arg4: 4);
                 context.SetSkip(state: new StateJaceyTalk06(context));
             }
 
@@ -286,8 +288,8 @@ namespace Maple2.Trigger._63000016_cs {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.CameraSelect(arg1: 602, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -309,7 +311,7 @@ namespace Maple2.Trigger._63000016_cs {
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "Guide", arg2: "IsTriggerEvent", arg3: "10021013")) {
+                if (context.WidgetCondition(type: WidgetType.Guide, arg2: "IsTriggerEvent", arg3: "10021013")) {
                     return new StateMinimapGuide02(context);
                 }
 
@@ -339,9 +341,9 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateJaceyTalk10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__4$", arg4: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11001620, script: "$63000016_CS__MEETJACEY01__4$", arg4: 4);
                 context.SetSkip(state: new StateJaceyTalk11(context));
             }
 
@@ -379,7 +381,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateJaceyTalk12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__5$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001620, script: "$63000016_CS__MEETJACEY01__5$", arg4: 4);
                 context.SetSkip(state: new StateJaceyTalk13(context));
             }
 
@@ -400,8 +402,8 @@ namespace Maple2.Trigger._63000016_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -439,9 +441,9 @@ namespace Maple2.Trigger._63000016_cs {
             internal StatePatrolWithJacey02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000016_CS__MEETJACEY01__6$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000016_CS__MEETJACEY01__7$", arg4: 3, arg5: 3);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000016_CS__MEETJACEY01__8$", arg4: 3, arg5: 6);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000016_CS__MEETJACEY01__6$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000016_CS__MEETJACEY01__7$", arg4: 3, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000016_CS__MEETJACEY01__8$", arg4: 3, arg5: 6);
             }
 
             public override TriggerState Execute() {
@@ -459,9 +461,9 @@ namespace Maple2.Trigger._63000016_cs {
             internal StatePatrolWithJacey03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000016_CS__MEETJACEY01__9$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000016_CS__MEETJACEY01__10$", arg4: 3, arg5: 3);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000016_CS__MEETJACEY01__11$", arg4: 3, arg5: 6);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000016_CS__MEETJACEY01__9$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000016_CS__MEETJACEY01__10$", arg4: 3, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000016_CS__MEETJACEY01__11$", arg4: 3, arg5: 6);
             }
 
             public override TriggerState Execute() {
@@ -479,7 +481,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StatePatrolWithJacey04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000016_CS__MEETJACEY01__12$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000016_CS__MEETJACEY01__12$", arg4: 3);
                 context.HideGuideSummary(entityId: 10021020);
             }
 
@@ -498,8 +500,8 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateCallNextRoom01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 700, arg2: true);
             }
 
@@ -538,7 +540,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateCallNextRoom03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__13$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001620, script: "$63000016_CS__MEETJACEY01__13$", arg4: 4);
                 context.SetSkip(state: new StateCallNextRoom04(context));
             }
 
@@ -559,8 +561,8 @@ namespace Maple2.Trigger._63000016_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.CameraSelect(arg1: 700, arg2: false);
@@ -619,9 +621,9 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateJaceyQuest02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__14$", arg4: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11001620, script: "$63000016_CS__MEETJACEY01__14$", arg4: 4);
                 context.SetSkip(state: new StateJaceyQuest03(context));
             }
 
@@ -659,7 +661,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateJaceyQuest04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__15$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001620, script: "$63000016_CS__MEETJACEY01__15$", arg4: 4);
                 context.DestroyMonster(arg1: new[] {102});
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.SetSkip(state: new StateJaceyQuest05(context));
@@ -699,7 +701,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateAboutPotion01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__16$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001620, script: "$63000016_CS__MEETJACEY01__16$", arg4: 4);
                 context.SetSkip(state: new StateAboutPotion02(context));
             }
 
@@ -737,7 +739,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateAboutPotion03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__17$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001620, script: "$63000016_CS__MEETJACEY01__17$", arg4: 4);
                 context.SetSkip(state: new StateAboutPotion04(context));
             }
 
@@ -758,8 +760,8 @@ namespace Maple2.Trigger._63000016_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_301");
             }
 
@@ -780,7 +782,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateJaceyLeve01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 103, arg3: "$63000016_CS__MEETJACEY01__18$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 103, script: "$63000016_CS__MEETJACEY01__18$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -835,7 +837,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StatePortalOpen01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

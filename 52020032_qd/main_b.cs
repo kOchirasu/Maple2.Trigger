@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52020032_qd {
     public static class _main_b {
         public class StateIdle : TriggerState {
@@ -156,9 +158,9 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_C_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.SetActor(arg1: 8002, arg2: true, arg3: "Idle_A");
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(state: new StateEvent_C_Skip_01(context), arg2: "Exit");
@@ -197,10 +199,10 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_C_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetPcEmotionLoop(arg1: "Down_Idle_A", arg2: 90000f);
-                context.AddCinematicTalk(npcId: 11003620, msg: "그럼 편안한 죽음 되시길.", duration: 2800, illustId: "Michael_normal", align: "Center");
+                context.AddCinematicTalk(npcId: 11003620, script: "그럼 편안한 죽음 되시길.", duration: 2800, illustId: "Michael_normal", align: Align.Center);
                 context.DestroyMonster(arg1: new[] {401});
                 context.SetActor(arg1: 8002, arg2: false, arg3: "Idle_A");
             }
@@ -257,7 +259,7 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_C_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003622, msg: "$npcName:11003620$놈!", duration: 2800, illustId: "Turka_normal", align: "Center");
+                context.AddCinematicTalk(npcId: 11003622, script: "$npcName:11003620$놈!", duration: 2800, illustId: "Turka_normal", align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -277,7 +279,7 @@ namespace Maple2.Trigger._52020032_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
                 context.CreateMonster(arg1: new[] {501}, arg2: true);
-                context.AddCinematicTalk(npcId: 11003622, msg: "감히 날 배신하다니!", duration: 2800, illustId: "Turka_normal", align: "Center");
+                context.AddCinematicTalk(npcId: 11003622, script: "감히 날 배신하다니!", duration: 2800, illustId: "Turka_normal", align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -296,7 +298,7 @@ namespace Maple2.Trigger._52020032_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcId: 11003622, msg: "배신의 대가는 톡톡히 치르게 해주겠다.", duration: 0, illustId: "Turka_normal", align: "Center");
+                context.AddCinematicTalk(npcId: 11003622, script: "배신의 대가는 톡톡히 치르게 해주겠다.", duration: 0, illustId: "Turka_normal", align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -314,7 +316,7 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_C_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003622, msg: ".......", duration: 1800, illustId: "0", align: "Center");
+                context.AddCinematicTalk(npcId: 11003622, script: ".......", duration: 1800, illustId: "0", align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -332,7 +334,7 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_C_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003622, msg: "이렇게 된 이상 그 계획을 빨리 진행해야겠군.", duration: 2800, illustId: "0", align: "Center");
+                context.AddCinematicTalk(npcId: 11003622, script: "이렇게 된 이상 그 계획을 빨리 진행해야겠군.", duration: 2800, illustId: "0", align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -448,9 +450,9 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_C_Skip_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -496,8 +498,8 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_C_Exit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 

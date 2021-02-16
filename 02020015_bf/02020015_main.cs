@@ -82,7 +82,7 @@ namespace Maple2.Trigger._02020015_bf {
             internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "20초 후 발판이 사라집니다.", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "20초 후 발판이 사라집니다.", arg3: 3000);
                 context.SetMesh(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019}, arg2: true);
                 context.SetUserValue(triggerId: 99990002, key: "Timer", value: 1);
             }

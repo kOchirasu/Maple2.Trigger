@@ -40,7 +40,7 @@ namespace Maple2.Trigger._99999911 {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$99999911__MAIN__0$", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$99999911__MAIN__0$", arg3: 4000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._99999911 {
                 context.CreateMonster(arg1: new[] {310}, arg2: true, arg3: 2);
                 context.CreateMonster(arg1: new[] {311}, arg2: true, arg3: 3);
                 context.CreateMonster(arg1: new[] {312}, arg2: true, arg3: 0);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._99999911 {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 991104, key: "Round_02", value: 1);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {

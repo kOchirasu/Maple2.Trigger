@@ -4,9 +4,9 @@ namespace Maple2.Trigger._02000426_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "ZakumBodyAppearance", value: 0);
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.DungeonClear();
                     return new StateEnd(context);
                 }
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.DungeonFail();
                     return new StateEnd(context);
                 }

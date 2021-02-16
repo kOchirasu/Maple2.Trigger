@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02020112_bf {
             internal State타이머시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 10, arg3: true, arg4: true, arg5: -40);
+                context.SetTimer(id: "1", arg2: 10, arg3: true, arg4: true, arg5: -40);
             }
 
             public override TriggerState Execute() {
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02020112_bf {
             internal State리셋(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
                 context.SetUserValue(triggerId: 99990020, key: "TimerReset", value: 1);
             }
 
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02020112_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
                 context.SetUserValue(triggerId: 99990020, key: "TimerReset", value: 0);
             }
 

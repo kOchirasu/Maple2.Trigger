@@ -6,7 +6,7 @@ namespace Maple2.Trigger._02000337_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7301, 7302, 7303, 7304, 7305, 7306, 7307, 7308, 7309}, arg2: false);
                 context.SetEffect(arg1: new[] {7310}, arg2: true);
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -24,12 +24,12 @@ namespace Maple2.Trigger._02000337_bf {
             internal State폭발예고(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 8002, arg2: true);
                 context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004}, arg2: false, arg4: 0, arg5: 10f);
                 context.SetEffect(arg1: new[] {7308}, arg2: true);
-                context.SetTimer(arg1: "2", arg2: 2, arg4: false);
+                context.SetTimer(id: "2", arg2: 2, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02000337_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7306}, arg2: true);
                 context.SetSkill(arg1: new[] {8306, 8307}, arg2: true);
-                context.SetTimer(arg1: "2", arg2: 2, arg4: false);
+                context.SetTimer(id: "2", arg2: 2, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -61,9 +61,9 @@ namespace Maple2.Trigger._02000337_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02000337_bf {
                 context.SetActor(arg1: 5006, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 5007, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 5008, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -139,8 +139,8 @@ namespace Maple2.Trigger._02000337_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
         }
 
@@ -150,9 +150,9 @@ namespace Maple2.Trigger._02000337_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {199});
                 context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11003124, arg3: "$02000337_BF__BOSS__0$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003124, script: "$02000337_BF__BOSS__0$", arg4: 3);
                 context.SetSkip(state: new State웨이홍_Script02(context));
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -172,9 +172,9 @@ namespace Maple2.Trigger._02000337_bf {
             internal State웨이홍_Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11003124, arg3: "$02000337_BF__BOSS__1$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003124, script: "$02000337_BF__BOSS__1$", arg4: 3);
                 context.SetSkip(state: new StateEnd(context));
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -186,9 +186,9 @@ namespace Maple2.Trigger._02000337_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -196,9 +196,9 @@ namespace Maple2.Trigger._02000337_bf {
             internal State웨이홍_Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11003124, arg3: "$02000337_BF__BOSS__2$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003124, script: "$02000337_BF__BOSS__2$", arg4: 3);
                 context.SetSkip(state: new StateEnd(context));
-                context.SetTimer(arg1: "4", arg2: 4, arg4: false);
+                context.SetTimer(id: "4", arg2: 4, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -210,9 +210,9 @@ namespace Maple2.Trigger._02000337_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -222,8 +222,8 @@ namespace Maple2.Trigger._02000337_bf {
             public override void OnEnter() {
                 context.DungeonClear();
                 context.CameraSelect(arg1: 8001, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 199, arg3: "$02000337_BF__BOSS__3$", arg4: 3, arg5: 2);
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);
+                context.SetConversation(arg1: 1, arg2: 199, script: "$02000337_BF__BOSS__3$", arg4: 3, arg5: 2);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

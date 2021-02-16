@@ -155,7 +155,7 @@ namespace Maple2.Trigger._02000303_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "120", arg2: 120);
+                context.SetTimer(id: "120", arg2: 120);
             }
 
             public override TriggerState Execute() {

@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02020112_bf {
             internal State안전장치_작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020112_BF__SAFEZONE1__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020112_BF__SAFEZONE1__0$", arg3: 5000);
                 context.SetUserValue(triggerId: 99990002, key: "Safe", value: 1);
             }
 

@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52020008_qd {
                 context.SetSkill(arg1: new[] {9991}, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 6001, 6002, 7001, 7002}, arg2: false);
                 context.SetBreakable(arg1: new[] {6001, 6002, 7001, 7002}, arg2: false);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false);
                 context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028}, arg2: true);
             }
 
@@ -29,8 +29,8 @@ namespace Maple2.Trigger._52020008_qd {
                 context.SetSceneSkip(state: new StateStopCinematic(context), arg2: "exit");
                 context.CreateMonster(arg1: new[] {101, 102}, arg2: false);
                 context.CreateMonster(arg1: new[] {103}, arg2: false, arg3: 30000);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 503, arg2: true);
             }
 
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52020008_qd {
             internal StateCinematicCamera1_세리하Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11003660, arg3: "왕녀는 내가 잘 모실테니 이제 항복하시지?", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003660, script: "왕녀는 내가 잘 모실테니 이제 항복하시지?", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 504, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11003675, arg3: "아름답지 않은 시중을 받을 생각은 없다!!", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003675, script: "아름답지 않은 시중을 받을 생각은 없다!!", arg4: 3);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Bore_A");
             }
 
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 501, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "저녀석은 흑성회의 일원이야! 조심해!", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 0, script: "저녀석은 흑성회의 일원이야! 조심해!", arg4: 3);
                 context.SetPcEmotionSequence(arg1: "Emotion_Troubled_A");
             }
 
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 505, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11003674, arg3: @"시커먼 속내를 가진 건 메이플 연합도 마찬가지 아닌가요? \n크리티아스의 힘은 누구에게도 이용당하게 두지 않겠어요!", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11003674, script: @"시커먼 속내를 가진 건 메이플 연합도 마찬가지 아닌가요? \n크리티아스의 힘은 누구에게도 이용당하게 두지 않겠어요!", arg4: 5);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
             }
 
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 503, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11003660, arg3: @"그 말이 맞는 것 같네?\n세상에 진짜 선과 악은 없는 법이지~", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003660, script: @"그 말이 맞는 것 같네?\n세상에 진짜 선과 악은 없는 법이지~", arg4: 3);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Bore_B");
             }
 
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 501, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11003660, arg3: "이제 어떻게 하실려나?", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003660, script: "이제 어떻게 하실려나?", arg4: 3);
                 context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 104, 105, 106}, arg2: false);
             }
 
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._52020008_qd {
             internal StateCinematicCamera1_탈출장치(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11003675, arg3: "이오네님 준비하시죠!", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003675, script: "이오네님 준비하시죠!", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -224,7 +224,7 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 502, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11003661, arg3: "아이고 오늘 정모날인가?", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003661, script: "아이고 오늘 정모날인가?", arg4: 3);
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "Bore_A");
             }
 
@@ -247,7 +247,7 @@ namespace Maple2.Trigger._52020008_qd {
                 context.SetVisibleBreakableObject(arg1: new[] {6001, 6002, 7001, 7002}, arg2: true);
                 context.SetBreakable(arg1: new[] {6001, 6002, 7001, 7002}, arg2: true);
                 context.FaceEmotion(spawnPointId: 103, emotionName: "Trigger_bore1");
-                context.SetConversation(arg1: 2, arg2: 11003660, arg3: "아으... 귀찮아.", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003660, script: "아으... 귀찮아.", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -267,7 +267,7 @@ namespace Maple2.Trigger._52020008_qd {
             public override void OnEnter() {
                 context.InitNpcRotation(arg1: new[] {103});
                 context.FaceEmotion(spawnPointId: 103, emotionName: "Trigger_bore2");
-                context.SetConversation(arg1: 2, arg2: 11003660, arg3: "왕녀는 또 어디갔어!! 환장하겠네!!", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003660, script: "왕녀는 또 어디갔어!! 환장하겠네!!", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._52020008_qd {
                 context.CameraSelect(arg1: 502, arg2: true);
                 context.SetVisibleBreakableObject(arg1: new[] {6001, 6002, 7001, 7002}, arg2: false);
                 context.SetBreakable(arg1: new[] {6001, 6002, 7001, 7002}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11003661, arg3: "왕녀는 우리가 접수하겠다. 얘들아 처리해라!", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003661, script: "왕녀는 우리가 접수하겠다. 얘들아 처리해라!", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -309,7 +309,7 @@ namespace Maple2.Trigger._52020008_qd {
                 context.SetNpcRotation(arg1: 104, arg2: 180);
                 context.SetNpcRotation(arg1: 105, arg2: 180);
                 context.SetNpcRotation(arg1: 106, arg2: 180);
-                context.SetConversation(arg1: 2, arg2: 11003661, arg3: "어서 움직이자!", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003661, script: "어서 움직이자!", arg4: 3);
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_Chekky");
                 context.MoveNpc(arg1: 105, arg2: "MS2PatrolData_Jigmunt");
                 context.MoveNpc(arg1: 106, arg2: "MS2PatrolData_Henryte");
@@ -331,7 +331,7 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 501, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 103, arg3: "하늘로 솟은거야?? 탑 위에 뭐가 있나 봐야겠어!!", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 103, script: "하늘로 솟은거야?? 탑 위에 뭐가 있나 봐야겠어!!", arg4: 3);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_Seriha");
             }
 
@@ -357,8 +357,8 @@ namespace Maple2.Trigger._52020008_qd {
                 context.SetVisibleBreakableObject(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false);
                 context.SetBreakable(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false);
                 context.CameraReset(interpolationTime: 0.1f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028}, arg2: false);
             }
 
@@ -373,7 +373,7 @@ namespace Maple2.Trigger._52020008_qd {
             internal StateNPCCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "세리하를 추적하세요.", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "세리하를 추적하세요.", arg3: 5000);
                 context.CreateMonster(arg1: new[] {211, 212, 213, 214, 215, 216, 217});
             }
 
@@ -443,7 +443,7 @@ namespace Maple2.Trigger._52020008_qd {
             internal StatePortalEnable(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

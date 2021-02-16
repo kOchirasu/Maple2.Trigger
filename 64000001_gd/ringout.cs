@@ -4,7 +4,7 @@ namespace Maple2.Trigger._64000001_gd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 12, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._64000001_gd {
             internal State링아웃(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {

@@ -13,8 +13,8 @@ namespace Maple2.Trigger._02010070_bf {
                 context.DestroyMonster(arg1: new[] {22201, 22202, 22203, 22204, 1000, 1001, 1002, 1003, 1004, 1005, 1006});
                 context.SetEffect(arg1: new[] {95222}, arg2: false);
                 context.CreateMonster(arg1: new[] {1007, 1008}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02010070_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {95222}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02010070_BF__MAIN__3$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02010070_BF__MAIN__3$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._02010070_bf {
             internal State시간1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "150", arg2: 5);
+                context.SetTimer(id: "150", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -205,8 +205,8 @@ namespace Maple2.Trigger._02010070_bf {
             internal StateStart6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 6);
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 6);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -241,9 +241,9 @@ namespace Maple2.Trigger._02010070_bf {
             internal StateStart8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetPortal(arg1: 5, arg2: true, arg3: true, arg4: false);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetPortal(portalId: 5, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

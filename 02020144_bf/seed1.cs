@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return new State나무Creation1(context);
                 }
 
-                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 1004, additionalEffectId: 70002109, level: true)) {
+                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 1004, additionalEffectId: 70002109, level: 1)) {
                     return new StateEnd(context);
                 }
 
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return new State나무Creation1(context);
                 }
 
-                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 1004, additionalEffectId: 70002109, level: true)) {
+                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 1004, additionalEffectId: 70002109, level: 1)) {
                     return new StateEnd(context);
                 }
 
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return new State나무Creation1(context);
                 }
 
-                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 1004, additionalEffectId: 70002109, level: true)) {
+                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 1004, additionalEffectId: 70002109, level: 1)) {
                     return new StateEnd(context);
                 }
 
@@ -184,7 +184,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return new State나무Creation1(context);
                 }
 
-                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 1004, additionalEffectId: 70002109, level: true)) {
+                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 1004, additionalEffectId: 70002109, level: 1)) {
                     return new StateEnd(context);
                 }
 

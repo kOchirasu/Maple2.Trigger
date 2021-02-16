@@ -16,7 +16,7 @@ namespace Maple2.Trigger._99999887 {
             }
 
             public override void OnExit() {
-                context.CameraSelectPath(arg1: new[] {101, 102}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {101, 102}, arg2: false);
             }
         }
 
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._99999887 {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
                 context.SetActor(arg1: 200, arg2: true, arg3: "Down_A");
             }
 
@@ -37,7 +37,7 @@ namespace Maple2.Trigger._99999887 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
     }

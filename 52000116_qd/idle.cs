@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52000116_qd {
             internal StateNelftalk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000116_QD__IdLE__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000116_QD__IdLE__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {

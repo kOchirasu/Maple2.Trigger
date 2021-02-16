@@ -391,7 +391,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetEffect(arg1: new[] {5101}, arg2: false);
                 context.PlaySystemSoundInBox(arg1: new[] {9900}, arg2: "System_PartTimeJob_Right_01");
                 context.RemoveEffectNif(spawnPointId: 1117);
-                context.SetConversation(arg1: 1, arg2: 1117, arg3: "$02000387_BF__1117_CUSTOMER__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1117, script: "$02000387_BF__1117_CUSTOMER__0$", arg4: 3, arg5: 0);
                 context.AddBuff(arg1: new[] {9900}, arg2: 70000112, arg3: 1, arg4: false, arg5: false);
             }
 
@@ -449,7 +449,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetEffect(arg1: new[] {5101}, arg2: false);
                 context.PlaySystemSoundInBox(arg1: new[] {9900}, arg2: "System_PartTimeJob_Wrong_01");
                 context.RemoveEffectNif(spawnPointId: 1117);
-                context.SetConversation(arg1: 1, arg2: 1117, arg3: "$02000387_BF__1117_CUSTOMER__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1117, script: "$02000387_BF__1117_CUSTOMER__1$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {

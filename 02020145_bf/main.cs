@@ -1,4 +1,5 @@
 using System.Numerics;
+using Maple2.Trigger.Enum;
 
 namespace Maple2.Trigger._02020145_bf {
     public static class _main {
@@ -44,7 +45,7 @@ namespace Maple2.Trigger._02020145_bf {
             internal StateBoss_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
                 context.CreateMonster(arg1: new[] {101});
             }
 
@@ -107,7 +108,7 @@ namespace Maple2.Trigger._02020145_bf {
             internal State조명리셋(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$02020111_BF__MOVEMENT_01__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$02020111_BF__MOVEMENT_01__1$", arg4: 3, arg5: 0);
                 context.DestroyMonster(arg1: new[] {121, 122, 123, 124, 125, 131, 132, 133, 134});
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAmbientLight(arg1: new Vector3(183f, 189f, 201f));
@@ -179,7 +180,7 @@ namespace Maple2.Trigger._02020145_bf {
 
             public override void OnEnter() {
                 context.SetAchievement(arg2: "trigger", arg3: "ClearBlueLapenta_Quest");
-                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__MAIN__1$", duration: 3176, voice: @"ko/Npc/00002202");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__MAIN__1$", duration: 3176, voice: @"ko/Npc/00002202");
                 context.DestroyMonster(arg1: new[] {121, 122, 123, 124, 125, 131, 132, 133, 134});
             }
 
@@ -224,7 +225,7 @@ namespace Maple2.Trigger._02020145_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetAchievement(arg2: "trigger", arg3: "ClearBlueLapenta_Quest");
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

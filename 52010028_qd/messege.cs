@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52010028_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$52010028_QD__MESSEGE__0$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52010028_QD__MESSEGE__0$", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {

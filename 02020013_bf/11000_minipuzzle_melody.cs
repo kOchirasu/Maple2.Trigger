@@ -4,8 +4,8 @@ namespace Maple2.Trigger._02020013_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "2");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "2");
                 context.EnableLocalCamera(isEnable: false);
                 context.SetInteractObject(arg1: new[] {12000201, 12000074, 12000058, 12000059, 12000060, 12000061, 12000062, 12000063, 12000064, 12000065}, arg2: 2);
                 context.SetUserValue(key: "AnswerIsRight", value: 0);
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02020013_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000074}, arg2: 0)) {
-                    context.SetTimer(arg1: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
+                    context.SetTimer(id: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
                     return new StateStartMelodyQuiz_Delay01(context);
                 }
 
@@ -794,7 +794,7 @@ namespace Maple2.Trigger._02020013_bf {
                 context.AddBuff(arg1: new[] {11901}, arg2: 71001012, arg3: 1, arg4: false, arg5: false);
                 context.SetEffect(arg1: new[] {11300}, arg2: true);
                 context.SetInteractObject(arg1: new[] {12000201}, arg2: 1);
-                context.SetTimer(arg1: "2", arg2: 60, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "2", arg2: 60, arg3: true, arg4: false, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -956,8 +956,8 @@ namespace Maple2.Trigger._02020013_bf {
             internal StateMelodyQuiz_Fail_Quit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "2");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "2");
             }
 
             public override TriggerState Execute() {
@@ -976,8 +976,8 @@ namespace Maple2.Trigger._02020013_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "TimeEventOn", value: 0);
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "2");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "2");
             }
 
             public override TriggerState Execute() {

@@ -60,8 +60,8 @@ namespace Maple2.Trigger._52000034_qd {
             internal StateCinematic01시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.DestroyMonster(arg1: new[] {2001, 2002, 2003});
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003}, arg2: false);
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State자베스Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000034_QD__QUEST_01__0$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000034_QD__QUEST_01__0$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State자베스Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000034_QD__QUEST_01__1$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000034_QD__QUEST_01__1$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000034_QD__QUEST_01__2$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__2$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000034_QD__QUEST_01__3$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__3$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000034_QD__QUEST_01__4$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__4$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State자베스Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000034_QD__QUEST_01__5$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000034_QD__QUEST_01__5$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -190,7 +190,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State자베스Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000034_QD__QUEST_01__6$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000034_QD__QUEST_01__6$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000034_QD__QUEST_01__7$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__7$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -226,7 +226,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000034_QD__QUEST_01__8$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__8$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State자베스Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000034_QD__QUEST_01__9$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000034_QD__QUEST_01__9$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -262,7 +262,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State자베스Script06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000034_QD__QUEST_01__10$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000034_QD__QUEST_01__10$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000034_QD__QUEST_01__11$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__11$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -298,7 +298,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000034_QD__QUEST_01__12$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__12$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -332,7 +332,7 @@ namespace Maple2.Trigger._52000034_qd {
             internal State제이시Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001690, arg3: "$52000034_QD__QUEST_01__13$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001690, script: "$52000034_QD__QUEST_01__13$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -353,8 +353,8 @@ namespace Maple2.Trigger._52000034_qd {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.CameraSelect(arg1: 301, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.DestroyMonster(arg1: new[] {1003});
                 context.CreateMonster(arg1: new[] {2003}, arg2: false);
             }

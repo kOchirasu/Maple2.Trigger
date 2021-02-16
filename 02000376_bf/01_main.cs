@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetActor(arg1: 4002, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 4000, arg2: true, arg3: "or_fi_struc_stonegate_A01_off");
                 context.SetActor(arg1: 4003, arg2: true, arg3: "Closed");
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {5000, 5001, 5004}, arg2: false);
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003}, arg2: true);
                 context.SetUserValue(key: "PuzzleSolved", value: 0);
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 11, key: "DungeonStart", value: 1);
                 context.SetActor(arg1: 4003, arg2: true, arg3: "Opened");
                 context.SetMesh(arg1: new[] {3506, 3507}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000376_BF__01_MAIN__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$02000376_BF__01_MAIN__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3502, 3503, 3504, 3505}, arg2: false, arg3: 0, arg4: 100, arg5: 5f);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_100");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_200");
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000376_BF__01_MAIN__1$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$02000376_BF__01_MAIN__1$", arg4: 4, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._02000376_bf {
             internal StateNpcPatrol02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000376_BF__01_MAIN__2$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000376_BF__01_MAIN__2$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -233,8 +233,8 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 201, 102, 202});
                 context.CreateMonster(arg1: new[] {103, 203}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 203, arg3: "$02000376_BF__01_MAIN__3$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 103, arg3: "$02000376_BF__01_MAIN__4$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 203, script: "$02000376_BF__01_MAIN__3$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 103, script: "$02000376_BF__01_MAIN__4$", arg4: 3, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -343,7 +343,7 @@ namespace Maple2.Trigger._02000376_bf {
                 context.ChangeMonster(arg1: 978, arg2: 878);
                 context.ChangeMonster(arg1: 979, arg2: 879);
                 context.ChangeMonster(arg1: 981, arg2: 881);
-                context.SetConversation(arg1: 1, arg2: 105, arg3: "$02000376_BF__01_MAIN__5$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 105, script: "$02000376_BF__01_MAIN__5$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -362,7 +362,7 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {102, 202});
-                context.SetConversation(arg1: 1, arg2: 205, arg3: "$02000376_BF__01_MAIN__6$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 205, script: "$02000376_BF__01_MAIN__6$", arg4: 3, arg5: 2);
                 context.MoveNpc(arg1: 105, arg2: "MS2PatrolData_106");
                 context.MoveNpc(arg1: 205, arg2: "MS2PatrolData_206");
                 context.SetMesh(arg1: new[] {3500, 3501}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -388,7 +388,7 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {102, 202});
-                context.SetConversation(arg1: 1, arg2: 205, arg3: "$02000376_BF__01_MAIN__7$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 205, script: "$02000376_BF__01_MAIN__7$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 105, arg2: "MS2PatrolData_107");
                 context.MoveNpc(arg1: 205, arg2: "MS2PatrolData_207");
             }
@@ -408,7 +408,7 @@ namespace Maple2.Trigger._02000376_bf {
             internal StateFoundGate02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 105, arg3: "$02000376_BF__01_MAIN__8$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 105, script: "$02000376_BF__01_MAIN__8$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -426,7 +426,7 @@ namespace Maple2.Trigger._02000376_bf {
             internal StateShadowApp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 205, arg3: "$02000376_BF__01_MAIN__9$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 205, script: "$02000376_BF__01_MAIN__9$", arg4: 2, arg5: 0);
                 context.CreateMonster(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908}, arg2: false);
             }
 
@@ -448,7 +448,7 @@ namespace Maple2.Trigger._02000376_bf {
                 context.DestroyMonster(arg1: new[] {105, 205});
                 context.CreateMonster(arg1: new[] {106, 206}, arg2: false);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000376_BF__01_MAIN__10$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000376_BF__01_MAIN__10$", arg3: 3000, arg4: "0");
                 context.CreateMonster(arg1: new[] {911, 912, 913, 914, 915, 916, 917, 918}, arg2: false);
             }
 
@@ -507,7 +507,7 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 4, key: "PuzzleStart", value: 1);
-                context.SetConversation(arg1: 1, arg2: 104, arg3: "$02000376_BF__01_MAIN__11$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 104, script: "$02000376_BF__01_MAIN__11$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -526,7 +526,7 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000376_BF__01_MAIN__12$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000376_BF__01_MAIN__12$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -580,11 +580,11 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_108");
                 context.MoveNpc(arg1: 204, arg2: "MS2PatrolData_208");
-                context.SetConversation(arg1: 1, arg2: 104, arg3: "$02000376_BF__01_MAIN__13$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 204, arg3: "$02000376_BF__01_MAIN__14$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 104, script: "$02000376_BF__01_MAIN__13$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 204, script: "$02000376_BF__01_MAIN__14$", arg4: 2, arg5: 2);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "or_fi_struc_stonegate_A01_on");
                 context.SetMesh(arg1: new[] {3030}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

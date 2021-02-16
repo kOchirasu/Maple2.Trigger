@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State벨라소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
                 context.CreateMonster(arg1: new[] {1001});
             }
 
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._02000253_bf {
             internal State벨라이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 3);
-                context.SetConversation(arg1: 1, arg2: 1001, arg3: "$02000253_BF__GROUND__0$", arg4: 3);
+                context.SetTimer(id: "1", arg2: 3);
+                context.SetConversation(arg1: 1, arg2: 1001, script: "$02000253_BF__GROUND__0$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -61,9 +61,9 @@ namespace Maple2.Trigger._02000253_bf {
             internal State벨라이동2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
                 context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1");
-                context.SetConversation(arg1: 1, arg2: 1001, arg3: "$02000253_BF__GROUND__1$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 1001, script: "$02000253_BF__GROUND__1$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State벨라소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 140);
+                context.SetTimer(id: "1", arg2: 140);
                 context.DestroyMonster(arg1: new[] {1001});
             }
 

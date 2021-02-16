@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {2900, 2901, 2902, 2903, 2904, 2905}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {12900, 22900, 12901, 22901, 12902, 22902}, arg2: false);
             }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State로딩Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -42,9 +42,9 @@ namespace Maple2.Trigger._52000014_qd {
             internal State무너짐01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetTimer(id: "2", arg2: 2);
                 context.SetEffect(arg1: new[] {12900, 22900}, arg2: true);
                 context.SetRandomMesh(arg1: new[] {2900, 2901, 2902, 2903, 2904, 2905}, arg2: false, arg3: 6, arg4: 100, arg5: 200);
             }
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateCameraCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 2);
+                context.SetTimer(id: "3", arg2: 2);
                 context.CameraSelect(arg1: 601, arg2: true);
             }
 
@@ -83,9 +83,9 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateCameraCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "4", arg2: 4);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3, arg2: "$52000014_QD__COLLAPSE_2900__0$");
+                context.SetTimer(id: "4", arg2: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3, script: "$52000014_QD__COLLAPSE_2900__0$");
                 context.SetSkip(state: new StateCameraCinematic03(context));
             }
 
@@ -104,9 +104,9 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateCameraCinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 3);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetTimer(id: "5", arg2: 3);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 601, arg2: false);
             }
 
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State무너짐02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$52000014_QD__COLLAPSE_2900__1$", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52000014_QD__COLLAPSE_2900__1$", arg3: 4000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -143,7 +143,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State무너짐03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 5);
+                context.SetTimer(id: "10", arg2: 5);
                 context.SetEffect(arg1: new[] {12901, 22901}, arg2: true);
             }
 
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State무너짐04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 2);
+                context.SetTimer(id: "10", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -196,9 +196,9 @@ namespace Maple2.Trigger._52000014_qd {
             internal State반응안내01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "20", arg2: 4);
+                context.SetTimer(id: "20", arg2: 4);
                 context.SetEffect(arg1: new[] {12902, 22902}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$52000014_QD__COLLAPSE_2900__2$", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52000014_QD__COLLAPSE_2900__2$", arg3: 4000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -216,7 +216,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State줍기안내01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$52000014_QD__COLLAPSE_2900__3$", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52000014_QD__COLLAPSE_2900__3$", arg3: 4000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -326,7 +326,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal StatePortalCreation01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

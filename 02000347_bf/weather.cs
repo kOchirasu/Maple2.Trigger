@@ -43,13 +43,13 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {600}, arg2: true);
-                context.SetTimer(arg1: "30", arg2: 30);
-                context.SetEventUI(arg1: 1, arg2: "$02000347_BF__MAIN1__4$", arg3: 2000, arg4: "0");
+                context.SetTimer(id: "30", arg2: 30);
+                context.SetEventUI(arg1: 1, script: "$02000347_BF__MAIN1__4$", arg3: 2000, arg4: "0");
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "30")) {
-                    context.SetEventUI(arg1: 1, arg2: "$02000347_BF__MAIN1__3$", arg3: 2000, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$02000347_BF__MAIN1__3$", arg3: 2000, arg4: "0");
                     return new StateStart(context);
                 }
 

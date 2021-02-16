@@ -47,7 +47,7 @@ namespace Maple2.Trigger._99999871 {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000075}, arg2: 0)) {
-                    context.SetTimer(arg1: "1", arg2: 90, arg3: true, arg4: false, arg5: 0);
+                    context.SetTimer(id: "1", arg2: 90, arg3: true, arg4: false, arg5: 0);
                     return new StateTracingFootHold_Start_Delay(context);
                 }
 
@@ -169,7 +169,7 @@ namespace Maple2.Trigger._99999871 {
                 context.SetEffect(arg1: new[] {12100}, arg2: true);
                 context.SetMesh(arg1: new[] {12003}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
                 context.SetInteractObject(arg1: new[] {12000067}, arg2: 1);
-                context.SetTimer(arg1: "2", arg2: 60, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "2", arg2: 60, arg3: true, arg4: false, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -229,8 +229,8 @@ namespace Maple2.Trigger._99999871 {
             internal StateResetTimer(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "2");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "2");
             }
 
             public override TriggerState Execute() {

@@ -11,7 +11,7 @@ namespace Maple2.Trigger._99999922 {
                 context.SetMesh(arg1: new[] {1300, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1400, 1500}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetAgent(arg1: new[] {1000001, 1000002, 1000003, 1000004, 1000005, 1000006, 1100001, 1100002, 1100003}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000065}, arg2: 2);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._99999922 {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 2000001, arg2: true);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._99999922 {
             internal State대화_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 101, arg3: "신입사원인가요?", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 101, script: "신입사원인가요?", arg4: 5);
                 context.SetSkip(state: new State대화_1_스킵(context));
             }
 
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._99999922 {
             internal State대화_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 101, arg3: @"반가워요.\n그럼 저를 따라와 보시겠어요??", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 101, script: @"반가워요.\n그럼 저를 따라와 보시겠어요??", arg4: 3);
                 context.SetSkip(state: new StateEndCinematic_1(context));
             }
 
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._99999922 {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 2000001, arg2: false);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 0);
             }
 
             public override TriggerState Execute() {
@@ -159,7 +159,7 @@ namespace Maple2.Trigger._99999922 {
             internal StateStoneSound_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "자경대장 오스칼과 함께 몬스터들을 처치하세요.", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "자경대장 오스칼과 함께 몬스터들을 처치하세요.", arg3: 4000);
             }
 
             public override TriggerState Execute() {
@@ -296,7 +296,7 @@ namespace Maple2.Trigger._99999922 {
             }
 
             public override void OnExit() {
-                context.SetEventUI(arg1: 1, arg2: "다리를 건너 마지막 몬스터를 처치하세요!", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "다리를 건너 마지막 몬스터를 처치하세요!", arg3: 4000);
             }
         }
 
@@ -437,8 +437,8 @@ namespace Maple2.Trigger._99999922 {
             public override void OnEnter() {
                 context.SetSound(arg1: 99999, arg2: false);
                 context.CameraSelect(arg1: 2000002, arg2: true);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -474,7 +474,7 @@ namespace Maple2.Trigger._99999922 {
             internal State대화_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 101, arg3: "저 스위치를 당겨야해요!", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 101, script: "저 스위치를 당겨야해요!", arg4: 5);
                 context.SetSkip(state: new State대화_3_스킵(context));
             }
 
@@ -509,8 +509,8 @@ namespace Maple2.Trigger._99999922 {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 2000002, arg2: false);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 0);
             }
 
             public override TriggerState Execute() {
@@ -522,7 +522,7 @@ namespace Maple2.Trigger._99999922 {
             }
 
             public override void OnExit() {
-                context.SetEventUI(arg1: 1, arg2: "Creation된 스위치를 작동시키세요!", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "Creation된 스위치를 작동시키세요!", arg3: 4000);
             }
         }
 
@@ -546,7 +546,7 @@ namespace Maple2.Trigger._99999922 {
             internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -565,7 +565,7 @@ namespace Maple2.Trigger._99999922 {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData0_101_3");
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "오예~끝났당~", arg4: 3, arg5: 7);
+                context.SetConversation(arg1: 1, arg2: 101, script: "오예~끝났당~", arg4: 3, arg5: 7);
             }
 
             public override TriggerState Execute() {

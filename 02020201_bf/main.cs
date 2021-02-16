@@ -1,10 +1,12 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020201_bf {
     public static class _main {
         public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 103, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 103, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -23,7 +25,7 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020201_BF__MAIN__0$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020201_BF__MAIN__0$");
             }
 
             public override TriggerState Execute() {
@@ -41,7 +43,7 @@ namespace Maple2.Trigger._02020201_bf {
             internal State제단파괴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020201_BF__MAIN__1$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020201_BF__MAIN__1$");
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$02020201_BF__MAIN__2$", duration: 3000, delayTick: 0);
                 context.DestroyMonster(arg1: new[] {201, 202, 203});
             }
@@ -63,7 +65,7 @@ namespace Maple2.Trigger._02020201_bf {
             public override void OnEnter() {
                 context.SetAchievement(arg2: "trigger", arg3: "PaikaKritiasClear");
                 context.DungeonClear();
-                context.SetPortal(arg1: 103, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 103, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

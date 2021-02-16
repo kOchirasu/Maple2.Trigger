@@ -11,19 +11,19 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetActor(arg1: 9902, arg2: false, arg3: "Interaction_Lapentafoothold_A01_Off");
                 context.SetActor(arg1: 9903, arg2: false, arg3: "Interaction_Lapentafoothold_A01_Off");
                 context.SetActor(arg1: 9904, arg2: false, arg3: "Interaction_Lapentafoothold_A01_Off");
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 7, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 8, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 9, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 14, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 4, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 7, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 8, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 9, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 14, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -95,9 +95,9 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(triggerId: 99990020, key: "GravityRoom", value: 1);
                 context.SetUserValue(triggerId: 99990002, key: "JumpFloor", value: 1);
                 context.SetUserValue(triggerId: 99990017, key: "JumpFloor", value: 1);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.CameraSelectPath(arg1: new[] {611, 612}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.CameraSelectPath(pathIds: new[] {611, 612}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -117,15 +117,15 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.CameraReset(interpolationTime: 1f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CreateMonster(arg1: new[] {120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130}, arg2: false);
             }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130})) {
-                    context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                    context.SetPortal(arg1: 13, arg2: true, arg3: true, arg4: false);
+                    context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
+                    context.SetPortal(portalId: 13, visible: true, enabled: true, minimapVisible: false);
                     return new State격리방_지하(context);
                 }
 
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._02020112_bf {
             internal State격리방_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {191})) {
-                    context.SetPortal(arg1: 7, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 7, visible: true, enabled: true, minimapVisible: true);
                     context.SetUserValue(triggerId: 99990008, key: "Start", value: 2);
                     context.SetUserValue(triggerId: 99990013, key: "EliteDead", value: 1);
                     context.SetUserValue(triggerId: 99990014, key: "EliteDead", value: 1);

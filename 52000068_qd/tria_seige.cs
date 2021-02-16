@@ -36,7 +36,7 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetActor(arg1: 16012, arg2: false, arg3: "Stun_A");
                 context.SetInteractObject(arg1: new[] {10001074, 10001075, 10001076}, arg2: 2);
                 context.SetEffect(arg1: new[] {601, 602, 603}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetBreakable(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015, 5016}, arg2: false);
             }
 
@@ -129,9 +129,9 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkill(arg1: new[] {701}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004}, arg2: true);
                 context.SetAgent(arg1: new[] {8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019}, arg2: false);
@@ -173,8 +173,8 @@ namespace Maple2.Trigger._52000068_qd {
             internal StateCamera이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
             }
 
@@ -248,7 +248,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State마드리아백샷(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2002, arg3: "$52000068_QD__TRIA_SEIGE__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 2002, script: "$52000068_QD__TRIA_SEIGE__0$", arg4: 3, arg5: 0);
                 context.SetOnetimeEffect(id: 1990, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_01_00001990.xml");
                 context.CameraSelect(arg1: 303, arg2: true);
             }
@@ -268,7 +268,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State레논Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000068_QD__TRIA_SEIGE__1$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000068_QD__TRIA_SEIGE__1$", arg4: 4);
                 context.CameraSelect(arg1: 304, arg2: true);
             }
 
@@ -287,7 +287,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State레논Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000068_QD__TRIA_SEIGE__2$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000068_QD__TRIA_SEIGE__2$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -305,7 +305,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State레논Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000068_QD__TRIA_SEIGE__3$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000068_QD__TRIA_SEIGE__3$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -342,7 +342,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 4);
                 context.CameraReset(interpolationTime: 0.5f);
             }
 
@@ -363,10 +363,10 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {199}, arg2: 70000109, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 304, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52000068_QD__TRIA_SEIGE__4$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1001, script: "$52000068_QD__TRIA_SEIGE__4$", arg4: 4, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -388,12 +388,12 @@ namespace Maple2.Trigger._52000068_qd {
             internal StateMission01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetInteractObject(arg1: new[] {10001074, 10001075, 10001076}, arg2: 1);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 305, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000068_QD__TRIA_SEIGE__5$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000068_QD__TRIA_SEIGE__5$", arg4: 4);
                 context.SetSceneSkip(state: new StateMission01반응Wait(context));
             }
 
@@ -414,15 +414,15 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.RemoveCinematicTalk();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.CameraSelect(arg1: 305, arg2: false);
             }
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001074, 10001075, 10001076}, arg2: 2)) {
-                    context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52000068_QD__TRIA_SEIGE__6$", arg4: 4, arg5: 0);
+                    context.SetConversation(arg1: 1, arg2: 1001, script: "$52000068_QD__TRIA_SEIGE__6$", arg4: 4, arg5: 0);
                     context.CreateItem(arg1: new[] {9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012});
                     context.AddBuff(arg1: new[] {199}, arg2: 70000058, arg3: 1, arg4: false, arg5: false);
                     return new StateMission02Wait(context);
@@ -454,12 +454,12 @@ namespace Maple2.Trigger._52000068_qd {
             internal StateMission02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetAgent(arg1: new[] {8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019}, arg2: true);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 306, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001838, arg3: "$52000068_QD__TRIA_SEIGE__7$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001838, script: "$52000068_QD__TRIA_SEIGE__7$", arg4: 4);
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104}, arg2: false, arg3: 6000);
                 context.MoveNpc(arg1: 1101, arg2: "MS2PatrolData_1101");
                 context.MoveNpc(arg1: 1102, arg2: "MS2PatrolData_1102");
@@ -503,7 +503,7 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.CameraSelect(arg1: 307, arg2: true);
                 context.CreateMonster(arg1: new[] {2003}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001838, arg3: "$52000068_QD__TRIA_SEIGE__8$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001838, script: "$52000068_QD__TRIA_SEIGE__8$", arg4: 4);
                 context.SetNpcEmotionSequence(arg1: 2003, arg2: "AttackReady_A");
                 context.SetSceneSkip(state: new StateMission02종료Wait(context));
             }
@@ -525,8 +525,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.RemoveCinematicTalk();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.CameraSelect(arg1: 307, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: false);
@@ -551,8 +551,8 @@ namespace Maple2.Trigger._52000068_qd {
             internal StateMission02종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 309, arg2: true);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.DestroyMonster(arg1: new[] {2001});
@@ -634,7 +634,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001838, arg3: "$52000068_QD__TRIA_SEIGE__9$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001838, script: "$52000068_QD__TRIA_SEIGE__9$", arg4: 4);
                 context.SetSceneSkip(state: new State대사스킵용02(context));
             }
 
@@ -669,7 +669,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetConversation(arg1: 2, arg2: 11001838, arg3: "$52000068_QD__TRIA_SEIGE__10$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001838, script: "$52000068_QD__TRIA_SEIGE__10$", arg4: 4);
                 context.SetSceneSkip(state: new State벽파괴종료(context));
             }
 
@@ -690,12 +690,12 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.RemoveCinematicTalk();
-                context.SetPortal(arg1: 2, arg2: false, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: false, enabled: true, minimapVisible: true);
                 context.DestroyMonster(arg1: new[] {2101, 2102, 2103, 2104});
                 context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.CameraSelect(arg1: 308, arg2: false);
             }

@@ -21,8 +21,8 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.VisibleMyPc(isVisible: false);
                 context.CreateMonster(arg1: new[] {107, 108}, arg2: false);
                 context.SetSceneSkip(state: new State세번째Cinematic대화진행05(context), arg2: "exit");
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._52020030_qd {
             internal State세번째Cinematic대화진행_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003756, msg: "...계획이 틀어졌군.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003756, script: "...계획이 틀어졌군.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -61,9 +61,9 @@ namespace Maple2.Trigger._52020030_qd {
             internal State세번째Cinematic대화진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4017}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4017}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcId: 11003753, msg: @"... 왔나.\n바보같은 행동을 했더군.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003753, script: @"... 왔나.\n바보같은 행동을 했더군.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -81,9 +81,9 @@ namespace Maple2.Trigger._52020030_qd {
             internal State세번째Cinematic대화진행02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4022}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4022}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 108, arg2: "Bore_A");
-                context.AddCinematicTalk(npcId: 11003756, msg: @"... 할말 없어.\n그래서, 이제 어쩔 셈이지?", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003756, script: @"... 할말 없어.\n그래서, 이제 어쩔 셈이지?", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -101,8 +101,8 @@ namespace Maple2.Trigger._52020030_qd {
             internal State세번째Cinematic대화진행03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4017}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003753, msg: @"훗. 바보같이.\n이제 흑성회가 움직이긴 어렵겠군.", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4017}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003753, script: @"훗. 바보같이.\n이제 흑성회가 움직이긴 어렵겠군.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -120,8 +120,8 @@ namespace Maple2.Trigger._52020030_qd {
             internal State세번째Cinematic대화진행03_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4040}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003753, msg: "또 다른 계획을 준비해야겠어.", duration: 5000);
+                context.CameraSelectPath(pathIds: new[] {4040}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003753, script: "또 다른 계획을 준비해야겠어.", duration: 5000);
             }
 
             public override TriggerState Execute() {
@@ -139,9 +139,9 @@ namespace Maple2.Trigger._52020030_qd {
             internal State세번째Cinematic대화진행04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4022}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4022}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 108, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003753, msg: @"그 새로운 계획, 흑성회에도 당연히 전달해 주겠지?\n기대할께.", duration: 5000);
+                context.AddCinematicTalk(npcId: 11003753, script: @"그 새로운 계획, 흑성회에도 당연히 전달해 주겠지?\n기대할께.", duration: 5000);
             }
 
             public override TriggerState Execute() {

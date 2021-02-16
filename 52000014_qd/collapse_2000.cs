@@ -23,7 +23,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._52000014_qd {
             internal State무너짐01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 2);
-                context.SetEventUI(arg1: 1, arg2: "$52000014_QD__COLLAPSE_2000__0$", arg3: 4000, arg4: "0");
+                context.SetTimer(id: "3", arg2: 2);
+                context.SetEventUI(arg1: 1, script: "$52000014_QD__COLLAPSE_2000__0$", arg3: 4000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State무너짐02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "4", arg2: 8);
+                context.SetTimer(id: "4", arg2: 8);
                 context.SetEffect(arg1: new[] {12000, 22000}, arg2: true);
                 context.SetRandomMesh(arg1: new[] {2000, 2001, 2002, 2003, 2004}, arg2: false, arg3: 5, arg4: 0, arg5: 200);
             }

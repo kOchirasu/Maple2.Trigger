@@ -38,8 +38,8 @@ namespace Maple2.Trigger._52000067_qd {
             internal StatePortal_off(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 104, arg3: "$52000067_QD__PORTAL_04__0$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 105, arg3: "$52000067_QD__PORTAL_04__1$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 104, script: "$52000067_QD__PORTAL_04__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 105, script: "$52000067_QD__PORTAL_04__1$", arg4: 3, arg5: 2);
                 context.SetEffect(arg1: new[] {7013}, arg2: false);
                 context.SetEffect(arg1: new[] {7113}, arg2: true);
             }

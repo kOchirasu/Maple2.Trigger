@@ -8,8 +8,8 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {33000, 34001, 34002, 34022, 34023}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10000817}, arg2: 0);
                 context.DestroyMonster(arg1: new[] {44441, 44442, 44443});
             }
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._02010069_bf {
             internal State1차어나운스(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.HideGuideSummary(entityId: 20100691);
                 context.SetEffect(arg1: new[] {32000, 34001}, arg2: true);
             }
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._02010069_bf {
             internal StateCinematic22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 44441, arg3: "$02010069_BF__MAIN__1$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 44441, script: "$02010069_BF__MAIN__1$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 44441, arg2: "MS2PatrolData2");
                 context.SetSkip(state: new StateCinematic25(context));
             }
@@ -145,7 +145,7 @@ namespace Maple2.Trigger._02010069_bf {
             internal StateCinematic23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 44443, arg3: "$02010069_BF__MAIN__2$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 44443, script: "$02010069_BF__MAIN__2$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 44443, arg2: "MS2PatrolData1");
             }
 
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._02010069_bf {
             internal StateCinematic24(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 44442, arg3: "$02010069_BF__MAIN__3$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 44442, script: "$02010069_BF__MAIN__3$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 44442, arg2: "MS2PatrolData0");
             }
 
@@ -202,10 +202,10 @@ namespace Maple2.Trigger._02010069_bf {
             internal StateCinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 4);
-                context.SetCinematicUI(arg1: 5);
-                context.SetCinematicUI(arg1: 6);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 4);
+                context.SetCinematicUI(type: 5);
+                context.SetCinematicUI(type: 6);
                 context.SetEffect(arg1: new[] {34022, 34023}, arg2: true);
             }
 
@@ -226,7 +226,7 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 999900, arg2: false);
                 context.MoveUser(arg1: 02010069, arg2: 2);
-                context.SetPortal(arg1: 2, arg2: false, arg3: true, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -244,8 +244,8 @@ namespace Maple2.Trigger._02010069_bf {
             internal StateCinematic4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetEffect(arg1: new[] {34022, 34023}, arg2: false);
             }
 

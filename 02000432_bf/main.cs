@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000432_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -166,8 +166,8 @@ namespace Maple2.Trigger._02000432_bf {
                 context.MoveUser(arg1: 02000432, arg2: 2);
                 context.DestroyMonster(arg1: new[] {1001, 1002, 2001, 2002, 2102});
                 context.CreateMonster(arg1: new[] {1098, 1099}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(arg1: 1098, arg2: "Dead_B", arg3: 3000000f);
                 context.SetNpcEmotionLoop(arg1: 1099, arg2: "Dead_B", arg3: 3000000f);
@@ -189,8 +189,8 @@ namespace Maple2.Trigger._02000432_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateStopCinematic(context));
-                context.SetConversation(arg1: 1, arg2: 1098, arg3: "$02000432_BF__MAIN__0$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 1099, arg3: "$02000432_BF__MAIN__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1098, script: "$02000432_BF__MAIN__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1099, script: "$02000432_BF__MAIN__1$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._02000432_bf {
             internal StatePC대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$02000432_BF__MAIN__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$02000432_BF__MAIN__2$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -226,7 +226,7 @@ namespace Maple2.Trigger._02000432_bf {
             internal StatePCScript2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$02000432_BF__MAIN__3$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$02000432_BF__MAIN__3$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -281,8 +281,8 @@ namespace Maple2.Trigger._02000432_bf {
             internal State자매대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1096, arg3: "$02000432_BF__MAIN__11$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 1097, arg3: "$02000432_BF__MAIN__4$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 1096, script: "$02000432_BF__MAIN__11$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1097, script: "$02000432_BF__MAIN__4$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -300,8 +300,8 @@ namespace Maple2.Trigger._02000432_bf {
             internal State자매대화02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1096, arg3: "$02000432_BF__MAIN__5$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 1097, arg3: "$02000432_BF__MAIN__6$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 1096, script: "$02000432_BF__MAIN__5$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1097, script: "$02000432_BF__MAIN__6$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -319,7 +319,7 @@ namespace Maple2.Trigger._02000432_bf {
             internal State자매대화03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1097, arg3: "$02000432_BF__MAIN__7$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1097, script: "$02000432_BF__MAIN__7$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._02000432_bf {
             internal StatePCScript3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$02000432_BF__MAIN__12$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$02000432_BF__MAIN__12$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -355,7 +355,7 @@ namespace Maple2.Trigger._02000432_bf {
             internal State자매대화04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1097, arg3: "$02000432_BF__MAIN__8$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1097, script: "$02000432_BF__MAIN__8$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -373,7 +373,7 @@ namespace Maple2.Trigger._02000432_bf {
             internal State자매대화05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1097, arg3: "$02000432_BF__MAIN__9$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1097, script: "$02000432_BF__MAIN__9$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -391,7 +391,7 @@ namespace Maple2.Trigger._02000432_bf {
             internal State자매대화06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1097, arg3: "$02000432_BF__MAIN__10$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1097, script: "$02000432_BF__MAIN__10$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -412,8 +412,8 @@ namespace Maple2.Trigger._02000432_bf {
                 context.SetSkip();
                 context.DestroyMonster(arg1: new[] {1098, 1099, 1096, 1097});
                 context.CreateMonster(arg1: new[] {1096, 1097}, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
@@ -450,7 +450,7 @@ namespace Maple2.Trigger._02000432_bf {
             public override void OnEnter() {
                 context.DungeonClear();
                 context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "ClearSirenSisters");
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

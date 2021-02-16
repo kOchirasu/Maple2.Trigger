@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02010086_bf {
                 context.SetEffect(arg1: new[] {7003, 7004}, arg2: true);
                 context.SetMesh(arg1: new[] {1171, 1172, 1173}, arg2: false, arg4: 300, arg5: 10f);
                 context.SetMesh(arg1: new[] {1161, 1162, 1163}, arg2: true, arg4: 300, arg5: 10f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -69,7 +69,7 @@ namespace Maple2.Trigger._02010086_bf {
                 context.SetMesh(arg1: new[] {2111}, arg2: false, arg4: 30, arg5: 0f);
                 context.SetMesh(arg1: new[] {1161, 1162, 1163}, arg2: false, arg4: 0, arg5: 10f);
                 context.SetMesh(arg1: new[] {2101}, arg2: false, arg4: 50, arg5: 1f);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02010086_bf {
             internal State벽Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

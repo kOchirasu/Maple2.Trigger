@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02000046_ad {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_201");
-                context.SetConversation(arg1: 1, arg2: 301, arg3: "$02000046_AD__EAGLE_01__0$", arg4: 2);
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetConversation(arg1: 1, arg2: 301, script: "$02000046_AD__EAGLE_01__0$", arg4: 2);
+                context.SetTimer(id: "1", arg2: 20);
             }
 
             public override TriggerState Execute() {

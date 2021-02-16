@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {301, 302}, arg2: false);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {

@@ -41,8 +41,8 @@ namespace Maple2.Trigger._02000311_bf {
             internal StatePhase_02_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$02000311_BF__AI__0$", arg4: 2, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 202, arg3: "$02000311_BF__AI__1$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$02000311_BF__AI__0$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 202, script: "$02000311_BF__AI__1$", arg4: 2, arg5: 0);
                 context.SetSkill(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010}, arg2: true);
             }
 

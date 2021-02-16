@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020146_bf {
     public static class _bossspawn {
         public class StateWaitStart : TriggerState {
@@ -20,9 +22,9 @@ namespace Maple2.Trigger._02020146_bf {
             internal StateDefaultSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 601, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 601, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -58,7 +60,7 @@ namespace Maple2.Trigger._02020146_bf {
             internal StateCinematicWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__0$", duration: 4000, voice: @"ko/Npc/00002192");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__0$", duration: 4000, voice: @"ko/Npc/00002192");
             }
 
             public override TriggerState Execute() {
@@ -76,7 +78,7 @@ namespace Maple2.Trigger._02020146_bf {
             internal State전투진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 601, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 601, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -112,13 +114,13 @@ namespace Maple2.Trigger._02020146_bf {
             internal State마무리Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
-                    context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
+                    context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     return new StateEnd(context);
                 }
 

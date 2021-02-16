@@ -4,9 +4,9 @@ namespace Maple2.Trigger._02020098_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 20, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 30, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 20, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 30, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 6501, 6502, 6503, 6504, 6505, 6506, 6507, 6508, 6509, 6510, 6511, 6512, 6513, 6514, 6515, 6516, 6517, 6518, 6519, 6520, 6521, 6522, 6523, 6524, 6525, 6526, 6527, 6528, 6529, 6530, 6531, 6532, 6533, 6534, 6535, 6536, 6537, 6538, 6539, 6540, 6541, 6542, 6543, 6544, 6545, 6546, 6547, 6548, 6549, 6550, 6551, 6552, 6553, 6554, 6555, 6556, 6557, 6558, 6559, 6560, 6561, 6562, 6563, 6564, 6565, 6566, 6567, 6568, 6569, 6570, 6571, 6572, 6573, 6574, 6575, 6576, 6577, 6578, 6579, 6580, 6701, 6702, 6703, 6704, 6705, 6706, 6707, 6708, 6709, 6710, 6711, 6712, 6713, 6714, 6715, 6716, 6717, 6718, 6719, 6720, 6721, 6722, 6723, 6724, 6725, 6726, 6727, 6728, 6729}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "StairsOkPass", value: 0);
             }
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {198, 199}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178}, arg2: true, arg3: 1, arg4: 50, arg5: 0.5f);
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {125, 116, 168, 126}, arg2: false, arg3: 0, arg4: 50, arg5: 0.5f);
                 context.SetUserValue(key: "2PhaseStart", value: 0);
-                context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 20, visible: true, enabled: true, minimapVisible: true);
                 context.SetMesh(arg1: new[] {198, 199}, arg2: true, arg3: 1, arg4: 1, arg5: 1f);
                 context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178}, arg2: false, arg3: 0, arg4: 50, arg5: 0.5f);
                 context.SetUserValue(key: "StairsOkPass", value: 1);
@@ -212,16 +212,16 @@ namespace Maple2.Trigger._02020098_bf {
             internal State3페이지_바로가기PortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 60, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 61, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 62, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 63, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 64, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 65, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 66, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 60, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 61, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 62, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 63, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 64, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 65, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 66, visible: false, enabled: false, minimapVisible: false);
                 context.SetUserValue(key: "3PhaseStart", value: 0);
-                context.SetPortal(arg1: 30, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 20, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 30, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 20, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

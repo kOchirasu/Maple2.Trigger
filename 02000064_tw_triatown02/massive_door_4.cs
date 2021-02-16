@@ -16,7 +16,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             internal State5SecondsBeforeClose(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "115", arg2: 115);
+                context.SetTimer(id: "115", arg2: 115);
             }
 
             public override TriggerState Execute() {
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "115");
+                context.ResetTimer(id: "115");
             }
         }
 
@@ -36,7 +36,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             internal StateClosed1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 1);
+                context.SetTimer(id: "5", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "5");
+                context.ResetTimer(id: "5");
             }
         }
 
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             internal StateClosed2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "6", arg2: 60);
+                context.SetTimer(id: "6", arg2: 60);
             }
 
             public override TriggerState Execute() {
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "6");
+                context.ResetTimer(id: "6");
             }
         }
     }

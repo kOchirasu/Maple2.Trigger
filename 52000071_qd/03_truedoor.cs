@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52000071_qd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10001105}, arg2: 1);
             }
 
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52000071_qd {
             internal StateMobSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

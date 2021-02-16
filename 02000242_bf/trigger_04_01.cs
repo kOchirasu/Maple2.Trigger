@@ -37,7 +37,7 @@ namespace Maple2.Trigger._02000242_bf {
             internal State1차Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
             }
 
             public override TriggerState Execute() {
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02000242_bf {
             internal State2차Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
             }
 
             public override TriggerState Execute() {
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02000242_bf {
             internal State3차Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 180);
+                context.SetTimer(id: "1", arg2: 180);
             }
 
             public override TriggerState Execute() {

@@ -68,8 +68,8 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateEvent_04_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 144, arg3: "$02000471_BF__MAGIC_04__0$", arg4: 2, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 144, arg3: "$02000471_BF__MAGIC_04__1$", arg4: 4, arg5: 5);
+                context.SetConversation(arg1: 1, arg2: 144, script: "$02000471_BF__MAGIC_04__0$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 144, script: "$02000471_BF__MAGIC_04__1$", arg4: 4, arg5: 5);
                 context.MoveNpc(arg1: 144, arg2: "MS2PatrolData_2134");
             }
 
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateEvent_04_c(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 144, arg3: "$02000471_BF__MAGIC_04__2$", arg4: 3, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 144, arg3: "$02000471_BF__MAGIC_04__3$", arg4: 3, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 144, script: "$02000471_BF__MAGIC_04__2$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 144, script: "$02000471_BF__MAGIC_04__3$", arg4: 3, arg5: 4);
                 context.MoveNpc(arg1: 144, arg2: "MS2PatrolData_2135");
             }
 

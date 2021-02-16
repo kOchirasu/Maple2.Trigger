@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020300_bf {
     public static class _main {
         public class StateWait : TriggerState {
@@ -8,7 +10,7 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetUserValue(triggerId: 99990003, key: "RandomBomb", value: 0);
                 context.SetUserValue(triggerId: 99990004, key: "Laser", value: 0);
                 context.SetUserValue(triggerId: 99990005, key: "elevator", value: 0);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10002185}, arg2: 0);
                 context.EnableSpawnPointPc(spawnPointId: 100, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 101, isEnable: false);
@@ -33,7 +35,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {902})) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020300_BF__MAIN__0$", arg3: 5000);
+                    context.SetEventUI(arg1: 1, script: "$02020300_BF__MAIN__0$", arg3: 5000);
                     context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
                     return new State추가Script_01(context);
                 }
@@ -52,7 +54,7 @@ namespace Maple2.Trigger._02020300_bf {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetUserValue(triggerId: 99990004, key: "Laser", value: 1);
-                    context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__1$", duration: 5000);
+                    context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__1$", duration: 5000);
                     return new State추가Script_02(context);
                 }
 
@@ -69,7 +71,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103})) {
-                    context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__2$", duration: 5000);
+                    context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__2$", duration: 5000);
                     return new State추가Script_03(context);
                 }
 
@@ -86,7 +88,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal", script: "$02020300_BF__MAIN__3$", duration: 5000);
+                    context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_normal", script: "$02020300_BF__MAIN__3$", duration: 5000);
                     return new State엘리베이터_체크(context);
                 }
 
@@ -103,7 +105,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__4$", duration: 5000);
+                    context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__4$", duration: 5000);
                     return new State엘리베이터_스위치(context);
                 }
 
@@ -153,7 +155,7 @@ namespace Maple2.Trigger._02020300_bf {
             internal State아르케온_탑승_Guide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020300_BF__MAIN__5$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020300_BF__MAIN__5$", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -230,7 +232,7 @@ namespace Maple2.Trigger._02020300_bf {
             internal State웨이브_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_unfair", script: "$02020300_BF__MAIN__6$", duration: 5000);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 29000170, illust: "ArcaneBlader_unfair", script: "$02020300_BF__MAIN__6$", duration: 5000);
             }
 
             public override TriggerState Execute() {
@@ -249,7 +251,7 @@ namespace Maple2.Trigger._02020300_bf {
             internal State추가Script_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__7$", duration: 5000);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__7$", duration: 5000);
                 context.SetUserValue(triggerId: 99990002, key: "Spawn", value: 1);
             }
 
@@ -297,7 +299,7 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetMesh(arg1: new[] {5001}, arg2: false);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003}, arg2: true);
                 context.SetUserValue(triggerId: 99990003, key: "RandomBomb", value: 1);
-                context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__8$", duration: 5000);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__8$", duration: 5000);
             }
 
             public override TriggerState Execute() {
@@ -315,7 +317,7 @@ namespace Maple2.Trigger._02020300_bf {
             internal State추가Script_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__9$", duration: 5000);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__9$", duration: 5000);
             }
 
             public override TriggerState Execute() {
@@ -333,7 +335,7 @@ namespace Maple2.Trigger._02020300_bf {
             internal State추가Script_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal", script: "$02020300_BF__MAIN__10$", duration: 5000);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_normal", script: "$02020300_BF__MAIN__10$", duration: 5000);
             }
 
             public override TriggerState Execute() {
@@ -352,10 +354,10 @@ namespace Maple2.Trigger._02020300_bf {
             internal StateBoss(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__11$", duration: 5000);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__11$", duration: 5000);
                 context.SetActor(arg1: 9002, arg2: true, arg3: "sf_fi_funct_darkdoor_A01_start");
                 context.SetMesh(arg1: new[] {3001}, arg2: false);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

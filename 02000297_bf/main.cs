@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$02000297_BF__MAIN__0$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000297_BF__MAIN__0$", arg3: 5000, arg4: "0");
                 context.SetAgent(arg1: new[] {101, 102, 103, 104, 105, 106, 121, 122, 123, 124, 125, 126, 127, 128}, arg2: true);
             }
 

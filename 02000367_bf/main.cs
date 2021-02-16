@@ -5,10 +5,10 @@ namespace Maple2.Trigger._02000367_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000, 3101, 3102, 3103, 3104, 3105, 3106, 3113, 3114}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 22, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 33, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 44, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 22, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 33, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 44, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10000983, 10000984, 10000985, 10000986, 10000987, 10000988, 10000995, 10000996}, arg2: 2);
             }
 
@@ -121,10 +121,10 @@ namespace Maple2.Trigger._02000367_bf {
             internal StatePortalEnable(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: false);
-                context.SetPortal(arg1: 22, arg2: true, arg3: true, arg4: false);
-                context.SetPortal(arg1: 33, arg2: true, arg3: true, arg4: false);
-                context.SetPortal(arg1: 44, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 22, visible: true, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 33, visible: true, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 44, visible: true, enabled: true, minimapVisible: false);
                 context.CreateMonster(arg1: new[] {41101, 41102, 41103, 41104, 41105, 41106, 41201, 41202, 41203, 41204}, arg2: false);
                 context.SetUserValue(triggerId: 9999900, key: "main2", value: 1);
             }

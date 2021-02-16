@@ -27,7 +27,7 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 99999841, arg2: 1, arg3: 9001, arg4: 3);
-                context.SetEventUI(arg1: 1, arg2: "잠시 후 경기가 시작됩니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "잠시 후 경기가 시작됩니다.", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._99999840 {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"경기 시작!\n당신은 A팀입니다.", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: @"경기 시작!\n당신은 A팀입니다.", arg3: 3000);
                 context.SetUserValue(triggerId: 99990002, key: "Team1Battle", value: 1);
                 context.SetUserValue(triggerId: 99990003, key: "Start", value: 1);
                 context.SetUserValue(triggerId: 99990004, key: "Start", value: 1);
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._99999840 {
             internal State메시지1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"검은 군단을 해치우고 자원을 획득하세요.\n획득한 자원을 20개 모아서Boss를 불러내세요.\n한번에 최대 9개의 자원을 들 수 있습니다.", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: @"검은 군단을 해치우고 자원을 획득하세요.\n획득한 자원을 20개 모아서Boss를 불러내세요.\n한번에 최대 9개의 자원을 들 수 있습니다.", arg3: 4000);
             }
 
             public override TriggerState Execute() {
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._99999840 {
             internal StateA팀승리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "A팀이 승리했습니다!", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "A팀이 승리했습니다!", arg3: 4000);
             }
 
             public override TriggerState Execute() {
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._99999840 {
             internal StateB팀승리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "B팀이 승리했습니다!", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "B팀이 승리했습니다!", arg3: 4000);
             }
 
             public override TriggerState Execute() {

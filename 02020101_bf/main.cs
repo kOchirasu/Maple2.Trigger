@@ -1,10 +1,12 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020101_bf {
     public static class _main {
         public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 4, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -40,7 +42,7 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateBoss_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal", script: "$02020101_BF__MAIN__0$", duration: 5670, voice: @"ko/Npc/00002206");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23501001, illust: "Turned_Yuperia_normal", script: "$02020101_BF__MAIN__0$", duration: 5670, voice: @"ko/Npc/00002206");
                 context.DungeonResetTime(seconds: 420);
                 context.CreateMonster(arg1: new[] {101});
             }
@@ -85,7 +87,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.DungeonStopTimer();
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -122,7 +124,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.MoveUser(arg1: 2020101, arg2: 1, arg3: 1002);
                 context.RemoveBuff(arg1: 1003, arg2: 70002122, arg3: true);
                 context.RemoveBuff(arg1: 1003, arg2: 70002151, arg3: true);
@@ -157,7 +159,7 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 23038005);
                 context.DungeonSetEndTime();
-                context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal", script: "$02020101_BF__MAIN__1$", duration: 7940, voice: @"ko/Npc/00002207");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23501001, illust: "Turned_Yuperia_normal", script: "$02020101_BF__MAIN__1$", duration: 7940, voice: @"ko/Npc/00002207");
             }
 
             public override TriggerState Execute() {
@@ -179,7 +181,7 @@ namespace Maple2.Trigger._02020101_bf {
                 context.DungeonClear();
                 context.SetAchievement(arg2: "trigger", arg3: "ClearGreenLapenta");
                 context.RemoveBuff(arg1: 1003, arg2: 70002151, arg3: true);
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

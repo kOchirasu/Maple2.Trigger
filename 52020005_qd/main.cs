@@ -279,8 +279,8 @@ namespace Maple2.Trigger._52020005_qd {
             internal State첫만남_StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -318,7 +318,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal State일어나01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003667, illustId: "Krantz_normal", msg: @"이봐. 눈을 떠 봐.\n정신이 드나?", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003667, illustId: "Krantz_normal", script: @"이봐. 눈을 떠 봐.\n정신이 드나?", duration: 2000);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 3000f);
             }
 
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal State일어나02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", msg: "흠, 부상은 크지 않은 것 같은데.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", script: "흠, 부상은 크지 않은 것 같은데.", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
             }
 
@@ -356,7 +356,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal State일어나03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003667, illustId: "Krantz_normal", msg: @"그렇다면, 빠르게 정신이 들도록…\n(스르릉, 하고 들려오는 이 소리는… 검을 뽑는 소리…?)", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003667, illustId: "Krantz_normal", script: @"그렇다면, 빠르게 정신이 들도록…\n(스르릉, 하고 들려오는 이 소리는… 검을 뽑는 소리…?)", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 3000f);
             }
 
@@ -375,7 +375,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal State일어나04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", msg: "그 검으로 찌르면 정신이 들자마자 저 세상으로 가고 말걸.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", script: "그 검으로 찌르면 정신이 들자마자 저 세상으로 가고 말걸.", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
                 context.SetPcEmotionLoop(arg1: "Emotion_Sleep_Idle_A", arg2: 5000f);
             }
@@ -396,7 +396,7 @@ namespace Maple2.Trigger._52020005_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcId: 11003667, illustId: "Krantz_normal", msg: @"이 자의 운명이라면 받아들여야 할 터…. \n그것이 세상의 아름다운 섭리입니다.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003667, illustId: "Krantz_normal", script: @"이 자의 운명이라면 받아들여야 할 터…. \n그것이 세상의 아름다운 섭리입니다.", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 3000f);
             }
 
@@ -415,7 +415,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal State일어나06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "(빨리 일어나지 않으면 목숨이 위험할 것 같다. 어서 일어나자.)", duration: 2000);
+                context.AddCinematicTalk(npcId: 0, script: "(빨리 일어나지 않으면 목숨이 위험할 것 같다. 어서 일어나자.)", duration: 2000);
             }
 
             public override TriggerState Execute() {
@@ -433,9 +433,9 @@ namespace Maple2.Trigger._52020005_qd {
             internal State일어나07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8000}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", msg: "…눈을 떴군.", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", script: "…눈을 떴군.", duration: 2000);
                 context.SetPcEmotionLoop(arg1: "Emotion_Surprise_A", arg2: 3000f);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
                 context.SetSceneSkip();
@@ -456,8 +456,8 @@ namespace Maple2.Trigger._52020005_qd {
             internal State일어나_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -477,8 +477,8 @@ namespace Maple2.Trigger._52020005_qd {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -496,8 +496,8 @@ namespace Maple2.Trigger._52020005_qd {
             internal StatePC내보내기Cinematic_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.MoveUser(arg1: 52020005, arg2: 10);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(state: new StatePCExit_스킵완료(context), arg2: "nextState");
@@ -518,7 +518,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal StatePC내보내기Cinematic_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8000}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Walkout");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
@@ -538,7 +538,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal State공주와기사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", msg: "이 연출은 제작 중이다. ", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", script: "이 연출은 제작 중이다. ", duration: 3000);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_Krantz_walking");
             }
 
@@ -557,9 +557,9 @@ namespace Maple2.Trigger._52020005_qd {
             internal State공주와기사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8001}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Eone");
-                context.AddCinematicTalk(npcId: 11003667, illustId: "Krantz_normal", msg: "그렇다. 제작 중이다.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003667, illustId: "Krantz_normal", script: "그렇다. 제작 중이다.", duration: 3000);
                 context.VisibleMyPc(isVisible: false);
             }
 
@@ -578,9 +578,9 @@ namespace Maple2.Trigger._52020005_qd {
             internal State공주와기사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8002}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_Krantz_promise");
-                context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", msg: "기다려 달라.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", script: "기다려 달라.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -598,7 +598,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal State공주와기사04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003667, illustId: "Krantz_normal", msg: "그렇다. 좀 기다려 달라.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003667, illustId: "Krantz_normal", script: "그렇다. 좀 기다려 달라.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -616,8 +616,8 @@ namespace Maple2.Trigger._52020005_qd {
             internal State마무리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", msg: "1월까지 완료될 것이다.", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {8002}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", script: "1월까지 완료될 것이다.", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
                 context.SetSceneSkip();
             }
@@ -637,8 +637,8 @@ namespace Maple2.Trigger._52020005_qd {
             internal StatePCExit_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -657,8 +657,8 @@ namespace Maple2.Trigger._52020005_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "PrincessAndHerKnight");
             }

@@ -23,9 +23,9 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012}, arg2: false, arg3: 800, arg4: 100, arg5: 0f);
-                context.SetEventUI(arg1: 1, arg2: "$02010052_BF__TORCHLIGHT_01__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02010052_BF__TORCHLIGHT_01__0$", arg3: 3000);
                 context.SetEffect(arg1: new[] {7001}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1, arg4: false);
+                context.SetTimer(id: "1", arg2: 1, arg4: false);
             }
 
             public override TriggerState Execute() {

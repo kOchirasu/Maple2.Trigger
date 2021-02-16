@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateLever2_안내MassiveEvent(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020061_BF__OBJECT2__0$", arg3: 5000, arg4: "9012");
+                context.SetEventUI(arg1: 1, script: "$02020061_BF__OBJECT2__0$", arg3: 5000, arg4: "9012");
             }
 
             public override TriggerState Execute() {
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5101}, arg2: true);
                 context.SetInteractObject(arg1: new[] {12000085}, arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02020061_BF__OBJECT2__1$", arg3: 5000, arg4: "9012");
+                context.SetEventUI(arg1: 1, script: "$02020061_BF__OBJECT2__1$", arg3: 5000, arg4: "9012");
             }
 
             public override TriggerState Execute() {

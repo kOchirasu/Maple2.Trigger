@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020021_bf {
     public static class _main {
         public class State입장 : TriggerState {
@@ -9,8 +11,8 @@ namespace Maple2.Trigger._02020021_bf {
                 context.SetUserValue(triggerId: 99990003, key: "Timer", value: 0);
                 context.SetUserValue(triggerId: 99990004, key: "SpecialTimer", value: 0);
                 context.SetUserValue(triggerId: 99990002, key: "SpecialTimer", value: 0);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -30,8 +32,8 @@ namespace Maple2.Trigger._02020021_bf {
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateCamera_종료(context), arg2: "exit");
                 context.CreateMonster(arg1: new[] {202}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -49,8 +51,8 @@ namespace Maple2.Trigger._02020021_bf {
             internal StateCamera_캡션(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {501, 502}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$02020021_BF__main__3$", desc: "$02020021_BF__main__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
+                context.CameraSelectPath(pathIds: new[] {501, 502}, arg2: false);
+                context.ShowCaption(type: CaptionType.Vertical, title: "$02020021_BF__main__3$", script: "$02020021_BF__main__4$", align: Align.Center | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
             }
 
             public override TriggerState Execute() {
@@ -68,8 +70,8 @@ namespace Maple2.Trigger._02020021_bf {
             internal StateCamera_샤텐Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {503, 504}, arg2: false);
-                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__0$", duration: 4000, align: "left");
+                context.CameraSelectPath(pathIds: new[] {503, 504}, arg2: false);
+                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", script: "$02020021_BF__main__0$", duration: 4000, align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -87,7 +89,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal StateCamera_샤텐Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__1$", duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", script: "$02020021_BF__main__1$", duration: 4000, align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -105,8 +107,8 @@ namespace Maple2.Trigger._02020021_bf {
             internal StateCamera_샤텐Script3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {505, 506}, arg2: false);
-                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__2$", duration: 4000, align: "left");
+                context.CameraSelectPath(pathIds: new[] {505, 506}, arg2: false);
+                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", script: "$02020021_BF__main__2$", duration: 4000, align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -124,8 +126,8 @@ namespace Maple2.Trigger._02020021_bf {
             internal StateCamera_샤텐Script4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {507, 508}, arg2: false);
-                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__5$", duration: 4000, align: "left");
+                context.CameraSelectPath(pathIds: new[] {507, 508}, arg2: false);
+                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", script: "$02020021_BF__main__5$", duration: 4000, align: Align.Left);
                 context.SetSceneSkip();
             }
 
@@ -146,8 +148,8 @@ namespace Maple2.Trigger._02020021_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {202});
                 context.CreateMonster(arg1: new[] {201}, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.1f);
             }
 

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000277_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000631}, arg2: 1);
-                context.SetPortal(arg1: 50, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 50, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02000277_bf {
             internal State문열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 7);
-                context.SetPortal(arg1: 50, arg2: true, arg3: true, arg4: false);
+                context.SetTimer(id: "1", arg2: 7);
+                context.SetPortal(portalId: 50, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

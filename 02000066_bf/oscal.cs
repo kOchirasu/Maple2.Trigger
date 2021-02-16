@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 5003, arg3: "$02000066_BF__OSCAL__0$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 5003, script: "$02000066_BF__OSCAL__0$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 5003, arg3: "$02000066_BF__OSCAL__1$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 5003, script: "$02000066_BF__OSCAL__1$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 5003, arg3: "$02000066_BF__OSCAL__2$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 5003, script: "$02000066_BF__OSCAL__2$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 5003, arg3: "$02000066_BF__OSCAL__3$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 5003, script: "$02000066_BF__OSCAL__3$", arg4: 3);
             }
 
             public override TriggerState Execute() {

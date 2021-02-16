@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020062_bf {
     public static class _battle_3 {
         public class StateWait : TriggerState {
@@ -10,7 +12,7 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetUserValue(triggerId: 99990009, key: "BossObjectStart", value: 0);
                 context.SetUserValue(triggerId: 99990010, key: "BossObjectStart", value: 0);
                 context.SetUserValue(triggerId: 99990011, key: "BossObjectStart", value: 0);
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
 
             public override TriggerState Execute() {
@@ -31,7 +33,7 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020062_BF__BATTLE_3__0$");
+                    context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020062_BF__BATTLE_3__0$");
                     return new StateBossRandom픽(context);
                 }
 
@@ -149,7 +151,7 @@ namespace Maple2.Trigger._02020062_bf {
             internal StateBoss_InvincibilityPhase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020062_BF__BATTLE_3__2$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020062_BF__BATTLE_3__2$", arg3: 5000);
                 context.CreateMonster(arg1: new[] {711, 712, 713, 811, 812, 821, 822, 831, 832}, arg2: false);
                 context.SetUserValue(triggerId: 99990009, key: "BossObjectStart", value: 1);
                 context.SetUserValue(triggerId: 99990010, key: "BossObjectStart", value: 1);
@@ -180,7 +182,7 @@ namespace Maple2.Trigger._02020062_bf {
             internal StateBoss_추가Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020062_BF__BATTLE_3__1$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020062_BF__BATTLE_3__1$");
             }
 
             public override TriggerState Execute() {
@@ -206,7 +208,7 @@ namespace Maple2.Trigger._02020062_bf {
             internal StateBoss_추가Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020062_BF__BATTLE_3__3$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020062_BF__BATTLE_3__3$");
             }
 
             public override TriggerState Execute() {

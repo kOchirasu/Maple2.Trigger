@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02010039_bf {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
             }
 
             public override TriggerState Execute() {

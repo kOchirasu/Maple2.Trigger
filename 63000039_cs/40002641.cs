@@ -33,8 +33,8 @@ namespace Maple2.Trigger._63000039_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetConversation(arg1: 1, arg2: 1002, arg3: "$63000039_CS__40002641__0$", arg4: 4, arg5: 0);
-                    context.SetConversation(arg1: 1, arg2: 1005, arg3: "$63000039_CS__40002641__1$", arg4: 4, arg5: 2);
+                    context.SetConversation(arg1: 1, arg2: 1002, script: "$63000039_CS__40002641__0$", arg4: 4, arg5: 0);
+                    context.SetConversation(arg1: 1, arg2: 1005, script: "$63000039_CS__40002641__1$", arg4: 4, arg5: 2);
                     return new StateInteractObjectWait(context);
                 }
 
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._63000039_cs {
             internal StateNPC를이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1001");
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002");
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._63000039_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$63000039_CS__40002641__2$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$63000039_CS__40002641__2$", arg4: 4, arg5: 0);
                 context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "SaveBackstreetPeople");
             }
 
@@ -132,8 +132,8 @@ namespace Maple2.Trigger._63000039_cs {
             internal State유저이동조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

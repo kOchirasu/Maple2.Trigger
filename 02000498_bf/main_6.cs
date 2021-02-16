@@ -6,7 +6,7 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3601}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {6601, 6602}, arg2: false);
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -26,12 +26,12 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6601}, arg2: true);
                 context.DarkStreamStartRound(round: 26, uiDuration: 3000, damagePenalty: 200);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.SetEventUI(arg1: 0, arg2: "26,30,26");
+                    context.SetEventUI(arg1: 0, script: "26,30,26");
                     return new State26라운드(context);
                 }
 
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000498_bf {
             internal State26라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000350_BF__MAIN_6__0$", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000350_BF__MAIN_6__0$", arg3: 4000, arg4: "0");
                 context.DarkStreamSpawnMonster(spawnId: new[] {126001}, score: 2200000);
             }
 
@@ -68,12 +68,12 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6601}, arg2: true);
                 context.DarkStreamStartRound(round: 27, uiDuration: 3000, damagePenalty: 200);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.SetEventUI(arg1: 0, arg2: "27,30,26");
+                    context.SetEventUI(arg1: 0, script: "27,30,26");
                     return new State27라운드(context);
                 }
 
@@ -109,12 +109,12 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6601}, arg2: true);
                 context.DarkStreamStartRound(round: 28, uiDuration: 3000, damagePenalty: 200);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.SetEventUI(arg1: 0, arg2: "28,30,26");
+                    context.SetEventUI(arg1: 0, script: "28,30,26");
                     return new State28라운드(context);
                 }
 
@@ -150,12 +150,12 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6601}, arg2: true);
                 context.DarkStreamStartRound(round: 29, uiDuration: 3000, damagePenalty: 200);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.SetEventUI(arg1: 0, arg2: "29,30,26");
+                    context.SetEventUI(arg1: 0, script: "29,30,26");
                     return new State29라운드(context);
                 }
 
@@ -191,12 +191,12 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6602}, arg2: true);
                 context.DarkStreamStartRound(round: 30, uiDuration: 3000, damagePenalty: 200);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.SetEventUI(arg1: 0, arg2: "30,30,26");
+                    context.SetEventUI(arg1: 0, script: "30,30,26");
                     return new State30라운드(context);
                 }
 
@@ -234,9 +234,9 @@ namespace Maple2.Trigger._02000498_bf {
             internal StateSuccess(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 0, arg2: "0,0");
-                context.SetEventUI(arg1: 7, arg2: "$02000350_BF__MAIN_6__1$", arg3: 3000, arg4: "0");
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetEventUI(arg1: 0, script: "0,0");
+                context.SetEventUI(arg1: 7, script: "$02000350_BF__MAIN_6__1$", arg3: 3000, arg4: "0");
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -254,8 +254,8 @@ namespace Maple2.Trigger._02000498_bf {
             internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000350_BF__MAIN_6__2$", arg3: 2500, arg4: "0");
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
+                context.SetEventUI(arg1: 1, script: "$02000350_BF__MAIN_6__2$", arg3: 2500, arg4: "0");
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

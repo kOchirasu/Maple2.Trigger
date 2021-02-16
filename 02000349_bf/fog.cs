@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000349_bf {
                 context.HideGuideSummary(entityId: 20003494);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000813}, arg2: 0);
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {

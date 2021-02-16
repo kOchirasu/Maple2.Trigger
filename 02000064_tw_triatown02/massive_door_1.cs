@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             internal StateStateOpening1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             internal StateStateOpening2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 1);
+                context.SetTimer(id: "2", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "2");
+                context.ResetTimer(id: "2");
                 context.SetActor(arg1: 3, arg2: true, arg3: "Eff_MassiveEvent_Door_Opened");
             }
         }
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             internal StateWaitClosing(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 114);
+                context.SetTimer(id: "3", arg2: 114);
             }
 
             public override TriggerState Execute() {
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "3");
+                context.ResetTimer(id: "3");
             }
         }
 
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
 
             public override void OnEnter() {
                 context.Notice(arg1: false, arg2: "$02000064_TW_Triatown02__MASSIVE_DOOR_1__0$", arg3: true);
-                context.SetTimer(arg1: "4", arg2: 5);
+                context.SetTimer(id: "4", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "4");
+                context.ResetTimer(id: "4");
                 context.SetActor(arg1: 3, arg2: true, arg3: "Eff_MassiveEvent_Door_Closed");
             }
         }
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             internal StateClosed1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 1);
+                context.SetTimer(id: "5", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "5");
+                context.ResetTimer(id: "5");
             }
         }
 
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
 
             public override void OnEnter() {
                 context.Notice(arg1: false, arg2: "$02000064_TW_Triatown02__MASSIVE_DOOR_1__1$", arg3: true);
-                context.SetTimer(arg1: "6", arg2: 1);
+                context.SetTimer(id: "6", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "6");
+                context.ResetTimer(id: "6");
             }
         }
     }

@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State낙하01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
                 context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 5);
+                context.SetTimer(id: "2", arg2: 5);
             }
 
             public override TriggerState Execute() {

@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateReadyToWalkIn_FromPortal02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 109, arg3: "$02000378_BF__09_FINDWAY__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 109, script: "$02000378_BF__09_FINDWAY__1$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000378_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1009}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1009, arg3: "$02000378_BF__09_FINDWAY__2$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 1009, script: "$02000378_BF__09_FINDWAY__2$", arg4: 3, arg5: 2);
                 context.SetUserValue(triggerId: 909, key: "MobWaveStart", value: 1);
             }
 
@@ -97,7 +97,7 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetMeshAnimation(arg1: new[] {3009}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMeshAnimation(arg1: new[] {3109}, arg2: true, arg3: 0, arg4: 0);
                 context.SetEffect(arg1: new[] {5209}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 109, arg3: "$02000378_BF__09_FINDWAY__3$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 109, script: "$02000378_BF__09_FINDWAY__3$", arg4: 2, arg5: 1);
             }
 
             public override TriggerState Execute() {

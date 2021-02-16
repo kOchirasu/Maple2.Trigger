@@ -8,9 +8,9 @@ namespace Maple2.Trigger._02000396_bf {
                 context.SetMesh(arg1: new[] {3200, 3201, 3202, 3300}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {5000}, arg2: false);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Closed");
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 20, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 30, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 20, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 30, visible: false, enabled: false, minimapVisible: false);
                 context.SetUserValue(key: "SearchStart", value: 0);
             }
 
@@ -75,8 +75,8 @@ namespace Maple2.Trigger._02000396_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3200}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3201, 3202}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: false);
-                context.SetEventUI(arg1: 1, arg2: "$02000396_BF__04_RANDOMPORTAL__0$", arg3: 2000, arg4: "0");
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: false);
+                context.SetEventUI(arg1: 1, script: "$02000396_BF__04_RANDOMPORTAL__0$", arg3: 2000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -94,9 +94,9 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateToWallGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000396_BF__04_RANDOMPORTAL__1$", arg4: 5);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11000006, script: "$02000396_BF__04_RANDOMPORTAL__1$", arg4: 5);
                 context.SetSkip(state: new StateToWallGuide01Skip(context));
             }
 
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._02000396_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -156,8 +156,8 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateToRoom02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000396_BF__04_RANDOMPORTAL__2$", arg3: 2000, arg4: "0");
-                context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: false);
+                context.SetEventUI(arg1: 1, script: "$02000396_BF__04_RANDOMPORTAL__2$", arg3: 2000, arg4: "0");
+                context.SetPortal(portalId: 20, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -175,9 +175,9 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateToRoomGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000396_BF__04_RANDOMPORTAL__3$", arg4: 5);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11000006, script: "$02000396_BF__04_RANDOMPORTAL__3$", arg4: 5);
                 context.SetSkip(state: new StateToRoomGuide01Skip(context));
             }
 
@@ -198,8 +198,8 @@ namespace Maple2.Trigger._02000396_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -237,11 +237,11 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateToTower02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000396_BF__04_RANDOMPORTAL__4$", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000396_BF__04_RANDOMPORTAL__4$", arg3: 2000, arg4: "0");
                 context.SetMesh(arg1: new[] {3300}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Opened");
-                context.SetPortal(arg1: 30, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 30, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -259,9 +259,9 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateToTowerGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000396_BF__04_RANDOMPORTAL__5$", arg4: 5);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11000006, script: "$02000396_BF__04_RANDOMPORTAL__5$", arg4: 5);
                 context.SetSkip(state: new StateToTowerGuide01Skip(context));
             }
 
@@ -282,8 +282,8 @@ namespace Maple2.Trigger._02000396_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

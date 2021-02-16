@@ -251,7 +251,7 @@ namespace Maple2.Trigger._02000384_bf {
                 context.DungeonClear();
                 context.SetAchievement(arg1: 90000, arg2: "trigger", arg3: "Madracan03");
                 context.SetAchievement(arg1: 90000, arg2: "trigger", arg3: "Madracan_Q03");
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -265,11 +265,11 @@ namespace Maple2.Trigger._02000384_bf {
             internal StateQuest_end(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 7, arg2: "$02000384_BF__MAIN__0$", arg3: 5000, arg4: "0");
-                context.SetConversation(arg1: 1, arg2: 510, arg3: "$02000384_BF__MAIN__1$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 510, arg3: "$02000384_BF__MAIN__2$", arg4: 2, arg5: 2);
+                context.SetEventUI(arg1: 7, script: "$02000384_BF__MAIN__0$", arg3: 5000, arg4: "0");
+                context.SetConversation(arg1: 1, arg2: 510, script: "$02000384_BF__MAIN__1$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 510, script: "$02000384_BF__MAIN__2$", arg4: 2, arg5: 2);
                 context.SetAchievement(arg1: 90000, arg2: "trigger", arg3: "Madracan_Q03");
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

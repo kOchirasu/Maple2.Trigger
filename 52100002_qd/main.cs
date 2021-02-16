@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52100002_qd {
     public static class _main {
         public class StateWait : TriggerState {
@@ -5,7 +7,7 @@ namespace Maple2.Trigger._52100002_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -248,8 +250,8 @@ namespace Maple2.Trigger._52100002_qd {
                 context.MoveUser(arg1: 52100002, arg2: 2);
                 context.DestroyMonster(arg1: new[] {1001, 1002, 2001, 2002, 2101, 2102});
                 context.CreateMonster(arg1: new[] {1098, 1099}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(arg1: 1098, arg2: "Dead_B", arg3: 3000000f);
                 context.SetNpcEmotionLoop(arg1: 1099, arg2: "Dead_B", arg3: 3000000f);
@@ -271,8 +273,8 @@ namespace Maple2.Trigger._52100002_qd {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateStopCinematic(context));
-                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__MAIN__0$", align: "left", duration: 4000);
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__1$", align: "right", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", script: "$02000392_BF__MAIN__0$", align: Align.Left, duration: 4000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", script: "$02000392_BF__MAIN__1$", align: Align.Right, duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -290,7 +292,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal StatePC대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$02000392_BF__MAIN__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$02000392_BF__MAIN__2$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -308,7 +310,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal StatePCScript2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$02000392_BF__MAIN__10$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$02000392_BF__MAIN__10$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -363,8 +365,8 @@ namespace Maple2.Trigger._52100002_qd {
             internal State자매대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__MAIN__3$", align: "left", duration: 4000);
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__4$", align: "right", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", script: "$02000392_BF__MAIN__3$", align: Align.Left, duration: 4000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", script: "$02000392_BF__MAIN__4$", align: Align.Right, duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -382,8 +384,8 @@ namespace Maple2.Trigger._52100002_qd {
             internal State자매대화02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__MAIN__5$", align: "left", duration: 5000);
-                context.SetConversation(arg1: 1, arg2: 1097, arg3: "$02000392_BF__MAIN__6$", arg4: 2, arg5: 2);
+                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", script: "$02000392_BF__MAIN__5$", align: Align.Left, duration: 5000);
+                context.SetConversation(arg1: 1, arg2: 1097, script: "$02000392_BF__MAIN__6$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -401,7 +403,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal State자매대화03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__11$", align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", script: "$02000392_BF__MAIN__11$", align: Align.Left, duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -419,7 +421,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal StatePCScript3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$02000392_BF__MAIN__12$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$02000392_BF__MAIN__12$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -437,7 +439,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal State자매대화04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__7$", align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", script: "$02000392_BF__MAIN__7$", align: Align.Left, duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -455,7 +457,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal State자매대화05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__8$", align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", script: "$02000392_BF__MAIN__8$", align: Align.Left, duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -473,7 +475,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal State자매대화06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__9$", align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", script: "$02000392_BF__MAIN__9$", align: Align.Left, duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -494,8 +496,8 @@ namespace Maple2.Trigger._52100002_qd {
                 context.SetSkip();
                 context.DestroyMonster(arg1: new[] {1098, 1099, 1096, 1097});
                 context.CreateMonster(arg1: new[] {1096, 1097}, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
@@ -539,7 +541,7 @@ namespace Maple2.Trigger._52100002_qd {
                 }
 
                 if (!context.IsDungeonRoom()) {
-                    context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     return new StateEnd(context);
                 }
 
@@ -555,7 +557,7 @@ namespace Maple2.Trigger._52100002_qd {
             public override void OnEnter() {
                 context.DungeonClear();
                 context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "ClearSirenSisters");
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

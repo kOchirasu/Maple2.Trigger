@@ -15,7 +15,7 @@ namespace Maple2.Trigger._02000253_bf {
                 context.SetLadder(arg1: 1703, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 1704, arg2: false, arg3: false, arg4: 0);
                 context.SetInteractObject(arg1: new[] {13000005}, arg2: 2);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 8);
+                context.SetTimer(id: "1", arg2: 8);
             }
 
             public override TriggerState Execute() {
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002527, textId: 20002527);
-                context.SetTimer(arg1: "1", arg2: 15);
+                context.SetTimer(id: "1", arg2: 15);
             }
 
             public override TriggerState Execute() {
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002528, textId: 20002528);
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
                 context.CreateMonster(arg1: new[] {4002, 4004, 4008}, arg2: true);
             }
 
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002529, textId: 20002529);
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
                 context.CreateMonster(arg1: new[] {4001, 4003, 4007}, arg2: true);
             }
 
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002530, textId: 20002530);
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
                 context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004}, arg2: true);
             }
 
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002531, textId: 20002531);
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
                 context.CreateMonster(arg1: new[] {4005, 4006, 4007, 4008}, arg2: true);
             }
 
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002532, textId: 20002532);
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
                 context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004, 4005}, arg2: true);
             }
 
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002533, textId: 20002533);
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
                 context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true);
             }
 
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State몹8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
                 context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true);
             }
 
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State몹9(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
                 context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true);
             }
 
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002533, textId: 20002533);
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
                 context.CreateMonster(arg1: new[] {4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016}, arg2: true);
             }
 
@@ -274,12 +274,12 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002524, textId: 20002524);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.SetLadder(arg1: 1701, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 1702, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 1703, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 1704, arg2: true, arg3: true, arg4: 2);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {

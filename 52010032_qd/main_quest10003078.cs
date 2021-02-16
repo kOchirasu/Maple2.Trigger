@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52010032_qd {
     public static class _main_quest10003078 {
         public class State무르파고스에들어오면 : TriggerState {
@@ -23,8 +25,8 @@ namespace Maple2.Trigger._52010032_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {301, 302}, arg2: true);
                 context.MoveUser(arg1: 52010032, arg2: 6001);
             }
@@ -64,7 +66,7 @@ namespace Maple2.Trigger._52010032_qd {
                 context.MoveUserPath(arg1: "MS2PatrolData_3005");
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_3003");
                 context.MoveNpc(arg1: 302, arg2: "MS2PatrolData_3004");
-                context.ShowCaption(type: "VerticalCaption", title: "$52010032_QD__MAIN_QUEST10003078__0$", desc: "$52010032_QD__MAIN_QUEST10003078__1$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
+                context.ShowCaption(type: CaptionType.Vertical, title: "$52010032_QD__MAIN_QUEST10003078__0$", script: "$52010032_QD__MAIN_QUEST10003078__1$", align: Align.Center | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
                 context.AddBalloonTalk(spawnPointId: 301, msg: "$52010032_QD__MAIN_QUEST10003078__2$", duration: 2000, delayTick: 1000);
                 context.AddBalloonTalk(spawnPointId: 302, msg: "$52010032_QD__MAIN_QUEST10003078__3$", duration: 2000, delayTick: 2000);
             }
@@ -85,8 +87,8 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

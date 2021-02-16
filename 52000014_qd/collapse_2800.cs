@@ -23,7 +23,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State무너짐경고01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$52000014_QD__COLLAPSE_2800__0$", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52000014_QD__COLLAPSE_2800__0$", arg3: 4000, arg4: "0");
                 context.SetEffect(arg1: new[] {12800, 22800}, arg2: true);
                 context.SetRandomMesh(arg1: new[] {2850, 2851, 2852, 2853, 2854, 2855}, arg2: false, arg3: 6, arg4: 0, arg5: 300);
             }
@@ -123,7 +123,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State무너짐경고06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
                 context.SetEffect(arg1: new[] {12850, 22850}, arg2: true);
                 context.SetRandomMesh(arg1: new[] {2840, 2841, 2842, 2843}, arg2: false, arg3: 4, arg4: 100, arg5: 150);
             }

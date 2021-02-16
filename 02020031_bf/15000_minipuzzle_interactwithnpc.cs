@@ -4,8 +4,8 @@ namespace Maple2.Trigger._02020031_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "10");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "10");
                 context.EnableLocalCamera(isEnable: false);
                 context.SetUserValue(key: "StandAsideTypeA", value: 0);
                 context.SetUserValue(key: "StandAsideTypeB", value: 0);
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02020031_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000078}, arg2: 0)) {
-                    context.SetTimer(arg1: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
+                    context.SetTimer(id: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
                     return new StateInteractWithNpc_NpcTypeA_NpcSpawn(context);
                 }
 
@@ -126,7 +126,7 @@ namespace Maple2.Trigger._02020031_bf {
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 2);
                 context.SetMesh(arg1: new[] {15101, 15102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.AddBuff(arg1: new[] {150001}, arg2: 71001052, arg3: 1, arg4: false, arg5: false);
-                context.SetTimer(arg1: "10", arg2: 60, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "10", arg2: 60, arg3: true, arg4: false, arg5: 0);
                 context.SetUserValue(triggerId: 151001, key: "NPCKill", value: 1);
             }
 
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._02020031_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000093}, arg2: 0)) {
-                    context.SetTimer(arg1: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
+                    context.SetTimer(id: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
                     return new StateInteractWithNpc_NpcTypeB_NpcSpawn(context);
                 }
 
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._02020031_bf {
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 2);
                 context.SetMesh(arg1: new[] {15101, 15102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.AddBuff(arg1: new[] {150001}, arg2: 71001052, arg3: 1, arg4: false, arg5: false);
-                context.SetTimer(arg1: "10", arg2: 60, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "10", arg2: 60, arg3: true, arg4: false, arg5: 0);
                 context.SetUserValue(triggerId: 151001, key: "NPCKill", value: 1);
             }
 
@@ -307,8 +307,8 @@ namespace Maple2.Trigger._02020031_bf {
             internal StateInteractWithNpc_Quit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "10");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "10");
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 0);
                 context.DestroyMonster(arg1: new[] {15401, 15402, 15501, 15502});
             }

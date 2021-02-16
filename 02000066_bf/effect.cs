@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State이펙트소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "15", arg2: 15);
+                context.SetTimer(id: "15", arg2: 15);
                 context.SetEffect(arg1: new[] {6001}, arg2: false);
             }
 

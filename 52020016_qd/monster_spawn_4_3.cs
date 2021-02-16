@@ -21,7 +21,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {4000404}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 4000404, arg3: "당신 떄문에!!당신 떄문에!!", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 4000404, script: "당신 떄문에!!당신 떄문에!!", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {

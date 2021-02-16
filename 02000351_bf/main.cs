@@ -27,10 +27,10 @@ namespace Maple2.Trigger._02000351_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateStart(context));
-                context.CameraSelectPath(arg1: new[] {80001, 80002}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {80001, 80002}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -43,9 +43,9 @@ namespace Maple2.Trigger._02000351_bf {
 
             public override void OnExit() {
                 context.RemoveCinematicTalk();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -53,8 +53,8 @@ namespace Maple2.Trigger._02000351_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000351_BF__MAIN__0$", arg3: 3000);
-                context.CameraSelectPath(arg1: new[] {80003}, arg2: true);
+                context.SetEventUI(arg1: 1, script: "$02000351_BF__MAIN__0$", arg3: 3000);
+                context.CameraSelectPath(pathIds: new[] {80003}, arg2: true);
                 context.SetMesh(arg1: new[] {6900}, arg2: false, arg4: 0, arg5: 10f);
             }
 
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02000351_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 112, textId: 40009);
                 context.SetMesh(arg1: new[] {6006}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
             }
 
             public override TriggerState Execute() {
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000313_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
     }

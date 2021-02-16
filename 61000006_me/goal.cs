@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._61000006_me {
     public static class _goal {
         public class StateWait : TriggerState {
@@ -22,7 +24,7 @@ namespace Maple2.Trigger._61000006_me {
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 401, isOnlyWinner: true, expRate: 1.0f);
                 context.MiniGameGiveReward(winnerBoxId: 401, contentType: "miniGame");
-                context.EndMiniGame(winnerBoxId: 401, isOnlyWinner: true, gameName: "crazyrunner");
+                context.EndMiniGame(winnerBoxId: 401, isOnlyWinner: true, type: MiniGame.CrazyRunners);
                 context.AddBuff(arg1: new[] {401}, arg2: 70000019, arg3: 1);
             }
 

@@ -4,8 +4,8 @@ namespace Maple2.Trigger._84000004_wd {
             internal StateStart_타이머설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "4000", arg2: 300, arg3: true, arg4: false);
-                context.SetPortal(arg1: 10001, arg2: false, arg3: false, arg4: false);
+                context.SetTimer(id: "4000", arg2: 300, arg3: true, arg4: false);
+                context.SetPortal(portalId: 10001, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -20,7 +20,7 @@ namespace Maple2.Trigger._84000004_wd {
 
             public override void OnEnter() {
                 context.SetPhotoStudio(isEnable: true);
-                context.SetPortal(arg1: 10001, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 10001, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

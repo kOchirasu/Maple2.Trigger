@@ -41,23 +41,23 @@ namespace Maple2.Trigger._02000320_bf {
             internal State깨어남1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 8);
+                context.SetTimer(id: "10", arg2: 8);
                 context.SetActor(arg1: 3001, arg2: true, arg3: "Bore_A");
                 context.SetActor(arg1: 3002, arg2: true, arg3: "Bore_A");
                 context.SetActor(arg1: 3004, arg2: false, arg3: "Bore_A");
                 context.SetActor(arg1: 3005, arg2: false, arg3: "Stun_A");
                 context.SetActor(arg1: 3006, arg2: false, arg3: "Stun_A");
                 context.CreateMonster(arg1: new[] {30004}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 30004, arg3: "$02000320_BF__WAKEUP_03__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 30004, script: "$02000320_BF__WAKEUP_03__0$", arg4: 2, arg5: 0);
                 context.CreateMonster(arg1: new[] {30005}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 30005, arg3: "$02000320_BF__WAKEUP_03__1$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 30005, script: "$02000320_BF__WAKEUP_03__1$", arg4: 2, arg5: 1);
                 context.CreateMonster(arg1: new[] {30006}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 30006, arg3: "$02000320_BF__WAKEUP_03__2$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 30006, script: "$02000320_BF__WAKEUP_03__2$", arg4: 2, arg5: 2);
                 context.CreateMonster(arg1: new[] {30001});
                 context.CreateMonster(arg1: new[] {30002});
                 context.CreateMonster(arg1: new[] {30003});
-                context.SetConversation(arg1: 1, arg2: 30003, arg3: "$02000320_BF__WAKEUP_03__3$", arg4: 2, arg5: 3);
-                context.SetConversation(arg1: 1, arg2: 30001, arg3: "$02000320_BF__WAKEUP_03__4$", arg4: 2, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 30003, script: "$02000320_BF__WAKEUP_03__3$", arg4: 2, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 30001, script: "$02000320_BF__WAKEUP_03__4$", arg4: 2, arg5: 4);
             }
 
             public override TriggerState Execute() {
@@ -75,10 +75,10 @@ namespace Maple2.Trigger._02000320_bf {
             internal State깨어남2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "11", arg2: 4);
-                context.SetConversation(arg1: 1, arg2: 30002, arg3: "$02000320_BF__WAKEUP_03__5$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 30001, arg3: "$02000320_BF__WAKEUP_03__6$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 30003, arg3: "$02000320_BF__WAKEUP_03__7$", arg4: 2, arg5: 2);
+                context.SetTimer(id: "11", arg2: 4);
+                context.SetConversation(arg1: 1, arg2: 30002, script: "$02000320_BF__WAKEUP_03__5$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 30001, script: "$02000320_BF__WAKEUP_03__6$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 30003, script: "$02000320_BF__WAKEUP_03__7$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02000320_bf {
             internal State깨어남3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "12", arg2: 1);
+                context.SetTimer(id: "12", arg2: 1);
                 context.SetActor(arg1: 3001, arg2: true, arg3: "Stun_A");
                 context.SetActor(arg1: 3002, arg2: true, arg3: "Stun_A");
             }
@@ -142,10 +142,10 @@ namespace Maple2.Trigger._02000320_bf {
                 context.RemoveBalloonTalk(spawnPointId: 30001);
                 context.RemoveBalloonTalk(spawnPointId: 30002);
                 context.RemoveBalloonTalk(spawnPointId: 30003);
-                context.SetTimer(arg1: "14", arg2: 4);
-                context.SetConversation(arg1: 1, arg2: 30004, arg3: "$02000320_BF__WAKEUP_03__8$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 30005, arg3: "$02000320_BF__WAKEUP_03__9$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 30006, arg3: "$02000320_BF__WAKEUP_03__10$", arg4: 2, arg5: 2);
+                context.SetTimer(id: "14", arg2: 4);
+                context.SetConversation(arg1: 1, arg2: 30004, script: "$02000320_BF__WAKEUP_03__8$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 30005, script: "$02000320_BF__WAKEUP_03__9$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 30006, script: "$02000320_BF__WAKEUP_03__10$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._02000320_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {30001, 30002, 30003, 30004, 30005, 30006});
-                context.SetTimer(arg1: "15", arg2: 7);
+                context.SetTimer(id: "15", arg2: 7);
                 context.SetActor(arg1: 3004, arg2: true, arg3: "Stun_A");
                 context.SetActor(arg1: 3005, arg2: true, arg3: "Stun_A");
                 context.SetActor(arg1: 3006, arg2: true, arg3: "Stun_A");

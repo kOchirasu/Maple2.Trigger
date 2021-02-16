@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000352_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {900001, 900002, 900003, 900004, 900005}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000822}, arg2: 0);
             }
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02000352_bf {
                 context.SetMesh(arg1: new[] {6007}, arg2: true, arg4: 0, arg5: 10f);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 112, textId: 40009);
-                context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

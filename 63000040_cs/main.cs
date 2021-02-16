@@ -68,12 +68,12 @@ namespace Maple2.Trigger._63000040_cs {
             internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2001");
                 context.MoveUserPath(arg1: "MS2PatrolData_2002");
-                context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000040_CS__MAIN__0$", arg4: 5);
+                context.CameraSelectPath(pathIds: new[] {8001, 8002}, arg2: false);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000040_CS__MAIN__0$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._63000040_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 3000f);
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000040_CS__MAIN__1$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000040_CS__MAIN__1$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._63000040_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
+                    context.CameraSelectPath(pathIds: new[] {8003}, arg2: false);
                     return new StateStart_07(context);
                 }
 
@@ -181,9 +181,9 @@ namespace Maple2.Trigger._63000040_cs {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8003}, arg2: true);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.CameraSelectPath(pathIds: new[] {8003}, arg2: true);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

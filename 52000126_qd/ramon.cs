@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000126_qd {
     public static class _ramon {
         public class StateIdle : TriggerState {
@@ -21,8 +23,8 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -41,7 +43,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
-                context.CameraSelectPath(arg1: new[] {4101}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4101}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -78,7 +80,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Idle_A");
-                context.CameraSelectPath(arg1: new[] {4101, 4102}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4101, 4102}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -97,7 +99,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Idle_A");
-                context.CameraSelectPath(arg1: new[] {4102, 4103}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4102, 4103}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -117,7 +119,7 @@ namespace Maple2.Trigger._52000126_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
-                context.AddCinematicTalk(npcId: 11003209, msg: "$52000126_QD__RAMON__0$", duration: 2000, align: "Left");
+                context.AddCinematicTalk(npcId: 11003209, script: "$52000126_QD__RAMON__0$", duration: 2000, align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -136,8 +138,8 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0f);
             }
 

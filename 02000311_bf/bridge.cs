@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000311_bf {
             internal State트로피(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000384_BF__BARRICADE__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000384_BF__BARRICADE__0$", arg3: 3000);
                 context.SetAchievement(arg2: "trigger", arg3: "meetfirroth");
             }
 

@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52010018_qd {
     public static class _main {
         public class StateWait : TriggerState {
@@ -20,8 +22,8 @@ namespace Maple2.Trigger._52010018_qd {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(arg1: new[] {1002, 1003, 1004, 1006}, arg2: false);
             }
@@ -66,7 +68,7 @@ namespace Maple2.Trigger._52010018_qd {
             internal State둔바Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010018_QD__MAIN__0$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001217, script: "$52010018_QD__MAIN__0$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -84,7 +86,7 @@ namespace Maple2.Trigger._52010018_qd {
             internal State에레브Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010018_QD__MAIN__1$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11000075, script: "$52010018_QD__MAIN__1$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -102,7 +104,7 @@ namespace Maple2.Trigger._52010018_qd {
             internal State미카Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010018_QD__MAIN__2$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010018_QD__MAIN__2$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -120,8 +122,8 @@ namespace Maple2.Trigger._52010018_qd {
             internal State미카이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 301, arg2: false);
                 context.MoveNpc(arg1: 1006, arg2: "MS2PatrolData_1006_B");
             }
@@ -157,13 +159,13 @@ namespace Maple2.Trigger._52010018_qd {
             internal State동영상재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: "awaken.swf", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new State동영상종료Wait(context);
                 }
 

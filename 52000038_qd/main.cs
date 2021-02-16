@@ -109,9 +109,9 @@ namespace Maple2.Trigger._52000038_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2001");
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000038_QD__MAIN__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000038_QD__MAIN__0$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2002");
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000038_QD__MAIN__1$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000038_QD__MAIN__1$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._52000038_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2003");
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000038_QD__MAIN__2$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000038_QD__MAIN__2$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._52000038_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2004");
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000038_QD__MAIN__3$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000038_QD__MAIN__3$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -187,9 +187,9 @@ namespace Maple2.Trigger._52000038_qd {
             public override void OnEnter() {
                 context.SetActor(arg1: 3001, arg2: false, arg3: "Dead_A");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2005");
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000038_QD__MAIN__4$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000038_QD__MAIN__4$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2006");
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000038_QD__MAIN__5$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000038_QD__MAIN__5$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -230,9 +230,9 @@ namespace Maple2.Trigger._52000038_qd {
                 context.SetActor(arg1: 3004, arg2: false, arg3: "Dead_A");
                 context.SetActor(arg1: 3005, arg2: false, arg3: "Dead_A");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2007");
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000038_QD__MAIN__6$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000038_QD__MAIN__6$", arg4: 2, arg5: 2);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2008");
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000038_QD__MAIN__7$", arg4: 2, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000038_QD__MAIN__7$", arg4: 2, arg5: 4);
                 context.ShowGuideSummary(entityId: 40010, textId: 40010);
             }
 
@@ -275,7 +275,7 @@ namespace Maple2.Trigger._52000038_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 121, arg2: "MS2PatrolData_2009");
-                context.SetConversation(arg1: 1, arg2: 121, arg3: "$52000038_QD__MAIN__8$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 121, script: "$52000038_QD__MAIN__8$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -294,7 +294,7 @@ namespace Maple2.Trigger._52000038_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 122, arg2: "MS2PatrolData_2010");
-                context.SetConversation(arg1: 1, arg2: 122, arg3: "$52000038_QD__MAIN__9$", arg4: 2, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 122, script: "$52000038_QD__MAIN__9$", arg4: 2, arg5: 3);
             }
 
             public override TriggerState Execute() {
@@ -314,7 +314,7 @@ namespace Maple2.Trigger._52000038_qd {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {103}, arg2: true);
                 context.ShowGuideSummary(entityId: 20020010, textId: 20020010);
-                context.SetConversation(arg1: 1, arg2: 121, arg3: "$52000038_QD__MAIN__10$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 121, script: "$52000038_QD__MAIN__10$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {

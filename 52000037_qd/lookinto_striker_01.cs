@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4000, arg2: false, arg3: "Dead_A");
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10000175}, arg2: 0);
             }
 
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() {
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Dead_A");
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateStrikerSetting04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateSayHi01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$52000037_QD__LOOKINTO_STRIKER_01__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -146,9 +146,9 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePCMove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
@@ -186,8 +186,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePatrol01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 601, arg2: true);
             }
 
@@ -207,7 +207,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_1000");
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$52000037_QD__LOOKINTO_STRIKER_01__1$", arg4: 3, arg5: 0);
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_401");
             }
 
@@ -245,7 +245,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePatrol04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 301, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 301, script: "$52000037_QD__LOOKINTO_STRIKER_01__2$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -263,8 +263,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateComeAcrossSB01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 700, arg2: true);
             }
 
@@ -283,7 +283,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateComeAcrossSB02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 301, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__3$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 301, script: "$52000037_QD__LOOKINTO_STRIKER_01__3$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -317,7 +317,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateSBRunAway01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 401, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__14$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 401, script: "$52000037_QD__LOOKINTO_STRIKER_01__14$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -371,7 +371,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateDialogue01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__4$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000037_QD__LOOKINTO_STRIKER_01__4$", arg4: 5);
                 context.SetSkip(state: new StateDialogue02(context));
             }
 
@@ -406,7 +406,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {401});
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__5$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000037_QD__LOOKINTO_STRIKER_01__5$", arg4: 5);
                 context.SetSkip(state: new StateDialogue04(context));
             }
 
@@ -427,8 +427,8 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 701, arg2: false);
             }
 
@@ -447,7 +447,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateStepInside01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 301, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__6$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 301, script: "$52000037_QD__LOOKINTO_STRIKER_01__6$", arg4: 4, arg5: 0);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_202");
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_302");
             }
@@ -467,7 +467,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateStepInside02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__7$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$52000037_QD__LOOKINTO_STRIKER_01__7$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -504,9 +504,9 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateTalkJabethNBravo01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__8$", arg4: 5);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000037_QD__LOOKINTO_STRIKER_01__8$", arg4: 5);
                 context.SetSkip(state: new StateTalkJabethNBravo02(context));
             }
 
@@ -540,7 +540,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateTalkJabethNBravo03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__9$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000037_QD__LOOKINTO_STRIKER_01__9$", arg4: 5);
                 context.SetSkip(state: new StateTalkJabethNBravo04(context));
             }
 
@@ -561,8 +561,8 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -595,7 +595,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateNextQuestStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 202, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__10$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 202, script: "$52000037_QD__LOOKINTO_STRIKER_01__10$", arg4: 4, arg5: 0);
                 context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_203");
                 context.MoveNpc(arg1: 302, arg2: "MS2PatrolData_303");
             }
@@ -631,9 +631,9 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateReadyToLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__11$", arg4: 6);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000037_QD__LOOKINTO_STRIKER_01__11$", arg4: 6);
                 context.SetSkip(state: new StateReadyToLeave02(context));
             }
 
@@ -654,9 +654,9 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -675,7 +675,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 302, arg2: "MS2PatrolData_304");
-                context.SetConversation(arg1: 1, arg2: 302, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__12$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 302, script: "$52000037_QD__LOOKINTO_STRIKER_01__12$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -711,7 +711,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateReadyToLeave05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 202, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__13$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 202, script: "$52000037_QD__LOOKINTO_STRIKER_01__13$", arg4: 3, arg5: 0);
                 context.MoveNpc(arg1: 302, arg2: "MS2PatrolData_305");
             }
 

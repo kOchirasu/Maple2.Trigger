@@ -23,10 +23,10 @@ namespace Maple2.Trigger._52010014_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetTimer(arg1: "3", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010014_QD__MAIN__0$", arg4: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetTimer(id: "3", arg2: 3);
+                context.SetConversation(arg1: 2, arg2: 11001292, script: "$52010014_QD__MAIN__0$", arg4: 3);
                 context.SetSkip(state: new StateEvent_02(context));
             }
 
@@ -47,9 +47,9 @@ namespace Maple2.Trigger._52010014_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010014_QD__MAIN__1$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010014_QD__MAIN__1$", arg4: 3);
                 context.SetSkip(state: new StateEvent_03(context));
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -69,9 +69,9 @@ namespace Maple2.Trigger._52010014_qd {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010014_QD__MAIN__2$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010014_QD__MAIN__2$", arg4: 3);
                 context.SetSkip(state: new StateEvent_04(context));
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._52010014_qd {
             internal StateEvent_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010014_QD__MAIN__3$", arg4: 3);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetConversation(arg1: 2, arg2: 11001292, script: "$52010014_QD__MAIN__3$", arg4: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetSkip(state: new StateEvent_05(context));
             }
 
@@ -105,9 +105,9 @@ namespace Maple2.Trigger._52010014_qd {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 

@@ -6,9 +6,9 @@ namespace Maple2.Trigger._02000317_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false, arg5: false);
-                context.SetPortal(arg1: 5, arg2: false, arg3: false, arg4: false, arg5: false);
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false, arg5: false);
+                context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false, arg5: false);
+                context.SetPortal(portalId: 5, visible: false, enabled: false, minimapVisible: false, arg5: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false, arg5: false);
             }
 
             public override TriggerState Execute() {
@@ -26,9 +26,9 @@ namespace Maple2.Trigger._02000317_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false, arg5: false);
-                context.SetPortal(arg1: 5, arg2: false, arg3: false, arg4: false, arg5: false);
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false, arg5: false);
+                context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false, arg5: false);
+                context.SetPortal(portalId: 5, visible: false, enabled: false, minimapVisible: false, arg5: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false, arg5: false);
                 context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -63,10 +63,10 @@ namespace Maple2.Trigger._02000317_bf {
             internal StateStep_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7}, arg2: false);
                 context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 301, 302, 303, 304, 305, 306, 307, 401, 402, 403, 404, 405, 406}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._02000317_bf {
             internal StateStep_1_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._02000317_bf {
             internal StateStep_1_E(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 5, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 5, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._02000317_bf {
             internal StateStep_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 7, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 7, visible: true, enabled: true, minimapVisible: true);
                 context.CreateMonster(arg1: new[] {100}, arg2: false);
             }
 
@@ -252,8 +252,8 @@ namespace Maple2.Trigger._02000317_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 8, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 8, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

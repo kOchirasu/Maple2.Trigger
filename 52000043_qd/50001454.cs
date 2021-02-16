@@ -53,8 +53,8 @@ namespace Maple2.Trigger._52000043_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 305, arg2: true);
             }
 
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State말퉁선Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1003, arg3: "$52000043_QD__50001454__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1003, script: "$52000043_QD__50001454__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__1$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__1$", arg4: 4);
                 context.SetSkip(state: new State준타Script01스킵(context));
             }
 
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State틴차이Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000043_QD__50001454__2$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$52000043_QD__50001454__2$", arg4: 4);
                 context.SetSkip(state: new State틴차이Script01스킵(context));
             }
 
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {606}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__3$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__3$", arg4: 4);
                 context.SetSkip(state: new State준타Script02스킵(context));
             }
 
@@ -234,7 +234,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__4$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__4$", arg4: 5);
                 context.SetSkip(state: new State준타Script03스킵(context));
             }
 
@@ -269,7 +269,7 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {607}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000043_QD__50001454__5$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$52000043_QD__50001454__5$", arg4: 3);
                 context.SetSkip(state: new State틴차이Script02스킵(context));
             }
 
@@ -304,7 +304,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__6$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__6$", arg4: 3);
                 context.SetSkip(state: new State준타Script04스킵(context));
             }
 
@@ -338,7 +338,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__7$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__7$", arg4: 5);
                 context.SetSkip(state: new State준타Script05스킵(context));
             }
 
@@ -372,7 +372,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__8$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__8$", arg4: 5);
                 context.SetSkip(state: new State준타Script06스킵(context));
             }
 
@@ -406,7 +406,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__9$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__9$", arg4: 6);
                 context.SetSkip(state: new State준타Script07스킵(context));
             }
 
@@ -440,7 +440,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__10$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__10$", arg4: 3);
                 context.SetSkip(state: new State준타Script08스킵(context));
             }
 
@@ -474,7 +474,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State틴차이Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000043_QD__50001454__26$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$52000043_QD__50001454__26$", arg4: 2);
                 context.SetSkip(state: new State틴차이Script03스킵(context));
             }
 
@@ -508,7 +508,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__11$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__11$", arg4: 4);
                 context.SetSkip(state: new State준타Script09스킵(context));
             }
 
@@ -542,7 +542,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__12$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__12$", arg4: 4);
                 context.SetSkip(state: new State준타Script10스킵(context));
             }
 
@@ -576,7 +576,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__13$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__13$", arg4: 4);
                 context.SetSkip(state: new State준타Script11스킵(context));
             }
 
@@ -610,7 +610,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State틴차이Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000043_QD__50001454__14$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$52000043_QD__50001454__14$", arg4: 2);
                 context.SetSkip(state: new State틴차이Script04스킵(context));
             }
 
@@ -644,7 +644,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__15$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__15$", arg4: 4);
                 context.SetSkip(state: new State준타Script12스킵(context));
             }
 
@@ -679,7 +679,7 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {608}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__16$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__16$", arg4: 4);
                 context.SetSkip(state: new State준타Script13스킵(context));
             }
 
@@ -733,7 +733,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__17$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__17$", arg4: 4);
                 context.SetSkip(state: new State준타Script14스킵(context));
             }
 
@@ -767,7 +767,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State틴차이Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000043_QD__50001454__18$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$52000043_QD__50001454__18$", arg4: 2);
                 context.SetSkip(state: new State틴차이Script05스킵(context));
             }
 
@@ -801,7 +801,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__19$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__19$", arg4: 6);
                 context.SetSkip(state: new State준타Script15스킵(context));
             }
 
@@ -835,7 +835,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__20$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__20$", arg4: 3);
                 context.SetSkip(state: new State준타Script16스킵(context));
             }
 
@@ -869,7 +869,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__21$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__21$", arg4: 4);
                 context.SetSkip(state: new State준타Script17스킵(context));
             }
 
@@ -903,7 +903,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State틴차이Script06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000043_QD__50001454__22$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$52000043_QD__50001454__22$", arg4: 3);
                 context.SetSkip(state: new State틴차이Script06스킵(context));
             }
 
@@ -937,7 +937,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__23$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__23$", arg4: 5);
                 context.SetSkip(state: new State준타Script18스킵(context));
             }
 
@@ -971,7 +971,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__24$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__24$", arg4: 6);
                 context.SetSkip(state: new State준타Script19스킵(context));
             }
 
@@ -1005,7 +1005,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001454__25$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001454__25$", arg4: 3);
                 context.SetSkip(state: new State준타Script20스킵(context));
             }
 
@@ -1045,8 +1045,8 @@ namespace Maple2.Trigger._52000043_qd {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.MoveUser(arg1: 02000039, arg2: 10);
-                    context.SetCinematicUI(arg1: 0);
-                    context.SetCinematicUI(arg1: 2);
+                    context.SetCinematicUI(type: 0);
+                    context.SetCinematicUI(type: 2);
                     return new StateEnd(context);
                 }
 

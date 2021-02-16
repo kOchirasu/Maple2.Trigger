@@ -20,7 +20,7 @@ namespace Maple2.Trigger._52000025_qd {
             internal StateTalk_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$52000025_QD__TALK_EVENT__0$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$52000025_QD__TALK_EVENT__0$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._52000025_qd {
             internal StateTalk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$52000025_QD__TALK_EVENT__1$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$52000025_QD__TALK_EVENT__1$", arg4: 2, arg5: 1);
             }
 
             public override TriggerState Execute() {

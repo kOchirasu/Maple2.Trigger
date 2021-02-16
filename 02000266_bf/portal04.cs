@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000266_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 54, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 54, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10000675}, arg2: 1);
             }
 
@@ -24,13 +24,13 @@ namespace Maple2.Trigger._02000266_bf {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000266, arg2: 53, arg3: 701);
-                context.SetPortal(arg1: 54, arg2: false, arg3: true, arg4: false);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetPortal(portalId: 54, visible: false, enabled: true, minimapVisible: false);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.SetPortal(arg1: 54, arg2: false, arg3: false, arg4: false);
+                    context.SetPortal(portalId: 54, visible: false, enabled: false, minimapVisible: false);
                     return new State재사용Wait(context);
                 }
 
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000266_bf {
             internal State재사용Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {

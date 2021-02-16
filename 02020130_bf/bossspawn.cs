@@ -5,10 +5,10 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022}, arg2: false);
-                context.SetPortal(arg1: 20, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 21, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 22, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 23, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 20, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 21, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 22, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 23, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -92,10 +92,10 @@ namespace Maple2.Trigger._02020130_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 21, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 22, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 23, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 20, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 21, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 22, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 23, visible: true, enabled: true, minimapVisible: true);
                 context.DungeonEnableGiveUp(isEnable: false);
             }
 

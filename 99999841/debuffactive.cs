@@ -29,7 +29,7 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 801, value: false);
-                context.SetEventUI(arg1: 1, arg2: "이동속도 감소 디Buff에 걸립니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "이동속도 감소 디Buff에 걸립니다.", arg3: 5000);
                 context.AddBuff(arg1: new[] {9001}, arg2: 70002581, arg3: 1, arg5: false);
             }
 
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 802, value: false);
-                context.SetEventUI(arg1: 1, arg2: "공격력 감소 디Buff에 걸립니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "공격력 감소 디Buff에 걸립니다.", arg3: 5000);
                 context.AddBuff(arg1: new[] {9001}, arg2: 70002591, arg3: 1, arg5: false);
             }
 
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 803, value: false);
-                context.SetEventUI(arg1: 1, arg2: "체력 감소 디Buff에 걸립니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "체력 감소 디Buff에 걸립니다.", arg3: 5000);
                 context.AddBuff(arg1: new[] {9001}, arg2: 70002601, arg3: 1, arg5: false);
             }
 

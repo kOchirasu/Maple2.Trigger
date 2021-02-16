@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 25200204, textId: 25200204);
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {

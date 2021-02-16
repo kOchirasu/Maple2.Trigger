@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 23, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 23, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {4028, 3008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3108}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMeshAnimation(arg1: new[] {3008}, arg2: true, arg3: 0, arg4: 0);
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._52000052_qd {
                 context.SetMesh(arg1: new[] {4028}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_108");
                 context.MoveNpc(arg1: 203, arg2: "MS2PatrolData_208");
-                context.SetConversation(arg1: 1, arg2: 203, arg3: "$52000052_QD__04_FINDWAY__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 203, script: "$52000052_QD__04_FINDWAY__0$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateReadyToWalkIn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 103, arg3: "$52000052_QD__04_FINDWAY__1$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 103, script: "$52000052_QD__04_FINDWAY__1$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1008, 2008}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1008, arg3: "$52000052_QD__04_FINDWAY__2$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 1008, script: "$52000052_QD__04_FINDWAY__2$", arg4: 3, arg5: 2);
                 context.SetUserValue(triggerId: 908, key: "MobWaveStart", value: 1);
             }
 
@@ -114,8 +114,8 @@ namespace Maple2.Trigger._52000052_qd {
                 context.SetMesh(arg1: new[] {3008}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
                 context.SetMeshAnimation(arg1: new[] {3008}, arg2: false, arg3: 0, arg4: 0);
                 context.SetEffect(arg1: new[] {5208}, arg2: true);
-                context.SetPortal(arg1: 23, arg2: true, arg3: true, arg4: false);
-                context.SetConversation(arg1: 1, arg2: 108, arg3: "$52000052_QD__04_FINDWAY__3$", arg4: 2, arg5: 1);
+                context.SetPortal(portalId: 23, visible: true, enabled: true, minimapVisible: false);
+                context.SetConversation(arg1: 1, arg2: 108, script: "$52000052_QD__04_FINDWAY__3$", arg4: 2, arg5: 1);
             }
 
             public override TriggerState Execute() {

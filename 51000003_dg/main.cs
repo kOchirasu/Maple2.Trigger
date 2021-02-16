@@ -5,7 +5,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7999}, arg2: false);
-                context.SetPortal(arg1: 8, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 8, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016, 6017, 6018, 6019, 6020, 6021, 6022, 6023, 6024, 6025, 6026, 6027, 6028, 6029, 6030, 6031, 6032, 6033, 6034, 6035, 6036, 6037, 6038, 6039, 6040, 6041, 6042, 6043, 6044, 6045, 6046, 6047, 6048, 6049, 6050, 6051, 6052, 6053, 6054, 6055, 6056, 6057, 6058, 6059, 6060, 6061, 6062, 6063, 6064, 6065, 6066, 6067, 6068, 6069, 6070, 6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082, 6083, 6084, 6085, 6086, 6087, 6088, 6089, 6090, 6091, 6092, 6093, 6094, 6095, 6096, 6097, 6098, 6099, 6100, 6201, 6202, 6203, 6204, 6205, 6206, 6207, 6208, 6209, 6210, 6211, 6212, 6213, 6214, 6215, 6216, 6217, 6218, 6219, 6220, 6221, 6222, 6223, 6224, 6225, 6226, 6227, 6228, 6229, 6230, 6231, 6232, 6233, 6234, 6235, 6236, 6237, 6238, 6239, 6240, 6241, 6242, 6243, 6244, 6245, 6246, 6247, 6248, 6249, 6250, 6251, 6252, 6253, 6254, 6255, 6256, 6257, 6258, 6259, 6260, 6261, 6262, 6263, 6264, 6265, 6266, 6267, 6268, 6269, 6270, 6271, 6272, 6273, 6274, 6275, 6276, 6277, 6278, 6279, 6280, 6281, 6282, 6283, 6284, 6285, 6286, 6287, 6288, 6289, 6290, 6291, 6292, 6293, 6294, 6295, 6296, 6297, 6298, 6299, 6300}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -27,9 +27,9 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7998}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.CameraSelectPath(arg1: new[] {8100, 8101, 8104, 8106, 8103, 8105, 8107, 8108}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.CameraSelectPath(pathIds: new[] {8100, 8101, 8104, 8106, 8103, 8105, 8107, 8108}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -67,11 +67,11 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.MoveUser(arg1: 51000003, arg2: 1, arg3: 701);
                 context.SetEffect(arg1: new[] {7998}, arg2: false);
-                context.CameraSelectPath(arg1: new[] {8005, 8001, 8002}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8005, 8001, 8002}, arg2: false);
                 context.SetUserValue(triggerId: 991109, key: "Tutorial", value: 0);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
                 context.ArcadeBoomBoomOceanStartGame(lifeCount: 20);
                 context.ShowCountUI(text: "$51000003_DG__MAIN__0$", stage: 0, count: 5);
                 context.SetUserValue(triggerId: 991103, key: "Fail", value: 1);
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8002, 8003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8002, 8003}, arg2: false);
                 context.SetEffect(arg1: new[] {7999}, arg2: true);
                 context.SetUserValue(triggerId: 991120, key: "Round_01", value: 1);
                 context.SetUserValue(triggerId: 991107, key: "Round_04", value: 1);
@@ -359,7 +359,7 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOceanClearRound(round: 9);
                 context.ArcadeBoomBoomOceanStartRound(round: 10, roundDuration: 20000, timeScoreRate: 2583);
                 context.SetEffect(arg1: new[] {7999}, arg2: true);
-                context.CameraSelectPath(arg1: new[] {8003, 8004}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8003, 8004}, arg2: false);
                 context.SetUserValue(triggerId: 991106, key: "Round_01", value: 1);
             }
 

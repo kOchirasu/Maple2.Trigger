@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000352_bf {
             internal StateLeverCheck완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02000352_bf {
             internal State열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
                 context.SetMesh(arg1: new[] {6054, 6055, 6056}, arg2: false, arg4: 200, arg5: 15f);
                 context.SetMesh(arg1: new[] {6154, 6155, 6156}, arg2: true, arg4: 200, arg5: 0f);
                 context.SetEffect(arg1: new[] {9000005}, arg2: true);
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._02000352_bf {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 113, textId: 40011);
                 context.CameraSelect(arg1: 8002, arg2: false);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {

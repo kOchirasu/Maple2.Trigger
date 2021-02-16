@@ -4,8 +4,8 @@ namespace Maple2.Trigger._52020026_qd {
             internal State감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false);
                 context.SetMesh(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018}, arg2: false);
                 context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028, 9029, 9030, 9031, 9032}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10001320, 10001321, 10001322, 10001323, 10001324, 10001325}, arg2: 2);
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._52020026_qd {
             internal State1층레버활성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "레버를 작동시켜 계단을 완성하세요.", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "레버를 작동시켜 계단을 완성하세요.", arg3: 5000);
                 context.SetInteractObject(arg1: new[] {10001320}, arg2: 1);
             }
 
@@ -305,7 +305,7 @@ namespace Maple2.Trigger._52020026_qd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1016, 1017, 1018}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

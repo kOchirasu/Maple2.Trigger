@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000168_qd {
     public static class _52000168 {
         public class StateWait : TriggerState {
@@ -5,7 +7,7 @@ namespace Maple2.Trigger._52000168_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -25,12 +27,12 @@ namespace Maple2.Trigger._52000168_qd {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {401, 402, 403, 404, 405, 406}, arg2: false);
                 context.MoveUser(arg1: 52000168, arg2: 80);
-                context.CreateWidget(arg1: "SceneMovie");
+                context.CreateWidget(type: WidgetType.SceneMovie);
                 context.PlaySceneMovie(fileName: "jobChange_RBlader.swf", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new State전경씬01(context);
                 }
 
@@ -56,8 +58,8 @@ namespace Maple2.Trigger._52000168_qd {
                 context.SetNpcEmotionLoop(arg1: 404, arg2: "Dead_A", arg3: 800000f);
                 context.SetNpcEmotionLoop(arg1: 405, arg2: "Dead_A", arg3: 800000f);
                 context.SetNpcEmotionLoop(arg1: 406, arg2: "Dead_A", arg3: 800000f);
-                context.CameraSelectPath(arg1: new[] {4000, 4001, 4003}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
+                context.CameraSelectPath(pathIds: new[] {4000, 4001, 4003}, arg2: false);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -112,7 +114,7 @@ namespace Maple2.Trigger._52000168_qd {
             internal StateSkip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 4);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
@@ -132,8 +134,8 @@ namespace Maple2.Trigger._52000168_qd {
             internal StateQuit02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.ShowGuideSummary(entityId: 52001681, textId: 52001681, duration: 10000);
             }
@@ -230,7 +232,7 @@ namespace Maple2.Trigger._52000168_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {

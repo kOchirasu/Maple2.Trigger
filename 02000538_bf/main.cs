@@ -15,7 +15,7 @@ namespace Maple2.Trigger._02000538_bf {
                 context.SetOnetimeEffect(id: 104, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetOnetimeEffect(id: 105, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.CreateMonster(arg1: new[] {108}, arg2: true);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02000538_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {5000}, arg2: false);
-                context.SetEventUI(arg1: 1, arg2: "$02000538_BF__MAIN__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000538_BF__MAIN__0$", arg3: 3000);
                 context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._02000538_bf {
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "$02000538_BF__MAIN__8$");
                 context.LockMyPc(isLock: true);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.SetOnetimeEffect(id: 105, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 

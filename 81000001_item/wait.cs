@@ -4,7 +4,7 @@ namespace Maple2.Trigger._81000001_item {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "60", arg2: 175, arg3: true, arg4: false);
+                context.SetTimer(id: "60", arg2: 175, arg3: true, arg4: false);
             }
 
             public override TriggerState Execute() {

@@ -22,8 +22,8 @@ namespace Maple2.Trigger._02000133_ad {
             internal State어나운스(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000133_AD__BOARD__0$", arg3: 4000, arg4: "101");
-                context.SetTimer(arg1: "5", arg2: 5, arg3: false);
+                context.SetEventUI(arg1: 1, script: "$02000133_AD__BOARD__0$", arg3: 4000, arg4: "101");
+                context.SetTimer(id: "5", arg2: 5, arg3: false);
             }
 
             public override TriggerState Execute() {

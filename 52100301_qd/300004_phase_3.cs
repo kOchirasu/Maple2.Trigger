@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52100301_qd {
     public static class _300004_phase_3 {
         public class StateWait : TriggerState {
@@ -32,8 +34,8 @@ namespace Maple2.Trigger._52100301_qd {
                 context.SetUserValue(triggerId: 3000037, key: "Phase_2_Interect_07", value: 0);
                 context.RemoveBuff(arg1: 1001, arg2: 73000004, arg3: true);
                 context.SetUserValue(triggerId: 3000031, key: "Phase_2_Interect_01", value: 0);
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$52100301_QD__300004_PHASE_3__0$", duration: 3176);
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$52100301_QD__300004_PHASE_3__1$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$52100301_QD__300004_PHASE_3__0$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$52100301_QD__300004_PHASE_3__1$", duration: 3176);
                 context.SetUserValue(key: "AI_Phase", value: 0);
                 context.SetVisibleBreakableObject(arg1: new[] {5171, 5172, 5173, 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5181, 5182, 5183, 5184, 5151, 5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161, 5162, 5163, 5164}, arg2: true);
                 context.SetBreakable(arg1: new[] {5171, 5172, 5173, 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5181, 5182, 5183, 5184, 5151, 5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161, 5162, 5163, 5164}, arg2: true);
@@ -95,7 +97,7 @@ namespace Maple2.Trigger._52100301_qd {
             internal StateGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$52100301_QD__300004_PHASE_3__2$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$52100301_QD__300004_PHASE_3__2$", arg3: 4000);
             }
 
             public override TriggerState Execute() {

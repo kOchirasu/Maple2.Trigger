@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4000, arg2: false, arg3: "Dead_A");
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Ending_Chord_01.xml");
@@ -46,9 +46,9 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateLoadingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Dead_A");
             }
 
@@ -86,8 +86,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateCameraWalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -199,8 +199,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateCameraShot04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 804, arg2: false);
             }
 
@@ -238,9 +238,9 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateLoadingDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Dead_A");
                 context.CreateMonster(arg1: new[] {501}, arg2: false);
             }
@@ -278,8 +278,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateFindDoor01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.MoveUserPath(arg1: "MS2PatrolData_1200");
                 context.CameraSelect(arg1: 810, arg2: true);
             }
@@ -299,7 +299,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateFindDoor02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 13, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 13, visible: true, enabled: true, minimapVisible: true);
                 context.MoveNpc(arg1: 501, arg2: "MS2PatrolData_500");
             }
 
@@ -390,11 +390,11 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateQuit02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 811, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$52000037_QD__LOOKINTO_THIEF_09__0$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52000037_QD__LOOKINTO_THIEF_09__0$", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -408,7 +408,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

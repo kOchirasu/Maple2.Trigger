@@ -25,8 +25,8 @@ namespace Maple2.Trigger._52000056_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000056, arg2: 3);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
             }
 
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52000056_qd {
             internal StatePC말풍선01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000056_QD__50001460__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000056_QD__50001460__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._52000056_qd {
             internal StatePC말풍선02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000056_QD__50001460__1$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000056_QD__50001460__1$", arg4: 4, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -136,14 +136,14 @@ namespace Maple2.Trigger._52000056_qd {
             internal StatePC말풍선03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000056_QD__50001460__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000056_QD__50001460__2$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611}, arg2: true);
-                    context.SetCinematicUI(arg1: 0);
-                    context.SetCinematicUI(arg1: 2);
+                    context.SetCinematicUI(type: 0);
+                    context.SetCinematicUI(type: 2);
                     context.SetGravity(gravity: -9.8f);
                     return new State이펙트종료Wait(context);
                 }

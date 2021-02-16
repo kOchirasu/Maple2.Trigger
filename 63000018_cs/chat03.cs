@@ -38,10 +38,10 @@ namespace Maple2.Trigger._63000018_cs {
             internal StateChat01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 301, arg3: "$63000018_CS__CHAT03__0$", arg4: 4, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 302, arg3: "$63000018_CS__CHAT03__1$", arg4: 4, arg5: 4);
-                context.SetConversation(arg1: 1, arg2: 301, arg3: "$63000018_CS__CHAT03__2$", arg4: 4, arg5: 8);
-                context.SetConversation(arg1: 1, arg2: 302, arg3: "$63000018_CS__CHAT03__3$", arg4: 4, arg5: 12);
+                context.SetConversation(arg1: 1, arg2: 301, script: "$63000018_CS__CHAT03__0$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 302, script: "$63000018_CS__CHAT03__1$", arg4: 4, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 301, script: "$63000018_CS__CHAT03__2$", arg4: 4, arg5: 8);
+                context.SetConversation(arg1: 1, arg2: 302, script: "$63000018_CS__CHAT03__3$", arg4: 4, arg5: 12);
             }
 
             public override TriggerState Execute() {

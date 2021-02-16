@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000498_bf {
             internal StateBuff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3600", arg2: 3600);
+                context.SetTimer(id: "3600", arg2: 3600);
                 context.AddBuff(arg1: new[] {105}, arg2: 70000071, arg3: 4, arg4: false, arg5: false);
             }
 

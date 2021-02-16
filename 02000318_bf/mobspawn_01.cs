@@ -44,8 +44,8 @@ namespace Maple2.Trigger._02000318_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "System_ShowGuideSummary_01");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.SetSkip(state: new StateCameraWalk01(context));
             }
@@ -84,10 +84,10 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateCameraWalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$02000318_BF__MOBSPAWN_01__0$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000318_BF__MOBSPAWN_01__0$", arg3: 3000, arg4: "0");
                 context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128}, arg2: false, arg3: 29, arg4: 500, arg5: 30);
             }

@@ -887,7 +887,7 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20002982);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.ShowGuideSummary(entityId: 20002983, textId: 20002983);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
@@ -908,7 +908,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State문열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
                 context.SetEffect(arg1: new[] {608}, arg2: true);
                 context.SetMesh(arg1: new[] {3221, 3222, 3223}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                 context.SetMesh(arg1: new[] {3224, 3225, 3226}, arg2: true, arg3: 1000, arg4: 1000, arg5: 5f);
@@ -934,7 +934,7 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20002982);
                 context.SetEffect(arg1: new[] {610}, arg2: true);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.ShowGuideSummary(entityId: 20002985, textId: 20002985);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 0);

@@ -1,11 +1,13 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020019_bf {
     public static class _02020019_main {
         public class State입장 : TriggerState {
             internal State입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.MoveUser(arg1: 02020019, arg2: 1);
                 context.SetUserValue(triggerId: 99990002, key: "battlesetting", value: 0);
                 context.SetUserValue(triggerId: 99990004, key: "Timer", value: 0);
@@ -31,8 +33,8 @@ namespace Maple2.Trigger._02020019_bf {
                 context.SetSceneSkip(state: new StateCamera_캡션(context), arg2: "exit");
                 context.MoveUser(arg1: 02020019, arg2: 1);
                 context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -50,8 +52,8 @@ namespace Maple2.Trigger._02020019_bf {
             internal StateCamera_캡션(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {501, 502}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$02020019_BF__02020019_main__3$", desc: "$02020019_BF__02020019_main__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
+                context.CameraSelectPath(pathIds: new[] {501, 502}, arg2: false);
+                context.ShowCaption(type: CaptionType.Vertical, title: "$02020019_BF__02020019_main__3$", script: "$02020019_BF__02020019_main__4$", align: Align.Center | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
             }
 
             public override TriggerState Execute() {
@@ -70,7 +72,7 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 503, arg2: true);
-                context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", msg: "$02020019_BF__02020019_main__0$", duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", script: "$02020019_BF__02020019_main__0$", duration: 4000, align: Align.Left);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 6300f);
             }
 
@@ -89,7 +91,7 @@ namespace Maple2.Trigger._02020019_bf {
             internal StateCamera_네이린설명2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", msg: "$02020019_BF__02020019_main__1$", duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", script: "$02020019_BF__02020019_main__1$", duration: 4000, align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -107,7 +109,7 @@ namespace Maple2.Trigger._02020019_bf {
             internal StateCamera_네이린설명3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", msg: "$02020019_BF__02020019_main__5$", duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", script: "$02020019_BF__02020019_main__5$", duration: 4000, align: Align.Left);
                 context.SetSceneSkip();
             }
 
@@ -126,8 +128,8 @@ namespace Maple2.Trigger._02020019_bf {
             internal StateCamera_종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.1f);
             }
 

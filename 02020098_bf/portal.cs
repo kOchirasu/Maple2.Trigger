@@ -4,15 +4,15 @@ namespace Maple2.Trigger._02020098_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 7, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 4, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 7, visible: false, enabled: false, minimapVisible: false);
                 context.SetUserValue(key: "BossOnePhaseEnd", value: 0);
-                context.SetPortal(arg1: 40, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 50, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 40, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 50, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -66,8 +66,8 @@ namespace Maple2.Trigger._02020098_bf {
             internal StateTeleportationPortalOFF(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 40, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 50, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 40, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 50, visible: false, enabled: false, minimapVisible: false);
                 context.SetUserValue(key: "BossOnePhaseEnd", value: 0);
             }
 
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._02020098_bf {
             internal State졸구간만PortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -148,8 +148,8 @@ namespace Maple2.Trigger._02020098_bf {
             internal State1페이지전투판PortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -167,10 +167,10 @@ namespace Maple2.Trigger._02020098_bf {
             internal State2페이지전투판PortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 5, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 6, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 5, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 6, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -188,8 +188,8 @@ namespace Maple2.Trigger._02020098_bf {
             internal State3페이지전투판PortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 7, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 7, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

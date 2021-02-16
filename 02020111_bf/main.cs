@@ -1,4 +1,5 @@
 using System.Numerics;
+using Maple2.Trigger.Enum;
 
 namespace Maple2.Trigger._02020111_bf {
     public static class _main {
@@ -45,7 +46,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900012, key: "SkillBreakMissionReset", value: 1);
-                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
                 context.DungeonResetTime(seconds: 420);
                 context.CreateMonster(arg1: new[] {101});
             }
@@ -90,7 +91,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() {
                 context.DungeonStopTimer();
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -127,15 +128,15 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900012, key: "SkillBreakMissionReset", value: 0);
-                context.SetPortal(arg1: 5, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 7, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 8, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 9, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 5, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 7, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 8, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 9, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 12, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.DestroyMonster(arg1: new[] {-1});
                 context.MoveUser(arg1: 2020111, arg2: 1, arg3: 1001);
                 context.RemoveBuff(arg1: 1006, arg2: 70002151, arg3: true);
@@ -170,7 +171,7 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 23039005);
                 context.DungeonSetEndTime();
-                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__MAIN__1$", duration: 3176, voice: @"ko/Npc/00002202");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__MAIN__1$", duration: 3176, voice: @"ko/Npc/00002202");
             }
 
             public override TriggerState Execute() {
@@ -192,15 +193,15 @@ namespace Maple2.Trigger._02020111_bf {
                 context.DungeonClear();
                 context.SetAchievement(arg2: "trigger", arg3: "ClearBlueLapenta");
                 context.RemoveBuff(arg1: 1006, arg2: 70002151, arg3: true);
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 5, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 6, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 7, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 8, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 9, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 12, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 5, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 6, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 7, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 8, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 9, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 12, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

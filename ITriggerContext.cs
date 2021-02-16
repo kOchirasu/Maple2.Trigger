@@ -1,11 +1,12 @@
 ﻿using System.Numerics;
+using Maple2.Trigger.Enum;
 
 namespace Maple2.Trigger {
     public interface ITriggerContext {
         #region Actions
         public void AddBalloonTalk(int spawnPointId = 0, string msg = "", int duration = 0, int delayTick = 0, bool npcId = false);
         public void AddBuff(int[] arg1 = default, int arg2 = 0, byte arg3 = 0, bool arg4 = false, bool arg5 = false, string feature = "");
-        public void AddCinematicTalk(int npcId = 0, string illustId = "", string msg = "", int duration = 0, string align = "", byte delayTick = 0, string illust = "", int delay = 0);
+        public void AddCinematicTalk(int npcId = 0, string illustId = "", string script = "", int duration = 0, Align align = default, int delayTick = 0);
         public void AddEffectNif(int spawnPointId = 0, string nifPath = "", bool isOutline = false, float scale = 0f, int rotateZ = 0);
         public void AddUserValue(string key = "", int value = 0);
         public void ArcadeBoomBoomOceanSetSkillScore(int id = 0, int score = 0);
@@ -29,25 +30,25 @@ namespace Maple2.Trigger {
         public void ChangeMonster(int arg1 = 0, int arg2 = 0);
         public void CameraReset(float interpolationTime = 0f);
         public void CameraSelect(int arg1 = 0, bool arg2 = false);
-        public void CameraSelectPath(int[] arg1 = default, bool arg2 = false);
+        public void CameraSelectPath(int[] pathIds = default, bool arg2 = false);
         public void CloseCinematic();
-        public void CreateFieldGame(string type = "", bool reset = false);
+        public void CreateFieldGame(FieldGame type = default, bool reset = false);
         public void CreateItem(int[] arg1 = default, int arg2 = 0, int arg3 = 0, int arg5 = 0);
         public void CreateMonster(int[] arg1 = default, bool arg2 = false, int arg3 = 0);
-        public void CreateWidget(string arg1 = "");
+        public void CreateWidget(WidgetType type = default);
         public void DarkStreamSpawnMonster(int[] spawnId = default, int score = 0);
         public void DarkStreamStartGame(byte round = 0);
         public void DarkStreamStartRound(byte round = 0, int uiDuration = 0, int damagePenalty = 0);
         public void DarkStreamClearRound(byte round = 0);
-        public void DebugString(string value = "", string feature = "", string message = "", string arg1 = "");
+        public void DebugString(string message = "", string feature = "");
         public void DestroyMonster(int[] arg1 = default, bool arg2 = false);
-        public void DungeonClear(string uiType = "");
+        public void DungeonClear(string uiType = "None");
         public void DungeonClearRound(byte round = 0);
         public void DungeonCloseTimer();
         public void DungeonDisableRanking();
         public void DungeonEnableGiveUp(bool isEnable = false);
         public void DungeonFail();
-        public void DungeonMissionComplete(string feature = "", int missionId = 0);
+        public void DungeonMissionComplete(int missionId = 0, string feature = "");
         public void DungeonMoveLapTimeToNow(bool id = false);
         public void DungeonResetTime(int seconds = 0);
         public void DungeonSetEndTime();
@@ -56,10 +57,10 @@ namespace Maple2.Trigger {
         public void SetDungeonVariable(int varId = 0, bool value = false);
         public void EnableLocalCamera(bool isEnable = false);
         public void EnableSpawnPointPc(int spawnPointId = 0, bool isEnable = false);
-        public void EndMiniGame(int winnerBoxId = 0, string gameName = "", bool isOnlyWinner = false);
-        public void EndMiniGameRound(int winnerBoxId = 0, float expRate = 0f, bool isOnlyWinner = false, bool isGainLoserBonus = false, bool meso = false, string gameName = "");
-        public void FaceEmotion(int spawnPointId = 0, string emotionName = "", bool spwnPointId = false);
-        public void FieldGameConstant(string key = "", string value = "", string feature = "", string locale = "");
+        public void EndMiniGame(int winnerBoxId = 0, MiniGame type = default, bool isOnlyWinner = false);
+        public void EndMiniGameRound(int winnerBoxId = 0, float expRate = 0f, bool isOnlyWinner = false, bool isGainLoserBonus = false, bool meso = false, MiniGame type = default);
+        public void FaceEmotion(int spawnPointId = 0, string emotionName = "");
+        public void FieldGameConstant(string key = "", string value = "", string feature = "", Locale locale = default);
         public void FieldGameMessage(byte custom = 0, string type = "", byte arg1 = 0, string arg2 = "", int arg3 = 0);
         public void FieldWarEnd(bool isClear = false);
         public void GiveExp(byte arg1 = 0, byte arg2 = 0);
@@ -68,7 +69,7 @@ namespace Maple2.Trigger {
         public void GuideEvent(int eventId = 0);
         public void GuildVsGameEndGame();
         public void GuildVsGameGiveContribution(int teamId = 0, bool isWin = false, string desc = "");
-        public void GuildVsGameGiveReward(string type = "", int teamId = 0, bool isWin = false, string desc = "");
+        public void GuildVsGameGiveReward(GuildReward type = default, int teamId = 0, bool isWin = false, string desc = "");
         public void GuildVsGameLogResult(string desc = "");
         public void GuildVsGameLogWonByDefault(int teamId = 0, string desc = "");
         public void GuildVsGameResult(string desc = "");
@@ -79,8 +80,8 @@ namespace Maple2.Trigger {
         public void LimitSpawnNpcCount(byte limitCount = 0);
         public void LockMyPc(bool isLock = false);
         public void MiniGameCameraDirection(int boxId = 0, int cameraId = 0);
-        public void MiniGameGiveExp(int boxId = 0, float expRate = 0f, string isOutSide = "");
-        public void MiniGameGiveReward(int winnerBoxId = 0, string contentType = "", string gameName = "");
+        public void MiniGameGiveExp(int boxId = 0, float expRate = 0f, bool isOutSide = true);
+        public void MiniGameGiveReward(int winnerBoxId = 0, string contentType = "", MiniGame type = default);
         public void MoveNpc(int arg1 = 0, string arg2 = "");
         public void MoveNpcToPos(int spawnPointId = 0, Vector3 pos = default, Vector3 rot = default);
         public void MoveRandomUser(int arg1 = 0, byte arg2 = 0, int arg3 = 0, byte arg4 = 0);
@@ -101,7 +102,7 @@ namespace Maple2.Trigger {
         public void RemoveBuff(int arg1 = 0, int arg2 = 0, bool arg3 = false);
         public void RemoveCinematicTalk();
         public void RemoveEffectNif(int spawnPointId = 0);
-        public void ResetTimer(string arg1 = "");
+        public void ResetTimer(string id = "");
         public void RoomExpire();
         public void ScoreBoardCreate(string type = "", int maxScore = 0);
         public void ScoreBoardRemove();
@@ -112,11 +113,11 @@ namespace Maple2.Trigger {
         public void SetAiExtraData(string key = "", int value = 0, bool isModify = false, int boxId = 0);
         public void SetAmbientLight(Vector3 arg1 = default, Vector3 arg2 = default, Vector3 arg3 = default);
         public void SetCinematicIntro(string text = "");
-        public void SetConversation(byte arg1 = 0, int arg2 = 0, string arg3 = "", int arg4 = 0, byte arg5 = 0, string align = "");
+        public void SetConversation(byte arg1 = 0, int arg2 = 0, string script = "", int arg4 = 0, byte arg5 = 0, Align align = default);
         public void SetCube(int[] ids = default, bool isVisible = false, byte randomCount = 0);
         public void SetDirectionalLight(Vector3 arg1 = default, Vector3 arg2 = default);
         public void SetEffect(int[] arg1 = default, bool arg2 = false, int arg3 = 0, byte arg4 = 0);
-        public void SetEventUI(byte arg1 = 0, string arg2 = "", int arg3 = 0, string arg4 = "");
+        public void SetEventUI(byte arg1 = 0, string script = "", int arg3 = 0, string arg4 = "");
         public void SetGravity(float gravity = 0f);
         public void SetInteractObject(int[] arg1 = default, byte arg2 = 0, bool arg4 = false, bool arg3 = false);
         public void SetLadder(int arg1 = 0, bool arg2 = false, bool arg3 = false, byte arg4 = 0);
@@ -134,8 +135,8 @@ namespace Maple2.Trigger {
         public void SetPcEmotionSequence(string arg1 = "");
         public void SetPcRotation(Vector3 rotation = default);
         public void SetPhotoStudio(bool isEnable = false);
-        public void SetPortal(int arg1 = 0, bool arg2 = false, bool arg3 = false, bool arg4 = false, bool arg5 = false);
-        public void SetCinematicUI(byte arg1 = 0, string arg2 = "", bool arg3 = false);
+        public void SetPortal(int portalId = 0, bool visible = false, bool enabled = false, bool minimapVisible = false, bool arg5 = false);
+        public void SetCinematicUI(byte type = 0, string script = "", bool arg3 = false);
         public void SetPvpZone(byte arg1 = 0, byte arg2 = 0, int arg3 = 0, int arg4 = 0, byte arg5 = 0, byte[] arg6 = default);
         public void SetQuestAccept(int questId = 0, int arg1 = 0);
         public void SetQuestComplete(int questId = 0);
@@ -146,7 +147,7 @@ namespace Maple2.Trigger {
         public void SetSkip(TriggerState state = default);
         public void SetSound(int arg1 = 0, bool arg2 = false);
         public void SetState(byte arg1 = 0, string arg2 = "", bool arg3 = false);
-        public void SetTimer(string arg1 = "", int arg2 = 0, bool arg3 = false, bool arg4 = false, int arg5 = 0, string arg6 = "");
+        public void SetTimer(string id = "", int arg2 = 0, bool arg3 = false, bool arg4 = false, int arg5 = 0, string arg6 = "");
         public void SetTimeScale(bool enable = false, float startScale = 0f, float endScale = 0f, float duration = 0f, byte interpolator = 0);
         public void SetUserValue(int triggerId = 0, string key = "", int value = 0);
         public void SetUserValueFromDungeonRewardCount(string key = "", int dungeonRewardId = 0);
@@ -156,17 +157,17 @@ namespace Maple2.Trigger {
         public void SetVisibleUI(string uiName = "", bool visible = false);
         public void ShadowExpeditionOpenBossGauge(int maxGaugePoint = 0, string title = "");
         public void ShadowExpeditionCloseBossGauge();
-        public void ShowCaption(string type = "", string title = "", string desc = "", string align = "", float offsetRateX = 0f, float offsetRateY = 0f, int duration = 0, float scale = 0f);
+        public void ShowCaption(CaptionType type = default, string title = "", string script = "", Align align = default, float offsetRateX = 0f, float offsetRateY = 0f, int duration = 0, float scale = 0f);
         public void ShowCountUI(string text = "", byte stage = 0, byte count = 0, byte soundType = 1);
-        public void ShowEventResult(string type = "", string text = "", int duration = 0, int userTagId = 0, int triggerBoxId = 0, bool isOutSide = false);
+        public void ShowEventResult(EventResultType type = default, string text = "", int duration = 0, int userTagId = 0, int triggerBoxId = 0, bool isOutSide = false);
         public void ShowGuideSummary(int entityId = 0, int textId = 0, int duration = 0);
         public void ShowRoundUI(byte round = 0, int duration = 0);
-        public void SideNpcTalk(int npcId = 0, string illust = "", int duration = 0, string script = "", string voice = "", string type = "", string usm = "");
+        public void SideNpcTalk(int npcId = 0, string illust = "", int duration = 0, string script = "", string voice = "", SideNpcTalkType type = default, string usm = "");
         public void SightRange(bool enable = false, byte range = 0, int rangeZ = 0, byte border = 0);
         public void SpawnItemRange(int[] rangeId = default, byte randomPickCount = 0);
         public void SpawnNpcRange(int[] rangeId = default, bool isAutoTargeting = false, byte randomPickCount = 0, int score = 0);
         public void StartCombineSpawn(int[] groupId = default, bool isStart = false);
-        public void StartMiniGame(int boxId = 0, byte round = 0, string gameName = "", string isShowResultUI = "");
+        public void StartMiniGame(int boxId = 0, byte round = 0, MiniGame type = default, bool isShowResultUI = true);
         public void StartMiniGameRound(int boxId = 0, byte round = 0);
         public void StartTutorial();
         public void TalkNpc(int spawnPointId = 0);
@@ -175,23 +176,23 @@ namespace Maple2.Trigger {
         public void UserValueToNumberMesh(string key = "", int startMeshId = 0, byte digitCount = 0);
         public void UseState(byte arg1 = 0, bool arg2 = false);
         public void VisibleMyPc(bool isVisible = false);
-        public void Weather(byte weatherType = 0);
+        public void Weather(WeatherType type = default);
         public void WeddingBroken();
-        public void WeddingMoveUser(string entryType = "", int arg1 = 0, byte[] arg2 = default, int arg3 = 0);
-        public void WeddingMutualAgree(string agreeType = "");
-        public void WeddingMutualCancel(string agreeType = "");
-        public void WeddingSetUserEmotion(string entryType = "", byte id = 0);
-        public void WeddingSetUserLookAt(string entryType = "", string lookAtEntryType = "", bool immediate = false);
-        public void WeddingSetUserRotation(string entryType = "", Vector3 rotation = default, bool immediate = false);
-        public void WeddingUserToPatrol(string patrolName = "", string entryType = "", byte patrolIndex = 0);
+        public void WeddingMoveUser(WeddingEntryType type = default, int arg1 = 0, byte[] arg2 = default, int arg3 = 0);
+        public void WeddingMutualAgree(WeddingAgreeType type = default);
+        public void WeddingMutualCancel(WeddingAgreeType type = default);
+        public void WeddingSetUserEmotion(WeddingEntryType type = default, byte id = 0);
+        public void WeddingSetUserLookAt(WeddingEntryType type = default, WeddingEntryType lookAtType = default, bool immediate = false);
+        public void WeddingSetUserRotation(WeddingEntryType type = default, Vector3 rotation = default, bool immediate = false);
+        public void WeddingUserToPatrol(string patrolName = "", WeddingEntryType type = default, byte patrolIndex = 0);
         public void WeddingVowComplete();
-        public void WidgetAction(string arg1 = "", string arg2 = "", string arg3 = "", int widgetArgNum = 0);
+        public void WidgetAction(WidgetType type = default, string name = "", string args = "", int widgetArgNum = 1);
         public void WriteLog(string arg1 = "", int arg2 = 0, string arg3 = "", byte arg4 = 0, string arg5 = "");
         #endregion
 
         #region Conditions
-        public bool BonusGameRewardDetected(byte arg1 = 0, bool arg2 = false);
-        public bool CheckAnyUserAdditionalEffect(int triggerBoxId = 0, int additionalEffectId = 0, bool level = false);
+        public bool BonusGameRewardDetected(byte arg1 = 0);
+        public bool CheckAnyUserAdditionalEffect(int triggerBoxId = 0, int additionalEffectId = 0, byte level = 0);
         public bool CheckDungeonLobbyUserCount();
         public bool CheckNpcAdditionalEffect(int spawnPointId = 0, int additionalEffectId = 0, byte level = 0);
         public bool CheckSameUserTag(int triggerBoxId = 0);
@@ -214,10 +215,10 @@ namespace Maple2.Trigger {
         public bool UserDetected(int[] arg1 = default, byte arg2 = 0);
         public bool WaitAndResetTick(int waitTick = 0);
         public bool WaitTick(int waitTick = 0);
-        public bool WeddingEntryInField(string entryType = "", bool isInField = false);
-        public bool WeddingHallState(string hallState = "", bool success = false);
-        public bool WeddingMutualAgreeResult(string agreeType = "", bool success = false);
-        public bool WidgetCondition(string arg1 = "", string arg2 = "", string arg3 = "");
+        public bool WeddingEntryInField(WeddingEntryType type = default);
+        public bool WeddingHallState(string hallState = "");
+        public bool? WeddingMutualAgreeResult(WeddingAgreeType type = default);
+        public bool WidgetCondition(WidgetType type = default, string arg2 = "", string arg3 = "");
         #endregion
 
         #region Getters

@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: true, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10001148}, arg2: 0);
                 context.DestroyMonster(arg1: new[] {940, 941, 942});
                 context.SetBreakable(arg1: new[] {6200}, arg2: false);
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateRockMove02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

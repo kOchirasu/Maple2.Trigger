@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000047_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {102});
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -41,9 +41,9 @@ namespace Maple2.Trigger._02000047_bf {
             internal State우레우스대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000047_BF__02_MOB__0$", arg4: 3);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000047_BF__02_MOB__1$", arg4: 3);
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$02000047_BF__02_MOB__0$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$02000047_BF__02_MOB__1$", arg4: 3);
+                context.SetTimer(id: "1", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -81,12 +81,12 @@ namespace Maple2.Trigger._02000047_bf {
             internal State우레우스소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30);
+                context.SetTimer(id: "1", arg2: 30);
             }
 
             public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {102})) {
-                    context.ResetTimer(arg1: "1");
+                    context.ResetTimer(id: "1");
                 }
 
                 if (context.MonsterDead(arg1: new[] {102})) {
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._02000047_bf {
             internal StateWaitDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
             }
 
             public override TriggerState Execute() {

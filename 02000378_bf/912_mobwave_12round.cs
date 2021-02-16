@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000378_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000378_BF__912_MOBWAVE_12ROUND__0$", arg3: 6000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000378_BF__912_MOBWAVE_12ROUND__0$", arg3: 6000, arg4: "0");
                 context.SetUserValue(key: "WaveTime", value: 1);
                 context.SetEffect(arg1: new[] {5112}, arg2: true);
                 context.CreateMonster(arg1: new[] {91200, 91202, 91204}, arg2: false);
@@ -1084,8 +1084,8 @@ namespace Maple2.Trigger._02000378_bf {
                 context.DestroyMonster(arg1: new[] {1012});
                 context.CreateMonster(arg1: new[] {1112}, arg2: false);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000378_BF__912_MOBWAVE_12ROUND__1$", arg3: 4000, arg4: "0");
-                context.SetConversation(arg1: 1, arg2: 1112, arg3: "$02000378_BF__912_MOBWAVE_12ROUND__2$", arg4: 4, arg5: 4);
+                context.SetEventUI(arg1: 1, script: "$02000378_BF__912_MOBWAVE_12ROUND__1$", arg3: 4000, arg4: "0");
+                context.SetConversation(arg1: 1, arg2: 1112, script: "$02000378_BF__912_MOBWAVE_12ROUND__2$", arg4: 4, arg5: 4);
             }
 
             public override TriggerState Execute() {
@@ -1121,7 +1121,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.SetUserValue(key: "PenaltyFinish", value: 0);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000378_BF__912_MOBWAVE_12ROUND__3$", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000378_BF__912_MOBWAVE_12ROUND__3$", arg3: 4000, arg4: "0");
                 context.DestroyMonster(arg1: new[] {1112});
                 context.CreateMonster(arg1: new[] {1012}, arg2: false);
                 context.RemoveBalloonTalk(spawnPointId: 1112);

@@ -27,9 +27,9 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new[] {4023, 4020}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.CameraSelectPath(pathIds: new[] {4023, 4020}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.MoveUser(arg1: 52020030, arg2: 6001);
             }
 
@@ -50,9 +50,9 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
-                context.AddCinematicTalk(npcId: 0, msg: "천공의 심장을 손에 넣었으니 티어스 코어를 완벽히 다시 만들 순 없을거야.", duration: 3000);
-                context.AddCinematicTalk(npcId: 0, msg: "지금쯤 수호군은 도착했을까...", duration: 3000);
-                context.AddCinematicTalk(npcId: 0, msg: "빨리 라딘에게 돌아가야겠어.", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "천공의 심장을 손에 넣었으니 티어스 코어를 완벽히 다시 만들 순 없을거야.", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "지금쯤 수호군은 도착했을까...", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "빨리 라딘에게 돌아가야겠어.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._52020030_qd {
             internal State바라보는크란츠_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4027, 4014}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003761, msg: "...", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4027, 4014}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003761, script: "...", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -107,9 +107,9 @@ namespace Maple2.Trigger._52020030_qd {
             internal State바라보는크란츠_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4014}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_C");
-                context.AddCinematicTalk(npcId: 11003761, msg: "후우... 말을 안 듣는군.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003761, script: "후우... 말을 안 듣는군.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._52020030_qd {
             internal State바라보는크란츠_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4024}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4024}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_3004");
             }
 
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new[] {4016, 4015}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4016, 4015}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._52020030_qd {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {106}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003761, msg: "... 봐 주는건, 여기까지야.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003761, script: "... 봐 주는건, 여기까지야.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 300, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.AddCinematicTalk(npcId: 0, msg: "커헉!", duration: 1500);
+                context.AddCinematicTalk(npcId: 0, script: "커헉!", duration: 1500);
                 context.MoveUser(arg1: 52020030, arg2: 6002);
             }
 
@@ -227,7 +227,7 @@ namespace Maple2.Trigger._52020030_qd {
                 context.SetOnetimeEffect(id: 300, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetEffect(arg1: new[] {5006}, arg2: true);
-                context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4005}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Stun_A", arg2: 20000f);
             }
 
@@ -246,8 +246,8 @@ namespace Maple2.Trigger._52020030_qd {
             internal State크란츠습격03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4025}, arg2: false);
-                context.AddCinematicTalk(npcId: 0, msg: "으으... 넌...", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4025}, arg2: false);
+                context.AddCinematicTalk(npcId: 0, script: "으으... 넌...", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -265,8 +265,8 @@ namespace Maple2.Trigger._52020030_qd {
             internal State크란츠습격03_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4026}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003761, msg: "빨리 이곳에서 나가라니깐, 정~말 말을 안 듣는 인간이군.", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4026}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003761, script: "빨리 이곳에서 나가라니깐, 정~말 말을 안 듣는 인간이군.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -284,8 +284,8 @@ namespace Maple2.Trigger._52020030_qd {
             internal State크란츠습격03_01_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4028}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003761, msg: "이런 귀중한 크리티아스의 보물을 당신과 같은 외지인에게 넘길 순 없어.", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4028}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003761, script: "이런 귀중한 크리티아스의 보물을 당신과 같은 외지인에게 넘길 순 없어.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -303,8 +303,8 @@ namespace Maple2.Trigger._52020030_qd {
             internal State크란츠습격03_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4025}, arg2: false);
-                context.AddCinematicTalk(npcId: 0, msg: "잠깐... 이건 오해야. 난 이오네 왕녀를 위해서...", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4025}, arg2: false);
+                context.AddCinematicTalk(npcId: 0, script: "잠깐... 이건 오해야. 난 이오네 왕녀를 위해서...", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -322,8 +322,8 @@ namespace Maple2.Trigger._52020030_qd {
             internal State크란츠습격03_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4029}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003761, msg: "... 천공의 심장은 내가 가져가겠다.", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4029}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003761, script: "... 천공의 심장은 내가 가져가겠다.", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -382,8 +382,8 @@ namespace Maple2.Trigger._52020030_qd {
                 context.CameraReset(interpolationTime: 0.5f);
                 context.DestroyMonster(arg1: new[] {106});
                 context.SetAchievement(arg1: 2001, arg2: "trigger", arg3: "AttackSomeone");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

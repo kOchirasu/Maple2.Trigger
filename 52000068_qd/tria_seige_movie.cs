@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000068_qd {
     public static class _tria_seige_movie {
         public class StateStart : TriggerState {
@@ -23,8 +25,8 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetSceneSkip(state: new StateNPC이동(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSkill(arg1: new[] {701}, arg2: true);
                 context.SetActor(arg1: 11010, arg2: true, arg3: "Dead_A");
                 context.SetActor(arg1: 11010, arg2: true, arg3: "Dead_A");
@@ -81,7 +83,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State원경Camera01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {12000, 12001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {12000, 12001}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -99,7 +101,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State원경Camera02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {12002, 12003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {12002, 12003}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -117,7 +119,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State원경Camera03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {12004, 12005}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {12004, 12005}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -135,7 +137,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State프레이대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11000064, illustId: "Lennon_closeEye", msg: "$52000068_QD__TRIA_SEIGE_MOVIE__0$", duration: 5000, align: "center");
+                context.AddCinematicTalk(npcId: 11000064, illustId: "Lennon_closeEye", script: "$52000068_QD__TRIA_SEIGE_MOVIE__0$", duration: 5000, align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -153,7 +155,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State알론대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE__1$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000076, script: "$52000068_QD__TRIA_SEIGE_MOVIE__1$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -191,7 +193,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State근위대Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001968, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE__2$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001968, script: "$52000068_QD__TRIA_SEIGE_MOVIE__2$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -209,7 +211,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State근위대Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001968, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE__3$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001968, script: "$52000068_QD__TRIA_SEIGE_MOVIE__3$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -227,7 +229,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State근위대Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE__4$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000601, script: "$52000068_QD__TRIA_SEIGE_MOVIE__4$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -265,8 +267,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.5f);
                 context.MoveNpc(arg1: 11000, arg2: "MS2PatrolData_GoToJody_ereb");
                 context.MoveNpc(arg1: 11001, arg2: "MS2PatrolData_GoToJody_karl");

@@ -28,7 +28,7 @@ namespace Maple2.Trigger._52010001_qd {
                 context.SetActor(arg1: 1001, arg2: false, arg3: "Down_Idle_A");
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1001");
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52010001_QD__MAIN__0$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52010001_QD__MAIN__0$", arg4: 3, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -46,9 +46,9 @@ namespace Maple2.Trigger._52010001_qd {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52010001_QD__MAIN__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52010001_QD__MAIN__1$", arg4: 3, arg5: 0);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1002");
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52010001_qd {
             internal StateEvent_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52010001_QD__MAIN__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52010001_QD__MAIN__2$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000871}, arg2: 1);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1003");
             }
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._52010001_qd {
             internal StateEvent_04_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -105,8 +105,8 @@ namespace Maple2.Trigger._52010001_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1004");
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52010001_QD__MAIN__3$", arg4: 3, arg5: 0);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52010001_QD__MAIN__3$", arg4: 3, arg5: 0);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -124,10 +124,10 @@ namespace Maple2.Trigger._52010001_qd {
             internal StateEvent_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52010001_QD__MAIN__4$", arg4: 3, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52010001_QD__MAIN__4$", arg4: 3, arg5: 3);
                 context.SetInteractObject(arg1: new[] {10000910}, arg2: 1);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1005");
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {

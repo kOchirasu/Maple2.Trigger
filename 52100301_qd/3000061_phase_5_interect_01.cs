@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52100301_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$52100301_QD__3000061_PHASE_5_INTERECT_01__0$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$52100301_QD__3000061_PHASE_5_INTERECT_01__0$", arg3: 4000);
                 context.CreateMonster(arg1: new[] {999}, arg2: false);
             }
 
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 0, additionalEffectId: 62100152, level: true)) {
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 0, additionalEffectId: 62100152, level: 1)) {
                     return new State리셋_Wait(context);
                 }
 

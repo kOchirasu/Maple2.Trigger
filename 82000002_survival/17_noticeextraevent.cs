@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._82000002_survival {
     public static class _17_noticeextraevent {
         public class StateSetting : TriggerState {
@@ -42,7 +44,7 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Completion_01");
-                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal", duration: 5000, script: "$82000002_survival__17_NoticeExtraEvent__0$");
+                context.SideNpcTalk(npcId: 21001019, type: SideNpcTalkType.TalkBottom, illust: "MushroomRichPorter_normal", duration: 5000, script: "$82000002_survival__17_NoticeExtraEvent__0$");
             }
 
             public override TriggerState Execute() {

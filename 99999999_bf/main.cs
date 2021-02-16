@@ -14,7 +14,7 @@ namespace Maple2.Trigger._99999999_bf {
                 context.EnableSpawnPointPc(spawnPointId: 4, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 5, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 6, isEnable: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: false);
-                context.CameraSelectPath(arg1: new[] {7000, 7001}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {7000, 7001}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: true);
-                context.SetEventUI(arg1: 1, arg2: @"까마득한 성채를 따라 내려가야 합니다.\n몰려오는 어둠을 조심하세요.", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: @"까마득한 성채를 따라 내려가야 합니다.\n몰려오는 어둠을 조심하세요.", arg3: 3000);
                 context.CreateMonster(arg1: new[] {101, 1011, 1012, 1013, 1014, 1017, 1018, 1019}, arg2: false);
             }
 
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._99999999_bf {
             internal State703진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"어둠의 샘이 당신의 존재를 눈치챘습니다.\n생명을 탐하는 검은 화살이 당신을 뒤쫓습니다.", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: @"어둠의 샘이 당신의 존재를 눈치챘습니다.\n생명을 탐하는 검은 화살이 당신을 뒤쫓습니다.", arg3: 3000);
                 context.CreateMonster(arg1: new[] {109, 103, 1031, 1032, 1033, 1034}, arg2: true);
             }
 
@@ -474,7 +474,7 @@ namespace Maple2.Trigger._99999999_bf {
             internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

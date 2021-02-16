@@ -45,8 +45,8 @@ namespace Maple2.Trigger._52000043_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(arg1: new[] {1001, 2001}, arg2: false);
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001451__0$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001451__0$", arg4: 3);
                 context.SetSkip(state: new State준타Script01스킵(context));
             }
 
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State틴차이Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000043_QD__50001451__1$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$52000043_QD__50001451__1$", arg4: 4);
                 context.SetSkip(state: new State틴차이Script01스킵(context));
             }
 
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001451__2$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001451__2$", arg4: 3);
                 context.SetSkip(state: new State준타Script02스킵(context));
             }
 
@@ -188,7 +188,7 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001451__3$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001451__3$", arg4: 4);
                 context.SetSkip(state: new State준타Script03스킵(context));
             }
 
@@ -223,7 +223,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State틴차이Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000043_QD__50001451__4$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$52000043_QD__50001451__4$", arg4: 5);
                 context.SetSkip(state: new State틴차이Script02스킵(context));
             }
 
@@ -258,7 +258,7 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001451__5$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000043_QD__50001451__5$", arg4: 2);
                 context.SetSkip(state: new State준타Script04스킵(context));
             }
 
@@ -293,8 +293,8 @@ namespace Maple2.Trigger._52000043_qd {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 302, arg2: false);
                 context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "gdworry");
             }

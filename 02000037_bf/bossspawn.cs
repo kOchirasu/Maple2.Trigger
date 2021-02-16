@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000037_bf {
                 context.SetInteractObject(arg1: new[] {10000931}, arg2: 2);
                 context.SetMesh(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4020, 4021, 4022, 4023, 4024, 4025, 4026, 4027, 4028, 4029, 4030, 4031, 4032, 4033, 4034, 4040, 4041, 4042, 4043, 4044, 4045, 4046}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {4050}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {5000, 5001}, arg2: false);
             }
 
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._02000037_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000931}, arg2: 1);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.DungeonClear();
             }
 

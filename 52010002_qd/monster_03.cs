@@ -37,7 +37,7 @@ namespace Maple2.Trigger._52010002_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {113}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 113, arg3: "$52010002_QD__MONSTER_03__0$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 113, script: "$52010002_QD__MONSTER_03__0$", arg4: 2, arg5: 1);
             }
 
             public override TriggerState Execute() {

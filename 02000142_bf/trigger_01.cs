@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000142_bf {
             internal State이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 15, arg3: false);
+                context.SetTimer(id: "1", arg2: 15, arg3: false);
                 context.SetBreakable(arg1: new[] {7000}, arg2: true);
             }
 
@@ -36,7 +36,7 @@ namespace Maple2.Trigger._02000142_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
     }

@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020065_bf {
     public static class _main {
         public class StateWait : TriggerState {
@@ -10,9 +12,9 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetMesh(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059, 1060, 1061, 1062, 1063, 1064, 1065, 1066, 1067, 1068, 1069, 1070, 1071, 1072, 1073, 1074, 1075, 1076, 1077, 1078, 1079, 1080, 1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088, 1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096}, arg2: true);
                 context.SetMesh(arg1: new[] {4001}, arg2: false);
                 context.SetActor(arg1: 4002, arg2: true, arg3: "ks_quest_fusiondevice_A01_off");
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 2, isEnable: false);
@@ -23,7 +25,7 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetUserValue(triggerId: 99990004, key: "Battle_3_Start", value: 0);
                 context.SetUserValue(triggerId: 99990005, key: "Battle_2_SpawnStart", value: 0);
                 context.SetUserValue(triggerId: 99990006, key: "Battle_3_SpawnStart", value: 0);
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
 
             public override TriggerState Execute() {
@@ -65,7 +67,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 9002, arg2: "trigger", arg3: "corps_battle");
-                context.SetEventUI(arg1: 1, arg2: "$02020065_BF__MAIN__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020065_BF__MAIN__0$", arg3: 5000);
                 context.CameraSelect(arg1: 998, arg2: true);
             }
 
@@ -84,7 +86,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal State방폭(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020065_BF__MAIN__1$", arg3: 10000);
+                context.SetEventUI(arg1: 1, script: "$02020065_BF__MAIN__1$", arg3: 10000);
             }
 
             public override TriggerState Execute() {
@@ -119,8 +121,8 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetEffect(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032}, arg2: false);
                 context.SetMesh(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059, 1060, 1061, 1062, 1063, 1064, 1065, 1066, 1067, 1068, 1069, 1070, 1071, 1072, 1073, 1074, 1075, 1076, 1077, 1078, 1079, 1080, 1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088, 1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096}, arg2: false);
                 context.CameraReset(interpolationTime: 1f);
-                context.SetEventUI(arg1: 0, arg2: "1,3");
-                context.SetEventUI(arg1: 1, arg2: "$02020065_BF__MAIN__2$", arg3: 5000);
+                context.SetEventUI(arg1: 0, script: "1,3");
+                context.SetEventUI(arg1: 1, script: "$02020065_BF__MAIN__2$", arg3: 5000);
                 context.CreateMonster(arg1: new[] {801}, arg2: false);
                 context.SetUserValue(triggerId: 99990002, key: "Battle_1_SpawnStart", value: 1);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
@@ -156,8 +158,8 @@ namespace Maple2.Trigger._02020065_bf {
                 context.GiveRewardContent(rewardId: 31000001);
                 context.SetUserValue(triggerId: 99990003, key: "Battle_2_Start", value: 1);
                 context.SetUserValue(triggerId: 99990005, key: "Battle_2_SpawnStart", value: 1);
-                context.SetEventUI(arg1: 0, arg2: "2,3");
-                context.SetEventUI(arg1: 1, arg2: "$02020065_BF__MAIN__3$", arg3: 5000);
+                context.SetEventUI(arg1: 0, script: "2,3");
+                context.SetEventUI(arg1: 1, script: "$02020065_BF__MAIN__3$", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -184,10 +186,10 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override void OnEnter() {
                 context.GiveRewardContent(rewardId: 31000002);
-                context.SetEventUI(arg1: 0, arg2: "3,3");
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020065_BF__MAIN__4$");
+                context.SetEventUI(arg1: 0, script: "3,3");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020065_BF__MAIN__4$");
                 context.SetUserValue(triggerId: 99990004, key: "Battle_3_Start", value: 1);
-                context.SetTimer(arg1: "1", arg2: 180, arg3: true, arg4: true, arg5: 60);
+                context.SetTimer(id: "1", arg2: 180, arg3: true, arg4: true, arg5: 60);
             }
 
             public override TriggerState Execute() {
@@ -216,14 +218,14 @@ namespace Maple2.Trigger._02020065_bf {
             internal StateSuccess_세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020065_BF__MAIN__5$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020065_BF__MAIN__5$");
                 context.SetUserValue(triggerId: 99990002, key: "Battle_1_SpawnStart", value: 0);
                 context.SetUserValue(triggerId: 99990003, key: "Battle_2_Start", value: 0);
                 context.SetUserValue(triggerId: 99990004, key: "Battle_3_Start", value: 0);
                 context.SetUserValue(triggerId: 99990005, key: "Battle_2_SpawnStart", value: 0);
                 context.SetUserValue(triggerId: 99990006, key: "Battle_3_SpawnStart", value: 0);
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "2");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "2");
             }
 
             public override TriggerState Execute() {
@@ -241,7 +243,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal StateSuccess_추가대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_smile", duration: 5000, script: "$02020065_BF__MAIN__6$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003533, illust: "Bliche_smile", duration: 5000, script: "$02020065_BF__MAIN__6$");
             }
 
             public override TriggerState Execute() {
@@ -259,15 +261,15 @@ namespace Maple2.Trigger._02020065_bf {
             internal State실패_세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020065_BF__MAIN__7$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020065_BF__MAIN__7$");
                 context.SetUserValue(triggerId: 99990002, key: "Battle_1_SpawnStart", value: 0);
                 context.SetUserValue(triggerId: 99990003, key: "Battle_2_Start", value: 0);
                 context.SetUserValue(triggerId: 99990004, key: "Battle_3_Start", value: 0);
                 context.SetUserValue(triggerId: 99990005, key: "Battle_2_SpawnStart", value: 0);
                 context.SetUserValue(triggerId: 99990006, key: "Battle_3_SpawnStart", value: 0);
                 context.ScoreBoardRemove();
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "2");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "2");
             }
 
             public override TriggerState Execute() {
@@ -285,7 +287,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal State실패_추가대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020065_BF__MAIN__8$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020065_BF__MAIN__8$");
             }
 
             public override TriggerState Execute() {
@@ -334,9 +336,9 @@ namespace Maple2.Trigger._02020065_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

@@ -8,7 +8,7 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetActor(arg1: 4001, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 4002, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 4000, arg2: true, arg3: "or_fi_struc_stonegate_A01_off");
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {5000, 5001, 5004}, arg2: false);
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003}, arg2: true);
                 context.SetUserValue(key: "FindLotus", value: 0);
@@ -32,9 +32,9 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateLodingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -72,8 +72,8 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateSetDarkness02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {100, 200}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_1000");
             }
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000051_QD__01_MAIN__0$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$52000051_QD__01_MAIN__0$", arg4: 5);
                 context.SetSkip(state: new StateNpcCinematic01Skip(context));
             }
 
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000051_QD__01_MAIN__1$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$52000051_QD__01_MAIN__1$", arg4: 5);
                 context.SetSkip(state: new StateNpcCinematic02Skip(context));
             }
 
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._52000051_qd {
                 context.CameraSelect(arg1: 601, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_110");
                 context.MoveUserPath(arg1: "MS2PatrolData_1001");
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000051_QD__01_MAIN__2$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$52000051_QD__01_MAIN__2$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcCinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000051_QD__01_MAIN__3$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$52000051_QD__01_MAIN__3$", arg4: 5);
                 context.SetSkip(state: new StateNpcCinematic05Skip(context));
             }
 
@@ -222,8 +222,8 @@ namespace Maple2.Trigger._52000051_qd {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.CameraSelect(arg1: 601, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetUserValue(triggerId: 9, key: "FindLotus", value: 1);
             }
 
@@ -260,7 +260,7 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_200");
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_100");
-                context.SetConversation(arg1: 1, arg2: 200, arg3: "$52000051_QD__01_MAIN__4$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 200, script: "$52000051_QD__01_MAIN__4$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -297,7 +297,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcPatrol02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$52000051_QD__01_MAIN__5$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52000051_QD__01_MAIN__5$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -401,8 +401,8 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 201, 102, 202});
                 context.CreateMonster(arg1: new[] {103, 203}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 203, arg3: "$02000376_BF__01_MAIN__3$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 103, arg3: "$02000376_BF__01_MAIN__4$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 203, script: "$02000376_BF__01_MAIN__3$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 103, script: "$02000376_BF__01_MAIN__4$", arg4: 3, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -509,7 +509,7 @@ namespace Maple2.Trigger._52000051_qd {
                 context.ChangeMonster(arg1: 980, arg2: 880);
                 context.ChangeMonster(arg1: 981, arg2: 881);
                 context.ChangeMonster(arg1: 982, arg2: 882);
-                context.SetConversation(arg1: 1, arg2: 105, arg3: "$52000051_QD__01_MAIN__8$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 105, script: "$52000051_QD__01_MAIN__8$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -527,7 +527,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateRemoveTotem04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 205, arg3: "$52000051_QD__01_MAIN__9$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 205, script: "$52000051_QD__01_MAIN__9$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 105, arg2: "MS2PatrolData_106");
                 context.MoveNpc(arg1: 205, arg2: "MS2PatrolData_206");
                 context.SetMesh(arg1: new[] {3500, 3501}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -552,7 +552,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateFoundGate01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 205, arg3: "$52000051_QD__01_MAIN__10$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 205, script: "$52000051_QD__01_MAIN__10$", arg4: 3, arg5: 0);
                 context.MoveNpc(arg1: 105, arg2: "MS2PatrolData_107");
                 context.MoveNpc(arg1: 205, arg2: "MS2PatrolData_207");
             }
@@ -572,7 +572,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateFoundGate02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 105, arg3: "$52000051_QD__01_MAIN__11$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 105, script: "$52000051_QD__01_MAIN__11$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -590,7 +590,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateShadowApp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 205, arg3: "$52000051_QD__01_MAIN__12$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 205, script: "$52000051_QD__01_MAIN__12$", arg4: 2, arg5: 0);
                 context.CreateMonster(arg1: new[] {901, 903, 905}, arg2: false);
             }
 
@@ -612,7 +612,7 @@ namespace Maple2.Trigger._52000051_qd {
                 context.DestroyMonster(arg1: new[] {105, 205});
                 context.CreateMonster(arg1: new[] {106, 206}, arg2: false);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$52000051_QD__01_MAIN__13$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52000051_QD__01_MAIN__13$", arg3: 3000, arg4: "0");
                 context.CreateMonster(arg1: new[] {914, 916, 918}, arg2: false);
             }
 
@@ -669,7 +669,7 @@ namespace Maple2.Trigger._52000051_qd {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 4, key: "PuzzleStart", value: 1);
-                context.SetConversation(arg1: 1, arg2: 104, arg3: "$52000051_QD__01_MAIN__14$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 104, script: "$52000051_QD__01_MAIN__14$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -688,7 +688,7 @@ namespace Maple2.Trigger._52000051_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$52000051_QD__01_MAIN__15$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52000051_QD__01_MAIN__15$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -742,11 +742,11 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_108");
                 context.MoveNpc(arg1: 204, arg2: "MS2PatrolData_208");
-                context.SetConversation(arg1: 1, arg2: 104, arg3: "$52000051_QD__01_MAIN__16$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 204, arg3: "$52000051_QD__01_MAIN__17$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 104, script: "$52000051_QD__01_MAIN__16$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 204, script: "$52000051_QD__01_MAIN__17$", arg4: 2, arg5: 2);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "or_fi_struc_stonegate_A01_on");
                 context.SetMesh(arg1: new[] {3030}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

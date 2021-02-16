@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000294_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: true);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: true);
                 context.DestroyMonster(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3100, 3101, 3102, 3103, 3104, 10000});
                 context.SetAgent(arg1: new[] {133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157}, arg2: false);
                 context.SetActor(arg1: 900, arg2: true, arg3: "Closed");
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._02000294_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {10000}, arg2: false);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.SetSkip(state: new StateGateOpen01(context));
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02000294_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 10000, arg2: "MS2PatrolData_10000");
-                context.SetConversation(arg1: 1, arg2: 10000, arg3: "$02000294_BF__MAIN__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 10000, script: "$02000294_BF__MAIN__0$", arg4: 2, arg5: 0);
                 context.SetSkip(state: new StateGateOpen01(context));
             }
 
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._02000294_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 10000, arg2: "MS2PatrolData_10001");
-                context.SetConversation(arg1: 1, arg2: 10000, arg3: "$02000294_BF__MAIN__1$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 10000, script: "$02000294_BF__MAIN__1$", arg4: 2, arg5: 0);
                 context.SetSkip(state: new StateGateOpen01(context));
             }
 
@@ -105,8 +105,8 @@ namespace Maple2.Trigger._02000294_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 600, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetActor(arg1: 900, arg2: true, arg3: "Opened");
                 context.SetMesh(arg1: new[] {300}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkip();
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02000294_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 10000, arg2: "MS2PatrolData_10002");
-                context.SetConversation(arg1: 1, arg2: 10000, arg3: "$02000294_BF__MAIN__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 10000, script: "$02000294_BF__MAIN__2$", arg4: 3, arg5: 0);
                 context.SetActor(arg1: 900, arg2: false, arg3: "Opened");
                 context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314}, arg2: false, arg3: 1000, arg4: 500, arg5: 5f);
             }
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._02000294_bf {
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {137, 138, 152, 153}, arg2: false);
                 context.MoveNpc(arg1: 10000, arg2: "MS2PatrolData_10003");
-                context.SetConversation(arg1: 1, arg2: 10000, arg3: "$02000294_BF__MAIN__3$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 10000, script: "$02000294_BF__MAIN__3$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -226,7 +226,7 @@ namespace Maple2.Trigger._02000294_bf {
             internal StateBattleEnd02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 10000, arg3: "$02000294_BF__MAIN__4$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 10000, script: "$02000294_BF__MAIN__4$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -245,9 +245,9 @@ namespace Maple2.Trigger._02000294_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 10000, arg2: "MS2PatrolData_10004");
-                context.SetConversation(arg1: 1, arg2: 10000, arg3: "$02000294_BF__MAIN__5$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 10000, script: "$02000294_BF__MAIN__5$", arg4: 3, arg5: 0);
                 context.SetMesh(arg1: new[] {101, 102}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._02000294_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20002942, textId: 20002942);
-                context.SetConversation(arg1: 1, arg2: 10000, arg3: "$02000294_BF__MAIN__6$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 10000, script: "$02000294_BF__MAIN__6$", arg4: 4, arg5: 0);
             }
 
             public override TriggerState Execute() {

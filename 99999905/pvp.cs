@@ -4,7 +4,7 @@ namespace Maple2.Trigger._99999905 {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "30", arg2: 30, arg3: false);
+                context.SetTimer(id: "30", arg2: 30, arg3: false);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 4001, 4002, 4003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._99999905 {
             internal StatePvP(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1, arg3: false);
+                context.SetTimer(id: "1", arg2: 1, arg3: false);
                 context.SetPvpZone(arg1: 104, arg2: 3, arg3: 600, arg4: 90001002, arg5: 3, arg6: new byte[] {1, 2, 101, 102, 103});
             }
 
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._99999905 {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2, arg3: false);
-                context.SetEventUI(arg1: 1, arg2: "$99999905__PVP__0$", arg3: 2000);
+                context.SetTimer(id: "2", arg2: 2, arg3: false);
+                context.SetEventUI(arg1: 1, script: "$99999905__PVP__0$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._99999905 {
             internal State어나운스1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "4", arg2: 4, arg3: false);
-                context.SetEventUI(arg1: 1, arg2: "$99999905__PVP__1$", arg3: 4000);
+                context.SetTimer(id: "4", arg2: 4, arg3: false);
+                context.SetEventUI(arg1: 1, script: "$99999905__PVP__1$", arg3: 4000);
             }
 
             public override TriggerState Execute() {
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._99999905 {
             internal State어나운스2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2, arg3: false);
-                context.SetEventUI(arg1: 1, arg2: "$99999905__PVP__2$", arg3: 2000);
+                context.SetTimer(id: "2", arg2: 2, arg3: false);
+                context.SetEventUI(arg1: 1, script: "$99999905__PVP__2$", arg3: 2000);
             }
 
             public override TriggerState Execute() {
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._99999905 {
             internal State어나운스3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3, arg3: false);
+                context.SetTimer(id: "3", arg2: 3, arg3: false);
                 context.ShowCountUI(text: "$99999905__PVP__3$", stage: 1, count: 3);
             }
 
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._99999905 {
             internal State게임종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {

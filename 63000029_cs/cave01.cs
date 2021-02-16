@@ -4,7 +4,7 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5100, 5200, 5201, 5202, 5203, 5300, 5400, 5500, 5501, 5502, 5503, 5504, 5505, 5506, 5507, 5700, 5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709, 5600, 5800, 5801, 5820, 5821, 5900, 5901, 5920, 5921, 5922, 5930, 5931, 6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6200, 6201, 6300, 6301, 6400}, arg2: false);
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -66,9 +66,9 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateQuestOnGiong11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -108,8 +108,8 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateQuestOnGiong13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -127,9 +127,9 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateQuestOnGiong01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -169,9 +169,9 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateQuestOnGiong03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000029_CS__CAVE01__0$", arg4: 3, arg5: 1);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$63000029_CS__CAVE01__0$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -314,9 +314,9 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateEnteranceBlock01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -356,8 +356,8 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateLaozApp05_CSkip(context), arg2: "nextState");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetEffect(arg1: new[] {5003}, arg2: true);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, arg2: true, arg3: 9, arg4: 100, arg5: 100);
@@ -379,8 +379,8 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 500, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -398,7 +398,7 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateTimeToMoveIn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 202, arg3: "$63000029_CS__CAVE01__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 202, script: "$63000029_CS__CAVE01__1$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -416,7 +416,7 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateTimeToMoveIn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000029_CS__CAVE01__2$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$63000029_CS__CAVE01__2$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_101");
                 context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_201");
             }
@@ -436,13 +436,13 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateLaozApp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {301}, arg2: false);
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_301");
                 context.SetEffect(arg1: new[] {6400}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 202, arg3: "$63000029_CS__CAVE01__3$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000029_CS__CAVE01__4$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 202, script: "$63000029_CS__CAVE01__3$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$63000029_CS__CAVE01__4$", arg4: 2, arg5: 0);
                 context.SetSceneSkip();
             }
 
@@ -497,8 +497,8 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateLaozApp04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 202, arg3: "$63000029_CS__CAVE01__5$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000029_CS__CAVE01__6$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 202, script: "$63000029_CS__CAVE01__5$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$63000029_CS__CAVE01__6$", arg4: 3, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -556,7 +556,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__7$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001556, script: "$63000029_CS__CAVE01__7$", arg4: 5);
                 context.SetSkip(state: new StateLaozTalk04(context));
             }
 
@@ -589,7 +589,7 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateLaozTalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__8$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001556, script: "$63000029_CS__CAVE01__8$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -610,8 +610,8 @@ namespace Maple2.Trigger._63000029_cs {
                 context.RemoveCinematicTalk();
                 context.DestroyMonster(arg1: new[] {301});
                 context.CreateMonster(arg1: new[] {302}, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 601, arg2: false);
             }
 
@@ -708,9 +708,9 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateEnteranceBlockExplosion01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.SetSceneSkip(state: new StateLaozNKahnTalk18_CSkip(context), arg2: "nextState");
             }
 
@@ -751,8 +751,8 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateEnteranceBlockExplosion03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetEffect(arg1: new[] {5400}, arg2: true);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkill(arg1: new[] {7001}, arg2: true);
@@ -777,7 +777,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5901, 6100}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 401, arg3: "$63000029_CS__CAVE01__9$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 401, script: "$63000029_CS__CAVE01__9$", arg4: 3, arg5: 0);
                 context.CreateMonster(arg1: new[] {900, 901, 902, 903}, arg2: false);
                 context.MoveNpc(arg1: 900, arg2: "MS2PatrolData_900");
                 context.MoveNpc(arg1: 901, arg2: "MS2PatrolData_901");
@@ -898,7 +898,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 303, arg2: "MS2PatrolData_302");
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 303, arg3: "$63000029_CS__CAVE01__10$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 303, script: "$63000029_CS__CAVE01__10$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -917,7 +917,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 203, arg2: "MS2PatrolData_202");
-                context.SetConversation(arg1: 1, arg2: 203, arg3: "$63000029_CS__CAVE01__11$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 203, script: "$63000029_CS__CAVE01__11$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -936,7 +936,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_102");
-                context.SetConversation(arg1: 1, arg2: 103, arg3: "$63000029_CS__CAVE01__12$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 103, script: "$63000029_CS__CAVE01__12$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -974,7 +974,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6101}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000029_CS__CAVE01__13$", arg4: 9);
+                context.SetConversation(arg1: 2, arg2: 11001559, script: "$63000029_CS__CAVE01__13$", arg4: 9);
                 context.SetNpcEmotionSequence(arg1: 401, arg2: "Event_A");
             }
 
@@ -1009,7 +1009,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6002}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__14$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001556, script: "$63000029_CS__CAVE01__14$", arg4: 4);
                 context.SetNpcEmotionSequence(arg1: 303, arg2: "Talk_A");
             }
 
@@ -1046,7 +1046,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6003}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__15$", arg4: 8);
+                context.SetConversation(arg1: 2, arg2: 11001556, script: "$63000029_CS__CAVE01__15$", arg4: 8);
                 context.SetNpcEmotionSequence(arg1: 303, arg2: "Talk_A");
             }
 
@@ -1080,7 +1080,7 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateLaozTalkToJuntaNTinChai03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000029_CS__CAVE01__16$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$63000029_CS__CAVE01__16$", arg4: 4);
                 context.SetNpcEmotionSequence(arg1: 203, arg2: "Talk_A");
             }
 
@@ -1114,7 +1114,7 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateLaozTalkToJuntaNTinChai05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000029_CS__CAVE01__17$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000029_CS__CAVE01__17$", arg4: 4);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Talk_A");
             }
 
@@ -1149,7 +1149,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__18$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001556, script: "$63000029_CS__CAVE01__18$", arg4: 4);
                 context.SetNpcEmotionSequence(arg1: 303, arg2: "Talk_A");
             }
 
@@ -1232,7 +1232,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.MoveNpc(arg1: 958, arg2: "MS2PatrolData_908");
                 context.MoveNpc(arg1: 959, arg2: "MS2PatrolData_909");
                 context.SetEffect(arg1: new[] {6004}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__19$", arg4: 9);
+                context.SetConversation(arg1: 2, arg2: 11001556, script: "$63000029_CS__CAVE01__19$", arg4: 9);
                 context.SetNpcEmotionSequence(arg1: 303, arg2: "Talk_A");
                 context.CameraSelect(arg1: 612, arg2: true);
                 context.SetSkip(state: new StateLaozNKahnTalk02(context));
@@ -1271,7 +1271,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 401, arg2: "Event_A");
                 context.SetEffect(arg1: new[] {6102}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000029_CS__CAVE01__20$", arg4: 9);
+                context.SetConversation(arg1: 2, arg2: 11001559, script: "$63000029_CS__CAVE01__20$", arg4: 9);
             }
 
             public override TriggerState Execute() {
@@ -1306,7 +1306,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 401, arg2: "Event_A");
                 context.SetEffect(arg1: new[] {6103}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000029_CS__CAVE01__21$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001559, script: "$63000029_CS__CAVE01__21$", arg4: 6);
                 context.SetSkip(state: new StateLaozNKahnTalk06(context));
             }
 
@@ -1347,7 +1347,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 303, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {6005}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__22$", arg4: 7);
+                context.SetConversation(arg1: 2, arg2: 11001556, script: "$63000029_CS__CAVE01__22$", arg4: 7);
             }
 
             public override TriggerState Execute() {
@@ -1386,7 +1386,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 303, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {6006}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__23$", arg4: 7);
+                context.SetConversation(arg1: 2, arg2: 11001556, script: "$63000029_CS__CAVE01__23$", arg4: 7);
             }
 
             public override TriggerState Execute() {
@@ -1425,7 +1425,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 401, arg2: "Event_A");
                 context.SetEffect(arg1: new[] {6104}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000029_CS__CAVE01__24$", arg4: 7);
+                context.SetConversation(arg1: 2, arg2: 11001559, script: "$63000029_CS__CAVE01__24$", arg4: 7);
             }
 
             public override TriggerState Execute() {
@@ -1464,7 +1464,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 303, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {6007}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__25$", arg4: 8);
+                context.SetConversation(arg1: 2, arg2: 11001556, script: "$63000029_CS__CAVE01__25$", arg4: 8);
             }
 
             public override TriggerState Execute() {
@@ -1498,7 +1498,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6105}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000029_CS__CAVE01__26$", arg4: 7);
+                context.SetConversation(arg1: 2, arg2: 11001559, script: "$63000029_CS__CAVE01__26$", arg4: 7);
                 context.CameraSelect(arg1: 621, arg2: true);
             }
 
@@ -1533,7 +1533,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6106}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000029_CS__CAVE01__27$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001559, script: "$63000029_CS__CAVE01__27$", arg4: 4);
                 context.SetNpcEmotionSequence(arg1: 401, arg2: "Event_A");
             }
 
@@ -1556,9 +1556,9 @@ namespace Maple2.Trigger._63000029_cs {
                 context.CreateMonster(arg1: new[] {103, 203, 303}, arg2: false);
                 context.MoveUser(arg1: 63000029, arg2: 12, arg3: 9900);
                 context.RemoveCinematicTalk();
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -1577,9 +1577,9 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -1626,8 +1626,8 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 631, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -1646,7 +1646,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 305, arg2: "MS2PatrolData_303");
-                context.SetConversation(arg1: 1, arg2: 305, arg3: "$63000029_CS__CAVE01__28$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 305, script: "$63000029_CS__CAVE01__28$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1801,7 +1801,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 303, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {6008}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__29$", arg4: 8);
+                context.SetConversation(arg1: 2, arg2: 11001556, script: "$63000029_CS__CAVE01__29$", arg4: 8);
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019, 8020, 8021, 8022, 8023, 8024, 8025, 8026, 8027}, arg2: true);
             }
 
@@ -1837,7 +1837,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 205, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {6200}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000029_CS__CAVE01__30$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$63000029_CS__CAVE01__30$", arg4: 6);
             }
 
             public override TriggerState Execute() {
@@ -1872,7 +1872,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 303, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {6009}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__31$", arg4: 7);
+                context.SetConversation(arg1: 2, arg2: 11001556, script: "$63000029_CS__CAVE01__31$", arg4: 7);
             }
 
             public override TriggerState Execute() {
@@ -1906,7 +1906,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6300}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000029_CS__CAVE01__32$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000029_CS__CAVE01__32$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -1941,7 +1941,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.CameraSelect(arg1: 634, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 401, arg2: "Event_A");
                 context.SetEffect(arg1: new[] {6107}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000029_CS__CAVE01__33$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001559, script: "$63000029_CS__CAVE01__33$", arg4: 6);
             }
 
             public override TriggerState Execute() {
@@ -1976,7 +1976,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 635, arg2: true);
                 context.SetEffect(arg1: new[] {6010}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__34$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001556, script: "$63000029_CS__CAVE01__34$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -2027,9 +2027,9 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateLaozVersusKahnAttack02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -2069,8 +2069,8 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateLaozVersusKahnCrash01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetEffect(arg1: new[] {5600}, arg2: true);
             }
 
@@ -2232,7 +2232,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetEffect(arg1: new[] {5820, 5821}, arg2: false);
                 context.SetSkill(arg1: new[] {7000}, arg2: true);
                 context.SetEffect(arg1: new[] {6300}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 105, arg3: "$63000029_CS__CAVE01__35$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 105, script: "$63000029_CS__CAVE01__35$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2293,7 +2293,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetSkill(arg1: new[] {7000}, arg2: true);
                 context.SetEffect(arg1: new[] {6300}, arg2: true);
                 context.SetVisibleBreakableObject(arg1: new[] {4000, 4001}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 105, arg3: "$63000029_CS__CAVE01__35$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 105, script: "$63000029_CS__CAVE01__35$", arg4: 3, arg5: 0);
                 context.DestroyMonster(arg1: new[] {305, 403});
                 context.SetBreakable(arg1: new[] {4000, 4001}, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new[] {4000, 4001}, arg2: false);
@@ -2316,8 +2316,8 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 660, arg2: true);
                 context.SetUserValue(triggerId: 2, key: "EarthquakeStart", value: 1);
-                context.SetConversation(arg1: 1, arg2: 105, arg3: "$63000029_CS__CAVE01__39$", arg4: 4, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 205, arg3: "$63000029_CS__CAVE01__40$", arg4: 3, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 105, script: "$63000029_CS__CAVE01__39$", arg4: 4, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 205, script: "$63000029_CS__CAVE01__40$", arg4: 3, arg5: 4);
             }
 
             public override TriggerState Execute() {
@@ -2373,7 +2373,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 205, arg2: "MS2PatrolData_205");
                 context.SetEffect(arg1: new[] {6301}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 105, arg3: "$63000029_CS__CAVE01__36$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 105, script: "$63000029_CS__CAVE01__36$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 105, arg2: "Talk_A");
             }
 
@@ -2394,7 +2394,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 105, arg2: "Idle_A");
                 context.SetEffect(arg1: new[] {6201}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 205, arg3: "$63000029_CS__CAVE01__37$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 205, script: "$63000029_CS__CAVE01__37$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 205, arg2: "Talk_A");
             }
 
@@ -2452,8 +2452,8 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateTimeToLeave03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 641, arg2: false);
             }
 
@@ -2492,7 +2492,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5900}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 205, arg3: "$63000029_CS__CAVE01__38$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 205, script: "$63000029_CS__CAVE01__38$", arg4: 3);
                 context.HideGuideSummary(entityId: 10036040);
             }
 
@@ -2529,7 +2529,7 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateOpenTheStoneGate02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.ShowGuideSummary(entityId: 1060, textId: 1060);
             }

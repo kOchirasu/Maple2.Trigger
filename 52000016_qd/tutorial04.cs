@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetMesh(arg1: new[] {2000, 3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015, 4020, 4021, 4022, 4023, 4024, 4025, 4026, 4027}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000825}, arg2: 0);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {8200, 8300, 8201, 8301, 8202, 8302, 8203, 8303, 8000, 6100, 6101, 6102, 6103, 6104, 6105, 6106, 6200, 6201, 6202, 6203, 6210, 6211, 6212, 6300, 6301, 6302, 6400, 6401, 6402}, arg2: false);
             }
 
@@ -29,8 +29,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetRandomMesh(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015}, arg2: true, arg3: 16, arg4: 50, arg5: 80);
             }
 
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal StateDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetSkill(arg1: new[] {910, 911, 912, 913, 914}, arg2: true);
                 context.SetEffect(arg1: new[] {7010, 7020}, arg2: true);
             }
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State막힌길발견02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 4);
+                context.SetTimer(id: "2", arg2: 4);
                 context.SetEffect(arg1: new[] {7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007}, arg2: true);
             }
 
@@ -100,11 +100,11 @@ namespace Maple2.Trigger._52000016_qd {
             internal State척후병입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1000");
                 context.SetEffect(arg1: new[] {6100}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001249, arg3: "$52000016_QD__TUTORIAL04__0$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001249, script: "$52000016_QD__TUTORIAL04__0$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -122,10 +122,10 @@ namespace Maple2.Trigger._52000016_qd {
             internal State돌치우기안내01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 3);
+                context.SetTimer(id: "5", arg2: 3);
                 context.SetEffect(arg1: new[] {6101}, arg2: true);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1001");
-                context.SetConversation(arg1: 2, arg2: 11001249, arg3: "$52000016_QD__TUTORIAL04__1$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001249, script: "$52000016_QD__TUTORIAL04__1$", arg4: 3);
                 context.SetSkip(state: new State돌치우기안내03(context));
             }
 
@@ -149,8 +149,8 @@ namespace Maple2.Trigger._52000016_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 601, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -226,7 +226,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State척후병이동02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000016_QD__TUTORIAL04__2$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000016_QD__TUTORIAL04__2$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State척후병전투시작01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "9", arg2: 1);
+                context.SetTimer(id: "9", arg2: 1);
                 context.SetAgent(arg1: new[] {10000, 10001, 10002, 10003, 10004, 10005, 10010}, arg2: false);
             }
 
@@ -263,8 +263,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal State전투중01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000016_QD__TUTORIAL04__3$", arg4: 2);
+                context.SetTimer(id: "10", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000016_QD__TUTORIAL04__3$", arg4: 2);
                 context.SetEffect(arg1: new[] {6102}, arg2: true);
             }
 
@@ -283,7 +283,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State전투중02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000016_QD__TUTORIAL04__4$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000016_QD__TUTORIAL04__4$", arg4: 2);
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
                 context.ShowGuideSummary(entityId: 10014030, textId: 10014030);
             }
@@ -305,9 +305,9 @@ namespace Maple2.Trigger._52000016_qd {
             internal State전투종료01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "11", arg2: 2);
+                context.SetTimer(id: "11", arg2: 2);
                 context.SetEffect(arg1: new[] {6103}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000016_QD__TUTORIAL04__5$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000016_QD__TUTORIAL04__5$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -325,8 +325,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal State전투종료02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "12", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000016_QD__TUTORIAL04__6$", arg4: 2);
+                context.SetTimer(id: "12", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000016_QD__TUTORIAL04__6$", arg4: 2);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1003");
             }
 
@@ -361,11 +361,11 @@ namespace Maple2.Trigger._52000016_qd {
             internal StateSetupCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "13", arg2: 3);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetTimer(id: "13", arg2: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 602, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001249, arg3: "$52000016_QD__TUTORIAL04__7$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001249, script: "$52000016_QD__TUTORIAL04__7$", arg4: 3);
                 context.SetEffect(arg1: new[] {6104}, arg2: true);
             }
 
@@ -384,8 +384,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal StateSetupCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "14", arg2: 2);
-                context.SetConversation(arg1: 2, arg2: 11001249, arg3: "$52000016_QD__TUTORIAL04__8$", arg4: 2);
+                context.SetTimer(id: "14", arg2: 2);
+                context.SetConversation(arg1: 2, arg2: 11001249, script: "$52000016_QD__TUTORIAL04__8$", arg4: 2);
                 context.SetEffect(arg1: new[] {6105}, arg2: true);
                 context.CreateMonster(arg1: new[] {201, 301, 210, 211, 212, 213, 214, 215, 216, 217, 310, 311, 312, 313}, arg2: true);
             }
@@ -420,8 +420,8 @@ namespace Maple2.Trigger._52000016_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateStopCinematic01_skip(context), arg2: "nextState");
-                context.SetTimer(arg1: "16", arg2: 1);
-                context.CameraSelectPath(arg1: new[] {602, 603}, arg2: false);
+                context.SetTimer(id: "16", arg2: 1);
+                context.CameraSelectPath(pathIds: new[] {602, 603}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -439,8 +439,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal State대결Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "18", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000016_QD__TUTORIAL04__9$", arg4: 3);
+                context.SetTimer(id: "18", arg2: 3);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000016_QD__TUTORIAL04__9$", arg4: 3);
                 context.SetEffect(arg1: new[] {6200}, arg2: true);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
@@ -476,8 +476,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal State대결Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "19", arg2: 7);
-                context.SetConversation(arg1: 2, arg2: 11001231, arg3: "$52000016_QD__TUTORIAL04__10$", arg4: 6);
+                context.SetTimer(id: "19", arg2: 7);
+                context.SetConversation(arg1: 2, arg2: 11001231, script: "$52000016_QD__TUTORIAL04__10$", arg4: 6);
                 context.SetEffect(arg1: new[] {6200}, arg2: false);
                 context.SetEffect(arg1: new[] {6210}, arg2: true);
                 context.SetSkip(state: new State대결Cinematic03Wait(context));
@@ -512,8 +512,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal State대결Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "20", arg2: 5);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000016_QD__TUTORIAL04__11$", arg4: 4);
+                context.SetTimer(id: "20", arg2: 5);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000016_QD__TUTORIAL04__11$", arg4: 4);
                 context.SetEffect(arg1: new[] {6210}, arg2: false);
                 context.SetEffect(arg1: new[] {6201}, arg2: true);
                 context.SetSkip(state: new State대결Cinematic04Wait(context));
@@ -548,8 +548,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal State대결Cinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "21", arg2: 5);
-                context.SetConversation(arg1: 2, arg2: 11001231, arg3: "$52000016_QD__TUTORIAL04__12$", arg4: 5);
+                context.SetTimer(id: "21", arg2: 5);
+                context.SetConversation(arg1: 2, arg2: 11001231, script: "$52000016_QD__TUTORIAL04__12$", arg4: 5);
                 context.SetEffect(arg1: new[] {6201}, arg2: false);
                 context.SetEffect(arg1: new[] {6211}, arg2: true);
                 context.SetSkip(state: new State대결Cinematic05Wait(context));
@@ -584,8 +584,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal State대결Cinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "22", arg2: 4);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000016_QD__TUTORIAL04__13$", arg4: 3);
+                context.SetTimer(id: "22", arg2: 4);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000016_QD__TUTORIAL04__13$", arg4: 3);
                 context.SetEffect(arg1: new[] {6211}, arg2: false);
                 context.SetEffect(arg1: new[] {6202}, arg2: true);
                 context.SetSkip(state: new State대결Cinematic06Wait(context));
@@ -620,8 +620,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal State대결Cinematic06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "23", arg2: 4);
-                context.SetConversation(arg1: 2, arg2: 11001231, arg3: "$52000016_QD__TUTORIAL04__14$", arg4: 3);
+                context.SetTimer(id: "23", arg2: 4);
+                context.SetConversation(arg1: 2, arg2: 11001231, script: "$52000016_QD__TUTORIAL04__14$", arg4: 3);
                 context.SetEffect(arg1: new[] {6202}, arg2: false);
                 context.SetEffect(arg1: new[] {6212}, arg2: true);
                 context.SetSkip(state: new State대결Cinematic07Wait(context));
@@ -657,7 +657,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State대결Cinematic07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "24", arg2: 1);
+                context.SetTimer(id: "24", arg2: 1);
                 context.CameraSelect(arg1: 606, arg2: true);
             }
 
@@ -676,9 +676,9 @@ namespace Maple2.Trigger._52000016_qd {
             internal State대결Cinematic08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "25", arg2: 1);
+                context.SetTimer(id: "25", arg2: 1);
                 context.SetEffect(arg1: new[] {7050}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000016_QD__TUTORIAL04__15$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000016_QD__TUTORIAL04__15$", arg4: 2);
                 context.SetEffect(arg1: new[] {6212}, arg2: false);
                 context.SetEffect(arg1: new[] {6203, 8200, 8300}, arg2: true);
             }
@@ -698,7 +698,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State이펙트Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "26", arg2: 2);
+                context.SetTimer(id: "26", arg2: 2);
                 context.SetEffect(arg1: new[] {8201, 8301}, arg2: true);
             }
 
@@ -719,7 +719,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State이펙트Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "27", arg2: 1);
+                context.SetTimer(id: "27", arg2: 1);
                 context.SetEffect(arg1: new[] {8201, 8301}, arg2: false);
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_2100");
@@ -742,7 +742,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State이펙트Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "28", arg2: 1);
+                context.SetTimer(id: "28", arg2: 1);
                 context.SetEffect(arg1: new[] {8202, 8302}, arg2: true);
                 context.SetSceneSkip();
             }
@@ -762,8 +762,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal StateStopCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "30", arg2: 1);
-                context.SetCinematicUI(arg1: 4);
+                context.SetTimer(id: "30", arg2: 1);
+                context.SetCinematicUI(type: 4);
                 context.CameraSelect(arg1: 606, arg2: false);
                 context.CameraSelect(arg1: 602, arg2: false);
                 context.CameraSelect(arg1: 603, arg2: false);
@@ -789,9 +789,9 @@ namespace Maple2.Trigger._52000016_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 102});
                 context.RemoveCinematicTalk();
-                context.SetTimer(arg1: "30", arg2: 1);
+                context.SetTimer(id: "30", arg2: 1);
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 4);
                 context.CameraSelect(arg1: 606, arg2: false);
                 context.CameraSelect(arg1: 602, arg2: false);
                 context.CameraSelect(arg1: 603, arg2: false);
@@ -815,10 +815,10 @@ namespace Maple2.Trigger._52000016_qd {
             internal StateLeverPull01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "31", arg2: 1);
-                context.SetCinematicUI(arg1: 4);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetTimer(id: "31", arg2: 1);
+                context.SetCinematicUI(type: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 605, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000825}, arg2: 1);
                 context.SetEffect(arg1: new[] {7030}, arg2: true);
@@ -839,8 +839,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal StateLeverPull02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "35", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11001249, arg3: "$52000016_QD__TUTORIAL04__16$", arg4: 3);
+                context.SetTimer(id: "35", arg2: 3);
+                context.SetConversation(arg1: 2, arg2: 11001249, script: "$52000016_QD__TUTORIAL04__16$", arg4: 3);
                 context.SetEffect(arg1: new[] {6106}, arg2: true);
             }
 
@@ -863,8 +863,8 @@ namespace Maple2.Trigger._52000016_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 605, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.DestroyMonster(arg1: new[] {301, 210, 211, 212, 213, 214, 215, 216, 217, 310, 311, 312, 313});
                 context.CreateMonster(arg1: new[] {220, 221, 222, 223, 224, 225, 226, 227}, arg2: true);
                 context.SetEffect(arg1: new[] {7030}, arg2: false);
@@ -887,7 +887,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State다리만들기02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "40", arg2: 1);
+                context.SetTimer(id: "40", arg2: 1);
                 context.SetRandomMesh(arg1: new[] {4020, 4021, 4022, 4023, 4024, 4025, 4026, 4027}, arg2: true, arg3: 8, arg4: 120, arg5: 120);
                 context.SetEffect(arg1: new[] {7011, 7021}, arg2: true);
                 context.SetAgent(arg1: new[] {10006, 10007, 10008, 10009}, arg2: false);
@@ -949,7 +949,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State마무리Prepare01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "41", arg2: 1);
+                context.SetTimer(id: "41", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -967,9 +967,9 @@ namespace Maple2.Trigger._52000016_qd {
             internal State마무리Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "42", arg2: 1);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetTimer(id: "42", arg2: 1);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 604, arg2: true);
                 context.SetSceneSkip(state: new State마무리Cinematic08(context), arg2: "nextState");
                 context.CreateMonster(arg1: new[] {401}, arg2: true);
@@ -990,7 +990,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State마무리Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "43", arg2: 3);
+                context.SetTimer(id: "43", arg2: 3);
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_4000");
             }
 
@@ -1009,8 +1009,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal State마무리Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "44", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11001230, arg3: "$52000016_QD__TUTORIAL04__17$", arg4: 3);
+                context.SetTimer(id: "44", arg2: 3);
+                context.SetConversation(arg1: 2, arg2: 11001230, script: "$52000016_QD__TUTORIAL04__17$", arg4: 3);
                 context.SetEffect(arg1: new[] {6300}, arg2: true);
                 context.SetSkip(state: new State마무리Cinematic04Wait(context));
             }
@@ -1044,9 +1044,9 @@ namespace Maple2.Trigger._52000016_qd {
             internal State마무리Cinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "45", arg2: 5);
+                context.SetTimer(id: "45", arg2: 5);
                 context.SetEffect(arg1: new[] {6300}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000016_QD__TUTORIAL04__18$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000016_QD__TUTORIAL04__18$", arg4: 4);
                 context.SetEffect(arg1: new[] {6400}, arg2: true);
                 context.SetSkip(state: new State마무리Cinematic05Wait(context));
             }
@@ -1080,9 +1080,9 @@ namespace Maple2.Trigger._52000016_qd {
             internal State마무리Cinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "46", arg2: 5);
+                context.SetTimer(id: "46", arg2: 5);
                 context.SetEffect(arg1: new[] {6400}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001230, arg3: "$52000016_QD__TUTORIAL04__19$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001230, script: "$52000016_QD__TUTORIAL04__19$", arg4: 4);
                 context.SetEffect(arg1: new[] {6301}, arg2: true);
                 context.SetSkip(state: new State마무리Cinematic06Wait(context));
             }
@@ -1116,9 +1116,9 @@ namespace Maple2.Trigger._52000016_qd {
             internal State마무리Cinematic06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "47", arg2: 5);
+                context.SetTimer(id: "47", arg2: 5);
                 context.SetEffect(arg1: new[] {6301}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000016_QD__TUTORIAL04__20$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000016_QD__TUTORIAL04__20$", arg4: 4);
                 context.SetEffect(arg1: new[] {6401}, arg2: true);
                 context.SetSceneSkip();
             }
@@ -1152,9 +1152,9 @@ namespace Maple2.Trigger._52000016_qd {
             internal State마무리Cinematic07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "48", arg2: 5);
+                context.SetTimer(id: "48", arg2: 5);
                 context.SetEffect(arg1: new[] {6401}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001230, arg3: "$52000016_QD__TUTORIAL04__21$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001230, script: "$52000016_QD__TUTORIAL04__21$", arg4: 4);
                 context.SetEffect(arg1: new[] {6302}, arg2: true);
                 context.SetSkip(state: new State마무리Cinematic08Wait(context));
             }
@@ -1188,7 +1188,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State마무리Cinematic08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_4001");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_1005");
             }
@@ -1208,10 +1208,10 @@ namespace Maple2.Trigger._52000016_qd {
             internal State마무리Cinematic09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "49", arg2: 5);
+                context.SetTimer(id: "49", arg2: 5);
                 context.DestroyMonster(arg1: new[] {102, 401});
                 context.SetEffect(arg1: new[] {6302}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000016_QD__TUTORIAL04__22$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000016_QD__TUTORIAL04__22$", arg4: 3);
                 context.SetEffect(arg1: new[] {6402}, arg2: true);
                 context.SetSkip(state: new State퇴장Prepare01Wait(context));
             }
@@ -1245,10 +1245,10 @@ namespace Maple2.Trigger._52000016_qd {
             internal State퇴장Prepare01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "50", arg2: 1);
+                context.SetTimer(id: "50", arg2: 1);
                 context.CameraSelect(arg1: 604, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

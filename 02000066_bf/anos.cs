@@ -82,7 +82,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 98, arg3: "$02000066_BF__ANOS__0$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 98, script: "$02000066_BF__ANOS__0$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 98, arg3: "$02000066_BF__ANOS__1$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 98, script: "$02000066_BF__ANOS__1$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 98, arg3: "$02000066_BF__ANOS__2$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 98, script: "$02000066_BF__ANOS__2$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 98, arg3: "$02000066_BF__ANOS__3$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 98, script: "$02000066_BF__ANOS__3$", arg4: 3);
             }
 
             public override TriggerState Execute() {

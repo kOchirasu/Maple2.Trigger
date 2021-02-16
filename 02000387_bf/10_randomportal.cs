@@ -6,14 +6,14 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {2011, 2012, 2013, 2014}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: false);
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 14, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 21, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 22, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 23, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 24, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 12, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 14, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 21, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 22, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 23, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 24, visible: false, enabled: false, minimapVisible: false);
                 context.SetActor(arg1: 4101, arg2: true, arg3: "ry_functobj_door_B01_off");
                 context.SetActor(arg1: 4102, arg2: true, arg3: "ry_functobj_door_B01_off");
                 context.SetActor(arg1: 4103, arg2: true, arg3: "ry_functobj_door_B01_off");
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__10_RANDOMPORTAL__0$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000387_BF__10_RANDOMPORTAL__0$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: true);
             }
 
@@ -145,8 +145,8 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateDoorActivate01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -213,10 +213,10 @@ namespace Maple2.Trigger._02000387_bf {
             internal State1stDoorPick(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 11, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 22, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 23, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 24, arg2: false, arg3: true, arg4: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 22, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 23, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 24, visible: false, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -234,10 +234,10 @@ namespace Maple2.Trigger._02000387_bf {
             internal State2ndDoorPick(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 12, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 21, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 23, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 24, arg2: false, arg3: true, arg4: false);
+                context.SetPortal(portalId: 12, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 21, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 23, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 24, visible: false, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -255,10 +255,10 @@ namespace Maple2.Trigger._02000387_bf {
             internal State3rdDoorPick(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 13, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 21, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 22, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 24, arg2: false, arg3: true, arg4: false);
+                context.SetPortal(portalId: 13, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 21, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 22, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 24, visible: false, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -276,10 +276,10 @@ namespace Maple2.Trigger._02000387_bf {
             internal State4rdDoorPick(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 14, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 21, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 22, arg2: false, arg3: true, arg4: false);
-                context.SetPortal(arg1: 23, arg2: false, arg3: true, arg4: false);
+                context.SetPortal(portalId: 14, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 21, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 22, visible: false, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 23, visible: false, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -333,16 +333,16 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateGameStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 14, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 21, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 22, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 23, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 24, arg2: false, arg3: false, arg4: false);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 12, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 14, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 21, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 22, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 23, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 24, visible: false, enabled: false, minimapVisible: false);
                 context.SetActor(arg1: 4101, arg2: true, arg3: "ry_functobj_door_B01_off");
                 context.SetActor(arg1: 4102, arg2: true, arg3: "ry_functobj_door_B01_off");
                 context.SetActor(arg1: 4103, arg2: true, arg3: "ry_functobj_door_B01_off");
@@ -433,7 +433,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateEndGame01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__10_RANDOMPORTAL__1$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000387_BF__10_RANDOMPORTAL__1$", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -473,9 +473,9 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateFieredNotice01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__10_RANDOMPORTAL__2$", arg4: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11000491, script: "$02000387_BF__10_RANDOMPORTAL__2$", arg4: 4);
                 context.SetSkip(state: new StateFieredNotice01Skip(context));
             }
 
@@ -509,7 +509,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateFieredNotice02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__10_RANDOMPORTAL__3$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000491, script: "$02000387_BF__10_RANDOMPORTAL__3$", arg4: 4);
                 context.SetSkip(state: new StateFieredNotice02Skip(context));
             }
 
@@ -530,8 +530,8 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

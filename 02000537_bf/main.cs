@@ -14,7 +14,7 @@ namespace Maple2.Trigger._02000537_bf {
                 context.EnableSpawnPointPc(spawnPointId: 4, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 5, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 6, isEnable: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -32,7 +32,7 @@ namespace Maple2.Trigger._02000537_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000537_BF__MAIN__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000537_BF__MAIN__0$", arg3: 3000);
                 context.CreateMonster(arg1: new[] {101, 1011, 1012, 1013, 1014, 1017, 1018, 1019}, arg2: false);
             }
 
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._02000537_bf {
             internal State703진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000537_BF__MAIN__3$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000537_BF__MAIN__3$", arg3: 3000);
                 context.CreateMonster(arg1: new[] {109, 103, 1031, 1032, 1033, 1034}, arg2: true);
             }
 
@@ -436,7 +436,7 @@ namespace Maple2.Trigger._02000537_bf {
             internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

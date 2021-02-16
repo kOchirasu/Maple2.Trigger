@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020063_bf {
     public static class _battle_3 {
         public class StateWait : TriggerState {
@@ -31,7 +33,7 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02020063_BF__BATTLE_3__0$", arg3: 5000);
+                    context.SetEventUI(arg1: 1, script: "$02020063_BF__BATTLE_3__0$", arg3: 5000);
                     return new StateBoss소환(context);
                 }
 
@@ -71,7 +73,7 @@ namespace Maple2.Trigger._02020063_bf {
             internal StateBoss_InvincibilityPhase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020063_BF__BATTLE_3__1$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020063_BF__BATTLE_3__1$", arg3: 5000);
                 context.SetUserValue(triggerId: 99990011, key: "Battle3_TurretSpawn_1", value: 1);
                 context.SetUserValue(triggerId: 99990012, key: "Battle3_TurretSpawn_2", value: 1);
                 context.SetUserValue(triggerId: 99990013, key: "Battle3_TurretSpawn_3", value: 1);
@@ -104,7 +106,7 @@ namespace Maple2.Trigger._02020063_bf {
             internal StateBoss_추가Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020063_BF__BATTLE_3__2$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020063_BF__BATTLE_3__2$");
             }
 
             public override TriggerState Execute() {
@@ -130,7 +132,7 @@ namespace Maple2.Trigger._02020063_bf {
             internal StateBoss_추가Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020063_BF__BATTLE_3__3$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020063_BF__BATTLE_3__3$");
             }
 
             public override TriggerState Execute() {

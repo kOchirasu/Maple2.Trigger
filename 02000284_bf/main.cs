@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000284_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000428, 10000430, 10000431, 10000432, 10000433}, arg2: 2);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -24,8 +24,8 @@ namespace Maple2.Trigger._02000284_bf {
             internal StateBossCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {2001}, arg2: false);
                 context.CameraSelect(arg1: 3001, arg2: true);
                 context.SetSkip(state: new StateSetup(context));
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._02000284_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 3001, arg2: false);
             }
         }
@@ -69,7 +69,7 @@ namespace Maple2.Trigger._02000284_bf {
             internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02000284_bf {
                     context.HideGuideSummary(entityId: 20002814);
                     context.DungeonClear();
                     context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308}, arg2: true, arg3: 0, arg4: 100, arg5: 0f);
-                    context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                     return new StateWaitDestroy(context);
                 }
 
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02000284_bf {
             internal StateWaitDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
+                context.SetTimer(id: "5", arg2: 5);
             }
 
             public override TriggerState Execute() {

@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02010040_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {4301, 4302, 4303}, arg2: false);
                 context.SetMesh(arg1: new[] {1300, 1301, 1302}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 2300, arg2: true, arg3: "Closed");
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02010040_bf {
                 context.SetActor(arg1: 2301, arg2: true, arg3: "Opened");
                 context.SetActor(arg1: 2302, arg2: true, arg3: "Opened");
                 context.SetAgent(arg1: new[] {3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312}, arg2: false);
-                context.SetPortal(arg1: 6, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 6, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

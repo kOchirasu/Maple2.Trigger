@@ -39,10 +39,10 @@ namespace Maple2.Trigger._02000095_bf {
             internal StateNPC대화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 892, arg3: "$02000095_BF__QUEST_MUSIC__0$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 893, arg3: "$02000095_BF__QUEST_MUSIC__1$", arg4: 2, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 894, arg3: "$02000095_BF__QUEST_MUSIC__2$", arg4: 2, arg5: 4);
-                context.SetTimer(arg1: "1", arg2: 8);
+                context.SetConversation(arg1: 1, arg2: 892, script: "$02000095_BF__QUEST_MUSIC__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 893, script: "$02000095_BF__QUEST_MUSIC__1$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 894, script: "$02000095_BF__QUEST_MUSIC__2$", arg4: 2, arg5: 4);
+                context.SetTimer(id: "1", arg2: 8);
             }
 
             public override TriggerState Execute() {
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02000095_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {101}, arg2: true);
                 context.DestroyMonster(arg1: new[] {892, 893, 894});
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
             }
 
             public override TriggerState Execute() {

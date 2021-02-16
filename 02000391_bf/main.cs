@@ -6,7 +6,7 @@ namespace Maple2.Trigger._02000391_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10001108}, arg2: 2);
                 context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032, 3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040, 3041, 3042, 3043, 3044, 3045, 3046, 3047, 3048, 3049, 3050, 3051, 3052, 3053, 3054, 3055, 3056, 3057, 3058, 3059, 3060, 3061, 3062, 3063, 3064, 3065, 3066, 3067, 3068, 3069, 3070, 3071, 3072, 3073, 3074, 3075, 3076, 3077, 3078, 3079, 3080, 3081, 3082, 3083, 3084, 3085, 3086, 3087, 3088, 3089, 3090, 3091, 3092, 3093, 3094, 3095, 3096, 3097, 3098, 3099, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132, 3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146, 3147, 3148, 3149, 3150, 3151, 3152, 3153, 3154, 3155, 3156, 3157, 3158, 3159, 3160, 3161, 3162, 3163, 3164, 3165, 3166, 3167, 3168, 3169, 3170, 3171, 3172, 3173, 3174, 3175, 3176, 3177, 3178, 3179, 3180, 3181, 3182, 3183, 3184, 3185, 3186, 3187, 3188, 3189, 3190, 3191, 3192, 3193, 3194, 3195, 3196, 3197, 3198, 3199, 3200, 3201, 3901, 3902, 3903, 3904}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -31,8 +31,8 @@ namespace Maple2.Trigger._02000391_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateStopCinematic(context));
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02000391_bf {
             internal State부선장Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 24003011, arg3: "$02000391_BF__MAIN__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 24003011, script: "$02000391_BF__MAIN__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000391_bf {
             internal State해적이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2099, arg3: "$02000391_BF__MAIN__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 2099, script: "$02000391_BF__MAIN__1$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 1099, arg2: "Attack_01_C");
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.MoveNpc(arg1: 2094, arg2: "MS2PatrolData_2094A");
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02000391_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 303, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24003011, arg3: "$02000391_BF__MAIN__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 24003011, script: "$02000391_BF__MAIN__2$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02000391_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 309, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24003010, arg3: "$02000391_BF__MAIN__3$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 24003010, script: "$02000391_BF__MAIN__3$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._02000391_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "Dungeon_Siren_Harp01");
                 context.SetNpcEmotionSequence(arg1: 1098, arg2: "Attack_01_D");
-                context.SetConversation(arg1: 1, arg2: 1099, arg3: "$02000391_BF__MAIN__4$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1099, script: "$02000391_BF__MAIN__4$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 1099, arg2: "Attack_01_D");
                 context.CameraSelect(arg1: 310, arg2: true);
                 context.SetEffect(arg1: new[] {603}, arg2: true);
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._02000391_bf {
             internal StateCamera304(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2099, arg3: "$02000391_BF__MAIN__5$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 2099, script: "$02000391_BF__MAIN__5$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 1099, arg2: "Attack_01_I");
                 context.CameraSelect(arg1: 304, arg2: true);
             }
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._02000391_bf {
             internal State세이렌연주02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1098, arg3: "$02000391_BF__MAIN__6$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1098, script: "$02000391_BF__MAIN__6$", arg4: 3, arg5: 0);
                 context.PlaySystemSoundInBox(arg2: "Dungeon_Siren_Harp01");
                 context.SetNpcEmotionSequence(arg1: 1098, arg2: "Attack_01_D");
             }
@@ -277,7 +277,7 @@ namespace Maple2.Trigger._02000391_bf {
             internal State세이렌이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1098, arg3: "$02000391_BF__MAIN__7$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1098, script: "$02000391_BF__MAIN__7$", arg4: 3, arg5: 0);
                 context.CameraSelect(arg1: 306, arg2: true);
                 context.MoveNpc(arg1: 1098, arg2: "MS2PatrolData_1098A");
             }
@@ -299,7 +299,7 @@ namespace Maple2.Trigger._02000391_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1098});
                 context.CameraSelect(arg1: 307, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24003011, arg3: "$02000391_BF__MAIN__8$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 24003011, script: "$02000391_BF__MAIN__8$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -320,7 +320,7 @@ namespace Maple2.Trigger._02000391_bf {
                 context.SpawnNpcRange(rangeId: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011}, isAutoTargeting: false);
                 context.CameraSelect(arg1: 308, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 2100, arg2: "Attack_01_A");
-                context.SetConversation(arg1: 1, arg2: 2100, arg3: "$02000391_BF__MAIN__9$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 2100, script: "$02000391_BF__MAIN__9$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -360,8 +360,8 @@ namespace Maple2.Trigger._02000391_bf {
                 context.SetEffect(arg1: new[] {603}, arg2: false);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032, 3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040, 3041, 3042, 3043, 3044, 3045, 3046, 3047, 3048, 3049, 3050, 3051, 3052, 3053, 3054, 3055, 3056, 3057, 3058, 3059, 3060, 3061, 3062, 3063, 3064, 3065, 3066, 3067, 3068, 3069, 3070, 3071, 3072, 3073, 3074, 3075, 3076, 3077, 3078, 3079, 3080, 3081, 3082, 3083, 3084, 3085, 3086, 3087, 3088, 3089, 3090, 3091, 3092, 3093, 3094, 3095, 3096, 3097, 3098, 3099, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132, 3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146, 3147, 3148, 3149, 3150, 3151, 3152, 3153, 3154, 3155, 3156, 3157, 3158, 3159, 3160, 3161, 3162, 3163, 3164, 3165, 3166, 3167, 3168, 3169, 3170, 3171, 3172, 3173, 3174, 3175, 3176, 3177, 3178, 3179, 3180, 3181, 3182, 3183, 3184, 3185, 3186, 3187, 3188, 3189, 3190, 3191, 3192, 3193, 3194, 3195, 3196, 3197, 3198, 3199, 3200, 3201}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3901, 3902, 3903, 3904}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
@@ -463,8 +463,8 @@ namespace Maple2.Trigger._02000391_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new State하프반응Wait(context));
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.CameraSelect(arg1: 307, arg2: true);
                 context.SetInteractObject(arg1: new[] {10001108}, arg2: 1);
@@ -485,8 +485,8 @@ namespace Maple2.Trigger._02000391_bf {
             internal State하프반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetSkip();
                 context.CameraReset(interpolationTime: 0.0f);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -527,12 +527,12 @@ namespace Maple2.Trigger._02000391_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateEnd(context));
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.CameraSelect(arg1: 305, arg2: true);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032, 3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040, 3041, 3042, 3043, 3044, 3045, 3046, 3047, 3048, 3049, 3050, 3051, 3052, 3053, 3054, 3055, 3056, 3057, 3058, 3059, 3060, 3061, 3062, 3063, 3064, 3065, 3066, 3067, 3068, 3069, 3070, 3071, 3072, 3073, 3074, 3075, 3076, 3077, 3078, 3079, 3080, 3081, 3082, 3083, 3084, 3085, 3086, 3087, 3088, 3089, 3090, 3091, 3092, 3093, 3094, 3095, 3096, 3097, 3098, 3099, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132, 3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146, 3147, 3148, 3149, 3150, 3151, 3152, 3153, 3154, 3155, 3156, 3157, 3158, 3159, 3160, 3161, 3162, 3163, 3164, 3165, 3166, 3167, 3168, 3169, 3170, 3171, 3172, 3173, 3174, 3175, 3176, 3177, 3178, 3179, 3180, 3181, 3182, 3183, 3184, 3185, 3186, 3187, 3188, 3189, 3190, 3191, 3192, 3193, 3194, 3195, 3196, 3197, 3198, 3199, 3200, 3201}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 2, arg2: false, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: false, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -553,8 +553,8 @@ namespace Maple2.Trigger._02000391_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039103, textId: 20039103);
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 

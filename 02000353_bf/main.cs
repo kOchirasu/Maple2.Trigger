@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5004}, arg2: true);
-                context.SetTimer(arg1: "2", arg2: 2, arg4: false);
+                context.SetTimer(id: "2", arg2: 2, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -124,8 +124,8 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_01_개방전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000353_BF__MAIN__2$", arg3: 2000);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetEventUI(arg1: 1, script: "$02000353_BF__MAIN__2$", arg3: 2000);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -143,11 +143,11 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_01_개방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new State관문_02_스킵(context));
                 context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {2001, 2002}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {2003}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -223,7 +223,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {2004}, arg2: true);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -235,9 +235,9 @@ namespace Maple2.Trigger._02000353_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -248,8 +248,8 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetSkill(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true);
                 context.SetSkip();
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -317,8 +317,8 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_02_개방전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000353_BF__MAIN__3$", arg3: 2000);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetEventUI(arg1: 1, script: "$02000353_BF__MAIN__3$", arg3: 2000);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -356,7 +356,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {2006}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -375,7 +375,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {2007}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -394,7 +394,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {2008}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -458,8 +458,8 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_03_개방전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000353_BF__MAIN__4$", arg3: 2000);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetEventUI(arg1: 1, script: "$02000353_BF__MAIN__4$", arg3: 2000);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -478,7 +478,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5003}, arg2: true);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -497,7 +497,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {2009}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -516,7 +516,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {2010}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -535,7 +535,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {2011}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -557,7 +557,7 @@ namespace Maple2.Trigger._02000353_bf {
                 context.ShowGuideSummary(entityId: 103, textId: 40009);
                 context.SetMesh(arg1: new[] {6006}, arg2: false, arg4: 0, arg5: 10f);
                 context.SetMesh(arg1: new[] {6007}, arg2: true, arg4: 0, arg5: 10f);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

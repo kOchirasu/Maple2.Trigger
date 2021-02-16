@@ -24,7 +24,7 @@ namespace Maple2.Trigger._99999931 {
             internal StateEnd안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetTimer(id: "1", arg2: 3);
                 context.SetEventUI(arg1: 5, arg3: 3000);
             }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._99999931 {
             internal State문열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 7);
+                context.SetTimer(id: "2", arg2: 7);
                 context.SetMesh(arg1: new[] {211, 212}, arg2: false);
                 context.SetMesh(arg1: new[] {551, 552}, arg2: true);
             }
@@ -63,18 +63,18 @@ namespace Maple2.Trigger._99999931 {
             internal State문닫기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetMesh(arg1: new[] {211, 212}, arg2: true);
                 context.SetMesh(arg1: new[] {551, 552}, arg2: false);
                 context.SetMesh(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208}, arg2: true);
-                context.SetPortal(arg1: 101, arg2: false, arg3: true);
-                context.SetPortal(arg1: 102, arg2: false, arg3: true);
-                context.SetPortal(arg1: 103, arg2: false, arg3: true);
-                context.SetPortal(arg1: 104, arg2: false, arg3: true);
-                context.SetPortal(arg1: 115, arg2: false, arg3: true);
-                context.SetPortal(arg1: 116, arg2: false, arg3: true);
-                context.SetPortal(arg1: 117, arg2: false, arg3: true);
-                context.SetPortal(arg1: 118, arg2: false, arg3: true);
+                context.SetPortal(portalId: 101, visible: false, enabled: true);
+                context.SetPortal(portalId: 102, visible: false, enabled: true);
+                context.SetPortal(portalId: 103, visible: false, enabled: true);
+                context.SetPortal(portalId: 104, visible: false, enabled: true);
+                context.SetPortal(portalId: 115, visible: false, enabled: true);
+                context.SetPortal(portalId: 116, visible: false, enabled: true);
+                context.SetPortal(portalId: 117, visible: false, enabled: true);
+                context.SetPortal(portalId: 118, visible: false, enabled: true);
             }
 
             public override TriggerState Execute() {

@@ -40,8 +40,8 @@ namespace Maple2.Trigger._02000048_bf {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 405, arg3: "$02000048_BF__FIRE_05__0$", arg4: 2);
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 405, script: "$02000048_BF__FIRE_05__0$", arg4: 2);
+                context.SetTimer(id: "1", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -79,12 +79,12 @@ namespace Maple2.Trigger._02000048_bf {
             internal StateMonsterDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
             }
 
             public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {405})) {
-                    context.ResetTimer(arg1: "1");
+                    context.ResetTimer(id: "1");
                 }
 
                 if (context.MonsterDead(arg1: new[] {405})) {
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02000048_bf {
             internal StateWaitDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02000048_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {405});
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetTimer(id: "1", arg2: 3);
             }
 
             public override TriggerState Execute() {

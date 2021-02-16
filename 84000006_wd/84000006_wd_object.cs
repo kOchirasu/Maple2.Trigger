@@ -47,7 +47,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateOver50(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 60, arg4: false);
+                context.SetTimer(id: "2", arg2: 60, arg4: false);
                 context.SetInteractObject(arg1: new[] {10001442, 10001443, 10001444, 10001445}, arg2: 1);
                 context.SetMesh(arg1: new[] {800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844, 845, 846, 847}, arg2: false);
             }
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateOver30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 60, arg4: false);
+                context.SetTimer(id: "2", arg2: 60, arg4: false);
                 context.SetInteractObject(arg1: new[] {10001442, 10001443, 10001445}, arg2: 1);
                 context.SetMesh(arg1: new[] {800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844, 845, 846, 847}, arg2: false);
             }
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateUnder30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 60, arg4: false);
+                context.SetTimer(id: "2", arg2: 60, arg4: false);
                 context.SetInteractObject(arg1: new[] {10001442, 10001445}, arg2: 1);
                 context.SetMesh(arg1: new[] {800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844, 845, 846, 847}, arg2: false);
             }

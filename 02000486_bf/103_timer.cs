@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000486_bf {
             internal State타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "999", arg2: 240, arg3: true, arg4: true);
+                context.SetTimer(id: "999", arg2: 240, arg3: true, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000486_bf {
             internal State설명(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000486_BF__103_TIMER__0$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02000486_BF__103_TIMER__0$", arg3: 4000);
             }
 
             public override TriggerState Execute() {
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02000486_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000486_BF__103_TIMER__1$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02000486_BF__103_TIMER__1$", arg3: 4000);
             }
 
             public override TriggerState Execute() {
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02000486_bf {
             internal State타이머종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "999");
+                context.ResetTimer(id: "999");
             }
 
             public override TriggerState Execute() {

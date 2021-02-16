@@ -26,9 +26,9 @@ namespace Maple2.Trigger._02000254_bf {
             internal State말풍선(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "8", arg2: 8);
+                context.SetTimer(id: "8", arg2: 8);
                 context.SetEffect(arg1: new[] {450}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 107, arg3: "$02000254_BF__KARL__0$", arg4: 5);
+                context.SetConversation(arg1: 1, arg2: 107, script: "$02000254_BF__KARL__0$", arg4: 5);
             }
 
             public override TriggerState Execute() {

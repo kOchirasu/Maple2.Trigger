@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000028_qd {
     public static class _main {
         public class StateWait : TriggerState {
@@ -38,8 +40,8 @@ namespace Maple2.Trigger._52000028_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -94,13 +96,13 @@ namespace Maple2.Trigger._52000028_qd {
             internal State동영상재상(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: "Starlight_expedition.swf", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new StateIshuraScript01(context);
                 }
 
@@ -116,7 +118,7 @@ namespace Maple2.Trigger._52000028_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000028_QD__MAIN__0$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000028_QD__MAIN__0$", arg4: 5, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -135,7 +137,7 @@ namespace Maple2.Trigger._52000028_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000028_QD__MAIN__1$", arg4: 6, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000028_QD__MAIN__1$", arg4: 6, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -155,7 +157,7 @@ namespace Maple2.Trigger._52000028_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1001_B");
                 context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000028_QD__MAIN__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000028_QD__MAIN__2$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -174,7 +176,7 @@ namespace Maple2.Trigger._52000028_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000028_QD__MAIN__3$", arg4: 6, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000028_QD__MAIN__3$", arg4: 6, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -188,8 +190,8 @@ namespace Maple2.Trigger._52000028_qd {
             public override void OnExit() {
                 context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "BackstoryOfRune");
                 context.CameraSelect(arg1: 301, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 

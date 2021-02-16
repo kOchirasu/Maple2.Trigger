@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52000004_qd {
             internal State메세지01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.ShowGuideSummary(entityId: 25200404, textId: 25200404);
             }
 
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000004_qd {
             internal State메세지02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.ShowGuideSummary(entityId: 25200405, textId: 25200405);
             }
 
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._52000004_qd {
             internal State메세지03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.ShowGuideSummary(entityId: 25200406, textId: 25200406);
             }
 
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52000004_qd {
             internal State메세지04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.ShowGuideSummary(entityId: 25200407, textId: 25200407);
             }
 
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._52000004_qd {
             internal State메세지05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.ShowGuideSummary(entityId: 25200408, textId: 25200408);
             }
 
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._52000004_qd {
             internal State메세지06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.ShowGuideSummary(entityId: 25200409, textId: 25200409);
             }
 

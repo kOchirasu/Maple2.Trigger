@@ -1,10 +1,12 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52010038_qd {
     public static class _main {
         public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {6299}, arg2: false);
                 context.ShadowExpeditionCloseBossGauge();
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -25,8 +27,8 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000109, arg3: 1, arg4: false, arg5: false);
                 context.CreateMonster(arg1: new[] {1805, 1806, 1201}, arg2: false);
                 context.SpawnNpcRange(rangeId: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, isAutoTargeting: false);
@@ -45,8 +47,8 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnExit() {
                 context.RemoveCinematicTalk();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -94,10 +96,10 @@ namespace Maple2.Trigger._52010038_qd {
             internal State2차폭탄방어(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "99", arg2: 60, arg3: true, arg4: true, arg5: 80);
+                context.SetTimer(id: "99", arg2: 60, arg3: true, arg4: true, arg5: 80);
                 context.SetUserValue(triggerId: 992003, key: "bombStart", value: 1);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateCinematic02종료(context));
             }
 
@@ -136,7 +138,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateCinematic02종료(context));
-                context.AddCinematicTalk(npcId: 11003536, illustId: "Neirin_surprise", msg: "$52010038_QD__MAIN__0$", duration: 7000, align: "right");
+                context.AddCinematicTalk(npcId: 11003536, illustId: "Neirin_surprise", script: "$52010038_QD__MAIN__0$", duration: 7000, align: Align.Right);
             }
 
             public override TriggerState Execute() {
@@ -154,8 +156,8 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateCinematic02종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetSkip();
                 context.SideNpcTalk(npcId: 11003537, illust: "Mason_closeEye", duration: 7000, script: "$52010038_QD__main__5$", voice: @"ko/Npc/00002095");
@@ -164,7 +166,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2008, 2009, 2010})) {
                     context.CreateMonster(arg1: new[] {4020, 4020}, arg2: false);
-                    context.ResetTimer(arg1: "99");
+                    context.ResetTimer(id: "99");
                     return new State2차폭탄방어완료조건(context);
                 }
 
@@ -217,8 +219,8 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6201, 6202, 6203, 6204}, arg2: false);
                 context.CreateMonster(arg1: new[] {2098}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateBossStopCinematic(context));
             }
 
@@ -257,7 +259,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateBossStopCinematic(context));
-                context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", msg: "$52010038_QD__MAIN__2$", duration: 5000, align: "left");
+                context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", script: "$52010038_QD__MAIN__2$", duration: 5000, align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -294,7 +296,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateCamera303(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", msg: "$52010038_QD__MAIN__3$", duration: 5000, align: "left");
+                context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", script: "$52010038_QD__MAIN__3$", duration: 5000, align: Align.Left);
                 context.CameraSelect(arg1: 303, arg2: true);
                 context.SetSkip(state: new StateBossStopCinematic(context));
             }
@@ -316,8 +318,8 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6299}, arg2: true);
                 context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 7000, script: "$52010038_QD__main__8$", voice: @"ko/Npc/00002058");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetSkip();
                 context.DestroyMonster(arg1: new[] {2098});

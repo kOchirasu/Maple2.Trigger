@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 17, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 17, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {4017}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetAgent(arg1: new[] {18101, 18102}, arg2: true);
                 context.SetEffect(arg1: new[] {5010}, arg2: false);
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._52000052_qd {
                 context.SetMesh(arg1: new[] {131000, 131001, 131002, 131003, 131004, 131005, 131006, 131007, 131008, 131009, 131010, 131011}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                 context.SetRandomMesh(arg1: new[] {331000, 331001, 331002, 331003, 331004, 331005, 331006, 331007, 331008, 331009, 331010, 331011}, arg2: true, arg3: 12, arg4: 100, arg5: 50);
                 context.SetAgent(arg1: new[] {18101, 18102}, arg2: false);
-                context.SetPortal(arg1: 17, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 17, visible: true, enabled: true, minimapVisible: false);
                 context.SetMesh(arg1: new[] {4017}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 

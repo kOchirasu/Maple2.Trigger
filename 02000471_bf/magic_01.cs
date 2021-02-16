@@ -73,9 +73,9 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetNpcEmotionSequence(arg1: 161, arg2: "Bore_A");
                 context.SetNpcEmotionSequence(arg1: 162, arg2: "Bore_A");
                 context.SetNpcEmotionSequence(arg1: 163, arg2: "Bore_A");
-                context.SetConversation(arg1: 1, arg2: 161, arg3: "$02000471_BF__MAGIC_01__0$", arg4: 3, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 162, arg3: "$02000471_BF__MAGIC_01__1$", arg4: 3, arg5: 4);
-                context.SetConversation(arg1: 1, arg2: 163, arg3: "$02000471_BF__MAGIC_01__2$", arg4: 3, arg5: 6);
+                context.SetConversation(arg1: 1, arg2: 161, script: "$02000471_BF__MAGIC_01__0$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 162, script: "$02000471_BF__MAGIC_01__1$", arg4: 3, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 163, script: "$02000471_BF__MAGIC_01__2$", arg4: 3, arg5: 6);
             }
 
             public override TriggerState Execute() {

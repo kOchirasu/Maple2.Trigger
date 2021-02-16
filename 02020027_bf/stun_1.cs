@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02020027_bf {
             internal StateBuff_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 301, arg3: "$02020027_BF__stun_1__0$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 302, arg3: "$02020027_BF__stun_1__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 301, script: "$02020027_BF__stun_1__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 302, script: "$02020027_BF__stun_1__1$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._02020027_bf {
             internal StateBuff_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 303, arg3: "$02020027_BF__stun_1__2$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 304, arg3: "$02020027_BF__stun_1__3$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 303, script: "$02020027_BF__stun_1__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 304, script: "$02020027_BF__stun_1__3$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -90,8 +90,8 @@ namespace Maple2.Trigger._02020027_bf {
             internal StateBuff_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 305, arg3: "$02020027_BF__stun_1__4$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 306, arg3: "$02020027_BF__stun_1__5$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 305, script: "$02020027_BF__stun_1__4$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 306, script: "$02020027_BF__stun_1__5$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {

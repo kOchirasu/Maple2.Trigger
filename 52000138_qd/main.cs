@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct1_wave1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$52000138_QD__MAIN__0$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52000138_QD__MAIN__0$", arg3: 3000, arg4: "0");
                 context.SetActor(arg1: 1001, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 1002, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 1003, arg2: true, arg3: "sf_quest_light_A01_On");
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._52000138_qd {
                 context.SetActor(arg1: 1026, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 1027, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 1028, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000138_QD__MAIN__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000138_QD__MAIN__1$", arg4: 3, arg5: 0);
                 context.SetSound(arg1: 10000, arg2: true);
                 context.SetSound(arg1: 7002, arg2: true);
             }
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._52000138_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4001, arg2: true, arg3: "Opened");
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000138_QD__MAIN__2$", arg4: 3, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000138_QD__MAIN__2$", arg4: 3, arg5: 4);
             }
 
             public override TriggerState Execute() {
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._52000138_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4002, arg2: true, arg3: "Opened");
-                context.SetConversation(arg1: 1, arg2: 104, arg3: "$52000138_QD__MAIN__3$", arg4: 3, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 104, script: "$52000138_QD__MAIN__3$", arg4: 3, arg5: 4);
             }
 
             public override TriggerState Execute() {
@@ -210,7 +210,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct1_wave3_move(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 105, arg3: "$52000138_QD__MAIN__4$", arg4: 3, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 105, script: "$52000138_QD__MAIN__4$", arg4: 3, arg5: 3);
                 context.SetActor(arg1: 4003, arg2: true, arg3: "Opened");
             }
 
@@ -257,8 +257,8 @@ namespace Maple2.Trigger._52000138_qd {
                 context.SetActor(arg1: 1012, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 1023, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 1024, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$52000138_QD__MAIN__5$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 111, arg3: "$52000138_QD__MAIN__6$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$52000138_QD__MAIN__5$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 111, script: "$52000138_QD__MAIN__6$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -295,7 +295,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct2_wave2_move(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 106, arg3: "$52000138_QD__MAIN__7$", arg4: 3, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 106, script: "$52000138_QD__MAIN__7$", arg4: 3, arg5: 3);
             }
 
             public override TriggerState Execute() {
@@ -333,7 +333,7 @@ namespace Maple2.Trigger._52000138_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4006, arg2: true, arg3: "Opened");
-                context.SetConversation(arg1: 1, arg2: 109, arg3: "$52000138_QD__MAIN__8$", arg4: 3, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 109, script: "$52000138_QD__MAIN__8$", arg4: 3, arg5: 3);
                 context.CreateMonster(arg1: new[] {112});
             }
 
@@ -352,7 +352,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct2_wave3_move_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 112, arg3: "$52000138_QD__MAIN__9$", arg4: 3, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 112, script: "$52000138_QD__MAIN__9$", arg4: 3, arg5: 4);
             }
 
             public override TriggerState Execute() {
@@ -398,7 +398,7 @@ namespace Maple2.Trigger._52000138_qd {
                 context.SetActor(arg1: 1020, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 1021, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 1022, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetConversation(arg1: 1, arg2: 113, arg3: "$52000138_QD__MAIN__10$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 113, script: "$52000138_QD__MAIN__10$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -434,7 +434,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct3_wave2_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 114, arg3: "$52000138_QD__MAIN__11$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 114, script: "$52000138_QD__MAIN__11$", arg4: 2, arg5: 2);
                 context.CreateMonster(arg1: new[] {116, 117, 118, 119});
             }
 
@@ -453,7 +453,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct3_wave2_move(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 116, arg3: "$52000138_QD__MAIN__12$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 116, script: "$52000138_QD__MAIN__12$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -471,10 +471,10 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateEscape(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {122});
-                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8001}, arg2: false);
                 context.SetSceneSkip(state: new StateEndready(context), arg2: "exit");
             }
 
@@ -494,7 +494,7 @@ namespace Maple2.Trigger._52000138_qd {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 7102, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 122, arg3: "$52000138_QD__MAIN__13$", arg4: 3, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 122, script: "$52000138_QD__MAIN__13$", arg4: 3, arg5: 4);
                 context.MoveNpc(arg1: 122, arg2: "MS2PatrolData_2001");
             }
 
@@ -513,7 +513,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateScheme1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 122, arg3: "$52000138_QD__MAIN__14$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 122, script: "$52000138_QD__MAIN__14$", arg4: 5, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -531,7 +531,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateScheme2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 122, arg3: "$52000138_QD__MAIN__15$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 122, script: "$52000138_QD__MAIN__15$", arg4: 5, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -549,7 +549,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateScheme3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 122, arg3: "$52000138_QD__MAIN__16$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 122, script: "$52000138_QD__MAIN__16$", arg4: 5, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -561,7 +561,7 @@ namespace Maple2.Trigger._52000138_qd {
             }
 
             public override void OnExit() {
-                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8002}, arg2: false);
             }
         }
 
@@ -570,7 +570,7 @@ namespace Maple2.Trigger._52000138_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 122, arg2: "Talk_A", arg3: 1500f);
-                context.SetConversation(arg1: 1, arg2: 122, arg3: "$52000138_QD__MAIN__17$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 122, script: "$52000138_QD__MAIN__17$", arg4: 5, arg5: 0);
                 context.SetSceneSkip();
             }
 

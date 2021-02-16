@@ -40,11 +40,11 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째SetupCinematic_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.DestroyMonster(arg1: new[] {102});
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4003}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._52020031_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcId: 0, msg: "천공의 심장을 돌려줘.", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "천공의 심장을 돌려줘.", duration: 3000);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_3003");
             }
 
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째Cinematic_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4010}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4010}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
             }
 
@@ -119,8 +119,8 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째Cinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003756, msg: "곱게 가져갈 수 있을 거라고 생각해?", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003756, msg: "꿈도 야무지다니까... 호호호", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003756, script: "곱게 가져갈 수 있을 거라고 생각해?", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003756, script: "꿈도 야무지다니까... 호호호", duration: 2000);
             }
 
             public override TriggerState Execute() {
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째Cinematic_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4012}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4012}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -176,8 +176,8 @@ namespace Maple2.Trigger._52020031_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101});
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 0);
             }
 
             public override TriggerState Execute() {
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._52020031_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CreateMonster(arg1: new[] {601}, arg2: false);
-                context.SetEventUI(arg1: 1, arg2: "하렌을 처치하세요!", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "하렌을 처치하세요!", arg3: 2000, arg4: "0");
                 context.AddBalloonTalk(spawnPointId: 601, msg: "숨통을 끊어주마.", duration: 3000, delayTick: 3000);
             }
 
@@ -238,8 +238,8 @@ namespace Maple2.Trigger._52020031_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 6, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

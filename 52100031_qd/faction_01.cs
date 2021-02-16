@@ -23,8 +23,8 @@ namespace Maple2.Trigger._52100031_qd {
             internal State석궁Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52100031_QD__FACTION_01__0$", arg4: 5, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52100031_QD__FACTION_01__1$", arg4: 5, arg5: 5);
+                context.SetConversation(arg1: 1, arg2: 1001, script: "$52100031_QD__FACTION_01__0$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1001, script: "$52100031_QD__FACTION_01__1$", arg4: 5, arg5: 5);
             }
 
             public override TriggerState Execute() {
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52100031_qd {
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2901})) {
                     context.SetInteractObject(arg1: new[] {10002058, 10002059, 10002067}, arg2: 0);
-                    context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52100031_QD__FACTION_01__2$", arg4: 5, arg5: 0);
+                    context.SetConversation(arg1: 1, arg2: 1001, script: "$52100031_QD__FACTION_01__2$", arg4: 5, arg5: 0);
                     context.RemoveBuff(arg1: 199, arg2: 99910150);
                     return new StateNPC삭제Wait(context);
                 }

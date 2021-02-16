@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000484_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5104, 5105, 5106, 5200, 5201, 5202, 5203, 5300, 5301, 5302, 5303, 5304, 5400, 5401, 5402, 5500, 5501, 5502, 5503, 5504}, arg2: false);
                 context.SetLadder(arg1: 510, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 511, arg2: false, arg3: false, arg4: 0);
@@ -81,9 +81,9 @@ namespace Maple2.Trigger._02000484_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {901, 902, 903}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000484_BF__01_CLIMBTHEWALL__0$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 902, arg3: "$02000484_BF__01_CLIMBTHEWALL__1$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 903, arg3: "$02000484_BF__01_CLIMBTHEWALL__2$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 901, script: "$02000484_BF__01_CLIMBTHEWALL__0$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 902, script: "$02000484_BF__01_CLIMBTHEWALL__1$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 903, script: "$02000484_BF__01_CLIMBTHEWALL__2$", arg4: 2, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -313,7 +313,7 @@ namespace Maple2.Trigger._02000484_bf {
             internal StateLadderOnToNextMap01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: true, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: true, minimapVisible: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039804, textId: 20039804, duration: 3000);
                 context.SetLadder(arg1: 530, arg2: true, arg3: true, arg4: 1);

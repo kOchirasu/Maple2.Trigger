@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02000213_bf {
             internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 15);
+                context.SetTimer(id: "1", arg2: 15);
             }
 
             public override TriggerState Execute() {
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02000213_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1024});
-                context.SetTimer(arg1: "1", arg2: 1200);
+                context.SetTimer(id: "1", arg2: 1200);
             }
 
             public override TriggerState Execute() {
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02000213_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
     }

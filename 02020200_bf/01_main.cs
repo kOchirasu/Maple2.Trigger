@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02020200_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 2, isEnable: false);
@@ -426,7 +426,7 @@ namespace Maple2.Trigger._02020200_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {11008}, arg2: true);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

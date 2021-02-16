@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02020100_bf {
                 context.SetUserValue(triggerId: 99990002, key: "Seed1start", value: 0);
                 context.SetUserValue(triggerId: 99990003, key: "Seed2start", value: 0);
                 context.SetUserValue(triggerId: 99990004, key: "Seed3start", value: 0);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetLadder(arg1: 2001, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 2002, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 2003, arg2: false, arg3: false, arg4: 0);
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02020100_bf {
             internal StateSeedExperience_씨앗들기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020100_BF__MAIN__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020100_BF__MAIN__0$", arg3: 5000);
                 context.SetUserValue(triggerId: 99990005, key: "Seed0start", value: 1);
             }
 
@@ -255,7 +255,7 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {9025, 9026, 9027, 9028, 9029}, arg2: false);
-                context.SetEventUI(arg1: 1, arg2: "$02020100_BF__MAIN__1$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020100_BF__MAIN__1$", arg3: 5000);
                 context.CreateMonster(arg1: new[] {111, 112, 113, 114, 115, 116}, arg2: false);
                 context.SetMesh(arg1: new[] {1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220}, arg2: false, arg3: 0, arg4: 0);
                 context.SetInteractObject(arg1: new[] {10002113}, arg2: 1);
@@ -362,7 +362,7 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990005, key: "Seed4start", value: 2);
                 context.DestroyMonster(arg1: new[] {111, 112, 113, 114, 115, 116, 117, 118, 119});
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

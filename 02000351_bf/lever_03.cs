@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02000351_bf {
             internal StateOpen(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {9000004}, arg2: true);
                 context.SetMesh(arg1: new[] {6151, 6152, 6153, 6154, 6155, 6156, 6157, 6158, 6159, 6160, 6161, 6162}, arg2: false, arg4: 200, arg5: 15f);
                 context.SetMesh(arg1: new[] {6181, 6182, 6183, 6184, 6185, 6186, 6187, 6188, 6189, 6190, 6191, 6192}, arg2: true, arg4: 200, arg5: 0f);

@@ -25,9 +25,9 @@ namespace Maple2.Trigger._63000027_cs {
             internal StateEnter01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._63000027_cs {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -90,8 +90,8 @@ namespace Maple2.Trigger._63000027_cs {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -118,8 +118,8 @@ namespace Maple2.Trigger._63000027_cs {
             internal StateLookAround01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._63000027_cs {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_1000");
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$63000027_CS__MISTERY01__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$63000027_CS__MISTERY01__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._63000027_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5400}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001560, arg3: "$63000027_CS__MISTERY01__1$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001560, script: "$63000027_CS__MISTERY01__1$", arg4: 5);
                 context.SetSkip(state: new StateVisionTalk04(context));
             }
 
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._63000027_cs {
             internal StateVisionTalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001560, arg3: "$63000027_CS__MISTERY01__2$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001560, script: "$63000027_CS__MISTERY01__2$", arg4: 5);
                 context.SetSkip(state: new StateVisionTalk04(context));
             }
 
@@ -307,8 +307,8 @@ namespace Maple2.Trigger._63000027_cs {
             internal StateVisionTalk05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -389,9 +389,9 @@ namespace Maple2.Trigger._63000027_cs {
             internal StateTimeToLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.CameraSelect(arg1: 700, arg2: true);
             }
 
@@ -431,8 +431,8 @@ namespace Maple2.Trigger._63000027_cs {
             internal StateTimeToLeave03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 701, arg2: true);
             }
 
@@ -471,7 +471,7 @@ namespace Maple2.Trigger._63000027_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5402}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 103, arg3: "$63000027_CS__MISTERY01__3$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 103, script: "$63000027_CS__MISTERY01__3$", arg4: 4, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -490,8 +490,8 @@ namespace Maple2.Trigger._63000027_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5401}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 103, arg3: "$63000027_CS__MISTERY01__4$", arg4: 4, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 103, arg3: "$63000027_CS__MISTERY01__5$", arg4: 3, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 103, script: "$63000027_CS__MISTERY01__4$", arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 103, script: "$63000027_CS__MISTERY01__5$", arg4: 3, arg5: 4);
             }
 
             public override TriggerState Execute() {
@@ -605,9 +605,9 @@ namespace Maple2.Trigger._63000027_cs {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Down_Idle_A", arg2: 10000f);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -644,8 +644,8 @@ namespace Maple2.Trigger._63000027_cs {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

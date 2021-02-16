@@ -5,8 +5,8 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4002, arg2: false, arg3: "Closed_A");
-                context.SetEventUI(arg1: 0, arg2: "0,3");
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetEventUI(arg1: 0, script: "0,3");
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {6001}, arg2: false);
                 context.SetMesh(arg1: new[] {6002}, arg2: true);
                 context.SetEffect(arg1: new[] {7999, 7001, 7002, 7003, 7999, 7998, 7801, 7802, 7803}, arg2: false);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._61000009_me {
             internal StateReady_Idle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1, arg4: false);
+                context.SetTimer(id: "1", arg2: 1, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.SetTimer(arg1: "30", arg2: 30, arg4: false);
+                context.SetTimer(id: "30", arg2: 30, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -71,10 +71,10 @@ namespace Maple2.Trigger._61000009_me {
             internal StateStart_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
                 context.PlaySystemSoundInBox(arg2: "System_Dark_Intro_Chord_01");
-                context.SetCinematicUI(arg1: 3, arg2: "$02000374_BF__MAIN__25$");
-                context.SetTimer(arg1: "5", arg2: 5, arg4: false);
+                context.SetCinematicUI(type: 3, script: "$02000374_BF__MAIN__25$");
+                context.SetTimer(id: "5", arg2: 5, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -86,9 +86,9 @@ namespace Maple2.Trigger._61000009_me {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -98,11 +98,11 @@ namespace Maple2.Trigger._61000009_me {
             public override void OnEnter() {
                 context.SetAchievement(arg1: 700, arg2: "trigger", arg3: "dailyquest_start");
                 context.SetUserValue(triggerId: 2037406, key: "timer", value: 1);
-                context.SetEventUI(arg1: 0, arg2: "1,3");
+                context.SetEventUI(arg1: 0, script: "1,3");
                 context.SetEffect(arg1: new[] {7998}, arg2: true);
                 context.SetMesh(arg1: new[] {6002}, arg2: false);
                 context.SetActor(arg1: 4001, arg2: true, arg3: "Opened_A");
-                context.SetPortal(arg1: 1, arg2: false, arg3: true, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._61000009_me {
             internal State1Round_Talk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__0$", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -168,8 +168,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State1Round_Talk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__1$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__1$", arg4: 3, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__1$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__1$", arg4: 3, arg5: 0);
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_2001");
             }
 
@@ -192,8 +192,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State1Round_Talk_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__2$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__2$", arg4: 3, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__2$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__2$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -231,8 +231,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__3$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__3$", arg4: 3, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__3$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__3$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -250,8 +250,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Talk_00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__26$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__27$", arg4: 3, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__26$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__27$", arg4: 3, arg5: 0);
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_2002");
             }
 
@@ -270,11 +270,11 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Talk_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 0, arg2: "2,3");
+                context.SetEventUI(arg1: 0, script: "2,3");
                 context.CameraSelect(arg1: 8001, arg2: true);
                 context.SetEffect(arg1: new[] {7801, 7802}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__28$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__29$", arg4: 3, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__28$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__29$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -297,8 +297,8 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_2003");
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__5$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__5$", arg4: 3, arg5: 1);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__5$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__5$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -316,8 +316,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Talk_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__6$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__6$", arg4: 3, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__6$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__6$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -359,8 +359,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Spawn_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__7$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__7$", arg4: 3, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__7$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__7$", arg4: 3, arg5: 0);
                 context.SetUserValue(triggerId: 2037402, key: "2Round_A", value: 1);
             }
 
@@ -384,8 +384,8 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_2004");
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__8$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__8$", arg4: 3, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__8$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__8$", arg4: 3, arg5: 0);
                 context.SetUserValue(triggerId: 2037403, key: "2Round_B", value: 1);
             }
 
@@ -409,8 +409,8 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_2005");
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__9$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__9$", arg4: 3, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__9$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__9$", arg4: 3, arg5: 0);
                 context.SetUserValue(triggerId: 2037404, key: "2Round_C", value: 1);
             }
 
@@ -433,8 +433,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Spawn_A_02_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__10$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__10$", arg4: 3, arg5: 1);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__10$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__10$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -452,8 +452,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Spawn_B_02_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__13$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__13$", arg4: 3, arg5: 1);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__13$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__13$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -471,8 +471,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Spawn_C_02_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__16$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__16$", arg4: 3, arg5: 1);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__16$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__16$", arg4: 3, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -554,8 +554,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Spawn_A_B_C(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__11$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__11$", arg4: 3, arg5: 1);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__11$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__11$", arg4: 3, arg5: 1);
                 context.SetUserValue(triggerId: 2037404, key: "2Round_C", value: 1);
             }
 
@@ -574,8 +574,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Spawn_A_C_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__12$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__12$", arg4: 3, arg5: 1);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__12$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__12$", arg4: 3, arg5: 1);
                 context.SetUserValue(triggerId: 2037403, key: "2Round_B", value: 1);
             }
 
@@ -658,8 +658,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Spawn_B_A_C(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__14$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__14$", arg4: 3, arg5: 1);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__14$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__14$", arg4: 3, arg5: 1);
                 context.SetUserValue(triggerId: 2037404, key: "2Round_C", value: 1);
             }
 
@@ -678,8 +678,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Spawn_B_C_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__15$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__15$", arg4: 3, arg5: 1);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__15$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__15$", arg4: 3, arg5: 1);
                 context.SetUserValue(triggerId: 2037402, key: "2Round_A", value: 1);
             }
 
@@ -762,8 +762,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Spawn_C_A_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__18$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__18$", arg4: 3, arg5: 1);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__18$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__18$", arg4: 3, arg5: 1);
                 context.SetUserValue(triggerId: 2037403, key: "2Round_B", value: 1);
             }
 
@@ -782,8 +782,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State2Round_Spawn_C_B_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__17$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__17$", arg4: 3, arg5: 1);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__17$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__17$", arg4: 3, arg5: 1);
                 context.SetUserValue(triggerId: 2037402, key: "2Round_A", value: 1);
             }
 
@@ -834,8 +834,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State3Round_Talk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__19$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__19$", arg4: 2, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__19$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__19$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -853,9 +853,9 @@ namespace Maple2.Trigger._61000009_me {
             internal State3Round_Talk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 0, arg2: "3,3");
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__20$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__20$", arg4: 2, arg5: 0);
+                context.SetEventUI(arg1: 0, script: "3,3");
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__20$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__20$", arg4: 2, arg5: 0);
                 context.SetUserValue(triggerId: 2037405, key: "3Round_Effect", value: 1);
             }
 
@@ -874,8 +874,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State3Round_Talk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__21$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__21$", arg4: 2, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__21$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__21$", arg4: 2, arg5: 0);
                 context.SetEffect(arg1: new[] {7206}, arg2: true);
             }
 
@@ -895,7 +895,7 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {199}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 199, arg3: "$02000374_BF__MAIN__30$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 199, script: "$02000374_BF__MAIN__30$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -914,8 +914,8 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {199});
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__31$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__32$", arg4: 2, arg5: 1);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__31$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__32$", arg4: 2, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -933,8 +933,8 @@ namespace Maple2.Trigger._61000009_me {
             internal State3Round_Talk06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__22$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__22$", arg4: 2, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__22$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__22$", arg4: 2, arg5: 0);
                 context.SetEffect(arg1: new[] {7205}, arg2: true);
             }
 
@@ -953,7 +953,7 @@ namespace Maple2.Trigger._61000009_me {
             internal State3Round_Talk07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__23$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__23$", arg4: 2, arg5: 0);
                 context.CreateMonster(arg1: new[] {105}, arg2: false);
             }
 
@@ -975,8 +975,8 @@ namespace Maple2.Trigger._61000009_me {
                 context.MoveUser(arg1: 61000009, arg2: 6);
                 context.SetActor(arg1: 4002, arg2: true, arg3: "Opened_A");
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_2999");
-                context.SetEventUI(arg1: 7, arg2: "$02000374_BF__MAIN__33$", arg3: 3000, arg4: "0");
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__24$", arg4: 2, arg5: 1);
+                context.SetEventUI(arg1: 7, script: "$02000374_BF__MAIN__33$", arg3: 3000, arg4: "0");
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__24$", arg4: 2, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -995,8 +995,8 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4002, arg2: true, arg3: "Closed_A");
-                context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__34$", arg3: 3000);
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__35$", arg4: 2, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__34$", arg3: 3000);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__MAIN__35$", arg4: 2, arg5: 0);
                 context.SetEffect(arg1: new[] {4102}, arg2: true);
             }
 
@@ -1017,7 +1017,7 @@ namespace Maple2.Trigger._61000009_me {
             public override void OnEnter() {
                 context.SetActor(arg1: 4002, arg2: false, arg3: "Closed_A");
                 context.DestroyMonster(arg1: new[] {110});
-                context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000292_bf {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000622}, arg2: 2);
                 context.CreateMonster(arg1: new[] {1100});
-                context.SetConversation(arg1: 1, arg2: 1100, arg3: "$02000292_BF__NPC3__0$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 1100, script: "$02000292_BF__NPC3__0$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1100, arg3: "$02000292_BF__NPC3__1$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 1100, script: "$02000292_BF__NPC3__1$", arg4: 2);
             }
 
             public override TriggerState Execute() {

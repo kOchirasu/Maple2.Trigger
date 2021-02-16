@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000336_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362, duration: 3000);
                 context.SetMesh(arg1: new[] {8010, 8011, 8012, 8013, 8014}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
             }
 
             public override TriggerState Execute() {

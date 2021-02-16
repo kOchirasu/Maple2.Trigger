@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000246_bf {
             internal State초재기1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "99", arg2: 5);
+                context.SetTimer(id: "99", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000246_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {2001}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000246_BF__TIMER__0$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000246_BF__TIMER__0$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02000246_bf {
             internal State유저이동음성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetTimer(id: "1", arg2: 3);
             }
 
             public override TriggerState Execute() {

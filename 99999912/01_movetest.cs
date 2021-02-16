@@ -1,10 +1,12 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._99999912 {
     public static class _01_movetest {
         public class StateSetup : TriggerState {
             internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateFieldGame(type: "GuildVsGame");
+                context.CreateFieldGame(type: FieldGame.GuildVsGame);
                 context.UserTagSymbol(symbol1: "guild_game_red", symbol2: "guild_game_blue");
             }
 
@@ -44,16 +46,16 @@ namespace Maple2.Trigger._99999912 {
                 context.DebugString(message: "강제이동 트리거가 발동됩니다.");
                 context.MoveToPortal(userTagId: 1, portalId: 1);
                 context.MoveToPortal(userTagId: 2, portalId: 2);
-                context.ShowEventResult(type: "notice", text: @"1팀 안녕?\n줄바꿈확인", duration: 3000, userTagId: 1);
-                context.ShowEventResult(type: "notice", text: @"2팀 안녕?\n줄바꿈확인", duration: 3000, userTagId: 2);
+                context.ShowEventResult(type: EventResultType.Notice, text: @"1팀 안녕?\n줄바꿈확인", duration: 3000, userTagId: 1);
+                context.ShowEventResult(type: EventResultType.Notice, text: @"2팀 안녕?\n줄바꿈확인", duration: 3000, userTagId: 2);
                 context.PlaySystemSoundByUserTag(userTagId: 1, soundKey: "System_ShowGuideSummary_01");
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_PartTimeJob_Right_01");
                 context.GuildVsGameScoreByUser(triggerBoxId: 9000, score: true, desc: "9000 트리거 박스 안의 유저수가 많은 팀에 1점을 추가한다.");
-                context.GuildVsGameGiveReward(type: "exp", teamId: 1, isWin: true, desc: "길드 경험치를 지급한다.");
-                context.GuildVsGameGiveReward(type: "fund", teamId: 1, isWin: true, desc: "길드 기금을 지급한다.");
+                context.GuildVsGameGiveReward(type: GuildReward.Experience, teamId: 1, isWin: true, desc: "길드 경험치를 지급한다.");
+                context.GuildVsGameGiveReward(type: GuildReward.Funds, teamId: 1, isWin: true, desc: "길드 기금을 지급한다.");
                 context.GuildVsGameGiveContribution(teamId: 1, isWin: true, desc: "길드 기여도를 지급한다.");
-                context.GuildVsGameGiveReward(type: "exp", teamId: 2, isWin: false, desc: "길드 경험치를 지급한다.");
-                context.GuildVsGameGiveReward(type: "fund", teamId: 2, isWin: false, desc: "길드 기금을 지급한다.");
+                context.GuildVsGameGiveReward(type: GuildReward.Experience, teamId: 2, isWin: false, desc: "길드 경험치를 지급한다.");
+                context.GuildVsGameGiveReward(type: GuildReward.Funds, teamId: 2, isWin: false, desc: "길드 기금을 지급한다.");
                 context.GuildVsGameGiveContribution(teamId: 2, isWin: false, desc: "길드 기여도를 지급한다.");
                 context.GuildVsGameResult(desc: "결과창을 출력");
                 context.GuildVsGameLogResult(desc: "로그를 남긴다");

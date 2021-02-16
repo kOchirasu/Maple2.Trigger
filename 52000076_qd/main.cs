@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000076_qd {
     public static class _main {
         public class StateWait : TriggerState {
@@ -17,7 +19,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetMesh(arg1: new[] {3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {600, 601, 602, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6201, 6202, 6203, 6204, 6205}, arg2: false);
                 context.SetSkill(arg1: new[] {701, 702, 703, 704}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetOnetimeEffect(id: 11, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
@@ -48,9 +50,9 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateCheckQuestCondition(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -113,8 +115,8 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateQuestOnGoing03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -132,8 +134,8 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateDungeonReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -151,13 +153,13 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: "KatvanIntroMovie.swf", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new State진행01벽Remove(context);
                 }
 
@@ -442,8 +444,8 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetSkip(state: new State레논구출종료(context));
                 context.DestroyMonster(arg1: new[] {2001});
@@ -466,7 +468,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6101}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000349_BF__MAIN__3$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$02000349_BF__MAIN__3$", arg4: 3);
                 context.SetSkip(state: new State레논구출종료(context));
             }
 
@@ -486,7 +488,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6102}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000349_BF__MAIN__4$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$02000349_BF__MAIN__4$", arg4: 3);
                 context.SetSkip(state: new State레논구출종료(context));
             }
 
@@ -505,7 +507,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal State레논구출종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {301}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {301}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -519,8 +521,8 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 301, arg2: false);
                 context.MoveNpc(arg1: 2002, arg2: "MS2PatrolData2002_AB");
                 context.ShowGuideSummary(entityId: 20003501, textId: 20003501, duration: 4000);
@@ -791,8 +793,8 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.SetSceneSkip(state: new State카드반StopCinematic(context), arg2: "nextState");
                 context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 302, arg2: true);
             }
 
@@ -811,7 +813,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal State카드반Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__5$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__5$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -829,7 +831,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal State카드반Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__6$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__6$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -848,7 +850,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 303, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000349_BF__MAIN__7$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$02000349_BF__MAIN__7$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -867,7 +869,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__8$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__8$", arg4: 6);
             }
 
             public override TriggerState Execute() {
@@ -886,7 +888,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__9$", arg4: 8);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__9$", arg4: 8);
             }
 
             public override TriggerState Execute() {
@@ -906,7 +908,7 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.CreateMonster(arg1: new[] {1025, 1026}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__10$", arg4: 7);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__10$", arg4: 7);
             }
 
             public override TriggerState Execute() {
@@ -931,7 +933,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: false);
                 context.DestroyMonster(arg1: new[] {2007});
                 context.CreateMonster(arg1: new[] {2006}, arg2: false);
-                context.CameraSelectPath(arg1: new[] {302}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {302}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -945,8 +947,8 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 302, arg2: false);
                 context.CameraSelect(arg1: 303, arg2: false);
                 context.MoveNpc(arg1: 2006, arg2: "MS2PatrolData2006_A");
@@ -991,8 +993,8 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateBossNpcChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: false);
                 context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
@@ -1074,7 +1076,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.CreateMonster(arg1: new[] {1400}, arg2: false);
                 context.MoveNpc(arg1: 1400, arg2: "MS2PatrolData_1400");
                 context.CameraSelect(arg1: 312, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 1400, arg3: "$52000076_QD__MAIN__0$", arg4: 4, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 1400, script: "$52000076_QD__MAIN__0$", arg4: 4, arg5: 2);
                 context.SetSceneSkip(state: new StateEvilKatvanLeave04(context), arg2: "nextState");
             }
 
@@ -1113,8 +1115,8 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1300, arg2: "MS2PatrolData_1300");
                 context.MoveUserPath(arg1: "MS2PatrolData_1000");
-                context.SetConversation(arg1: 1, arg2: 1300, arg3: "$52000076_QD__MAIN__1$", arg4: 2, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000076_QD__MAIN__2$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 1300, script: "$52000076_QD__MAIN__1$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000076_QD__MAIN__2$", arg4: 2, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -1133,7 +1135,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 11, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
-                context.SetConversation(arg1: 1, arg2: 1200, arg3: "$52000076_QD__MAIN__3$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1200, script: "$52000076_QD__MAIN__3$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1154,7 +1156,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 314, arg2: true);
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__4$", duration: 5000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__4$", duration: 5000, align: Align.Center);
                 context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
             }
 
@@ -1192,7 +1194,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__5$", duration: 5000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__5$", duration: 5000, align: Align.Center);
                 context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
             }
 
@@ -1230,7 +1232,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000076_QD__MAIN__6$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__6$", arg4: 5);
                 context.SetNpcEmotionSequence(arg1: 1300, arg2: "Talk_A");
             }
 
@@ -1307,7 +1309,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1300, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000076_QD__MAIN__7$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__7$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -1345,7 +1347,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 12, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__8$", arg4: 7);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__8$", arg4: 7);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
 
@@ -1382,7 +1384,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 13, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__9$", arg4: 7);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__9$", arg4: 7);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
 
@@ -1419,7 +1421,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 14, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__10$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__10$", arg4: 6);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
 
@@ -1478,7 +1480,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__11$", duration: 5000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__11$", duration: 5000, align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -1517,7 +1519,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__12$", duration: 7000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__12$", duration: 7000, align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -1556,7 +1558,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000523, arg3: "$52000076_QD__MAIN__13$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000523, script: "$52000076_QD__MAIN__13$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -1595,7 +1597,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 15, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__14$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__14$", arg4: 6);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
 
@@ -1636,7 +1638,7 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Idle_A");
                 context.MoveNpc(arg1: 1300, arg2: "MS2PatrolData_1302");
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000076_QD__MAIN__15$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__15$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -1674,7 +1676,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 16, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__16$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__16$", arg4: 5);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
 
@@ -1716,7 +1718,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 17, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__17$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__17$", arg4: 6);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
 
@@ -1758,7 +1760,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 18, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__18$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__18$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -1798,7 +1800,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1300, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000076_QD__MAIN__19$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__19$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -1854,7 +1856,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 19, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__20$", arg4: 9);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__20$", arg4: 9);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
 
@@ -1895,7 +1897,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__21$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__21$", arg4: 6);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
 
@@ -1972,7 +1974,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1300, arg2: "MS2PatrolData_1303");
-                context.SetConversation(arg1: 1, arg2: 1300, arg3: "$52000076_QD__MAIN__22$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1300, script: "$52000076_QD__MAIN__22$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2050,7 +2052,7 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateEveTalk31Skip(context), arg2: "nextState");
                 context.SetNpcEmotionSequence(arg1: 1310, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000076_QD__MAIN__23$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__23$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -2088,7 +2090,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1310, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000076_QD__MAIN__24$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__24$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -2126,7 +2128,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1410, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__25$", duration: 6000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__25$", duration: 6000, align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -2164,7 +2166,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1410, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__26$", duration: 6000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__26$", duration: 6000, align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -2202,7 +2204,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1310, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000076_QD__MAIN__27$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__27$", arg4: 6);
             }
 
             public override TriggerState Execute() {
@@ -2240,7 +2242,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1410, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__28$", duration: 3000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__28$", duration: 3000, align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -2278,7 +2280,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk31(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__29$", duration: 5000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__29$", duration: 5000, align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -2319,7 +2321,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "saveEveIntheDark");
                 context.SetEffect(arg1: new[] {6205}, arg2: true);
                 context.SetMesh(arg1: new[] {3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: true, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -2337,8 +2339,8 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateQuestComplete02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraReset(interpolationTime: 1.0f);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
@@ -2376,7 +2378,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateGotoTria01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1310, arg3: "$52000076_QD__MAIN__30$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1310, script: "$52000076_QD__MAIN__30$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -2425,8 +2427,8 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 

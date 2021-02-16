@@ -23,10 +23,10 @@ namespace Maple2.Trigger._52020025_qd {
             internal StateCamera_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "으아아악!!!", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 0, script: "으아아악!!!", arg4: 2);
                 context.SetSceneSkip(state: new StateCamera_종료(context), arg2: "exit");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetMesh(arg1: new[] {1001}, arg2: false);
             }
 
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52020025_qd {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Bossmove");
                 context.SetNpcRotation(arg1: 0, arg2: 180);
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "응??", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 0, script: "응??", arg4: 2);
                 context.CameraSelect(arg1: 502, arg2: true);
             }
 
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._52020025_qd {
 
             public override void OnEnter() {
                 context.SetNpcRotation(arg1: 0, arg2: 180);
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "튀자!!", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 0, script: "튀자!!", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -106,8 +106,8 @@ namespace Maple2.Trigger._52020025_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101});
                 context.CameraReset(interpolationTime: 0.1f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: false);
             }
 
@@ -126,7 +126,7 @@ namespace Maple2.Trigger._52020025_qd {
                 context.SetLocalCamera(cameraId: 511, enable: true);
                 context.MoveUserPath(arg1: "MS2PatrolData_PCrun");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_Bossrun");
-                context.SetEventUI(arg1: 1, arg2: "무서운 몬스터로부터 도망치세요", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "무서운 몬스터로부터 도망치세요", arg3: 4000, arg4: "0");
             }
 
             public override TriggerState Execute() {

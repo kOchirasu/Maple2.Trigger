@@ -15,7 +15,7 @@ namespace Maple2.Trigger._52000011_qd {
                 context.SetActor(arg1: 207, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 208, arg2: true, arg3: "Closed");
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006}, arg2: true);
             }
 
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._52000011_qd {
             internal StateStartCinematicDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._52000011_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -77,9 +77,9 @@ namespace Maple2.Trigger._52000011_qd {
             internal State오스칼01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {302}, arg2: true);
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000011_QD__MAIN__0$", arg4: 4);
+                context.CameraSelectPath(pathIds: new[] {302}, arg2: true);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetConversation(arg1: 2, arg2: 11000015, script: "$52000011_QD__MAIN__0$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -97,8 +97,8 @@ namespace Maple2.Trigger._52000011_qd {
             internal State오스칼02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5);
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000011_QD__MAIN__1$", arg4: 4);
+                context.SetTimer(id: "5", arg2: 5);
+                context.SetConversation(arg1: 2, arg2: 11000015, script: "$52000011_QD__MAIN__1$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -116,8 +116,8 @@ namespace Maple2.Trigger._52000011_qd {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 301, arg2: false);
             }
 
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._52000011_qd {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
                 context.DestroyMonster(arg1: new[] {2001});
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -434,8 +434,8 @@ namespace Maple2.Trigger._52000011_qd {
             internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "30", arg2: 30);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetTimer(id: "30", arg2: 30);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

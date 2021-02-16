@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetActor(arg1: 8004, arg2: false, arg3: "Dmg_A");
                 context.SetActor(arg1: 8005, arg2: false, arg3: "Dmg_A");
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 993, arg3: "$02010052_BF__TORCHLIGHT_03__0$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 993, script: "$02010052_BF__TORCHLIGHT_03__0$", arg4: 3);
             }
         }
 
@@ -80,10 +80,10 @@ namespace Maple2.Trigger._02010052_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7503}, arg2: true);
                 context.SetMesh(arg1: new[] {6021, 6022, 6023, 6024, 6025, 6026, 6027, 6028, 6029, 6030, 6031, 6032}, arg2: false, arg3: 800, arg4: 100, arg5: 8f);
-                context.SetConversation(arg1: 1, arg2: 9999, arg3: "$02010052_BF__TORCHLIGHT_03__1$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 9999, script: "$02010052_BF__TORCHLIGHT_03__1$", arg4: 3);
                 context.HideGuideSummary(entityId: 200);
-                context.SetEventUI(arg1: 1, arg2: "$02010052_BF__TORCHLIGHT_03__2$", arg3: 3000);
-                context.SetTimer(arg1: "1", arg2: 1, arg4: false);
+                context.SetEventUI(arg1: 1, script: "$02010052_BF__TORCHLIGHT_03__2$", arg3: 3000);
+                context.SetTimer(id: "1", arg2: 1, arg4: false);
             }
 
             public override TriggerState Execute() {

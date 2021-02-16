@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02020112_bf {
             internal State안전장치Enabled(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 8, arg2: true, arg3: true, arg4: false);
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 8, visible: true, enabled: true, minimapVisible: false);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10002118}, arg2: 1);
             }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02020112_bf {
             internal State안전장치_작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020112_BF__SAFEZONE2__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020112_BF__SAFEZONE2__0$", arg3: 5000);
                 context.SetUserValue(triggerId: 99990017, key: "Safe", value: 1);
             }
 

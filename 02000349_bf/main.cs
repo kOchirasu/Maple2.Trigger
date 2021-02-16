@@ -1,4 +1,5 @@
 using Maple2.Trigger._dungeon_common;
+using Maple2.Trigger.Enum;
 
 namespace Maple2.Trigger._02000349_bf {
     public static class _main {
@@ -19,7 +20,7 @@ namespace Maple2.Trigger._02000349_bf {
                 context.SetMesh(arg1: new[] {3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {600, 601, 602, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6201, 6202, 6203, 6204, 6205}, arg2: false);
                 context.SetSkill(arg1: new[] {701, 702, 703, 704}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: true);
             }
 
@@ -38,13 +39,13 @@ namespace Maple2.Trigger._02000349_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: "KatvanIntroMovie.swf", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new State진행01벽Remove(context);
                 }
 
@@ -329,8 +330,8 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetSkip(state: new State레논구출종료(context));
                 context.DestroyMonster(arg1: new[] {2001});
@@ -353,7 +354,7 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6101}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000349_BF__MAIN__3$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$02000349_BF__MAIN__3$", arg4: 3);
                 context.SetSkip(state: new State레논구출종료(context));
             }
 
@@ -373,7 +374,7 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6102}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000349_BF__MAIN__4$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$02000349_BF__MAIN__4$", arg4: 3);
                 context.SetSkip(state: new State레논구출종료(context));
             }
 
@@ -392,7 +393,7 @@ namespace Maple2.Trigger._02000349_bf {
             internal State레논구출종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {301}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {301}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -406,8 +407,8 @@ namespace Maple2.Trigger._02000349_bf {
             internal State진행07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 301, arg2: false);
                 context.MoveNpc(arg1: 2002, arg2: "MS2PatrolData2002_AB");
                 context.ShowGuideSummary(entityId: 20003501, textId: 20003501, duration: 4000);
@@ -677,8 +678,8 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.SetSkip(state: new State카드반StopCinematic(context));
             }
@@ -698,7 +699,7 @@ namespace Maple2.Trigger._02000349_bf {
             internal State카드반Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__5$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__5$", arg4: 3);
                 context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
@@ -717,7 +718,7 @@ namespace Maple2.Trigger._02000349_bf {
             internal State카드반Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__6$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__6$", arg4: 4);
                 context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
@@ -737,7 +738,7 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 303, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000349_BF__MAIN__7$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000064, script: "$02000349_BF__MAIN__7$", arg4: 4);
                 context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
@@ -757,7 +758,7 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__8$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__8$", arg4: 6);
                 context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
@@ -777,7 +778,7 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__9$", arg4: 8);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__9$", arg4: 8);
                 context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
@@ -798,7 +799,7 @@ namespace Maple2.Trigger._02000349_bf {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.CreateMonster(arg1: new[] {1025, 1026}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__10$", arg4: 7);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__10$", arg4: 7);
                 context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
@@ -823,7 +824,7 @@ namespace Maple2.Trigger._02000349_bf {
                 context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: false);
                 context.DestroyMonster(arg1: new[] {2007});
                 context.CreateMonster(arg1: new[] {2006});
-                context.CameraSelectPath(arg1: new[] {302}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {302}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -837,8 +838,8 @@ namespace Maple2.Trigger._02000349_bf {
             internal State진행16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 302, arg2: false);
                 context.CameraSelect(arg1: 303, arg2: false);
                 context.MoveNpc(arg1: 2006, arg2: "MS2PatrolData2006_A");
@@ -899,7 +900,7 @@ namespace Maple2.Trigger._02000349_bf {
             internal StateDungeon종료StopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2008, arg3: "$02000349_BF__MAIN__11$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 2008, script: "$02000349_BF__MAIN__11$", arg4: 3);
                 context.DungeonClear();
             }
 
@@ -918,11 +919,11 @@ namespace Maple2.Trigger._02000349_bf {
             internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2008, arg3: "$02000349_BF__MAIN__13$", arg4: 4);
+                context.SetConversation(arg1: 1, arg2: 2008, script: "$02000349_BF__MAIN__13$", arg4: 4);
                 context.MoveNpc(arg1: 2008, arg2: "MS2PatrolData2008_A");
                 context.SetEffect(arg1: new[] {6205}, arg2: true);
                 context.SetMesh(arg1: new[] {3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

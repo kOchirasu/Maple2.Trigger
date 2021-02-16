@@ -44,7 +44,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGameGuideR1_30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 29, arg3: true, arg4: false);
+                context.SetTimer(id: "1", arg2: 29, arg3: true, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGameGuideR2_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 19, arg3: true, arg4: false);
+                context.SetTimer(id: "1", arg2: 19, arg3: true, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGameGuideR3_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14, arg3: true, arg4: false);
+                context.SetTimer(id: "1", arg2: 14, arg3: true, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGameGuideR4_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 9, arg3: true, arg4: false);
+                context.SetTimer(id: "1", arg2: 9, arg3: true, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGameGuideR5_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 9, arg3: true, arg4: false);
+                context.SetTimer(id: "1", arg2: 9, arg3: true, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGambleGuideR4_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 14, arg3: true, arg4: false);
+                context.SetTimer(id: "1", arg2: 14, arg3: true, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -256,7 +256,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateJackpotGuideR4_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 19, arg3: true, arg4: false);
+                context.SetTimer(id: "1", arg2: 19, arg3: true, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -351,7 +351,7 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "GameGuide", value: 0);
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
 
             public override TriggerState Execute() {

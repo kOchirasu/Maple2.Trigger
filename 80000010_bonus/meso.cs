@@ -93,7 +93,7 @@ namespace Maple2.Trigger._80000010_bonus {
                 context.CreateItem(arg1: new[] {269});
                 context.CreateItem(arg1: new[] {270});
                 context.CreateItem(arg1: new[] {9001, 9002, 9003, 9004, 9005});
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
             }
 
             public override TriggerState Execute() {

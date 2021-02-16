@@ -26,7 +26,7 @@ namespace Maple2.Trigger._52000002_qd {
             internal StateNPC교체(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetInteractObject(arg1: new[] {10000612}, arg2: 2);
                 context.CreateMonster(arg1: new[] {1091});
             }
@@ -50,10 +50,10 @@ namespace Maple2.Trigger._52000002_qd {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "6", arg2: 6);
+                context.SetTimer(id: "6", arg2: 6);
                 context.MoveNpc(arg1: 1091, arg2: "MS2PatrolData_1091");
                 context.SetEffect(arg1: new[] {611}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 1091, arg3: "$52000002_QD__SHEEP_01__0$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 1091, script: "$52000002_QD__SHEEP_01__0$", arg4: 2);
             }
 
             public override TriggerState Execute() {

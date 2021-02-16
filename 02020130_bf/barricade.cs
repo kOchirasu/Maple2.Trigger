@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02020130_bf {
             internal StateCount(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020130_BF__BARRICADE__0$", arg3: 5500);
+                context.SetEventUI(arg1: 1, script: "$02020130_BF__BARRICADE__0$", arg3: 5500);
             }
 
             public override TriggerState Execute() {

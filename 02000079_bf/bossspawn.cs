@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000079_bf {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.CreateMonster(arg1: new[] {100}, arg2: false);
             }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000079_bf {
             internal StateEnd체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

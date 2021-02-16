@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02010055_bf {
     public static class _scene02 {
         public class StateWaitStart : TriggerState {
@@ -125,8 +127,8 @@ namespace Maple2.Trigger._02010055_bf {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.CreateMonster(arg1: new[] {1002, 1003, 1004}, arg2: false);
                 context.SetSkip(state: new StateNPC이동(context));
@@ -148,7 +150,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateNPC이동(context));
-                context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$02010055_BF__SCENE02__0$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001292, script: "$02010055_BF__SCENE02__0$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -167,7 +169,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateNPC이동(context));
-                context.SetConversation(arg1: 2, arg2: 11001218, arg3: "$02010055_BF__SCENE02__1$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001218, script: "$02010055_BF__SCENE02__1$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -186,7 +188,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateNPC이동(context));
-                context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$02010055_BF__SCENE02__2$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001292, script: "$02010055_BF__SCENE02__2$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -204,8 +206,8 @@ namespace Maple2.Trigger._02010055_bf {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 302, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_A");
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_A");
@@ -229,8 +231,8 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetTimer(arg1: "21", arg2: 10);
-                context.CameraSelectPath(arg1: new[] {601, 602}, arg2: false);
+                context.SetTimer(id: "21", arg2: 10);
+                context.CameraSelectPath(pathIds: new[] {601, 602}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -248,12 +250,12 @@ namespace Maple2.Trigger._02010055_bf {
             internal State영상재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
+                context.CreateWidget(type: WidgetType.SceneMovie);
                 context.PlaySceneMovie(fileName: @"common\KarKarBossEvent.usm", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new StateEnd(context);
                 }
 

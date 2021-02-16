@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52000070_qd {
                 context.SetMesh(arg1: new[] {3100, 4100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {4200}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 3000, arg2: true, arg3: "Closed");
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetEffect(arg1: new[] {6000, 6100}, arg2: false);
             }
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateLoadingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -47,8 +47,8 @@ namespace Maple2.Trigger._52000070_qd {
             internal StatePCEnter01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._52000070_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001963, arg3: "$52000070_QD__TRAP01__0$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001963, script: "$52000070_QD__TRAP01__0$", arg4: 5);
                 context.SetSkip(state: new StateEnemyNpcTalk01Skip(context));
             }
 
@@ -245,7 +245,7 @@ namespace Maple2.Trigger._52000070_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001963, arg3: "$52000070_QD__TRAP01__1$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001963, script: "$52000070_QD__TRAP01__1$", arg4: 5);
                 context.SetSkip(state: new StateEnemyNpcTalk02Skip(context));
             }
 
@@ -284,8 +284,8 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateEnemyMobChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104});
                 context.CreateMonster(arg1: new[] {901, 902, 903, 904}, arg2: false);
@@ -306,8 +306,8 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateBattleEnd01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -405,7 +405,7 @@ namespace Maple2.Trigger._52000070_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001964, arg3: "$52000070_QD__TRAP01__2$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001964, script: "$52000070_QD__TRAP01__2$", arg4: 4);
                 context.SetSkip(state: new StateFriendNpcTalk01Skip(context));
             }
 
@@ -441,7 +441,7 @@ namespace Maple2.Trigger._52000070_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001964, arg3: "$52000070_QD__TRAP01__3$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001964, script: "$52000070_QD__TRAP01__3$", arg4: 4);
                 context.SetSkip(state: new StateFriendNpcTalk02Skip(context));
             }
 
@@ -519,7 +519,7 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateWayOpen03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$52000070_QD__TRAP01__4$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$52000070_QD__TRAP01__4$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -555,9 +555,9 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateMoveToComplete(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.MoveUser(arg1: 02000208, arg2: 1);
             }
 

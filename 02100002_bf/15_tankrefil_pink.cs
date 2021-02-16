@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 105, key: "Gauge", value: 100);
-                context.SetTimer(arg1: "100100", arg2: 15, arg3: true);
+                context.SetTimer(id: "100100", arg2: 15, arg3: true);
                 context.SetActor(arg1: 4005, arg2: true, arg3: "Interaction_tankpink_A01_100");
                 context.SetActor(arg1: 4105, arg2: true, arg3: "Interaction_tankpink_A01_100");
             }
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5305, 5405, 5505}, arg2: true);
-                context.ResetTimer(arg1: "100100");
+                context.ResetTimer(id: "100100");
             }
 
             public override TriggerState Execute() {
@@ -75,8 +75,8 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 105, key: "Gauge", value: 75);
-                context.ResetTimer(arg1: "100100");
-                context.SetTimer(arg1: "10075", arg2: 15, arg3: true);
+                context.ResetTimer(id: "100100");
+                context.SetTimer(id: "10075", arg2: 15, arg3: true);
                 context.SetActor(arg1: 4005, arg2: true, arg3: "Interaction_tankpink_A01_75");
                 context.SetActor(arg1: 4105, arg2: true, arg3: "Interaction_tankpink_A01_75");
             }
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5305, 5405, 5505}, arg2: true);
-                context.ResetTimer(arg1: "10075");
+                context.ResetTimer(id: "10075");
             }
 
             public override TriggerState Execute() {
@@ -124,8 +124,8 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 105, key: "Gauge", value: 50);
-                context.ResetTimer(arg1: "10075");
-                context.SetTimer(arg1: "10050", arg2: 15, arg3: true);
+                context.ResetTimer(id: "10075");
+                context.SetTimer(id: "10050", arg2: 15, arg3: true);
                 context.SetActor(arg1: 4005, arg2: true, arg3: "Interaction_tankpink_A01_50");
                 context.SetActor(arg1: 4105, arg2: true, arg3: "Interaction_tankpink_A01_50");
             }
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5305, 5405, 5505}, arg2: true);
-                context.ResetTimer(arg1: "10050");
+                context.ResetTimer(id: "10050");
             }
 
             public override TriggerState Execute() {
@@ -173,8 +173,8 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 105, key: "Gauge", value: 25);
-                context.ResetTimer(arg1: "10050");
-                context.SetTimer(arg1: "10025", arg2: 15, arg3: true);
+                context.ResetTimer(id: "10050");
+                context.SetTimer(id: "10025", arg2: 15, arg3: true);
                 context.SetActor(arg1: 4005, arg2: true, arg3: "Interaction_tankpink_A01_25");
                 context.SetActor(arg1: 4105, arg2: true, arg3: "Interaction_tankpink_A01_25");
             }
@@ -203,7 +203,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5305, 5405, 5505}, arg2: true);
-                context.ResetTimer(arg1: "10025");
+                context.ResetTimer(id: "10025");
             }
 
             public override TriggerState Execute() {
@@ -221,7 +221,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "10025");
+                context.ResetTimer(id: "10025");
                 context.SetUserValue(triggerId: 105, key: "Gauge", value: 1);
                 context.SetActor(arg1: 4005, arg2: true, arg3: "Interaction_tankpink_A01_1");
                 context.SetActor(arg1: 4105, arg2: true, arg3: "Interaction_tankpink_A01_1");

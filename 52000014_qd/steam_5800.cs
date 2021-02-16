@@ -20,7 +20,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State발사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 1);
+                context.SetTimer(id: "2", arg2: 1);
                 context.CreateMonster(arg1: new[] {580}, arg2: false);
             }
 
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State발사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.CreateMonster(arg1: new[] {581}, arg2: false);
             }
 
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "4", arg2: 1);
+                context.SetTimer(id: "4", arg2: 1);
                 context.DestroyMonster(arg1: new[] {580});
             }
 
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State발사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 2);
+                context.SetTimer(id: "5", arg2: 2);
                 context.CreateMonster(arg1: new[] {581}, arg2: false);
             }
 

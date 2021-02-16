@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000347_bf {
             internal StateWait_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "8", arg2: 8);
+                context.SetTimer(id: "8", arg2: 8);
             }
 
             public override TriggerState Execute() {
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000347_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000347_BF__MAIN1__5$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000347_BF__MAIN1__5$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {

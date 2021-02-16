@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02000300_bf {
             internal State20초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "20", arg2: 20);
+                context.SetTimer(id: "20", arg2: 20);
             }
 
             public override TriggerState Execute() {
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000300_bf {
             internal State25초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "25", arg2: 25);
+                context.SetTimer(id: "25", arg2: 25);
             }
 
             public override TriggerState Execute() {
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._02000300_bf {
             internal State30초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "30", arg2: 30);
+                context.SetTimer(id: "30", arg2: 30);
             }
 
             public override TriggerState Execute() {
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._02000300_bf {
             internal State35초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "35", arg2: 35);
+                context.SetTimer(id: "35", arg2: 35);
             }
 
             public override TriggerState Execute() {
@@ -172,8 +172,8 @@ namespace Maple2.Trigger._02000300_bf {
             internal StateScript1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 1002, arg3: "$02000300_BF__TEXTBALLOON__0$", arg4: 2, arg5: 0);
+                context.SetTimer(id: "2", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 1002, script: "$02000300_BF__TEXTBALLOON__0$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -191,8 +191,8 @@ namespace Maple2.Trigger._02000300_bf {
             internal StateScript2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 1003, arg3: "$02000300_BF__TEXTBALLOON__1$", arg4: 2);
+                context.SetTimer(id: "2", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 1003, script: "$02000300_BF__TEXTBALLOON__1$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -210,8 +210,8 @@ namespace Maple2.Trigger._02000300_bf {
             internal StateScript3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 1003, arg3: "$02000300_BF__TEXTBALLOON__2$", arg4: 2);
+                context.SetTimer(id: "2", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 1003, script: "$02000300_BF__TEXTBALLOON__2$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -229,8 +229,8 @@ namespace Maple2.Trigger._02000300_bf {
             internal StateScript4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 1004, arg3: "$02000300_BF__TEXTBALLOON__3$", arg4: 2);
+                context.SetTimer(id: "2", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 1004, script: "$02000300_BF__TEXTBALLOON__3$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -248,14 +248,14 @@ namespace Maple2.Trigger._02000300_bf {
             internal StateEnd대화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    context.SetConversation(arg1: 1, arg2: 1001, arg3: "$02000300_BF__TEXTBALLOON__4$", arg4: 3, arg5: 0);
-                    context.SetConversation(arg1: 1, arg2: 1003, arg3: "$02000300_BF__TEXTBALLOON__5$", arg4: 2, arg5: 2);
-                    context.SetConversation(arg1: 1, arg2: 1002, arg3: "$02000300_BF__TEXTBALLOON__6$", arg4: 2, arg5: 4);
+                    context.SetConversation(arg1: 1, arg2: 1001, script: "$02000300_BF__TEXTBALLOON__4$", arg4: 3, arg5: 0);
+                    context.SetConversation(arg1: 1, arg2: 1003, script: "$02000300_BF__TEXTBALLOON__5$", arg4: 2, arg5: 2);
+                    context.SetConversation(arg1: 1, arg2: 1002, script: "$02000300_BF__TEXTBALLOON__6$", arg4: 2, arg5: 4);
                     return new StateEnd(context);
                 }
 

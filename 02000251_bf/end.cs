@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000251_bf {
             internal State어나운스1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 7);
-                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__END__0$", arg3: 5000, arg4: "0");
+                context.SetTimer(id: "1", arg2: 7);
+                context.SetEventUI(arg1: 1, script: "$02000251_BF__END__0$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._02000251_bf {
             internal State어나운스2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 7);
-                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__END__1$", arg3: 5000, arg4: "0");
+                context.SetTimer(id: "1", arg2: 7);
+                context.SetEventUI(arg1: 1, script: "$02000251_BF__END__1$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -54,8 +54,8 @@ namespace Maple2.Trigger._02000251_bf {
             internal State어나운스3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 7);
-                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__END__2$", arg3: 5000);
+                context.SetTimer(id: "1", arg2: 7);
+                context.SetEventUI(arg1: 1, script: "$02000251_BF__END__2$", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02000251_bf {
             internal State어나운스4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 7);
+                context.SetTimer(id: "1", arg2: 7);
             }
 
             public override TriggerState Execute() {
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02000251_bf {
             internal State통과(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 300);
+                context.SetTimer(id: "1", arg2: 300);
             }
 
             public override TriggerState Execute() {

@@ -43,7 +43,7 @@ namespace Maple2.Trigger._80000014_bonus {
             internal State안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$80000014_bonus__lever__0$", arg3: 2000);
+                context.SetEventUI(arg1: 1, script: "$80000014_bonus__lever__0$", arg3: 2000);
             }
 
             public override TriggerState Execute() {

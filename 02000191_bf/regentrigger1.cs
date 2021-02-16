@@ -38,13 +38,13 @@ namespace Maple2.Trigger._02000191_bf {
             internal State웜리젠91CoolTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "9");
-                context.SetTimer(arg1: "9", arg2: 20);
+                context.ResetTimer(id: "9");
+                context.SetTimer(id: "9", arg2: 20);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "9")) {
-                    context.ResetTimer(arg1: "9");
+                    context.ResetTimer(id: "9");
                     return new StateWaitStart(context);
                 }
 

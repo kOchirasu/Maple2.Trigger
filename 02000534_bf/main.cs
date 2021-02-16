@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000534_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008}, arg2: true);
                 context.SetEffect(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009}, arg2: false);
                 context.CreateMonster(arg1: new[] {508, 509, 510, 511, 716, 715, 713, 717, 718, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712}, arg2: true);
@@ -28,9 +28,9 @@ namespace Maple2.Trigger._02000534_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetEventUI(arg1: 1, arg2: "$02000534_BF__MAIN__0$", arg3: 3000);
-                context.SetPortal(arg1: 2, arg2: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetEventUI(arg1: 1, script: "$02000534_BF__MAIN__0$", arg3: 3000);
+                context.SetPortal(portalId: 2, visible: false);
             }
 
             public override TriggerState Execute() {
@@ -584,8 +584,8 @@ namespace Maple2.Trigger._02000534_bf {
             internal State오브젝트설명4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02000534_BF__MAIN__29$", duration: 3000);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02000534_BF__MAIN__30$", duration: 3500, delayTick: 3000);
                 context.SetSceneSkip(state: new State방해4(context), arg2: "nextState");
@@ -606,8 +606,8 @@ namespace Maple2.Trigger._02000534_bf {
             internal State방해4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.RemoveBalloonTalk(spawnPointId: 0);
             }
 
@@ -665,7 +665,7 @@ namespace Maple2.Trigger._02000534_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {7004}, arg2: true);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000, script: "$02000534_BF__MAIN__33$");
                 context.CreateMonster(arg1: new[] {507}, arg2: true);
                 context.AddBalloonTalk(spawnPointId: 507, msg: "$02000534_BF__MAIN__34$", duration: 3500, delayTick: 1500);
@@ -690,10 +690,10 @@ namespace Maple2.Trigger._02000534_bf {
             internal State업그레이드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 15, arg4: true);
+                context.SetTimer(id: "1", arg2: 15, arg4: true);
                 context.CreateMonster(arg1: new[] {9901, 9902, 9903, 9904}, arg2: false);
                 context.AddBalloonTalk(spawnPointId: 507, msg: "$02000534_BF__MAIN__35$", duration: 3500, delayTick: 500);
-                context.SetEventUI(arg1: 1, arg2: "$02000534_BF__MAIN__36$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000534_BF__MAIN__36$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -772,7 +772,7 @@ namespace Maple2.Trigger._02000534_bf {
             internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 15, arg4: false);
+                context.SetTimer(id: "1", arg2: 15, arg4: false);
                 context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 3000, script: "$02000534_BF__MAIN__39$");
             }
 
@@ -791,8 +791,8 @@ namespace Maple2.Trigger._02000534_bf {
             internal StatePortalCreation2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000534_BF__MAIN__40$", arg3: 3000);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetEventUI(arg1: 1, script: "$02000534_BF__MAIN__40$", arg3: 3000);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

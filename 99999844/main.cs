@@ -204,7 +204,7 @@ namespace Maple2.Trigger._99999844 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {905})) {
-                    context.SetConversation(arg1: 1, arg2: 105, arg3: "웃기는군! 이동 할 수 있게 해줄게", arg4: 4000);
+                    context.SetConversation(arg1: 1, arg2: 105, script: "웃기는군! 이동 할 수 있게 해줄게", arg4: 4000);
                     // return new State다리CreationCount(context);
                     return null;
                 }

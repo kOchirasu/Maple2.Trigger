@@ -8,11 +8,11 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(132f, 195f, 255f), arg2: new Vector3(0f, 0f, 0f), arg3: new Vector3(0f, 0f, 0f));
                 context.SetDirectionalLight(arg1: new Vector3(163f, 115f, 143f), arg2: new Vector3(140f, 140f, 140f));
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6002, arg2: false);
-                context.SetPortal(arg1: 6003, arg2: false);
-                context.SetPortal(arg1: 6004, arg2: false);
-                context.SetPortal(arg1: 6005, arg2: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6002, visible: false);
+                context.SetPortal(portalId: 6003, visible: false);
+                context.SetPortal(portalId: 6004, visible: false);
+                context.SetPortal(portalId: 6005, visible: false);
                 context.SetInteractObject(arg1: new[] {10003138, 10003139, 10003140, 10003141}, arg2: 0);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
@@ -42,9 +42,9 @@ namespace Maple2.Trigger._02000540_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000540_BF__MAIN__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000540_BF__MAIN__0$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._02000540_bf {
             internal State첫번째오브젝트조사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000540_BF__MAIN__5$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000540_BF__MAIN__5$", arg3: 3000);
                 context.SetInteractObject(arg1: new[] {10003138}, arg2: 1);
             }
 
@@ -123,7 +123,7 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8001}, arg2: true);
                 context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetEventUI(arg1: 1, arg2: "$02000540_BF__MAIN__6$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000540_BF__MAIN__6$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._02000540_bf {
             internal State두번째오브젝트조사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000540_BF__MAIN__9$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000540_BF__MAIN__9$", arg3: 3000);
                 context.SetInteractObject(arg1: new[] {10003139}, arg2: 1);
             }
 
@@ -201,10 +201,10 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8002}, arg2: true);
                 context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetEventUI(arg1: 1, arg2: "$02000540_BF__MAIN__10$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000540_BF__MAIN__10$", arg3: 3000);
                 context.SetEffect(arg1: new[] {8005, 8006}, arg2: true);
-                context.SetPortal(arg1: 6002, arg2: true);
-                context.SetPortal(arg1: 6003, arg2: true);
+                context.SetPortal(portalId: 6002, visible: true);
+                context.SetPortal(portalId: 6003, visible: true);
                 context.AddBalloonTalk(spawnPointId: 614, msg: "$02000540_BF__MAIN__11$", duration: 6500, delayTick: 2000);
             }
 
@@ -261,7 +261,7 @@ namespace Maple2.Trigger._02000540_bf {
             internal State세번째오브젝트조사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000540_BF__MAIN__13$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000540_BF__MAIN__13$", arg3: 3000);
                 context.SetInteractObject(arg1: new[] {10003140}, arg2: 1);
             }
 
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8003}, arg2: true);
                 context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetEventUI(arg1: 1, arg2: "$02000540_BF__MAIN__14$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000540_BF__MAIN__14$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -338,7 +338,7 @@ namespace Maple2.Trigger._02000540_bf {
             internal State네번째오브젝트조사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000540_BF__MAIN__16$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000540_BF__MAIN__16$", arg3: 3000);
                 context.SetInteractObject(arg1: new[] {10003141}, arg2: 1);
             }
 
@@ -359,11 +359,11 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8004}, arg2: true);
                 context.SetOnetimeEffect(id: 104, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetEventUI(arg1: 1, arg2: "$02000540_BF__MAIN__17$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000540_BF__MAIN__17$", arg3: 3000);
                 context.SetAmbientLight(arg1: new Vector3(237f, 225f, 255f), arg2: new Vector3(0f, 0f, 0f), arg3: new Vector3(0f, 0f, 0f));
                 context.SetDirectionalLight(arg1: new Vector3(232f, 212f, 127f), arg2: new Vector3(140f, 140f, 140f));
-                context.SetPortal(arg1: 6004, arg2: true);
-                context.SetPortal(arg1: 6005, arg2: true);
+                context.SetPortal(portalId: 6004, visible: true);
+                context.SetPortal(portalId: 6005, visible: true);
                 context.SetEffect(arg1: new[] {8007, 8008}, arg2: true);
             }
 
@@ -406,7 +406,7 @@ namespace Maple2.Trigger._02000540_bf {
                 context.SetOnetimeEffect(id: 105, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000540_BF__MAIN__19$");
                 context.CreateMonster(arg1: new[] {613}, arg2: true);
-                context.SetPortal(arg1: 6005, arg2: false);
+                context.SetPortal(portalId: 6005, visible: false);
             }
 
             public override TriggerState Execute() {
@@ -425,7 +425,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000540_BF__MAIN__20$");
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

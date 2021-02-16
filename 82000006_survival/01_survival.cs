@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._82000006_survival {
     public static class _01_survival {
         public class StateSetting : TriggerState {
@@ -29,7 +31,7 @@ namespace Maple2.Trigger._82000006_survival {
             internal StateWait_Talk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 90, arg3: true, arg4: true, arg5: -80);
+                context.SetTimer(id: "1", arg2: 90, arg3: true, arg4: true, arg5: -80);
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__0$");
                 context.WriteLog(arg1: "Survival", arg3: "Waiting_Start");
             }
@@ -163,7 +165,7 @@ namespace Maple2.Trigger._82000006_survival {
             internal StateCheckTheNumberOfPlayers_1st(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
 
             public override TriggerState Execute() {
@@ -624,7 +626,7 @@ namespace Maple2.Trigger._82000006_survival {
             internal StateCountdown(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateFieldGame(type: "MapleSurvival");
+                context.CreateFieldGame(type: FieldGame.MapleSurvival);
                 context.ShowCountUI(text: "$82000012_survival__01_SURVIVAL__14$", stage: 0, count: 3);
             }
 
@@ -757,7 +759,7 @@ namespace Maple2.Trigger._82000006_survival {
             internal StateReadyToKickOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$82000012_survival__01_SURVIVAL__18$", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$82000012_survival__01_SURVIVAL__18$", arg3: 4000, arg4: "0");
             }
 
             public override TriggerState Execute() {

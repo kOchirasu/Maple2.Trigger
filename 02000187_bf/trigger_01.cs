@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000187_bf {
             internal StateCoolTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
             }
 
             public override TriggerState Execute() {

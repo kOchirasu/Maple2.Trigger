@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02000493_bf {
     public static class _main {
         public class StateWait : TriggerState {
@@ -22,7 +24,7 @@ namespace Maple2.Trigger._02000493_bf {
                 context.SetLadder(arg1: 3111, arg2: true, arg3: true, arg4: 0);
                 context.SetLadder(arg1: 3112, arg2: true, arg3: true, arg4: 0);
                 context.SetInteractObject(arg1: new[] {10000978, 10000979, 10000980, 10000981, 10000982}, arg2: 2);
-                context.SetPortal(arg1: 32, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 32, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -41,15 +43,15 @@ namespace Maple2.Trigger._02000493_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103, 111, 112, 113, 114, 115, 116, 119, 121, 122, 123, 124, 125, 126, 127}, arg2: false);
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: "Nutaman_intro.swf", movieId: 1);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new State전투01(context);
                 }
 
@@ -57,8 +59,8 @@ namespace Maple2.Trigger._02000493_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 

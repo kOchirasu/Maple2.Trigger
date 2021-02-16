@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000246_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {631, 632, 633, 634, 635, 636, 637, 638, 639}, arg2: false);
-                context.SetTimer(arg1: "1", arg2: 120);
+                context.SetTimer(id: "1", arg2: 120);
             }
 
             public override TriggerState Execute() {
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000246_bf {
             internal State통과(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 180);
+                context.SetTimer(id: "2", arg2: 180);
             }
 
             public override TriggerState Execute() {

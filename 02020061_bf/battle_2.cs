@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020061_bf {
     public static class _battle_2 {
         public class StateWait : TriggerState {
@@ -56,7 +58,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State대사용_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020061_BF__BATTLE_2__0$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020061_BF__BATTLE_2__0$");
             }
 
             public override TriggerState Execute() {
@@ -82,7 +84,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State대사용_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020061_BF__BATTLE_2__1$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020061_BF__BATTLE_2__1$");
             }
 
             public override TriggerState Execute() {
@@ -108,7 +110,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State대사용_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020061_BF__BATTLE_2__2$");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020061_BF__BATTLE_2__2$");
             }
 
             public override TriggerState Execute() {

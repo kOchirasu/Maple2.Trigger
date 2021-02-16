@@ -40,7 +40,7 @@ namespace Maple2.Trigger._63000089_cs {
             internal StateSetup13끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "413", arg2: 2, arg3: false);
+                context.SetTimer(id: "413", arg2: 2, arg3: false);
             }
 
             public override TriggerState Execute() {

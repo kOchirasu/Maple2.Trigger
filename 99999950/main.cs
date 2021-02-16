@@ -20,12 +20,12 @@ namespace Maple2.Trigger._99999950 {
             internal StateBeginWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.SetEventUI(arg1: 1, arg2: "$99999950__MAIN__0$", arg3: 2000, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$99999950__MAIN__0$", arg3: 2000, arg4: "0");
                     return new State1라운드(context);
                 }
 
@@ -75,12 +75,12 @@ namespace Maple2.Trigger._99999950 {
             internal State2라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.SetEventUI(arg1: 1, arg2: "$99999950__MAIN__1$", arg3: 2000, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$99999950__MAIN__1$", arg3: 2000, arg4: "0");
                     return new State2라운드(context);
                 }
 
@@ -130,12 +130,12 @@ namespace Maple2.Trigger._99999950 {
             internal State3라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.SetEventUI(arg1: 1, arg2: "$99999950__MAIN__2$", arg3: 2000, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$99999950__MAIN__2$", arg3: 2000, arg4: "0");
                     return new State3라운드(context);
                 }
 
@@ -185,12 +185,12 @@ namespace Maple2.Trigger._99999950 {
             internal State4라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.SetEventUI(arg1: 1, arg2: "$99999950__MAIN__3$", arg3: 2000, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$99999950__MAIN__3$", arg3: 2000, arg4: "0");
                     return new State4라운드(context);
                 }
 
@@ -258,12 +258,12 @@ namespace Maple2.Trigger._99999950 {
             internal State5라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.SetEventUI(arg1: 1, arg2: "$99999950__MAIN__4$", arg3: 2000, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$99999950__MAIN__4$", arg3: 2000, arg4: "0");
                     return new State5라운드(context);
                 }
 

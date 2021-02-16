@@ -42,9 +42,9 @@ namespace Maple2.Trigger._99999883 {
             internal StateTakeOffFlyingCloud01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.SetInteractObject(arg1: new[] {10001010}, arg2: 2);
                 context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: true);
                 context.SetBreakable(arg1: new[] {4000}, arg2: true);
@@ -83,8 +83,8 @@ namespace Maple2.Trigger._99999883 {
             internal StateTakeOffFlyingCloud03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -102,8 +102,8 @@ namespace Maple2.Trigger._99999883 {
             internal StateTakeOffFlyingCloud04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.MoveUser(arg1: 99999883, arg2: 101, arg3: 9900);
             }
 

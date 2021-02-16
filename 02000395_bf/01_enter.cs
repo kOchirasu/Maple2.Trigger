@@ -67,9 +67,9 @@ namespace Maple2.Trigger._02000395_bf {
             internal StateNpcTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11000119, arg3: "$02000395_BF__01_ENTER__0$", arg4: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11000119, script: "$02000395_BF__01_ENTER__0$", arg4: 4);
                 context.SetSkip(state: new StateNpcTalk01Skip(context));
             }
 
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._02000395_bf {
             internal StateNpcTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000395_BF__01_ENTER__1$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000015, script: "$02000395_BF__01_ENTER__1$", arg4: 5);
                 context.SetSkip(state: new StateNpcTalk02Skip(context));
             }
 
@@ -124,8 +124,8 @@ namespace Maple2.Trigger._02000395_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -139,8 +139,8 @@ namespace Maple2.Trigger._02000395_bf {
             internal StateNpcMonologue01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000395_BF__01_ENTER__2$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$02000395_BF__01_ENTER__3$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$02000395_BF__01_ENTER__2$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$02000395_BF__01_ENTER__3$", arg4: 2, arg5: 0);
                 context.SetUserValue(triggerId: 2, key: "MobSpawn", value: 1);
             }
 
@@ -180,8 +180,8 @@ namespace Maple2.Trigger._02000395_bf {
             internal StateNpcMonologue02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000395_BF__01_ENTER__4$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 202, arg3: "$02000395_BF__01_ENTER__5$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$02000395_BF__01_ENTER__4$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 202, script: "$02000395_BF__01_ENTER__5$", arg4: 2, arg5: 1);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039501, textId: 20039501, duration: 4000);
                 context.SetInteractObject(arg1: new[] {10001127}, arg2: 1);

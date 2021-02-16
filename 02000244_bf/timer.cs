@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000244_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {798, 799}, arg2: false);
-                context.SetTimer(arg1: "89", arg2: 3, arg3: false);
+                context.SetTimer(id: "89", arg2: 3, arg3: false);
             }
 
             public override TriggerState Execute() {
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02000244_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {2001}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000244_BF__TIMER__0$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000244_BF__TIMER__0$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {

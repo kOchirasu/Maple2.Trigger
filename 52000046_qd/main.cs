@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000046_qd {
     public static class _main {
         public class StateIdle : TriggerState {
@@ -24,8 +26,8 @@ namespace Maple2.Trigger._52000046_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.DestroyMonster(arg1: new[] {1001, 1002, 2002});
             }
@@ -45,7 +47,7 @@ namespace Maple2.Trigger._52000046_qd {
             internal StateCamera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4001, 4002, 4003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4001, 4002, 4003}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -64,7 +66,7 @@ namespace Maple2.Trigger._52000046_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "ChatUp_A");
-                context.AddCinematicTalk(npcId: 11003216, msg: "$52000046_QD__MAIN__0$", duration: 3000, align: "Left");
+                context.AddCinematicTalk(npcId: 11003216, script: "$52000046_QD__MAIN__0$", duration: 3000, align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -82,7 +84,7 @@ namespace Maple2.Trigger._52000046_qd {
             internal StateScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(type: "NameCaption", scale: 2.3f, title: "$52000046_QD__MAIN__1$", desc: "$52000046_QD__MAIN__2$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
+                context.ShowCaption(type: CaptionType.Name, scale: 2.3f, title: "$52000046_QD__MAIN__1$", script: "$52000046_QD__MAIN__2$", align: Align.Center | Align.Left, offsetRateX: -0.15f, duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -156,8 +158,8 @@ namespace Maple2.Trigger._52000046_qd {
             internal StateEmd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

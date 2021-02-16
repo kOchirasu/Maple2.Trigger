@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000229_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1001});
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
             }
 
             public override TriggerState Execute() {

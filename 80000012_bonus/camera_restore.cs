@@ -5,7 +5,7 @@ namespace Maple2.Trigger._80000012_bonus {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._80000012_bonus {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {

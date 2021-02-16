@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._63000035_cs {
     public static class _report01 {
         public class StateWait : TriggerState {
@@ -28,9 +30,9 @@ namespace Maple2.Trigger._63000035_cs {
             internal StateEnter01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -48,13 +50,13 @@ namespace Maple2.Trigger._63000035_cs {
             internal StatePlayOpeningMovie02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: @"common\Common_Opening.usm", movieId: 2);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "2")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "2")) {
                     return new StatePlayMovie01(context);
                 }
 
@@ -88,13 +90,13 @@ namespace Maple2.Trigger._63000035_cs {
             internal StatePlayMovie02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: "Cut_Vivid_Dream.swf", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new StateLodingDelay01(context);
                 }
 
@@ -106,8 +108,8 @@ namespace Maple2.Trigger._63000035_cs {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -115,9 +117,9 @@ namespace Maple2.Trigger._63000035_cs {
             internal StateLodingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.CameraSelect(arg1: 500, arg2: true);
             }
 
@@ -140,8 +142,8 @@ namespace Maple2.Trigger._63000035_cs {
                 context.SetSound(arg1: 10001, arg2: true);
                 context.SetSound(arg1: 10002, arg2: true);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 501, arg2: true);
             }
 
@@ -160,7 +162,7 @@ namespace Maple2.Trigger._63000035_cs {
             internal StateOperator01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001705, arg3: "$63000035_CS__REPORT01__0$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001705, script: "$63000035_CS__REPORT01__0$", arg4: 6);
                 context.SetSceneSkip(state: new StatePCTeleport01(context), arg2: "exit");
             }
 
@@ -197,7 +199,7 @@ namespace Maple2.Trigger._63000035_cs {
             internal StateOperator02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001705, arg3: "$63000035_CS__REPORT01__1$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001705, script: "$63000035_CS__REPORT01__1$", arg4: 6);
             }
 
             public override TriggerState Execute() {
@@ -233,8 +235,8 @@ namespace Maple2.Trigger._63000035_cs {
             internal StateMonitorOn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 502, arg2: true);
             }
 
@@ -293,7 +295,7 @@ namespace Maple2.Trigger._63000035_cs {
             internal StateKahnTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000035_CS__REPORT01__2$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001559, script: "$63000035_CS__REPORT01__2$", arg4: 6);
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
             }
 
@@ -363,7 +365,7 @@ namespace Maple2.Trigger._63000035_cs {
             internal StateKahnTalk05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000035_CS__REPORT01__3$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001559, script: "$63000035_CS__REPORT01__3$", arg4: 6);
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
             }
 
@@ -401,9 +403,9 @@ namespace Maple2.Trigger._63000035_cs {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {

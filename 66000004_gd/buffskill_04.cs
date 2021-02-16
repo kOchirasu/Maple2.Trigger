@@ -53,7 +53,7 @@ namespace Maple2.Trigger._66000004_gd {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7401}, arg2: true);
-                context.SetTimer(arg1: "60", arg2: 60);
+                context.SetTimer(id: "60", arg2: 60);
             }
 
             public override TriggerState Execute() {
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._66000004_gd {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7402}, arg2: true);
-                context.SetTimer(arg1: "60", arg2: 60);
+                context.SetTimer(id: "60", arg2: 60);
             }
 
             public override TriggerState Execute() {
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._66000004_gd {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7403}, arg2: true);
-                context.SetTimer(arg1: "60", arg2: 60);
+                context.SetTimer(id: "60", arg2: 60);
             }
 
             public override TriggerState Execute() {
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._66000004_gd {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.SetSkill(arg1: new[] {7401, 7402, 7403}, arg2: false);
             }
 

@@ -23,7 +23,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State무너짐01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
                 context.SetEffect(arg1: new[] {12500}, arg2: true);
                 context.SetMesh(arg1: new[] {2500}, arg2: false, arg3: 0, arg4: 0, arg5: 1f);
                 context.SetMesh(arg1: new[] {2502}, arg2: false, arg3: 500, arg4: 0, arg5: 1f);

@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02010086_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {995, 999, 998});
                 context.CreateMonster(arg1: new[] {199}, arg2: true);
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {181, 188}, arg2: true);
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {182, 187}, arg2: true);
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {183, 186}, arg2: true);
-                context.SetTimer(arg1: "10", arg2: 10);
+                context.SetTimer(id: "10", arg2: 10);
             }
 
             public override TriggerState Execute() {
@@ -114,7 +114,7 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {184, 185}, arg2: true);
-                context.SetTimer(arg1: "20", arg2: 20);
+                context.SetTimer(id: "20", arg2: 20);
             }
 
             public override TriggerState Execute() {
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._02010086_bf {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 112, textId: 40009);
                 context.SetMesh(arg1: new[] {1098}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

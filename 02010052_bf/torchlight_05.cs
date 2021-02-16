@@ -25,9 +25,9 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7542}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 994, arg3: "$02010052_BF__TORCHLIGHT_05__0$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 994, script: "$02010052_BF__TORCHLIGHT_05__0$", arg4: 3);
                 context.SetMesh(arg1: new[] {6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082}, arg2: true, arg3: 80, arg4: 100, arg5: 8f);
-                context.SetTimer(arg1: "1", arg2: 1, arg4: false);
+                context.SetTimer(id: "1", arg2: 1, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -68,9 +68,9 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetEffect(arg1: new[] {7505}, arg2: true);
                 context.SetMesh(arg1: new[] {6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082}, arg2: false, arg3: 800, arg4: 100, arg5: 8f);
                 context.SetMesh(arg1: new[] {600001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEventUI(arg1: 1, arg2: "$02010052_BF__TORCHLIGHT_05__1$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02010052_BF__TORCHLIGHT_05__1$", arg3: 3000);
                 context.SetEffect(arg1: new[] {7005}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1, arg4: false);
+                context.SetTimer(id: "1", arg2: 1, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -89,10 +89,10 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 205, textId: 20105202);
-                context.SetConversation(arg1: 1, arg2: 994, arg3: "$02010052_BF__TORCHLIGHT_05__2$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 994, script: "$02010052_BF__TORCHLIGHT_05__2$", arg4: 3);
                 context.MoveNpc(arg1: 994, arg2: "MS2PatrolData_1007");
                 context.CreateMonster(arg1: new[] {510, 511, 512, 513, 514, 515}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1, arg4: false);
+                context.SetTimer(id: "1", arg2: 1, arg4: false);
             }
 
             public override TriggerState Execute() {

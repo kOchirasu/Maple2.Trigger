@@ -1,4 +1,5 @@
 using System.Numerics;
+using Maple2.Trigger.Enum;
 
 namespace Maple2.Trigger._02020051_bf {
     public static class _101_main {
@@ -23,7 +24,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 60001, arg2: false);
-                context.ResetTimer(arg1: "999");
+                context.ResetTimer(id: "999");
                 context.SetUserValue(triggerId: 102, key: "Timmer", value: 2);
                 context.SetAmbientLight(arg1: new Vector3(198f, 255f, 205f));
                 context.SetDirectionalLight(arg1: new Vector3(255f, 234f, 193f), arg2: new Vector3(255f, 255f, 255f));
@@ -46,8 +47,8 @@ namespace Maple2.Trigger._02020051_bf {
             internal State타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "999", arg2: 10, arg3: true, arg4: true);
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", script: "$02020051_BF__101_MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
+                context.SetTimer(id: "999", arg2: 10, arg3: true, arg4: true);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_surprise", script: "$02020051_BF__101_MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
                 context.RemoveBuff(arg1: 11, arg2: 90000900);
             }
 
@@ -66,7 +67,7 @@ namespace Maple2.Trigger._02020051_bf {
             internal StateFadeOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "999");
+                context.ResetTimer(id: "999");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -88,7 +89,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", script: "$02020051_BF__101_MAIN__1$", duration: 5684, voice: @"ko/Npc/00002201");
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_surprise", script: "$02020051_BF__101_MAIN__1$", duration: 5684, voice: @"ko/Npc/00002201");
             }
 
             public override TriggerState Execute() {
@@ -256,7 +257,7 @@ namespace Maple2.Trigger._02020051_bf {
                 context.SetUserValue(triggerId: 106, key: "Summon_monster_2", value: 1);
                 context.SetUserValue(triggerId: 102, key: "Timmer", value: 1);
                 context.SetUserValue(triggerId: 104, key: "End", value: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02020051_BF__101_MAIN__2$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02020051_BF__101_MAIN__2$", arg3: 4000);
             }
 
             public override TriggerState Execute() {

@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal State이동Wait01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "90", arg2: 90);
+                context.SetTimer(id: "90", arg2: 90);
             }
 
             public override TriggerState Execute() {
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal State이동Wait02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "100", arg2: 100);
+                context.SetTimer(id: "100", arg2: 100);
             }
 
             public override TriggerState Execute() {
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal State이동Wait03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "110", arg2: 110);
+                context.SetTimer(id: "110", arg2: 110);
             }
 
             public override TriggerState Execute() {
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal State이동Wait04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "120", arg2: 120);
+                context.SetTimer(id: "120", arg2: 120);
             }
 
             public override TriggerState Execute() {
@@ -155,8 +155,8 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000304_BF__MOVE__0$", arg4: 2);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 2001, script: "$02000304_BF__MOVE__0$", arg4: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._02000304_bf {
                 }
 
                 if (context.TimeExpired(arg1: "2")) {
-                    context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000304_BF__MOVE__1$", arg4: 1);
+                    context.SetConversation(arg1: 1, arg2: 2001, script: "$02000304_BF__MOVE__1$", arg4: 1);
                     context.MoveRandomUser(arg1: 02000304, arg2: 11, arg3: 101, arg4: 1);
                     return new State이동2(context);
                 }
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal State이동2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._02000304_bf {
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000304_BF__MOVE__2$", arg4: 1);
+                    context.SetConversation(arg1: 1, arg2: 2001, script: "$02000304_BF__MOVE__2$", arg4: 1);
                     context.MoveRandomUser(arg1: 02000304, arg2: 12, arg3: 101, arg4: 1);
                     return new State이동3(context);
                 }
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal State이동3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._02000304_bf {
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000304_BF__MOVE__3$", arg4: 1);
+                    context.SetConversation(arg1: 1, arg2: 2001, script: "$02000304_BF__MOVE__3$", arg4: 1);
                     context.MoveRandomUser(arg1: 02000304, arg2: 13, arg3: 101, arg4: 1);
                     return new State이동4(context);
                 }
@@ -228,7 +228,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal State이동4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._02000304_bf {
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000304_BF__MOVE__4$", arg4: 1);
+                    context.SetConversation(arg1: 1, arg2: 2001, script: "$02000304_BF__MOVE__4$", arg4: 1);
                     context.MoveRandomUser(arg1: 02000304, arg2: 14, arg3: 101, arg4: 1);
                     return new StateWait(context);
                 }
@@ -252,7 +252,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1800000", arg2: 1800000);
+                context.SetTimer(id: "1800000", arg2: 1800000);
             }
 
             public override TriggerState Execute() {

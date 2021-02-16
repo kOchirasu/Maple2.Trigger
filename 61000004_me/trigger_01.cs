@@ -1,10 +1,12 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._61000004_me {
     public static class _trigger_01 {
         public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.SetMesh(arg1: new[] {301, 302, 303}, arg2: true, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {3101, 3102, 3201, 3202, 3301, 3302, 3401, 3402, 3403, 3404}, arg2: false, arg3: 0, arg4: 0);
                 context.SetEffect(arg1: new[] {71011, 71012, 71021, 71022, 72011, 72021, 73011, 73021, 73022, 73023}, arg2: false);
@@ -140,7 +142,7 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "ME_Trigger_01_00");
-                context.SetEventUI(arg1: 1, arg2: "$61000004_ME__TRIGGER_01__0$", arg3: 7000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$61000004_ME__TRIGGER_01__0$", arg3: 7000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -166,7 +168,7 @@ namespace Maple2.Trigger._61000004_me {
                     context.SetMesh(arg1: new[] {301, 302, 303}, arg2: false, arg3: 12, arg4: 0);
                     context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "dailyquest_start");
                     context.GiveGuildExp(boxId: false, type: 2);
-                    context.StartMiniGame(boxId: 105, round: 1, gameName: "escape");
+                    context.StartMiniGame(boxId: 105, round: 1, type: MiniGame.LudibriumEscape);
                     context.StartMiniGameRound(boxId: 105, round: 1);
                     context.MoveUserToBox(boxId: 101, portalId: true);
                     return new StateStart(context);
@@ -183,7 +185,7 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999111, key: "gameStart", value: 1);
-                context.SetTimer(arg1: "180", arg2: 180, arg3: false, arg4: true);
+                context.SetTimer(id: "180", arg2: 180, arg3: false, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -202,8 +204,8 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 102, arg2: "trigger", arg3: "escape_win");
-                context.SetEventUI(arg1: 3, arg2: "$61000004_ME__TRIGGER_01__2$", arg3: 5000, arg4: "102");
-                context.SetEventUI(arg1: 6, arg2: "$61000004_ME__TRIGGER_01__3$", arg3: 5000, arg4: "!102");
+                context.SetEventUI(arg1: 3, script: "$61000004_ME__TRIGGER_01__2$", arg3: 5000, arg4: "102");
+                context.SetEventUI(arg1: 6, script: "$61000004_ME__TRIGGER_01__3$", arg3: 5000, arg4: "!102");
                 context.AddBuff(arg1: new[] {102}, arg2: 70000019, arg3: 1);
             }
 
@@ -211,7 +213,7 @@ namespace Maple2.Trigger._61000004_me {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.EndMiniGameRound(winnerBoxId: 102, expRate: 0.25f, isGainLoserBonus: true);
                     context.MiniGameGiveReward(winnerBoxId: 102, contentType: "miniGame");
-                    context.EndMiniGame(winnerBoxId: 102, gameName: "escape");
+                    context.EndMiniGame(winnerBoxId: 102, type: MiniGame.LudibriumEscape);
                     return new State강제이동(context);
                 }
 

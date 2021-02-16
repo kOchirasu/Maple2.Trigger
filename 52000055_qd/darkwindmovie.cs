@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 6002, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 6002, visible: false, enabled: false, minimapVisible: false);
                 context.SetOnetimeEffect(id: 11100101, enable: true, path: @"BG/Common/Sound/Eff_Object_CityWar_ComputerRoom_01.xml");
                 context.MoveUser(arg1: 52000055, arg2: 1);
             }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -173,8 +173,8 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new[] {119, 120}, arg2: true);
-                context.SetCinematicUI(arg1: 3);
+                context.CameraSelectPath(pathIds: new[] {119, 120}, arg2: true);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetOnetimeEffect(id: 02100267, enable: true, path: @"BG/Common/Sound/Eff_Object_CityWar_ComputerSignal_01.xml");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 100, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_AI_00001876.xml");
-                context.SetConversation(arg1: 2, arg2: 11001896, arg3: "$52000055_QD__DARKWINDMOVIE__0$", arg4: 7);
+                context.SetConversation(arg1: 2, arg2: 11001896, script: "$52000055_QD__DARKWINDMOVIE__0$", arg4: 7);
             }
 
             public override TriggerState Execute() {
@@ -216,7 +216,7 @@ namespace Maple2.Trigger._52000055_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetOnetimeEffect(id: 11100102, enable: false, path: @"BG/Common/Sound/Eff_Object_CityWar_SystemWarningAlarm_01.xml");
-                context.CameraSelectPath(arg1: new[] {106, 128}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {106, 128}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -231,7 +231,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001878.xml");
-                context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__1$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001897, script: "$52000055_QD__DARKWINDMOVIE__1$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -250,7 +250,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelectPath(arg1: new[] {105, 127}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {105, 127}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -265,7 +265,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 03500148, enable: true, path: @"BG/Common/Sound/Eff_Object_CityWar_KeyboardTyping_01.xml");
-                context.SetConversation(arg1: 2, arg2: 11000259, arg3: "$52000055_QD__DARKWINDMOVIE__2$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000259, script: "$52000055_QD__DARKWINDMOVIE__2$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelectPath(arg1: new[] {107, 129}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {107, 129}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -298,7 +298,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk7(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000259, arg3: "$52000055_QD__DARKWINDMOVIE__3$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000259, script: "$52000055_QD__DARKWINDMOVIE__3$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -317,7 +317,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelectPath(arg1: new[] {109, 110, 111}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {109, 110, 111}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -333,7 +333,7 @@ namespace Maple2.Trigger._52000055_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 11100103, enable: true, path: @"BG/Common/Sound/Eff_Object_CityWar_SystemErrorAlarm_01.xml");
                 context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_AI_00001877.xml");
-                context.SetConversation(arg1: 2, arg2: 11001896, arg3: "$52000055_QD__DARKWINDMOVIE__4$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001896, script: "$52000055_QD__DARKWINDMOVIE__4$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -367,7 +367,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 105, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000259, arg3: "$52000055_QD__DARKWINDMOVIE__5$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000259, script: "$52000055_QD__DARKWINDMOVIE__5$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -400,9 +400,9 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 112, arg2: true);
-                context.CameraSelectPath(arg1: new[] {112, 113}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {112, 113}, arg2: true);
                 context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001879.xml");
-                context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__6$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001897, script: "$52000055_QD__DARKWINDMOVIE__6$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -435,8 +435,8 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 114, arg2: true);
-                context.CameraSelectPath(arg1: new[] {114, 115}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000259, arg3: "$52000055_QD__DARKWINDMOVIE__7$", arg4: 5);
+                context.CameraSelectPath(pathIds: new[] {114, 115}, arg2: true);
+                context.SetConversation(arg1: 2, arg2: 11000259, script: "$52000055_QD__DARKWINDMOVIE__7$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -468,7 +468,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000215, arg3: "$52000055_QD__DARKWINDMOVIE__8$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11000215, script: "$52000055_QD__DARKWINDMOVIE__8$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -487,7 +487,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelectPath(arg1: new[] {117, 118}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {117, 118}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -502,7 +502,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 104, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001880.xml");
-                context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__9$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001897, script: "$52000055_QD__DARKWINDMOVIE__9$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -521,7 +521,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 115, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001964.xml");
-                context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__10$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001897, script: "$52000055_QD__DARKWINDMOVIE__10$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -554,7 +554,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 118, arg2: true);
-                context.CameraSelectPath(arg1: new[] {121, 122}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {121, 122}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -588,7 +588,7 @@ namespace Maple2.Trigger._52000055_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 105, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001881.xml");
                 context.CameraSelect(arg1: 122, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__11$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001897, script: "$52000055_QD__DARKWINDMOVIE__11$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -620,8 +620,8 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk25(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {125, 126}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000215, arg3: "$52000055_QD__DARKWINDMOVIE__12$", arg4: 5);
+                context.CameraSelectPath(pathIds: new[] {125, 126}, arg2: true);
+                context.SetConversation(arg1: 2, arg2: 11000215, script: "$52000055_QD__DARKWINDMOVIE__12$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -654,8 +654,8 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 106, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001882.xml");
-                context.CameraSelectPath(arg1: new[] {123, 124}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__13$", arg4: 5);
+                context.CameraSelectPath(pathIds: new[] {123, 124}, arg2: true);
+                context.SetConversation(arg1: 2, arg2: 11001897, script: "$52000055_QD__DARKWINDMOVIE__13$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -707,9 +707,9 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 6002, arg2: true, arg3: true, arg4: true);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetPortal(portalId: 6002, visible: true, enabled: true, minimapVisible: true);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
                 context.MoveUser(arg1: 52000067, arg2: 1);
             }

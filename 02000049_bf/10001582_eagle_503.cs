@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000049_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 5003, arg2: "MS2PatrolData_503");
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
             }
 
             public override TriggerState Execute() {
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02000049_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {5003});
-                context.SetTimer(arg1: "2", arg2: 50);
+                context.SetTimer(id: "2", arg2: 50);
             }
 
             public override TriggerState Execute() {

@@ -289,7 +289,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604});
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
                 context.SetTimeScale(enable: true, startScale: 0.1f, endScale: 0.5f, duration: 10.0f, interpolator: 1);
             }
 

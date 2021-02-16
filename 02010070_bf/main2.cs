@@ -6,8 +6,8 @@ namespace Maple2.Trigger._02010070_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108});
                 context.SetInteractObject(arg1: new[] {10000834}, arg2: 1);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 4, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {95001}, arg2: false);
                 context.DestroyMonster(arg1: new[] {22210, 22211, 22212, 22213});
             }
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02010070_bf {
             internal StateWaitTime02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02010070_BF__MAIN__4$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02010070_BF__MAIN__4$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02010070_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20100706, textId: 20100706, duration: 7000);
                 context.MoveNpc(arg1: 2108, arg2: "MS2PatrolData0");
-                context.SetConversation(arg1: 1, arg2: 2108, arg3: "$02010070_BF__MAIN__1$", arg4: 4);
+                context.SetConversation(arg1: 1, arg2: 2108, script: "$02010070_BF__MAIN__1$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._02010070_bf {
             internal StateStart112(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2108, arg3: "$02010070_BF__MAIN__2$", arg4: 4);
+                context.SetConversation(arg1: 1, arg2: 2108, script: "$02010070_BF__MAIN__2$", arg4: 4);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20100707, textId: 20100707);
             }
@@ -204,8 +204,8 @@ namespace Maple2.Trigger._02010070_bf {
             internal StateStart6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 6);
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 6);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -240,9 +240,9 @@ namespace Maple2.Trigger._02010070_bf {
             internal StateStart8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: false);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

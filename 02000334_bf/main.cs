@@ -6,7 +6,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateMain(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 12, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {13000012}, arg2: 2);
                 context.SetEffect(arg1: new[] {98001, 98002, 98003, 98004, 98005, 98006, 90021, 90022}, arg2: false);
                 context.SetEffect(arg1: new[] {98031}, arg2: true);
@@ -28,10 +28,10 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
                 context.CreateMonster(arg1: new[] {199}, arg2: true);
                 context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.CreateMonster(arg1: new[] {401, 402, 403, 404, 405, 406, 801, 802, 803, 804, 805, 806, 807, 808, 809}, arg2: true);
                 context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: true);
             }
@@ -51,11 +51,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetTimer(arg1: "5", arg2: 5, arg4: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetTimer(id: "5", arg2: 5, arg4: false);
                 context.SetSkip(state: new StateStart_03(context));
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -73,8 +73,8 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateStart_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__1$", arg4: 3);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.SetConversation(arg1: 2, arg2: 11000015, script: "$02000334_BF__MAIN__1$", arg4: 3);
                 context.CreateMonster(arg1: new[] {190}, arg2: false);
                 context.SetSkip(state: new State1단계_시작(context));
             }
@@ -88,10 +88,10 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
+                context.SetCinematicUI(type: 4);
             }
         }
 
@@ -99,8 +99,8 @@ namespace Maple2.Trigger._02000334_bf {
             internal State1단계_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8013, 8015}, arg2: false);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.CameraSelectPath(pathIds: new[] {8013, 8015}, arg2: false);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -118,10 +118,10 @@ namespace Maple2.Trigger._02000334_bf {
             internal State1단계_시작02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 24001205, arg3: "$02000334_BF__MAIN__6$", arg4: 3);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 24001205, script: "$02000334_BF__MAIN__6$", arg4: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetSkip(state: new State1단계_시작03(context));
             }
 
@@ -134,9 +134,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -144,9 +144,9 @@ namespace Maple2.Trigger._02000334_bf {
             internal State1단계_시작03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 0, arg2: "1,4");
+                context.SetEventUI(arg1: 0, script: "1,4");
                 context.ShowCountUI(text: "$02000334_BF__MAIN__2$", stage: 1, count: 5);
-                context.SetTimer(arg1: "4", arg2: 4);
+                context.SetTimer(id: "4", arg2: 4);
             }
 
             public override TriggerState Execute() {
@@ -164,11 +164,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State1단계_시작04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 199, arg3: "$02000334_BF__MAIN__3$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 199, script: "$02000334_BF__MAIN__3$", arg4: 3);
                 context.CreateMonster(arg1: new[] {201, 203}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 203, arg3: "$02000334_BF__MAIN__4$", arg4: 3);
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$02000334_BF__MAIN__5$", arg4: 3);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 203, script: "$02000334_BF__MAIN__4$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$02000334_BF__MAIN__5$", arg4: 3);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {90022}, arg2: true);
                 context.CreateMonster(arg1: new[] {160, 150}, arg2: false);
-                context.SetTimer(arg1: "60", arg2: 60, arg4: true);
+                context.SetTimer(id: "60", arg2: 60, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -220,11 +220,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State2단계_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__7$", arg4: 3);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.SetConversation(arg1: 2, arg2: 11000015, script: "$02000334_BF__MAIN__7$", arg4: 3);
                 context.SetSkip(state: new State2단계_시작(context));
             }
 
@@ -237,9 +237,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -248,11 +248,11 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {204, 205}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 199, arg3: "$02000334_BF__MAIN__8$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 199, script: "$02000334_BF__MAIN__8$", arg4: 3);
                 context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg4: 250, arg5: 1f);
-                context.SetEventUI(arg1: 0, arg2: "2,4");
+                context.SetEventUI(arg1: 0, script: "2,4");
                 context.ShowCountUI(text: "$02000334_BF__MAIN__2$", stage: 2, count: 5);
-                context.SetTimer(arg1: "6", arg2: 6);
+                context.SetTimer(id: "6", arg2: 6);
             }
 
             public override TriggerState Execute() {
@@ -277,7 +277,7 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetEffect(arg1: new[] {90022}, arg2: true);
                 context.CameraSelect(arg1: 8000, arg2: true);
                 context.CreateMonster(arg1: new[] {150, 151}, arg2: false);
-                context.SetTimer(arg1: "60", arg2: 60, arg4: true);
+                context.SetTimer(id: "60", arg2: 60, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -301,11 +301,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State3단계_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 991, 992, 993, 994, 995, 996, 997, 998});
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__9$", arg4: 3);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.SetConversation(arg1: 2, arg2: 11000015, script: "$02000334_BF__MAIN__9$", arg4: 3);
                 context.SetSkip(state: new State3단계_시작(context));
             }
 
@@ -318,9 +318,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -329,9 +329,9 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {206, 207}, arg2: true);
-                context.SetEventUI(arg1: 0, arg2: "3,4");
+                context.SetEventUI(arg1: 0, script: "3,4");
                 context.ShowCountUI(text: "$02000334_BF__MAIN__2$", stage: 3, count: 5);
-                context.SetTimer(arg1: "6", arg2: 6);
+                context.SetTimer(id: "6", arg2: 6);
             }
 
             public override TriggerState Execute() {
@@ -355,7 +355,7 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {90022}, arg2: true);
                 context.CreateMonster(arg1: new[] {150, 151, 152}, arg2: false);
-                context.SetTimer(arg1: "60", arg2: 60, arg4: true);
+                context.SetTimer(id: "60", arg2: 60, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -379,11 +379,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State4단계_Prepare_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__10$", arg4: 3);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.SetConversation(arg1: 2, arg2: 11000015, script: "$02000334_BF__MAIN__10$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -401,8 +401,8 @@ namespace Maple2.Trigger._02000334_bf {
             internal State4단계_Prepare_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
-                context.SetConversation(arg1: 2, arg2: 24001205, arg3: "$02000334_BF__MAIN__11$", arg4: 3);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.SetConversation(arg1: 2, arg2: 24001205, script: "$02000334_BF__MAIN__11$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -414,9 +414,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -426,10 +426,10 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.MoveNpc(arg1: 190, arg2: "MS2PatrolData_2999");
-                context.SetEventUI(arg1: 0, arg2: "4,4");
+                context.SetEventUI(arg1: 0, script: "4,4");
                 context.ShowCountUI(text: "$02000334_BF__MAIN__2$", stage: 4, count: 5);
-                context.SetTimer(arg1: "6", arg2: 6);
-                context.SetConversation(arg1: 1, arg2: 190, arg3: "$02000334_BF__WAVE__2$", arg4: 3);
+                context.SetTimer(id: "6", arg2: 6);
+                context.SetConversation(arg1: 1, arg2: 190, script: "$02000334_BF__WAVE__2$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -454,7 +454,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {90022}, arg2: true);
-                context.SetTimer(arg1: "150", arg2: 150, arg4: true);
+                context.SetTimer(id: "150", arg2: 150, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -484,8 +484,8 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 190, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetEventUI(arg1: 5, arg3: 3000);
-                context.SetEventUI(arg1: 0, arg2: "0,0");
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
+                context.SetEventUI(arg1: 0, script: "0,0");
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
                 context.SetEffect(arg1: new[] {98031}, arg2: false);
             }
 
@@ -504,11 +504,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State게임오버_이벤트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 190, 991, 992, 993, 994, 995, 996, 997, 998});
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
-                context.SetConversation(arg1: 2, arg2: 24001205, arg3: "$02000334_BF__MAIN__13$", arg4: 3);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.SetConversation(arg1: 2, arg2: 24001205, script: "$02000334_BF__MAIN__13$", arg4: 3);
                 context.SetSkip(state: new State게임오버_강퇴(context));
             }
 
@@ -521,9 +521,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -531,8 +531,8 @@ namespace Maple2.Trigger._02000334_bf {
             internal State게임오버_강퇴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "5", arg2: 5, arg4: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000334_BF__MAIN__14$", arg3: 5000);
+                context.SetTimer(id: "5", arg2: 5, arg4: true);
+                context.SetEventUI(arg1: 1, script: "$02000334_BF__MAIN__14$", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -567,7 +567,7 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetAchievement(arg1: 90001, arg2: "trigger", arg3: "TaboKill");
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetEffect(arg1: new[] {98002, 98003, 98004, 98005}, arg2: true);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {98031}, arg2: false);
             }
 
@@ -589,12 +589,12 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__16$", arg4: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11000015, script: "$02000334_BF__MAIN__16$", arg4: 3);
                 context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg4: 250, arg5: 1f);
                 context.SetSkip(state: new StateClear_보상(context));
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -606,9 +606,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -616,11 +616,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateClear_보상(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 103, textId: 40009);
                 context.MoveNpc(arg1: 199, arg2: "MS2PatrolData_2015");
-                context.SetTimer(arg1: "10", arg2: 10, arg4: true);
+                context.SetTimer(id: "10", arg2: 10, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -645,10 +645,10 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 8003, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__18$", arg4: 3);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11000015, script: "$02000334_BF__MAIN__18$", arg4: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -660,9 +660,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -670,13 +670,13 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateClear_보상_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 199, arg3: "$02000334_BF__MAIN__19$", arg4: 5);
+                context.SetConversation(arg1: 1, arg2: 199, script: "$02000334_BF__MAIN__19$", arg4: 5);
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.DungeonClear();
-                    context.SetPortal(arg1: 12, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 12, visible: true, enabled: true, minimapVisible: true);
                     return new StateEnd(context);
                 }
 

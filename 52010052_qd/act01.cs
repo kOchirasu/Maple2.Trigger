@@ -122,9 +122,9 @@ namespace Maple2.Trigger._52010052_qd {
             internal State트리스탄삐짐01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003790, illustId: "Tristan_normal", msg: "$52010052_QD__ACT01__0$", duration: 4000);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 11003790, illustId: "Tristan_normal", script: "$52010052_QD__ACT01__0$", duration: 4000);
                 context.MoveNpc(arg1: 2005, arg2: "MS2PatrolData_1001");
             }
 
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._52010052_qd {
             internal State트리스탄삐짐02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.DestroyMonster(arg1: new[] {2005});
             }
 

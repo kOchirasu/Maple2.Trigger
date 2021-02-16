@@ -20,26 +20,26 @@ namespace Maple2.Trigger._02000551_bf {
             internal StateTeleportationPortalHide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 12000, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3000, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6000, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 9000, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 12201, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 12202, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 4501, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 4502, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 7801, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 7802, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10111, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10112, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13003, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13006, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13009, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13012, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13121, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13031, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13061, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13091, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 12000, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3000, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6000, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 9000, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 12201, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 12202, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 4501, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 4502, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 7801, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 7802, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10111, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10112, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13003, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13006, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13009, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13012, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13121, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13031, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13061, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13091, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -61,26 +61,26 @@ namespace Maple2.Trigger._02000551_bf {
             internal StateTeleportationPortalSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 12000, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 3000, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 6000, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 9000, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 12201, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 12202, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 4501, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 4502, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 7801, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 7802, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 10111, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 10112, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 13003, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 13006, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 13009, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 13012, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 13121, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 13031, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 13061, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 13091, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 12000, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 3000, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 6000, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 9000, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 12201, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 12202, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 4501, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 4502, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 7801, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 7802, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 10111, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 10112, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 13003, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 13006, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 13009, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 13012, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 13121, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 13031, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 13061, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 13091, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

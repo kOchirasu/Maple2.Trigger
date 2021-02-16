@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal State1차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "15", arg2: 15);
+                context.SetTimer(id: "15", arg2: 15);
             }
 
             public override TriggerState Execute() {
@@ -39,10 +39,10 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {98001}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 190, arg3: "$02000334_BF__WAVE__2$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 190, script: "$02000334_BF__WAVE__2$", arg4: 3);
                 context.MoveNpc(arg1: 190, arg2: "MS2PatrolData_3501");
                 context.CreateMonster(arg1: new[] {991, 993, 994}, arg2: true);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -63,9 +63,9 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetEffect(arg1: new[] {98006}, arg2: true);
                 context.AddBuff(arg1: new[] {90001}, arg2: 70000068, arg3: 1);
                 context.MoveNpc(arg1: 199, arg2: "MS2PatrolData_3502");
-                context.SetConversation(arg1: 1, arg2: 199, arg3: "$02000334_BF__WAVE__3$", arg4: 3);
-                context.CameraSelectPath(arg1: new[] {8017}, arg2: false);
-                context.SetTimer(arg1: "15", arg2: 15);
+                context.SetConversation(arg1: 1, arg2: 199, script: "$02000334_BF__WAVE__3$", arg4: 3);
+                context.CameraSelectPath(pathIds: new[] {8017}, arg2: false);
+                context.SetTimer(id: "15", arg2: 15);
             }
 
             public override TriggerState Execute() {
@@ -85,9 +85,9 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {98001}, arg2: true);
                 context.MoveNpc(arg1: 190, arg2: "MS2PatrolData_3501");
-                context.SetConversation(arg1: 1, arg2: 190, arg3: "$02000334_BF__WAVE__4$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 190, script: "$02000334_BF__WAVE__4$", arg4: 3);
                 context.CreateMonster(arg1: new[] {992, 995}, arg2: true);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -108,8 +108,8 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetEffect(arg1: new[] {98006}, arg2: true);
                 context.AddBuff(arg1: new[] {90001}, arg2: 70000068, arg3: 1);
                 context.MoveNpc(arg1: 199, arg2: "MS2PatrolData_3502");
-                context.SetConversation(arg1: 1, arg2: 199, arg3: "$02000334_BF__WAVE__5$", arg4: 3);
-                context.CameraSelectPath(arg1: new[] {8017}, arg2: false);
+                context.SetConversation(arg1: 1, arg2: 199, script: "$02000334_BF__WAVE__5$", arg4: 3);
+                context.CameraSelectPath(pathIds: new[] {8017}, arg2: false);
             }
 
             public override TriggerState Execute() {

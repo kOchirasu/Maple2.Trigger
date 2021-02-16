@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52100105_qd {
     public static class _52100105_01 {
         public class StateWait_01 : TriggerState {
@@ -43,7 +45,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
                 context.VisibleMyPc(isVisible: false);
             }
 
@@ -63,7 +65,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4001}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -81,11 +83,11 @@ namespace Maple2.Trigger._52100105_qd {
             internal State투르카_클라디아_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "right", msg: "$52100105_QD__52100105_01__0$", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "right", msg: "$52100105_QD__52100105_01__1$", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "right", msg: "$52100105_QD__52100105_01__2$", duration: 4000);
+                context.CameraSelectPath(pathIds: new[] {4002}, arg2: false);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: Align.Right, script: "$52100105_QD__52100105_01__0$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: Align.Right, script: "$52100105_QD__52100105_01__1$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: Align.Right, script: "$52100105_QD__52100105_01__2$", duration: 4000);
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
@@ -104,10 +106,10 @@ namespace Maple2.Trigger._52100105_qd {
             internal State투르카_클라디아_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
-                context.AddCinematicTalk(npcId: 11004392, illustId: "cladia_normal", align: "left", msg: "$52100105_QD__52100105_01__3$", duration: 3500);
-                context.AddCinematicTalk(npcId: 11004392, illustId: "cladia_normal", align: "left", msg: "$52100105_QD__52100105_01__4$", duration: 3500);
-                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "right", msg: "$52100105_QD__52100105_01__5$", duration: 4000);
+                context.CameraSelectPath(pathIds: new[] {4003}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004392, illustId: "cladia_normal", align: Align.Left, script: "$52100105_QD__52100105_01__3$", duration: 3500);
+                context.AddCinematicTalk(npcId: 11004392, illustId: "cladia_normal", align: Align.Left, script: "$52100105_QD__52100105_01__4$", duration: 3500);
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: Align.Right, script: "$52100105_QD__52100105_01__5$", duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -125,8 +127,8 @@ namespace Maple2.Trigger._52100105_qd {
             internal State투르카_클라디아_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
-                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "left", msg: "$52100105_QD__52100105_01__6$", duration: 5000);
+                context.CameraSelectPath(pathIds: new[] {4004}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: Align.Left, script: "$52100105_QD__52100105_01__6$", duration: 5000);
             }
 
             public override TriggerState Execute() {
@@ -144,10 +146,10 @@ namespace Maple2.Trigger._52100105_qd {
             internal State장치가동_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4007}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4007}, arg2: false);
                 context.SetNpcRotation(arg1: 102, arg2: 270);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Bore_A");
-                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "left", msg: "$52100105_QD__52100105_01__7$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: Align.Left, script: "$52100105_QD__52100105_01__7$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -165,7 +167,7 @@ namespace Maple2.Trigger._52100105_qd {
             internal State장치가동_01_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4005}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -202,7 +204,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4006}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -223,7 +225,7 @@ namespace Maple2.Trigger._52100105_qd {
                 context.SetNpcRotation(arg1: 102, arg2: 360);
                 context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Quest_Attack_A", arg3: 5000f);
-                context.AddCinematicTalk(npcId: 11004392, illustId: "cladia_normal", align: "right", msg: "$52100105_QD__52100105_01__8$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004392, illustId: "cladia_normal", align: Align.Right, script: "$52100105_QD__52100105_01__8$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -241,7 +243,7 @@ namespace Maple2.Trigger._52100105_qd {
             internal State장치가동_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4002, 4008}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4002, 4008}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Quest_Effect_A", arg3: 12000f);
                 context.SetSceneSkip();
             }

@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_11");
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000076_TW_HenesysVillage__01_NPCBACKUP01__0$", arg4: 1);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$02000076_TW_HenesysVillage__01_NPCBACKUP01__0$", arg4: 1);
             }
 
             public override TriggerState Execute() {
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101});
-                context.SetTimer(arg1: "1", arg2: 60);
+                context.SetTimer(id: "1", arg2: 60);
             }
 
             public override TriggerState Execute() {

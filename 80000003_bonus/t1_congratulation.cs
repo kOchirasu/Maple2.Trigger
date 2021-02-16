@@ -20,7 +20,7 @@ namespace Maple2.Trigger._80000003_bonus {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                if (context.BonusGameRewardDetected(arg1: 100, arg2: true)) {
+                if (context.BonusGameRewardDetected(arg1: 100)) {
                     return new State축하1(context);
                 }
 
@@ -48,9 +48,9 @@ namespace Maple2.Trigger._80000003_bonus {
             internal State축하2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 100, arg3: "$80000003_bonus__T1_CONGRATULATION__0$");
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$80000003_bonus__T1_CONGRATULATION__1$");
-                context.SetTimer(arg1: "1", arg2: 30);
+                context.SetConversation(arg1: 1, arg2: 100, script: "$80000003_bonus__T1_CONGRATULATION__0$");
+                context.SetConversation(arg1: 1, arg2: 101, script: "$80000003_bonus__T1_CONGRATULATION__1$");
+                context.SetTimer(id: "1", arg2: 30);
             }
 
             public override TriggerState Execute() {

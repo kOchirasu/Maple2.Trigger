@@ -23,11 +23,11 @@ namespace Maple2.Trigger._03009023_in {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
                 context.DestroyMonster(arg1: new[] {110});
                 context.CreateMonster(arg1: new[] {210}, arg2: true);
                 context.MoveNpc(arg1: 210, arg2: "MS2PatrolData_210");
-                context.SetConversation(arg1: 1, arg2: 210, arg3: "$03009023_IN__10__0$", arg4: 4, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 210, script: "$03009023_IN__10__0$", arg4: 4, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._03009023_in {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {210});
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
             }
 
             public override TriggerState Execute() {

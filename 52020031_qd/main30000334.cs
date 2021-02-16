@@ -40,9 +40,9 @@ namespace Maple2.Trigger._52020031_qd {
             internal State세번째전투끝나고1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.CameraSelectPath(pathIds: new[] {4003}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52020031_qd {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.FaceEmotion(spawnPointId: 0, emotionName: "defaultBattle");
                 context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 5000f);
-                context.AddCinematicTalk(npcId: 0, msg: @"역시 너희 흑성회는 믿을 만한 사람들이 아니었군.\n천공의 심장은 내가 가져가겠어.", duration: 5000);
+                context.AddCinematicTalk(npcId: 0, script: @"역시 너희 흑성회는 믿을 만한 사람들이 아니었군.\n천공의 심장은 내가 가져가겠어.", duration: 5000);
             }
 
             public override TriggerState Execute() {
@@ -101,9 +101,9 @@ namespace Maple2.Trigger._52020031_qd {
             internal State세번째전투끝나고3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4010}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4010}, arg2: false);
                 context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003756, msg: "크윽...", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003756, script: "크윽...", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -139,9 +139,9 @@ namespace Maple2.Trigger._52020031_qd {
             internal State세번째전투끝나고4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
-                context.AddCinematicTalk(npcId: 0, msg: "오늘 있었던 일은, 라딘에게도 전하겠어.", duration: 3000);
-                context.AddCinematicTalk(npcId: 0, msg: "흑성회와의 동맹은 여기까지야.", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4003}, arg2: false);
+                context.AddCinematicTalk(npcId: 0, script: "오늘 있었던 일은, 라딘에게도 전하겠어.", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "흑성회와의 동맹은 여기까지야.", duration: 3000);
             }
 
             public override TriggerState Execute() {

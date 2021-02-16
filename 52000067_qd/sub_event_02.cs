@@ -23,8 +23,8 @@ namespace Maple2.Trigger._52000067_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {756, 755}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000067_QD__SUB_EVENT_02__0$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000067_QD__SUB_EVENT_02__1$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000067_QD__SUB_EVENT_02__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52000067_QD__SUB_EVENT_02__1$", arg4: 3, arg5: 2);
             }
 
             public override TriggerState Execute() {

@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000030_qd {
     public static class _main_k {
         public class StateWait : TriggerState {
@@ -26,17 +28,17 @@ namespace Maple2.Trigger._52000030_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: "Nutaman_intro.swf", movieId: 1);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new StateIshuraScript01(context);
                 }
 
@@ -50,8 +52,8 @@ namespace Maple2.Trigger._52000030_qd {
             internal StateIshuraScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001230, arg3: "$52000030_QD__MAIN_K__0$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000030_QD__MAIN_K__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001230, script: "$52000030_QD__MAIN_K__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000076, script: "$52000030_QD__MAIN_K__1$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new StateNPC단체이동(context));
             }
 
@@ -97,8 +99,8 @@ namespace Maple2.Trigger._52000030_qd {
             public override void OnExit() {
                 context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014});
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 2001, 2002}, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -147,9 +149,9 @@ namespace Maple2.Trigger._52000030_qd {
             internal StateIshuraScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000030_QD__MAIN_K__2$", arg4: 2, arg5: 0);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11000076, script: "$52000030_QD__MAIN_K__2$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -161,8 +163,8 @@ namespace Maple2.Trigger._52000030_qd {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -188,9 +190,9 @@ namespace Maple2.Trigger._52000030_qd {
             internal StateIshuraScript03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000030_QD__MAIN_K__3$", arg4: 3, arg5: 0);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000030_QD__MAIN_K__3$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -203,8 +205,8 @@ namespace Maple2.Trigger._52000030_qd {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 

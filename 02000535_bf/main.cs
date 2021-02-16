@@ -1,10 +1,12 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02000535_bf {
     public static class _main {
         public class StateIdle : TriggerState {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {801, 802}, arg2: false);
                 context.SetMesh(arg1: new[] {4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016, 4017, 4018, 4019}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10003145, 10003146, 10003136, 10003137}, arg2: 0);
@@ -142,7 +144,7 @@ namespace Maple2.Trigger._02000535_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {802}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__6$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__6$", arg3: 5000);
                 context.SetInteractObject(arg1: new[] {10003136}, arg2: 1);
             }
 
@@ -305,10 +307,10 @@ namespace Maple2.Trigger._02000535_bf {
             internal State간부들대화2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSceneSkip(state: new StateCamera리셋시키기2(context), arg2: "nextState");
-                context.CameraSelectPath(arg1: new[] {2005}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {2005}, arg2: false);
                 context.AddBalloonTalk(spawnPointId: 9902, msg: "$02000535_BF__MAIN__25$", duration: 3500);
                 context.AddBalloonTalk(spawnPointId: 9903, msg: "$02000535_BF__MAIN__26$", duration: 3500, delayTick: 3000);
             }
@@ -328,11 +330,11 @@ namespace Maple2.Trigger._02000535_bf {
             internal StateCamera리셋시키기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1f);
                 context.LockMyPc(isLock: false);
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__27$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__27$", arg3: 5000);
                 context.SetEffect(arg1: new[] {801}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10003137}, arg2: 1);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02000535_BF__MAIN__28$", duration: 3500);
@@ -450,7 +452,7 @@ namespace Maple2.Trigger._02000535_bf {
             internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__38$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__38$", arg3: 5000);
                 context.SetMesh(arg1: new[] {4019}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10003145}, arg2: 1);
             }
@@ -471,7 +473,7 @@ namespace Maple2.Trigger._02000535_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "GameLogicEnd", value: 999);
-                context.WidgetAction(arg1: "Round", arg2: "InitWidgetRound");
+                context.WidgetAction(type: WidgetType.Round, name: "InitWidgetRound");
                 context.SetUserValue(triggerId: 9002, key: "GameLogicStart", value: 999);
                 context.LockMyPc(isLock: true);
             }
@@ -491,7 +493,7 @@ namespace Maple2.Trigger._02000535_bf {
             internal State문열기시작2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__39$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__39$", arg3: 4000);
                 context.LockMyPc(isLock: true);
             }
 
@@ -556,7 +558,7 @@ namespace Maple2.Trigger._02000535_bf {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 3000f);
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__40$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__40$", arg3: 3000);
                 context.LockMyPc(isLock: false);
             }
 
@@ -576,7 +578,7 @@ namespace Maple2.Trigger._02000535_bf {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 3000f);
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__41$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__41$", arg3: 3000);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02000535_BF__MAIN__42$", duration: 3500);
                 context.LockMyPc(isLock: false);
             }
@@ -596,9 +598,9 @@ namespace Maple2.Trigger._02000535_bf {
             internal State문부시기안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__43$", arg3: 5000);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__43$", arg3: 5000);
                 context.LockMyPc(isLock: false);
                 context.CreateMonster(arg1: new[] {611}, arg2: true);
             }
@@ -618,8 +620,8 @@ namespace Maple2.Trigger._02000535_bf {
             internal State이동하자(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.LockMyPc(isLock: false);
                 context.SideNpcTalk(npcId: 23300001, illust: "Haren_smile", duration: 4000, script: "$02000535_BF__MAIN__44$");
             }
@@ -639,7 +641,7 @@ namespace Maple2.Trigger._02000535_bf {
             internal State이동하자2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true);
+                context.SetPortal(portalId: 2, visible: true);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02000535_BF__MAIN__45$", duration: 3500);
             }
 

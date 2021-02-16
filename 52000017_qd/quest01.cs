@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000017_qd {
     public static class _quest01 {
         public class StateWait : TriggerState {
@@ -23,15 +25,15 @@ namespace Maple2.Trigger._52000017_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: "Cut_Remember_Vision.swf", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new State말풍선Delay(context);
                 }
 
@@ -61,7 +63,7 @@ namespace Maple2.Trigger._52000017_qd {
             internal StatePC말풍선01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000017_QD__QUEST01__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000017_QD__QUEST01__0$", arg4: 3, arg5: 0);
                 context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
@@ -81,7 +83,7 @@ namespace Maple2.Trigger._52000017_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001560, arg3: "$52000017_QD__QUEST01__1$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001560, script: "$52000017_QD__QUEST01__1$", arg4: 4);
                 context.SetSkip(state: new StateNPCScript01스킵(context));
             }
 
@@ -117,7 +119,7 @@ namespace Maple2.Trigger._52000017_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001560, arg3: "$52000017_QD__QUEST01__2$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001560, script: "$52000017_QD__QUEST01__2$", arg4: 3);
                 context.SetSkip(state: new StateNPCScript02스킵(context));
             }
 
@@ -152,8 +154,8 @@ namespace Maple2.Trigger._52000017_qd {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

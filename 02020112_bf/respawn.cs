@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02020112_bf {
             internal State스폰시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020112_BF__RESPAWN__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020112_BF__RESPAWN__0$", arg3: 5000);
                 context.CreateMonster(arg1: new[] {141, 142, 143, 144}, arg2: false);
             }
 

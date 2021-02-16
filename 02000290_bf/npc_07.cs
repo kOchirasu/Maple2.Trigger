@@ -28,13 +28,13 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {907});
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
                     context.SetEffect(arg1: new[] {6001}, arg2: true);
-                    context.SetConversation(arg1: 1, arg2: 907, arg3: "$02000290_BF__NPC_07__0$", arg4: 3);
+                    context.SetConversation(arg1: 1, arg2: 907, script: "$02000290_BF__NPC_07__0$", arg4: 3);
                     return new StateNPC이동(context);
                 }
 
@@ -48,14 +48,14 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "4", arg2: 4);
+                context.SetTimer(id: "4", arg2: 4);
                 context.MoveNpc(arg1: 907, arg2: "MS2PatrolData907");
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
                     context.SetEffect(arg1: new[] {6002}, arg2: true);
-                    context.SetConversation(arg1: 1, arg2: 907, arg3: "$02000290_BF__NPC_07__1$", arg4: 3);
+                    context.SetConversation(arg1: 1, arg2: 907, script: "$02000290_BF__NPC_07__1$", arg4: 3);
                     return new StateNPCDestroy(context);
                 }
 

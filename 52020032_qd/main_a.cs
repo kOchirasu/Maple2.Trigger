@@ -87,9 +87,9 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.CameraSelectPath(pathIds: new[] {4001}, arg2: false);
                 context.SetSceneSkip(state: new StateBattle_B(context), arg2: "nextState");
             }
 
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4002, 4003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4002, 4003}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._52020032_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_3001");
-                context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4004}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -166,8 +166,8 @@ namespace Maple2.Trigger._52020032_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.5f);
                 context.ChangeMonster(arg1: 301, arg2: 701);
             }

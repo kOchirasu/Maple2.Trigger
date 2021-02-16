@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52010011_qd {
     public static class _act01 {
         public class StateWait : TriggerState {
@@ -23,7 +25,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "30", arg2: 1);
+                context.SetTimer(id: "30", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -58,8 +60,8 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -96,7 +98,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_01_테모로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__0$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001314, script: "$52010011_QD__ACT01__0$", arg4: 5);
                 context.SetSkip(state: new StateScript_01_테모로skip(context));
             }
 
@@ -130,7 +132,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_02_테모로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__1$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001314, script: "$52010011_QD__ACT01__1$", arg4: 5);
                 context.SetSkip(state: new StateScript_02_테모로skip(context));
             }
 
@@ -164,7 +166,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_03_PC(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52010011_QD__ACT01__2$", arg4: 4);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52010011_QD__ACT01__2$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -182,7 +184,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_04_테모로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__3$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001314, script: "$52010011_QD__ACT01__3$", arg4: 5);
                 context.SetSkip(state: new StateScript_04_테모로skip(context));
             }
 
@@ -216,7 +218,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_05_테모로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__4$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001314, script: "$52010011_QD__ACT01__4$", arg4: 5);
                 context.SetSkip(state: new StateScript_05_테모로skip(context));
             }
 
@@ -250,7 +252,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_06_PC(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52010011_QD__ACT01__5$", arg4: 4);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52010011_QD__ACT01__5$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -268,7 +270,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_07_테모로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__6$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001314, script: "$52010011_QD__ACT01__6$", arg4: 5);
                 context.SetSkip(state: new StateScript_07_테모로skip(context));
             }
 
@@ -302,7 +304,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_08_테모로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__7$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001314, script: "$52010011_QD__ACT01__7$", arg4: 5);
                 context.SetSkip(state: new StateScript_08_테모로skip(context));
             }
 
@@ -336,7 +338,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_09_PC(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52010011_QD__ACT01__8$", arg4: 4);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52010011_QD__ACT01__8$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -354,7 +356,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_10_테모로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__9$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001314, script: "$52010011_QD__ACT01__9$", arg4: 5);
                 context.SetSkip(state: new StateScript_10_테모로skip(context));
             }
 
@@ -388,7 +390,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_11_테모로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__10$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001314, script: "$52010011_QD__ACT01__10$", arg4: 5);
                 context.SetSkip(state: new StateScript_11_테모로skip(context));
             }
 
@@ -422,7 +424,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_12_PC(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52010011_QD__ACT01__11$", arg4: 5);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52010011_QD__ACT01__11$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -440,7 +442,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_13_테모로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__12$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001314, script: "$52010011_QD__ACT01__12$", arg4: 5);
                 context.SetSkip(state: new StateScript_13_테모로skip(context));
             }
 
@@ -475,8 +477,8 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetTimer(arg1: "21", arg2: 2);
-                context.CameraSelectPath(arg1: new[] {601, 602}, arg2: false);
+                context.SetTimer(id: "21", arg2: 2);
+                context.CameraSelectPath(pathIds: new[] {601, 602}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -494,12 +496,12 @@ namespace Maple2.Trigger._52010011_qd {
             internal State영상재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
+                context.CreateWidget(type: WidgetType.SceneMovie);
                 context.PlaySceneMovie(fileName: @"common\KarKarIntro.usm", movieId: 1);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new StateScript_14_PC(context);
                 }
 
@@ -517,9 +519,9 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_14_PC(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52010011_QD__ACT01__13$", arg4: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52010011_QD__ACT01__13$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -537,7 +539,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_15_테모로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__14$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001314, script: "$52010011_QD__ACT01__14$", arg4: 5);
                 context.SetSkip(state: new StateScript_15_테모로skip(context));
             }
 
@@ -571,7 +573,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_16_테모로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__15$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001314, script: "$52010011_QD__ACT01__15$", arg4: 5);
                 context.SetSkip(state: new StateScript_16_테모로skip(context));
             }
 
@@ -607,7 +609,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_2001");
-                context.SetConversation(arg1: 2, arg2: 11001313, arg3: "$52010011_QD__ACT01__16$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001313, script: "$52010011_QD__ACT01__16$", arg4: 5);
                 context.SetSkip(state: new StateScript_17_덴덴skip(context));
             }
 
@@ -641,7 +643,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_18_PC(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52010011_QD__ACT01__17$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52010011_QD__ACT01__17$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -659,7 +661,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_19_덴덴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001313, arg3: "$52010011_QD__ACT01__18$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001313, script: "$52010011_QD__ACT01__18$", arg4: 4);
                 context.SetSkip(state: new StateScript_19_덴덴skip(context));
             }
 
@@ -693,7 +695,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_20_PC(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52010011_QD__ACT01__19$", arg4: 4);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52010011_QD__ACT01__19$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -711,7 +713,7 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateScript_21_덴덴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001313, arg3: "$52010011_QD__ACT01__20$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001313, script: "$52010011_QD__ACT01__20$", arg4: 3);
                 context.SetSkip(state: new StateScript_21_덴덴skip(context));
             }
 
@@ -745,8 +747,8 @@ namespace Maple2.Trigger._52010011_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02100004_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {601}, arg2: false);
             }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02100004_bf {
             internal StateCheckUser10_GuildRaid(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "99", arg2: 30, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "99", arg2: 30, arg3: true, arg4: false, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._02100004_bf {
             internal StateMaxCount10_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "99");
+                context.ResetTimer(id: "99");
             }
 
             public override TriggerState Execute() {
@@ -173,8 +173,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
                 context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
-                context.SetEventUI(arg1: 0, arg2: "1,10");
-                context.SetTimer(arg1: "1", arg2: 20, arg3: true, arg4: true);
+                context.SetEventUI(arg1: 0, script: "1,10");
+                context.SetTimer(id: "1", arg2: 20, arg3: true, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -190,7 +190,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -219,9 +219,9 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(arg1: "2", arg2: 20, arg3: true, arg4: true);
+                context.SetTimer(id: "2", arg2: 20, arg3: true, arg4: true);
                 context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
-                context.SetEventUI(arg1: 0, arg2: "2,10");
+                context.SetEventUI(arg1: 0, script: "2,10");
             }
 
             public override TriggerState Execute() {
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "2");
+                context.ResetTimer(id: "2");
             }
         }
 
@@ -266,9 +266,9 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(arg1: "3", arg2: 20, arg3: true, arg4: true);
+                context.SetTimer(id: "3", arg2: 20, arg3: true, arg4: true);
                 context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
-                context.SetEventUI(arg1: 0, arg2: "3,10");
+                context.SetEventUI(arg1: 0, script: "3,10");
             }
 
             public override TriggerState Execute() {
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "3");
+                context.ResetTimer(id: "3");
             }
         }
 
@@ -313,9 +313,9 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(arg1: "4", arg2: 20, arg3: true, arg4: true);
+                context.SetTimer(id: "4", arg2: 20, arg3: true, arg4: true);
                 context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
-                context.SetEventUI(arg1: 0, arg2: "4,10");
+                context.SetEventUI(arg1: 0, script: "4,10");
             }
 
             public override TriggerState Execute() {
@@ -331,7 +331,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "4");
+                context.ResetTimer(id: "4");
             }
         }
 
@@ -360,9 +360,9 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(arg1: "5", arg2: 20, arg3: true, arg4: true);
+                context.SetTimer(id: "5", arg2: 20, arg3: true, arg4: true);
                 context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
-                context.SetEventUI(arg1: 0, arg2: "5,10");
+                context.SetEventUI(arg1: 0, script: "5,10");
             }
 
             public override TriggerState Execute() {
@@ -378,7 +378,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "5");
+                context.ResetTimer(id: "5");
             }
         }
 
@@ -407,9 +407,9 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(arg1: "6", arg2: 20, arg3: true, arg4: true);
+                context.SetTimer(id: "6", arg2: 20, arg3: true, arg4: true);
                 context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
-                context.SetEventUI(arg1: 0, arg2: "6,10");
+                context.SetEventUI(arg1: 0, script: "6,10");
             }
 
             public override TriggerState Execute() {
@@ -425,7 +425,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "6");
+                context.ResetTimer(id: "6");
             }
         }
 
@@ -454,9 +454,9 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(arg1: "7", arg2: 20, arg3: true, arg4: true);
+                context.SetTimer(id: "7", arg2: 20, arg3: true, arg4: true);
                 context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
-                context.SetEventUI(arg1: 0, arg2: "7,10");
+                context.SetEventUI(arg1: 0, script: "7,10");
             }
 
             public override TriggerState Execute() {
@@ -472,7 +472,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "7");
+                context.ResetTimer(id: "7");
             }
         }
 
@@ -501,9 +501,9 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(arg1: "8", arg2: 20, arg3: true, arg4: true);
+                context.SetTimer(id: "8", arg2: 20, arg3: true, arg4: true);
                 context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
-                context.SetEventUI(arg1: 0, arg2: "8,10");
+                context.SetEventUI(arg1: 0, script: "8,10");
             }
 
             public override TriggerState Execute() {
@@ -519,7 +519,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "8");
+                context.ResetTimer(id: "8");
             }
         }
 
@@ -548,9 +548,9 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(arg1: "9", arg2: 20, arg3: true, arg4: true);
+                context.SetTimer(id: "9", arg2: 20, arg3: true, arg4: true);
                 context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
-                context.SetEventUI(arg1: 0, arg2: "9,10");
+                context.SetEventUI(arg1: 0, script: "9,10");
             }
 
             public override TriggerState Execute() {
@@ -566,7 +566,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "9");
+                context.ResetTimer(id: "9");
             }
         }
 
@@ -595,15 +595,15 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(arg1: "10", arg2: 150, arg3: true, arg4: true);
+                context.SetTimer(id: "10", arg2: 150, arg3: true, arg4: true);
                 context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
-                context.SetEventUI(arg1: 0, arg2: "10,10");
+                context.SetEventUI(arg1: 0, script: "10,10");
                 context.SetUserValue(triggerId: 999995, key: "LastRoundStart", value: 1);
             }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2000})) {
-                    context.ResetTimer(arg1: "10");
+                    context.ResetTimer(id: "10");
                     return new StateSuccess(context);
                 }
 
@@ -615,7 +615,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.SetEventUI(arg1: 0, arg2: "0,0");
+                context.SetEventUI(arg1: 0, script: "0,0");
                 context.SetUserValue(triggerId: 999995, key: "LastRoundEnd", value: 1);
             }
         }
@@ -627,7 +627,7 @@ namespace Maple2.Trigger._02100004_bf {
                 context.SetUserValue(triggerId: 999993, key: "BattleEnd", value: 1);
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "Find02100004");
-                context.SetEventUI(arg1: 7, arg2: "$02000251_BF__TRIGGER_01_01__0$", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 7, script: "$02000251_BF__TRIGGER_01_01__0$", arg3: 2000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -646,7 +646,7 @@ namespace Maple2.Trigger._02100004_bf {
             internal State실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 5, arg2: "$02100004_BF__MAIN__11$", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 5, script: "$02100004_BF__MAIN__11$", arg3: 2000, arg4: "0");
                 context.SetUserValue(triggerId: 999993, key: "BattleEnd", value: 1);
                 context.DestroyMonster(arg1: new[] {-1});
             }
@@ -667,7 +667,7 @@ namespace Maple2.Trigger._02100004_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000551_bf {
             internal StateDefaultSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {8101, 8102, 8103, 8104, 8105}, arg2: false);
             }
 
@@ -39,9 +39,9 @@ namespace Maple2.Trigger._02000551_bf {
             internal StatePortalEnable(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
                 context.DungeonEnableGiveUp(isEnable: true);
-                context.SetEventUI(arg1: 1, arg2: "$02020140_BF__BARRICADE__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02020140_BF__BARRICADE__0$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02000551_bf {
             internal StatePortalHide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02000551_bf {
             internal StateDungeonFailure종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

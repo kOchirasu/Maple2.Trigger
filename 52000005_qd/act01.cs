@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000005_qd {
     public static class _act01 {
         public class StateWait : TriggerState {
@@ -22,9 +24,9 @@ namespace Maple2.Trigger._52000005_qd {
             internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 4);
                 context.DestroyMonster(arg1: new[] {103, 202});
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -42,9 +44,9 @@ namespace Maple2.Trigger._52000005_qd {
             internal State영감대화Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 4);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -58,8 +60,8 @@ namespace Maple2.Trigger._52000005_qd {
             internal State영감대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000005_QD__ACT01__0$", arg4: 3);
+                context.SetTimer(id: "2", arg2: 3);
+                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000005_QD__ACT01__0$", arg4: 3);
                 context.SetSkip(state: new State영감대화02Wait(context));
             }
 
@@ -92,8 +94,8 @@ namespace Maple2.Trigger._52000005_qd {
             internal State영감대화02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11000001, arg3: "$52000005_QD__ACT01__1$", arg4: 3);
+                context.SetTimer(id: "3", arg2: 3);
+                context.SetConversation(arg1: 2, arg2: 11000001, script: "$52000005_QD__ACT01__1$", arg4: 3);
                 context.CreateMonster(arg1: new[] {101, 201}, arg2: true);
                 context.SetSkip(state: new State여제입장01(context));
             }
@@ -114,7 +116,7 @@ namespace Maple2.Trigger._52000005_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetTimer(arg1: "10", arg2: 1);
+                context.SetTimer(id: "10", arg2: 1);
                 context.CameraSelect(arg1: 601, arg2: true);
             }
 
@@ -133,7 +135,7 @@ namespace Maple2.Trigger._52000005_qd {
             internal StateDelay03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "12", arg2: 2);
+                context.SetTimer(id: "12", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -151,8 +153,8 @@ namespace Maple2.Trigger._52000005_qd {
             internal State여제대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "20", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000005_QD__ACT01__2$", arg4: 3);
+                context.SetTimer(id: "20", arg2: 3);
+                context.SetConversation(arg1: 2, arg2: 11000075, script: "$52000005_QD__ACT01__2$", arg4: 3);
                 context.SetSkip(state: new State영상Prepare(context));
             }
 
@@ -172,8 +174,8 @@ namespace Maple2.Trigger._52000005_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetTimer(arg1: "21", arg2: 3);
-                context.CameraSelectPath(arg1: new[] {601, 602}, arg2: false);
+                context.SetTimer(id: "21", arg2: 3);
+                context.CameraSelectPath(pathIds: new[] {601, 602}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -191,17 +193,17 @@ namespace Maple2.Trigger._52000005_qd {
             internal State영상재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
-                context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.CreateWidget(type: WidgetType.SceneMovie);
+                context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.PlaySceneMovie(fileName: "lumieragonhistory.swf", movieId: 1);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new State영상종료(context);
                 }
 
@@ -215,10 +217,10 @@ namespace Maple2.Trigger._52000005_qd {
             internal State영상종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "31", arg2: 4);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000005_QD__ACT01__3$", arg4: 4);
+                context.SetTimer(id: "31", arg2: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11000075, script: "$52000005_QD__ACT01__3$", arg4: 4);
                 context.SetSkip(state: new StateStopCinematic(context));
             }
 
@@ -254,8 +256,8 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "Lumieragon_History");
                 context.CameraSelect(arg1: 601, arg2: false);
                 context.CameraSelect(arg1: 602, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

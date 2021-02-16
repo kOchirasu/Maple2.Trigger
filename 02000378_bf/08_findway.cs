@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 23, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 23, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {4028, 3008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3108}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMeshAnimation(arg1: new[] {3008}, arg2: true, arg3: 0, arg4: 0);
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateReadyToWalkIn_FromPortal02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 107, arg3: "$02000378_BF__08_FINDWAY__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 107, script: "$02000378_BF__08_FINDWAY__1$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000378_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1008}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1008, arg3: "$02000378_BF__08_FINDWAY__2$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 1008, script: "$02000378_BF__08_FINDWAY__2$", arg4: 3, arg5: 2);
                 context.SetUserValue(triggerId: 908, key: "MobWaveStart", value: 1);
             }
 
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetMesh(arg1: new[] {3008}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
                 context.SetMeshAnimation(arg1: new[] {3008}, arg2: false, arg3: 0, arg4: 0);
                 context.SetEffect(arg1: new[] {5208}, arg2: true);
-                context.SetPortal(arg1: 23, arg2: true, arg3: true, arg4: false);
-                context.SetConversation(arg1: 1, arg2: 108, arg3: "$02000378_BF__08_FINDWAY__3$", arg4: 2, arg5: 1);
+                context.SetPortal(portalId: 23, visible: true, enabled: true, minimapVisible: false);
+                context.SetConversation(arg1: 1, arg2: 108, script: "$02000378_BF__08_FINDWAY__3$", arg4: 2, arg5: 1);
             }
 
             public override TriggerState Execute() {

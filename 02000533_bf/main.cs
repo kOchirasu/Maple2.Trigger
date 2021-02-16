@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02000533_bf {
     public static class _main {
         public class StateIdle : TriggerState {
@@ -6,7 +8,7 @@ namespace Maple2.Trigger._02000533_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {901, 3000, 3001, 3002, 3003}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10003144}, arg2: 0);
-                context.SetPortal(arg1: 2, arg2: false);
+                context.SetPortal(portalId: 2, visible: false);
                 context.SetEffect(arg1: new[] {7000}, arg2: false);
                 context.CreateMonster(arg1: new[] {603, 604, 605, 606}, arg2: true);
                 context.MoveNpc(arg1: 603, arg2: "MS2PatrolData_5003");
@@ -30,7 +32,7 @@ namespace Maple2.Trigger._02000533_bf {
             internal State출입문부시기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false);
+                context.SetPortal(portalId: 2, visible: false);
                 context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 3000, script: "$02000533_BF__MAIN__0$");
             }
 
@@ -49,7 +51,7 @@ namespace Maple2.Trigger._02000533_bf {
             internal State출입문부시기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000533_BF__MAIN__1$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000533_BF__MAIN__1$", arg3: 3000);
                 context.CreateMonster(arg1: new[] {508}, arg2: true);
             }
 
@@ -163,11 +165,11 @@ namespace Maple2.Trigger._02000533_bf {
             internal State문열기게임(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000, script: "$02000533_BF__MAIN__7$");
                 context.SetUserValue(key: "GameLogicEnd", value: 999);
-                context.WidgetAction(arg1: "Round", arg2: "InitWidgetRound");
+                context.WidgetAction(type: WidgetType.Round, name: "InitWidgetRound");
                 context.SetUserValue(triggerId: 9002, key: "GameLogicStart", value: 999);
                 context.LockMyPc(isLock: true);
             }
@@ -187,7 +189,7 @@ namespace Maple2.Trigger._02000533_bf {
             internal State문열기시작2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000533_BF__MAIN__8$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02000533_BF__MAIN__8$", arg3: 4000);
                 context.LockMyPc(isLock: true);
             }
 
@@ -251,7 +253,7 @@ namespace Maple2.Trigger._02000533_bf {
             internal State게임로직종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000533_BF__MAIN__9$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000533_BF__MAIN__9$", arg3: 3000);
                 context.LockMyPc(isLock: false);
             }
 
@@ -270,7 +272,7 @@ namespace Maple2.Trigger._02000533_bf {
             internal State실패게임로직종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000533_BF__MAIN__10$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000533_BF__MAIN__10$", arg3: 3000);
                 context.LockMyPc(isLock: false);
             }
 
@@ -290,10 +292,10 @@ namespace Maple2.Trigger._02000533_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.LockMyPc(isLock: false);
-                context.AddCinematicTalk(npcId: 0, msg: "$02000533_BF__MAIN__11$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$02000533_BF__MAIN__11$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -311,9 +313,9 @@ namespace Maple2.Trigger._02000533_bf {
             internal State문부시기안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetEventUI(arg1: 1, arg2: "$02000533_BF__MAIN__12$", arg3: 5000);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetEventUI(arg1: 1, script: "$02000533_BF__MAIN__12$", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -351,7 +353,7 @@ namespace Maple2.Trigger._02000533_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {901}, arg2: false, arg3: 1);
-                context.SetPortal(arg1: 2, arg2: true);
+                context.SetPortal(portalId: 2, visible: true);
                 context.LockMyPc(isLock: false);
             }
 
@@ -372,9 +374,9 @@ namespace Maple2.Trigger._02000533_bf {
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000, script: "$02000533_BF__MAIN__14$");
                 context.SetMesh(arg1: new[] {901}, arg2: false, arg3: 1);
-                context.SetPortal(arg1: 2, arg2: true);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetPortal(portalId: 2, visible: true);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.LockMyPc(isLock: false);
             }
 

@@ -27,9 +27,9 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateEnter01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -83,8 +83,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateQuestOnGiong22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -121,8 +121,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateQuestOnGiong12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -159,8 +159,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateQuestOnGiong02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -197,8 +197,8 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_1000");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -255,7 +255,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateLookAround04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000030_CS__FLYINGCLOUD01__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$63000030_CS__FLYINGCLOUD01__0$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_102");
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_202");
             }
@@ -276,7 +276,7 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6100}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$63000030_CS__FLYINGCLOUD01__1$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$63000030_CS__FLYINGCLOUD01__1$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 920, arg2: "MS2PatrolData_920");
                 context.MoveNpc(arg1: 923, arg2: "MS2PatrolData_923");
                 context.MoveNpc(arg1: 925, arg2: "MS2PatrolData_925");
@@ -357,8 +357,8 @@ namespace Maple2.Trigger._63000030_cs {
                 context.DestroyMonster(arg1: new[] {101, 201});
                 context.CreateMonster(arg1: new[] {102, 202}, arg2: false);
                 context.CameraSelect(arg1: 500, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012}, arg2: false);
             }
 
@@ -398,9 +398,9 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateBattleEnd01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -439,8 +439,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateBattleEnd03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSceneSkip(state: new StateDialogueSkip10(context), arg2: "nextState");
             }
 
@@ -461,7 +461,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6101}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 203, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000030_CS__FLYINGCLOUD01__2$", arg4: 7);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$63000030_CS__FLYINGCLOUD01__2$", arg4: 7);
             }
 
             public override TriggerState Execute() {
@@ -496,7 +496,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__3$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000030_CS__FLYINGCLOUD01__3$", arg4: 6);
             }
 
             public override TriggerState Execute() {
@@ -531,7 +531,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__4$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000030_CS__FLYINGCLOUD01__4$", arg4: 6);
             }
 
             public override TriggerState Execute() {
@@ -566,7 +566,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6102}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 203, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000030_CS__FLYINGCLOUD01__5$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$63000030_CS__FLYINGCLOUD01__5$", arg4: 6);
             }
 
             public override TriggerState Execute() {
@@ -601,7 +601,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6002}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__6$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000030_CS__FLYINGCLOUD01__6$", arg4: 6);
             }
 
             public override TriggerState Execute() {
@@ -636,7 +636,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6003}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__7$", arg4: 6);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000030_CS__FLYINGCLOUD01__7$", arg4: 6);
             }
 
             public override TriggerState Execute() {
@@ -671,7 +671,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6103}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 203, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000030_CS__FLYINGCLOUD01__8$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$63000030_CS__FLYINGCLOUD01__8$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -704,7 +704,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateDialogue08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__9$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000030_CS__FLYINGCLOUD01__9$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -742,7 +742,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6104}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 203, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000030_CS__FLYINGCLOUD01__10$", arg4: 8);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$63000030_CS__FLYINGCLOUD01__10$", arg4: 8);
             }
 
             public override TriggerState Execute() {
@@ -777,7 +777,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6004}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__11$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000030_CS__FLYINGCLOUD01__11$", arg4: 5);
                 context.SetSceneSkip();
             }
 
@@ -800,8 +800,8 @@ namespace Maple2.Trigger._63000030_cs {
                 context.CameraSelect(arg1: 501, arg2: false);
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -882,9 +882,9 @@ namespace Maple2.Trigger._63000030_cs {
             internal StatePatrolWhileTalking01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -923,8 +923,8 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateFightBack01(context), arg2: "nextState");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_103");
                 context.MoveNpc(arg1: 204, arg2: "MS2PatrolData_203");
                 context.MoveUserPath(arg1: "MS2PatrolData_1001");
@@ -945,8 +945,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StatePatrolWhileTalking04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 204, arg3: "$63000030_CS__FLYINGCLOUD01__12$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 204, arg3: "$63000030_CS__FLYINGCLOUD01__13$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 204, script: "$63000030_CS__FLYINGCLOUD01__12$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 204, script: "$63000030_CS__FLYINGCLOUD01__13$", arg4: 2, arg5: 2);
             }
 
             public override TriggerState Execute() {
@@ -964,9 +964,9 @@ namespace Maple2.Trigger._63000030_cs {
             internal StatePatrolWhileTalking05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 104, arg3: "$63000030_CS__FLYINGCLOUD01__14$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 104, arg3: "$63000030_CS__FLYINGCLOUD01__15$", arg4: 2, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 104, arg3: "$63000030_CS__FLYINGCLOUD01__16$", arg4: 2, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 104, script: "$63000030_CS__FLYINGCLOUD01__14$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 104, script: "$63000030_CS__FLYINGCLOUD01__15$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 104, script: "$63000030_CS__FLYINGCLOUD01__16$", arg4: 2, arg5: 4);
             }
 
             public override TriggerState Execute() {
@@ -1007,7 +1007,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_104");
                 context.SetEffect(arg1: new[] {6105}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 204, arg3: "$63000030_CS__FLYINGCLOUD01__17$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 204, script: "$63000030_CS__FLYINGCLOUD01__17$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -1043,7 +1043,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateShadowApp04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 104, arg3: "$63000030_CS__FLYINGCLOUD01__18$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 104, script: "$63000030_CS__FLYINGCLOUD01__18$", arg4: 2, arg5: 0);
                 context.SetSceneSkip();
             }
 
@@ -1082,7 +1082,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 204, arg2: "MS2PatrolData_205");
                 context.SetEffect(arg1: new[] {6106}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000030_CS__FLYINGCLOUD01__19$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001557, script: "$63000030_CS__FLYINGCLOUD01__19$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -1117,7 +1117,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_105");
                 context.SetEffect(arg1: new[] {6005}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__20$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001708, script: "$63000030_CS__FLYINGCLOUD01__20$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -1137,9 +1137,9 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.SetEffect(arg1: new[] {5400}, arg2: false);
             }
 
@@ -1182,8 +1182,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateFightBack06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetUserValue(triggerId: 2, key: "PushStart", value: 1);
             }
 
@@ -1204,8 +1204,8 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 602, arg2: false);
                 context.SetEffect(arg1: new[] {5001, 5200, 5201, 5202, 5203, 5204, 5205, 5100}, arg2: true);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.ShowGuideSummary(entityId: 10037020, textId: 10037020);
             }
@@ -1250,9 +1250,9 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateTakeOffFlyingCloud01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: true);
                 context.SetBreakable(arg1: new[] {4000}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10001010}, arg2: 2);
@@ -1294,8 +1294,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateTakeOffFlyingCloud03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 701, arg2: true);
             }
 
@@ -1333,8 +1333,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

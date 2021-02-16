@@ -20,7 +20,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State경고텍스트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"더이상 상대할 수 없습니다.\n포탑을 이용해 다른 곳으로 이동하세요.", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: @"더이상 상대할 수 없습니다.\n포탑을 이용해 다른 곳으로 이동하세요.", arg3: 4000);
             }
 
             public override TriggerState Execute() {
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State경고텍스트_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"더이상 상대할 수 없습니다.\n포탑을 이용해 다른 곳으로 이동하세요.", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: @"더이상 상대할 수 없습니다.\n포탑을 이용해 다른 곳으로 이동하세요.", arg3: 4000);
             }
 
             public override TriggerState Execute() {

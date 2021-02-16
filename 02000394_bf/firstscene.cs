@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000394_bf {
             internal StateCameraCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 3000, arg2: false);
             }
 
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02000394_bf {
             internal StateCameraCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {3000, 3001, 3002, 3003}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {3000, 3001, 3002, 3003}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02000394_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.6f);
             }
         }

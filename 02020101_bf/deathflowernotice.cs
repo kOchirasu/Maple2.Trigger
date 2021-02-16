@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02020101_bf {
             internal State경고(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020101_BF__DEATHFLOWERNOTICE__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02020101_BF__DEATHFLOWERNOTICE__0$", arg3: 3000);
                 context.SetUserValue(triggerId: 900005, key: "notice", value: 0);
             }
 

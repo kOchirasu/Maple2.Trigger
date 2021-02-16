@@ -36,7 +36,7 @@ namespace Maple2.Trigger._02000486_bf {
             internal State텍스트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000486_BF__107_TEXT__0$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02000486_BF__107_TEXT__0$", arg3: 4000);
             }
 
             public override TriggerState Execute() {

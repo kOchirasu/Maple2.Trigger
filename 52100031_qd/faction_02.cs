@@ -24,12 +24,12 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateQuest(context));
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1104}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1101, arg3: "$52100031_QD__FACTION_02__0$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1101, script: "$52100031_QD__FACTION_02__0$", arg4: 5, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10002068}, arg2: 1);
             }
 
@@ -49,8 +49,8 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetSkip();
             }
 

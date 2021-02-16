@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000, 6001, 6002, 6003}, arg2: false);
-                context.SetPortal(arg1: 50, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 50, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {837}, arg2: false);
                 context.SetMesh(arg1: new[] {2000, 2001, 2002, 2003, 2100, 2101, 2102, 2103, 2104, 2105, 2200}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02010051_bf {
             internal State입장Delay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
                 context.SetMesh(arg1: new[] {2000, 2001, 2002, 2003, 2100, 2101, 2102, 2103, 2104, 2105}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -66,8 +66,8 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 7, key: "timercheck", value: 1);
-                context.SetTimer(arg1: "10", arg2: 2);
-                context.SetPortal(arg1: 50, arg2: true, arg3: true, arg4: true);
+                context.SetTimer(id: "10", arg2: 2);
+                context.SetPortal(portalId: 50, visible: true, enabled: true, minimapVisible: true);
                 context.SetEffect(arg1: new[] {6003, 837}, arg2: true);
                 context.SetRandomMesh(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: true, arg3: 10, arg4: 50, arg5: 50);
                 context.SetMesh(arg1: new[] {13001, 13002, 13003, 13004, 13005, 13006, 13007, 13008, 13009, 13010, 13011, 13012, 13013, 13014, 13015, 13016, 13017, 13018, 13019, 13020, 13021, 13022, 13023, 13024, 13025, 13026, 13027, 13028, 13029, 13030, 13031, 13032, 13033, 13034, 13035, 13036, 13037, 13038, 13039}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -89,8 +89,8 @@ namespace Maple2.Trigger._02010051_bf {
             internal State대화SetupCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -104,8 +104,8 @@ namespace Maple2.Trigger._02010051_bf {
             internal StateCinematic대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "20", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11001319, arg3: "$02010051_BF__PORTAL03__0$", arg4: 3);
+                context.SetTimer(id: "20", arg2: 3);
+                context.SetConversation(arg1: 2, arg2: 11001319, script: "$02010051_BF__PORTAL03__0$", arg4: 3);
                 context.SetSkip(state: new State대화StopCinematic01(context));
             }
 
@@ -125,8 +125,8 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

@@ -4,7 +4,7 @@ namespace Maple2.Trigger._50000011_dl {
             internal StateCheckUserCount(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._50000011_dl {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.ShowGuideSummary(entityId: 25100203, textId: 25100203);
             }
 

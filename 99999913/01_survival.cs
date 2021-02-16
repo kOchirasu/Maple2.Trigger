@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._99999913 {
     public static class _01_survival {
         public class StateSetting : TriggerState {
@@ -29,8 +31,8 @@ namespace Maple2.Trigger._99999913 {
             internal StateWait01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 60, arg3: true, arg4: true, arg5: -80);
-                context.SetEventUI(arg1: 1, arg2: @"잠시 기다려주세요.\n잠시 후 경기 시작점이 결정됩니다.", arg3: 4000, arg4: "0");
+                context.SetTimer(id: "1", arg2: 60, arg3: true, arg4: true, arg5: -80);
+                context.SetEventUI(arg1: 1, script: @"잠시 기다려주세요.\n잠시 후 경기 시작점이 결정됩니다.", arg3: 4000, arg4: "0");
                 context.WriteLog(arg1: "Survival", arg3: "Waiting_Start");
             }
 
@@ -93,8 +95,8 @@ namespace Maple2.Trigger._99999913 {
             internal StateStartPositionRandomPick(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
-                context.SetEventUI(arg1: 1, arg2: "시작점으로 이동합니다.", arg3: 3000, arg4: "0");
+                context.ResetTimer(id: "1");
+                context.SetEventUI(arg1: 1, script: "시작점으로 이동합니다.", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -301,7 +303,7 @@ namespace Maple2.Trigger._99999913 {
             internal StatePVPReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"space 키를 누르면  수레에 탈 수 있습니다.\nspace 키를 다시 누르면 수레에서 내립니다.", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: @"space 키를 누르면  수레에 탈 수 있습니다.\nspace 키를 다시 누르면 수레에서 내립니다.", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -320,8 +322,8 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: @"경기를 곧 시작합니다!\n경기 시작과 함께 수레가 출발합니다!", arg3: 4000, arg4: "0");
-                context.CreateFieldGame(type: "MapleSurvive");
+                context.SetEventUI(arg1: 1, script: @"경기를 곧 시작합니다!\n경기 시작과 함께 수레가 출발합니다!", arg3: 4000, arg4: "0");
+                context.CreateFieldGame(type: FieldGame.MapleSurvival);
             }
 
             public override TriggerState Execute() {
@@ -429,7 +431,7 @@ namespace Maple2.Trigger._99999913 {
             internal StateGameCancel01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "참가자 부족으로 인해 경기를 취소합니다.", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "참가자 부족으로 인해 경기를 취소합니다.", arg3: 4000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -447,7 +449,7 @@ namespace Maple2.Trigger._99999913 {
             internal StateGameCancel02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "잠시 후 원래 있던 곳으로 돌아갑니다.", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "잠시 후 원래 있던 곳으로 돌아갑니다.", arg3: 4000, arg4: "0");
             }
 
             public override TriggerState Execute() {

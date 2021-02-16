@@ -68,11 +68,11 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateEvent_06_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1103, arg3: "$02000471_BF__MAGIC_06__0$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 1103, script: "$02000471_BF__MAGIC_06__0$", arg4: 3, arg5: 1);
                 context.SetNpcEmotionSequence(arg1: 1103, arg2: "Talk_A");
-                context.SetConversation(arg1: 1, arg2: 1104, arg3: "$02000471_BF__MAGIC_06__1$", arg4: 3, arg5: 4);
-                context.SetConversation(arg1: 1, arg2: 1103, arg3: "$02000471_BF__MAGIC_06__2$", arg4: 3, arg5: 7);
-                context.SetConversation(arg1: 1, arg2: 1104, arg3: "$02000471_BF__MAGIC_06__3$", arg4: 3, arg5: 10);
+                context.SetConversation(arg1: 1, arg2: 1104, script: "$02000471_BF__MAGIC_06__1$", arg4: 3, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 1103, script: "$02000471_BF__MAGIC_06__2$", arg4: 3, arg5: 7);
+                context.SetConversation(arg1: 1, arg2: 1104, script: "$02000471_BF__MAGIC_06__3$", arg4: 3, arg5: 10);
             }
 
             public override TriggerState Execute() {
@@ -180,8 +180,8 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateEvent_06_h(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1107, arg3: "$02000471_BF__MAGIC_06__4$", arg4: 5, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 1108, arg3: "$02000471_BF__MAGIC_06__5$", arg4: 3, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 1107, script: "$02000471_BF__MAGIC_06__4$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1108, script: "$02000471_BF__MAGIC_06__5$", arg4: 3, arg5: 3);
             }
 
             public override TriggerState Execute() {
@@ -200,9 +200,9 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1107, arg2: "MS2PatrolData_2142");
-                context.SetConversation(arg1: 1, arg2: 1107, arg3: "$02000471_BF__MAGIC_06__6$", arg4: 5, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 1108, arg3: "$02000471_BF__MAGIC_06__7$", arg4: 3, arg5: 3);
-                context.SetConversation(arg1: 1, arg2: 1107, arg3: "$02000471_BF__MAGIC_06__8$", arg4: 3, arg5: 5);
+                context.SetConversation(arg1: 1, arg2: 1107, script: "$02000471_BF__MAGIC_06__6$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1108, script: "$02000471_BF__MAGIC_06__7$", arg4: 3, arg5: 3);
+                context.SetConversation(arg1: 1, arg2: 1107, script: "$02000471_BF__MAGIC_06__8$", arg4: 3, arg5: 5);
             }
 
             public override TriggerState Execute() {

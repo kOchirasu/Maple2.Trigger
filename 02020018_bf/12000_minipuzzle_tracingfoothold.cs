@@ -4,8 +4,8 @@ namespace Maple2.Trigger._02020018_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "2");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "2");
                 context.SetInteractObject(arg1: new[] {12000082, 12000083, 12000223, 12000075}, arg2: 2);
                 context.SetMesh(arg1: new[] {12001, 12002, 12003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 12201, arg2: false, arg3: "Interaction_luminous_A01_on");
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02020018_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000075}, arg2: 0)) {
-                    context.SetTimer(arg1: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
+                    context.SetTimer(id: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
                     return new StateTracingFootHold_Start_Delay(context);
                 }
 
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02020018_bf {
                 context.SetEffect(arg1: new[] {12100}, arg2: true);
                 context.SetMesh(arg1: new[] {12003}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
                 context.SetInteractObject(arg1: new[] {12000223}, arg2: 1);
-                context.SetTimer(arg1: "2", arg2: 60, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "2", arg2: 60, arg3: true, arg4: false, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -231,8 +231,8 @@ namespace Maple2.Trigger._02020018_bf {
             internal StateResetTimer(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "2");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "2");
             }
 
             public override TriggerState Execute() {

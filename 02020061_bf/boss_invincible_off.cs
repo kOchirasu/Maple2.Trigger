@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02020061_bf {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {9002}, arg2: 70002371, arg3: 1, arg5: false);
-                context.SetEventUI(arg1: 1, arg2: "$02020061_BF__BOSS_INVINCIBLE_OFF__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020061_BF__BOSS_INVINCIBLE_OFF__0$", arg3: 5000);
             }
 
             public override TriggerState Execute() {

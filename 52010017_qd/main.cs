@@ -37,8 +37,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal StateCameraCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
             }
 
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._52010017_qd {
                 context.SetLadder(arg1: 403, arg2: true, arg3: true, arg4: 0);
                 context.SetLadder(arg1: 404, arg2: true, arg3: true, arg4: 0);
                 context.SetLadder(arg1: 405, arg2: true, arg3: true, arg4: 0);
-                context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010017_QD__MAIN__0$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010017_QD__MAIN__0$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -83,8 +83,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal State체크포인트01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 301, arg2: false);
             }
 
@@ -104,8 +104,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal StateCameraCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 302, arg2: true);
             }
 
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._52010017_qd {
             internal State미카Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010017_QD__MAIN__1$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010017_QD__MAIN__1$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal State체크포인트02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_A");
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_A");
                 context.MoveNpc(arg1: 1004, arg2: "MS2PatrolData_1004_A");
@@ -202,8 +202,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal StateCameraCinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -221,7 +221,7 @@ namespace Maple2.Trigger._52010017_qd {
             internal State타라Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001218, arg3: "$52010017_QD__MAIN__2$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001218, script: "$52010017_QD__MAIN__2$", arg4: 2);
                 context.CameraSelect(arg1: 303, arg2: true);
                 context.CreateMonster(arg1: new[] {2003}, arg2: true);
             }
@@ -241,8 +241,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal State체크포인트03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 303, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_B");
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_B");
@@ -301,8 +301,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal StateCameraCinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -321,7 +321,7 @@ namespace Maple2.Trigger._52010017_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 304, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010017_QD__MAIN__3$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001217, script: "$52010017_QD__MAIN__3$", arg4: 2);
                 context.CreateMonster(arg1: new[] {2004}, arg2: true);
             }
 
@@ -340,8 +340,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal State체크포인트04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 304, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_C");
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_C");
@@ -400,8 +400,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal StateCameraCinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -420,7 +420,7 @@ namespace Maple2.Trigger._52010017_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 305, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010017_QD__MAIN__4$", arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001292, script: "$52010017_QD__MAIN__4$", arg4: 2);
                 context.CreateMonster(arg1: new[] {2005}, arg2: true);
             }
 
@@ -439,8 +439,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal State체크포인트05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraSelect(arg1: 305, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_D");
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_D");
@@ -500,8 +500,8 @@ namespace Maple2.Trigger._52010017_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1005, arg2: "MS2PatrolData_1005_D3");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -519,7 +519,7 @@ namespace Maple2.Trigger._52010017_qd {
             internal State미카Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010017_QD__MAIN__5$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010017_QD__MAIN__5$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -537,7 +537,7 @@ namespace Maple2.Trigger._52010017_qd {
             internal State미카Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010017_QD__MAIN__6$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010017_QD__MAIN__6$", arg4: 5);
             }
 
             public override TriggerState Execute() {
@@ -555,8 +555,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal State이동Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetAchievement(arg1: 110, arg2: "trigger", arg3: "Getalllamestone");
             }
 

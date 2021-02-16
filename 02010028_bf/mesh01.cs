@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02010028_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005}, arg2: false, arg3: 0, arg4: 0, arg5: 7f);
-                context.SetTimer(arg1: "2", arg2: 3);
+                context.SetTimer(id: "2", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02010028_bf {
             internal State재사용Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 4);
+                context.SetTimer(id: "3", arg2: 4);
             }
 
             public override TriggerState Execute() {

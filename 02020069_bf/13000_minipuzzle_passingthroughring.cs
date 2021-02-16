@@ -4,8 +4,8 @@ namespace Maple2.Trigger._02020069_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "10");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "10");
                 context.SetMesh(arg1: new[] {13001, 13011, 13002, 13012, 13003, 13013}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMeshAnimation(arg1: new[] {13011, 13012, 13013}, arg2: false, arg3: 0, arg4: 0);
                 context.SetInteractObject(arg1: new[] {12000235, 12000076}, arg2: 2);
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02020069_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000076}, arg2: 0)) {
-                    context.SetTimer(arg1: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
+                    context.SetTimer(id: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
                     return new StatePassingThroughRing_Start_Delay(context);
                 }
 
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02020069_bf {
             }
 
             public override TriggerState Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13401, additionalEffectId: 71001031, level: true)) {
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13401, additionalEffectId: 71001031, level: 1)) {
                     return new StatePassingThroughRing_Play01_Delay(context);
                 }
 
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._02020069_bf {
             }
 
             public override TriggerState Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13402, additionalEffectId: 71001031, level: true)) {
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13402, additionalEffectId: 71001031, level: 1)) {
                     return new StatePassingThroughRing_Play02_Delay(context);
                 }
 
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._02020069_bf {
             }
 
             public override TriggerState Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13403, additionalEffectId: 71001031, level: true)) {
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13403, additionalEffectId: 71001031, level: 1)) {
                     return new StatePassingThroughRing_Play03_Delay(context);
                 }
 
@@ -225,7 +225,7 @@ namespace Maple2.Trigger._02020069_bf {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {130001}, arg2: 71001032, arg3: 1, arg4: false, arg5: false);
-                context.SetTimer(arg1: "10", arg2: 61, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "10", arg2: 61, arg3: true, arg4: false, arg5: 0);
                 context.SetEffect(arg1: new[] {13200}, arg2: true);
                 context.SetMesh(arg1: new[] {13300}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {12000235}, arg2: 1);
@@ -271,8 +271,8 @@ namespace Maple2.Trigger._02020069_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.ResetTimer(arg1: "1");
-                    context.ResetTimer(arg1: "10");
+                    context.ResetTimer(id: "1");
+                    context.ResetTimer(id: "10");
                     return new StateWait(context);
                 }
 
@@ -286,8 +286,8 @@ namespace Maple2.Trigger._02020069_bf {
             internal StateResetTimer(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
-                context.ResetTimer(arg1: "10");
+                context.ResetTimer(id: "1");
+                context.ResetTimer(id: "10");
             }
 
             public override TriggerState Execute() {

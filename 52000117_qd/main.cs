@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000117_qd {
     public static class _main {
         public class StateReady : TriggerState {
@@ -22,9 +24,9 @@ namespace Maple2.Trigger._52000117_qd {
             internal StateFadeout(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -44,8 +46,8 @@ namespace Maple2.Trigger._52000117_qd {
             internal StateFadein(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -64,8 +66,8 @@ namespace Maple2.Trigger._52000117_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
-                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__0$", duration: 3000, illustId: "Jordy_normal", align: "Left");
-                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__1$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003166, script: "$52000117_QD__MAIN__0$", duration: 3000, illustId: "Jordy_normal", align: Align.Left);
+                context.AddCinematicTalk(npcId: 11003166, script: "$52000117_QD__MAIN__1$", duration: 3000);
                 context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
@@ -86,8 +88,8 @@ namespace Maple2.Trigger._52000117_qd {
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_3002");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
-                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__2$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__3$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003166, script: "$52000117_QD__MAIN__2$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003166, script: "$52000117_QD__MAIN__3$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -106,7 +108,7 @@ namespace Maple2.Trigger._52000117_qd {
 
             public override void OnEnter() {
                 context.SetPcEmotionSequence(arg1: "Emotion_Angry_A");
-                context.AddCinematicTalk(npcId: 0, msg: "$52000117_QD__MAIN__15$", duration: 2000);
+                context.AddCinematicTalk(npcId: 0, script: "$52000117_QD__MAIN__15$", duration: 2000);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Sit_Down_A", arg3: 3000f);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Sit_Down_A", arg3: 3000f);
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$52000117_QD__MAIN__5$", duration: 3000);
@@ -146,8 +148,8 @@ namespace Maple2.Trigger._52000117_qd {
             internal StateScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__7$", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4001}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003166, script: "$52000117_QD__MAIN__7$", duration: 3000);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetPcEmotionLoop(arg1: "Emotion_Dance_S", arg2: 3000f);
             }
@@ -186,8 +188,8 @@ namespace Maple2.Trigger._52000117_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__8$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__9$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003166, script: "$52000117_QD__MAIN__8$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003166, script: "$52000117_QD__MAIN__9$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -206,8 +208,8 @@ namespace Maple2.Trigger._52000117_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__10$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__11$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003166, script: "$52000117_QD__MAIN__10$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003166, script: "$52000117_QD__MAIN__11$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -226,8 +228,8 @@ namespace Maple2.Trigger._52000117_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__12$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__13$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003166, script: "$52000117_QD__MAIN__12$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003166, script: "$52000117_QD__MAIN__13$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -263,9 +265,9 @@ namespace Maple2.Trigger._52000117_qd {
             internal StateScene_fadeout(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -301,8 +303,8 @@ namespace Maple2.Trigger._52000117_qd {
             internal StateScene_fadein(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSceneSkip();
             }
 
@@ -323,8 +325,8 @@ namespace Maple2.Trigger._52000117_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101});
                 context.CameraReset(interpolationTime: 0.5f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetAchievement(arg1: 2001, arg2: "trigger", arg3: "jordyhello");
             }
 
@@ -344,7 +346,7 @@ namespace Maple2.Trigger._52000117_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$52000117_QD__MAIN__14$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52000117_QD__MAIN__14$", arg3: 3000, arg4: "0");
                 context.MoveUser(arg1: 52000118, arg2: 0);
             }
 

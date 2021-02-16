@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52020011_qd {
     public static class _main_a {
         public class StateIdle : TriggerState {
@@ -20,9 +22,9 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -40,10 +42,10 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
-                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
+                context.CameraSelectPath(pathIds: new[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52020011, arg2: 6001);
                 context.SetSceneSkip(state: new StateExit(context), arg2: "Exit");
             }
@@ -63,10 +65,10 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateScene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$map:52020011$", desc: "$NpcName:11003599$의 임시 거처", align: "centerLeft", offsetRateX: 0.05f, offsetRateY: 0.15f, duration: 3000, scale: 1.5f);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.CameraSelectPath(pathIds: new[] {4002}, arg2: false);
+                context.ShowCaption(type: CaptionType.Vertical, title: "$map:52020011$", script: "$NpcName:11003599$의 임시 거처", align: Align.Center | Align.Left, offsetRateX: 0.05f, offsetRateY: 0.15f, duration: 3000, scale: 1.5f);
             }
 
             public override TriggerState Execute() {
@@ -84,7 +86,7 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4003, 4004, 4005, 4006}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4003, 4004, 4005, 4006}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -104,7 +106,7 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateScene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4007, 4008}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4007, 4008}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -122,8 +124,8 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateScene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(type: "NameCaption", title: "$NpcName:11003599$", desc: "크리티아스 왕녀", align: "centerLeft", offsetRateX: 0.05f, offsetRateY: 0.15f, duration: 3000, scale: 2.0f);
-                context.AddCinematicTalk(npcId: 11003599, msg: "그래, 반갑구나.", duration: 2800);
+                context.ShowCaption(type: CaptionType.Name, title: "$NpcName:11003599$", script: "크리티아스 왕녀", align: Align.Center | Align.Left, offsetRateX: 0.05f, offsetRateY: 0.15f, duration: 3000, scale: 2.0f);
+                context.AddCinematicTalk(npcId: 11003599, script: "그래, 반갑구나.", duration: 2800);
                 context.SetSceneSkip();
             }
 
@@ -142,8 +144,8 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateExit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0f);
             }
 

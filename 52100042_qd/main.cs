@@ -264,8 +264,8 @@ namespace Maple2.Trigger._52100042_qd {
             internal StateQuest_end(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 510, arg3: "$52100042_QD__MAIN__0$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 510, arg3: "$52100042_QD__MAIN__1$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 510, script: "$52100042_QD__MAIN__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 510, script: "$52100042_QD__MAIN__1$", arg4: 2, arg5: 2);
                 context.SetAchievement(arg1: 90000, arg2: "trigger", arg3: "Madracan_Q03");
             }
 

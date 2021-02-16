@@ -40,8 +40,8 @@ namespace Maple2.Trigger._51000006_dg {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Result_01");
                 context.WriteLog(arg1: "ThreeTwoOne_log", arg2: 9001, arg3: "char_event", arg5: "BlackbeanThreeTwoOnegameover");
-                context.SetTimer(arg1: "10", arg2: 10, arg4: true);
-                context.CameraSelectPath(arg1: new[] {8011, 8010}, arg2: false);
+                context.SetTimer(id: "10", arg2: 10, arg4: true);
+                context.CameraSelectPath(pathIds: new[] {8011, 8010}, arg2: false);
                 context.ArcadeThreeTwoOneEndGame();
             }
 

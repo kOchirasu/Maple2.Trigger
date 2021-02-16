@@ -20,7 +20,7 @@ namespace Maple2.Trigger._99999840 {
             internal State메시지1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "B팀의Boss 체력이 70% 이하입니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "B팀의Boss 체력이 70% 이하입니다.", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._99999840 {
             internal State메시지2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "B팀의Boss 체력이 50% 이하입니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "B팀의Boss 체력이 50% 이하입니다.", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._99999840 {
             internal State메시지3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "B팀의Boss 체력이 30% 이하입니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "B팀의Boss 체력이 30% 이하입니다.", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._99999840 {
             internal State메시지4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "B팀의Boss 체력이 10% 이하입니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "B팀의Boss 체력이 10% 이하입니다.", arg3: 5000);
             }
 
             public override TriggerState Execute() {

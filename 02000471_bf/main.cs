@@ -49,10 +49,10 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateStart(context));
-                context.CameraSelectPath(arg1: new[] {8100, 8101, 8102}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8100, 8101, 8102}, arg2: false);
                 context.SetAmbientLight(arg1: new Vector3(120f, 120f, 120f));
                 context.SetDirectionalLight(arg1: new Vector3(10f, 10f, 10f), arg2: new Vector3(0f, 0f, 0f));
                 context.AddBuff(arg1: new[] {701}, arg2: 71000009, arg3: 1, arg4: false, arg5: false);
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1801, 1802}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.DungeonFail();
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -126,8 +126,8 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetUserValue(triggerId: 2040319, key: "SpawnCheck", value: 1);
                 context.SetUserValue(triggerId: 2040320, key: "SpawnCheck", value: 1);
                 context.SetUserValue(triggerId: 2040321, key: "SpawnCheck", value: 1);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new[] {8006, 8007}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8006, 8007}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -211,10 +211,10 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetUserValue(triggerId: 2040321, key: "Buff", value: 1);
                 context.SetUserValue(triggerId: 2040322, key: "Boss", value: 1);
                 context.SetInteractObject(arg1: new[] {10002018, 10002019, 10002020, 10002021, 10002022, 10002023, 10002024}, arg2: 2);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__MAIN__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000471_BF__MAIN__0$", arg3: 3000);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -254,7 +254,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.DungeonClear();
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.SetEffect(arg1: new[] {7999}, arg2: false);
                 context.SetEffect(arg1: new[] {7998}, arg2: true);
             }

@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02020301_bf {
     public static class _3000031_phase_2_interect_01 {
         public class StateWait : TriggerState {
@@ -22,8 +24,8 @@ namespace Maple2.Trigger._02020301_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__3000031_PHASE_2_INTERECT_01__0$", duration: 3176);
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__3000031_PHASE_2_INTERECT_01__1$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__3000031_PHASE_2_INTERECT_01__0$", duration: 3176);
+                context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__3000031_PHASE_2_INTERECT_01__1$", duration: 3176);
             }
 
             public override TriggerState Execute() {
@@ -41,7 +43,7 @@ namespace Maple2.Trigger._02020301_bf {
             internal State인터렉트_설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020301_BF__3000031_PHASE_2_INTERECT_01__2$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02020301_BF__3000031_PHASE_2_INTERECT_01__2$", arg3: 4000);
                 context.CreateMonster(arg1: new[] {999}, arg2: false);
             }
 

@@ -220,9 +220,9 @@ namespace Maple2.Trigger._63000019_cs {
             internal StateWeiHongTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000019_CS__DRINKJUICE01__0$", arg4: 5);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000019_CS__DRINKJUICE01__0$", arg4: 5);
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
                 context.SetSkip(state: new StateWeiHongTalk02(context));
             }
@@ -262,7 +262,7 @@ namespace Maple2.Trigger._63000019_cs {
             internal StateWeiHongTalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001547, arg3: "$63000019_CS__DRINKJUICE01__1$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11001547, script: "$63000019_CS__DRINKJUICE01__1$", arg4: 4);
                 context.SetEffect(arg1: new[] {8001}, arg2: true);
                 context.SetSkip(state: new StateWeiHongTalk04(context));
             }
@@ -302,7 +302,7 @@ namespace Maple2.Trigger._63000019_cs {
             internal StateWeiHongTalk05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000019_CS__DRINKJUICE01__2$", arg4: 8);
+                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000019_CS__DRINKJUICE01__2$", arg4: 8);
                 context.SetEffect(arg1: new[] {8002}, arg2: true);
                 context.SetSkip(state: new StateMovingDelay01(context));
             }
@@ -342,8 +342,8 @@ namespace Maple2.Trigger._63000019_cs {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.MoveUser(arg1: 63000020, arg2: 1, arg3: 9900);
             }
 

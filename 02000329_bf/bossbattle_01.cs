@@ -6,7 +6,7 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {611}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000759}, arg2: 2);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetActor(arg1: 211, arg2: true, arg3: "Closed");
                 context.CreateMonster(arg1: new[] {1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018}, arg2: false);
                 context.SetEffect(arg1: new[] {6811}, arg2: false);
@@ -49,8 +49,8 @@ namespace Maple2.Trigger._02000329_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetInteractObject(arg1: new[] {10000759}, arg2: 1);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 103, textId: 20000050);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -102,8 +102,8 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {611}, arg2: false);
                 context.SetEffect(arg1: new[] {6811}, arg2: true);
-                context.SetTimer(arg1: "6", arg2: 6);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "6", arg2: 6);
+                context.SetTimer(id: "2", arg2: 2);
                 context.SetActor(arg1: 211, arg2: true, arg3: "Opened");
             }
 
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._02000329_bf {
                 context.MoveNpc(arg1: 1015, arg2: "MS2PatrolData_1006");
                 context.MoveNpc(arg1: 1016, arg2: "MS2PatrolData_1005");
                 context.MoveNpc(arg1: 1017, arg2: "MS2PatrolData_1004");
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

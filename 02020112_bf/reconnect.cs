@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {916}, arg2: 70002105, arg3: 1, arg5: false);
-                context.SetTimer(arg1: "1", arg2: 5, arg3: false, arg4: false);
+                context.SetTimer(id: "1", arg2: 5, arg3: false, arg4: false);
             }
 
             public override TriggerState Execute() {

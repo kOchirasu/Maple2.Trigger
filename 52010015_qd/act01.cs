@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52010015_qd {
             internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "100", arg2: 1);
+                context.SetTimer(id: "100", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._52010015_qd {
             internal State미카교체01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.DestroyMonster(arg1: new[] {201});
                 context.CreateMonster(arg1: new[] {202}, arg2: false);
             }

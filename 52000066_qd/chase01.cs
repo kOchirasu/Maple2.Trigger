@@ -15,7 +15,7 @@ namespace Maple2.Trigger._52000066_qd {
                 context.SetEffect(arg1: new[] {5001}, arg2: false);
                 context.SetBreakable(arg1: new[] {4100, 4200}, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new[] {4100, 4200}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: true, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -33,8 +33,8 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateLodingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._52000066_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_1002");
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000066_QD__CHASE01__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000066_QD__CHASE01__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -109,8 +109,8 @@ namespace Maple2.Trigger._52000066_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 600, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._52000066_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101});
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$52000066_QD__CHASE01__1$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52000066_QD__CHASE01__1$", arg3: 3000, arg4: "0");
                 context.SetLadder(arg1: 1000, arg2: true, arg3: true);
                 context.SetLadder(arg1: 1001, arg2: true, arg3: true);
                 context.SetLadder(arg1: 1002, arg2: true, arg3: true);
@@ -154,8 +154,8 @@ namespace Maple2.Trigger._52000066_qd {
             internal State2ndCameraGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 601, arg2: true);
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_102");
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52000066_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_1001");
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000066_QD__CHASE01__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000066_QD__CHASE01__2$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -227,8 +227,8 @@ namespace Maple2.Trigger._52000066_qd {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -297,8 +297,8 @@ namespace Maple2.Trigger._52000066_qd {
             internal State3rdCameraGuide02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 602, arg2: true);
             }
 
@@ -338,7 +338,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StatePCMonologue10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000066_QD__CHASE01__3$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000066_QD__CHASE01__3$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -351,8 +351,8 @@ namespace Maple2.Trigger._52000066_qd {
 
             public override void OnExit() {
                 context.CameraSelect(arg1: 604, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -382,8 +382,8 @@ namespace Maple2.Trigger._52000066_qd {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_103");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -456,7 +456,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StatePCMonologue20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000066_QD__CHASE01__4$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, script: "$52000066_QD__CHASE01__4$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -474,8 +474,8 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateQuestEndCheck01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -493,7 +493,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

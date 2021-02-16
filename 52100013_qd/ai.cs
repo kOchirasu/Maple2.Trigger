@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52100013_qd {
     public static class _ai {
         public class StateIsDungeonRoomReady : TriggerState {
@@ -149,8 +151,8 @@ namespace Maple2.Trigger._52100013_qd {
                 context.RemoveBuff(arg1: 701, arg2: 99910120);
                 context.SetMesh(arg1: new[] {1001, 1002, 1004, 1005, 1006}, arg2: false);
                 context.SetLocalCamera(cameraId: 8002, enable: true);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52100013_QD__AI__7$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52100013_QD__AI__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52100013_QD__AI__7$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52100013_QD__AI__0$", arg4: 2, arg5: 0);
                 context.DestroyMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
             }
 
@@ -178,8 +180,8 @@ namespace Maple2.Trigger._52100013_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(arg1: new[] {201, 210, 101, 102});
                 context.CreateMonster(arg1: new[] {202, 103, 104}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -199,13 +201,13 @@ namespace Maple2.Trigger._52100013_qd {
             public override void OnEnter() {
                 context.SetSkip(state: new StateEnding_04(context));
                 context.DestroyMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
-                context.CameraSelectPath(arg1: new[] {8101, 8102, 8103}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8101, 8102, 8103}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Stun_A", arg3: 9000000f);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2008");
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_2007");
-                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$52100013_QD__AI__1$", align: "right", duration: 2000);
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$52100013_QD__AI__2$", align: "left", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", script: "$52100013_QD__AI__1$", align: Align.Right, duration: 2000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", script: "$52100013_QD__AI__2$", align: Align.Left, duration: 2000);
             }
 
             public override TriggerState Execute() {
@@ -223,10 +225,10 @@ namespace Maple2.Trigger._52100013_qd {
             internal StateEnding_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 202, arg3: "$52100013_QD__AI__3$", arg4: 2, arg5: 0);
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$52100013_QD__AI__4$", align: "left", duration: 2000);
-                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$52100013_QD__AI__5$", align: "right", duration: 2000);
-                context.SetConversation(arg1: 1, arg2: 202, arg3: "$52100013_QD__AI__6$", arg4: 2, arg5: 6);
+                context.SetConversation(arg1: 1, arg2: 202, script: "$52100013_QD__AI__3$", arg4: 2, arg5: 0);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", script: "$52100013_QD__AI__4$", align: Align.Left, duration: 2000);
+                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", script: "$52100013_QD__AI__5$", align: Align.Right, duration: 2000);
+                context.SetConversation(arg1: 1, arg2: 202, script: "$52100013_QD__AI__6$", arg4: 2, arg5: 6);
             }
 
             public override TriggerState Execute() {
@@ -282,8 +284,8 @@ namespace Maple2.Trigger._52100013_qd {
             public override void OnEnter() {
                 context.SetLocalCamera(cameraId: 8001, enable: false);
                 context.SetLocalCamera(cameraId: 8002, enable: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -325,7 +327,7 @@ namespace Maple2.Trigger._52100013_qd {
                 context.SetMesh(arg1: new[] {1004, 1005, 1006}, arg2: false);
                 context.SetEffect(arg1: new[] {7001}, arg2: false);
                 context.SetMesh(arg1: new[] {1001, 1002}, arg2: false);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "clearalbanos");
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "ClearOceanKing");
                 context.DungeonClear();

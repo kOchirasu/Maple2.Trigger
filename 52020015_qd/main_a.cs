@@ -40,8 +40,8 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4001}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4101, 4102}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4101, 4102}, arg2: false);
                 context.SetSceneSkip(state: new StateMobSpawn_A(context), arg2: "nextState");
             }
 
@@ -114,7 +114,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4105}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4105}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4104, 4103}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4104, 4103}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4201}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4201}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Down_Idle_A", arg3: 10000f);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Down_Idle_A", arg3: 10000f);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Down_Idle_A", arg3: 10000f);
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4202}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4202}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4204}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4204}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -207,7 +207,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4202}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4202}, arg2: false);
                 context.SetSceneSkip();
             }
 
@@ -247,8 +247,8 @@ namespace Maple2.Trigger._52020015_qd {
             internal StatePlay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
@@ -290,7 +290,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4001}, arg2: false);
                 context.SetSceneSkip(state: new StateEnd(context), arg2: "Exit");
             }
 
@@ -328,8 +328,8 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 

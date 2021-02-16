@@ -24,7 +24,7 @@ namespace Maple2.Trigger._03000049_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 201, arg3: "$03000049_BF__TRIGGER_02__0$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 201, script: "$03000049_BF__TRIGGER_02__0$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._03000049_bf {
             internal State반항2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: false);
+                context.SetTimer(id: "1", arg2: 30, arg3: false);
                 context.SetInteractObject(arg1: new[] {10000286}, arg2: 2);
             }
 

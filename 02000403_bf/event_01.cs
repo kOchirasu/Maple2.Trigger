@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000403_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000403_BF__EVENT_01__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000403_BF__EVENT_01__0$", arg3: 3000);
             }
 
             public override TriggerState Execute() {

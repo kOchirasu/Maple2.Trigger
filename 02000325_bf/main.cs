@@ -6,7 +6,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10000739, 10000740}, arg2: 2);
                 context.SetEffect(arg1: new[] {601, 602, 611, 612}, arg2: false);
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02000325_BF__MAIN__0$", arg3: 4000, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__0$", arg3: 4000, arg4: "0");
                     return new State어나운스02(context);
                 }
 
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02000325_BF__MAIN__1$", arg3: 3500, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__1$", arg3: 3500, arg4: "0");
                     return new State어나운스03(context);
                 }
 
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02000325_BF__MAIN__2$", arg3: 3500, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__2$", arg3: 3500, arg4: "0");
                     return new State1라운드반응체크(context);
                 }
 
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {602, 611, 612}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000739, 10000740}, arg2: 1);
-                context.SetEventUI(arg1: 0, arg2: "1,3");
+                context.SetEventUI(arg1: 0, script: "1,3");
                 context.ShowCountUI(text: "$02000325_BF__MAIN__3$", stage: 1, count: 3);
             }
 
@@ -612,7 +612,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02000325_BF__MAIN__4$", arg3: 3500, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__4$", arg3: 3500, arg4: "0");
                     return new State2라운드반응체크(context);
                 }
 
@@ -645,7 +645,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State어나운스04_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000325_BF__MAIN__5$", arg3: 3500, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__5$", arg3: 3500, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -665,7 +665,7 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {602, 612}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000740}, arg2: 1);
-                context.SetEventUI(arg1: 0, arg2: "2,3");
+                context.SetEventUI(arg1: 0, script: "2,3");
                 context.ShowCountUI(text: "$02000325_BF__MAIN__6$", stage: 2, count: 3);
             }
 
@@ -1558,7 +1558,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02000325_BF__MAIN__7$", arg3: 3500, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__7$", arg3: 3500, arg4: "0");
                     return new State3라운드반응체크(context);
                 }
 
@@ -1593,7 +1593,7 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetEffect(arg1: new[] {612}, arg2: false);
-                context.SetEventUI(arg1: 0, arg2: "3,3");
+                context.SetEventUI(arg1: 0, script: "3,3");
                 context.ShowCountUI(text: "$02000325_BF__MAIN__9$", stage: 3, count: 3);
             }
 
@@ -2503,8 +2503,8 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                    context.SetEventUI(arg1: 0, arg2: "0,0");
+                    context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
+                    context.SetEventUI(arg1: 0, script: "0,0");
                     context.DungeonClear();
                     return new StateEnd(context);
                 }

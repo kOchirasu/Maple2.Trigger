@@ -41,9 +41,9 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateNpcMove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 5008, arg3: "$02000296_BF__NPC1__0$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 50081, arg3: "$02000296_BF__NPC5__0$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 50082, arg3: "$02000296_BF__NPC6__0$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 5008, script: "$02000296_BF__NPC1__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 50081, script: "$02000296_BF__NPC5__0$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 50082, script: "$02000296_BF__NPC6__0$", arg4: 2, arg5: 2);
                 context.MoveNpc(arg1: 5008, arg2: "MS2PatrolData2");
                 context.MoveNpc(arg1: 50081, arg2: "MS2PatrolData2");
                 context.MoveNpc(arg1: 50082, arg2: "MS2PatrolData2");

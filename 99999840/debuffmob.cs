@@ -32,7 +32,7 @@ namespace Maple2.Trigger._99999840 {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 60);
+                context.SetTimer(id: "2", arg2: 60);
             }
 
             public override TriggerState Execute() {
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._99999840 {
             internal StateRandom확률(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"디버프 몬스터가 생성되었습니다.\n몬스터를 처치하면 상대팀에 디버프를 겁니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: @"디버프 몬스터가 생성되었습니다.\n몬스터를 처치하면 상대팀에 디버프를 겁니다.", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._99999840 {
                 }
 
                 if (context.MonsterDead(arg1: new[] {801})) {
-                    context.SetEventUI(arg1: 1, arg2: "상대팀에 이동속도 감소 디Buff를 겁니다.", arg3: 5000);
+                    context.SetEventUI(arg1: 1, script: "상대팀에 이동속도 감소 디Buff를 겁니다.", arg3: 5000);
                     context.SetDungeonVariable(varId: 801, value: true);
                     return new StateDelay(context);
                 }
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._99999840 {
                 }
 
                 if (context.MonsterDead(arg1: new[] {802})) {
-                    context.SetEventUI(arg1: 1, arg2: "상대팀에 공격력 감소 디Buff를 겁니다.", arg3: 5000);
+                    context.SetEventUI(arg1: 1, script: "상대팀에 공격력 감소 디Buff를 겁니다.", arg3: 5000);
                     context.SetDungeonVariable(varId: 802, value: true);
                     return new StateDelay(context);
                 }
@@ -161,7 +161,7 @@ namespace Maple2.Trigger._99999840 {
                 }
 
                 if (context.MonsterDead(arg1: new[] {803})) {
-                    context.SetEventUI(arg1: 1, arg2: "상대팀에 체력 감소 디Buff를 겁니다.", arg3: 5000);
+                    context.SetEventUI(arg1: 1, script: "상대팀에 체력 감소 디Buff를 겁니다.", arg3: 5000);
                     context.SetDungeonVariable(varId: 803, value: true);
                     return new StateDelay(context);
                 }
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._99999840 {
             internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 60);
+                context.SetTimer(id: "1", arg2: 60);
             }
 
             public override TriggerState Execute() {

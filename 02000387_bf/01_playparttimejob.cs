@@ -6,7 +6,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "ry_functobj_door_E01_off");
                 context.SetActor(arg1: 4001, arg2: true, arg3: "ry_functobj_door_E01_off");
@@ -49,8 +49,8 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetMiniGameAreaForHack(boxId: 9001);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateGuideTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__01_PLAYPARTTIMEJOB__0$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000491, script: "$02000387_BF__01_PLAYPARTTIMEJOB__0$", arg4: 4);
                 context.SetSkip(state: new StateGuideTalk01Skip(context));
             }
 
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateGuideTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__01_PLAYPARTTIMEJOB__1$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000491, script: "$02000387_BF__01_PLAYPARTTIMEJOB__1$", arg4: 4);
                 context.SetSkip(state: new StateGuideTalk02Skip(context));
             }
 
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateGuideTalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__01_PLAYPARTTIMEJOB__2$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000491, script: "$02000387_BF__01_PLAYPARTTIMEJOB__2$", arg4: 4);
                 context.SetSkip(state: new StateGuideTalk03Skip(context));
             }
 
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateGuideTalk04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__01_PLAYPARTTIMEJOB__3$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000491, script: "$02000387_BF__01_PLAYPARTTIMEJOB__3$", arg4: 4);
                 context.SetSkip(state: new StateGuideTalk04Skip(context));
             }
 
@@ -191,8 +191,8 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -264,7 +264,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetActor(arg1: 4001, arg2: true, arg3: "ry_functobj_door_E01_on");
                 context.SetActor(arg1: 4002, arg2: true, arg3: "ry_functobj_door_E01_on");
                 context.SetActor(arg1: 4003, arg2: true, arg3: "ry_functobj_door_E01_on");
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__4$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000387_BF__01_PLAYPARTTIMEJOB__4$", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -283,8 +283,8 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__5$", arg3: 3000, arg4: "0");
-                context.SetEventUI(arg1: 0, arg2: "1,3");
+                context.SetEventUI(arg1: 1, script: "$02000387_BF__01_PLAYPARTTIMEJOB__5$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 0, script: "1,3");
                 context.SetEffect(arg1: new[] {5105, 5106}, arg2: true);
             }
 
@@ -469,8 +469,8 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__6$", arg3: 3000, arg4: "0");
-                context.SetEventUI(arg1: 0, arg2: "2,3");
+                context.SetEventUI(arg1: 1, script: "$02000387_BF__01_PLAYPARTTIMEJOB__6$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 0, script: "2,3");
             }
 
             public override TriggerState Execute() {
@@ -813,8 +813,8 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__7$", arg3: 3000, arg4: "0");
-                context.SetEventUI(arg1: 0, arg2: "3,3");
+                context.SetEventUI(arg1: 1, script: "$02000387_BF__01_PLAYPARTTIMEJOB__7$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 0, script: "3,3");
             }
 
             public override TriggerState Execute() {
@@ -1272,10 +1272,10 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateGameEndNotice01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.MoveUser(arg1: 02000387, arg2: 1, arg3: 9900);
-                context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__01_PLAYPARTTIMEJOB__8$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11000491, script: "$02000387_BF__01_PLAYPARTTIMEJOB__8$", arg4: 4);
                 context.SetSkip(state: new StateGameEndNotice01Skip(context));
             }
 
@@ -1296,8 +1296,8 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetUserValue(triggerId: 10, key: "DungeonClear", value: 1);
             }
 
@@ -1334,7 +1334,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.UnSetMiniGameAreaForHack();
             }
 
@@ -1353,7 +1353,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePCLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__10$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000387_BF__01_PLAYPARTTIMEJOB__10$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {

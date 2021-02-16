@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000037_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25}, arg2: true, arg3: 0, arg4: 0);
             }
 
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000037_bf {
             internal StatePortalOpen(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02000037_bf {
             internal State발록죽음(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25}, arg2: true, arg3: 0, arg4: 200);
             }
 

@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000073_qd {
     public static class _losteve {
         public class StateWait : TriggerState {
@@ -117,8 +119,8 @@ namespace Maple2.Trigger._52000073_qd {
             internal State대원Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {401});
             }
 
@@ -138,9 +140,9 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_pcTurn");
-                context.CameraSelectPath(arg1: new[] {8003, 8004}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8003, 8004}, arg2: false);
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_2001");
-                context.AddCinematicTalk(npcId: 11003446, illustId: "0", msg: "$52000073_QD__LOSTEVE__0$", duration: 4000, align: "right");
+                context.AddCinematicTalk(npcId: 11003446, illustId: "0", script: "$52000073_QD__LOSTEVE__0$", duration: 4000, align: Align.Right);
                 context.FaceEmotion(spawnPointId: 101, emotionName: "Upset");
                 context.SetSceneSkip(state: new StateStopCinematic(context), arg2: "exit");
             }
@@ -160,7 +162,7 @@ namespace Maple2.Trigger._52000073_qd {
             internal State카트반대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11000044, illustId: "0", msg: "$52000073_QD__LOSTEVE__1$", duration: 4000, align: "right");
+                context.AddCinematicTalk(npcId: 11000044, illustId: "0", script: "$52000073_QD__LOSTEVE__1$", duration: 4000, align: Align.Right);
             }
 
             public override TriggerState Execute() {
@@ -180,8 +182,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

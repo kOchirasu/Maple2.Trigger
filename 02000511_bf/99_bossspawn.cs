@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02000511_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {999});
-                context.SetPortal(arg1: 40, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 40, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {3160, 3161, 3162, 3163, 3164}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {5610, 5611, 5612}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._02000511_bf {
 
             public override void OnEnter() {
                 context.DungeonClear();
-                context.SetPortal(arg1: 40, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 40, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

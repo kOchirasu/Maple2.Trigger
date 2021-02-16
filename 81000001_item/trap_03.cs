@@ -23,7 +23,7 @@ namespace Maple2.Trigger._81000001_item {
             internal State완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "128", arg2: 5, arg3: false);
+                context.SetTimer(id: "128", arg2: 5, arg3: false);
             }
 
             public override TriggerState Execute() {
@@ -36,7 +36,7 @@ namespace Maple2.Trigger._81000001_item {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "128");
+                context.ResetTimer(id: "128");
             }
         }
     }

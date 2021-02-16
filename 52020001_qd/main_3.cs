@@ -36,7 +36,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State타이머시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "102", arg2: 180, arg3: true, arg4: true);
+                context.SetTimer(id: "102", arg2: 180, arg3: true, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -98,9 +98,9 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {6000018}, arg2: 49286001, arg3: 1, arg4: true);
                 context.AddBuff(arg1: new[] {6000019}, arg2: 49286001, arg3: 1, arg4: true);
-                context.ResetTimer(arg1: "102");
+                context.ResetTimer(id: "102");
                 context.SetInteractObject(arg1: new[] {10002003}, arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "아크레온이 거대해지며 모든공격을 튕겨내기 시작했습니다.", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "아크레온이 거대해지며 모든공격을 튕겨내기 시작했습니다.", arg3: 4000);
             }
 
             public override TriggerState Execute() {
@@ -139,8 +139,8 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {6100003});
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 1);
                 context.VisibleMyPc(isVisible: false);
             }
 
@@ -159,7 +159,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {2000007}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {2000007}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -214,9 +214,9 @@ namespace Maple2.Trigger._52020001_qd {
             internal StateCameraCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {2000008}, arg2: false);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 0);
+                context.CameraSelectPath(pathIds: new[] {2000008}, arg2: false);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 0);
                 context.DestroyMonster(arg1: new[] {6000018, 6000019});
             }
 
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal StateCamera리셋(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 17, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 17, visible: true, enabled: true, minimapVisible: false);
                 context.CameraReset(interpolationTime: 0.8f);
             }
 
@@ -293,9 +293,9 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetEffect(arg1: new[] {10090, 10091, 10092}, arg2: true);
                 context.SetMesh(arg1: new[] {80000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.DestroyMonster(arg1: new[] {-1});
-                context.SetEventUI(arg1: 1, arg2: "미션에 실패하였습니다. 다시 재도전 해보세요.", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "미션에 실패하였습니다. 다시 재도전 해보세요.", arg3: 4000);
                 context.MoveUser(arg1: 52020001, arg2: 99);
-                context.SetPortal(arg1: 14, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 14, visible: true, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

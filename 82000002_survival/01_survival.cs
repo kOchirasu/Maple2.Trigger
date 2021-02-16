@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._82000002_survival {
     public static class _01_survival {
         public class StateSetting : TriggerState {
@@ -22,7 +24,7 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnExit() {
                 context.SetEffect(arg1: new[] {4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 59, arg3: true, arg4: true, arg5: -80);
+                context.SetTimer(id: "1", arg2: 59, arg3: true, arg4: true, arg5: -80);
                 context.WriteLog(arg1: "Survival", arg3: "Waiting_Start");
             }
         }
@@ -430,7 +432,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateCheckTheNumberOfPlayers(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
 
             public override TriggerState Execute() {
@@ -506,7 +508,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateCountdown(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateFieldGame(type: "MapleSurvivalTeam");
+                context.CreateFieldGame(type: FieldGame.MapleSurvivalTeam);
                 context.ShowCountUI(text: "$82000002_survival__01_SURVIVAL__10$", stage: 0, count: 3);
             }
 
@@ -640,7 +642,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateReadyToKickOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$82000002_survival__01_SURVIVAL__13$", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$82000002_survival__01_SURVIVAL__13$", arg3: 4000, arg4: "0");
             }
 
             public override TriggerState Execute() {

@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000084_qd {
     public static class _1122330_findway {
         public class StateSetting : TriggerState {
@@ -8,9 +10,9 @@ namespace Maple2.Trigger._52000084_qd {
                 context.DestroyMonster(arg1: new[] {101});
                 context.SetActor(arg1: 4000, arg2: true, arg3: "ic_fi_funct_icedoor_A01_off");
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 12, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
                 context.SetUserValue(key: "BossRoomPortal01", value: 0);
                 context.SetUserValue(key: "BossRoomPortal02", value: 0);
                 context.SetUserValue(key: "BossRoomPortal03", value: 0);
@@ -75,8 +77,8 @@ namespace Maple2.Trigger._52000084_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 501, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -94,7 +96,7 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateNpcTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000084_QD__1122330_FINDWAY__0$", align: "right", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", script: "$52000084_QD__1122330_FINDWAY__0$", align: Align.Right, duration: 4000);
                 context.SetSkip(state: new StateNpcTalk01Skip(context));
             }
 
@@ -132,7 +134,7 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateNpcTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000084_QD__1122330_FINDWAY__1$", align: "right", duration: 5000);
+                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", script: "$52000084_QD__1122330_FINDWAY__1$", align: Align.Right, duration: 5000);
                 context.SetSkip(state: new StateNpcTalk02Skip(context));
             }
 
@@ -192,8 +194,8 @@ namespace Maple2.Trigger._52000084_qd {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
@@ -259,7 +261,7 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateBossRoomPortal01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -277,7 +279,7 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateBossRoomPortal02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 12, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 12, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -295,7 +297,7 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateBossRoomPortal03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 13, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 13, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

@@ -8,7 +8,7 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "1", arg2: 30, arg3: true, arg4: false, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
 
             public override TriggerState Execute() {

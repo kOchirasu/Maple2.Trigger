@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02000410_bf {
     public static class _popupcinema {
         public class StateReady : TriggerState {
@@ -54,7 +56,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal StateBattleStart02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene1.usm", duration: 0);
+                context.SideNpcTalk(type: SideNpcTalkType.Movie, usm: @"Common/WorldInvasionScene1.usm", duration: 0);
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000, script: "$02000410_BF__PopUpCinema__1$", voice: @"ko/Npc/00002166");
             }
 
@@ -127,7 +129,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State두번째팝업영상출력(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene2.usm", duration: 0);
+                context.SideNpcTalk(type: SideNpcTalkType.Movie, usm: @"Common/WorldInvasionScene2.usm", duration: 0);
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000, script: "$02000410_BF__PopUpCinema__5$", voice: @"ko/Npc/00002178");
             }
 
@@ -165,7 +167,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000, script: "$02000410_BF__PopUpCinema__7$", voice: @"ko/Npc/00002179");
-                context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene3.usm", duration: 0);
+                context.SideNpcTalk(type: SideNpcTalkType.Movie, usm: @"Common/WorldInvasionScene3.usm", duration: 0);
             }
 
             public override TriggerState Execute() {
@@ -237,7 +239,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State네번째팝업영상출력(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene4.usm", duration: 0);
+                context.SideNpcTalk(type: SideNpcTalkType.Movie, usm: @"Common/WorldInvasionScene4.usm", duration: 0);
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000, script: "$02000410_BF__PopUpCinema__11$", voice: @"ko/Npc/00002181");
             }
 

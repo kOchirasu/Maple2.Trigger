@@ -1,4 +1,5 @@
 using System.Numerics;
+using Maple2.Trigger.Enum;
 
 namespace Maple2.Trigger._84000006_wd {
     public static class _84000006_wd_main {
@@ -6,8 +7,8 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateReception(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 10001, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 10002, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10001, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 10002, visible: false, enabled: false, minimapVisible: false);
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.SetEffect(arg1: new[] {3000, 3001, 3002}, arg2: false);
             }
@@ -27,7 +28,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateEntryDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 40, arg3: true, arg4: false);
+                context.SetTimer(id: "1", arg2: 40, arg3: true, arg4: false);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
@@ -50,10 +51,10 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateOpeningScene_start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.VisibleMyPc(isVisible: false);
-                context.CameraSelectPath(arg1: new[] {5004, 5003}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {5004, 5003}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -136,8 +137,8 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);
                 context.AddBuff(arg1: new[] {9002}, arg2: 99940044, arg3: 1, arg4: false, arg5: true);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.VisibleMyPc(isVisible: true);
                 context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__5$");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 20000f);
@@ -230,7 +231,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateGameGuide06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 2, arg2: "$84000006_WD__84000006_WD_MAIN__10$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 2, script: "$84000006_WD__84000006_WD_MAIN__10$", arg3: 3000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -251,7 +252,7 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetUserValue(triggerId: 1004, key: "Interaction", value: 1);
                 context.DestroyMonster(arg1: new[] {102});
                 context.SetMesh(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.StartMiniGame(boxId: 9001, round: 1, isShowResultUI: "False", gameName: "PinataWD");
+                context.StartMiniGame(boxId: 9001, round: 1, isShowResultUI: false, type: MiniGame.WDPinata);
                 context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__11$", duration: 8000, delayTick: 1000);
                 context.ShowGuideSummary(entityId: 28500010, textId: 28500010, duration: 5000);
             }
@@ -289,20 +290,20 @@ namespace Maple2.Trigger._84000006_wd {
             internal StatePinata_Fight2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 60, arg4: true);
-                context.SetEventUI(arg1: 1, arg2: "$84000006_WD__84000006_WD_MAIN__13$", arg3: 3000);
+                context.SetTimer(id: "3", arg2: 60, arg4: true);
+                context.SetEventUI(arg1: 1, script: "$84000006_WD__84000006_WD_MAIN__13$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201})) {
                     context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__14$", duration: 3000, delayTick: 1000);
-                    context.SetTimer(arg1: "4", arg2: 20, arg3: false, arg4: false);
+                    context.SetTimer(id: "4", arg2: 20, arg3: false, arg4: false);
                     return new StatePinata_Kill(context);
                 }
 
                 if (context.TimeExpired(arg1: "3")) {
                     context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__15$", duration: 3000, delayTick: 1000);
-                    context.SetTimer(arg1: "4", arg2: 20, arg3: false, arg4: false);
+                    context.SetTimer(id: "4", arg2: 20, arg3: false, arg4: false);
                     return new StatePinata_noKill(context);
                 }
 
@@ -318,7 +319,7 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {201});
                 context.EndMiniGameRound(winnerBoxId: 9001, expRate: 0.1f);
-                context.EndMiniGame(winnerBoxId: 9001, gameName: "PinataWD");
+                context.EndMiniGame(winnerBoxId: 9001, type: MiniGame.WDPinata);
                 context.AddBuff(arg1: new[] {9001}, arg2: 70000019, arg3: 1);
             }
 
@@ -339,7 +340,7 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {201});
                 context.EndMiniGameRound(winnerBoxId: 9002, expRate: 0.1f);
-                context.EndMiniGame(winnerBoxId: 9002, gameName: "PinataWD");
+                context.EndMiniGame(winnerBoxId: 9002, type: MiniGame.WDPinata);
             }
 
             public override TriggerState Execute() {
@@ -359,8 +360,8 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(255f, 255f, 255f));
                 context.SetUserValue(triggerId: 1004, key: "Interaction", value: 2);
-                context.SetEventUI(arg1: 3, arg2: "$84000006_WD__84000006_WD_MAIN__16$", arg3: 3000, arg4: "9001");
-                context.SetEventUI(arg1: 4, arg2: "$84000006_WD__84000006_WD_MAIN__17$", arg3: 3000, arg4: "!9001");
+                context.SetEventUI(arg1: 3, script: "$84000006_WD__84000006_WD_MAIN__16$", arg3: 3000, arg4: "9001");
+                context.SetEventUI(arg1: 4, script: "$84000006_WD__84000006_WD_MAIN__17$", arg3: 3000, arg4: "!9001");
                 context.CreateMonster(arg1: new[] {101, 103}, arg2: false);
                 context.SetEffect(arg1: new[] {3001}, arg2: true);
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__18$", duration: 5000, delayTick: 100);
@@ -385,8 +386,8 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(255f, 255f, 255f));
                 context.SetUserValue(triggerId: 1004, key: "Interaction", value: 2);
-                context.SetEventUI(arg1: 3, arg2: "$84000006_WD__84000006_WD_MAIN__20$", arg3: 3000, arg4: "9002");
-                context.SetEventUI(arg1: 4, arg2: "$84000006_WD__84000006_WD_MAIN__21$", arg3: 3000, arg4: "!9002");
+                context.SetEventUI(arg1: 3, script: "$84000006_WD__84000006_WD_MAIN__20$", arg3: 3000, arg4: "9002");
+                context.SetEventUI(arg1: 4, script: "$84000006_WD__84000006_WD_MAIN__21$", arg3: 3000, arg4: "!9002");
                 context.CreateMonster(arg1: new[] {101, 103}, arg2: false);
                 context.SetEffect(arg1: new[] {3001}, arg2: true);
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__22$", duration: 5000, delayTick: 100);
@@ -408,7 +409,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StatePinata_Fireworks(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {5002, 5001}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {5002, 5001}, arg2: true);
                 context.SetUserValue(triggerId: 1002, key: "Fireworks", value: 1);
             }
 
@@ -428,12 +429,12 @@ namespace Maple2.Trigger._84000006_wd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {8022, 8023, 8024}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 10001, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10002, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 10001, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10002, visible: true, enabled: true, minimapVisible: true);
                 context.SetUserValue(triggerId: 1001, key: "Conder", value: 1);
                 context.AddBuff(arg1: new[] {9002}, arg2: 99940042, arg3: 1, arg4: false, arg5: true);
-                context.SetEventUI(arg1: 1, arg2: "$84000006_WD__84000006_WD_MAIN__24$", arg3: 3000);
-                context.SetTimer(arg1: "5", arg2: 150, arg3: false, arg4: true);
+                context.SetEventUI(arg1: 1, script: "$84000006_WD__84000006_WD_MAIN__24$", arg3: 3000);
+                context.SetTimer(id: "5", arg2: 150, arg3: false, arg4: true);
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__25$", duration: 5000, delayTick: 3000);
                 context.AddBalloonTalk(spawnPointId: 103, msg: "$84000006_WD__84000006_WD_MAIN__26$", duration: 5000, delayTick: 3000);
                 context.SetPhotoStudio(isEnable: true);

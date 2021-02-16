@@ -1,4 +1,5 @@
 using System.Numerics;
+using Maple2.Trigger.Enum;
 
 namespace Maple2.Trigger._52010037_qd {
     public static class _52010037 {
@@ -65,7 +66,7 @@ namespace Maple2.Trigger._52010037_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -85,7 +86,7 @@ namespace Maple2.Trigger._52010037_qd {
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateQuit01(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new[] {3000, 3001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {3000, 3001}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -103,7 +104,7 @@ namespace Maple2.Trigger._52010037_qd {
             internal State지하기지전경씬02_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {3002, 3003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {3002, 3003}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -121,7 +122,7 @@ namespace Maple2.Trigger._52010037_qd {
             internal State지하기지전경씬02_c(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {3004, 3005}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {3004, 3005}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -139,8 +140,8 @@ namespace Maple2.Trigger._52010037_qd {
             internal State지하기지전경씬03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(type: "VerticalCaption", title: "$52010037_QD__52010037__0$", desc: "$52010037_QD__52010037__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 7000, scale: 2.5f);
-                context.CameraSelectPath(arg1: new[] {3006, 3007}, arg2: false);
+                context.ShowCaption(type: CaptionType.Vertical, title: "$52010037_QD__52010037__0$", script: "$52010037_QD__52010037__1$", align: Align.Bottom | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 7000, scale: 2.5f);
+                context.CameraSelectPath(pathIds: new[] {3006, 3007}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -177,8 +178,8 @@ namespace Maple2.Trigger._52010037_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 

@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000328_bf {
             internal State진행1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000328_bf {
                 context.SetMesh(arg1: new[] {273, 274, 275, 276}, arg2: true, arg3: 1000, arg4: 50, arg5: 2f);
                 context.ShowGuideSummary(entityId: 20003281, textId: 20003281);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetTimer(arg1: "100", arg2: 5);
+                context.SetTimer(id: "100", arg2: 5);
             }
 
             public override TriggerState Execute() {

@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._63000042_cs {
     public static class _wakeup02 {
         public class StateIdle : TriggerState {
@@ -22,11 +24,11 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.DestroyMonster(arg1: new[] {102});
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.MoveUser(arg1: 63000042, arg2: 10);
             }
 
@@ -45,7 +47,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateTalk_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$63000042_CS__WAKEUP02__0$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$63000042_CS__WAKEUP02__0$", duration: 3000);
                 context.SetSceneSkip(state: new StateSitReady(context), arg2: "nextState");
             }
 
@@ -64,7 +66,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateTalk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$63000042_CS__WAKEUP02__1$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$63000042_CS__WAKEUP02__1$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -82,7 +84,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateTalk_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$63000042_CS__WAKEUP02__2$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$63000042_CS__WAKEUP02__2$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -100,7 +102,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateTalk_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003145, msg: "$63000042_CS__WAKEUP02__3$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003145, script: "$63000042_CS__WAKEUP02__3$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -118,7 +120,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateTalk_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$63000042_CS__WAKEUP02__4$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$63000042_CS__WAKEUP02__4$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -136,7 +138,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateTalk_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$63000042_CS__WAKEUP02__5$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$63000042_CS__WAKEUP02__5$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -154,7 +156,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateTalk_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$63000042_CS__WAKEUP02__6$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$63000042_CS__WAKEUP02__6$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -172,7 +174,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateTalk_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003145, msg: "$63000042_CS__WAKEUP02__7$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003145, script: "$63000042_CS__WAKEUP02__7$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -190,7 +192,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateTalk_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$63000042_CS__WAKEUP02__8$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$63000042_CS__WAKEUP02__8$", duration: 3000);
                 context.SetSceneSkip();
             }
 
@@ -248,7 +250,7 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_103");
-                context.AddCinematicTalk(npcId: 11003165, illustId: "Fray_normal", msg: "$63000042_CS__WAKEUP02__9$", duration: 3000, align: "Left");
+                context.AddCinematicTalk(npcId: 11003165, illustId: "Fray_normal", script: "$63000042_CS__WAKEUP02__9$", duration: 3000, align: Align.Left);
                 context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
@@ -267,8 +269,8 @@ namespace Maple2.Trigger._63000042_cs {
             internal StatePraytalk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003165, msg: "$63000042_CS__WAKEUP02__10$", duration: 3000);
-                context.CameraSelectPath(arg1: new[] {502}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003165, script: "$63000042_CS__WAKEUP02__10$", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {502}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -286,8 +288,8 @@ namespace Maple2.Trigger._63000042_cs {
             internal StatePray(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(scale: 2.5f, type: "NameCaption", title: "$63000042_CS__WAKEUP02__11$", desc: "$63000042_CS__WAKEUP02__12$", align: "centerRight", offsetRateX: 0.5f, duration: 4000);
-                context.CameraSelectPath(arg1: new[] {502, 503}, arg2: false);
+                context.ShowCaption(scale: 2.5f, type: CaptionType.Name, title: "$63000042_CS__WAKEUP02__11$", script: "$63000042_CS__WAKEUP02__12$", align: Align.Center | Align.Right, offsetRateX: 0.5f, duration: 4000);
+                context.CameraSelectPath(pathIds: new[] {502, 503}, arg2: false);
                 context.SetSceneSkip();
             }
 
@@ -307,10 +309,10 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Sit_Ground_Idle_A", arg2: 100f);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

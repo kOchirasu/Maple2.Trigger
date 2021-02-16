@@ -23,7 +23,7 @@ namespace Maple2.Trigger._52000067_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 759, arg2: "Talk_A");
-                context.SetConversation(arg1: 1, arg2: 759, arg3: "$52000067_QD__SUB_EVENT_04__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 759, script: "$52000067_QD__SUB_EVENT_04__0$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {

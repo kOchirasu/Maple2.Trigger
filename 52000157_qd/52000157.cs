@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000157_qd {
     public static class _52000157 {
         public class StateWait_01 : TriggerState {
@@ -30,13 +32,13 @@ namespace Maple2.Trigger._52000157_qd {
             internal State전직컷씬01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SceneMovie");
+                context.CreateWidget(type: WidgetType.SceneMovie);
                 context.PlaySceneMovie(fileName: "jobChange_thief.swf", movieId: 1);
                 context.CreateMonster(arg1: new[] {107}, arg2: false);
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
                     return new State정산끝(context);
                 }
 
@@ -140,7 +142,7 @@ namespace Maple2.Trigger._52000157_qd {
             internal State이별Prepare_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
                 context.DestroyMonster(arg1: new[] {107, 105, 106});
                 context.CreateMonster(arg1: new[] {110, 109, 108}, arg2: false);
                 context.MoveUser(arg1: 52000157, arg2: 6002);
@@ -179,8 +181,8 @@ namespace Maple2.Trigger._52000157_qd {
             internal State이별Prepare_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -199,7 +201,7 @@ namespace Maple2.Trigger._52000157_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 7, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {

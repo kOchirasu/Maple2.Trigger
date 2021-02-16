@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52010004_qd {
             internal State둔바교체01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 2);
+                context.SetTimer(id: "1", arg2: 2);
                 context.SetMesh(arg1: new[] {7000, 7001, 7002, 7003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
@@ -45,10 +45,10 @@ namespace Maple2.Trigger._52010004_qd {
             internal State둔바SetupCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
                 context.CameraSelect(arg1: 601, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -66,8 +66,8 @@ namespace Maple2.Trigger._52010004_qd {
             internal State둔바대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 2);
-                context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010004_QD__BATTLE01__0$", arg4: 2);
+                context.SetTimer(id: "10", arg2: 2);
+                context.SetConversation(arg1: 2, arg2: 11001217, script: "$52010004_QD__BATTLE01__0$", arg4: 2);
                 context.SetSkip(state: new State둔바대화02Wait(context));
             }
 
@@ -100,8 +100,8 @@ namespace Maple2.Trigger._52010004_qd {
             internal State둔바대화02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "11", arg2: 2);
-                context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010004_QD__BATTLE01__1$", arg4: 2);
+                context.SetTimer(id: "11", arg2: 2);
+                context.SetConversation(arg1: 2, arg2: 11001217, script: "$52010004_QD__BATTLE01__1$", arg4: 2);
                 context.SetSkip(state: new State둔바대화03Wait(context));
             }
 
@@ -134,8 +134,8 @@ namespace Maple2.Trigger._52010004_qd {
             internal State둔바대화03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "12", arg2: 2);
-                context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010004_QD__BATTLE01__2$", arg4: 2);
+                context.SetTimer(id: "12", arg2: 2);
+                context.SetConversation(arg1: 2, arg2: 11001217, script: "$52010004_QD__BATTLE01__2$", arg4: 2);
                 context.SetSkip(state: new State둔바StopCinematic01(context));
             }
 
@@ -155,10 +155,10 @@ namespace Maple2.Trigger._52010004_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetTimer(arg1: "13", arg2: 1);
+                context.SetTimer(id: "13", arg2: 1);
                 context.CameraSelect(arg1: 601, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._52010004_qd {
             internal State전투Prepare01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "20", arg2: 1);
+                context.SetTimer(id: "20", arg2: 1);
                 context.SetAgent(arg1: new[] {10000, 10001, 10002, 10003}, arg2: true);
                 context.DestroyMonster(arg1: new[] {102});
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
@@ -216,7 +216,7 @@ namespace Maple2.Trigger._52010004_qd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {7000, 7001, 7002, 7003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetTimer(arg1: "30", arg2: 3);
+                context.SetTimer(id: "30", arg2: 3);
             }
 
             public override TriggerState Execute() {

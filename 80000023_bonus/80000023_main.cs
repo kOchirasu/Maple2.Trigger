@@ -6,7 +6,7 @@ namespace Maple2.Trigger._80000023_bonus {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198}, arg2: true);
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105}, arg2: false);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._80000023_bonus {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 105, arg2: "Dead_A");
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.CreateItem(arg1: new[] {5001});
             }
 

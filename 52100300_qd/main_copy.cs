@@ -34,10 +34,10 @@ namespace Maple2.Trigger._52100300_qd {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateStart_03(context));
-                context.CameraSelectPath(arg1: new[] {80001, 80002}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {80001, 80002}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -50,9 +50,9 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void OnExit() {
                 context.RemoveCinematicTalk();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -60,11 +60,11 @@ namespace Maple2.Trigger._52100300_qd {
             internal StateStart_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {80003}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02010086_BF__MAIN__0$", arg3: 3000);
+                context.CameraSelectPath(pathIds: new[] {80003}, arg2: true);
+                context.SetEventUI(arg1: 1, script: "$02010086_BF__MAIN__0$", arg3: 3000);
                 context.SetActor(arg1: 1001, arg2: true, arg3: "Opened");
                 context.SetMesh(arg1: new[] {1002}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetTimer(arg1: "1", arg2: 1, arg4: false);
+                context.SetTimer(id: "1", arg2: 1, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -349,7 +349,7 @@ namespace Maple2.Trigger._52100300_qd {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {2001, 2002, 2003}, arg2: false, arg4: 300, arg5: 10f);
                 context.SetMesh(arg1: new[] {2011, 2012, 2013}, arg2: true, arg4: 300, arg5: 10f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {

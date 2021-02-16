@@ -33,10 +33,10 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306});
-                context.SetEventUI(arg1: 1, arg2: "$02020027_BF__battle_1__0$", arg3: 4000);
-                context.SetConversation(arg1: 1, arg2: 301, arg3: "$02020027_BF__battle_1__1$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 303, arg3: "$02020027_BF__battle_1__2$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 305, arg3: "$02020027_BF__battle_1__3$", arg4: 3, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02020027_BF__battle_1__0$", arg3: 4000);
+                context.SetConversation(arg1: 1, arg2: 301, script: "$02020027_BF__battle_1__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 303, script: "$02020027_BF__battle_1__2$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 305, script: "$02020027_BF__battle_1__3$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {

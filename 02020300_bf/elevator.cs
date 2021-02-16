@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02020300_bf {
             internal State엘리베이터_정지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020300_BF__MAIN__12$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020300_BF__MAIN__12$", arg3: 5000);
             }
 
             public override TriggerState Execute() {

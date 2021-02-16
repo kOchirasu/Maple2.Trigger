@@ -1,18 +1,20 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._99999942 {
     public static class _main {
         public class StateNone : TriggerState {
             internal StateNone(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateFieldGame(type: "WaterGunBattle", reset: true);
+                context.CreateFieldGame(type: FieldGame.WaterGunBattle, reset: true);
                 context.FieldGameConstant(key: "WaitUserTick", value: "15000");
                 context.FieldGameConstant(key: "WaitPlayTick", value: "5000");
                 context.FieldGameConstant(key: "ResizeWaitTick", value: "15000,15000,15000,15000");
                 context.FieldGameConstant(key: "ResizeWarningTick", value: "5000,5000,5000,5000");
                 context.FieldGameConstant(key: "SkillSetId", value: "99930047");
                 context.FieldGameConstant(key: "MinPlayer", value: "2");
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -30,7 +32,7 @@ namespace Maple2.Trigger._99999942 {
             internal State유저Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 15, arg3: false, arg4: true);
+                context.SetTimer(id: "1", arg2: 15, arg3: false, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -52,7 +54,7 @@ namespace Maple2.Trigger._99999942 {
             internal State유저이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5, arg3: false, arg4: true);
+                context.SetTimer(id: "1", arg2: 5, arg3: false, arg4: true);
                 context.MoveUser(arg1: 99999942, arg2: 2);
             }
 

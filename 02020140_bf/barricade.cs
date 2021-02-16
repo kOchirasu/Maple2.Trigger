@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02020140_bf {
             internal State칸막이Wait알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020140_BF__BARRICADE__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02020140_BF__BARRICADE__0$", arg3: 3000);
                 context.DungeonEnableGiveUp(isEnable: true);
             }
 

@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52010023_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.SetEffect(arg1: new[] {7001}, arg2: false);
                 context.CreateMonster(arg1: new[] {101});
             }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52010023_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52010023_QD__MAIN__0$", arg4: 5);
+                context.SetConversation(arg1: 1, arg2: 101, script: "$52010023_QD__MAIN__0$", arg4: 5);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2001");
             }
 

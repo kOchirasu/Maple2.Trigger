@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000110_bf {
                 context.SetActor(arg1: 11, arg2: true, arg3: "Opened");
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
                 context.SetEffect(arg1: new[] {202}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -65,12 +65,12 @@ namespace Maple2.Trigger._02000110_bf {
             internal StateMonsterDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30);
+                context.SetTimer(id: "1", arg2: 30);
             }
 
             public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {102})) {
-                    context.ResetTimer(arg1: "1");
+                    context.ResetTimer(id: "1");
                 }
 
                 if (context.MonsterDead(arg1: new[] {102})) {
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02000110_bf {
             internal StateWaitDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -114,7 +114,7 @@ namespace Maple2.Trigger._02000110_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {102});
-                context.SetTimer(arg1: "2", arg2: 20);
+                context.SetTimer(id: "2", arg2: 20);
             }
 
             public override TriggerState Execute() {
@@ -126,7 +126,7 @@ namespace Maple2.Trigger._02000110_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "2");
+                context.ResetTimer(id: "2");
             }
         }
     }

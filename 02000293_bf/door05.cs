@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000293_bf {
             public override void OnEnter() {
                 context.SetActor(arg1: 1009, arg2: true, arg3: "Opened");
                 context.CreateMonster(arg1: new[] {2036}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetTimer(id: "1", arg2: 5);
             }
 
             public override TriggerState Execute() {

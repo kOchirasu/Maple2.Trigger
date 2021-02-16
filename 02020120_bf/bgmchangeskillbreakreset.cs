@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1220, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1220, visible: false, enabled: false, minimapVisible: false);
                 context.SetUserValue(key: "SkillBreakStart", value: 0);
                 context.SetUserValue(key: "DungeonReset", value: 0);
             }
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateSkill브레이크로직작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 6201, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 6201, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateSkill브레이크실패Reset처리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1220, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1220, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -126,8 +126,8 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateBoss한테보내는PortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 6201, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 1220, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 6201, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 1220, visible: false, enabled: false, minimapVisible: false);
                 context.SetUserValue(key: "SkillBreakStart", value: 0);
             }
 
@@ -163,8 +163,8 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateBoss한테보내는PortalCreation_시간Reset안함02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 6201, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 1220, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 6201, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 1220, visible: false, enabled: false, minimapVisible: false);
                 context.SetUserValue(key: "SkillBreakStart", value: 0);
             }
 

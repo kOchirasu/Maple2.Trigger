@@ -21,8 +21,8 @@ namespace Maple2.Trigger._52100202_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
+                context.CameraSelectPath(pathIds: new[] {4001}, arg2: false);
+                context.SetCinematicUI(type: 1);
                 context.MoveUser(arg1: 52100202, arg2: 6001);
                 context.SetMesh(arg1: new[] {4026}, arg2: true);
             }
@@ -60,10 +60,10 @@ namespace Maple2.Trigger._52100202_qd {
             internal State티마이온_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
-                context.SetCinematicUI(arg1: 3);
+                context.CameraSelectPath(pathIds: new[] {4005}, arg2: false);
+                context.SetCinematicUI(type: 3);
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
-                context.AddCinematicTalk(npcId: 0, msg: "$52100202_QD__52100202__0$", duration: 3500);
+                context.AddCinematicTalk(npcId: 0, script: "$52100202_QD__52100202__0$", duration: 3500);
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52100202_qd {
             internal State티마이온_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4002}, arg2: false);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._52100202_qd {
             internal State티마이온_03_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4003}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Attack_Idle", arg3: 3000f);
             }
 
@@ -139,10 +139,10 @@ namespace Maple2.Trigger._52100202_qd {
             internal State티마이온_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4004, 4006}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4004, 4006}, arg2: false);
                 context.FaceEmotion(spawnPointId: 0, emotionName: "Trigger_serious");
-                context.AddCinematicTalk(npcId: 0, msg: "$52100202_QD__52100202__1$", duration: 4500);
-                context.AddCinematicTalk(npcId: 0, msg: "$52100202_QD__52100202__2$", duration: 4500);
+                context.AddCinematicTalk(npcId: 0, script: "$52100202_QD__52100202__1$", duration: 4500);
+                context.AddCinematicTalk(npcId: 0, script: "$52100202_QD__52100202__2$", duration: 4500);
                 context.SetSceneSkip();
             }
 

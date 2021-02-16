@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State교체01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.DestroyMonster(arg1: new[] {800});
                 context.CreateMonster(arg1: new[] {801}, arg2: false);
                 context.MoveNpc(arg1: 801, arg2: "MS2PatrolData_801");
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State일어남01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetTimer(id: "2", arg2: 2);
             }
 
             public override TriggerState Execute() {
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State포효01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 5);
+                context.SetTimer(id: "3", arg2: 5);
                 context.SetEffect(arg1: new[] {8100}, arg2: true);
             }
 

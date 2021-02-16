@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateNPCScript(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 902, arg3: "$02000290_BF__NPC_02__0$", arg4: 2);
+                context.SetTimer(id: "2", arg2: 2);
+                context.SetConversation(arg1: 1, arg2: 902, script: "$02000290_BF__NPC_02__0$", arg4: 2);
             }
 
             public override TriggerState Execute() {
@@ -42,9 +42,9 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.MoveNpc(arg1: 902, arg2: "MS2PatrolData902");
-                context.SetConversation(arg1: 1, arg2: 902, arg3: "$02000290_BF__NPC_02__1$", arg4: 2);
+                context.SetConversation(arg1: 1, arg2: 902, script: "$02000290_BF__NPC_02__1$", arg4: 2);
             }
 
             public override TriggerState Execute() {

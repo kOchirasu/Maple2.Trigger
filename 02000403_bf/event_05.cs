@@ -55,10 +55,10 @@ namespace Maple2.Trigger._02000403_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1110, arg3: "$02000403_BF__EVENT_05__0$", arg4: 3, arg5: 4);
-                context.SetConversation(arg1: 1, arg2: 1111, arg3: "$02000403_BF__EVENT_05__1$", arg4: 3, arg5: 5);
-                context.SetConversation(arg1: 1, arg2: 1112, arg3: "$02000403_BF__EVENT_05__2$", arg4: 3, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 1113, arg3: "$02000403_BF__EVENT_05__3$", arg4: 3, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 1110, script: "$02000403_BF__EVENT_05__0$", arg4: 3, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 1111, script: "$02000403_BF__EVENT_05__1$", arg4: 3, arg5: 5);
+                context.SetConversation(arg1: 1, arg2: 1112, script: "$02000403_BF__EVENT_05__2$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 1113, script: "$02000403_BF__EVENT_05__3$", arg4: 3, arg5: 2);
             }
 
             public override TriggerState Execute() {

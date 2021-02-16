@@ -38,8 +38,8 @@ namespace Maple2.Trigger._02000137_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {148});
-                context.SetConversation(arg1: 1, arg2: 148, arg3: "$02000137_BF__IA_47__0$", arg4: 2);
-                context.SetTimer(arg1: "1", arg2: 5);
+                context.SetConversation(arg1: 1, arg2: 148, script: "$02000137_BF__IA_47__0$", arg4: 2);
+                context.SetTimer(id: "1", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02000137_bf {
             internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 10);
+                context.SetTimer(id: "1", arg2: 10);
             }
 
             public override TriggerState Execute() {

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000485_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(arg1: new[] {10002048, 10002049, 10002050}, arg2: 0);
                 context.DestroyMonster(arg1: new[] {901, 902, 903, 910, 911, 912, 920, 921, 922, 930, 931, 932, 940, 941, 942});
                 context.SetLadder(arg1: 510, arg2: false, arg3: false, arg4: 0);
@@ -85,9 +85,9 @@ namespace Maple2.Trigger._02000485_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {901, 902, 903}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000485_BF__01_ABOVEWALL__0$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 902, arg3: "$02000485_BF__01_ABOVEWALL__0$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 903, arg3: "$02000485_BF__01_ABOVEWALL__0$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 901, script: "$02000485_BF__01_ABOVEWALL__0$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 902, script: "$02000485_BF__01_ABOVEWALL__0$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 903, script: "$02000485_BF__01_ABOVEWALL__0$", arg4: 2, arg5: 1);
             }
 
             public override TriggerState Execute() {
@@ -278,7 +278,7 @@ namespace Maple2.Trigger._02000485_bf {
                 context.SetLadder(arg1: 528, arg2: true, arg3: true, arg4: 2);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039804, textId: 20039804, duration: 5000);
-                context.SetPortal(arg1: 2, arg2: false, arg3: true, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

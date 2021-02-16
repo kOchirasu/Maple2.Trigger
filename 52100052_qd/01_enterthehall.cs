@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52100052_qd {
     public static class _01_enterthehall {
         public class StateWait : TriggerState {
@@ -46,8 +48,8 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateBlackeyeApp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
@@ -66,11 +68,11 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateBlackeyeApp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
-                context.AddCinematicTalk(npcId: 11001590, illustId: "11001590", msg: "$52100052_QD__01_ENTERTHEHALL__0$", duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11001590, illustId: "11001590", script: "$52100052_QD__01_ENTERTHEHALL__0$", duration: 3000, align: Align.Left);
                 context.SetSkip(state: new StateBlackeyeApp02Skip(context));
             }
 
@@ -105,7 +107,7 @@ namespace Maple2.Trigger._52100052_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
-                context.AddCinematicTalk(npcId: 11001590, illustId: "11001590", msg: "$52100052_QD__01_ENTERTHEHALL__1$", duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11001590, illustId: "11001590", script: "$52100052_QD__01_ENTERTHEHALL__1$", duration: 3000, align: Align.Left);
                 context.SetSkip(state: new StateBlackeyeApp03Skip(context));
             }
 
@@ -139,8 +141,8 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateEnemyApp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 601, arg2: true);
                 context.SetUserValue(triggerId: 2, key: "MobSpawn", value: 1);
             }
@@ -160,12 +162,12 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateEnemyApp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {901, 902, 903}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 901, arg3: "$52100052_QD__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 902, arg3: "$52100052_QD__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 903, arg3: "$52100052_QD__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 901, script: "$52100052_QD__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 902, script: "$52100052_QD__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 903, script: "$52100052_QD__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
                 context.SetSkip(state: new StateEnemyApp03Skip(context));
             }
 
@@ -201,8 +203,8 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateEnemyApp03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_104");
             }
@@ -222,9 +224,9 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateBlackeyeAction01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001590, arg3: "$52100052_QD__01_ENTERTHEHALL__5$", arg4: 5);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11001590, script: "$52100052_QD__01_ENTERTHEHALL__5$", arg4: 5);
                 context.SetSkip(state: new StateBlackeyeAction01Skip(context));
             }
 
@@ -245,8 +247,8 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
@@ -267,7 +269,7 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52100052_QD__01_ENTERTHEHALL__6$", arg4: 3, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52100052_QD__01_ENTERTHEHALL__6$", arg4: 3, arg5: 1);
                 context.SetLadder(arg1: 511, arg2: true, arg3: true, arg4: 1);
                 context.SetLadder(arg1: 512, arg2: true, arg3: true, arg4: 1);
                 context.SetUserValue(triggerId: 2, key: "MobAttack", value: 1);
@@ -333,9 +335,9 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateMoveToUpstairs02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001590, arg3: "$52100052_QD__01_ENTERTHEHALL__7$", arg4: 5);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetConversation(arg1: 2, arg2: 11001590, script: "$52100052_QD__01_ENTERTHEHALL__7$", arg4: 5);
                 context.SetSkip(state: new StateMoveToUpstairs02Skip(context));
             }
 
@@ -356,8 +358,8 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039602, textId: 20039602, duration: 3000);
             }
@@ -396,7 +398,7 @@ namespace Maple2.Trigger._52100052_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$52100052_QD__01_ENTERTHEHALL__8$", arg3: 4000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52100052_QD__01_ENTERTHEHALL__8$", arg3: 4000, arg4: "0");
                 context.SetUserValue(triggerId: 4, key: "SearchStart", value: 1);
             }
 
@@ -443,7 +445,7 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateNpcMonologue01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52100052_QD__01_ENTERTHEHALL__9$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52100052_QD__01_ENTERTHEHALL__9$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -465,7 +467,7 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateNpcMonologue02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52100052_QD__01_ENTERTHEHALL__10$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52100052_QD__01_ENTERTHEHALL__10$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -487,7 +489,7 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateNpcMonologue03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52100052_QD__01_ENTERTHEHALL__11$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52100052_QD__01_ENTERTHEHALL__11$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -509,7 +511,7 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateNpcMonologue04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52100052_QD__01_ENTERTHEHALL__12$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52100052_QD__01_ENTERTHEHALL__12$", arg4: 3, arg5: 0);
             }
 
             public override TriggerState Execute() {

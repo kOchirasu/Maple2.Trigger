@@ -22,8 +22,8 @@ namespace Maple2.Trigger._99999931 {
             internal StateCount다운1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "31", arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "3", arg3: 1000);
+                context.SetTimer(id: "31", arg2: 1);
+                context.SetEventUI(arg1: 1, script: "3", arg3: 1000);
             }
 
             public override TriggerState Execute() {
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._99999931 {
             internal StateCount다운2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "32", arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "2", arg3: 1000);
+                context.SetTimer(id: "32", arg2: 1);
+                context.SetEventUI(arg1: 1, script: "2", arg3: 1000);
             }
 
             public override TriggerState Execute() {
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._99999931 {
             internal StateCount다운3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "33", arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "1", arg3: 1000);
+                context.SetTimer(id: "33", arg2: 1);
+                context.SetEventUI(arg1: 1, script: "1", arg3: 1000);
             }
 
             public override TriggerState Execute() {
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._99999931 {
             internal State게임시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "34", arg2: 1);
+                context.SetTimer(id: "34", arg2: 1);
                 context.SetBreakable(arg1: new[] {101, 102, 104, 105, 107, 108, 111, 112, 114, 115, 117, 118, 120, 121, 122, 123, 125, 126, 128, 129, 130, 131, 132, 135, 136}, arg2: true);
             }
 
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._99999931 {
             internal State게임진행1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "35", arg2: 1);
+                context.SetTimer(id: "35", arg2: 1);
                 context.SetBreakable(arg1: new[] {101, 102, 104, 105, 107, 108, 111, 112, 114, 115, 117, 118, 120, 121, 122, 123, 125, 126, 128, 129, 130, 131, 132, 135, 136}, arg2: false);
                 context.SetSkill(arg1: new[] {801, 802, 804, 805, 807, 808, 811, 812, 814, 815, 817, 818, 820, 821, 822, 823, 825, 826, 828, 829, 830, 831, 832, 835, 836}, arg2: true);
             }
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._99999931 {
             internal State게임진행2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "36", arg2: 2);
+                context.SetTimer(id: "36", arg2: 2);
                 context.SetSkill(arg1: new[] {801, 802, 804, 805, 807, 808, 811, 812, 814, 815, 817, 818, 820, 821, 822, 823, 825, 826, 828, 829, 830, 831, 832, 835, 836}, arg2: false);
             }
 

@@ -6,47 +6,47 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnEnter() {
                 context.SetUserValue(key: "DungeonReset", value: 0);
                 context.SetUserValue(key: "Stage02", value: 0);
-                context.SetPortal(arg1: 2101, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2201, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 2301, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3101, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3102, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3103, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3104, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3201, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3202, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3203, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3301, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3302, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3303, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3304, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3305, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 3306, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 4101, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 4102, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 4201, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 4202, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 4301, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 4302, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5101, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5102, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5201, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5202, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5203, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5204, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5205, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5206, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5301, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5302, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5303, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5304, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 5401, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6101, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6201, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6301, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6302, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6303, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 6304, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2101, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2201, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 2301, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3101, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3102, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3103, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3104, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3201, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3202, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3203, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3301, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3302, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3303, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3304, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3305, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 3306, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 4101, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 4102, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 4201, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 4202, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 4301, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 4302, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5101, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5102, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5201, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5202, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5203, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5204, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5205, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5206, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5301, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5302, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5303, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5304, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 5401, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6101, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6201, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6301, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6302, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6303, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 6304, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateStage2_왼쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2101, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2101, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateStage2_가운데진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2201, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2201, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateStage2_오른쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2301, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2301, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

@@ -137,7 +137,7 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetActor(arg1: 9904, arg2: true, arg3: "Interaction_Lapentafoothold_A01_On");
                 context.AddBuff(arg1: new[] {916}, arg2: 70002105, arg3: 1, arg5: false);
                 context.SetGravity(gravity: -32f);
-                context.SetEventUI(arg1: 1, arg2: "$02020112_BF__BUTTONCHECK__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020112_BF__BUTTONCHECK__0$", arg3: 5000);
                 context.SetUserValue(triggerId: 99990016, key: "respawn", value: 2);
                 context.SetUserValue(triggerId: 99990003, key: "Timer", value: 2);
                 context.SetUserValue(triggerId: 99990001, key: "GravityRoom", value: 2);

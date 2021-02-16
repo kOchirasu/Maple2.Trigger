@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02000065_bf {
     public static class _main {
         public class StateWait : TriggerState {
@@ -124,8 +126,8 @@ namespace Maple2.Trigger._02000065_bf {
             internal StateCinematic1Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
@@ -163,9 +165,9 @@ namespace Maple2.Trigger._02000065_bf {
             internal State앤Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8001}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_ann01");
-                context.AddCinematicTalk(npcId: 11003432, illustId: "Ann_normal", msg: "$02000065_BF__MAIN__0$", duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003432, illustId: "Ann_normal", script: "$02000065_BF__MAIN__0$", duration: 3000, align: Align.Left);
             }
 
             public override TriggerState Execute() {
@@ -183,7 +185,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State앤Spawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8002}, arg2: false);
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$02000065_BF__MAIN__1$", duration: 3000, delayTick: 0);
             }
 
@@ -202,8 +204,8 @@ namespace Maple2.Trigger._02000065_bf {
             internal StateCinematic2Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {111}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
@@ -243,8 +245,8 @@ namespace Maple2.Trigger._02000065_bf {
             internal State앤Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8010, 8011}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003432, msg: "$02000065_BF__MAIN__2$", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {8010, 8011}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003432, script: "$02000065_BF__MAIN__2$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 3000f);
                 context.SetSceneSkip(state: new State칼과앤_스킵완료(context), arg2: "nextState");
                 context.SetSkip(state: new State앤Script01_skip(context));
@@ -280,7 +282,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State칼Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11000074, msg: "$02000065_BF__MAIN__3$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11000074, script: "$02000065_BF__MAIN__3$", duration: 3000);
                 context.SetSkip(state: new State칼Script01_skip(context));
             }
 
@@ -314,7 +316,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State앤Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003432, msg: "$02000065_BF__MAIN__4$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003432, script: "$02000065_BF__MAIN__4$", duration: 4000);
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 3000f);
                 context.SetSkip(state: new State앤Script02_skip(context));
             }
@@ -349,7 +351,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State칼Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11000074, msg: "$02000065_BF__MAIN__5$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11000074, script: "$02000065_BF__MAIN__5$", duration: 3000);
                 context.SetSkip(state: new State칼Script02_skip(context));
             }
 
@@ -383,7 +385,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State앤Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003432, msg: "$02000065_BF__MAIN__6$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003432, script: "$02000065_BF__MAIN__6$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 2000f);
                 context.SetSkip(state: new State앤Script03_skip(context));
             }
@@ -418,7 +420,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State칼Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11000074, msg: "$02000065_BF__MAIN__7$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11000074, script: "$02000065_BF__MAIN__7$", duration: 4000);
                 context.SetSkip(state: new State칼Script03_skip(context));
             }
 
@@ -452,7 +454,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State앤Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003432, msg: "$02000065_BF__MAIN__8$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003432, script: "$02000065_BF__MAIN__8$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 2000f);
                 context.SetSkip(state: new State앤Script04_skip(context));
             }
@@ -487,7 +489,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State칼Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11000074, msg: "$02000065_BF__MAIN__9$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11000074, script: "$02000065_BF__MAIN__9$", duration: 3000);
                 context.SetSkip(state: new State칼Script04_skip(context));
             }
 
@@ -521,8 +523,8 @@ namespace Maple2.Trigger._02000065_bf {
             internal State앤Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11003432, arg3: "$02000065_BF__MAIN__10$", arg4: 3, arg5: 0);
+                context.CameraSelectPath(pathIds: new[] {8000}, arg2: false);
+                context.SetConversation(arg1: 2, arg2: 11003432, script: "$02000065_BF__MAIN__10$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 2000f);
             }
 
@@ -541,7 +543,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal StateCamera아웃(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8000, 8001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8000, 8001}, arg2: false);
                 context.VisibleMyPc(isVisible: true);
             }
 
@@ -560,8 +562,8 @@ namespace Maple2.Trigger._02000065_bf {
             internal State칼과앤_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 4);
                 context.VisibleMyPc(isVisible: true);
             }
 
@@ -582,8 +584,8 @@ namespace Maple2.Trigger._02000065_bf {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 3.0f);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "meetingAnn");
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

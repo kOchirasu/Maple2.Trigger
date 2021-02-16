@@ -6,9 +6,9 @@ namespace Maple2.Trigger._02010054_bf {
             internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
                 context.SetGravity(gravity: -9.8f);
                 context.SetInteractObject(arg1: new[] {10000856, 10000857, 10000858, 10000859}, arg2: 2);
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02010054_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetSkip(state: new State인트로Cinematic스킵(context));
@@ -63,8 +63,8 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetCinematicUI(arg1: 0);
-                    context.SetCinematicUI(arg1: 2);
+                    context.SetCinematicUI(type: 0);
+                    context.SetCinematicUI(type: 2);
                     return new StateStart(context);
                 }
 
@@ -80,8 +80,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnEnter() {
                 context.SetSkip();
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000860, 10000861}, arg2: 0)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02010054_BF__MAIN__1$", arg3: 5000, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$02010054_BF__MAIN__1$", arg3: 5000, arg4: "0");
                     context.SetInteractObject(arg1: new[] {10000858}, arg2: 1);
                     return new State반응Wait03(context);
                 }
@@ -268,7 +268,7 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3315, 3316, 3317, 3318, 3319, 3320, 3321}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
@@ -291,7 +291,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000859}, arg2: 0)) {
                     context.SetMesh(arg1: new[] {3330}, arg2: true, arg3: 0, arg4: 0, arg5: 3f);
-                    context.SetPortal(arg1: 10, arg2: false, arg3: true, arg4: false);
+                    context.SetPortal(portalId: 10, visible: false, enabled: true, minimapVisible: false);
                     context.SetGravity(gravity: -9.8f);
                     return new State중간Boss소환(context);
                 }
@@ -437,8 +437,8 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3130, 3131, 3132, 3133, 3134, 3135, 3136}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                context.SetTimer(arg1: "4", arg2: 4);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
+                context.SetTimer(id: "4", arg2: 4);
                 context.DungeonClear();
             }
 

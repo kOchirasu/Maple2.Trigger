@@ -60,10 +60,10 @@ namespace Maple2.Trigger._52100041_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 147, arg2: "MS2PatrolData_2136");
-                context.SetConversation(arg1: 1, arg2: 147, arg3: "$52100041_QD__MAGIC_05__0$", arg4: 2, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 145, arg3: "$52100041_QD__MAGIC_05__1$", arg4: 3, arg5: 4);
-                context.SetConversation(arg1: 1, arg2: 146, arg3: "$52100041_QD__MAGIC_05__1$", arg4: 3, arg5: 5);
-                context.SetConversation(arg1: 1, arg2: 147, arg3: "$52100041_QD__MAGIC_05__3$", arg4: 3, arg5: 6);
+                context.SetConversation(arg1: 1, arg2: 147, script: "$52100041_QD__MAGIC_05__0$", arg4: 2, arg5: 2);
+                context.SetConversation(arg1: 1, arg2: 145, script: "$52100041_QD__MAGIC_05__1$", arg4: 3, arg5: 4);
+                context.SetConversation(arg1: 1, arg2: 146, script: "$52100041_QD__MAGIC_05__1$", arg4: 3, arg5: 5);
+                context.SetConversation(arg1: 1, arg2: 147, script: "$52100041_QD__MAGIC_05__3$", arg4: 3, arg5: 6);
             }
 
             public override TriggerState Execute() {

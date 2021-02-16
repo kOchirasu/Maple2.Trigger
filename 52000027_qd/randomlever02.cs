@@ -92,7 +92,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State1Pattern_2번레버_오답01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__RANDOMLEVER02__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__RANDOMLEVER02__0$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000475, 10000477}, arg2: 0);
                 context.CreateMonster(arg1: new[] {921}, arg2: true);
             }
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State1Pattern_2번레버_오답02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__RANDOMLEVER02__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__RANDOMLEVER02__1$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000475}, arg2: 0);
                 context.CreateMonster(arg1: new[] {922}, arg2: true);
             }
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State1Pattern_3번레버_오답01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__RANDOMLEVER02__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__RANDOMLEVER02__0$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000475, 10000476}, arg2: 0);
                 context.CreateMonster(arg1: new[] {921}, arg2: true);
             }
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State1Pattern_3번레버_오답02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__RANDOMLEVER02__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__RANDOMLEVER02__1$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000475}, arg2: 0);
                 context.CreateMonster(arg1: new[] {922}, arg2: true);
             }
@@ -314,7 +314,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State2Pattern_1번레버_오답01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__RANDOMLEVER02__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__RANDOMLEVER02__0$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000476, 10000477}, arg2: 0);
                 context.CreateMonster(arg1: new[] {921}, arg2: true);
             }
@@ -356,7 +356,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State2Pattern_1번레버_오답02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__RANDOMLEVER02__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__RANDOMLEVER02__1$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000476}, arg2: 0);
                 context.CreateMonster(arg1: new[] {922}, arg2: true);
             }
@@ -394,7 +394,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State2Pattern_3번레버_오답01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__RANDOMLEVER02__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__RANDOMLEVER02__0$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000476, 10000477}, arg2: 0);
                 context.CreateMonster(arg1: new[] {921}, arg2: true);
             }
@@ -436,7 +436,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State2Pattern_3번레버_오답02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__RANDOMLEVER02__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__RANDOMLEVER02__1$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000476}, arg2: 0);
                 context.CreateMonster(arg1: new[] {922}, arg2: true);
             }
@@ -536,7 +536,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State3Pattern_1번레버_오답01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__RANDOMLEVER02__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__RANDOMLEVER02__0$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000476, 10000477}, arg2: 0);
                 context.CreateMonster(arg1: new[] {921}, arg2: true);
             }
@@ -578,7 +578,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State3Pattern_1번레버_오답02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__RANDOMLEVER02__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__RANDOMLEVER02__1$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000477}, arg2: 0);
                 context.CreateMonster(arg1: new[] {922}, arg2: true);
             }
@@ -616,7 +616,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State3Pattern_2번레버_오답01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__RANDOMLEVER02__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__RANDOMLEVER02__0$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000475, 10000477}, arg2: 0);
                 context.CreateMonster(arg1: new[] {921}, arg2: true);
             }
@@ -658,7 +658,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State3Pattern_2번레버_오답02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__RANDOMLEVER02__1$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, script: "$52000027_QD__RANDOMLEVER02__1$", arg4: 3, arg5: 0);
                 context.SetInteractObject(arg1: new[] {10000477}, arg2: 0);
                 context.CreateMonster(arg1: new[] {922}, arg2: true);
             }

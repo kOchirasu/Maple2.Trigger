@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02000374_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_2006");
-                context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__2ROUND_A__0$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 110, script: "$02000374_BF__2ROUND_A__0$", arg4: 2, arg5: 1);
                 context.SetUserValue(triggerId: 2037401, key: "2Round_A", value: 1);
             }
 

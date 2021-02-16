@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02100009_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "10000");
+                context.ResetTimer(id: "10000");
             }
         }
 
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02100009_bf {
             }
 
             public override void OnExit() {
-                context.SetEventUI(arg1: 1, arg2: "$02100009_BF__resurrection_2__0$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02100009_BF__resurrection_2__0$", arg3: 4000);
             }
         }
 

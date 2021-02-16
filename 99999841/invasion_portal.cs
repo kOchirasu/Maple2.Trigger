@@ -19,7 +19,7 @@ namespace Maple2.Trigger._99999841 {
             internal StatePortal열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: true);
+                context.SetTimer(id: "1", arg2: 30, arg3: true);
                 context.SetInteractObject(arg1: new[] {10002184}, arg2: 1, arg3: false);
             }
 
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._99999841 {
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.ResetTimer(arg1: "1");
+                    context.ResetTimer(id: "1");
                     return new StatePortal닫힘(context);
                 }
 
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990010, key: "PCmove", value: 0);
-                context.SetTimer(arg1: "2", arg2: 60, arg3: true);
+                context.SetTimer(id: "2", arg2: 60, arg3: true);
                 context.SetInteractObject(arg1: new[] {10002184}, arg2: 2, arg3: false);
             }
 
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._99999841 {
                 }
 
                 if (context.TimeExpired(arg1: "2")) {
-                    context.ResetTimer(arg1: "2");
+                    context.ResetTimer(id: "2");
                     return new StateWait(context);
                 }
 

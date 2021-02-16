@@ -20,7 +20,7 @@ namespace Maple2.Trigger._61000009_me {
             internal StateReady_Idle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1, arg4: false);
+                context.SetTimer(id: "1", arg2: 1, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._61000009_me {
             internal StateReady_Idle_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "60", arg2: 60, arg4: false);
+                context.SetTimer(id: "60", arg2: 60, arg4: false);
             }
 
             public override TriggerState Execute() {

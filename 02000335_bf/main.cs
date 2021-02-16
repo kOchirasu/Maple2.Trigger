@@ -46,11 +46,11 @@ namespace Maple2.Trigger._02000335_bf {
             internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateStart_03(context));
-                context.SetConversation(arg1: 1, arg2: 203, arg3: "$02000335_BF__MAIN__0$", arg4: 2, arg5: 0);
-                context.CameraSelectPath(arg1: new[] {80001, 80002, 80003, 80004}, arg2: false);
+                context.SetConversation(arg1: 1, arg2: 203, script: "$02000335_BF__MAIN__0$", arg4: 2, arg5: 0);
+                context.CameraSelectPath(pathIds: new[] {80001, 80002, 80003, 80004}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -62,9 +62,9 @@ namespace Maple2.Trigger._02000335_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
             }
         }
 
@@ -73,8 +73,8 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetEventUI(arg1: 1, arg2: "$02000335_BF__MAIN__1$", arg3: 3000, arg4: "0");
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
+                context.SetEventUI(arg1: 1, script: "$02000335_BF__MAIN__1$", arg3: 3000, arg4: "0");
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._02000335_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362);
                 context.SetMesh(arg1: new[] {6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -188,7 +188,7 @@ namespace Maple2.Trigger._02000335_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362);
                 context.SetMesh(arg1: new[] {6111, 6112, 6113, 6114, 6115, 6116, 6117, 6118}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetTimer(arg1: "3", arg2: 3, arg4: false);
+                context.SetTimer(id: "3", arg2: 3, arg4: false);
             }
 
             public override TriggerState Execute() {

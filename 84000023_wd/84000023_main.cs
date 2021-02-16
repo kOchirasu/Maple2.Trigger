@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._84000023_wd {
     public static class _84000023_main {
         public class StateReset : TriggerState {
@@ -5,7 +7,7 @@ namespace Maple2.Trigger._84000023_wd {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "Weddingceremonystarts", value: 0);
-                context.SetPortal(arg1: 99, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 99, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -61,12 +63,12 @@ namespace Maple2.Trigger._84000023_wd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetCinematicUI(arg1: 1);
-                context.WeddingMoveUser(entryType: "Guest", arg1: 84000023, arg2: new byte[] {22, 23}, arg3: 701);
-                context.WeddingMoveUser(entryType: "Guest", arg1: 84000023, arg2: new byte[] {22, 23}, arg3: 703);
-                context.WeddingMoveUser(entryType: "Groom", arg1: 84000023, arg2: new byte[] {11}, arg3: 702);
-                context.WeddingMoveUser(entryType: "Bride", arg1: 84000023, arg2: new byte[] {12}, arg3: 702);
-                context.SetPortal(arg1: 99, arg2: true, arg3: true, arg4: true);
+                context.SetCinematicUI(type: 1);
+                context.WeddingMoveUser(type: WeddingEntryType.Guest, arg1: 84000023, arg2: new byte[] {22, 23}, arg3: 701);
+                context.WeddingMoveUser(type: WeddingEntryType.Guest, arg1: 84000023, arg2: new byte[] {22, 23}, arg3: 703);
+                context.WeddingMoveUser(type: WeddingEntryType.Groom, arg1: 84000023, arg2: new byte[] {11}, arg3: 702);
+                context.WeddingMoveUser(type: WeddingEntryType.Bride, arg1: 84000023, arg2: new byte[] {12}, arg3: 702);
+                context.SetPortal(portalId: 99, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -85,7 +87,7 @@ namespace Maple2.Trigger._84000023_wd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new[] {8002, 8001}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {8002, 8001}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -103,8 +105,8 @@ namespace Maple2.Trigger._84000023_wd {
             internal State주례줌인02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11004724, msg: "$84000023_WD__84000023_MAIN__0$", duration: 3500);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 11004724, script: "$84000023_WD__84000023_MAIN__0$", duration: 3500);
             }
 
             public override TriggerState Execute() {
@@ -158,9 +160,9 @@ namespace Maple2.Trigger._84000023_wd {
             internal StateUI테스트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8007}, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.CameraSelectPath(pathIds: new[] {8007}, arg2: false);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
@@ -179,8 +181,8 @@ namespace Maple2.Trigger._84000023_wd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new[] {8009}, arg2: false);
-                context.SetCinematicUI(arg1: 1);
+                context.CameraSelectPath(pathIds: new[] {8009}, arg2: false);
+                context.SetCinematicUI(type: 1);
             }
 
             public override TriggerState Execute() {
@@ -198,8 +200,8 @@ namespace Maple2.Trigger._84000023_wd {
             internal State입장Prepare02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WeddingSetUserEmotion(entryType: "Bride", id: 6);
-                context.WeddingSetUserEmotion(entryType: "Groom", id: 6);
+                context.WeddingSetUserEmotion(type: WeddingEntryType.Bride, id: 6);
+                context.WeddingSetUserEmotion(type: WeddingEntryType.Groom, id: 6);
             }
 
             public override TriggerState Execute() {
@@ -217,9 +219,9 @@ namespace Maple2.Trigger._84000023_wd {
             internal State입장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8004, 8005}, arg2: false);
-                context.WeddingUserToPatrol(patrolName: "MS2PatrolData_2001", entryType: "Groom", patrolIndex: 1);
-                context.WeddingUserToPatrol(patrolName: "MS2PatrolData_2002", entryType: "Bride", patrolIndex: 2);
+                context.CameraSelectPath(pathIds: new[] {8004, 8005}, arg2: false);
+                context.WeddingUserToPatrol(patrolName: "MS2PatrolData_2001", type: WeddingEntryType.Groom, patrolIndex: 1);
+                context.WeddingUserToPatrol(patrolName: "MS2PatrolData_2002", type: WeddingEntryType.Bride, patrolIndex: 2);
             }
 
             public override TriggerState Execute() {
@@ -271,8 +273,8 @@ namespace Maple2.Trigger._84000023_wd {
             internal State주례사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11004724, msg: "$84000023_WD__84000023_MAIN__1$", duration: 4000);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 11004724, script: "$84000023_WD__84000023_MAIN__1$", duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -290,25 +292,25 @@ namespace Maple2.Trigger._84000023_wd {
             internal State성혼타이핑결과확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WeddingMutualAgree(agreeType: "partnerName");
+                context.WeddingMutualAgree(type: WeddingAgreeType.PartnerName);
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.WeddingMutualCancel(agreeType: "partnerName");
+                    context.WeddingMutualCancel(type: WeddingAgreeType.PartnerName);
                     return new State미입력으로중단01(context);
                 }
 
-                if (context.WeddingEntryInField(entryType: "GroomBride", isInField: false)) {
-                    context.WeddingMutualCancel(agreeType: "partnerName");
+                if (!context.WeddingEntryInField(type: WeddingEntryType.Groom) || !context.WeddingEntryInField(type: WeddingEntryType.Bride)) {
+                    context.WeddingMutualCancel(type: WeddingAgreeType.PartnerName);
                     return new State탈주로중단(context);
                 }
 
-                if (context.WeddingMutualAgreeResult(agreeType: "partnerName", success: false)) {
+                if (context.WeddingMutualAgreeResult(type: WeddingAgreeType.PartnerName) == true == false) {
                     return new State탈주로중단(context);
                 }
 
-                if (context.WeddingMutualAgreeResult(agreeType: "partnerName", success: true)) {
+                if (context.WeddingMutualAgreeResult(type: WeddingAgreeType.PartnerName) == true) {
                     return new State성혼발표(context);
                 }
 
@@ -322,7 +324,7 @@ namespace Maple2.Trigger._84000023_wd {
             internal State탈주로중단(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11004724, msg: "$84000023_WD__84000023_MAIN__2$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004724, script: "$84000023_WD__84000023_MAIN__2$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -340,7 +342,7 @@ namespace Maple2.Trigger._84000023_wd {
             internal State탈주로중단선언(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11004724, msg: "$84000023_WD__84000023_MAIN__3$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004724, script: "$84000023_WD__84000023_MAIN__3$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -358,7 +360,7 @@ namespace Maple2.Trigger._84000023_wd {
             internal State미입력으로중단01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11004724, msg: "$84000023_WD__84000023_MAIN__4$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004724, script: "$84000023_WD__84000023_MAIN__4$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -376,7 +378,7 @@ namespace Maple2.Trigger._84000023_wd {
             internal State미입력으로중단선언(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11004724, msg: "$84000023_WD__84000023_MAIN__5$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004724, script: "$84000023_WD__84000023_MAIN__5$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -396,8 +398,8 @@ namespace Maple2.Trigger._84000023_wd {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 4002, key: "Weddingceremonyfail", value: 1);
                 context.SetUserValue(triggerId: 4000, key: "Weddingceremonyfail", value: 1);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
@@ -412,11 +414,11 @@ namespace Maple2.Trigger._84000023_wd {
             internal State성혼발표(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11004724, msg: "$84000023_WD__84000023_MAIN__6$", duration: 2500);
+                context.AddCinematicTalk(npcId: 11004724, script: "$84000023_WD__84000023_MAIN__6$", duration: 2500);
                 context.WeddingVowComplete();
                 context.SetUserValue(triggerId: 4002, key: "WeddingFinished", value: 1);
-                context.WeddingSetUserLookAt(entryType: "Bride", lookAtEntryType: "Groom", immediate: true);
-                context.WeddingSetUserLookAt(entryType: "Groom", lookAtEntryType: "Bride", immediate: true);
+                context.WeddingSetUserLookAt(type: WeddingEntryType.Bride, lookAtType: WeddingEntryType.Groom, immediate: true);
+                context.WeddingSetUserLookAt(type: WeddingEntryType.Groom, lookAtType: WeddingEntryType.Bride, immediate: true);
             }
 
             public override TriggerState Execute() {
@@ -434,9 +436,9 @@ namespace Maple2.Trigger._84000023_wd {
             internal State환호성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
-                context.WeddingSetUserEmotion(entryType: "Bride", id: 4);
-                context.WeddingSetUserEmotion(entryType: "Groom", id: 4);
+                context.CameraSelectPath(pathIds: new[] {8010}, arg2: false);
+                context.WeddingSetUserEmotion(type: WeddingEntryType.Bride, id: 4);
+                context.WeddingSetUserEmotion(type: WeddingEntryType.Groom, id: 4);
                 context.PlaySystemSoundInBox(arg2: "System_WeddingAudience_01");
             }
 
@@ -455,8 +457,8 @@ namespace Maple2.Trigger._84000023_wd {
             internal State뒷풀이01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
@@ -479,7 +481,7 @@ namespace Maple2.Trigger._84000023_wd {
             }
 
             public override TriggerState Execute() {
-                if (context.WeddingHallState(hallState: "weddingComplete", success: true)) {
+                if (context.WeddingHallState(hallState: "weddingComplete")) {
                     return new State뒷풀이02(context);
                 }
 
@@ -510,7 +512,7 @@ namespace Maple2.Trigger._84000023_wd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 28400135, textId: 28400135);
-                context.SetPortal(arg1: 99, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 99, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -551,19 +553,19 @@ namespace Maple2.Trigger._84000023_wd {
             internal State결혼종료확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WeddingMutualAgree(agreeType: "endActing");
+                context.WeddingMutualAgree(type: WeddingAgreeType.EndActing);
             }
 
             public override TriggerState Execute() {
-                if (context.WeddingEntryInField(entryType: "GroomBride", isInField: false)) {
+                if (!context.WeddingEntryInField(type: WeddingEntryType.Groom) || !context.WeddingEntryInField(type: WeddingEntryType.Bride)) {
                     return new StateEnd알림(context);
                 }
 
-                if (context.WeddingMutualAgreeResult(agreeType: "endActing", success: true)) {
+                if (context.WeddingMutualAgreeResult(type: WeddingAgreeType.EndActing) == true) {
                     return new StateEnd알림(context);
                 }
 
-                if (context.WeddingMutualAgreeResult(agreeType: "endActing", success: false)) {
+                if (context.WeddingMutualAgreeResult(type: WeddingAgreeType.EndActing) == true == false) {
                     return new State뒷풀이03(context);
                 }
 

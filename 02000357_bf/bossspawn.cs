@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000357_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02000357_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {99}, arg2: false);
                 context.SetSkip(state: new StateEnd체크(context));
             }
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02000357_bf {
 
             public override void OnExit() {
                 context.CameraSelect(arg1: 301, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000357_bf {
 
             public override void OnEnter() {
                 context.DungeonClear();
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

@@ -4,7 +4,7 @@ namespace Maple2.Trigger._64000001_gd {
             internal State시간표확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 10, arg3: false);
+                context.SetTimer(id: "10", arg2: 10, arg3: false);
             }
 
             public override TriggerState Execute() {
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._64000001_gd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "88", arg2: 1200, arg3: false);
+                context.SetTimer(id: "88", arg2: 1200, arg3: false);
             }
 
             public override TriggerState Execute() {

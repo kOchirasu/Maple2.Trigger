@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02100000_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 19, arg2: false, arg3: false, arg4: true);
+                context.SetPortal(portalId: 19, visible: false, enabled: false, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02100000_bf {
             internal State타이머시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10000", arg2: 360, arg3: true, arg4: true, arg5: 0);
+                context.SetTimer(id: "10000", arg2: 360, arg3: true, arg4: true, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._02100000_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "10000");
+                context.ResetTimer(id: "10000");
             }
         }
 
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02100000_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "Find02100000");
-                context.SetEventUI(arg1: 7, arg2: "$02100000_BF__TIMER__1$", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 7, script: "$02100000_BF__TIMER__1$", arg3: 2000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._02100000_bf {
             internal State실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 5, arg2: "$02100000_BF__TIMER__0$", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 5, script: "$02100000_BF__TIMER__0$", arg3: 2000, arg4: "0");
                 context.DestroyMonster(arg1: new[] {-1});
             }
 
@@ -133,8 +133,8 @@ namespace Maple2.Trigger._02100000_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 19, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 5, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 19, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 5, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

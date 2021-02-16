@@ -36,7 +36,7 @@ namespace Maple2.Trigger._52000006_qd {
             internal State화면효과(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 7);
+                context.SetTimer(id: "1", arg2: 7);
             }
 
             public override TriggerState Execute() {
@@ -54,9 +54,9 @@ namespace Maple2.Trigger._52000006_qd {
             internal State화면효과2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 3);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_2__0$");
+                context.SetTimer(id: "1", arg2: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3, script: "$52000006_QD__TUTORIAL_06_2__0$");
                 context.SetEffect(arg1: new[] {401}, arg2: true);
             }
 
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._52000006_qd {
             internal State화면효과3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
                 context.CameraSelect(arg1: 303, arg2: true);
                 context.SetEffect(arg1: new[] {402}, arg2: true);
             }
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52000006_qd {
             internal State맵이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(type: 0);
                 context.MoveUser(arg1: 52000007, arg2: 1);
             }
 

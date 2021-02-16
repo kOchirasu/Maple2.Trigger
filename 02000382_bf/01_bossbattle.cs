@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000382_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {901, 902, 903});
-                context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
                 context.EnableSpawnPointPc(spawnPointId: 10000, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 10001, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 10002, isEnable: false);
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02000382_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {901}, arg2: false);
                 context.SetUserValue(triggerId: 1122330, key: "AgentOff", value: 1);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 501, arg2: true);
             }
 
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02000382_bf {
             internal StateBoss01Talk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11003068, arg3: "$02000382_BF__01_BOSSBATTLE__0$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11003068, script: "$02000382_BF__01_BOSSBATTLE__0$", arg4: 4);
                 context.SetSkip(state: new StateBoss01Talk01Skip(context));
             }
 
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._02000382_bf {
             internal StateBoss01Talk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11003069, arg3: "$02000382_BF__01_BOSSBATTLE__1$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11003069, script: "$02000382_BF__01_BOSSBATTLE__1$", arg4: 5);
                 context.SetSkip(state: new StateBoss01Talk02Skip(context));
             }
 
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._02000382_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
@@ -194,8 +194,8 @@ namespace Maple2.Trigger._02000382_bf {
             internal StateBoss02CameraSet(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 511, arg2: true);
             }
 
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._02000382_bf {
             internal StateBoss02Talk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11003068, arg3: "$02000382_BF__01_BOSSBATTLE__2$", arg4: 3);
+                context.SetConversation(arg1: 2, arg2: 11003068, script: "$02000382_BF__01_BOSSBATTLE__2$", arg4: 3);
                 context.SetSkip(state: new StateBoss02Talk01Skip(context));
             }
 
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._02000382_bf {
             internal StateBoss02Talk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11003069, arg3: "$02000382_BF__01_BOSSBATTLE__3$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11003069, script: "$02000382_BF__01_BOSSBATTLE__3$", arg4: 4);
                 context.SetSkip(state: new StateBoss02Talk02Skip(context));
             }
 
@@ -274,8 +274,8 @@ namespace Maple2.Trigger._02000382_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
@@ -315,8 +315,8 @@ namespace Maple2.Trigger._02000382_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {903}, arg2: false);
                 context.SetUserValue(triggerId: 1122330, key: "AgentOff", value: 1);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 521, arg2: true);
             }
 
@@ -335,7 +335,7 @@ namespace Maple2.Trigger._02000382_bf {
             internal StateBoss03Talk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11003068, arg3: "$02000382_BF__01_BOSSBATTLE__4$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 11003068, script: "$02000382_BF__01_BOSSBATTLE__4$", arg4: 4);
                 context.SetSkip(state: new StateBoss03Talk01Skip(context));
             }
 
@@ -374,7 +374,7 @@ namespace Maple2.Trigger._02000382_bf {
             internal StateBoss03Talk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11003069, arg3: "$02000382_BF__01_BOSSBATTLE__5$", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11003069, script: "$02000382_BF__01_BOSSBATTLE__5$", arg4: 5);
                 context.SetSkip(state: new StateBoss03Talk02Skip(context));
             }
 
@@ -395,8 +395,8 @@ namespace Maple2.Trigger._02000382_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
@@ -436,8 +436,8 @@ namespace Maple2.Trigger._02000382_bf {
             public override void OnEnter() {
                 context.DungeonClear();
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "ClearSnowQueen");
-                context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

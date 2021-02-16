@@ -24,9 +24,9 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
             }
 
             public override TriggerState Execute() {
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52020011_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52020011, arg2: 6001);
-                context.CameraSelectPath(arg1: new[] {4009}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4009}, arg2: false);
                 context.SetActor(arg1: 8001, arg2: true, arg3: "Attack_Idle_A");
             }
 
@@ -64,9 +64,9 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateGo(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003599, msg: "나 $npcName:11003599$의 이름으로 명한다.", duration: 2800);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.AddCinematicTalk(npcId: 11003599, script: "나 $npcName:11003599$의 이름으로 명한다.", duration: 2800);
             }
 
             public override TriggerState Execute() {
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateScene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003599, msg: "이 땅의 모든 저주받은 존재여! 깊고 어두운 곳으로 떨어져라!", duration: 2800);
+                context.AddCinematicTalk(npcId: 11003599, script: "이 땅의 모든 저주받은 존재여! 깊고 어두운 곳으로 떨어져라!", duration: 2800);
             }
 
             public override TriggerState Execute() {

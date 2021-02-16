@@ -61,7 +61,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 6000, script: "$52010038_QD__gauge__3$", voice: @"ko/Npc/00002107");
                 context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "skyfortress_takeoff");
-                context.SetEventUI(arg1: 7, arg2: "$52010038_QD__GAUGE__0$", arg3: 2500);
+                context.SetEventUI(arg1: 7, script: "$52010038_QD__GAUGE__0$", arg3: 2500);
             }
 
             public override TriggerState Execute() {
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 5, arg2: "$52010038_QD__GAUGE__1$", arg3: 2500);
+                context.SetEventUI(arg1: 5, script: "$52010038_QD__GAUGE__1$", arg3: 2500);
             }
 
             public override TriggerState Execute() {

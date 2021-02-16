@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000125_qd {
     public static class _main_01 {
         public class StateIdle : TriggerState {
@@ -20,7 +22,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -39,14 +41,14 @@ namespace Maple2.Trigger._52000125_qd {
             internal StateScene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4006}, arg2: false);
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
                 context.MoveUser(arg1: 52000125, arg2: 6001);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Clap_A");
-                context.AddCinematicTalk(npcId: 11003205, msg: "$52000125_QD__MAIN_01__0$", duration: 3000, align: "center");
+                context.AddCinematicTalk(npcId: 11003205, script: "$52000125_QD__MAIN_01__0$", duration: 3000, align: Align.Center);
                 context.SetSceneSkip(state: new StateScene_08(context), arg2: "exit");
             }
 
@@ -66,7 +68,7 @@ namespace Maple2.Trigger._52000125_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "ChatUp");
-                context.AddCinematicTalk(npcId: 11003205, msg: "$52000125_QD__MAIN_01__1$", duration: 1000, align: "center");
+                context.AddCinematicTalk(npcId: 11003205, script: "$52000125_QD__MAIN_01__1$", duration: 1000, align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -84,7 +86,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal StateScene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003208, msg: "$52000125_QD__MAIN_01__2$", duration: 2000, align: "center");
+                context.AddCinematicTalk(npcId: 11003208, script: "$52000125_QD__MAIN_01__2$", duration: 2000, align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -102,8 +104,8 @@ namespace Maple2.Trigger._52000125_qd {
             internal StateScene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003205, msg: "$52000125_QD__MAIN_01__3$", duration: 3000, align: "center");
+                context.CameraSelectPath(pathIds: new[] {4003}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003205, script: "$52000125_QD__MAIN_01__3$", duration: 3000, align: Align.Center);
             }
 
             public override TriggerState Execute() {
@@ -121,7 +123,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal StateScene_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4003, 4004, 4005}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4003, 4004, 4005}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -195,11 +197,11 @@ namespace Maple2.Trigger._52000125_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {

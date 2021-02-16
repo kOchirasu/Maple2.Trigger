@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 16, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 16, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {4016}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetAgent(arg1: new[] {28091, 28092}, arg2: true);
                 context.SetMesh(arg1: new[] {230900, 230901, 230902, 230903, 230904, 230905, 230906, 230907, 230908, 230909, 430900, 430901, 430902, 430903, 430904, 430905, 430906, 430907, 430908, 430909}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetMesh(arg1: new[] {230900, 230901, 230902, 230903, 230904, 230905, 230906, 230907, 230908, 230909}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                 context.SetRandomMesh(arg1: new[] {430900, 430901, 430902, 430903, 430904, 430905, 430906, 430907, 430908, 430909}, arg2: true, arg3: 10, arg4: 0, arg5: 50);
                 context.SetAgent(arg1: new[] {28091, 28092}, arg2: false);
-                context.SetPortal(arg1: 16, arg2: true, arg3: true, arg4: false);
+                context.SetPortal(portalId: 16, visible: true, enabled: true, minimapVisible: false);
                 context.SetMesh(arg1: new[] {4016}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 

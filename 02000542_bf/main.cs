@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000542_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
                 context.SetInteractObject(arg1: new[] {10003142}, arg2: 1);
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000542_bf {
             internal State문열기오브젝트설정1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000542_BF__MAIN__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02000542_BF__MAIN__0$", arg3: 5000);
                 context.SetInteractObject(arg1: new[] {10003142}, arg2: 1);
                 context.CreateMonster(arg1: new[] {112}, arg2: false);
                 context.AddBalloonTalk(spawnPointId: 112, msg: "$02000542_BF__MAIN__1$", duration: 3500, delayTick: 1500);
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._02000542_bf {
             internal State문열기오브젝트설정2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000542_BF__MAIN__5$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02000542_BF__MAIN__5$", arg3: 5000);
                 context.SetInteractObject(arg1: new[] {10003143}, arg2: 1);
                 context.CreateMonster(arg1: new[] {113}, arg2: false);
                 context.AddBalloonTalk(spawnPointId: 113, msg: "$02000542_BF__MAIN__6$", duration: 3500);
@@ -408,7 +408,7 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetMesh(arg1: new[] {601, 602}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.DestroyMonster(arg1: new[] {115});
             }
 

@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000243_bf {
             internal State초재기1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "99", arg2: 5);
+                context.SetTimer(id: "99", arg2: 5);
             }
 
             public override TriggerState Execute() {
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._02000243_bf {
             internal State초재기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "99", arg2: 3);
-                context.SetEventUI(arg1: 1, arg2: "$02000243_BF__TIMER__0$", arg3: 3000, arg4: "0");
+                context.SetTimer(id: "99", arg2: 3);
+                context.SetEventUI(arg1: 1, script: "$02000243_BF__TIMER__0$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {2001}, arg2: true);
             }
 
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._02000243_bf {
             internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "99", arg2: 3);
-                context.SetEventUI(arg1: 1, arg2: "$02000243_BF__TIMER__1$", arg3: 3000, arg4: "0");
+                context.SetTimer(id: "99", arg2: 3);
+                context.SetEventUI(arg1: 1, script: "$02000243_BF__TIMER__1$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {2002}, arg2: true);
             }
 
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._02000243_bf {
             internal State초재기3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000243_BF__TIMER__2$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000243_BF__TIMER__2$", arg3: 5000, arg4: "0");
             }
 
             public override TriggerState Execute() {
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._02000243_bf {
             internal State유저이동음성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 3);
+                context.SetTimer(id: "1", arg2: 3);
             }
 
             public override TriggerState Execute() {

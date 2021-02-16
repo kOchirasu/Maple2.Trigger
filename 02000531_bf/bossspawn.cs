@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000531_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02000531_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.DungeonClear();
                     return new StateEnd(context);
                 }
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02000531_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.DungeonFail();
                     return new StateEnd(context);
                 }

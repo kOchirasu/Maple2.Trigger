@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020066_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "PortalOn", value: 0);
-                context.SetPortal(arg1: 15700, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 15700, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02020066_bf {
             internal StatePortalOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 15700, arg2: false, arg3: true, arg4: false);
+                context.SetPortal(portalId: 15700, visible: false, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02020066_bf {
             internal StatePortalOff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 15700, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 15700, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

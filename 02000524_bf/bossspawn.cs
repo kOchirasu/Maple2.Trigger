@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000524_bf {
             internal State일반난이도_BossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.CreateMonster(arg1: new[] {98}, arg2: false);
             }
 
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02000524_bf {
             internal State어려움난이도_BossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.CreateMonster(arg1: new[] {99}, arg2: false);
             }
 
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._02000524_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});
-                context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

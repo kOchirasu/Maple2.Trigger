@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000281_bf {
                 context.SetLadder(arg1: 321, arg2: false, arg3: false);
                 context.SetLadder(arg1: 322, arg2: false, arg3: false);
                 context.SetLadder(arg1: 323, arg2: false, arg3: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -29,8 +29,8 @@ namespace Maple2.Trigger._02000281_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000414}, arg2: 1);
                 context.CameraSelect(arg1: 3001, arg2: true);
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._02000281_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._02000281_bf {
                     context.SetLadder(arg1: 321, arg2: true, arg3: true);
                     context.SetLadder(arg1: 322, arg2: true, arg3: true);
                     context.SetLadder(arg1: 323, arg2: true, arg3: true);
-                    context.SetPortal(arg1: 2, arg2: false, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 2, visible: false, enabled: true, minimapVisible: true);
                     return new StateEnd(context);
                 }
 

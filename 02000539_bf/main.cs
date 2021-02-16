@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetLadder(arg1: 601, arg2: false, arg3: false);
                 context.SetLadder(arg1: 602, arg2: false, arg3: false);
                 context.SetLadder(arg1: 603, arg2: false, arg3: false);
@@ -567,7 +567,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal StatePortalEnable(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

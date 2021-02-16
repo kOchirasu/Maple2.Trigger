@@ -64,7 +64,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$02100001_BF__99_BARRICADE__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02100001_BF__99_BARRICADE__0$", arg3: 3000);
             }
 
             public override TriggerState Execute() {

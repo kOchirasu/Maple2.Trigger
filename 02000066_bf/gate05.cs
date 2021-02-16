@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State게이트열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "3", arg2: 3);
+                context.SetTimer(id: "3", arg2: 3);
                 context.SetInteractObject(arg1: new[] {10000337}, arg2: 1);
                 context.SetEffect(arg1: new[] {604}, arg2: true);
                 context.ShowGuideSummary(entityId: 20000664, textId: 20000664);

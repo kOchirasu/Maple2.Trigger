@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetEffect(arg1: new[] {7541}, arg2: true);
                 context.SetMesh(arg1: new[] {6051, 6052, 6053, 6054, 6055, 6056, 6057, 6058, 6059, 6060, 6061, 6062, 6063, 6064, 6065, 6066}, arg2: true, arg3: 80, arg4: 100, arg5: 8f);
                 context.MoveNpc(arg1: 994, arg2: "MS2PatrolData_1006");
-                context.SetConversation(arg1: 1, arg2: 994, arg3: "$02010052_BF__MAIN__6$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 994, script: "$02010052_BF__MAIN__6$", arg4: 3);
             }
 
             public override TriggerState Execute() {
@@ -48,9 +48,9 @@ namespace Maple2.Trigger._02010052_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7504}, arg2: true);
                 context.SetMesh(arg1: new[] {6051, 6052, 6053, 6054, 6055, 6056, 6057, 6058, 6059, 6060, 6061, 6062, 6063, 6064, 6065, 6066}, arg2: false, arg3: 800, arg4: 100, arg5: 8f);
-                context.SetEventUI(arg1: 1, arg2: "$02010052_BF__TORCHLIGHT_04__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02010052_BF__TORCHLIGHT_04__0$", arg3: 3000);
                 context.SetEffect(arg1: new[] {7004}, arg2: true);
-                context.SetTimer(arg1: "1", arg2: 1, arg4: false);
+                context.SetTimer(id: "1", arg2: 1, arg4: false);
             }
 
             public override TriggerState Execute() {
@@ -69,11 +69,11 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 200);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 80003, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 21800073, arg3: "$02010052_BF__TORCHLIGHT_04__1$", arg4: 2);
-                context.SetTimer(arg1: "2", arg2: 2);
+                context.SetConversation(arg1: 2, arg2: 21800073, script: "$02010052_BF__TORCHLIGHT_04__1$", arg4: 2);
+                context.SetTimer(id: "2", arg2: 2);
                 context.SetSkip(state: new StateRun(context));
             }
 
@@ -87,9 +87,9 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnExit() {
                 context.RemoveCinematicTalk();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetCinematicUI(type: 7);
                 context.CameraSelect(arg1: 80003, arg2: false);
             }
         }
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 200, textId: 20105202);
-                context.SetConversation(arg1: 1, arg2: 994, arg3: "$02010052_BF__TORCHLIGHT_04__2$", arg4: 3);
+                context.SetConversation(arg1: 1, arg2: 994, script: "$02010052_BF__TORCHLIGHT_04__2$", arg4: 3);
                 context.MoveNpc(arg1: 994, arg2: "MS2PatrolData_1005");
                 context.CreateMonster(arg1: new[] {501, 502, 503, 504, 505, 506}, arg2: true);
             }

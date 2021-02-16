@@ -6,9 +6,9 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
-                context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 12, visible: false, enabled: false, minimapVisible: false);
+                context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006}, arg2: false);
                 context.SetLadder(arg1: 4001, arg2: false, arg3: false);
                 context.SetLadder(arg1: 4002, arg2: false, arg3: false);
@@ -61,8 +61,8 @@ namespace Maple2.Trigger._02000313_bf {
                 context.CreateMonster(arg1: new[] {1001, 2001}, arg2: false);
                 context.CameraSelect(arg1: 30000, arg2: true);
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new State1차전투시작(context));
             }
 
@@ -76,8 +76,8 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnExit() {
                 context.CameraSelect(arg1: 30000, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
         }
 
@@ -296,8 +296,8 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 30001, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -356,8 +356,8 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnExit() {
                 context.CameraSelect(arg1: 30001, arg2: false);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108});
                 context.SetNpcEmotionLoop(arg1: 1005, arg2: "Dead_Idle_A", arg3: 9999999999999999f);
                 context.SetEffect(arg1: new[] {5002}, arg2: false);
@@ -427,9 +427,9 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() {
                 context.DungeonClear();
-                context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 12, arg2: true, arg3: true, arg4: true);
-                context.SetPortal(arg1: 13, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 12, visible: true, enabled: true, minimapVisible: true);
+                context.SetPortal(portalId: 13, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {
@@ -444,9 +444,9 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 4);
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
@@ -473,9 +473,9 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.SetCinematicUI(arg1: 9, arg2: "$02000313_BF__BOSSSPAWN__43$", arg3: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.SetCinematicUI(type: 9, script: "$02000313_BF__BOSSSPAWN__43$", arg3: false);
                 context.CreateMonster(arg1: new[] {205, 202, 203, 204}, arg2: true);
                 context.MoveUser(arg1: 02000313, arg2: 6001);
             }
@@ -496,12 +496,12 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateQuestEndCinematic_이동(context), arg2: "exit");
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 30000, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcId: 0, msg: "$02000313_BF__BOSSSPAWN__44$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003392, msg: "$02000313_BF__BOSSSPAWN__45$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$02000313_BF__BOSSSPAWN__44$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003392, script: "$02000313_BF__BOSSSPAWN__45$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 205, arg2: "Stun_A", arg3: 160000000f);
                 context.SetNpcEmotionLoop(arg1: 203, arg2: "Attack_Idle_A", arg3: 160000000f);
             }
@@ -521,11 +521,11 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4012}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4012}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Bore_A");
                 context.FaceEmotion(spawnPointId: 203, emotionName: "Trigger_Sad");
-                context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__46$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__47$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__46$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__47$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -543,11 +543,11 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4014}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 203, arg2: "Attack_Idle_A", arg3: 999999999f);
                 context.SetNpcEmotionSequence(arg1: 204, arg2: "Talk_A,Bore_B");
                 context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003454, msg: "$02000313_BF__BOSSSPAWN__48$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003454, script: "$02000313_BF__BOSSSPAWN__48$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -566,9 +566,9 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 203, emotionName: "Trigger_Danger");
-                context.AddCinematicTalk(npcId: 11003387, msg: "$02000313_BF__BOSSSPAWN__49$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003387, msg: "$02000313_BF__BOSSSPAWN__50$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003454, msg: "$02000313_BF__BOSSSPAWN__51$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003387, script: "$02000313_BF__BOSSSPAWN__49$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003387, script: "$02000313_BF__BOSSSPAWN__50$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003454, script: "$02000313_BF__BOSSSPAWN__51$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -586,10 +586,10 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_04_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4011}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4011}, arg2: false);
                 context.SetPcEmotionSequence(arg1: "Talk_A");
-                context.AddCinematicTalk(npcId: 0, msg: "$02000313_BF__BOSSSPAWN__52$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__53$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$02000313_BF__BOSSSPAWN__52$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__53$", duration: 3000);
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02000313_BF__BOSSSPAWN__54$", duration: 2000, delayTick: 5000);
             }
@@ -628,9 +628,9 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4013}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4013}, arg2: false);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_9991");
-                context.AddCinematicTalk(npcId: 11003387, msg: "$02000313_BF__BOSSSPAWN__55$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003387, script: "$02000313_BF__BOSSSPAWN__55$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -648,10 +648,10 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4013}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4013}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 201, arg2: "Idle_A", arg3: 999999999f);
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__56$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__57$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__56$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__57$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -669,8 +669,8 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003387, msg: "$02000313_BF__BOSSSPAWN__58$", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4014}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003387, script: "$02000313_BF__BOSSSPAWN__58$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -688,11 +688,11 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4018}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4018}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 201, arg2: "Idle_A", arg3: 999999999f);
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Bore_A");
                 context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_9994");
-                context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__15$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__15$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -710,10 +710,10 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4013}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4013}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 201, arg2: "Attack_Idle_A", arg3: 999999999f);
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__59$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__60$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__59$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__60$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -731,10 +731,10 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4014}, arg2: false);
                 context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_9995");
-                context.AddCinematicTalk(npcId: 11003387, msg: "$02000313_BF__BOSSSPAWN__61$", duration: 3000);
-                context.AddCinematicTalk(npcId: 0, msg: "$02000313_BF__BOSSSPAWN__62$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003387, script: "$02000313_BF__BOSSSPAWN__61$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$02000313_BF__BOSSSPAWN__62$", duration: 3000);
                 context.SetNpcEmotionSequence(arg1: 204, arg2: "Talk_A");
                 context.SetNpcEmotionSequence(arg1: 203, arg2: "Attack_01_C");
             }
@@ -754,13 +754,13 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_10_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4013}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__63$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__64$", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4013}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__63$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__64$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 201, arg2: "Attack_Idle_A", arg3: 999999999f);
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__65$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__66$", duration: 3000);
-                context.AddCinematicTalk(npcId: 0, msg: "$02000313_BF__BOSSSPAWN__67$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__65$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__66$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, script: "$02000313_BF__BOSSSPAWN__67$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -781,8 +781,8 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "ChatUp_A");
                 context.FaceEmotion(spawnPointId: 201, emotionName: "Trigger_Proud");
                 context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_9996");
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__68$", duration: 4000);
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__69$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__68$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__69$", duration: 4000);
             }
 
             public override TriggerState Execute() {
@@ -800,8 +800,8 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_11_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003387, msg: "$02000313_BF__BOSSSPAWN__70$", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4014}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003387, script: "$02000313_BF__BOSSSPAWN__70$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 203, arg2: "Sit_Down_A", arg3: 10000f);
             }
 
@@ -820,8 +820,8 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_11_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4018}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__71$", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4018}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__71$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -841,9 +841,9 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Bore_A");
                 context.FaceEmotion(spawnPointId: 201, emotionName: "Trigger_Sad");
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__72$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__73$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__74$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__72$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__73$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__74$", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -862,7 +862,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 201, emotionName: "Trigger_Proud");
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__75$", duration: 6060);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__75$", duration: 6060);
             }
 
             public override TriggerState Execute() {
@@ -880,10 +880,10 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_11_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4019}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4019}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Attack_01_A");
-                context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__76$", duration: 4000);
-                context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__77$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__76$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__77$", duration: 4000);
                 context.SetSkip(state: new StateQuestCinematic_마지막전투_04(context));
             }
 
@@ -902,8 +902,8 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003387, msg: "$02000313_BF__BOSSSPAWN__78$", duration: 3000);
+                context.CameraSelectPath(pathIds: new[] {4014}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003387, script: "$02000313_BF__BOSSSPAWN__78$", duration: 3000);
                 context.FaceEmotion(spawnPointId: 203, emotionName: "Trigger_Embarrassed");
             }
 
@@ -922,13 +922,13 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4018}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4018}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Bore_A");
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Attack_01_C");
-                context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__79$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__80$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__81$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__79$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__80$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__81$", duration: 3000);
                 context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.DestroyMonster(arg1: new[] {203, 204});
             }
@@ -948,10 +948,10 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_마지막전투_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4020}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4020}, arg2: false);
                 context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetNpcEmotionSequence(arg1: 205, arg2: "Attack_04_G");
-                context.AddCinematicTalk(npcId: 11003392, msg: "$02000313_BF__BOSSSPAWN__82$", duration: 1500);
+                context.AddCinematicTalk(npcId: 11003392, script: "$02000313_BF__BOSSSPAWN__82$", duration: 1500);
                 context.SetEffect(arg1: new[] {5004}, arg2: true);
             }
 
@@ -970,10 +970,10 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_마지막전투_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4017}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4017}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
-                context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__83$", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__84$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__83$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__84$", duration: 3000);
                 context.SetOnetimeEffect(id: 102, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetNpcEmotionSequence(arg1: 205, arg2: "Attack_02_H");
             }
@@ -1014,7 +1014,7 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_마지막전투_03_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {4017}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4017}, arg2: false);
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetNpcEmotionSequence(arg1: 205, arg2: "Dead_A");
@@ -1065,7 +1065,7 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG\weather\Eff_monochrome_03.xml");
-                context.CameraSelectPath(arg1: new[] {4021, 4022}, arg2: false);
+                context.CameraSelectPath(pathIds: new[] {4021, 4022}, arg2: false);
             }
 
             public override TriggerState Execute() {
@@ -1085,7 +1085,7 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG\weather\Eff_monochrome_03.xml");
-                context.SetCinematicUI(arg1: 9, arg2: "$02000313_BF__BOSSSPAWN__85$", arg3: false);
+                context.SetCinematicUI(type: 9, script: "$02000313_BF__BOSSSPAWN__85$", arg3: false);
                 context.SetEffect(arg1: new[] {5005, 5006}, arg2: false);
             }
 
@@ -1104,7 +1104,7 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_마지막전투_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 9, arg2: "$02000313_BF__BOSSSPAWN__86$", arg3: false);
+                context.SetCinematicUI(type: 9, script: "$02000313_BF__BOSSSPAWN__86$", arg3: false);
             }
 
             public override TriggerState Execute() {

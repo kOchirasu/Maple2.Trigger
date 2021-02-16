@@ -5,7 +5,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "MoveToTeamPortal", value: 0);
-                context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 6, arg2: false, arg3: true, arg4: false);
+                context.SetPortal(portalId: 6, visible: false, enabled: true, minimapVisible: false);
             }
 
             public override TriggerState Execute() {

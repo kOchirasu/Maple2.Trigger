@@ -20,7 +20,7 @@ namespace Maple2.Trigger._51000001_dg {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 0, arg2: "0,0");
+                context.SetEventUI(arg1: 0, script: "0,0");
                 context.CameraSelect(arg1: 344, arg2: true);
             }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._51000001_dg {
             internal State진짜끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "10", arg2: 10, arg3: false, arg4: true, arg5: -30, arg6: "TR");
+                context.SetTimer(id: "10", arg2: 10, arg3: false, arg4: true, arg5: -30, arg6: "TR");
             }
 
             public override TriggerState Execute() {

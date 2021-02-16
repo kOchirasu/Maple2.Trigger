@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 28000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02000410_BF__BARRICADE_GIVEUP_0$", arg3: 5000);
+                    context.SetEventUI(arg1: 1, script: "$02000410_BF__BARRICADE_GIVEUP_0$", arg3: 5000);
                     context.DungeonEnableGiveUp(isEnable: true);
                     return new State입구PortalRemove(context);
                 }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
+                    context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
                     return new StateBossHP체크(context);
                 }
 

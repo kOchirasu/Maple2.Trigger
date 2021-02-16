@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._52000187_qd {
     public static class _tutorial {
         public class StateWait : TriggerState {
@@ -5,8 +7,8 @@ namespace Maple2.Trigger._52000187_qd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {2000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.CreateWidget(arg1: "Guide");
+                context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
+                context.CreateWidget(type: WidgetType.Guide);
             }
 
             public override TriggerState Execute() {
@@ -167,7 +169,7 @@ namespace Maple2.Trigger._52000187_qd {
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "Guide", arg2: "IsTriggerEvent", arg3: "551")) {
+                if (context.WidgetCondition(type: WidgetType.Guide, arg2: "IsTriggerEvent", arg3: "551")) {
                     context.CreateMonster(arg1: new[] {101}, arg2: false);
                     return new State모쿰Script1(context);
                 }
@@ -234,7 +236,7 @@ namespace Maple2.Trigger._52000187_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007}, arg3: new byte[] {3})) {
-                    context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 }
 
                 return null;

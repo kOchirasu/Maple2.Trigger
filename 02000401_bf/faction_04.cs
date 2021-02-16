@@ -25,14 +25,14 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new State반응Wait(context));
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.DestroyMonster(arg1: new[] {2902});
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 303, arg2: true);
                 context.CreateMonster(arg1: new[] {1300}, arg2: true);
                 context.CreateMonster(arg1: new[] {1301, 1302, 1303, 1304, 1305}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1301, arg3: "$02000401_BF__FACTION_04__0$", arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1301, script: "$02000401_BF__FACTION_04__0$", arg4: 5, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -51,13 +51,13 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.ShowGuideSummary(entityId: 20040104, textId: 20040104, duration: 2500);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 

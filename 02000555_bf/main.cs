@@ -1,3 +1,5 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._02000555_bf {
     public static class _main {
         public class StateWaitStart : TriggerState {
@@ -23,7 +25,7 @@ namespace Maple2.Trigger._02000555_bf {
                 context.SetEffect(arg1: new[] {8100, 8101, 8102, 8103, 8104, 8200, 8201, 8202, 8203, 8300, 8301, 8302, 8303, 8304, 8400, 8401, 8402, 8403, 8404, 8405, 8406, 8407, 8408, 8409, 8410, 8411, 8412, 8413, 8414, 8415, 8416, 8417, 8418, 8419, 8420, 8421, 8422, 8423, 8424, 8425, 8426}, arg2: false);
                 context.SetEffect(arg1: new[] {8500, 8501, 8502, 8503, 8504, 8505, 8506, 8507, 8508, 8509, 8510, 8511, 8512, 8513, 8514, 8515, 8516, 8517}, arg2: false);
                 context.SetEffect(arg1: new[] {8600, 8601, 8602, 8801, 8802, 8803, 8804, 8805}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(arg1: new[] {4012, 4013, 4014, 4015, 4001, 4002, 4003, 4004}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10003145}, arg2: 0);
             }
@@ -62,7 +64,7 @@ namespace Maple2.Trigger._02000555_bf {
             internal StateStage1_추가SpawnWait01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__37$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__37$", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -366,7 +368,7 @@ namespace Maple2.Trigger._02000555_bf {
             public override void OnEnter() {
                 context.SetUserValue(key: "MonsterMany", value: 0);
                 context.CreateMonster(arg1: new[] {4001}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__36$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__36$", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -531,7 +533,7 @@ namespace Maple2.Trigger._02000555_bf {
             internal State보안게임Preparing(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__38$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__38$", arg3: 5000);
                 context.SetInteractObject(arg1: new[] {10003145}, arg2: 1);
             }
 
@@ -551,7 +553,7 @@ namespace Maple2.Trigger._02000555_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "GameLogicEnd", value: 999);
-                context.WidgetAction(arg1: "Round", arg2: "InitWidgetRound");
+                context.WidgetAction(type: WidgetType.Round, name: "InitWidgetRound");
                 context.SetUserValue(triggerId: 9002, key: "GameLogicStart", value: 999);
                 context.LockMyPc(isLock: true);
             }
@@ -571,7 +573,7 @@ namespace Maple2.Trigger._02000555_bf {
             internal State문열기시작2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__39$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__39$", arg3: 4000);
                 context.LockMyPc(isLock: true);
             }
 
@@ -636,7 +638,7 @@ namespace Maple2.Trigger._02000555_bf {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 3000f);
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__40$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__40$", arg3: 3000);
                 context.LockMyPc(isLock: false);
             }
 
@@ -656,7 +658,7 @@ namespace Maple2.Trigger._02000555_bf {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 3000f);
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__41$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__41$", arg3: 3000);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02000535_BF__MAIN__42$", duration: 3500);
                 context.LockMyPc(isLock: false);
             }
@@ -676,9 +678,9 @@ namespace Maple2.Trigger._02000555_bf {
             internal State문파괴안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
-                context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__43$", arg3: 7000);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
+                context.SetEventUI(arg1: 1, script: "$02000535_BF__MAIN__43$", arg3: 7000);
                 context.LockMyPc(isLock: false);
                 context.CreateMonster(arg1: new[] {611}, arg2: true);
             }
@@ -698,13 +700,13 @@ namespace Maple2.Trigger._02000555_bf {
             internal State이동하자(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.LockMyPc(isLock: false);
                 context.SideNpcTalk(npcId: 23300001, illust: "Haren_smile", duration: 4000, script: "$02000535_BF__MAIN__44$");
                 context.SetMesh(arg1: new[] {4014, 4015}, arg2: false);
                 context.SetEffect(arg1: new[] {8805}, arg2: true);
-                context.SetPortal(arg1: 2, arg2: true);
+                context.SetPortal(portalId: 2, visible: true);
             }
 
             public override TriggerState Execute() {

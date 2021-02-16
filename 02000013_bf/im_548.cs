@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000013_bf {
             internal State시간텀(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetTimer(id: "1", arg2: 1);
             }
 
             public override TriggerState Execute() {
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02000013_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1107, arg2: "MS2PatrolData_548");
-                context.SetConversation(arg1: 1, arg2: 1107, arg3: "$02000013_BF__IM_548__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 1107, script: "$02000013_BF__IM_548__0$", arg4: 2, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02000013_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1107});
-                context.SetTimer(arg1: "1", arg2: 20);
+                context.SetTimer(id: "1", arg2: 20);
                 context.RemoveBalloonTalk(spawnPointId: 1107);
             }
 

@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02000355_bf {
                 context.SetMesh(arg1: new[] {3999, 3900, 3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkill(arg1: new[] {7001}, arg2: false);
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
             public override TriggerState Execute() {
@@ -30,8 +30,8 @@ namespace Maple2.Trigger._02000355_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetEffect(arg1: new[] {699}, arg2: true);
             }
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000355_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {600}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000355_BF__MAIN__0$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000355_BF__MAIN__0$", arg4: 4);
             }
 
             public override TriggerState Execute() {
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02000355_bf {
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7001}, arg2: true);
                 context.SetMesh(arg1: new[] {3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CameraSelectPath(arg1: new[] {301}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {301}, arg2: true);
             }
 
             public override TriggerState Execute() {
@@ -115,8 +115,8 @@ namespace Maple2.Trigger._02000355_bf {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     context.SetMesh(arg1: new[] {3900}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.SetCinematicUI(arg1: 0);
-                    context.SetCinematicUI(arg1: 2);
+                    context.SetCinematicUI(type: 0);
+                    context.SetCinematicUI(type: 2);
                     context.CameraSelect(arg1: 301, arg2: false);
                     context.ShowGuideSummary(entityId: 20003552, textId: 20003552, duration: 4000);
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -167,8 +167,8 @@ namespace Maple2.Trigger._02000355_bf {
             internal StateEndStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
             }
 
             public override TriggerState Execute() {
@@ -187,7 +187,7 @@ namespace Maple2.Trigger._02000355_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {600}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000355_BF__MAIN__1$", arg4: 4);
+                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000355_BF__MAIN__1$", arg4: 4);
                 context.SetSkip(state: new StateStopCinematic2(context));
             }
 
@@ -206,15 +206,15 @@ namespace Maple2.Trigger._02000355_bf {
             internal StateStopCinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     context.DungeonClear();
                     context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808}, arg2: true, arg3: 0, arg4: 50, arg5: 2f);
-                    context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                    context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     return new StateEnd(context);
                 }
 

@@ -1,10 +1,12 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._82000001_survival {
     public static class _03_storm {
         public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateWidget(arg1: "SurvivalContents");
+                context.CreateWidget(type: WidgetType.SurvivalContents);
             }
 
             public override TriggerState Execute() {
@@ -22,7 +24,7 @@ namespace Maple2.Trigger._82000001_survival {
             internal StateSetStorm(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "StormData", arg3: "1,0");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "StormData", args: "1,0");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_0");
             }
 
@@ -37,12 +39,12 @@ namespace Maple2.Trigger._82000001_survival {
             internal StateStep01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "EnterStep", arg3: "1");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "EnterStep", args: "1");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_1_start");
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
+                if (context.WidgetCondition(type: WidgetType.SurvivalContents, arg2: "TimeOver")) {
                     return new StateStep02(context);
                 }
 
@@ -50,7 +52,7 @@ namespace Maple2.Trigger._82000001_survival {
             }
 
             public override void OnExit() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "ExitStep", arg3: "1");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "ExitStep", args: "1");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_1_end");
             }
         }
@@ -59,12 +61,12 @@ namespace Maple2.Trigger._82000001_survival {
             internal StateStep02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "EnterStep", arg3: "2");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "EnterStep", args: "2");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_2_start");
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
+                if (context.WidgetCondition(type: WidgetType.SurvivalContents, arg2: "TimeOver")) {
                     return new StateStep03(context);
                 }
 
@@ -72,7 +74,7 @@ namespace Maple2.Trigger._82000001_survival {
             }
 
             public override void OnExit() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "ExitStep", arg3: "1");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "ExitStep", args: "1");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_2_end");
             }
         }
@@ -81,12 +83,12 @@ namespace Maple2.Trigger._82000001_survival {
             internal StateStep03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "EnterStep", arg3: "3");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "EnterStep", args: "3");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_3_start");
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
+                if (context.WidgetCondition(type: WidgetType.SurvivalContents, arg2: "TimeOver")) {
                     return new StateStep04(context);
                 }
 
@@ -94,7 +96,7 @@ namespace Maple2.Trigger._82000001_survival {
             }
 
             public override void OnExit() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "ExitStep", arg3: "1");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "ExitStep", args: "1");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_3_end");
             }
         }
@@ -103,12 +105,12 @@ namespace Maple2.Trigger._82000001_survival {
             internal StateStep04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "EnterStep", arg3: "4");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "EnterStep", args: "4");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_4_start");
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
+                if (context.WidgetCondition(type: WidgetType.SurvivalContents, arg2: "TimeOver")) {
                     return new StateStep05(context);
                 }
 
@@ -116,7 +118,7 @@ namespace Maple2.Trigger._82000001_survival {
             }
 
             public override void OnExit() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "ExitStep", arg3: "1");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "ExitStep", args: "1");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_4_end");
             }
         }
@@ -125,12 +127,12 @@ namespace Maple2.Trigger._82000001_survival {
             internal StateStep05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "EnterStep", arg3: "5");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "EnterStep", args: "5");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_5_start");
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
+                if (context.WidgetCondition(type: WidgetType.SurvivalContents, arg2: "TimeOver")) {
                     return new StateStep06(context);
                 }
 
@@ -138,7 +140,7 @@ namespace Maple2.Trigger._82000001_survival {
             }
 
             public override void OnExit() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "ExitStep", arg3: "1");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "ExitStep", args: "1");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_5_end");
             }
         }
@@ -147,12 +149,12 @@ namespace Maple2.Trigger._82000001_survival {
             internal StateStep06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "EnterStep", arg3: "6");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "EnterStep", args: "6");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_6_start");
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
+                if (context.WidgetCondition(type: WidgetType.SurvivalContents, arg2: "TimeOver")) {
                     return new StateStep07(context);
                 }
 
@@ -160,7 +162,7 @@ namespace Maple2.Trigger._82000001_survival {
             }
 
             public override void OnExit() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "ExitStep", arg3: "1");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "ExitStep", args: "1");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_6_end");
             }
         }
@@ -169,12 +171,12 @@ namespace Maple2.Trigger._82000001_survival {
             internal StateStep07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "EnterStep", arg3: "7");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "EnterStep", args: "7");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_7_start");
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
+                if (context.WidgetCondition(type: WidgetType.SurvivalContents, arg2: "TimeOver")) {
                     return new StateStep08(context);
                 }
 
@@ -182,7 +184,7 @@ namespace Maple2.Trigger._82000001_survival {
             }
 
             public override void OnExit() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "ExitStep", arg3: "1");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "ExitStep", args: "1");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_7_end");
             }
         }
@@ -191,12 +193,12 @@ namespace Maple2.Trigger._82000001_survival {
             internal StateStep08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "EnterStep", arg3: "8");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "EnterStep", args: "8");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_8_start");
             }
 
             public override TriggerState Execute() {
-                if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
+                if (context.WidgetCondition(type: WidgetType.SurvivalContents, arg2: "TimeOver")) {
                     return new StateQuit(context);
                 }
 
@@ -204,7 +206,7 @@ namespace Maple2.Trigger._82000001_survival {
             }
 
             public override void OnExit() {
-                context.WidgetAction(arg1: "SurvivalContents", arg2: "ExitStep", arg3: "1");
+                context.WidgetAction(type: WidgetType.SurvivalContents, name: "ExitStep", args: "1");
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_8_end");
             }
         }

@@ -1,10 +1,12 @@
+using Maple2.Trigger.Enum;
+
 namespace Maple2.Trigger._61000029_me {
     public static class _61000029_main {
         public class StateNone : TriggerState {
             internal StateNone(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateFieldGame(type: "HideAndSeek", reset: true);
+                context.CreateFieldGame(type: FieldGame.HideAndSeek, reset: true);
                 context.FieldGameConstant(key: "BeginTriggerId", value: "1");
                 context.FieldGameConstant(key: "EndTriggerId", value: "36");
                 context.FieldGameConstant(key: "RequireUserCount", value: "2");
@@ -27,18 +29,18 @@ namespace Maple2.Trigger._61000029_me {
                 context.FieldGameConstant(key: "SeekTeamSkillSetId", value: "99930041");
                 context.FieldGameConstant(key: "HideTeamExp", value: "0");
                 context.FieldGameConstant(key: "SeekTeamExp", value: "0");
-                context.FieldGameConstant(key: "WinnerRewardItemId", value: "30001442", feature: "MassiveHideAndSeek", locale: "KR");
-                context.FieldGameConstant(key: "WinnerRewardItemRank", value: "1", feature: "MassiveHideAndSeek", locale: "KR");
-                context.FieldGameConstant(key: "WinnerRewardItemCount", value: "3", feature: "MassiveHideAndSeek", locale: "KR");
-                context.FieldGameConstant(key: "LoserRewardItemId", value: "30001442", feature: "MassiveHideAndSeek", locale: "KR");
-                context.FieldGameConstant(key: "LoserRewardItemRank", value: "1", feature: "MassiveHideAndSeek", locale: "KR");
-                context.FieldGameConstant(key: "LoserRewardItemCount", value: "1", feature: "MassiveHideAndSeek", locale: "KR");
-                context.FieldGameConstant(key: "WinnerRewardItemId", value: "30001446", feature: "MassiveHideAndSeek", locale: "CN");
-                context.FieldGameConstant(key: "WinnerRewardItemRank", value: "1", feature: "MassiveHideAndSeek", locale: "CN");
-                context.FieldGameConstant(key: "WinnerRewardItemCount", value: "3", feature: "MassiveHideAndSeek", locale: "CN");
-                context.FieldGameConstant(key: "LoserRewardItemId", value: "30001446", feature: "MassiveHideAndSeek", locale: "CN");
-                context.FieldGameConstant(key: "LoserRewardItemRank", value: "1", feature: "MassiveHideAndSeek", locale: "CN");
-                context.FieldGameConstant(key: "LoserRewardItemCount", value: "1", feature: "MassiveHideAndSeek", locale: "CN");
+                context.FieldGameConstant(key: "WinnerRewardItemId", value: "30001442", feature: "MassiveHideAndSeek", Locale.KR);
+                context.FieldGameConstant(key: "WinnerRewardItemRank", value: "1", feature: "MassiveHideAndSeek", Locale.KR);
+                context.FieldGameConstant(key: "WinnerRewardItemCount", value: "3", feature: "MassiveHideAndSeek", Locale.KR);
+                context.FieldGameConstant(key: "LoserRewardItemId", value: "30001442", feature: "MassiveHideAndSeek", Locale.KR);
+                context.FieldGameConstant(key: "LoserRewardItemRank", value: "1", feature: "MassiveHideAndSeek", Locale.KR);
+                context.FieldGameConstant(key: "LoserRewardItemCount", value: "1", feature: "MassiveHideAndSeek", Locale.KR);
+                context.FieldGameConstant(key: "WinnerRewardItemId", value: "30001446", feature: "MassiveHideAndSeek", Locale.CN);
+                context.FieldGameConstant(key: "WinnerRewardItemRank", value: "1", feature: "MassiveHideAndSeek", Locale.CN);
+                context.FieldGameConstant(key: "WinnerRewardItemCount", value: "3", feature: "MassiveHideAndSeek", Locale.CN);
+                context.FieldGameConstant(key: "LoserRewardItemId", value: "30001446", feature: "MassiveHideAndSeek", Locale.CN);
+                context.FieldGameConstant(key: "LoserRewardItemRank", value: "1", feature: "MassiveHideAndSeek", Locale.CN);
+                context.FieldGameConstant(key: "LoserRewardItemCount", value: "1", feature: "MassiveHideAndSeek", Locale.CN);
                 context.FieldGameConstant(key: "WatchCameraId", value: "101");
                 context.FieldGameConstant(key: "EventDailyQuestStart", value: "dailyquest_start");
                 context.FieldGameConstant(key: "EventHideAndSeekStart", value: "hideandseek_start");
@@ -60,7 +62,7 @@ namespace Maple2.Trigger._61000029_me {
             internal StateWaitForEnterUser(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 60, arg3: true, arg4: true);
+                context.SetTimer(id: "1", arg2: 60, arg3: true, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -80,7 +82,7 @@ namespace Maple2.Trigger._61000029_me {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
                 context.HideGuideSummary(entityId: 26500301);
             }
         }
@@ -89,7 +91,7 @@ namespace Maple2.Trigger._61000029_me {
             internal StateGameRuleNotice(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000023_ME__61000023_MAIN__1$", arg3: 10000);
+                context.SetEventUI(arg1: 1, script: "$61000023_ME__61000023_MAIN__1$", arg3: 10000);
             }
 
             public override TriggerState Execute() {
@@ -149,7 +151,7 @@ namespace Maple2.Trigger._61000029_me {
             internal StateBeInHidingTeams(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: true, arg4: true);
+                context.SetTimer(id: "1", arg2: 30, arg3: true, arg4: true);
                 context.FieldGameMessage(custom: 1, type: "SetEventUI", arg1: 1, arg2: "$61000023_ME__61000023_MAIN__2$", arg3: 30000);
                 context.FieldGameMessage(custom: 2, type: "SetEventUI", arg1: 1, arg2: "$61000023_ME__61000023_MAIN__3$", arg3: 30000);
             }
@@ -167,7 +169,7 @@ namespace Maple2.Trigger._61000029_me {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -175,7 +177,7 @@ namespace Maple2.Trigger._61000029_me {
             internal StateLookingForATeams(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 150, arg3: true, arg4: true);
+                context.SetTimer(id: "1", arg2: 150, arg3: true, arg4: true);
             }
 
             public override TriggerState Execute() {
@@ -187,7 +189,7 @@ namespace Maple2.Trigger._61000029_me {
             }
 
             public override void OnExit() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
         }
 
@@ -211,7 +213,7 @@ namespace Maple2.Trigger._61000029_me {
             internal StateGameExitNotice(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000023_ME__61000023_MAIN__4$", arg3: 10000);
+                context.SetEventUI(arg1: 1, script: "$61000023_ME__61000023_MAIN__4$", arg3: 10000);
             }
 
             public override TriggerState Execute() {
@@ -229,7 +231,7 @@ namespace Maple2.Trigger._61000029_me {
             internal StateShortOfUser(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000023_ME__61000023_MAIN__5$", arg3: 10000);
+                context.SetEventUI(arg1: 1, script: "$61000023_ME__61000023_MAIN__5$", arg3: 10000);
             }
 
             public override TriggerState Execute() {

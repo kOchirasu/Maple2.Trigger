@@ -52,7 +52,7 @@ namespace Maple2.Trigger._52020027_qd {
             internal State2Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 111, arg3: "조심하는 게 좋을걸?", arg4: 4);
+                context.SetConversation(arg1: 1, arg2: 111, script: "조심하는 게 좋을걸?", arg4: 4);
                 context.CreateMonster(arg1: new[] {112, 113, 114, 115}, arg2: true);
             }
 

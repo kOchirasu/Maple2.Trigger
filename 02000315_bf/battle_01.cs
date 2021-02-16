@@ -6,7 +6,7 @@ namespace Maple2.Trigger._02000315_bf {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
+                context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(arg1: new[] {5000}, arg2: false);
                 context.SetLadder(arg1: 510, arg2: false, arg3: false);
                 context.SetLadder(arg1: 511, arg2: false, arg3: false);
@@ -57,9 +57,9 @@ namespace Maple2.Trigger._02000315_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetCinematicUI(arg1: 1);
-                context.SetCinematicUI(arg1: 3);
-                context.CameraSelectPath(arg1: new[] {600, 601}, arg2: false);
+                context.SetCinematicUI(type: 1);
+                context.SetCinematicUI(type: 3);
+                context.CameraSelectPath(pathIds: new[] {600, 601}, arg2: false);
                 context.SetSkip(state: new StateCameraWalk01(context));
             }
 
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000315_bf {
             internal StateCameraWalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new[] {601, 600}, arg2: true);
+                context.CameraSelectPath(pathIds: new[] {601, 600}, arg2: true);
                 context.SetSkip();
             }
 
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._02000315_bf {
             }
 
             public override void OnExit() {
-                context.SetCinematicUI(arg1: 0);
-                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(type: 0);
+                context.SetCinematicUI(type: 2);
                 context.SetLadder(arg1: 510, arg2: true, arg3: true);
                 context.SetLadder(arg1: 511, arg2: true, arg3: true);
                 context.SetLadder(arg1: 512, arg2: true, arg3: true);
@@ -279,7 +279,7 @@ namespace Maple2.Trigger._02000315_bf {
 
             public override void OnEnter() {
                 context.DungeonClear();
-                context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
+                context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
             public override TriggerState Execute() {

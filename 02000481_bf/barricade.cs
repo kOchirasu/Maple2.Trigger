@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateCheckUser04_GuildRaid(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "1", arg2: 30, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(id: "1", arg2: 30, arg3: true, arg4: false, arg5: 0);
             }
 
             public override TriggerState Execute() {
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateMaxCount04_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(arg1: "1");
+                context.ResetTimer(id: "1");
             }
 
             public override TriggerState Execute() {
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateCount(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000481_BF__BARRICADE__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000481_BF__BARRICADE__0$", arg3: 3000);
             }
 
             public override TriggerState Execute() {
