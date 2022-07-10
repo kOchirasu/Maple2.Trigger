@@ -5,8 +5,8 @@ namespace Maple2.Trigger._99999927 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {701})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{701})) {
                     return new StateReady(context);
                 }
 
@@ -20,12 +20,12 @@ namespace Maple2.Trigger._99999927 {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 99910120, level: 1, arg4: false, arg5: false);
                 context.SetGravity(gravity: -25f);
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(spawnIds: new []{201}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

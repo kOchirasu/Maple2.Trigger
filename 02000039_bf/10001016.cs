@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000039_bf {
             internal StateInteractObjectWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10001016}, arg2: 1);
+                context.SetMesh(triggerIds: new []{3000}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10001016}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001016}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001016}, arg2: 0)) {
                     return new State열림(context);
                 }
 
@@ -23,10 +23,10 @@ namespace Maple2.Trigger._02000039_bf {
             internal State열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMesh(triggerIds: new []{3000}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateInteractObjectWait(context);
                 }

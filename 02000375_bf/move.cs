@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02000375_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(arg1: new[] {7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, arg2: true);
-                context.SetBreakable(arg1: new[] {7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001024}, arg2: 1);
+                context.SetVisibleBreakableObject(triggerIds: new []{7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, arg2: true);
+                context.SetBreakable(triggerIds: new []{7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, enabled: false);
+                context.SetInteractObject(interactIds: new []{10001024}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001024}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001024}, arg2: 0)) {
                     return new State이동(context);
                 }
 
@@ -24,11 +24,11 @@ namespace Maple2.Trigger._02000375_bf {
             internal State이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, arg2: true);
-                context.SetEventUI(arg1: 1, script: "$02000375_BF__move__0$", arg3: 3000);
+                context.SetBreakable(triggerIds: new []{7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, enabled: true);
+                context.SetEventUI(arg1: 1, script: "$02000375_BF__move__0$", duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 60000)) {
                     return new StateLever삭제(context);
                 }
@@ -43,12 +43,12 @@ namespace Maple2.Trigger._02000375_bf {
             internal StateLever삭제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(arg1: new[] {7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, arg2: false);
-                context.SetBreakable(arg1: new[] {7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001024}, arg2: 2);
+                context.SetVisibleBreakableObject(triggerIds: new []{7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, arg2: false);
+                context.SetBreakable(triggerIds: new []{7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, enabled: false);
+                context.SetInteractObject(interactIds: new []{10001024}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleEnd") == 1) {
                     return new StateWait(context);
                 }
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._02000375_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

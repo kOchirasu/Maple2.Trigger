@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000427_bf {
                 context.SetPortal(portalId: 8, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ThirdPhase") == 1) {
                     return new StateTeleportationPortalCreation(context);
                 }
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02000427_bf {
                 context.SetPortal(portalId: 8, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000427_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

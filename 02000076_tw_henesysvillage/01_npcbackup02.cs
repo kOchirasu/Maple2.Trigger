@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {1001}, arg2: new[] {10002041}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{1001}, questIds: new []{10002041}, questStates: new byte[]{1})) {
                     return new StateReinforcementsCreation(context);
                 }
 
@@ -20,12 +20,12 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             internal StateReinforcementsCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_12");
+                context.CreateMonster(spawnIds: new []{102}, arg2: false);
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_12");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 2001, arg2: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 2001, spawnIds: new []{101})) {
                     return new StateReinforcementsDead(context);
                 }
 
@@ -39,12 +39,12 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             internal StateReinforcementsDead(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {102});
-                context.SetTimer(id: "2", arg2: 120);
+                context.DestroyMonster(spawnIds: new []{102});
+                context.SetTimer(timerId: "2", seconds: 120);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateWait(context);
                 }
 

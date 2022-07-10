@@ -5,10 +5,10 @@ namespace Maple2.Trigger._84000007_wd {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "Box44Check", value: 10);
-                context.SetMesh(arg1: new[] {544, 5440}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{544, 5440}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Box44Check") == 0) {
                     return new StateSensor0(context);
                 }
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._84000007_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateFail(context);
             }
 
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._84000007_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9440) == 1) {
                     return new StatePass(context);
                 }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._84000007_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9440) == 2) {
                     return new StatePass(context);
                 }
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._84000007_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9440) == 3) {
                     return new StatePass(context);
                 }
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._84000007_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9440) == 4) {
                     return new StatePass(context);
                 }
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._84000007_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9440) == 5) {
                     return new StatePass(context);
                 }
@@ -155,12 +155,12 @@ namespace Maple2.Trigger._84000007_wd {
             internal StatePass(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {9440}, arg2: "DDStop_Stage_Pass_01");
+                context.PlaySystemSoundInBox(boxIds: new []{9440}, sound: "DDStop_Stage_Pass_01");
                 context.SetUserValue(triggerId: 7440, key: "Color44", value: 0);
-                context.SetMesh(arg1: new[] {544}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new []{544}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateReset(context);
                 }
@@ -175,13 +175,13 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateFail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {9440}, arg2: "DDStop_Stage_Fail_01");
-                context.SetMesh(arg1: new[] {544}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new[] {5440}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.PlaySystemSoundInBox(boxIds: new []{9440}, sound: "DDStop_Stage_Fail_01");
+                context.SetMesh(triggerIds: new []{544}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new []{5440}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(triggerId: 7440, key: "Color44", value: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateReset(context);
                 }
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetUserValue(key: "Box44Check", value: 10);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

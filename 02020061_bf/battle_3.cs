@@ -15,7 +15,7 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SetUserValue(triggerId: 99990012, key: "BossObjectStart", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossPhase") == 1) {
                     return new StateBoss_추가대사(context);
                 }
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02020061_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020061_BF__BATTLE_3__0$");
                     return new StateBossRandom픽(context);
@@ -47,31 +47,31 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateBossRandom픽(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9002}, arg2: 70002371, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{9002}, skillId: 70002371, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 17f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 17f)) {
                     return new StateBoss소환1(context);
                 }
 
-                if (context.RandomCondition(arg1: 16f)) {
+                if (context.RandomCondition(rate: 16f)) {
                     return new StateBoss소환2(context);
                 }
 
-                if (context.RandomCondition(arg1: 17f)) {
+                if (context.RandomCondition(rate: 17f)) {
                     return new StateBoss소환3(context);
                 }
 
-                if (context.RandomCondition(arg1: 16f)) {
+                if (context.RandomCondition(rate: 16f)) {
                     return new StateBoss소환4(context);
                 }
 
-                if (context.RandomCondition(arg1: 17f)) {
+                if (context.RandomCondition(rate: 17f)) {
                     return new StateBoss소환5(context);
                 }
 
-                if (context.RandomCondition(arg1: 17f)) {
+                if (context.RandomCondition(rate: 17f)) {
                     return new StateBoss소환6(context);
                 }
 
@@ -85,19 +85,19 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateBoss소환1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {921}, arg2: false);
+                context.CreateMonster(spawnIds: new []{921}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})) {
+                if (context.MonsterDead(spawnIds: new []{921})) {
                     return new StateBoss군단_Clear(context);
                 }
 
-                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {921})) {
+                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(boxId: 9099, spawnIds: new []{921})) {
                     return new StateBoss_InvincibilityPhase(context);
                 }
 
@@ -111,19 +111,19 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateBoss소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {922}, arg2: false);
+                context.CreateMonster(spawnIds: new []{922}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {922})) {
+                if (context.MonsterDead(spawnIds: new []{922})) {
                     return new StateBoss군단_Clear(context);
                 }
 
-                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {922})) {
+                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(boxId: 9099, spawnIds: new []{922})) {
                     return new StateBoss_InvincibilityPhase(context);
                 }
 
@@ -137,19 +137,19 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateBoss소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {923}, arg2: false);
+                context.CreateMonster(spawnIds: new []{923}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {923})) {
+                if (context.MonsterDead(spawnIds: new []{923})) {
                     return new StateBoss군단_Clear(context);
                 }
 
-                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {923})) {
+                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(boxId: 9099, spawnIds: new []{923})) {
                     return new StateBoss_InvincibilityPhase(context);
                 }
 
@@ -163,19 +163,19 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateBoss소환4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {924}, arg2: false);
+                context.CreateMonster(spawnIds: new []{924}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {924})) {
+                if (context.MonsterDead(spawnIds: new []{924})) {
                     return new StateBoss군단_Clear(context);
                 }
 
-                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {924})) {
+                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(boxId: 9099, spawnIds: new []{924})) {
                     return new StateBoss_InvincibilityPhase(context);
                 }
 
@@ -189,19 +189,19 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateBoss소환5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {925}, arg2: false);
+                context.CreateMonster(spawnIds: new []{925}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {925})) {
+                if (context.MonsterDead(spawnIds: new []{925})) {
                     return new StateBoss군단_Clear(context);
                 }
 
-                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {925})) {
+                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(boxId: 9099, spawnIds: new []{925})) {
                     return new StateBoss_InvincibilityPhase(context);
                 }
 
@@ -215,19 +215,19 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateBoss소환6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {926}, arg2: false);
+                context.CreateMonster(spawnIds: new []{926}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {926})) {
+                if (context.MonsterDead(spawnIds: new []{926})) {
                     return new StateBoss군단_Clear(context);
                 }
 
-                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {926})) {
+                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(boxId: 9099, spawnIds: new []{926})) {
                     return new StateBoss_InvincibilityPhase(context);
                 }
 
@@ -241,8 +241,8 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateBoss_InvincibilityPhase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02020061_BF__BATTLE_3__1$", arg3: 5000);
-                context.CreateMonster(arg1: new[] {711, 712, 713, 714}, arg2: false);
+                context.SetEventUI(arg1: 1, script: "$02020061_BF__BATTLE_3__1$", duration: 5000);
+                context.CreateMonster(spawnIds: new []{711, 712, 713, 714}, arg2: false);
                 context.SetUserValue(triggerId: 99990009, key: "BossObjectStart", value: 1);
                 context.SetUserValue(triggerId: 99990010, key: "BossObjectStart", value: 1);
                 context.SetUserValue(triggerId: 99990011, key: "BossObjectStart", value: 1);
@@ -250,12 +250,12 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SetUserValue(triggerId: 99990013, key: "BombPhase", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923}) && context.MonsterDead(arg1: new[] {924}) && context.MonsterDead(arg1: new[] {925}) && context.MonsterDead(arg1: new[] {926})) {
+                if (context.MonsterDead(spawnIds: new []{921, 922, 923, 924, 925, 926})) {
                     return new StateBoss군단_Clear(context);
                 }
 
@@ -276,12 +276,12 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020061_BF__BATTLE_3__2$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923}) && context.MonsterDead(arg1: new[] {924}) && context.MonsterDead(arg1: new[] {925}) && context.MonsterDead(arg1: new[] {926})) {
+                if (context.MonsterDead(spawnIds: new []{921, 922, 923, 924, 925, 926})) {
                     return new StateBoss군단_Clear(context);
                 }
 
@@ -302,12 +302,12 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020061_BF__BATTLE_3__3$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923}) && context.MonsterDead(arg1: new[] {924}) && context.MonsterDead(arg1: new[] {925}) && context.MonsterDead(arg1: new[] {926})) {
+                if (context.MonsterDead(spawnIds: new []{921, 922, 923, 924, 925, 926})) {
                     return new StateBoss군단_Clear(context);
                 }
 
@@ -330,7 +330,7 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SetUserValue(triggerId: 99990012, key: "BossObjectStart", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

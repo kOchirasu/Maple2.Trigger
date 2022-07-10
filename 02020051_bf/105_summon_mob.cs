@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02020051_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {1003}, isStart: true);
-                context.StartCombineSpawn(groupId: new[] {1002}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{1003}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{1002}, isStart: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Summon_monster") == 1) {
                     return new StateMonsterSpawn(context);
                 }
@@ -23,11 +23,11 @@ namespace Maple2.Trigger._02020051_bf {
             internal StateMonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {1003}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {1002}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{1003}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{1002}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State리셋(context);
                 }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Summon_monster") == 2) {
                     return new StateWait(context);
                 }

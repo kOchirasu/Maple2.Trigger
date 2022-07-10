@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateBoss스킬브레이크시작_Waiting(context);
                 }
 
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.CheckNpcAdditionalEffect(spawnPointId: 99, additionalEffectId: 50004546, level: 1)) {
+            public override TriggerState? Execute() {
+                if (context.CheckNpcAdditionalEffect(spawnId: 99, additionalEffectId: 50004546, level: 1)) {
                     return new State던전미션_체크(context);
                 }
 
@@ -37,12 +37,12 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcExtraData(spawnPointId: 99, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 99, additionalEffectId: 70002171, level: 1)) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcExtraData(spawnId: 99, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnId: 99, additionalEffectId: 70002171, level: 1)) {
                     return new State던전미션_스킬브레이크저지_Success(context);
                 }
 
-                if (context.CheckNpcAdditionalEffect(spawnPointId: 99, additionalEffectId: 50000367, level: 1)) {
+                if (context.CheckNpcAdditionalEffect(spawnId: 99, additionalEffectId: 50000367, level: 1)) {
                     return new State던전미션_스킬브레이크저지_실패(context);
                 }
 
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02020120_bf {
                 context.DungeonMissionComplete(missionId: 23037004);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnd(context);
                 }
@@ -75,8 +75,8 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (!context.CheckNpcAdditionalEffect(spawnPointId: 99, additionalEffectId: 50004546, level: 1)) {
+            public override TriggerState? Execute() {
+                if (!context.CheckNpcAdditionalEffect(spawnId: 99, additionalEffectId: 50004546, level: 1)) {
                     return new StateWaitStart(context);
                 }
 
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

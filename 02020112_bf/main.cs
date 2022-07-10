@@ -7,10 +7,10 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetGravity(gravity: 0f);
                 context.SetUserValue(triggerId: 99990002, key: "JumpFloor", value: 0);
                 context.SetUserValue(triggerId: 99990017, key: "JumpFloor", value: 0);
-                context.SetActor(arg1: 9901, arg2: true, arg3: "Interaction_Lapentafoothold_A01_Off");
-                context.SetActor(arg1: 9902, arg2: false, arg3: "Interaction_Lapentafoothold_A01_Off");
-                context.SetActor(arg1: 9903, arg2: false, arg3: "Interaction_Lapentafoothold_A01_Off");
-                context.SetActor(arg1: 9904, arg2: false, arg3: "Interaction_Lapentafoothold_A01_Off");
+                context.SetActor(triggerId: 9901, visible: true, initialSequence: "Interaction_Lapentafoothold_A01_Off");
+                context.SetActor(triggerId: 9902, visible: false, initialSequence: "Interaction_Lapentafoothold_A01_Off");
+                context.SetActor(triggerId: 9903, visible: false, initialSequence: "Interaction_Lapentafoothold_A01_Off");
+                context.SetActor(triggerId: 9904, visible: false, initialSequence: "Interaction_Lapentafoothold_A01_Off");
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
@@ -26,8 +26,8 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetPortal(portalId: 14, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {901})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{901})) {
                     return new State중력방_Wait(context);
                 }
 
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {915})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{915})) {
                     return new State중력방_발판(context);
                 }
 
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(triggerId: 99990020, key: "GravityRoom", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "GravityRoom") == 2) {
                     return new State중력방_전투(context);
                 }
@@ -76,8 +76,8 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {141, 142, 143, 144})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{141, 142, 143, 144})) {
                     return new StateCamera_발판점프대(context);
                 }
 
@@ -97,10 +97,10 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(triggerId: 99990017, key: "JumpFloor", value: 1);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelectPath(pathIds: new[] {611, 612}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{611, 612}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateCamera_종료(context);
                 }
@@ -119,11 +119,11 @@ namespace Maple2.Trigger._02020112_bf {
                 context.CameraReset(interpolationTime: 1f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CreateMonster(arg1: new[] {120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130}, arg2: false);
+                context.CreateMonster(spawnIds: new []{120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130})) {
                     context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.SetPortal(portalId: 13, visible: true, enabled: true, minimapVisible: false);
                     return new State격리방_지하(context);
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MonsterDead") == 1) {
                     return new State격리방_Wait(context);
                 }
@@ -158,8 +158,8 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {932})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{932})) {
                     return new State격리방_전투(context);
                 }
 
@@ -173,12 +173,12 @@ namespace Maple2.Trigger._02020112_bf {
             internal State격리방_전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {191}, arg2: false);
+                context.CreateMonster(spawnIds: new []{191}, arg2: false);
                 context.SetUserValue(triggerId: 99990008, key: "Start", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {191})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{191})) {
                     context.SetPortal(portalId: 7, visible: true, enabled: true, minimapVisible: true);
                     context.SetUserValue(triggerId: 99990008, key: "Start", value: 2);
                     context.SetUserValue(triggerId: 99990013, key: "EliteDead", value: 1);

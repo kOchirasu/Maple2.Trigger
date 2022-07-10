@@ -4,11 +4,11 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7001, 7002, 7003, 7004, 7005}, arg2: false);
-                context.SetEffect(arg1: new[] {7010}, arg2: true);
+                context.SetEffect(triggerIds: new []{7001, 7002, 7003, 7004, 7005}, visible: false);
+                context.SetEffect(triggerIds: new []{7010}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Round_01") == 1) {
                     // return new StateRound_01(context);
                     return null;
@@ -37,7 +37,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRound_02_Start(context);
                 }
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRound_03_Start(context);
                 }
@@ -69,7 +69,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRound_04_Start(context);
                 }
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRound_05_Start(context);
                 }
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRound_06_Start(context);
                 }
@@ -116,10 +116,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_02_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7001}, arg2: true);
+                context.SetEffect(triggerIds: new []{7001}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Round_02") == 0) {
                     return new StateRound_check(context);
                 }
@@ -138,10 +138,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_03_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7002}, arg2: true);
+                context.SetEffect(triggerIds: new []{7002}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Round_03") == 0) {
                     return new StateRound_check(context);
                 }
@@ -160,10 +160,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7002}, arg2: true);
+                context.SetEffect(triggerIds: new []{7002}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Round_04") == 0) {
                     return new StateRound_check(context);
                 }
@@ -182,10 +182,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7003}, arg2: true);
+                context.SetEffect(triggerIds: new []{7003}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Round_05") == 0) {
                     return new StateRound_check(context);
                 }
@@ -204,10 +204,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_06_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7005}, arg2: true);
+                context.SetEffect(triggerIds: new []{7005}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Round_06") == 0) {
                     return new StateRound_check(context);
                 }

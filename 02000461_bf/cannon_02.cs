@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000461_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {692, 792}, arg2: false);
-                context.SetMesh(arg1: new[] {3903}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{692, 792}, visible: false);
+                context.SetMesh(triggerIds: new []{3903}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "cannon02") == 1) {
                     return new StateCreation(context);
                 }
@@ -23,13 +23,13 @@ namespace Maple2.Trigger._02000461_bf {
             internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2902}, arg2: true);
+                context.CreateMonster(spawnIds: new []{2902}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2902})) {
-                    context.SetEffect(arg1: new[] {692}, arg2: true);
-                    context.SetMesh(arg1: new[] {3902}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2902})) {
+                    context.SetEffect(triggerIds: new []{692}, visible: true);
+                    context.SetMesh(triggerIds: new []{3902}, visible: false, arg3: 0, arg4: 0, arg5: 5f);
                     return new StateBoss_Wait(context);
                 }
 
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000461_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Bosscannon02") == 1) {
                     return new StateBossOnly_Creation(context);
                 }
@@ -59,20 +59,20 @@ namespace Maple2.Trigger._02000461_bf {
             internal StateBossOnly_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {692}, arg2: false);
-                context.SetEffect(arg1: new[] {792}, arg2: true);
-                context.SetMesh(arg1: new[] {3902}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {2902}, arg2: true);
-                context.AddBuff(arg1: new[] {2099}, arg2: 70002071, arg3: 1, arg4: true, arg5: false);
-                context.AddBuff(arg1: new[] {2902}, arg2: 40444001, arg3: 1, arg4: true, arg5: false);
+                context.SetEffect(triggerIds: new []{692}, visible: false);
+                context.SetEffect(triggerIds: new []{792}, visible: true);
+                context.SetMesh(triggerIds: new []{3902}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(spawnIds: new []{2902}, arg2: true);
+                context.AddBuff(boxIds: new []{2099}, skillId: 70002071, level: 1, arg4: true, arg5: false);
+                context.AddBuff(boxIds: new []{2902}, skillId: 40444001, level: 1, arg4: true, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2902})) {
-                    context.SetEffect(arg1: new[] {692}, arg2: true);
-                    context.SetEffect(arg1: new[] {792}, arg2: false);
-                    context.SetMesh(arg1: new[] {3902}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                    context.AddBuff(arg1: new[] {2099}, arg2: 70002072, arg3: 1, arg4: true, arg5: false);
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2902})) {
+                    context.SetEffect(triggerIds: new []{692}, visible: true);
+                    context.SetEffect(triggerIds: new []{792}, visible: false);
+                    context.SetMesh(triggerIds: new []{3902}, visible: false, arg3: 0, arg4: 0, arg5: 5f);
+                    context.AddBuff(boxIds: new []{2099}, skillId: 70002072, level: 1, arg4: true, arg5: false);
                     return new StateBossOnly_ResetCreation(context);
                 }
 
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02000461_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 90000)) {
                     return new StateBossOnly_Creation(context);
                 }
@@ -110,12 +110,12 @@ namespace Maple2.Trigger._02000461_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {692, 792}, arg2: false);
-                context.SetMesh(arg1: new[] {3902}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.DestroyMonster(arg1: new[] {2902});
+                context.SetEffect(triggerIds: new []{692, 792}, visible: false);
+                context.SetMesh(triggerIds: new []{3902}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.DestroyMonster(spawnIds: new []{2902});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

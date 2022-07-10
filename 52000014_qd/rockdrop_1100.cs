@@ -4,12 +4,12 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1100}, arg2: false);
-                context.SetEffect(arg1: new[] {1101}, arg2: false);
+                context.SetSkill(triggerIds: new []{1100}, arg2: false);
+                context.SetEffect(triggerIds: new []{1101}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new State낙하01Prepare(context);
                 }
 
@@ -23,11 +23,11 @@ namespace Maple2.Trigger._52000014_qd {
             internal State낙하01Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State낙하01시작(context);
                 }
 
@@ -41,10 +41,10 @@ namespace Maple2.Trigger._52000014_qd {
             internal State낙하01시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {1101}, arg2: true);
+                context.SetEffect(triggerIds: new []{1101}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
                     return new State낙하01완료(context);
                 }
@@ -59,12 +59,12 @@ namespace Maple2.Trigger._52000014_qd {
             internal State낙하01완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 1);
-                context.SetSkill(arg1: new[] {1100}, arg2: true);
+                context.SetTimer(timerId: "2", seconds: 1);
+                context.SetSkill(triggerIds: new []{1100}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateReset(context);
                 }
 
@@ -78,13 +78,13 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 1);
-                context.SetSkill(arg1: new[] {1100}, arg2: false);
-                context.SetEffect(arg1: new[] {1101}, arg2: false);
+                context.SetTimer(timerId: "3", seconds: 1);
+                context.SetSkill(triggerIds: new []{1100}, arg2: false);
+                context.SetEffect(triggerIds: new []{1101}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State낙하01Prepare(context);
                 }
 

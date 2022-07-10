@@ -4,15 +4,15 @@ namespace Maple2.Trigger._02000351_bf {
             internal StateLeverCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000819, 10000820}, arg2: 0);
+                context.SetInteractObject(interactIds: new []{10000819, 10000820}, state: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000819}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000819}, arg2: 1)) {
                     return new StateLeverCheck2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10000820}, arg2: 1)) {
+                if (context.ObjectInteracted(interactIds: new []{10000820}, arg2: 1)) {
                     return new StateLeverCheck2(context);
                 }
 
@@ -27,12 +27,12 @@ namespace Maple2.Trigger._02000351_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000820}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000820}, arg2: 0)) {
                     return new StateLeverCheck3_1개(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10000819}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10000819}, arg2: 0)) {
                     return new StateLeverCheck4_1개(context);
                 }
 
@@ -47,8 +47,8 @@ namespace Maple2.Trigger._02000351_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000819}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000819}, arg2: 0)) {
                     return new StateLeverCheck완료(context);
                 }
 
@@ -63,8 +63,8 @@ namespace Maple2.Trigger._02000351_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000820}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000820}, arg2: 0)) {
                     return new StateLeverCheck완료(context);
                 }
 
@@ -78,11 +78,11 @@ namespace Maple2.Trigger._02000351_bf {
             internal StateLeverCheck완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State열림(context);
                 }
 
@@ -96,12 +96,12 @@ namespace Maple2.Trigger._02000351_bf {
             internal State열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
-                context.SetMesh(arg1: new[] {6005}, arg2: false, arg4: 0, arg5: 10f);
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.SetMesh(triggerIds: new []{6005}, visible: false, arg4: 0, arg5: 10f);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State열림_끝(context);
                 }
 
@@ -119,11 +119,11 @@ namespace Maple2.Trigger._02000351_bf {
             internal State열림_끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateEnd(context);
                 }
 
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._02000351_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {60001022}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{60001022}, questStates: new byte[]{1})) {
                     return new StateCamera_01(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateMonster_spawn_01(context);
                 }
 
@@ -41,18 +41,18 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 110, textId: 40010);
-                context.CreateMonster(arg1: new[] {111, 112, 113, 114}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 111, script: "$52000020_QD__MAIN__2$", arg4: 5);
-                context.SetConversation(arg1: 1, arg2: 112, script: "$52000020_QD__MAIN__3$", arg4: 5);
-                context.SetTimer(id: "1", arg2: 1);
+                context.CreateMonster(spawnIds: new []{111, 112, 113, 114}, arg2: true);
+                context.SetConversation(type: 1, spawnId: 111, script: "$52000020_QD__MAIN__2$", arg4: 5);
+                context.SetConversation(type: 1, spawnId: 112, script: "$52000020_QD__MAIN__3$", arg4: 5);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateBattle_01(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {111, 112, 113, 114})) {
+                if (context.MonsterDead(spawnIds: new []{111, 112, 113, 114})) {
                     return new StateCamera_02(context);
                 }
 
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {111, 112, 113, 114})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{111, 112, 113, 114})) {
                     return new StateCamera_02(context);
                 }
 
@@ -90,12 +90,12 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetTimer(id: "1", arg2: 1);
-                context.CameraSelectPath(pathIds: new[] {8003, 8004}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.CameraSelectPath(pathIds: new []{8003, 8004}, returnView: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateMonster_spawn_02(context);
                 }
 
@@ -110,18 +110,18 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 110, textId: 40010);
-                context.CreateMonster(arg1: new[] {121, 122, 123, 124, 125, 126}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 121, script: "$52000020_QD__MAIN__4$", arg4: 5);
-                context.SetConversation(arg1: 1, arg2: 124, script: "$52000020_QD__MAIN__5$", arg4: 5);
-                context.SetTimer(id: "1", arg2: 1);
+                context.CreateMonster(spawnIds: new []{121, 122, 123, 124, 125, 126}, arg2: true);
+                context.SetConversation(type: 1, spawnId: 121, script: "$52000020_QD__MAIN__4$", arg4: 5);
+                context.SetConversation(type: 1, spawnId: 124, script: "$52000020_QD__MAIN__5$", arg4: 5);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateBattle_02(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {121, 122, 123, 124, 125, 126})) {
+                if (context.MonsterDead(spawnIds: new []{121, 122, 123, 124, 125, 126})) {
                     return new StateCamera_03(context);
                 }
 
@@ -140,8 +140,8 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {121, 122, 123, 124, 125, 126})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{121, 122, 123, 124, 125, 126})) {
                     return new StateCamera_03(context);
                 }
 
@@ -159,12 +159,12 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetTimer(id: "1", arg2: 1);
-                context.CameraSelectPath(pathIds: new[] {8005, 8006}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.CameraSelectPath(pathIds: new []{8005, 8006}, returnView: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateMonster_spawn_03(context);
                 }
 
@@ -179,16 +179,16 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 110, textId: 40010);
-                context.CreateMonster(arg1: new[] {131, 132, 133, 134, 135, 136}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.CreateMonster(spawnIds: new []{131, 132, 133, 134, 135, 136}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateBattle_03(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {131, 132, 133, 134, 135, 136})) {
+                if (context.MonsterDead(spawnIds: new []{131, 132, 133, 134, 135, 136})) {
                     return new StateComplete(context);
                 }
 
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._52000020_qd {
             }
 
             public override void OnExit() {
-                context.SetConversation(arg1: 1, arg2: 131, script: "$52000020_QD__MAIN__1$", arg4: 5);
+                context.SetConversation(type: 1, spawnId: 131, script: "$52000020_QD__MAIN__1$", arg4: 5);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 7);
@@ -208,8 +208,8 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {131, 132, 133, 134, 135, 136})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{131, 132, 133, 134, 135, 136})) {
                     return new StateComplete(context);
                 }
 
@@ -226,7 +226,7 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,13 +4,13 @@ namespace Maple2.Trigger._99999946 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(ids: new[] {500, 501, 502, 503, 504, 505, 506, 507, 508, 509}, randomCount: 10, isVisible: false);
-                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006}, arg2: false);
-                context.CameraSelect(arg1: 301, arg2: true);
+                context.SetCube(triggerIds: new []{500, 501, 502, 503, 504, 505, 506, 507, 508, 509}, randomCount: 10, visible: false);
+                context.CreateMonster(spawnIds: new []{1001, 1002, 1003, 1004, 1005, 1006}, arg2: false);
+                context.CameraSelect(triggerId: 301, enable: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateBeginWait(context);
                 }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._99999946 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEnd(context);
                 }
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._99999946 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "FinalPhase") == 1) {
                     return new State스폰(context);
                 }
@@ -20,15 +20,15 @@ namespace Maple2.Trigger._52020024_qd {
             internal State스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {131, 132, 133, 134, 135, 136}, arg2: true);
+                context.CreateMonster(spawnIds: new []{131, 132, 133, 134, 135, 136}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
                     return new State스폰(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {131, 132, 133, 134, 135, 136})) {
+                if (context.MonsterDead(spawnIds: new []{131, 132, 133, 134, 135, 136})) {
                     return new State스폰(context);
                 }
 
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,8 +5,8 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new StateWaitSomeoneFall(context);
                 }
 
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9100})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9100})) {
                     return new StateKillSomeoneFall(context);
                 }
 
@@ -36,15 +36,15 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateKillSomeoneFall(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9100}, arg2: 70001061, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{9100}, skillId: 70001061, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateKillSomeoneFall(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {9100})) {
+                if (!context.UserDetected(boxIds: new []{9100})) {
                     return new StateWaitSomeoneFall(context);
                 }
 

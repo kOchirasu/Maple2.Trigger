@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020009_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "NPCKill") == 1) {
                     return new StateNPCKillWait(context);
                 }
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02020009_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7500)) {
                     return new StateNPCKill(context);
                 }
@@ -36,10 +36,10 @@ namespace Maple2.Trigger._02020009_bf {
             internal StateNPCKill(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {15401, 15402, 15501, 15502});
+                context.DestroyMonster(spawnIds: new []{15401, 15402, 15501, 15502});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateKillEnd(context);
                 }
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02020009_bf {
                 context.SetUserValue(triggerId: 151001, key: "NPCKill", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

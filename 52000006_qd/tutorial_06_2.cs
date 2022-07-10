@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateWaitOpening(context);
                 }
 
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000016})) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000016})) {
                     return new State화면효과(context);
                 }
 
@@ -36,11 +36,11 @@ namespace Maple2.Trigger._52000006_qd {
             internal State화면효과(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 7);
+                context.SetTimer(timerId: "1", seconds: 7);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State화면효과2(context);
                 }
 
@@ -54,14 +54,14 @@ namespace Maple2.Trigger._52000006_qd {
             internal State화면효과2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 3);
+                context.SetTimer(timerId: "1", seconds: 3);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$52000006_QD__TUTORIAL_06_2__0$");
-                context.SetEffect(arg1: new[] {401}, arg2: true);
+                context.SetEffect(triggerIds: new []{401}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State화면효과3(context);
                 }
 
@@ -75,13 +75,13 @@ namespace Maple2.Trigger._52000006_qd {
             internal State화면효과3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.CameraSelect(arg1: 303, arg2: true);
-                context.SetEffect(arg1: new[] {402}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.CameraSelect(triggerId: 303, enable: true);
+                context.SetEffect(triggerIds: new []{402}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State맵이동(context);
                 }
 
@@ -96,10 +96,10 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
-                context.MoveUser(arg1: 52000007, arg2: 1);
+                context.MoveUser(mapId: 52000007, portalId: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

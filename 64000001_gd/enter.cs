@@ -4,11 +4,11 @@ namespace Maple2.Trigger._64000001_gd {
             internal StatePvP(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {701, 702}, arg2: false);
+                context.SetEffect(triggerIds: new []{701, 702}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                context.SetPvpZone(arg1: 101, arg2: 30, arg3: 120, arg4: 90001002, arg5: 4, arg6: new byte[] {102, 103, 112, 113, 10, 11, 1, 3});
+            public override TriggerState? Execute() {
+                context.SetPvpZone(boxId: 101, arg2: 30, duration: 120, additionalEffectId: 90001002, arg5: 4, boxIds: new []{102, 103, 112, 113, 10, 11, 1, 3});
                     return new StatePvP종료(context);
             }
 
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._64000001_gd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.PvpZoneEnded(arg1: 101)) {
+            public override TriggerState? Execute() {
+                if (context.PvpZoneEnded(boxId: 101)) {
                     return new State게임종료(context);
                 }
 
@@ -35,11 +35,11 @@ namespace Maple2.Trigger._64000001_gd {
             internal State게임종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "999", arg2: 4, arg3: false);
+                context.SetTimer(timerId: "999", seconds: 4, clearAtZero: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "999")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "999")) {
                     return new State완료(context);
                 }
 
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._64000001_gd {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "999");
+                context.ResetTimer(timerId: "999");
             }
         }
 
@@ -55,12 +55,12 @@ namespace Maple2.Trigger._64000001_gd {
             internal State완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 60);
+                context.SetTimer(timerId: "1", seconds: 60);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
-                    context.MoveUser(arg1: 0, arg2: 0);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
+                    context.MoveUser(mapId: 0, portalId: 0);
                 }
 
                 return null;

@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02000111_bf {
             internal StateWaitStart1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000164}, arg2: 1);
-                context.SetMesh(arg1: new[] {301}, arg2: false);
-                context.SetEffect(arg1: new[] {401}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10000164}, state: 1);
+                context.SetMesh(triggerIds: new []{301}, visible: false);
+                context.SetEffect(triggerIds: new []{401}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000164}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000164}, arg2: 0)) {
                     return new State열기1(context);
                 }
 
@@ -24,13 +24,13 @@ namespace Maple2.Trigger._02000111_bf {
             internal StateWaitStart2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000164}, arg2: 1);
-                context.SetMesh(arg1: new[] {301}, arg2: false);
-                context.SetEffect(arg1: new[] {401}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10000164}, state: 1);
+                context.SetMesh(triggerIds: new []{301}, visible: false);
+                context.SetEffect(triggerIds: new []{401}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000164}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000164}, arg2: 0)) {
                     return new State열기1(context);
                 }
 
@@ -44,25 +44,25 @@ namespace Maple2.Trigger._02000111_bf {
             internal State열기1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {301}, arg2: true);
-                context.SetEffect(arg1: new[] {401}, arg2: true);
-                context.SetTimer(id: "1", arg2: 30);
+                context.SetMesh(triggerIds: new []{301}, visible: true);
+                context.SetEffect(triggerIds: new []{401}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 30);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 201, arg2: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 201, spawnIds: new []{103})) {
                     return new State아이템1(context);
                 }
 
-                if (context.NpcDetected(arg1: 201, arg2: new[] {104})) {
+                if (context.NpcDetected(boxId: 201, spawnIds: new []{104})) {
                     return new State아이템2(context);
                 }
 
-                if (context.NpcDetected(arg1: 201, arg2: new[] {105})) {
+                if (context.NpcDetected(boxId: 201, spawnIds: new []{105})) {
                     return new State아이템3(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWaitStart2(context);
                 }
 
@@ -76,14 +76,14 @@ namespace Maple2.Trigger._02000111_bf {
             internal State아이템1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateItem(arg1: new[] {501}, arg2: 0, arg3: 10000164);
-                context.SetMesh(arg1: new[] {301}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000164}, arg2: 1);
-                context.SetEffect(arg1: new[] {401}, arg2: true);
-                context.DestroyMonster(arg1: new[] {103});
+                context.CreateItem(spawnIds: new []{501}, triggerId: 0, itemId: 10000164);
+                context.SetMesh(triggerIds: new []{301}, visible: false);
+                context.SetInteractObject(interactIds: new []{10000164}, state: 1);
+                context.SetEffect(triggerIds: new []{401}, visible: true);
+                context.DestroyMonster(spawnIds: new []{103});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State빠지기1(context);
             }
 
@@ -94,14 +94,14 @@ namespace Maple2.Trigger._02000111_bf {
             internal State아이템2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateItem(arg1: new[] {501}, arg2: 0, arg3: 10000164);
-                context.SetMesh(arg1: new[] {301}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000164}, arg2: 1);
-                context.SetEffect(arg1: new[] {401}, arg2: true);
-                context.DestroyMonster(arg1: new[] {104});
+                context.CreateItem(spawnIds: new []{501}, triggerId: 0, itemId: 10000164);
+                context.SetMesh(triggerIds: new []{301}, visible: false);
+                context.SetInteractObject(interactIds: new []{10000164}, state: 1);
+                context.SetEffect(triggerIds: new []{401}, visible: true);
+                context.DestroyMonster(spawnIds: new []{104});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State빠지기2(context);
             }
 
@@ -112,14 +112,14 @@ namespace Maple2.Trigger._02000111_bf {
             internal State아이템3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateItem(arg1: new[] {501}, arg2: 0, arg3: 10000164);
-                context.SetMesh(arg1: new[] {301}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000164}, arg2: 1);
-                context.SetEffect(arg1: new[] {401}, arg2: true);
-                context.DestroyMonster(arg1: new[] {105});
+                context.CreateItem(spawnIds: new []{501}, triggerId: 0, itemId: 10000164);
+                context.SetMesh(triggerIds: new []{301}, visible: false);
+                context.SetInteractObject(interactIds: new []{10000164}, state: 1);
+                context.SetEffect(triggerIds: new []{401}, visible: true);
+                context.DestroyMonster(spawnIds: new []{105});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State빠지기3(context);
             }
 
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02000111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWaitStart2(context);
             }
 
@@ -143,7 +143,7 @@ namespace Maple2.Trigger._02000111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWaitStart2(context);
             }
 
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._02000111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWaitStart2(context);
             }
 

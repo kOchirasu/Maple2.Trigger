@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000187_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {20001281}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{101}, questIds: new []{20001281}, questStates: new byte[]{2})) {
                     return new StateMobCreation(context);
                 }
 
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02000187_bf {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206});
+                context.CreateMonster(spawnIds: new []{201, 202, 203, 204, 205, 206});
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {201, 202, 203, 204, 205, 206})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{201, 202, 203, 204, 205, 206})) {
                     return new StateCoolTime(context);
                 }
 
@@ -38,11 +38,11 @@ namespace Maple2.Trigger._02000187_bf {
             internal StateCoolTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 20);
+                context.SetTimer(timerId: "1", seconds: 20);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWaitStart(context);
                 }
 

@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new State알림(context);
                 }
 
@@ -21,12 +21,12 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 100000001) <= 0.5f || context.GetNpcHpRate(spawnPointId: 100000002) <= 0.5f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 100000001) <= 0.5f || context.GetNpcHpRate(spawnId: 100000002) <= 0.5f) {
                     return new State알림_2(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {100000001}) && context.MonsterDead(arg1: new[] {100000002})) {
+                if (context.MonsterDead(spawnIds: new []{100000001, 100000002})) {
                     return new State완료알림(context);
                 }
 
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02100009_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "10000");
+                context.ResetTimer(timerId: "10000");
             }
         }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State알림_3(context);
                 }
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02100009_bf {
             }
 
             public override void OnExit() {
-                context.SetEventUI(arg1: 1, script: "$02100009_BF__resurrection_2__0$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02100009_BF__resurrection_2__0$", duration: 4000);
             }
         }
 
@@ -61,12 +61,12 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new State알림(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {100000001}) && context.MonsterDead(arg1: new[] {100000002})) {
+                if (context.MonsterDead(spawnIds: new []{100000001, 100000002})) {
                     return new State완료알림(context);
                 }
 
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5500)) { }
 
                 return null;

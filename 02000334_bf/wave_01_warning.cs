@@ -5,12 +5,12 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 90099, arg2: new[] {150})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 90099, spawnIds: new []{150})) {
                     return new State1차타이머(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {999})) {
+                if (context.MonsterDead(spawnIds: new []{999})) {
                     return new State게임오버(context);
                 }
 
@@ -24,11 +24,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State1차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "30", arg2: 30);
+                context.SetTimer(timerId: "30", seconds: 30);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "30")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "30")) {
                     return new State돌격(context);
                 }
 
@@ -42,15 +42,15 @@ namespace Maple2.Trigger._02000334_bf {
             internal State돌격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {98001}, arg2: true);
-                context.MoveNpc(arg1: 190, arg2: "MS2PatrolData_3501");
-                context.SetConversation(arg1: 1, arg2: 190, script: "$02000334_BF__WAVE__0$", arg4: 3);
-                context.CreateMonster(arg1: new[] {991, 992, 993}, arg2: true);
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetEffect(triggerIds: new []{98001}, visible: true);
+                context.MoveNpc(spawnId: 190, patrolName: "MS2PatrolData_3501");
+                context.SetConversation(type: 1, spawnId: 190, script: "$02000334_BF__WAVE__0$", arg4: 3);
+                context.CreateMonster(spawnIds: new []{991, 992, 993}, arg2: true);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateCamera복구(context);
                 }
 
@@ -64,14 +64,14 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateCamera복구(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {98006}, arg2: true);
-                context.MoveNpc(arg1: 199, arg2: "MS2PatrolData_3502");
-                context.AddBuff(arg1: new[] {90001}, arg2: 70000068, arg3: 1);
-                context.SetConversation(arg1: 1, arg2: 199, script: "$02000334_BF__WAVE__1$", arg4: 3);
-                context.CameraSelectPath(pathIds: new[] {8017}, arg2: false);
+                context.SetEffect(triggerIds: new []{98006}, visible: true);
+                context.MoveNpc(spawnId: 199, patrolName: "MS2PatrolData_3502");
+                context.AddBuff(boxIds: new []{90001}, skillId: 70000068, level: 1);
+                context.SetConversation(type: 1, spawnId: 199, script: "$02000334_BF__WAVE__1$", arg4: 3);
+                context.CameraSelectPath(pathIds: new []{8017}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

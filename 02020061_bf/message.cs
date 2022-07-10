@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02020061_BF__MESSAGE__0$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020061_BF__MESSAGE__0$", duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "FieldGameStart") == 1) {
                     return new StateEnd(context);
                 }
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02020061_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

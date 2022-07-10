@@ -4,11 +4,11 @@ namespace Maple2.Trigger._99999904 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000084}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{12000084}, state: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {902})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{902})) {
                     return new StateDelay(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._99999904 {
             internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000084}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{12000084}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -36,10 +36,10 @@ namespace Maple2.Trigger._99999904 {
             internal StateDisabled(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000084}, arg2: 2, arg3: true);
+                context.SetInteractObject(interactIds: new []{12000084}, state: 2, arg3: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

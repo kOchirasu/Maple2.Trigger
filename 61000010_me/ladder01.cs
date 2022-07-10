@@ -4,15 +4,15 @@ namespace Maple2.Trigger._61000010_me {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 701, arg2: false, arg3: false);
-                context.SetLadder(arg1: 702, arg2: false, arg3: false);
-                context.SetLadder(arg1: 711, arg2: false, arg3: false);
-                context.SetLadder(arg1: 712, arg2: false, arg3: false);
-                context.SetLadder(arg1: 721, arg2: false, arg3: false);
-                context.SetLadder(arg1: 722, arg2: false, arg3: false);
+                context.SetLadder(triggerId: 701, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 702, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 711, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 712, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 721, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 722, visible: false, animationEffect: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateRandom(context);
             }
 
@@ -24,22 +24,22 @@ namespace Maple2.Trigger._61000010_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 34f)) {
-                    context.SetLadder(arg1: 701, arg2: true, arg3: true);
-                    context.SetLadder(arg1: 702, arg2: true, arg3: true);
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 34f)) {
+                    context.SetLadder(triggerId: 701, visible: true, animationEffect: true);
+                    context.SetLadder(triggerId: 702, visible: true, animationEffect: true);
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(arg1: 33f)) {
-                    context.SetLadder(arg1: 711, arg2: true, arg3: true);
-                    context.SetLadder(arg1: 712, arg2: true, arg3: true);
+                if (context.RandomCondition(rate: 33f)) {
+                    context.SetLadder(triggerId: 711, visible: true, animationEffect: true);
+                    context.SetLadder(triggerId: 712, visible: true, animationEffect: true);
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(arg1: 33f)) {
-                    context.SetLadder(arg1: 721, arg2: true, arg3: true);
-                    context.SetLadder(arg1: 722, arg2: true, arg3: true);
+                if (context.RandomCondition(rate: 33f)) {
+                    context.SetLadder(triggerId: 721, visible: true, animationEffect: true);
+                    context.SetLadder(triggerId: 722, visible: true, animationEffect: true);
                     return new StateEnd(context);
                 }
 
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._61000010_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

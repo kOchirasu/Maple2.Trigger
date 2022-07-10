@@ -6,14 +6,14 @@ namespace Maple2.Trigger._99999841 {
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 3, value: false);
                 context.SetDungeonVariable(varId: 200, value: false);
-                context.SetInteractObject(arg1: new[] {10002182}, arg2: 1, arg3: false);
-                context.StartCombineSpawn(groupId: new[] {513}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {514}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {515}, isStart: false);
+                context.SetInteractObject(interactIds: new []{10002182}, state: 1, arg3: false);
+                context.StartCombineSpawn(groupId: new []{513}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{514}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{515}, isStart: false);
                 context.SetUserValue(triggerId: 99990001, key: "Team2Win", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Team2Battle") == 1) {
                     return new State지역선택1(context);
                 }
@@ -31,20 +31,20 @@ namespace Maple2.Trigger._99999841 {
                 context.ScoreBoardCreate(maxScore: 240);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(arg1: 33f)) {
+                if (context.RandomCondition(rate: 33f)) {
                     return new StateA지역1(context);
                 }
 
-                if (context.RandomCondition(arg1: 34f)) {
+                if (context.RandomCondition(rate: 34f)) {
                     return new StateB지역1(context);
                 }
 
-                if (context.RandomCondition(arg1: 33f)) {
+                if (context.RandomCondition(rate: 33f)) {
                     return new StateC지역1(context);
                 }
 
@@ -58,15 +58,15 @@ namespace Maple2.Trigger._99999841 {
             internal StateA지역1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {513}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{513}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
@@ -84,15 +84,15 @@ namespace Maple2.Trigger._99999841 {
             internal StateB지역1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {514}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{514}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
@@ -110,15 +110,15 @@ namespace Maple2.Trigger._99999841 {
             internal StateC지역1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {515}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{515}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
@@ -136,23 +136,23 @@ namespace Maple2.Trigger._99999841 {
             internal State지역선택2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "추가 병력 Appear", arg3: 4000, arg4: "9201");
+                context.SetEventUI(arg1: 1, script: "추가 병력 Appear", duration: 4000, boxId: 9201);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateB지역2(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateC지역2(context);
                 }
 
@@ -166,23 +166,23 @@ namespace Maple2.Trigger._99999841 {
             internal State지역선택2_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "추가 병력 Appear", arg3: 4000, arg4: "9201");
+                context.SetEventUI(arg1: 1, script: "추가 병력 Appear", duration: 4000, boxId: 9201);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateA지역2(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateC지역2(context);
                 }
 
@@ -196,23 +196,23 @@ namespace Maple2.Trigger._99999841 {
             internal State지역선택2_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "추가 병력 Appear", arg3: 4000, arg4: "9201");
+                context.SetEventUI(arg1: 1, script: "추가 병력 Appear", duration: 4000, boxId: 9201);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateA지역2(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateB지역2(context);
                 }
 
@@ -226,15 +226,15 @@ namespace Maple2.Trigger._99999841 {
             internal StateA지역2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {513}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{513}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
@@ -253,15 +253,15 @@ namespace Maple2.Trigger._99999841 {
             internal StateB지역2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {514}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{514}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
@@ -280,15 +280,15 @@ namespace Maple2.Trigger._99999841 {
             internal StateC지역2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {515}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{515}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
@@ -310,20 +310,20 @@ namespace Maple2.Trigger._99999841 {
                 context.SetDungeonVariable(varId: 2000, value: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateB지역3(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateC지역3(context);
                 }
 
@@ -340,20 +340,20 @@ namespace Maple2.Trigger._99999841 {
                 context.SetDungeonVariable(varId: 2000, value: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateA지역3(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateC지역3(context);
                 }
 
@@ -370,20 +370,20 @@ namespace Maple2.Trigger._99999841 {
                 context.SetDungeonVariable(varId: 2000, value: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateA지역3(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateB지역3(context);
                 }
 
@@ -397,15 +397,15 @@ namespace Maple2.Trigger._99999841 {
             internal StateA지역3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {513}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{513}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
@@ -419,15 +419,15 @@ namespace Maple2.Trigger._99999841 {
             internal StateB지역3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {514}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{514}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
@@ -441,15 +441,15 @@ namespace Maple2.Trigger._99999841 {
             internal StateC지역3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {515}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{515}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002182}, arg2: 0)) {
                     return new StateStart_Boss(context);
                 }
 
@@ -463,23 +463,23 @@ namespace Maple2.Trigger._99999841 {
             internal StateStart_Boss(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002179}, arg2: 0, arg3: false);
-                context.SetInteractObject(arg1: new[] {10002180}, arg2: 0, arg3: false);
-                context.SetInteractObject(arg1: new[] {10002181}, arg2: 0, arg3: false);
-                context.SetInteractObject(arg1: new[] {10002182}, arg2: 0, arg3: false);
-                context.StartCombineSpawn(groupId: new[] {513}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {514}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {515}, isStart: false);
-                context.CreateMonster(arg1: new[] {911}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10002179}, state: 0, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002180}, state: 0, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002181}, state: 0, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002182}, state: 0, arg3: false);
+                context.StartCombineSpawn(groupId: new []{513}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{514}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{515}, isStart: false);
+                context.CreateMonster(spawnIds: new []{911}, arg2: false);
                 context.SetDungeonVariable(varId: 200, value: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {911})) {
+                if (context.MonsterDead(spawnIds: new []{911})) {
                     return new StateSuccess(context);
                 }
 
@@ -496,7 +496,7 @@ namespace Maple2.Trigger._99999841 {
                 context.SetDungeonVariable(varId: 3, value: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -507,17 +507,17 @@ namespace Maple2.Trigger._99999841 {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002179}, arg2: 0, arg3: false);
-                context.SetInteractObject(arg1: new[] {10002180}, arg2: 0, arg3: false);
-                context.SetInteractObject(arg1: new[] {10002181}, arg2: 0, arg3: false);
-                context.SetInteractObject(arg1: new[] {10002182}, arg2: 0, arg3: false);
-                context.StartCombineSpawn(groupId: new[] {513}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {514}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {515}, isStart: false);
-                context.DestroyMonster(arg1: new[] {911});
+                context.SetInteractObject(interactIds: new []{10002179}, state: 0, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002180}, state: 0, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002181}, state: 0, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002182}, state: 0, arg3: false);
+                context.StartCombineSpawn(groupId: new []{513}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{514}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{515}, isStart: false);
+                context.DestroyMonster(spawnIds: new []{911});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

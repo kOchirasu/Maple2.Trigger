@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000441_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "monster_buff") == 1) {
                     return new StateMonster_Dead(context);
                 }
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02000441_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {401}) || context.MonsterDead(arg1: new[] {402})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{401}) || context.MonsterDead(spawnIds: new []{402})) {
                     return new State초강력Buff(context);
                 }
 
@@ -36,10 +36,10 @@ namespace Maple2.Trigger._02000441_bf {
             internal State초강력Buff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {401, 402}, arg2: 49200001, arg3: 1, arg4: true);
+                context.AddBuff(boxIds: new []{401, 402}, skillId: 49200001, level: 1, arg4: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

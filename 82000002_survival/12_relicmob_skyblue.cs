@@ -4,12 +4,12 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209});
+                context.DestroyMonster(spawnIds: new []{1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209});
                 context.SetUserValue(key: "RelicMobSpawn", value: 0);
                 context.SetUserValue(key: "RelicMobRemove", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "RelicMobSpawn") == 1) {
                     return new StateDelay(context);
                 }
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
                     return new StateMobSpawnRandom(context);
                 }
@@ -45,44 +45,44 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 10f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateMobSpawn01(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateMobSpawn02(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateMobSpawn03(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateMobSpawn04(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateMobSpawn05(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateMobSpawn06(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateMobSpawn07(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateMobSpawn08(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateMobSpawn09(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateMobSpawn10(context);
                 }
 
@@ -100,11 +100,11 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateMobSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1200}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1200}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1200})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1200})) {
                     return new StateNotice(context);
                 }
 
@@ -122,11 +122,11 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateMobSpawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1201}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1201}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1201})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1201})) {
                     return new StateNotice(context);
                 }
 
@@ -144,11 +144,11 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateMobSpawn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1202}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1202}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1202})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1202})) {
                     return new StateNotice(context);
                 }
 
@@ -166,11 +166,11 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateMobSpawn04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1203}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1203}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1203})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1203})) {
                     return new StateNotice(context);
                 }
 
@@ -188,11 +188,11 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateMobSpawn05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1204}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1204}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1204})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1204})) {
                     return new StateNotice(context);
                 }
 
@@ -210,11 +210,11 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateMobSpawn06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1205}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1205}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1205})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1205})) {
                     return new StateNotice(context);
                 }
 
@@ -232,11 +232,11 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateMobSpawn07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1206}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1206}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1206})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1206})) {
                     return new StateNotice(context);
                 }
 
@@ -254,11 +254,11 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateMobSpawn08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1207}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1207}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1207})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1207})) {
                     return new StateNotice(context);
                 }
 
@@ -276,11 +276,11 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateMobSpawn09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1208}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1208}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1208})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1208})) {
                     return new StateNotice(context);
                 }
 
@@ -298,11 +298,11 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateMobSpawn10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1209}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1209}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1209})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1209})) {
                     return new StateNotice(context);
                 }
 
@@ -323,7 +323,7 @@ namespace Maple2.Trigger._82000002_survival {
                 context.SetUserValue(triggerId: 16, key: "RelicMobSkyblueDie", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "RelicMobRemove") == 1) {
                     return new StateQuit(context);
                 }
@@ -338,10 +338,10 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209});
+                context.DestroyMonster(spawnIds: new []{1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

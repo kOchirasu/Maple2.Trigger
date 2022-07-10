@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 90099, arg2: new[] {151})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 90099, spawnIds: new []{151})) {
                     return new State1차타이머(context);
                 }
 
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State1차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "15", arg2: 15);
+                context.SetTimer(timerId: "15", seconds: 15);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "15")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "15")) {
                     return new State돌격(context);
                 }
 
@@ -38,15 +38,15 @@ namespace Maple2.Trigger._02000334_bf {
             internal State돌격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {98001}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 190, script: "$02000334_BF__WAVE__2$", arg4: 3);
-                context.MoveNpc(arg1: 190, arg2: "MS2PatrolData_3501");
-                context.CreateMonster(arg1: new[] {991, 993, 994}, arg2: true);
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetEffect(triggerIds: new []{98001}, visible: true);
+                context.SetConversation(type: 1, spawnId: 190, script: "$02000334_BF__WAVE__2$", arg4: 3);
+                context.MoveNpc(spawnId: 190, patrolName: "MS2PatrolData_3501");
+                context.CreateMonster(spawnIds: new []{991, 993, 994}, arg2: true);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateCamera_복구(context);
                 }
 
@@ -60,16 +60,16 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateCamera_복구(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {98006}, arg2: true);
-                context.AddBuff(arg1: new[] {90001}, arg2: 70000068, arg3: 1);
-                context.MoveNpc(arg1: 199, arg2: "MS2PatrolData_3502");
-                context.SetConversation(arg1: 1, arg2: 199, script: "$02000334_BF__WAVE__3$", arg4: 3);
-                context.CameraSelectPath(pathIds: new[] {8017}, arg2: false);
-                context.SetTimer(id: "15", arg2: 15);
+                context.SetEffect(triggerIds: new []{98006}, visible: true);
+                context.AddBuff(boxIds: new []{90001}, skillId: 70000068, level: 1);
+                context.MoveNpc(spawnId: 199, patrolName: "MS2PatrolData_3502");
+                context.SetConversation(type: 1, spawnId: 199, script: "$02000334_BF__WAVE__3$", arg4: 3);
+                context.CameraSelectPath(pathIds: new []{8017}, returnView: false);
+                context.SetTimer(timerId: "15", seconds: 15);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "15")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "15")) {
                     return new State돌격2(context);
                 }
 
@@ -83,15 +83,15 @@ namespace Maple2.Trigger._02000334_bf {
             internal State돌격2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {98001}, arg2: true);
-                context.MoveNpc(arg1: 190, arg2: "MS2PatrolData_3501");
-                context.SetConversation(arg1: 1, arg2: 190, script: "$02000334_BF__WAVE__4$", arg4: 3);
-                context.CreateMonster(arg1: new[] {992, 995}, arg2: true);
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetEffect(triggerIds: new []{98001}, visible: true);
+                context.MoveNpc(spawnId: 190, patrolName: "MS2PatrolData_3501");
+                context.SetConversation(type: 1, spawnId: 190, script: "$02000334_BF__WAVE__4$", arg4: 3);
+                context.CreateMonster(spawnIds: new []{992, 995}, arg2: true);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateCamera_복구2(context);
                 }
 
@@ -105,14 +105,14 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateCamera_복구2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {98006}, arg2: true);
-                context.AddBuff(arg1: new[] {90001}, arg2: 70000068, arg3: 1);
-                context.MoveNpc(arg1: 199, arg2: "MS2PatrolData_3502");
-                context.SetConversation(arg1: 1, arg2: 199, script: "$02000334_BF__WAVE__5$", arg4: 3);
-                context.CameraSelectPath(pathIds: new[] {8017}, arg2: false);
+                context.SetEffect(triggerIds: new []{98006}, visible: true);
+                context.AddBuff(boxIds: new []{90001}, skillId: 70000068, level: 1);
+                context.MoveNpc(spawnId: 199, patrolName: "MS2PatrolData_3502");
+                context.SetConversation(type: 1, spawnId: 199, script: "$02000334_BF__WAVE__5$", arg4: 3);
+                context.CameraSelectPath(pathIds: new []{8017}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

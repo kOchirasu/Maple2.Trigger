@@ -4,10 +4,10 @@ namespace Maple2.Trigger._52010018_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1001, 1005}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1001, 1005}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State분기점(context);
             }
 
@@ -19,28 +19,28 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002851}, arg3: new byte[] {2})) {
-                    context.DestroyMonster(arg1: new[] {1005});
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{100}, questIds: new []{10002851}, questStates: new byte[]{2})) {
+                    context.DestroyMonster(spawnIds: new []{1005});
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002852}, arg3: new byte[] {1})) {
-                    context.DestroyMonster(arg1: new[] {1005});
+                if (context.QuestUserDetected(boxIds: new []{100}, questIds: new []{10002852}, questStates: new byte[]{1})) {
+                    context.DestroyMonster(spawnIds: new []{1005});
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002853}, arg3: new byte[] {1})) {
-                    context.DestroyMonster(arg1: new[] {1005});
+                if (context.QuestUserDetected(boxIds: new []{100}, questIds: new []{10002853}, questStates: new byte[]{1})) {
+                    context.DestroyMonster(spawnIds: new []{1005});
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002853}, arg3: new byte[] {2})) {
-                    context.DestroyMonster(arg1: new[] {1005});
+                if (context.QuestUserDetected(boxIds: new []{100}, questIds: new []{10002853}, questStates: new byte[]{2})) {
+                    context.DestroyMonster(spawnIds: new []{1005});
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002851}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{100}, questIds: new []{10002851}, questStates: new byte[]{3})) {
                     return new State분기점2(context);
                 }
 
@@ -55,17 +55,17 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002852}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{100}, questIds: new []{10002852}, questStates: new byte[]{2})) {
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002852}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{100}, questIds: new []{10002852}, questStates: new byte[]{3})) {
                     return new StateEnd(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002852}, arg3: new byte[] {2})) {
-                    context.DestroyMonster(arg1: new[] {1005});
+                if (!context.QuestUserDetected(boxIds: new []{100}, questIds: new []{10002852}, questStates: new byte[]{2})) {
+                    context.DestroyMonster(spawnIds: new []{1005});
                     return new StateEnd(context);
                 }
 
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

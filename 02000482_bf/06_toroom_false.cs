@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000482_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002033}, arg2: 0);
+                context.SetInteractObject(interactIds: new []{10002033}, state: 0);
                 context.SetUserValue(key: "ToRoomFalse", value: 0);
                 context.SetUserValue(key: "AnotherGuide", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ToRoomFalse") == 1) {
                     return new StateToRoomFalse(context);
                 }
@@ -24,11 +24,11 @@ namespace Maple2.Trigger._02000482_bf {
             internal StateToRoomFalse(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002033}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002033}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10002033}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10002033}, arg2: 0)) {
                     return new StateNoticeDelay(context);
                 }
 
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000482_bf {
                 context.SetUserValue(triggerId: 7, key: "AnotherGuide", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateNoticeOn(context);
                 }
@@ -61,11 +61,11 @@ namespace Maple2.Trigger._02000482_bf {
             internal StateNoticeOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039604, textId: 20039604);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateCloseGuide02(context);
                 }
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._02000482_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateCloseGuide02(context);
                 }
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02000482_bf {
                 context.SetUserValue(triggerId: 7, key: "AnotherGuide", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -8,7 +8,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MoveToTeamPortal") == 1) {
                     return new StateMoveUserbyTag(context);
                 }
@@ -29,8 +29,8 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 13, key: "BannerCheckIn", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9900})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9900})) {
                     return new StateMoveUserbyTag(context);
                 }
 
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateQuit(context);
                 }
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetPortal(portalId: 6, visible: false, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

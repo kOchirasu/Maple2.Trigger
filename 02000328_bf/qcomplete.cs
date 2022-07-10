@@ -7,8 +7,8 @@ namespace Maple2.Trigger._02000328_bf {
                 context.SetUserValue(key: "clearafter", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {999999}, arg2: new[] {10003061}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{999999}, questIds: new []{10003061}, questStates: new byte[]{2})) {
                     return new State완료npc리젠(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._02000328_bf {
             internal State완료npc리젠(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2002});
+                context.CreateMonster(spawnIds: new []{2002});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "clearafter") == 1) {
                     return new State완료npc킬(context);
                 }
@@ -40,10 +40,10 @@ namespace Maple2.Trigger._02000328_bf {
             internal State완료npc킬(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {2002});
+                context.DestroyMonster(spawnIds: new []{2002});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

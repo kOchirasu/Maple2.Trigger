@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02000251_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {705, 706}, arg2: true);
-                context.SetMesh(arg1: new[] {711, 712}, arg2: false);
-                context.DestroyMonster(arg1: new[] {601, 602, 603, 604});
-                context.SetEffect(arg1: new[] {3004}, arg2: false);
+                context.SetMesh(triggerIds: new []{705, 706}, visible: true);
+                context.SetMesh(triggerIds: new []{711, 712}, visible: false);
+                context.DestroyMonster(spawnIds: new []{601, 602, 603, 604});
+                context.SetEffect(triggerIds: new []{3004}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 201) == 1) {
                     return new StateMobCreation(context);
                 }
@@ -25,12 +25,12 @@ namespace Maple2.Trigger._02000251_bf {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {711, 712}, arg2: true);
-                context.CreateMonster(arg1: new[] {601, 602, 603, 604}, arg2: false);
+                context.SetMesh(triggerIds: new []{711, 712}, visible: true);
+                context.CreateMonster(spawnIds: new []{601, 602, 603, 604}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {601, 602, 603, 604})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{601, 602, 603, 604})) {
                     return new State통과Delay(context);
                 }
 
@@ -44,14 +44,14 @@ namespace Maple2.Trigger._02000251_bf {
             internal State통과Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
-                context.SetAchievement(arg1: 1000, arg2: "trigger", arg3: "goldenTower");
+                context.SetTimer(timerId: "3", seconds: 3);
+                context.SetAchievement(triggerId: 1000, type: "trigger", code: "goldenTower");
                 context.DungeonClear();
-                context.SetMesh(arg1: new[] {705, 706, 711, 712}, arg2: false);
+                context.SetMesh(triggerIds: new []{705, 706, 711, 712}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State통과(context);
                 }
 
@@ -65,10 +65,10 @@ namespace Maple2.Trigger._02000251_bf {
             internal State통과(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {3004}, arg2: true);
+                context.SetEffect(triggerIds: new []{3004}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

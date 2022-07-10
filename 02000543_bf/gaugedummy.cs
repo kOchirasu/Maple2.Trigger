@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "GaugeStart") == 1) {
                     return new StateCreation(context);
                 }
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._02000543_bf {
             internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {4000}, arg2: false);
+                context.CreateMonster(spawnIds: new []{4000}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateCreation(context);
                 }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

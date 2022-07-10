@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {710})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{710})) {
                     return new StateLadderGuide(context);
                 }
 
@@ -20,13 +20,13 @@ namespace Maple2.Trigger._02000329_bf {
             internal StateLadderGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20000060);
-                context.SetTimer(id: "5", arg2: 5);
+                context.SetTimer(timerId: "5", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
                     return new StateWait(context);
                 }
 

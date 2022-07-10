@@ -8,8 +8,8 @@ namespace Maple2.Trigger._02000426_bf {
                 context.SetUserValue(key: "SummonZakumArmMany", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateWait중(context);
                 }
 
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SummonZakumArmRegenCheck") == 1) {
                     return new State자쿰몸통InvincibilityBuff로직_WaitStart(context);
                 }
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State자쿰몸통InvincibilityBuff로직_작동(context);
                 }
@@ -55,11 +55,11 @@ namespace Maple2.Trigger._02000426_bf {
             internal State자쿰몸통InvincibilityBuff로직_작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {2011}, arg2: 50000265, arg3: 1, arg4: true, arg5: false);
-                context.AddBuff(arg1: new[] {2012}, arg2: 50000265, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(boxIds: new []{2011}, skillId: 50000265, level: 1, arg4: true, arg5: false);
+                context.AddBuff(boxIds: new []{2012}, skillId: 50000265, level: 1, arg4: true, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SummonZakumArmMany") == 0) {
                     return new State자쿰몸통InvincibilityBuff_RemoveWait(context);
                 }
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State자쿰몸통InvincibilityBuff_Remove작업(context);
                 }
@@ -90,12 +90,12 @@ namespace Maple2.Trigger._02000426_bf {
             internal State자쿰몸통InvincibilityBuff_Remove작업(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.NpcRemoveAdditionalEffect(spawnPointId: 2011, additionalEffectId: 50000265);
-                context.NpcRemoveAdditionalEffect(spawnPointId: 2012, additionalEffectId: 50000265);
+                context.NpcRemoveAdditionalEffect(spawnId: 2011, additionalEffectId: 50000265);
+                context.NpcRemoveAdditionalEffect(spawnId: 2012, additionalEffectId: 50000265);
                 context.SetUserValue(key: "SummonZakumArmRegenCheck", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
                     return new StateWait중(context);
                 }
@@ -111,7 +111,7 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -7,8 +7,8 @@ namespace Maple2.Trigger._64000001_gd {
                 context.SetPortal(portalId: 12, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {105})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{105})) {
                     return new State링아웃(context);
                 }
 
@@ -22,12 +22,12 @@ namespace Maple2.Trigger._64000001_gd {
             internal State링아웃(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
-                    context.MoveUser(arg1: 64000001, arg2: 2, arg3: 105);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
+                    context.MoveUser(mapId: 64000001, portalId: 2, boxId: 105);
                     return new StateWait(context);
                 }
 

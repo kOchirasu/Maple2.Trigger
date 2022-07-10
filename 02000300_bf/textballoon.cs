@@ -5,12 +5,12 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {1099})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{1099})) {
                     return new StateRandom대화(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1099})) {
+                if (context.MonsterDead(spawnIds: new []{1099})) {
                     return new StateEnd대화(context);
                 }
 
@@ -25,24 +25,24 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 25f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 25f)) {
                     return new State20초(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new State25초(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new State30초(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new State35초(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1099})) {
+                if (context.MonsterDead(spawnIds: new []{1099})) {
                     return new StateEnd대화(context);
                 }
 
@@ -56,15 +56,15 @@ namespace Maple2.Trigger._02000300_bf {
             internal State20초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "20", arg2: 20);
+                context.SetTimer(timerId: "20", seconds: 20);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "20")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "20")) {
                     return new State대화(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1099})) {
+                if (context.MonsterDead(spawnIds: new []{1099})) {
                     return new StateEnd대화(context);
                 }
 
@@ -78,15 +78,15 @@ namespace Maple2.Trigger._02000300_bf {
             internal State25초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "25", arg2: 25);
+                context.SetTimer(timerId: "25", seconds: 25);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "25")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "25")) {
                     return new State대화(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1099})) {
+                if (context.MonsterDead(spawnIds: new []{1099})) {
                     return new StateEnd대화(context);
                 }
 
@@ -100,15 +100,15 @@ namespace Maple2.Trigger._02000300_bf {
             internal State30초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "30", arg2: 30);
+                context.SetTimer(timerId: "30", seconds: 30);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "30")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "30")) {
                     return new State대화(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1099})) {
+                if (context.MonsterDead(spawnIds: new []{1099})) {
                     return new StateEnd대화(context);
                 }
 
@@ -122,15 +122,15 @@ namespace Maple2.Trigger._02000300_bf {
             internal State35초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "35", arg2: 35);
+                context.SetTimer(timerId: "35", seconds: 35);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "35")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "35")) {
                     return new State대화(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1099})) {
+                if (context.MonsterDead(spawnIds: new []{1099})) {
                     return new StateEnd대화(context);
                 }
 
@@ -145,20 +145,20 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 25f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateScript1(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateScript2(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateScript3(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateScript4(context);
                 }
 
@@ -172,12 +172,12 @@ namespace Maple2.Trigger._02000300_bf {
             internal StateScript1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 1002, script: "$02000300_BF__TEXTBALLOON__0$", arg4: 2, arg5: 0);
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.SetConversation(type: 1, spawnId: 1002, script: "$02000300_BF__TEXTBALLOON__0$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateWait(context);
                 }
 
@@ -191,12 +191,12 @@ namespace Maple2.Trigger._02000300_bf {
             internal StateScript2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 1003, script: "$02000300_BF__TEXTBALLOON__1$", arg4: 2);
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.SetConversation(type: 1, spawnId: 1003, script: "$02000300_BF__TEXTBALLOON__1$", arg4: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateWait(context);
                 }
 
@@ -210,12 +210,12 @@ namespace Maple2.Trigger._02000300_bf {
             internal StateScript3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 1003, script: "$02000300_BF__TEXTBALLOON__2$", arg4: 2);
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.SetConversation(type: 1, spawnId: 1003, script: "$02000300_BF__TEXTBALLOON__2$", arg4: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateWait(context);
                 }
 
@@ -229,12 +229,12 @@ namespace Maple2.Trigger._02000300_bf {
             internal StateScript4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 1004, script: "$02000300_BF__TEXTBALLOON__3$", arg4: 2);
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.SetConversation(type: 1, spawnId: 1004, script: "$02000300_BF__TEXTBALLOON__3$", arg4: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateWait(context);
                 }
 
@@ -248,14 +248,14 @@ namespace Maple2.Trigger._02000300_bf {
             internal StateEnd대화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "10", arg2: 10);
+                context.SetTimer(timerId: "10", seconds: 10);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "10")) {
-                    context.SetConversation(arg1: 1, arg2: 1001, script: "$02000300_BF__TEXTBALLOON__4$", arg4: 3, arg5: 0);
-                    context.SetConversation(arg1: 1, arg2: 1003, script: "$02000300_BF__TEXTBALLOON__5$", arg4: 2, arg5: 2);
-                    context.SetConversation(arg1: 1, arg2: 1002, script: "$02000300_BF__TEXTBALLOON__6$", arg4: 2, arg5: 4);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "10")) {
+                    context.SetConversation(type: 1, spawnId: 1001, script: "$02000300_BF__TEXTBALLOON__4$", arg4: 3, arg5: 0);
+                    context.SetConversation(type: 1, spawnId: 1003, script: "$02000300_BF__TEXTBALLOON__5$", arg4: 2, arg5: 2);
+                    context.SetConversation(type: 1, spawnId: 1002, script: "$02000300_BF__TEXTBALLOON__6$", arg4: 2, arg5: 4);
                     return new StateEnd(context);
                 }
 
@@ -270,7 +270,7 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -7,8 +7,8 @@ namespace Maple2.Trigger._52020011_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200015}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{60200015}, questStates: new byte[]{2})) {
                     return new StateReady(context);
                 }
 
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetCinematicUI(type: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateSetting(context);
                 }
@@ -45,12 +45,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.CameraSelectPath(pathIds: new[] {4001}, arg2: false);
-                context.MoveUser(arg1: 52020011, arg2: 6001);
+                context.CameraSelectPath(pathIds: new []{4001}, returnView: false);
+                context.MoveUser(mapId: 52020011, portalId: 6001);
                 context.SetSceneSkip(state: new StateExit(context), arg2: "Exit");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateScene_01(context);
                 }
@@ -67,11 +67,11 @@ namespace Maple2.Trigger._52020011_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelectPath(pathIds: new[] {4002}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4002}, returnView: false);
                 context.ShowCaption(type: CaptionType.Vertical, title: "$map:52020011$", script: "$NpcName:11003599$의 임시 거처", align: Align.Center | Align.Left, offsetRateX: 0.05f, offsetRateY: 0.15f, duration: 3000, scale: 1.5f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new StateScene_02(context);
                 }
@@ -86,10 +86,10 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4003, 4004, 4005, 4006}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4003, 4004, 4005, 4006}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
                     return new StateScene_03(context);
                 }
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._52020011_qd {
             }
 
             public override void OnExit() {
-                context.SetPcEmotionSequence(arg1: "Emotion_Chin_Chin_A");
+                context.SetPcEmotionSequence(sequenceNames: new []{"Emotion_Chin_Chin_A"});
             }
         }
 
@@ -106,10 +106,10 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateScene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4007, 4008}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4007, 4008}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new StateScene_04(context);
                 }
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetSceneSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateExit(context);
                 }
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._52020011_qd {
                 context.CameraReset(interpolationTime: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

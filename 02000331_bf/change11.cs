@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 9022, arg2: new[] {602})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 9022, spawnIds: new []{602})) {
                     return new StateStart(context);
                 }
 
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 9030, arg2: new[] {990})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 9030, spawnIds: new []{990})) {
                     return new State분기점(context);
                 }
 
@@ -37,12 +37,12 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 9030, arg2: new[] {999})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 9030, spawnIds: new []{999})) {
                     return new StateBossCombat(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {602})) {
+                if (context.MonsterDead(spawnIds: new []{602})) {
                     return new State교체Delay(context);
                 }
 
@@ -57,12 +57,12 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {999})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{999})) {
                     return new State전투종료(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {602})) {
+                if (context.MonsterDead(spawnIds: new []{602})) {
                     return new State교체Delay(context);
                 }
 
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 9022, arg2: new[] {602})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 9022, spawnIds: new []{602})) {
                     return new State디펜스Success(context);
                 }
 
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State교체쓰러짐(context);
                 }
@@ -120,11 +120,11 @@ namespace Maple2.Trigger._02000331_bf {
             internal State교체쓰러짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {612});
+                context.CreateMonster(spawnIds: new []{612});
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 9020, arg2: new[] {600})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 9020, spawnIds: new []{600})) {
                     return new State교체일어남(context);
                 }
 
@@ -138,10 +138,10 @@ namespace Maple2.Trigger._02000331_bf {
             internal State교체일어남(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ChangeMonster(arg1: 612, arg2: 210);
+                context.ChangeMonster(removeSpawnId: 612, addSpawnId: 210);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,36 +5,36 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001258}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001258}, arg2: 0)) {
                     return new State점수(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001259}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001259}, arg2: 0)) {
                     return new State점수(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001260}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001260}, arg2: 0)) {
                     return new State점수(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001261}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001261}, arg2: 0)) {
                     return new State점수(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001262}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001262}, arg2: 0)) {
                     return new State점수(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001263}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001263}, arg2: 0)) {
                     return new State점수(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001264}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001264}, arg2: 0)) {
                     return new State점수(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001265}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001265}, arg2: 0)) {
                     return new State점수(context);
                 }
 
@@ -48,10 +48,10 @@ namespace Maple2.Trigger._52010038_qd {
             internal State점수(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {4030}, arg2: false);
+                context.CreateMonster(spawnIds: new []{4030}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateWait(context);
                 }

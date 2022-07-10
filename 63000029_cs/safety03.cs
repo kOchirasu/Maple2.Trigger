@@ -7,7 +7,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetUserValue(key: "SafetyStart", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SafetyStart") == 1) {
                     return new StateEnter01(context);
                 }
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9200})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9200})) {
                     return new StatePCTeleport01(context);
                 }
 
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._63000029_cs {
             internal StatePCTeleport01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 63000029, arg2: 12, arg3: 9900);
+                context.MoveUser(mapId: 63000029, portalId: 12, boxId: 9900);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateReset01(context);
                 }
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9200})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9200})) {
                     return new StateEnter01(context);
                 }
 

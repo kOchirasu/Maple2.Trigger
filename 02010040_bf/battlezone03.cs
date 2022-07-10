@@ -5,16 +5,16 @@ namespace Maple2.Trigger._02010040_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false);
-                context.SetEffect(arg1: new[] {4301, 4302, 4303}, arg2: false);
-                context.SetMesh(arg1: new[] {1300, 1301, 1302}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetActor(arg1: 2300, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 2301, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 2302, arg2: true, arg3: "Closed");
-                context.SetAgent(arg1: new[] {3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312}, arg2: true);
+                context.SetEffect(triggerIds: new []{4301, 4302, 4303}, visible: false);
+                context.SetMesh(triggerIds: new []{1300, 1301, 1302}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetActor(triggerId: 2300, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 2301, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 2302, visible: true, initialSequence: "Closed");
+                context.SetAgent(triggerIds: new []{3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9300})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9300})) {
                     return new StateBattleStart(context);
                 }
 
@@ -28,11 +28,11 @@ namespace Maple2.Trigger._02010040_bf {
             internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {501, 502, 601, 602, 701, 702}, arg2: false);
+                context.CreateMonster(spawnIds: new []{501, 502, 601, 602, 701, 702}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {501, 502, 601, 602, 701, 702})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{501, 502, 601, 602, 701, 702})) {
                     return new State문열기(context);
                 }
 
@@ -46,16 +46,16 @@ namespace Maple2.Trigger._02010040_bf {
             internal State문열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1300, 1301, 1302}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {4301, 4302, 4303}, arg2: true);
-                context.SetActor(arg1: 2300, arg2: true, arg3: "Opened");
-                context.SetActor(arg1: 2301, arg2: true, arg3: "Opened");
-                context.SetActor(arg1: 2302, arg2: true, arg3: "Opened");
-                context.SetAgent(arg1: new[] {3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312}, arg2: false);
+                context.SetMesh(triggerIds: new []{1300, 1301, 1302}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{4301, 4302, 4303}, visible: true);
+                context.SetActor(triggerId: 2300, visible: true, initialSequence: "Opened");
+                context.SetActor(triggerId: 2301, visible: true, initialSequence: "Opened");
+                context.SetActor(triggerId: 2302, visible: true, initialSequence: "Opened");
+                context.SetAgent(triggerIds: new []{3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312}, visible: false);
                 context.SetPortal(portalId: 6, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

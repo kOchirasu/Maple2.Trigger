@@ -4,10 +4,10 @@ namespace Maple2.Trigger._52100301_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 690000, arg2: false);
+                context.CameraSelect(triggerId: 690000, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Phase_4_Camera_01") == 1) {
                     return new StateStart(context);
                 }
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._52100301_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 690000, arg2: true);
+                context.CameraSelect(triggerId: 690000, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State리셋(context);
                 }
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Phase_4_Camera_01") == 0) {
                     return new StateWait(context);
                 }

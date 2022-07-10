@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "GaugeOpen") == 1) {
                     return new State게이지시작(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000543_bf {
                 context.ShadowExpeditionOpenBossGauge(title: "$02000543_BF__GAUGE__0$", maxGaugePoint: 1000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetShadowExpeditionPoints() >= 1000) {
                     return new StateSuccess(context);
                 }
@@ -39,12 +39,12 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() {
                 context.ShadowExpeditionCloseBossGauge();
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
                 context.SetUserValue(triggerId: 2001, key: "WaveEnd", value: 1);
                 context.SetUserValue(triggerId: 2003, key: "WaveEnd", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd(context);
                 }
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

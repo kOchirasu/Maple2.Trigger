@@ -5,8 +5,8 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9002})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9002})) {
                     return new StateRemove(context);
                 }
 
@@ -24,8 +24,8 @@ namespace Maple2.Trigger._66200001_gd {
                 context.MoveToPortal(boxId: 9002, userTagId: 2, portalId: 22);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9002})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9002})) {
                     return new StateRemove(context);
                 }
 

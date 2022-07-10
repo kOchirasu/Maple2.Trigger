@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02020063_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {814}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{814}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Battle3_TurretSpawn_4") == 1) {
                     return new StateTurretEnabled(context);
                 }
@@ -22,19 +22,19 @@ namespace Maple2.Trigger._02020063_bf {
             internal StateTurretEnabled(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {814}, arg2: false);
+                context.CreateMonster(spawnIds: new []{814}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Battle3_TurretSpawn_4") == 0) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {814})) {
+                if (context.MonsterDead(spawnIds: new []{814})) {
                     return new StateTurretDisabled(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {801})) {
+                if (context.MonsterDead(spawnIds: new []{801})) {
                     return new StateEnd(context);
                 }
 
@@ -49,12 +49,12 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Battle3_TurretSpawn_4") == 0) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {801})) {
+                if (context.MonsterDead(spawnIds: new []{801})) {
                     return new StateEnd(context);
                 }
 
@@ -68,10 +68,10 @@ namespace Maple2.Trigger._02020063_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {814}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{814}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Battle3_TurretSpawn_4") == 1) {
                     return new StateWait(context);
                 }

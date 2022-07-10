@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000118_bf {
             internal StateLeverPull(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000291}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000291}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000291}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000291}, arg2: 0)) {
                     return new StateSkill동작(context);
                 }
 
@@ -22,12 +22,12 @@ namespace Maple2.Trigger._02000118_bf {
             internal StateSkill동작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {2005, 2006, 2007, 2008}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{2005, 2006, 2007, 2008}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateEnd(context);
                 }
 
@@ -41,12 +41,12 @@ namespace Maple2.Trigger._02000118_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 10);
-                context.SetSkill(arg1: new[] {2005, 2006, 2007, 2008}, arg2: false);
+                context.SetTimer(timerId: "2", seconds: 10);
+                context.SetSkill(triggerIds: new []{2005, 2006, 2007, 2008}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateLeverPull(context);
                 }
 

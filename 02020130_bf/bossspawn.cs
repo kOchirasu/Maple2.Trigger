@@ -4,15 +4,15 @@ namespace Maple2.Trigger._02020130_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022}, arg2: false);
+                context.SetMesh(triggerIds: new []{2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022}, visible: false);
                 context.SetPortal(portalId: 20, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 21, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 22, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 23, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {600})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{600})) {
                     return new StateBossSpawn(context);
                 }
 
@@ -26,11 +26,11 @@ namespace Maple2.Trigger._02020130_bf {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {701, 702, 703}, arg2: false);
+                context.CreateMonster(spawnIds: new []{701, 702, 703}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {701, 702, 703})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{701, 702, 703})) {
                     return new StateEndDelay(context);
                 }
 
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._02020130_bf {
                 context.DungeonMissionComplete(missionId: 23040000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     context.DungeonClear();
-                    context.SetAchievement(arg3: "IshuraFinalDungeonClear");
+                    context.SetAchievement(type: "trigger", code: "IshuraFinalDungeonClear");
                     return new StateEnd(context);
                 }
 
@@ -73,10 +73,10 @@ namespace Maple2.Trigger._02020130_bf {
             internal StateDungeonFailure(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     context.DungeonFail();
                     return new StateEnd(context);
@@ -96,10 +96,10 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetPortal(portalId: 21, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 22, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 23, visible: true, enabled: true, minimapVisible: true);
-                context.DungeonEnableGiveUp(isEnable: false);
+                context.DungeonEnableGiveUp(enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

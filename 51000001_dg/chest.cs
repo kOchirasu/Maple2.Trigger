@@ -4,10 +4,10 @@ namespace Maple2.Trigger._51000001_dg {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {11000013, 11000014, 11000015, 11000016, 11000017}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{11000013, 11000014, 11000015, 11000016, 11000017}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

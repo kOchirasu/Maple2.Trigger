@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000351_bf {
             internal State닫힘상태(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {6001, 6002}, arg2: true, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025, 6026}, arg2: false, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{6001, 6002}, visible: true, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{6020, 6021, 6022, 6023, 6024, 6025, 6026}, visible: false, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000818}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000818}, arg2: 1)) {
                     return new State작동(context);
                 }
 
@@ -23,12 +23,12 @@ namespace Maple2.Trigger._02000351_bf {
             internal State작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 111, textId: 20000080);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000818}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000818}, arg2: 0)) {
                     return new StateOpen(context);
                 }
 
@@ -44,14 +44,14 @@ namespace Maple2.Trigger._02000351_bf {
             internal StateOpen(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
-                context.SetMesh(arg1: new[] {6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg4: 200, arg5: 15f);
-                context.SetMesh(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025, 6026}, arg2: true, arg4: 200, arg5: 15f);
-                context.SetEffect(arg1: new[] {9000002}, arg2: true);
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.SetMesh(triggerIds: new []{6010, 6011, 6012, 6013, 6014, 6015, 6016}, visible: false, arg4: 200, arg5: 15f);
+                context.SetMesh(triggerIds: new []{6020, 6021, 6022, 6023, 6024, 6025, 6026}, visible: true, arg4: 200, arg5: 15f);
+                context.SetEffect(triggerIds: new []{9000002}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State열림(context);
                 }
 
@@ -65,12 +65,12 @@ namespace Maple2.Trigger._02000351_bf {
             internal State열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {6001, 6002}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetTimer(id: "2", arg2: 2);
+                context.SetMesh(triggerIds: new []{6001, 6002}, visible: false, arg4: 0, arg5: 10f);
+                context.SetTimer(timerId: "2", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State열림_끝(context);
                 }
 
@@ -88,10 +88,10 @@ namespace Maple2.Trigger._02000351_bf {
             internal State열림_끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 8001, arg2: false);
+                context.CameraSelect(triggerId: 8001, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

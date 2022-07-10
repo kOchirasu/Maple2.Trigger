@@ -4,11 +4,11 @@ namespace Maple2.Trigger._63000001_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {304}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new []{304}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {104})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{104})) {
                     return new StateSetup04(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._63000001_cs {
             internal StateSetup04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {304}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new []{304}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {104})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{104})) {
                     return new StateSetup04끝(context);
                 }
 
@@ -40,11 +40,11 @@ namespace Maple2.Trigger._63000001_cs {
             internal StateSetup04끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "404", arg2: 2, arg3: false);
+                context.SetTimer(timerId: "404", seconds: 2, clearAtZero: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "404")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "404")) {
                     return new StateWait(context);
                 }
 

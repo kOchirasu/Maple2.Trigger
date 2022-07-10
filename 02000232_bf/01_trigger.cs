@@ -7,8 +7,8 @@ namespace Maple2.Trigger._02000232_bf {
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {201})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{201})) {
                     return new StateMobCreation(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02000232_bf {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {301}, arg2: true);
+                context.CreateMonster(spawnIds: new []{301}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {301})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{301})) {
                     return new StatePortal(context);
                 }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000232_bf {
                 context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

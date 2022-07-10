@@ -5,7 +5,7 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BuffGo") == 1) {
                     return new StateCheckpoly(context);
                 }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._99999925 {
                 context.SetUserValue(key: "BuffGo", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateCheckIdle(context);
                 }

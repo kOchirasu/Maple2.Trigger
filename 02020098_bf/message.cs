@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {11})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{11})) {
                     return new State크리스탈활용안내DisplayGuide(context);
                 }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02020098_bf {
                 context.ShowGuideSummary(entityId: 29200002, textId: 29200002);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6300)) {
                     return new StateTrigger종료(context);
                 }
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

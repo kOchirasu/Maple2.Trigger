@@ -4,11 +4,11 @@ namespace Maple2.Trigger._63000003_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1001, 1002}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1001, 1002}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {50001475}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{101}, questIds: new []{50001475}, questStates: new byte[]{3})) {
                     return new State말풍선01(context);
                 }
 
@@ -24,10 +24,10 @@ namespace Maple2.Trigger._63000003_cs {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetConversation(arg1: 1, arg2: 1001, script: "$63000003_CS__50001475__0$", arg4: 4, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 1001, script: "$63000003_CS__50001475__0$", arg4: 4, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateNPC이동(context);
                 }
@@ -42,11 +42,11 @@ namespace Maple2.Trigger._63000003_cs {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_A");
-                context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_A");
+                context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_A");
+                context.MoveNpc(spawnId: 1002, patrolName: "MS2PatrolData_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StatePC이동(context);
                 }
@@ -61,10 +61,10 @@ namespace Maple2.Trigger._63000003_cs {
             internal StatePC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUserPath(arg1: "MS2PatrolData_A");
+                context.MoveUserPath(patrolName: "MS2PatrolData_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
                     return new State강제이동(context);
                 }
@@ -79,10 +79,10 @@ namespace Maple2.Trigger._63000003_cs {
             internal State강제이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 02000062, arg2: 0);
+                context.MoveUser(mapId: 02000062, portalId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd(context);
                 }
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._63000003_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

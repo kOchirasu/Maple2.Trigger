@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new State발사01(context);
                 }
 
@@ -20,12 +20,12 @@ namespace Maple2.Trigger._52000014_qd {
             internal State발사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 3);
-                context.CreateMonster(arg1: new[] {540}, arg2: false);
+                context.SetTimer(timerId: "1", seconds: 3);
+                context.CreateMonster(spawnIds: new []{540}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateReset(context);
                 }
 
@@ -39,10 +39,10 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {540});
+                context.DestroyMonster(spawnIds: new []{540});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State발사01(context);
             }
 

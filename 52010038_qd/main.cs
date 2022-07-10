@@ -7,13 +7,13 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
-                context.SetEffect(arg1: new[] {6299}, arg2: false);
+                context.SetEffect(triggerIds: new []{6299}, visible: false);
                 context.ShadowExpeditionCloseBossGauge();
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3005}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateSetup(context);
                 }
 
@@ -29,15 +29,15 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.AddBuff(arg1: new[] {199}, arg2: 70000109, arg3: 1, arg4: false, arg5: false);
-                context.CreateMonster(arg1: new[] {1805, 1806, 1201}, arg2: false);
-                context.SpawnNpcRange(rangeId: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, isAutoTargeting: false);
-                context.SpawnNpcRange(rangeId: new[] {1101, 1102, 1103, 1104, 1105, 1106}, isAutoTargeting: false);
-                context.SpawnNpcRange(rangeId: new[] {1801, 1802, 1803, 1804}, isAutoTargeting: false);
+                context.AddBuff(boxIds: new []{199}, skillId: 70000109, level: 1, arg4: false, arg5: false);
+                context.CreateMonster(spawnIds: new []{1805, 1806, 1201}, arg2: false);
+                context.SpawnNpcRange(rangeId: new []{1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, isAutoTargeting: false);
+                context.SpawnNpcRange(rangeId: new []{1101, 1102, 1103, 1104, 1105, 1106}, isAutoTargeting: false);
+                context.SpawnNpcRange(rangeId: new []{1801, 1802, 1803, 1804}, isAutoTargeting: false);
                 context.SetSkip(state: new StateStart(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateStart(context);
                 }
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetUserValue(triggerId: 999004, key: "AllertStart", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetShadowExpeditionPoints() >= 150) {
                     return new State부상병발생(context);
                 }
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetUserValue(triggerId: 993001, key: "WoundStart", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetShadowExpeditionPoints() >= 300) {
                     return new State2차폭탄방어(context);
                 }
@@ -96,14 +96,14 @@ namespace Maple2.Trigger._52010038_qd {
             internal State2차폭탄방어(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "99", arg2: 60, arg3: true, arg4: true, arg5: 80);
+                context.SetTimer(timerId: "99", seconds: 60, clearAtZero: true, display: true, arg5: 80);
                 context.SetUserValue(triggerId: 992003, key: "bombStart", value: 1);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateCinematic02종료(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateCamera304(context);
                 }
@@ -118,11 +118,11 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateCamera304(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 304, arg2: true);
+                context.CameraSelect(triggerId: 304, enable: true);
                 context.SetSkip(state: new StateCinematic02종료(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State부관Script03(context);
                 }
@@ -141,7 +141,7 @@ namespace Maple2.Trigger._52010038_qd {
                 context.AddCinematicTalk(npcId: 11003536, illustId: "Neirin_surprise", script: "$52010038_QD__MAIN__0$", duration: 7000, align: Align.Right);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateCinematic02종료(context);
                 }
@@ -163,10 +163,10 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SideNpcTalk(npcId: 11003537, illust: "Mason_closeEye", duration: 7000, script: "$52010038_QD__main__5$", voice: @"ko/Npc/00002095");
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2008, 2009, 2010})) {
-                    context.CreateMonster(arg1: new[] {4020, 4020}, arg2: false);
-                    context.ResetTimer(id: "99");
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2008, 2009, 2010})) {
+                    context.CreateMonster(spawnIds: new []{4020, 4020}, arg2: false);
+                    context.ResetTimer(timerId: "99");
                     return new State2차폭탄방어완료조건(context);
                 }
 
@@ -181,8 +181,8 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2097})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2097})) {
                     return new StateEnd(context);
                 }
 
@@ -202,7 +202,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetShadowExpeditionPoints() >= 700) {
                     return new StateBossSpawn(context);
                 }
@@ -217,14 +217,14 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6201, 6202, 6203, 6204}, arg2: false);
-                context.CreateMonster(arg1: new[] {2098}, arg2: false);
+                context.SetEffect(triggerIds: new []{6201, 6202, 6203, 6204}, visible: false);
+                context.CreateMonster(spawnIds: new []{2098}, arg2: false);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateBossStopCinematic(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateCamera302(context);
                 }
@@ -239,11 +239,11 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateCamera302(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 302, arg2: true);
+                context.CameraSelect(triggerId: 302, enable: true);
                 context.SetSkip(state: new StateBossStopCinematic(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateBossScript01(context);
                 }
@@ -262,7 +262,7 @@ namespace Maple2.Trigger._52010038_qd {
                 context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", script: "$52010038_QD__MAIN__2$", duration: 5000, align: Align.Left);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateBoss이동(context);
                 }
@@ -278,10 +278,10 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateBossStopCinematic(context));
-                context.MoveNpc(arg1: 2098, arg2: "MS2PatrolData_2098");
+                context.MoveNpc(spawnId: 2098, patrolName: "MS2PatrolData_2098");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
                     return new StateCamera303(context);
                 }
@@ -297,11 +297,11 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", script: "$52010038_QD__MAIN__3$", duration: 5000, align: Align.Left);
-                context.CameraSelect(arg1: 303, arg2: true);
+                context.CameraSelect(triggerId: 303, enable: true);
                 context.SetSkip(state: new StateBossStopCinematic(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateBossStopCinematic(context);
                 }
@@ -316,25 +316,25 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateBossStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6299}, arg2: true);
+                context.SetEffect(triggerIds: new []{6299}, visible: true);
                 context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 7000, script: "$52010038_QD__main__8$", voice: @"ko/Npc/00002058");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetSkip();
-                context.DestroyMonster(arg1: new[] {2098});
-                context.CreateMonster(arg1: new[] {2099}, arg2: true);
-                context.CreateMonster(arg1: new[] {1099}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{2098});
+                context.CreateMonster(spawnIds: new []{2099}, arg2: true);
+                context.CreateMonster(spawnIds: new []{1099}, arg2: false);
                 context.SetUserValue(triggerId: 992001, key: "WaveSlowDown", value: 1);
                 context.SetUserValue(triggerId: 992002, key: "WaveStart", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetShadowExpeditionPoints() >= 1000) {
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1099})) {
+                if (context.MonsterDead(spawnIds: new []{1099})) {
                     context.SetUserValue(triggerId: 999001, key: "EngineIsDead", value: 1);
                     return new StateEnd(context);
                 }
@@ -350,7 +350,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

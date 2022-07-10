@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "WaveStart") == 1) {
                     return new StateCreation(context);
                 }
@@ -14,7 +14,7 @@ namespace Maple2.Trigger._52010038_qd {
             }
 
             public override void OnExit() {
-                context.SpawnNpcRange(rangeId: new[] {2005, 2006, 2007}, isAutoTargeting: true);
+                context.SpawnNpcRange(rangeId: new []{2005, 2006, 2007}, isAutoTargeting: true);
             }
         }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {4000}, arg2: false);
-                context.SpawnNpcRange(rangeId: new[] {2005, 2006, 2007}, isAutoTargeting: true, randomPickCount: 1);
+                context.CreateMonster(spawnIds: new []{4000}, arg2: false);
+                context.SpawnNpcRange(rangeId: new []{2005, 2006, 2007}, isAutoTargeting: true, randomPickCount: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateCreation(context);
                 }
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

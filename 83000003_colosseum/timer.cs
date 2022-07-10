@@ -5,7 +5,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Timer") == 1) {
                     return new StateStage1(context);
                 }
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "LimitTimer", arg2: 180, arg3: true);
+                context.SetTimer(timerId: "LimitTimer", seconds: 180, clearAtZero: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State타이머체크1(context);
             }
 
@@ -71,13 +71,13 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "LimitTimer")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "LimitTimer")) {
                     context.SetUserValue(triggerId: 900001, key: "Fail", value: 1);
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {101})) {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     return new StateEnd(context);
                 }
@@ -92,10 +92,10 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "LimitTimer2", arg2: 180, arg3: true);
+                context.SetTimer(timerId: "LimitTimer2", seconds: 180, clearAtZero: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State타이머체크2(context);
             }
 
@@ -107,13 +107,13 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "LimitTimer")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "LimitTimer")) {
                     context.SetUserValue(triggerId: 900001, key: "Fail", value: 1);
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {102})) {
+                if (context.MonsterDead(spawnIds: new []{102})) {
                     context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     return new StateEnd(context);
                 }
@@ -128,10 +128,10 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "LimitTimer3", arg2: 180, arg3: true);
+                context.SetTimer(timerId: "LimitTimer3", seconds: 180, clearAtZero: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State타이머체크3(context);
             }
 
@@ -143,13 +143,13 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "LimitTimer")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "LimitTimer")) {
                     context.SetUserValue(triggerId: 900001, key: "Fail", value: 1);
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {103})) {
+                if (context.MonsterDead(spawnIds: new []{103})) {
                     context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     return new StateEnd(context);
                 }
@@ -164,10 +164,10 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "LimitTimer4", arg2: 180, arg3: true);
+                context.SetTimer(timerId: "LimitTimer4", seconds: 180, clearAtZero: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State타이머체크4(context);
             }
 
@@ -179,12 +179,12 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "LimitTimer")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "LimitTimer")) {
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {104})) {
+                if (context.MonsterDead(spawnIds: new []{104})) {
                     context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     return new StateEnd(context);
                 }
@@ -199,10 +199,10 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "LimitTimer5", arg2: 180, arg3: true);
+                context.SetTimer(timerId: "LimitTimer5", seconds: 180, clearAtZero: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State타이머체크5(context);
             }
 
@@ -214,12 +214,12 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "LimitTimer")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "LimitTimer")) {
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {105})) {
+                if (context.MonsterDead(spawnIds: new []{105})) {
                     context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     return new StateEnd(context);
                 }
@@ -234,10 +234,10 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "LimitTimer6", arg2: 180, arg3: true);
+                context.SetTimer(timerId: "LimitTimer6", seconds: 180, clearAtZero: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State타이머체크6(context);
             }
 
@@ -249,12 +249,12 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "LimitTimer")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "LimitTimer")) {
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {106})) {
+                if (context.MonsterDead(spawnIds: new []{106})) {
                     context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     return new StateEnd(context);
                 }
@@ -269,10 +269,10 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage7(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "LimitTimer7", arg2: 180, arg3: true);
+                context.SetTimer(timerId: "LimitTimer7", seconds: 180, clearAtZero: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State타이머체크7(context);
             }
 
@@ -284,12 +284,12 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "LimitTimer")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "LimitTimer")) {
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {107})) {
+                if (context.MonsterDead(spawnIds: new []{107})) {
                     context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     return new StateEnd(context);
                 }
@@ -304,10 +304,10 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "LimitTimer8", arg2: 300, arg3: true);
+                context.SetTimer(timerId: "LimitTimer8", seconds: 300, clearAtZero: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State타이머체크8(context);
             }
 
@@ -319,12 +319,12 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "LimitTimer")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "LimitTimer")) {
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {108})) {
+                if (context.MonsterDead(spawnIds: new []{108})) {
                     context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     return new StateEnd(context);
                 }
@@ -339,10 +339,10 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage9(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "LimitTimer9", arg2: 300, arg3: true);
+                context.SetTimer(timerId: "LimitTimer9", seconds: 300, clearAtZero: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State타이머체크9(context);
             }
 
@@ -354,12 +354,12 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "LimitTimer")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "LimitTimer")) {
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {109})) {
+                if (context.MonsterDead(spawnIds: new []{109})) {
                     context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     return new StateEnd(context);
                 }
@@ -374,10 +374,10 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "LimitTimer10", arg2: 300, arg3: true);
+                context.SetTimer(timerId: "LimitTimer10", seconds: 300, clearAtZero: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State타이머체크10(context);
             }
 
@@ -389,12 +389,12 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "LimitTimer")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "LimitTimer")) {
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {110})) {
+                if (context.MonsterDead(spawnIds: new []{110})) {
                     context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     return new StateEnd(context);
                 }
@@ -409,19 +409,19 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(id: "LimitTimer");
-                context.ResetTimer(id: "LimitTimer2");
-                context.ResetTimer(id: "LimitTimer3");
-                context.ResetTimer(id: "LimitTimer4");
-                context.ResetTimer(id: "LimitTimer5");
-                context.ResetTimer(id: "LimitTimer6");
-                context.ResetTimer(id: "LimitTimer7");
-                context.ResetTimer(id: "LimitTimer8");
-                context.ResetTimer(id: "LimitTimer9");
-                context.ResetTimer(id: "LimitTimer10");
+                context.ResetTimer(timerId: "LimitTimer");
+                context.ResetTimer(timerId: "LimitTimer2");
+                context.ResetTimer(timerId: "LimitTimer3");
+                context.ResetTimer(timerId: "LimitTimer4");
+                context.ResetTimer(timerId: "LimitTimer5");
+                context.ResetTimer(timerId: "LimitTimer6");
+                context.ResetTimer(timerId: "LimitTimer7");
+                context.ResetTimer(timerId: "LimitTimer8");
+                context.ResetTimer(timerId: "LimitTimer9");
+                context.ResetTimer(timerId: "LimitTimer10");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }

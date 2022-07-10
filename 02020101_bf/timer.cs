@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetUserValue(triggerId: 900002, key: "TimerReset", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 1) {
                     return new State타이머1_시작(context);
                 }
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._02020101_bf {
             internal State타이머1_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 20, arg3: true, arg4: true, arg5: -40);
+                context.SetTimer(timerId: "1", seconds: 20, clearAtZero: true, display: true, arg5: -40);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 9) {
                     return new StateEnd(context);
                 }
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new State리셋_1(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State리셋_1(context);
                 }
 
@@ -49,10 +49,10 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900002, key: "TimerReset", value: 1);
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 9) {
                     return new StateEnd(context);
                 }
@@ -71,10 +71,10 @@ namespace Maple2.Trigger._02020101_bf {
             internal State타이머2_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 20, arg3: true, arg4: true, arg5: -40);
+                context.SetTimer(timerId: "2", seconds: 20, clearAtZero: true, display: true, arg5: -40);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 9) {
                     return new StateEnd(context);
                 }
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new State리셋_2(context);
                 }
 
-                if (context.TimeExpired(arg1: "2")) {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State리셋_2(context);
                 }
 
@@ -98,10 +98,10 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900002, key: "TimerReset", value: 2);
-                context.ResetTimer(id: "2");
+                context.ResetTimer(timerId: "2");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 9) {
                     return new StateEnd(context);
                 }
@@ -120,10 +120,10 @@ namespace Maple2.Trigger._02020101_bf {
             internal State타이머3_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 20, arg3: true, arg4: true, arg5: -40);
+                context.SetTimer(timerId: "3", seconds: 20, clearAtZero: true, display: true, arg5: -40);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 9) {
                     return new StateEnd(context);
                 }
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new State리셋_3(context);
                 }
 
-                if (context.TimeExpired(arg1: "3")) {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State리셋_3(context);
                 }
 
@@ -147,10 +147,10 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900002, key: "TimerReset", value: 3);
-                context.ResetTimer(id: "3");
+                context.ResetTimer(timerId: "3");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 9) {
                     return new StateEnd(context);
                 }
@@ -165,12 +165,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(id: "1");
-                context.ResetTimer(id: "2");
-                context.ResetTimer(id: "3");
+                context.ResetTimer(timerId: "1");
+                context.ResetTimer(timerId: "2");
+                context.ResetTimer(timerId: "3");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023, 7024}, arg2: false);
+                context.SetSkill(triggerIds: new []{7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023, 7024}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {99991})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{99991})) {
                     return new StateActivateSkill(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateActivateSkill(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023, 7024}, arg2: true);
+                context.SetSkill(triggerIds: new []{7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023, 7024}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateWait(context);
                 }

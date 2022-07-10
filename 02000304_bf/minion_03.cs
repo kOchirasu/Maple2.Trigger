@@ -5,13 +5,13 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {113})) {
-                    context.CreateMonster(arg1: new[] {1005, 1006}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{113})) {
+                    context.CreateMonster(spawnIds: new []{1005, 1006}, arg2: false);
                     return new StateEnd체크(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {2001})) {
+                if (context.MonsterDead(spawnIds: new []{2001})) {
                     return new StateEnd체크(context);
                 }
 
@@ -26,13 +26,13 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1005, 1006})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1005, 1006})) {
                     return new StateWaitTime(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {2001})) {
-                    context.DestroyMonster(arg1: new[] {1005, 1006});
+                if (context.MonsterDead(spawnIds: new []{2001})) {
+                    context.DestroyMonster(spawnIds: new []{1005, 1006});
                     return new StateWaitTime(context);
                 }
 
@@ -46,12 +46,12 @@ namespace Maple2.Trigger._02000304_bf {
             internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
+                context.SetTimer(timerId: "2", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
-                    context.MoveUser(arg1: 02000304, arg2: 10, arg3: 113);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
+                    context.MoveUser(mapId: 02000304, portalId: 10, boxId: 113);
                     return new StateWait(context);
                 }
 

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "elevator") == 1) {
                     return new State엘리베이터_정지(context);
                 }
@@ -20,12 +20,12 @@ namespace Maple2.Trigger._02020300_bf {
             internal State엘리베이터_정지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02020300_BF__MAIN__12$", arg3: 5000);
+                context.SetEventUI(arg1: 1, script: "$02020300_BF__MAIN__12$", duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.SetBreakable(arg1: new[] {5001}, arg2: false);
+                    context.SetBreakable(triggerIds: new []{5001}, enabled: false);
                     return new StateEnd(context);
                 }
 
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "elevator") == 0) {
                     return new State메시지_Wait(context);
                 }

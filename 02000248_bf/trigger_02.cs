@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02000248_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(ids: new[] {2101, 2102, 2103, 2104, 2105}, isVisible: true);
+                context.SetCube(triggerIds: new []{2101, 2102, 2103, 2104, 2105}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -18,10 +18,10 @@ namespace Maple2.Trigger._02000248_bf {
             internal StateObjectset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(ids: new[] {2101, 2102, 2103, 2104, 2105}, randomCount: 1, isVisible: true);
+                context.SetCube(triggerIds: new []{2101, 2102, 2103, 2104, 2105}, randomCount: 1, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateWaitTick(context);
                 }
@@ -37,7 +37,7 @@ namespace Maple2.Trigger._02000248_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateObjectset(context);
                 }

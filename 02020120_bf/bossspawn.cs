@@ -6,13 +6,13 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1920, 1921, 1922, 1923, 1924, 1925, 1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935, 1936, 1937}, arg2: false);
+                context.SetMesh(triggerIds: new []{1920, 1921, 1922, 1923, 1924, 1925, 1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935, 1936, 1937}, visible: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetUserValue(key: "DungeonReset", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateBossSpawn(context);
                 }
 
@@ -28,17 +28,17 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnEnter() {
                 context.DungeonResetTime(seconds: 720);
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__0$", duration: 4000, voice: @"ko/Npc/00002192");
-                context.CreateMonster(arg1: new[] {99}, arg2: false);
+                context.CreateMonster(spawnIds: new []{99}, arg2: false);
                 context.SetPortal(portalId: 9901, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 9902, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "DungeonReset") == 1) {
                     return new State던전Reset진행(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {99})) {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new StateEndDelay(context);
                 }
 
@@ -60,13 +60,13 @@ namespace Maple2.Trigger._02020120_bf {
             internal State던전Reset진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 02020120, arg2: 9903);
-                context.SetSound(arg1: 19601, arg2: true);
+                context.MoveUser(mapId: 02020120, portalId: 9903);
+                context.SetSound(triggerId: 19601, arg2: true);
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23000113, illust: "Ishura_Dark_smile", script: "$02020120_BF__BOSSSPAWN__1$", duration: 7000, voice: @"ko/Npc/00002193");
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new State던전Reset시간등각종설정(context);
                 }
@@ -85,8 +85,8 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetUserValue(key: "DungeonReset", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateBossSpawn(context);
                 }
 
@@ -103,13 +103,13 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.SetSkill(arg1: new[] {2222, 1212}, arg2: false);
+                    context.SetSkill(triggerIds: new []{2222, 1212}, arg2: false);
                     context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.DungeonClear();
                     context.DungeonSetEndTime();
-                    context.SetAchievement(arg3: "IshuraDungeonClear");
+                    context.SetAchievement(type: "trigger", code: "IshuraDungeonClear");
                     return new StateEnd(context);
                 }
 
@@ -123,12 +123,12 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateDungeonFailure(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.SetSkill(arg1: new[] {2222, 1212}, arg2: false);
+                    context.SetSkill(triggerIds: new []{2222, 1212}, arg2: false);
                     context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.DungeonFail();
                     return new StateEnd(context);
@@ -185,10 +185,10 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(portalId: 6302, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 6303, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 6304, visible: true, enabled: true, minimapVisible: true);
-                context.DungeonEnableGiveUp(isEnable: false);
+                context.DungeonEnableGiveUp(enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

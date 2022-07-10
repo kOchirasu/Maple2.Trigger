@@ -7,8 +7,8 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateRoomCheck(context);
                 }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.IsDungeonRoom()) {
                     return new State난이도체크(context);
                 }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonLevel() == 2) {
                     return new State레이드Wait(context);
                 }
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2299})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2299})) {
                     return new State영상Prepare(context);
                 }
 
@@ -80,8 +80,8 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2099})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2099})) {
                     return new State영상Prepare(context);
                 }
 
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2199})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2199})) {
                     return new State영상Prepare(context);
                 }
 
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateStartCinematic(context);
                 }
@@ -129,12 +129,12 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 302, arg2: true);
-                context.CreateMonster(arg1: new[] {1002, 1003, 1004}, arg2: false);
+                context.CameraSelect(triggerId: 302, enable: true);
+                context.CreateMonster(spawnIds: new []{1002, 1003, 1004}, arg2: false);
                 context.SetSkip(state: new StateNPC이동(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State스타츠Script01(context);
                 }
@@ -150,10 +150,10 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateNPC이동(context));
-                context.SetConversation(arg1: 2, arg2: 11001292, script: "$02010055_BF__SCENE02__0$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11001292, script: "$02010055_BF__SCENE02__0$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State타라Script01(context);
                 }
@@ -169,10 +169,10 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateNPC이동(context));
-                context.SetConversation(arg1: 2, arg2: 11001218, script: "$02010055_BF__SCENE02__1$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 11001218, script: "$02010055_BF__SCENE02__1$", arg4: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State스타츠Script02(context);
                 }
@@ -188,10 +188,10 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateNPC이동(context));
-                context.SetConversation(arg1: 2, arg2: 11001292, script: "$02010055_BF__SCENE02__2$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 11001292, script: "$02010055_BF__SCENE02__2$", arg4: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateNPC이동(context);
                 }
@@ -208,15 +208,15 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(arg1: 302, arg2: false);
-                context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_A");
-                context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_A");
-                context.MoveNpc(arg1: 1004, arg2: "MS2PatrolData_A");
+                context.CameraSelect(triggerId: 302, enable: false);
+                context.MoveNpc(spawnId: 1002, patrolName: "MS2PatrolData_A");
+                context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_A");
+                context.MoveNpc(spawnId: 1004, patrolName: "MS2PatrolData_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.DestroyMonster(arg1: new[] {1002, 1003, 1004});
+                    context.DestroyMonster(spawnIds: new []{1002, 1003, 1004});
                     return new StateEnd(context);
                 }
 
@@ -231,12 +231,12 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetTimer(id: "21", arg2: 10);
-                context.CameraSelectPath(pathIds: new[] {601, 602}, arg2: false);
+                context.SetTimer(timerId: "21", seconds: 10);
+                context.CameraSelectPath(pathIds: new []{601, 602}, returnView: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "21")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "21")) {
                     return new State영상재생(context);
                 }
 
@@ -254,8 +254,8 @@ namespace Maple2.Trigger._02010055_bf {
                 context.PlaySceneMovie(fileName: @"common\KarKarBossEvent.usm", movieId: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
+            public override TriggerState? Execute() {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, condition: "IsStop", value: "1")) {
                     return new StateEnd(context);
                 }
 
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

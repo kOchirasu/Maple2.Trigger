@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000014_ad {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000113}, arg2: 1);
-                context.SetActor(arg1: 113, arg2: true, arg3: "Dead_A");
+                context.SetInteractObject(interactIds: new []{10000113}, state: 1);
+                context.SetActor(triggerId: 113, visible: true, initialSequence: "Dead_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateInteractObject(context);
             }
 
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000014_ad {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000113}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000113}, arg2: 0)) {
                     return new StateNPC이동(context);
                 }
 
@@ -29,8 +29,8 @@ namespace Maple2.Trigger._02000014_ad {
             }
 
             public override void OnExit() {
-                context.SetActor(arg1: 113, arg2: false, arg3: "Dead_A");
-                context.CreateMonster(arg1: new[] {91}, arg2: false);
+                context.SetActor(triggerId: 113, visible: false, initialSequence: "Dead_A");
+                context.CreateMonster(spawnIds: new []{91}, arg2: false);
             }
         }
 
@@ -38,12 +38,12 @@ namespace Maple2.Trigger._02000014_ad {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 91, arg2: "MS2PatrolData401");
-                context.SetConversation(arg1: 1, arg2: 91, script: "$02000014_AD__IA_113__0$", arg4: 4, arg5: 0);
+                context.MoveNpc(spawnId: 91, patrolName: "MS2PatrolData401");
+                context.SetConversation(type: 1, spawnId: 91, script: "$02000014_AD__IA_113__0$", arg4: 4, arg5: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 291, arg2: new[] {91})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 291, spawnIds: new []{91})) {
                     return new StateNPCDestroy(context);
                 }
 
@@ -57,12 +57,12 @@ namespace Maple2.Trigger._02000014_ad {
             internal StateNPCDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {91});
-                context.SetTimer(id: "301", arg2: 10);
+                context.DestroyMonster(spawnIds: new []{91});
+                context.SetTimer(timerId: "301", seconds: 10);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "301")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "301")) {
                     return new StateWaitStart(context);
                 }
 

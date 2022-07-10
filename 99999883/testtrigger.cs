@@ -9,8 +9,8 @@ namespace Maple2.Trigger._99999883 {
                 context.ShowGuideSummary(entityId: 20000661, textId: 20000661, duration: 3000);
             }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {100}, itemId: 0)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{100}, itemId: 0)) {
                     return new State07_보상테스트(context);
                 }
 
@@ -28,14 +28,14 @@ namespace Maple2.Trigger._99999883 {
             internal State01경험치구슬(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateItem(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16});
+                context.CreateItem(spawnIds: new []{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16});
                 context.DebugString(message: "변수를 설정한다");
                 context.SetUserValue(key: "TimeEvent", value: 0);
                 context.SetUserValue(triggerId: 2, key: "test", value: 1);
-                context.GiveExp(arg1: 100, arg2: 36);
+                //context.GiveExp(boxId: 100, arg2: 36);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 // 타임이벤트로 유지시간을 받아 끝나면 다시 돌아갑니다.
                 if (context.WaitTick(context.GetUserValue(key: "TimeEventLifeTime"))) {
                     return new State컷씬종료(context);
@@ -51,11 +51,11 @@ namespace Maple2.Trigger._99999883 {
             internal State02Achievement이벤트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg3: "oxquiz_win");
+                context.SetAchievement(type: "trigger", code: "oxquiz_win");
                 context.DebugString(message: "Achievement이벤트테스트");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new State컷씬종료(context);
                 }
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._99999883 {
                 context.DebugString(message: "컷씬테스트");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new State컷씬종료(context);
                 }
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._99999883 {
                 context.DebugString(message: "그림자원정대게이지테스트");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new State컷씬종료(context);
                 }
@@ -108,12 +108,12 @@ namespace Maple2.Trigger._99999883 {
             internal State05PC이동테스트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUserToPos(pos: new Vector3(907f, 758f, 151f), rot: new Vector3(0f, 0f, 315f));
-                context.MoveNpcToPos(spawnPointId: 101, pos: new Vector3(702f, 767f, 151f), rot: new Vector3(0f, 0f, 45f));
+                context.MoveUserToPos(position: new Vector3(907f, 758f, 151f), rotation: new Vector3(0f, 0f, 315f));
+                context.MoveNpcToPos(spawnId: 101, position: new Vector3(702f, 767f, 151f), rotation: new Vector3(0f, 0f, 45f));
                 context.DebugString(message: "05PC NPC이동테스트");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new State컷씬종료(context);
                 }
@@ -131,8 +131,8 @@ namespace Maple2.Trigger._99999883 {
                 context.DebugString(message: "06_요일테스트");
             }
 
-            public override TriggerState Execute() {
-                if (context.DayOfWeek(dayOfWeeks: new byte[] {5}, desc: "1(일)-7(토)")) {
+            public override TriggerState? Execute() {
+                if (context.DayOfWeek(dayOfWeeks: new byte[]{5}, description: "1(일)-7(토)")) {
                     return new State03컷씬(context);
                 }
 
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._99999883 {
                 context.GiveRewardContent(rewardId: 31000003);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWaitStart(context);
                 }
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._99999883 {
                 context.CloseCinematic();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWaitStart(context);
                 }

@@ -5,22 +5,22 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109}, arg2: false);
-                context.SetEffect(arg1: new[] {601, 602}, arg2: false);
-                context.SetMesh(arg1: new[] {4001}, arg2: false);
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_01_girl");
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_02_man");
-                context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_03_girlmaid");
-                context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_04_boymaid");
-                context.MoveNpc(arg1: 105, arg2: "MS2PatrolData_05_blackstaragent");
-                context.MoveNpc(arg1: 106, arg2: "MS2PatrolData_06_oldman");
-                context.MoveNpc(arg1: 107, arg2: "MS2PatrolData_07_cat");
-                context.MoveNpc(arg1: 108, arg2: "MS2PatrolData_08_youngboy");
+                context.CreateMonster(spawnIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109}, arg2: false);
+                context.SetEffect(triggerIds: new []{601, 602}, visible: false);
+                context.SetMesh(triggerIds: new []{4001}, visible: false);
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_01_girl");
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_02_man");
+                context.MoveNpc(spawnId: 103, patrolName: "MS2PatrolData_03_girlmaid");
+                context.MoveNpc(spawnId: 104, patrolName: "MS2PatrolData_04_boymaid");
+                context.MoveNpc(spawnId: 105, patrolName: "MS2PatrolData_05_blackstaragent");
+                context.MoveNpc(spawnId: 106, patrolName: "MS2PatrolData_06_oldman");
+                context.MoveNpc(spawnId: 107, patrolName: "MS2PatrolData_07_cat");
+                context.MoveNpc(spawnId: 108, patrolName: "MS2PatrolData_08_youngboy");
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new StateQuestcheck(context);
                 }
 
@@ -34,20 +34,20 @@ namespace Maple2.Trigger._63000069_cs {
             internal StateQuestcheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {150});
+                context.DestroyMonster(spawnIds: new []{150});
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{30000356}, questStates: new byte[]{3})) {
                     return new StateFin(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{30000356}, questStates: new byte[]{2})) {
                     return new StateScene1_ready(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{30000356}, questStates: new byte[]{1})) {
                     return new StateSearching_check(context);
                 }
 
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._63000069_cs {
                 context.ShowGuideSummary(entityId: 26300691, textId: 26300691);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{30000356}, questStates: new byte[]{2})) {
                     return new StateScene1_ready(context);
                 }
 
@@ -83,10 +83,10 @@ namespace Maple2.Trigger._63000069_cs {
                 context.HideGuideSummary(entityId: 26300691, textId: 26300691);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_03_girlmaid_out");
+                context.MoveNpc(spawnId: 103, patrolName: "MS2PatrolData_03_girlmaid_out");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateScene1_set(context);
                 }
@@ -101,12 +101,12 @@ namespace Maple2.Trigger._63000069_cs {
             internal StateScene1_set(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 63000069, arg2: 11);
-                context.SetMesh(arg1: new[] {4001}, arg2: true);
+                context.MoveUser(mapId: 63000069, portalId: 11);
+                context.SetMesh(triggerIds: new []{4001}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (!context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{30000356}, questStates: new byte[]{2})) {
                     return new StateQuestcheck(context);
                 }
 
@@ -126,10 +126,10 @@ namespace Maple2.Trigger._63000069_cs {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(state: new StateSceneskip(context), arg2: "exit");
-                context.CameraSelectPath(pathIds: new[] {8000, 8001}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{8000, 8001}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateScene1_girlmonologue0(context);
                 }
@@ -144,11 +144,11 @@ namespace Maple2.Trigger._63000069_cs {
             internal StateScene1_girlmonologue0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {150}, arg2: false);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.CreateMonster(spawnIds: new []{150}, arg2: false);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateScene1_girlmonologue1(context);
                 }
@@ -163,12 +163,12 @@ namespace Maple2.Trigger._63000069_cs {
             internal StateScene1_girlmonologue1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 150, arg2: "MS2PatrolData_50_marienne");
-                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.MoveNpc(spawnId: 150, patrolName: "MS2PatrolData_50_marienne");
+                context.SetEffect(triggerIds: new []{601}, visible: false);
                 context.AddCinematicTalk(npcId: 11004308, script: "$63000069_CS__63000069_MAIN__0$", duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateScene1_girlmonologue2(context);
                 }
@@ -184,11 +184,11 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11004308, script: "$63000069_CS__63000069_MAIN__1$", duration: 4500);
-                context.SetNpcEmotionLoop(arg1: 150, arg2: "Talk_A", arg3: 4500f);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetNpcEmotionLoop(spawnId: 150, sequenceName: "Talk_A", duration: 4500f);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateScene1_girlmonologue3(context);
                 }
@@ -204,10 +204,10 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11004308, script: "$63000069_CS__63000069_MAIN__2$", duration: 5500);
-                context.SetNpcEmotionLoop(arg1: 150, arg2: "Bore_B", arg3: 5500f);
+                context.SetNpcEmotionLoop(spawnId: 150, sequenceName: "Bore_B", duration: 5500f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5500)) {
                     return new StateScene1_girlrealize0(context);
                 }
@@ -222,12 +222,12 @@ namespace Maple2.Trigger._63000069_cs {
             internal StateScene1_girlrealize0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {8002}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{8002}, returnView: false);
                 context.AddCinematicTalk(npcId: 11004308, script: "$63000069_CS__63000069_MAIN__3$", duration: 3000);
-                context.SetNpcEmotionLoop(arg1: 150, arg2: "Damg_A", arg3: 100f);
+                context.SetNpcEmotionLoop(spawnId: 150, sequenceName: "Damg_A", duration: 100f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateScene1_girlrealize1(context);
                 }
@@ -242,13 +242,13 @@ namespace Maple2.Trigger._63000069_cs {
             internal StateScene1_girlrealize1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {8003}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{8003}, returnView: false);
                 context.AddCinematicTalk(npcId: 11004308, script: "$63000069_CS__63000069_MAIN__4$", duration: 4000);
-                context.MoveUser(arg1: 63000069, arg2: 10);
-                context.MoveNpc(arg1: 150, arg2: "MS2PatrolData_51_marienne1");
+                context.MoveUser(mapId: 63000069, portalId: 10);
+                context.MoveNpc(spawnId: 150, patrolName: "MS2PatrolData_51_marienne1");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateScene1_girlrealize2(context);
                 }
@@ -264,10 +264,10 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11004308, script: "$63000069_CS__63000069_MAIN__5$", duration: 5000);
-                context.SetNpcEmotionLoop(arg1: 150, arg2: "Talk_A", arg3: 4500f);
+                context.SetNpcEmotionLoop(spawnId: 150, sequenceName: "Talk_A", duration: 4500f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateScene1_girlmonologue5(context);
                 }
@@ -282,12 +282,12 @@ namespace Maple2.Trigger._63000069_cs {
             internal StateScene1_girlmonologue5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {8004}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{8004}, returnView: false);
                 context.AddCinematicTalk(npcId: 11004308, script: "$63000069_CS__63000069_MAIN__6$", duration: 3500);
-                context.SetEffect(arg1: new[] {602}, arg2: true);
+                context.SetEffect(triggerIds: new []{602}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
                     return new StateScene_readytoend(context);
                 }
@@ -303,11 +303,11 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetMesh(arg1: new[] {4001}, arg2: false);
+                context.SetMesh(triggerIds: new []{4001}, visible: false);
                 context.SetSceneSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateScene_fin_ready(context);
                 }
@@ -322,14 +322,14 @@ namespace Maple2.Trigger._63000069_cs {
             internal StateSceneskip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {150});
-                context.SetMesh(arg1: new[] {4001}, arg2: false);
-                context.MoveUser(arg1: 63000069, arg2: 10);
+                context.DestroyMonster(spawnIds: new []{150});
+                context.SetMesh(triggerIds: new []{4001}, visible: false);
+                context.MoveUser(mapId: 63000069, portalId: 10);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateScene_fin_ready(context);
                 }
@@ -345,12 +345,12 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);
-                context.DestroyMonster(arg1: new[] {150});
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_03_girlmaid");
+                context.DestroyMonster(spawnIds: new []{150});
+                context.SetEffect(triggerIds: new []{602}, visible: false);
+                context.MoveNpc(spawnId: 103, patrolName: "MS2PatrolData_03_girlmaid");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateScene_fin(context);
                 }
@@ -371,7 +371,7 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -383,7 +383,7 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

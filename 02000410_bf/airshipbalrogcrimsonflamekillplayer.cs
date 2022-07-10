@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
                     return new StateBattleStart(context);
                 }
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonPlayTime() == 540) {
                     context.SetAiExtraData(key: "AirshipBalrogCrimsonFlameKillPlayer", value: 1);
                     return new StateEnd(context);
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

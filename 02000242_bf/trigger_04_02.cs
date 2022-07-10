@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000242_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {303}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {703, 704}, arg2: true);
+                context.SetMesh(triggerIds: new []{303}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{703, 704}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {402})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{402})) {
                     return new State버튼눌림(context);
                 }
 
@@ -23,12 +23,12 @@ namespace Maple2.Trigger._02000242_bf {
             internal State버튼눌림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {303}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {703, 704}, arg2: false);
-                context.SetTimer(id: "1", arg2: 180);
+                context.SetMesh(triggerIds: new []{303}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{703, 704}, visible: false);
+                context.SetTimer(timerId: "1", seconds: 180);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

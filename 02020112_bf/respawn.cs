@@ -8,7 +8,7 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(key: "respawn", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "respawn") == 1) {
                     return new State스폰시작(context);
                 }
@@ -27,11 +27,11 @@ namespace Maple2.Trigger._02020112_bf {
             internal State스폰시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02020112_BF__RESPAWN__0$", arg3: 5000);
-                context.CreateMonster(arg1: new[] {141, 142, 143, 144}, arg2: false);
+                context.SetEventUI(arg1: 1, script: "$02020112_BF__RESPAWN__0$", duration: 5000);
+                context.CreateMonster(spawnIds: new []{141, 142, 143, 144}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "respawn") == 2) {
                     return new StateEnd(context);
                 }
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

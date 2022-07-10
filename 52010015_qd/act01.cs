@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52010015_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(spawnIds: new []{201}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002824}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{10002824}, questStates: new byte[]{2})) {
                     return new StateDelay01(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._52010015_qd {
             internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "100", arg2: 1);
+                context.SetTimer(timerId: "100", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "100")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "100")) {
                     return new State미카교체01(context);
                 }
 
@@ -40,13 +40,13 @@ namespace Maple2.Trigger._52010015_qd {
             internal State미카교체01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.DestroyMonster(arg1: new[] {201});
-                context.CreateMonster(arg1: new[] {202}, arg2: false);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.DestroyMonster(spawnIds: new []{201});
+                context.CreateMonster(spawnIds: new []{202}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State미카이동01(context);
                 }
 
@@ -60,11 +60,11 @@ namespace Maple2.Trigger._52010015_qd {
             internal State미카이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_2020");
+                context.MoveNpc(spawnId: 202, patrolName: "MS2PatrolData_2020");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 8000, arg2: new[] {202})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 8000, spawnIds: new []{202})) {
                     return new State미카소멸01(context);
                 }
 
@@ -78,10 +78,10 @@ namespace Maple2.Trigger._52010015_qd {
             internal State미카소멸01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {202});
+                context.DestroyMonster(spawnIds: new []{202});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

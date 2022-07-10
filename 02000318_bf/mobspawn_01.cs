@@ -6,11 +6,11 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "ShipMove", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateLoadingDelay(context);
                 }
@@ -25,10 +25,10 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateLoadingDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 201, 202, 203, 204, 205}, arg2: false);
+                context.CreateMonster(spawnIds: new []{301, 302, 303, 304, 305, 201, 202, 203, 204, 205}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
@@ -43,14 +43,14 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(boxIds: new []{102}, sound: "System_ShowGuideSummary_01");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 600, arg2: true);
+                context.CameraSelect(triggerId: 600, enable: true);
                 context.SetSkip(state: new StateCameraWalk01(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateCameraWalk01(context);
                 }
@@ -65,11 +65,11 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateCameraWalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 600, arg2: false);
+                context.CameraSelect(triggerId: 600, enable: false);
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCameraWalk02(context);
                 }
@@ -86,13 +86,13 @@ namespace Maple2.Trigger._02000318_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, script: "$02000318_BF__MOBSPAWN_01__0$", arg3: 3000, arg4: "0");
-                context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128}, arg2: false, arg3: 29, arg4: 500, arg5: 30);
+                context.PlaySystemSoundInBox(boxIds: new []{102}, sound: "System_ShowGuideSummary_01");
+                context.SetEventUI(arg1: 1, script: "$02000318_BF__MOBSPAWN_01__0$", duration: 3000, boxId: 0);
+                context.SetMesh(triggerIds: new []{3000}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetRandomMesh(triggerIds: new []{3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128}, visible: false, meshCount: 29, arg4: 500, delay: 30);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateBattle01(context);
                 }
@@ -107,12 +107,12 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(boxIds: new []{102}, sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20031801, textId: 20031801);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {301, 302, 303, 304, 305})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{301, 302, 303, 304, 305})) {
                     return new StateBattle02(context);
                 }
 
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._02000318_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {301, 302, 303, 304, 305});
+                context.DestroyMonster(spawnIds: new []{301, 302, 303, 304, 305});
             }
         }
 
@@ -128,10 +128,10 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateBattle02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {111, 112, 113, 114, 115, 116, 501}, arg2: false);
+                context.CreateMonster(spawnIds: new []{111, 112, 113, 114, 115, 116, 501}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateBattle03(context);
                 }
@@ -147,12 +147,12 @@ namespace Maple2.Trigger._02000318_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20031801);
-                context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(boxIds: new []{102}, sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20031802, textId: 20031802);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {111, 112, 113, 114, 115, 116})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{111, 112, 113, 114, 115, 116})) {
                     return new StateMoveShip01(context);
                 }
 
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._02000318_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {111, 112, 113, 114, 115, 116, 501});
+                context.DestroyMonster(spawnIds: new []{111, 112, 113, 114, 115, 116, 501});
             }
         }
 
@@ -170,10 +170,10 @@ namespace Maple2.Trigger._02000318_bf {
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20031802);
                 context.SetUserValue(triggerId: 2, key: "ShipSet", value: 1);
-                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3001}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ShipMove") == 1) {
                     return new StateMoveShip02(context);
                 }
@@ -189,8 +189,8 @@ namespace Maple2.Trigger._02000318_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103})) {
                     return new StateBattle11(context);
                 }
 
@@ -204,12 +204,12 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateBattle11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(boxIds: new []{102}, sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20031801, textId: 20031801);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {201, 202, 203, 204, 205})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{201, 202, 203, 204, 205})) {
                     return new StateBattle12(context);
                 }
 
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._02000318_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {201, 202, 203, 204, 205});
+                context.DestroyMonster(spawnIds: new []{201, 202, 203, 204, 205});
             }
         }
 
@@ -225,10 +225,10 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateBattle12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {211, 212, 213, 214, 215, 216, 217, 218, 219, 502, 503}, arg2: false);
+                context.CreateMonster(spawnIds: new []{211, 212, 213, 214, 215, 216, 217, 218, 219, 502, 503}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateBattle13(context);
                 }
@@ -244,12 +244,12 @@ namespace Maple2.Trigger._02000318_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20031801);
-                context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(boxIds: new []{102}, sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20031802, textId: 20031802);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {211, 212, 213, 214, 215, 216, 217, 218, 219})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{211, 212, 213, 214, 215, 216, 217, 218, 219})) {
                     return new StateCannonSpawn01(context);
                 }
 
@@ -257,7 +257,7 @@ namespace Maple2.Trigger._02000318_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {211, 212, 213, 214, 215, 216, 217, 218, 219, 502, 503});
+                context.DestroyMonster(spawnIds: new []{211, 212, 213, 214, 215, 216, 217, 218, 219, 502, 503});
             }
         }
 
@@ -265,10 +265,10 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateCannonSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {401}, arg2: false);
+                context.CreateMonster(spawnIds: new []{401}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateCannonSpawn02(context);
                 }
@@ -284,13 +284,13 @@ namespace Maple2.Trigger._02000318_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20031802);
-                context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(boxIds: new []{102}, sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20031804, textId: 20031804);
-                context.SetMesh(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3002}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {104})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{104})) {
                     return new StateQuit(context);
                 }
 
@@ -307,7 +307,7 @@ namespace Maple2.Trigger._02000318_bf {
                 context.HideGuideSummary(entityId: 20031804);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

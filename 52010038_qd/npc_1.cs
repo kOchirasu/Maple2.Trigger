@@ -4,10 +4,10 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6201}, arg2: false);
+                context.SetEffect(triggerIds: new []{6201}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "GaugeStart") == 1) {
                     return new StateNpc체크(context);
                 }
@@ -23,12 +23,12 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {1801})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{1801})) {
                     return new State이펙트(context);
                 }
 
-                if (!context.MonsterInCombat(arg1: new[] {1801})) {
+                if (!context.MonsterInCombat(spawnIds: new []{1801})) {
                     return new StateCreation(context);
                 }
 
@@ -46,11 +46,11 @@ namespace Maple2.Trigger._52010038_qd {
             internal State이펙트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6201}, arg2: true);
+                context.SetEffect(triggerIds: new []{6201}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (!context.MonsterInCombat(arg1: new[] {1801})) {
+            public override TriggerState? Execute() {
+                if (!context.MonsterInCombat(spawnIds: new []{1801})) {
                     return new StateCreation(context);
                 }
 
@@ -64,12 +64,12 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6201}, arg2: false);
-                context.InitNpcRotation(arg1: new[] {1801});
-                context.CreateMonster(arg1: new[] {4000}, arg2: false);
+                context.SetEffect(triggerIds: new []{6201}, visible: false);
+                context.InitNpcRotation(spawnIds: new []{1801});
+                context.CreateMonster(spawnIds: new []{4000}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateNpc체크(context);
                 }
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,12 +5,12 @@ namespace Maple2.Trigger._52020011_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
-                context.SetActor(arg1: 8001, arg2: false, arg3: "Attack_Idle_A");
-                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: false);
+                context.SetActor(triggerId: 8001, visible: false, initialSequence: "Attack_Idle_A");
+                context.SetEffect(triggerIds: new []{5001, 5002, 5003, 5004}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200130}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{60200130}, questStates: new byte[]{2})) {
                     return new StateReady(context);
                 }
 
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetCinematicUI(type: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSet(context);
                 }
@@ -44,12 +44,12 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateSet(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52020011, arg2: 6001);
-                context.CameraSelectPath(pathIds: new[] {4009}, arg2: false);
-                context.SetActor(arg1: 8001, arg2: true, arg3: "Attack_Idle_A");
+                context.MoveUser(mapId: 52020011, portalId: 6001);
+                context.CameraSelectPath(pathIds: new []{4009}, returnView: false);
+                context.SetActor(triggerId: 8001, visible: true, initialSequence: "Attack_Idle_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGo(context);
                 }
@@ -69,7 +69,7 @@ namespace Maple2.Trigger._52020011_qd {
                 context.AddCinematicTalk(npcId: 11003599, script: "나 $npcName:11003599$의 이름으로 명한다.", duration: 2800);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateScene_01(context);
                 }
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52020011_qd {
                 context.AddCinematicTalk(npcId: 11003599, script: "이 땅의 모든 저주받은 존재여! 깊고 어두운 곳으로 떨어져라!", duration: 2800);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateScene_02(context);
                 }
@@ -102,10 +102,10 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001, 5002}, arg2: true);
+                context.SetEffect(triggerIds: new []{5001, 5002}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateScene_03(context);
                 }
@@ -120,12 +120,12 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateScene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5003, 5004}, arg2: true);
+                context.SetEffect(triggerIds: new []{5003, 5004}, visible: true);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
-                context.AddBalloonTalk(spawnPointId: 0, msg: "!", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 0, msg: "!", duration: 2000, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 700)) {
                     return new StateScene_Exit(context);
                 }
@@ -140,10 +140,10 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateScene_Exit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52020020, arg2: 6001);
+                context.MoveUser(mapId: 52020020, portalId: 6001);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

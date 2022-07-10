@@ -6,10 +6,10 @@ namespace Maple2.Trigger._02020051_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(id: "990");
+                context.ResetTimer(timerId: "990");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Timmer") == 1) {
                     return new State타이머(context);
                 }
@@ -24,10 +24,10 @@ namespace Maple2.Trigger._02020051_bf {
             internal State타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "990", arg2: 600, arg3: true, arg4: true);
+                context.SetTimer(timerId: "990", seconds: 600, clearAtZero: true, display: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 600000)) {
                     return new StateEnd(context);
                 }
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02020051_bf {
                 context.SetUserValue(triggerId: 104, key: "End", value: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Timmer") == 2) {
                     return new StateStart(context);
                 }

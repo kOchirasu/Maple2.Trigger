@@ -4,15 +4,15 @@ namespace Maple2.Trigger._52000149_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 102, 111, 112});
-                context.SetEffect(arg1: new[] {6001, 6002}, arg2: true);
-                context.SetNpcEmotionLoop(arg1: 111, arg2: "Sit_Down_A", arg3: 99999999f);
-                context.SetNpcEmotionLoop(arg1: 112, arg2: "Event_02_Idle", arg3: 99999999f);
+                context.CreateMonster(spawnIds: new []{101, 102, 111, 112});
+                context.SetEffect(triggerIds: new []{6001, 6002}, visible: true);
+                context.SetNpcEmotionLoop(spawnId: 111, sequenceName: "Sit_Down_A", duration: 99999999f);
+                context.SetNpcEmotionLoop(spawnId: 112, sequenceName: "Event_02_Idle", duration: 99999999f);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new StateQuestConditionCheck(context);
                 }
 
@@ -27,36 +27,36 @@ namespace Maple2.Trigger._52000149_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001633}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001633}, questStates: new byte[]{2})) {
                     return new State빈집(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001633}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001633}, questStates: new byte[]{1})) {
                     return new StateBasic(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001632}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001632}, questStates: new byte[]{3})) {
                     return new StateBasic(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001632}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001632}, questStates: new byte[]{2})) {
                     return new StateBasic(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001632}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001632}, questStates: new byte[]{1})) {
                     return new State전경_SetupCinematic(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001631}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001631}, questStates: new byte[]{3})) {
                     return new StateBasic(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001631}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001631}, questStates: new byte[]{2})) {
                     return new StateBasic(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001631}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001631}, questStates: new byte[]{1})) {
                     return new StateBasic(context);
                 }
 
@@ -73,8 +73,8 @@ namespace Maple2.Trigger._52000149_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001632}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001632}, questStates: new byte[]{1})) {
                     return new State전경_SetupCinematic(context);
                 }
 
@@ -90,11 +90,11 @@ namespace Maple2.Trigger._52000149_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.MoveUser(arg1: 52000149, arg2: 10);
+                context.MoveUser(mapId: 52000149, portalId: 10);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State전경_StartCinematic(context);
                 }
@@ -109,12 +109,12 @@ namespace Maple2.Trigger._52000149_qd {
             internal State전경_StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {8000, 8010}, arg2: false);
-                context.MoveUserPath(arg1: "MS2PatrolData_pc");
+                context.CameraSelectPath(pathIds: new []{8000, 8010}, returnView: false);
+                context.MoveUserPath(patrolName: "MS2PatrolData_pc");
                 context.SetSceneSkip(state: new State아노스아파_스킵완료(context), arg2: "nextState");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateCamera_아노스줌인(context);
                 }
@@ -129,12 +129,12 @@ namespace Maple2.Trigger._52000149_qd {
             internal StateCamera_아노스줌인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {8001}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{8001}, returnView: false);
                 context.AddCinematicTalk(npcId: 11003436, script: "$52000149_QD__MAIN__0$", duration: 3000);
                 context.SetSkip(state: new State아노스아파_스킵완료(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateCamera_아노스줌인01(context);
                 }
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._52000149_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateCamera_케이틀린01(context);
                 }
@@ -165,12 +165,12 @@ namespace Maple2.Trigger._52000149_qd {
             internal StateCamera_케이틀린01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {8002, 8004}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{8002, 8004}, returnView: false);
                 context.AddCinematicTalk(npcId: 11003436, script: "$52000149_QD__MAIN__1$", duration: 3000);
                 context.SetSkip(state: new State아노스아파_스킵완료(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateCamera_케이틀린0102(context);
                 }
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._52000149_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCamera_케이틀린02(context);
                 }
@@ -201,15 +201,15 @@ namespace Maple2.Trigger._52000149_qd {
             internal StateCamera_케이틀린02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {8003}, arg2: false);
-                context.SetNpcEmotionLoop(arg1: 102, arg2: "Idle_A", arg3: 3000f);
+                context.CameraSelectPath(pathIds: new []{8003}, returnView: false);
+                context.SetNpcEmotionLoop(spawnId: 102, sequenceName: "Idle_A", duration: 3000f);
                 context.AddCinematicTalk(npcId: 11003436, script: "$52000149_QD__MAIN__2$", duration: 3000);
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$52000149_QD__MAIN__3$", duration: 3000, delayTick: 0);
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_katelyn");
+                context.AddBalloonTalk(spawnId: 102, msg: "$52000149_QD__MAIN__3$", duration: 3000, delayTick: 0);
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_katelyn");
                 context.SetSkip(state: new State아노스아파_스킵완료(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State호르헤이동(context);
                 }
@@ -224,11 +224,11 @@ namespace Maple2.Trigger._52000149_qd {
             internal State호르헤이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {8003}, arg2: false);
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Jorge");
+                context.CameraSelectPath(pathIds: new []{8003}, returnView: false);
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_Jorge");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateStopCinematic(context);
                 }
@@ -243,11 +243,11 @@ namespace Maple2.Trigger._52000149_qd {
             internal State빈집(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {111, 112});
+                context.DestroyMonster(spawnIds: new []{111, 112});
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateStopCinematic(context);
                 }
@@ -264,11 +264,11 @@ namespace Maple2.Trigger._52000149_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 4);
-                context.MoveUser(arg1: 52000149, arg2: 11);
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Jorge");
+                context.MoveUser(mapId: 52000149, portalId: 11);
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_Jorge");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateStopCinematic(context);
                 }
@@ -284,12 +284,12 @@ namespace Maple2.Trigger._52000149_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 3.0f);
-                context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "AnosReturns");
+                context.SetAchievement(triggerId: 9000, type: "trigger", code: "AnosReturns");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd(context);
                 }
@@ -305,7 +305,7 @@ namespace Maple2.Trigger._52000149_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

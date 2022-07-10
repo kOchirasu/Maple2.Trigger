@@ -5,12 +5,12 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetMesh(triggerIds: new []{3000, 3001}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateCheckUser10_GuildRaid(context);
                 }
 
@@ -24,10 +24,10 @@ namespace Maple2.Trigger._02100004_bf {
             internal StateCheckUser10_GuildRaid(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "99", arg2: 30, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(timerId: "99", seconds: 30, clearAtZero: true, display: false, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 199) >= 10) {
                     return new StateMaxCount10_Start(context);
                 }
@@ -53,12 +53,12 @@ namespace Maple2.Trigger._02100004_bf {
                 context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 199) >= 10) {
                     return new StateMaxCount10_Start(context);
                 }
 
-                if (context.TimeExpired(arg1: "99")) {
+                if (context.TimeExpired(timerId: "99")) {
                     return new StateMaxCount10_Start(context);
                 }
 
@@ -80,10 +80,10 @@ namespace Maple2.Trigger._02100004_bf {
             internal StateMaxCount10_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(id: "99");
+                context.ResetTimer(timerId: "99");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateDungeonStart(context);
             }
 
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._02100004_bf {
                 context.SetSkip(state: new StateCaption01Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
                     return new StateCaption01Skip(context);
                 }
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._02100004_bf {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateStart(context);
             }
 
@@ -127,17 +127,17 @@ namespace Maple2.Trigger._02100004_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3000, 3001}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.CloseCinematic();
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.ShowGuideSummary(entityId: 20002411, textId: 20002411);
                 context.SetUserValue(triggerId: 999993, key: "BattleStart", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new State1라운드시작(context);
                 }
 
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._02100004_bf {
                 context.SetUserValue(triggerId: 999992, key: "RoundStart", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State1라운드(context);
                 }
@@ -171,18 +171,18 @@ namespace Maple2.Trigger._02100004_bf {
             internal State1라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "1,10");
-                context.SetTimer(id: "1", arg2: 20, arg3: true, arg4: true);
+                context.SetTimer(timerId: "1", seconds: 20, clearAtZero: true, display: true);
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{0})) {
                     return new State2라운드시작(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State2라운드시작(context);
                 }
 
@@ -190,7 +190,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
         }
 
@@ -198,12 +198,12 @@ namespace Maple2.Trigger._02100004_bf {
             internal State2라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.SetUserValue(triggerId: 999992, key: "RoundStart", value: 1);
                 context.ShowCountUI(text: "$02100004_BF__MAIN__2$", stage: 0, count: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State2라운드(context);
                 }
@@ -218,18 +218,18 @@ namespace Maple2.Trigger._02100004_bf {
             internal State2라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(id: "2", arg2: 20, arg3: true, arg4: true);
-                context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.SetTimer(timerId: "2", seconds: 20, clearAtZero: true, display: true);
+                context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "2,10");
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{0})) {
                     return new State3라운드시작(context);
                 }
 
-                if (context.TimeExpired(arg1: "2")) {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State3라운드시작(context);
                 }
 
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "2");
+                context.ResetTimer(timerId: "2");
             }
         }
 
@@ -245,12 +245,12 @@ namespace Maple2.Trigger._02100004_bf {
             internal State3라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.SetUserValue(triggerId: 999992, key: "RoundStart", value: 1);
                 context.ShowCountUI(text: "$02100004_BF__MAIN__3$", stage: 0, count: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State3라운드(context);
                 }
@@ -265,18 +265,18 @@ namespace Maple2.Trigger._02100004_bf {
             internal State3라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(id: "3", arg2: 20, arg3: true, arg4: true);
-                context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.SetTimer(timerId: "3", seconds: 20, clearAtZero: true, display: true);
+                context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "3,10");
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{0})) {
                     return new State4라운드시작(context);
                 }
 
-                if (context.TimeExpired(arg1: "3")) {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State4라운드시작(context);
                 }
 
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "3");
+                context.ResetTimer(timerId: "3");
             }
         }
 
@@ -292,12 +292,12 @@ namespace Maple2.Trigger._02100004_bf {
             internal State4라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.SetUserValue(triggerId: 999992, key: "RoundStart", value: 1);
                 context.ShowCountUI(text: "$02100004_BF__MAIN__4$", stage: 0, count: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State4라운드(context);
                 }
@@ -312,18 +312,18 @@ namespace Maple2.Trigger._02100004_bf {
             internal State4라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(id: "4", arg2: 20, arg3: true, arg4: true);
-                context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.SetTimer(timerId: "4", seconds: 20, clearAtZero: true, display: true);
+                context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "4,10");
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{0})) {
                     return new State5라운드시작(context);
                 }
 
-                if (context.TimeExpired(arg1: "4")) {
+                if (context.TimeExpired(timerId: "4")) {
                     return new State5라운드시작(context);
                 }
 
@@ -331,7 +331,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "4");
+                context.ResetTimer(timerId: "4");
             }
         }
 
@@ -339,12 +339,12 @@ namespace Maple2.Trigger._02100004_bf {
             internal State5라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.SetUserValue(triggerId: 999992, key: "RoundStart", value: 1);
                 context.ShowCountUI(text: "$02100004_BF__MAIN__5$", stage: 0, count: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State5라운드(context);
                 }
@@ -359,18 +359,18 @@ namespace Maple2.Trigger._02100004_bf {
             internal State5라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(id: "5", arg2: 20, arg3: true, arg4: true);
-                context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.SetTimer(timerId: "5", seconds: 20, clearAtZero: true, display: true);
+                context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "5,10");
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{0})) {
                     return new State6라운드시작(context);
                 }
 
-                if (context.TimeExpired(arg1: "5")) {
+                if (context.TimeExpired(timerId: "5")) {
                     return new State6라운드시작(context);
                 }
 
@@ -378,7 +378,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "5");
+                context.ResetTimer(timerId: "5");
             }
         }
 
@@ -386,12 +386,12 @@ namespace Maple2.Trigger._02100004_bf {
             internal State6라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.SetUserValue(triggerId: 999992, key: "RoundStart", value: 1);
                 context.ShowCountUI(text: "$02100004_BF__MAIN__6$", stage: 0, count: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State6라운드(context);
                 }
@@ -406,18 +406,18 @@ namespace Maple2.Trigger._02100004_bf {
             internal State6라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(id: "6", arg2: 20, arg3: true, arg4: true);
-                context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.SetTimer(timerId: "6", seconds: 20, clearAtZero: true, display: true);
+                context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "6,10");
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{0})) {
                     return new State7라운드시작(context);
                 }
 
-                if (context.TimeExpired(arg1: "6")) {
+                if (context.TimeExpired(timerId: "6")) {
                     return new State7라운드시작(context);
                 }
 
@@ -425,7 +425,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "6");
+                context.ResetTimer(timerId: "6");
             }
         }
 
@@ -433,12 +433,12 @@ namespace Maple2.Trigger._02100004_bf {
             internal State7라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.SetUserValue(triggerId: 999992, key: "RoundStart", value: 1);
                 context.ShowCountUI(text: "$02100004_BF__MAIN__7$", stage: 0, count: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State7라운드(context);
                 }
@@ -453,18 +453,18 @@ namespace Maple2.Trigger._02100004_bf {
             internal State7라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(id: "7", arg2: 20, arg3: true, arg4: true);
-                context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.SetTimer(timerId: "7", seconds: 20, clearAtZero: true, display: true);
+                context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "7,10");
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{0})) {
                     return new State8라운드시작(context);
                 }
 
-                if (context.TimeExpired(arg1: "7")) {
+                if (context.TimeExpired(timerId: "7")) {
                     return new State8라운드시작(context);
                 }
 
@@ -472,7 +472,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "7");
+                context.ResetTimer(timerId: "7");
             }
         }
 
@@ -480,12 +480,12 @@ namespace Maple2.Trigger._02100004_bf {
             internal State8라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.SetUserValue(triggerId: 999992, key: "RoundStart", value: 1);
                 context.ShowCountUI(text: "$02100004_BF__MAIN__8$", stage: 0, count: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State8라운드(context);
                 }
@@ -500,18 +500,18 @@ namespace Maple2.Trigger._02100004_bf {
             internal State8라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(id: "8", arg2: 20, arg3: true, arg4: true);
-                context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.SetTimer(timerId: "8", seconds: 20, clearAtZero: true, display: true);
+                context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "8,10");
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{0})) {
                     return new State9라운드시작(context);
                 }
 
-                if (context.TimeExpired(arg1: "8")) {
+                if (context.TimeExpired(timerId: "8")) {
                     return new State9라운드시작(context);
                 }
 
@@ -519,7 +519,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "8");
+                context.ResetTimer(timerId: "8");
             }
         }
 
@@ -527,12 +527,12 @@ namespace Maple2.Trigger._02100004_bf {
             internal State9라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.SetUserValue(triggerId: 999992, key: "RoundStart", value: 1);
                 context.ShowCountUI(text: "$02100004_BF__MAIN__9$", stage: 0, count: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State9라운드(context);
                 }
@@ -547,18 +547,18 @@ namespace Maple2.Trigger._02100004_bf {
             internal State9라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(id: "9", arg2: 20, arg3: true, arg4: true);
-                context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.SetTimer(timerId: "9", seconds: 20, clearAtZero: true, display: true);
+                context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "9,10");
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{0})) {
                     return new State10라운드시작(context);
                 }
 
-                if (context.TimeExpired(arg1: "9")) {
+                if (context.TimeExpired(timerId: "9")) {
                     return new State10라운드시작(context);
                 }
 
@@ -566,7 +566,7 @@ namespace Maple2.Trigger._02100004_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "9");
+                context.ResetTimer(timerId: "9");
             }
         }
 
@@ -574,12 +574,12 @@ namespace Maple2.Trigger._02100004_bf {
             internal State10라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.CreateMonster(arg1: new[] {2000}, arg2: true);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
+                context.CreateMonster(spawnIds: new []{2000}, arg2: true);
                 context.ShowCountUI(text: "$02100004_BF__MAIN__10$", stage: 0, count: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State10라운드(context);
                 }
@@ -594,20 +594,20 @@ namespace Maple2.Trigger._02100004_bf {
             internal State10라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetTimer(id: "10", arg2: 150, arg3: true, arg4: true);
-                context.MoveRandomUser(arg1: 02100004, arg2: 99, arg3: 101, arg4: 1);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.SetTimer(timerId: "10", seconds: 150, clearAtZero: true, display: true);
+                context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "10,10");
                 context.SetUserValue(triggerId: 999995, key: "LastRoundStart", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2000})) {
-                    context.ResetTimer(id: "10");
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2000})) {
+                    context.ResetTimer(timerId: "10");
                     return new StateSuccess(context);
                 }
 
-                if (context.TimeExpired(arg1: "10")) {
+                if (context.TimeExpired(timerId: "10")) {
                     return new State실패(context);
                 }
 
@@ -625,12 +625,12 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999993, key: "BattleEnd", value: 1);
-                context.DestroyMonster(arg1: new[] {-1});
-                context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "Find02100004");
-                context.SetEventUI(arg1: 7, script: "$02000251_BF__TRIGGER_01_01__0$", arg3: 2000, arg4: "0");
+                context.DestroyMonster(spawnIds: new []{-1});
+                context.SetAchievement(triggerId: 9900, type: "trigger", code: "Find02100004");
+                context.SetEventUI(arg1: 7, script: "$02000251_BF__TRIGGER_01_01__0$", duration: 2000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.DungeonClear();
                     return new StateEnd(context);
@@ -646,12 +646,12 @@ namespace Maple2.Trigger._02100004_bf {
             internal State실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 5, script: "$02100004_BF__MAIN__11$", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 5, script: "$02100004_BF__MAIN__11$", duration: 2000, boxId: 0);
                 context.SetUserValue(triggerId: 999993, key: "BattleEnd", value: 1);
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.DungeonFail();
                     return new StateEnd(context);
@@ -670,7 +670,7 @@ namespace Maple2.Trigger._02100004_bf {
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

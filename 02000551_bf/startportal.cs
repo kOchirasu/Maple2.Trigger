@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateDefaultSetting(context);
                 }
@@ -21,10 +21,10 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
-                context.SetEffect(arg1: new[] {8101, 8102, 8103, 8104, 8105}, arg2: false);
+                context.SetEffect(triggerIds: new []{8101, 8102, 8103, 8104, 8105}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePortalEnable(context);
                 }
@@ -40,11 +40,11 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
-                context.DungeonEnableGiveUp(isEnable: true);
-                context.SetEventUI(arg1: 1, script: "$02020140_BF__BARRICADE__0$", arg3: 3000);
+                context.DungeonEnableGiveUp(enable: true);
+                context.SetEventUI(arg1: 1, script: "$02020140_BF__BARRICADE__0$", duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.DungeonTimeOut()) {
                     return new StateDungeonFailure종료(context);
                 }
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.DungeonTimeOut()) {
                     return new StateDungeonFailure종료(context);
                 }
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

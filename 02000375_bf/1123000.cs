@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000375_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3400}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetActor(arg1: 201, arg2: true, arg3: "sf_fi_funct_darkdoor_A01_off");
+                context.SetMesh(triggerIds: new []{3400}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetActor(triggerId: 201, visible: true, initialSequence: "sf_fi_funct_darkdoor_A01_off");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SecondPhaseEnd") == 1) {
                     return new State문열림(context);
                 }
@@ -23,11 +23,11 @@ namespace Maple2.Trigger._02000375_bf {
             internal State문열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3400}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetActor(arg1: 201, arg2: true, arg3: "sf_fi_funct_darkdoor_A01_on");
+                context.SetMesh(triggerIds: new []{3400}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetActor(triggerId: 201, visible: true, initialSequence: "sf_fi_funct_darkdoor_A01_on");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateEnd(context);
                 }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000375_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

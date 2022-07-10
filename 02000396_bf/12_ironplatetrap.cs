@@ -4,14 +4,14 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3430, 3431, 3432, 3433}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5300, 5301, 5302, 5303}, arg2: false);
-                context.DestroyMonster(arg1: new[] {203, 303});
-                context.SetInteractObject(arg1: new[] {10001131}, arg2: 0, arg4: false);
+                context.SetMesh(triggerIds: new []{3430, 3431, 3432, 3433}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{5300, 5301, 5302, 5303}, visible: false);
+                context.DestroyMonster(spawnIds: new []{203, 303});
+                context.SetInteractObject(interactIds: new []{10001131}, state: 0, arg4: false);
                 context.SetUserValue(key: "TrapOn", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TrapOn") == 1) {
                     return new StateLeverOnDelay(context);
                 }
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000396_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateLeverOn(context);
                 }
@@ -42,12 +42,12 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateLeverOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001131}, arg2: 1);
-                context.SetEffect(arg1: new[] {5300, 5301, 5302, 5303}, arg2: true);
+                context.SetInteractObject(interactIds: new []{10001131}, state: 1);
+                context.SetEffect(triggerIds: new []{5300, 5301, 5302, 5303}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001131}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001131}, arg2: 0)) {
                     return new StateTrapOn(context);
                 }
 
@@ -61,12 +61,12 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateTrapOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {203, 303}, arg2: false);
-                context.SetMesh(arg1: new[] {3430, 3431, 3432, 3433}, arg2: false, arg3: 500, arg4: 0, arg5: 2f);
-                context.SetEffect(arg1: new[] {5300, 5301, 5302, 5303}, arg2: false);
+                context.CreateMonster(spawnIds: new []{203, 303}, arg2: false);
+                context.SetMesh(triggerIds: new []{3430, 3431, 3432, 3433}, visible: false, arg3: 500, arg4: 0, arg5: 2f);
+                context.SetEffect(triggerIds: new []{5300, 5301, 5302, 5303}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateRemove(context);
                 }
@@ -81,10 +81,10 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateRemove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {203, 303});
+                context.DestroyMonster(spawnIds: new []{203, 303});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -8,7 +8,7 @@ namespace Maple2.Trigger._02020031_bf {
                 context.SetPortal(portalId: 15700, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PortalOn") == 1) {
                     return new StatePortalOn(context);
                 }
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02020031_bf {
                 context.SetPortal(portalId: 15700, visible: false, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PortalOn") == 2) {
                     return new StatePortalOff(context);
                 }
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02020031_bf {
                 context.SetPortal(portalId: 15700, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PortalOn") == 0) {
                     return new StateWait(context);
                 }

@@ -7,8 +7,8 @@ namespace Maple2.Trigger._52020037_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100820}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{50100820}, questStates: new byte[]{2})) {
                     return new StateWait_02(context);
                 }
 
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._52020037_qd {
                 context.SetCinematicUI(type: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State영상재생(context);
                 }
@@ -45,8 +45,8 @@ namespace Maple2.Trigger._52020037_qd {
                 context.PlaySceneMovie(fileName: @"common\Kritias_01.usm", movieId: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
+            public override TriggerState? Execute() {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, condition: "IsStop", value: "1")) {
                     return new State밝아짐(context);
                 }
 
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._52020037_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

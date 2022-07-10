@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02020019_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
                 context.SetUserValue(triggerId: 99990004, key: "TimerReset", value: 0);
                 context.SetUserValue(key: "Success", value: 0);
                 context.SetUserValue(triggerId: 99990001, key: "End", value: 0);
@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.DebugString(feature: "Develop", message: "이건 Develop 환경에서 나오는 스트링 입니다.");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "battlesetting") == 1) {
                     return new State전투_1라운드세팅(context);
                 }
@@ -30,11 +30,11 @@ namespace Maple2.Trigger._02020019_bf {
                 context.DungeonResetTime(seconds: 300);
                 context.ShowRoundUI(round: 1, duration: 3000);
                 context.SetEventUI(arg1: 0, script: "1,5");
-                context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
+                context.SetNpcEmotionLoop(spawnId: 101, sequenceName: "Talk_B", duration: 4800f);
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__0$", voice: @"ko/Npc/00002116");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State전투_1라운드시작(context);
                 }
@@ -49,15 +49,15 @@ namespace Maple2.Trigger._02020019_bf {
             internal State전투_1라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201});
+                context.CreateMonster(spawnIds: new []{201});
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {201})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{201})) {
                     return new State전투_1라운드종료(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -76,15 +76,15 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 24093001);
-                context.DestroyMonster(arg1: new[] {201});
+                context.DestroyMonster(spawnIds: new []{201});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State전투_2라운드세팅(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -104,16 +104,16 @@ namespace Maple2.Trigger._02020019_bf {
             public override void OnEnter() {
                 context.ShowRoundUI(round: 2, duration: 3000);
                 context.SetEventUI(arg1: 0, script: "2,5");
-                context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
+                context.SetNpcEmotionLoop(spawnId: 101, sequenceName: "Talk_B", duration: 4800f);
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__1$", voice: @"ko/Npc/00002121");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State전투_2라운드시작(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -131,15 +131,15 @@ namespace Maple2.Trigger._02020019_bf {
             internal State전투_2라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {211}, arg2: true);
+                context.CreateMonster(spawnIds: new []{211}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {211})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{211})) {
                     return new State전투_2라운드종료(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -158,15 +158,15 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 24093002);
-                context.DestroyMonster(arg1: new[] {211});
+                context.DestroyMonster(spawnIds: new []{211});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State전투_3라운드세팅(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -186,16 +186,16 @@ namespace Maple2.Trigger._02020019_bf {
             public override void OnEnter() {
                 context.ShowRoundUI(round: 3, duration: 3000);
                 context.SetEventUI(arg1: 0, script: "3,5");
-                context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
+                context.SetNpcEmotionLoop(spawnId: 101, sequenceName: "Talk_B", duration: 4800f);
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__2$", voice: @"ko/Npc/00002241");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State전투_3라운드시작(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -213,15 +213,15 @@ namespace Maple2.Trigger._02020019_bf {
             internal State전투_3라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {221, 222, 223, 224, 225, 226, 227}, arg2: true);
+                context.CreateMonster(spawnIds: new []{221, 222, 223, 224, 225, 226, 227}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 221) <= 0.50f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 221) <= 0.50f) {
                     return new State전투_3라운드Buff(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -240,15 +240,15 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_serious", duration: 5000, script: "$02020019_BF__02020019_battle__3$", voice: @"ko/Npc/00002117");
-                context.AddBuff(arg1: new[] {221}, arg2: 49219001, arg3: 1, arg4: true);
+                context.AddBuff(boxIds: new []{221}, skillId: 49219001, level: 1, arg4: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {221, 222, 223, 224, 225, 226, 227})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{221, 222, 223, 224, 225, 226, 227})) {
                     return new State전투_3라운드종료(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -266,15 +266,15 @@ namespace Maple2.Trigger._02020019_bf {
             internal State전투_3라운드종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {221, 222, 223, 224, 225, 226, 227});
+                context.DestroyMonster(spawnIds: new []{221, 222, 223, 224, 225, 226, 227});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State전투_4라운드세팅(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -294,16 +294,16 @@ namespace Maple2.Trigger._02020019_bf {
             public override void OnEnter() {
                 context.ShowRoundUI(round: 4, duration: 3000);
                 context.SetEventUI(arg1: 0, script: "4,5");
-                context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
+                context.SetNpcEmotionLoop(spawnId: 101, sequenceName: "Talk_B", duration: 4800f);
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__4$", voice: @"ko/Npc/00002242");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State전투_4라운드시작(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -321,17 +321,17 @@ namespace Maple2.Trigger._02020019_bf {
             internal State전투_4라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {231, 232, 233, 234, 235, 236, 237}, arg2: true);
+                context.CreateMonster(spawnIds: new []{231, 232, 233, 234, 235, 236, 237}, arg2: true);
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__5$", voice: @"ko/Npc/00002243");
                 context.SetAiExtraData(key: "Autofire", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 231) <= 0.50f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 231) <= 0.50f) {
                     return new State전투_4라운드Buff(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -350,15 +350,15 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_serious", duration: 5000, script: "$02020019_BF__02020019_battle__6$", voice: @"ko/Npc/00002118");
-                context.AddBuff(arg1: new[] {231}, arg2: 49219001, arg3: 1, arg4: true);
+                context.AddBuff(boxIds: new []{231}, skillId: 49219001, level: 1, arg4: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {231, 232, 233, 234, 235, 236, 237})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{231, 232, 233, 234, 235, 236, 237})) {
                     return new State전투_4라운드종료(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -377,15 +377,15 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 24093003);
-                context.DestroyMonster(arg1: new[] {231, 232, 233, 234, 235, 236, 237});
+                context.DestroyMonster(spawnIds: new []{231, 232, 233, 234, 235, 236, 237});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State전투_5라운드세팅(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -405,17 +405,17 @@ namespace Maple2.Trigger._02020019_bf {
             public override void OnEnter() {
                 context.ShowRoundUI(round: 5, duration: 3000);
                 context.SetEventUI(arg1: 0, script: "5,5");
-                context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
+                context.SetNpcEmotionLoop(spawnId: 101, sequenceName: "Talk_B", duration: 4800f);
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__7$", voice: @"ko/Npc/00002122");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 99990003, key: "5Phase", value: 1);
                     return new State전투_5라운드시작(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -433,19 +433,19 @@ namespace Maple2.Trigger._02020019_bf {
             internal State전투_5라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {241, 242, 243, 244, 245, 246, 247, 248}, arg2: true);
+                context.CreateMonster(spawnIds: new []{241, 242, 243, 244, 245, 246, 247, 248}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 241) <= 0.50f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 241) <= 0.50f) {
                     return new State전투_5라운드Buff(context);
                 }
 
-                if (context.GetNpcHpRate(spawnPointId: 242) <= 0.50f) {
+                if (context.GetNpcHpRate(spawnId: 242) <= 0.50f) {
                     return new State전투_5라운드Buff(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -464,35 +464,35 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 24100001, illust: "Neirin_serious", duration: 5000, script: "$02020019_BF__02020019_battle__8$", voice: @"ko/Npc/00002119");
-                context.AddBuff(arg1: new[] {241}, arg2: 49219001, arg3: 1, arg4: true);
-                context.AddBuff(arg1: new[] {242}, arg2: 49219001, arg3: 1, arg4: true);
+                context.AddBuff(boxIds: new []{241}, skillId: 49219001, level: 1, arg4: true);
+                context.AddBuff(boxIds: new []{242}, skillId: 49219001, level: 1, arg4: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.GetDungeonPlayTime() <= 180 && context.MonsterDead(arg1: new[] {241, 242, 243, 244, 245, 246, 247, 248})) {
+            public override TriggerState? Execute() {
+                if (context.GetDungeonPlayTime() <= 180 && context.MonsterDead(spawnIds: new []{241, 242, 243, 244, 245, 246, 247, 248})) {
                     context.DungeonMissionComplete(missionId: 24093004);
                     context.DungeonMissionComplete(missionId: 24093005);
                     return new State전투_종료(context);
                 }
 
-                if (context.GetDungeonPlayTime() <= 70 && context.MonsterDead(arg1: new[] {241, 242, 243, 244, 245, 246, 247, 248})) {
+                if (context.GetDungeonPlayTime() <= 70 && context.MonsterDead(spawnIds: new []{241, 242, 243, 244, 245, 246, 247, 248})) {
                     context.DungeonMissionComplete(missionId: 24093004);
                     context.DungeonMissionComplete(missionId: 24093006);
                     return new State전투_종료(context);
                 }
 
-                if (context.GetDungeonPlayTime() <= 270 && context.MonsterDead(arg1: new[] {241, 242, 243, 244, 245, 246, 247, 248})) {
+                if (context.GetDungeonPlayTime() <= 270 && context.MonsterDead(spawnIds: new []{241, 242, 243, 244, 245, 246, 247, 248})) {
                     context.DungeonMissionComplete(missionId: 24093004);
                     context.DungeonMissionComplete(missionId: 24093007);
                     return new State전투_종료(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {241, 242, 243, 244, 245, 246, 247, 248})) {
+                if (context.MonsterDead(spawnIds: new []{241, 242, 243, 244, 245, 246, 247, 248})) {
                     context.DungeonMissionComplete(missionId: 24093004);
                     return new State전투_종료(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {901})) {
+                if (!context.UserDetected(boxIds: new []{901})) {
                     return new State전투_종료(context);
                 }
 
@@ -514,11 +514,11 @@ namespace Maple2.Trigger._02020019_bf {
                 context.DungeonCloseTimer();
                 context.SetAiExtraData(key: "Autofire", value: 0);
                 context.SetEventUI(arg1: 0, script: "0,0");
-                context.InitNpcRotation(arg1: new[] {102, 103});
-                context.DestroyMonster(arg1: new[] {201, 211, 221, 222, 223, 224, 225, 226, 227, 231, 232, 233, 234, 235, 236, 237, 241, 242, 243, 244, 245, 246, 247, 248});
+                context.InitNpcRotation(spawnIds: new []{102, 103});
+                context.DestroyMonster(spawnIds: new []{201, 211, 221, 222, 223, 224, 225, 226, 227, 231, 232, 233, 234, 235, 236, 237, 241, 242, 243, 244, 245, 246, 247, 248});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd신호(context);
                 }
@@ -536,7 +536,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.SetUserValue(triggerId: 99990001, key: "End", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

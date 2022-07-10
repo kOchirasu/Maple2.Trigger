@@ -4,12 +4,12 @@ namespace Maple2.Trigger._03000021_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {11000008, 11000009}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{11000008, 11000009}, state: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
-                    context.CreateMonster(arg1: new[] {2001}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
+                    context.CreateMonster(spawnIds: new []{2001}, arg2: false);
                     return new StateMobCreation(context);
                 }
 
@@ -26,14 +26,14 @@ namespace Maple2.Trigger._03000021_bf {
                 context.ShowGuideSummary(entityId: 23000004, textId: 23000004, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateMobCreation(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {2001})) {
+                if (context.MonsterDead(spawnIds: new []{2001})) {
                     context.HideGuideSummary(entityId: 23000004);
-                    context.SetEventUI(arg1: 7, arg3: 2000, arg4: "0");
+                    context.SetEventUI(arg1: 7, duration: 2000, boxId: 0);
                     return new State상자확률(context);
                 }
 
@@ -48,14 +48,14 @@ namespace Maple2.Trigger._03000021_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 90f)) {
-                    context.SetInteractObject(arg1: new[] {11000008}, arg2: 1);
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 90f)) {
+                    context.SetInteractObject(interactIds: new []{11000008}, state: 1);
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
-                    context.SetInteractObject(arg1: new[] {11000009}, arg2: 1);
+                if (context.RandomCondition(rate: 10f)) {
+                    context.SetInteractObject(interactIds: new []{11000009}, state: 1);
                     return new StateEnd(context);
                 }
 
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._03000021_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,11 +5,11 @@ namespace Maple2.Trigger._02000269_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 51, visible: false, enabled: false, minimapVisible: false);
-                context.SetInteractObject(arg1: new[] {10000701}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000701}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000701}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000701}, arg2: 0)) {
                     return new StateCreation(context);
                 }
 
@@ -24,11 +24,11 @@ namespace Maple2.Trigger._02000269_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 51, visible: false, enabled: true, minimapVisible: false);
-                context.SetTimer(id: "2", arg2: 2, arg3: false, arg4: false);
+                context.SetTimer(timerId: "2", seconds: 2, clearAtZero: false, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     context.SetPortal(portalId: 51, visible: false, enabled: false, minimapVisible: false);
                     return new State재사용Wait(context);
                 }
@@ -43,11 +43,11 @@ namespace Maple2.Trigger._02000269_bf {
             internal State재사용Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3, arg3: false, arg4: false);
+                context.SetTimer(timerId: "3", seconds: 3, clearAtZero: false, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateStart(context);
                 }
 

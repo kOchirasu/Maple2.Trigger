@@ -5,8 +5,8 @@ namespace Maple2.Trigger._81000001_item {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {102})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{102})) {
                     return new State어나운스0(context);
                 }
 
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._81000001_item {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "4", arg2: 15, arg3: false);
+                context.SetTimer(timerId: "4", seconds: 15, clearAtZero: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "4")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "4")) {
                     return new StateWait(context);
                 }
 

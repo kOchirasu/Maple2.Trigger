@@ -5,8 +5,8 @@ namespace Maple2.Trigger._61000012_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateWait(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._61000012_me {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 301, arg2: true);
+                context.CameraSelect(triggerId: 301, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd(context);
                 }
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._61000012_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

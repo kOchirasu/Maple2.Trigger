@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000390_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.IsDungeonRoom()) {
                     return new StateIdle(context);
                 }
@@ -25,12 +25,12 @@ namespace Maple2.Trigger._02000390_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Error") == 1) {
                     return new StateEnd(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {702})) {
+                if (context.UserDetected(boxIds: new []{702})) {
                     return new StateError(context);
                 }
 
@@ -44,10 +44,10 @@ namespace Maple2.Trigger._02000390_bf {
             internal StateError(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveRandomUser(arg1: 02000390, arg2: 2, arg3: 702, arg4: 4);
+                context.MoveRandomUser(mapId: 02000390, portalId: 2, triggerId: 702, count: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateIdle(context);
                 }
@@ -63,20 +63,20 @@ namespace Maple2.Trigger._02000390_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Error") == 1) {
                     return new StateEnd(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {702})) {
+                if (context.UserDetected(boxIds: new []{702})) {
                     return new StateQuest_error(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{50001518}, questStates: new byte[]{1})) {
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001517}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{50001517}, questStates: new byte[]{2})) {
                     return new StateEnd(context);
                 }
 
@@ -90,19 +90,19 @@ namespace Maple2.Trigger._02000390_bf {
             internal StateQuest_error(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveRandomUser(arg1: 02000390, arg2: 2, arg3: 702, arg4: 4);
+                context.MoveRandomUser(mapId: 02000390, portalId: 2, triggerId: 702, count: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateQuest_idle(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{50001518}, questStates: new byte[]{1})) {
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001517}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{50001517}, questStates: new byte[]{2})) {
                     return new StateEnd(context);
                 }
 
@@ -116,10 +116,10 @@ namespace Maple2.Trigger._02000390_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1001, 1002}, arg2: false);
+                context.SetMesh(triggerIds: new []{1001, 1002}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

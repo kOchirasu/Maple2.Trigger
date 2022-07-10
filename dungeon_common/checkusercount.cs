@@ -9,7 +9,7 @@ namespace Maple2.Trigger._dungeon_common {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonMaxUserCount() == 4) {
                     return new StateMaxCount04_Wait01(context, startDungeon);
                 }
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._dungeon_common {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() == 4) {
                     return startDungeon;
                 }
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._dungeon_common {
                 context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() == 4) {
                     return startDungeon;
                 }
@@ -97,7 +97,7 @@ namespace Maple2.Trigger._dungeon_common {
                 context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() == 4) {
                     return startDungeon;
                 }
@@ -123,7 +123,7 @@ namespace Maple2.Trigger._dungeon_common {
                 context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() == 4) {
                     return startDungeon;
                 }
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._dungeon_common {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() == 3) {
                     return startDungeon;
                 }
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._dungeon_common {
                 context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() == 3) {
                     return startDungeon;
                 }
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._dungeon_common {
                 context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() == 3) {
                     return startDungeon;
                 }
@@ -225,7 +225,7 @@ namespace Maple2.Trigger._dungeon_common {
                 context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() == 3) {
                     return startDungeon;
                 }
@@ -249,7 +249,7 @@ namespace Maple2.Trigger._dungeon_common {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() == 2) {
                     return startDungeon;
                 }
@@ -275,7 +275,7 @@ namespace Maple2.Trigger._dungeon_common {
                 context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() == 2) {
                     return startDungeon;
                 }
@@ -301,7 +301,7 @@ namespace Maple2.Trigger._dungeon_common {
                 context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() == 2) {
                     return startDungeon;
                 }
@@ -327,7 +327,7 @@ namespace Maple2.Trigger._dungeon_common {
                 context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() == 2) {
                     return startDungeon;
                 }
@@ -351,7 +351,7 @@ namespace Maple2.Trigger._dungeon_common {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return startDungeon;
                 }

@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {8000, 8001}, arg2: false);
-                context.SetEffect(arg1: new[] {7000, 7001}, arg2: false);
+                context.SetSkill(triggerIds: new []{8000, 8001}, arg2: false);
+                context.SetEffect(triggerIds: new []{7000, 7001}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateRockDrop01(context);
                 }
@@ -23,10 +23,10 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7000}, arg2: true);
+                context.SetEffect(triggerIds: new []{7000}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
                     return new StateRockDrop02(context);
                 }
@@ -41,10 +41,10 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {8000}, arg2: true);
+                context.SetSkill(triggerIds: new []{8000}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateRockDrop11(context);
                 }
@@ -59,10 +59,10 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7001}, arg2: true);
+                context.SetEffect(triggerIds: new []{7001}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
                     return new StateRockDrop12(context);
                 }
@@ -77,10 +77,10 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {8001}, arg2: true);
+                context.SetSkill(triggerIds: new []{8001}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateRockDrop21(context);
                 }
@@ -95,10 +95,10 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7000}, arg2: true);
+                context.SetEffect(triggerIds: new []{7000}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
                     return new StateRockDrop22(context);
                 }
@@ -113,10 +113,10 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {8000}, arg2: true);
+                context.SetSkill(triggerIds: new []{8000}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateReset(context);
                 }
@@ -131,11 +131,11 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {8000, 8001}, arg2: false);
-                context.SetEffect(arg1: new[] {7000, 7001}, arg2: false);
+                context.SetSkill(triggerIds: new []{8000, 8001}, arg2: false);
+                context.SetEffect(triggerIds: new []{7000, 7001}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateRockDrop01(context);
                 }

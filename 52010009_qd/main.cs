@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52010009_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000866, 10000880, 10000915}, arg2: 0);
+                context.SetInteractObject(interactIds: new []{10000866, 10000880, 10000915}, state: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002091}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{20002091}, questStates: new byte[]{1})) {
                     return new StateEvent_01_Idle(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._52010009_qd {
             internal StateEvent_01_Idle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateEvent_01(context);
                 }
 
@@ -40,13 +40,13 @@ namespace Maple2.Trigger._52010009_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
+                context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 110, textId: 40010);
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEvent_02(context);
                 }
 
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 110);
-                context.SetInteractObject(arg1: new[] {10000866}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000866}, state: 1);
             }
         }
 
@@ -63,12 +63,12 @@ namespace Maple2.Trigger._52010009_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
+                context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 111, textId: 25201901);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000866}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000866}, arg2: 0)) {
                     return new StateEvent_03(context);
                 }
 
@@ -77,9 +77,9 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 111);
-                context.CreateMonster(arg1: new[] {111}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 111, script: "$52010009_QD__MAIN__0$", arg4: 3, arg5: 1);
-                context.MoveNpc(arg1: 111, arg2: "MS2PatrolData0_1001");
+                context.CreateMonster(spawnIds: new []{111}, arg2: false);
+                context.SetConversation(type: 1, spawnId: 111, script: "$52010009_QD__MAIN__0$", arg4: 3, arg5: 1);
+                context.MoveNpc(spawnId: 111, patrolName: "MS2PatrolData0_1001");
             }
         }
 
@@ -87,13 +87,13 @@ namespace Maple2.Trigger._52010009_qd {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
+                context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 110, textId: 40010);
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(spawnIds: new []{102}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {102})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{102})) {
                     return new StateEvent_04(context);
                 }
 
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 110);
-                context.SetInteractObject(arg1: new[] {10000880}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000880}, state: 1);
             }
         }
 
@@ -110,12 +110,12 @@ namespace Maple2.Trigger._52010009_qd {
             internal StateEvent_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
+                context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 111, textId: 25201901);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000880}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000880}, arg2: 0)) {
                     return new StateEvent_05(context);
                 }
 
@@ -124,9 +124,9 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 111);
-                context.CreateMonster(arg1: new[] {112}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 112, script: "$52010009_QD__MAIN__1$", arg4: 3, arg5: 1);
-                context.MoveNpc(arg1: 112, arg2: "MS2PatrolData0_1001");
+                context.CreateMonster(spawnIds: new []{112}, arg2: false);
+                context.SetConversation(type: 1, spawnId: 112, script: "$52010009_QD__MAIN__1$", arg4: 3, arg5: 1);
+                context.MoveNpc(spawnId: 112, patrolName: "MS2PatrolData0_1001");
             }
         }
 
@@ -134,13 +134,13 @@ namespace Maple2.Trigger._52010009_qd {
             internal StateEvent_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
+                context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 110, textId: 40010);
-                context.CreateMonster(arg1: new[] {103}, arg2: false);
+                context.CreateMonster(spawnIds: new []{103}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{103})) {
                     return new StateEvent_06(context);
                 }
 
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 110);
-                context.SetInteractObject(arg1: new[] {10000915}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000915}, state: 1);
             }
         }
 
@@ -157,12 +157,12 @@ namespace Maple2.Trigger._52010009_qd {
             internal StateEvent_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
+                context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 111, textId: 25201901);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000915}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000915}, arg2: 0)) {
                     return new StateEnd(context);
                 }
 
@@ -171,9 +171,9 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 111);
-                context.CreateMonster(arg1: new[] {113}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 113, script: "$52010009_QD__MAIN__2$", arg4: 3, arg5: 1);
-                context.MoveNpc(arg1: 113, arg2: "MS2PatrolData0_1001");
+                context.CreateMonster(spawnIds: new []{113}, arg2: false);
+                context.SetConversation(type: 1, spawnId: 113, script: "$52010009_QD__MAIN__2$", arg4: 3, arg5: 1);
+                context.MoveNpc(spawnId: 113, patrolName: "MS2PatrolData0_1001");
             }
         }
 
@@ -181,10 +181,10 @@ namespace Maple2.Trigger._52010009_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "findrepairman");
+                context.SetAchievement(triggerId: 701, type: "trigger", code: "findrepairman");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,14 +4,14 @@ namespace Maple2.Trigger._52000022_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.CreateMonster(arg1: new[] {111, 211}, arg2: false);
+                context.SetMesh(triggerIds: new []{3001}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.CreateMonster(spawnIds: new []{111, 211}, arg2: false);
                 context.SetCinematicUI(type: 4);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60001041}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{60001041}, questStates: new byte[]{1})) {
                     return new StateSetupCinematic(context);
                 }
 
@@ -25,13 +25,13 @@ namespace Maple2.Trigger._52000022_qd {
             internal StateSetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
-                context.DestroyMonster(arg1: new[] {111, 211});
-                context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
+                context.SetTimer(timerId: "3", seconds: 3);
+                context.DestroyMonster(spawnIds: new []{111, 211});
+                context.CreateMonster(spawnIds: new []{101, 201}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State말풍선Cinematic01(context);
                 }
 
@@ -45,12 +45,12 @@ namespace Maple2.Trigger._52000022_qd {
             internal State말풍선Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "5", arg2: 5);
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000022_QD__PATROL01__0$", arg4: 4, arg5: 0);
+                context.SetTimer(timerId: "5", seconds: 5);
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000022_QD__PATROL01__0$", arg4: 4, arg5: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
                     return new State말풍선Cinematic02(context);
                 }
 
@@ -64,12 +64,12 @@ namespace Maple2.Trigger._52000022_qd {
             internal State말풍선Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "4", arg2: 4);
-                context.SetConversation(arg1: 1, arg2: 201, script: "$52000022_QD__PATROL01__1$", arg4: 3, arg5: 0);
+                context.SetTimer(timerId: "4", seconds: 4);
+                context.SetConversation(type: 1, spawnId: 201, script: "$52000022_QD__PATROL01__1$", arg4: 3, arg5: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "4")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "4")) {
                     return new State말풍선Cinematic03(context);
                 }
 
@@ -83,12 +83,12 @@ namespace Maple2.Trigger._52000022_qd {
             internal State말풍선Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "5", arg2: 5);
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000022_QD__PATROL01__2$", arg4: 4, arg5: 0);
+                context.SetTimer(timerId: "5", seconds: 5);
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000022_QD__PATROL01__2$", arg4: 4, arg5: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
                     return new StateIshura이동(context);
                 }
 
@@ -102,12 +102,12 @@ namespace Maple2.Trigger._52000022_qd {
             internal StateIshura이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101");
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State추격대원이동(context);
                 }
 
@@ -121,13 +121,13 @@ namespace Maple2.Trigger._52000022_qd {
             internal State추격대원이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
-                context.SetConversation(arg1: 1, arg2: 201, script: "$52000022_QD__PATROL01__3$", arg4: 3, arg5: 0);
-                context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
+                context.SetTimer(timerId: "3", seconds: 3);
+                context.SetConversation(type: 1, spawnId: 201, script: "$52000022_QD__PATROL01__3$", arg4: 3, arg5: 0);
+                context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_201");
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State말풍선Cinematic04(context);
                 }
 
@@ -141,12 +141,12 @@ namespace Maple2.Trigger._52000022_qd {
             internal State말풍선Cinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "5", arg2: 5);
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000022_QD__PATROL01__4$", arg4: 4, arg5: 0);
+                context.SetTimer(timerId: "5", seconds: 5);
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000022_QD__PATROL01__4$", arg4: 4, arg5: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
                     return new State말풍선Cinematic05(context);
                 }
 
@@ -160,13 +160,13 @@ namespace Maple2.Trigger._52000022_qd {
             internal State말풍선Cinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000022_QD__PATROL01__5$", arg4: 2, arg5: 0);
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101_B");
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000022_QD__PATROL01__5$", arg4: 2, arg5: 0);
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101_B");
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State말풍선Cinematic06(context);
                 }
 
@@ -180,12 +180,12 @@ namespace Maple2.Trigger._52000022_qd {
             internal State말풍선Cinematic06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000022_QD__PATROL01__6$", arg4: 2, arg5: 0);
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000022_QD__PATROL01__6$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State감옥이펙트(context);
                 }
 
@@ -199,13 +199,13 @@ namespace Maple2.Trigger._52000022_qd {
             internal State감옥이펙트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
+                context.SetMesh(triggerIds: new []{3001}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State말풍선Cinematic07(context);
                 }
 
@@ -219,13 +219,13 @@ namespace Maple2.Trigger._52000022_qd {
             internal State말풍선Cinematic07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 201, script: "$52000022_QD__PATROL01__7$", arg4: 2, arg5: 0);
-                context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201_B");
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.SetConversation(type: 1, spawnId: 201, script: "$52000022_QD__PATROL01__7$", arg4: 2, arg5: 0);
+                context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_201_B");
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State말풍선Cinematic08(context);
                 }
 
@@ -239,12 +239,12 @@ namespace Maple2.Trigger._52000022_qd {
             internal State말풍선Cinematic08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000022_QD__PATROL01__8$", arg4: 2, arg5: 0);
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000022_QD__PATROL01__8$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State몹소환(context);
                 }
 
@@ -258,13 +258,13 @@ namespace Maple2.Trigger._52000022_qd {
             internal State몹소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000022_QD__PATROL01__9$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000022_QD__PATROL01__10$", arg4: 3, arg5: 0);
-                context.CreateMonster(arg1: new[] {1001}, arg2: true);
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000022_QD__PATROL01__9$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000022_QD__PATROL01__10$", arg4: 3, arg5: 0);
+                context.CreateMonster(spawnIds: new []{1001}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1001})) {
                     return new StateStopCinematic(context);
                 }
 
@@ -278,15 +278,15 @@ namespace Maple2.Trigger._52000022_qd {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetTimer(id: "2", arg2: 2);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.DestroyMonster(arg1: new[] {101, 201});
-                context.CreateMonster(arg1: new[] {111, 211}, arg2: false);
+                context.SetMesh(triggerIds: new []{3001}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetTimer(timerId: "2", seconds: 2);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.DestroyMonster(spawnIds: new []{101, 201});
+                context.CreateMonster(spawnIds: new []{111, 211}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateEnd(context);
                 }
 
@@ -301,7 +301,7 @@ namespace Maple2.Trigger._52000022_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

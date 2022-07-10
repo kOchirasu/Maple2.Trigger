@@ -4,16 +4,16 @@ namespace Maple2.Trigger._52000093_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3003, 3004}, arg2: false);
-                context.DestroyMonster(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008});
+                context.SetMesh(triggerIds: new []{3003, 3004}, visible: false);
+                context.DestroyMonster(spawnIds: new []{1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008});
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {50100490}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9100}, questIds: new []{50100490}, questStates: new byte[]{1})) {
                     return new State20002274진행중일때(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {20002274}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{9100}, questIds: new []{20002274}, questStates: new byte[]{1})) {
                     return new State20002274진행중일때(context);
                 }
 
@@ -27,11 +27,11 @@ namespace Maple2.Trigger._52000093_qd {
             internal State20002274진행중일때(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008})) {
                     return new State20002274진행중일때(context);
                 }
 

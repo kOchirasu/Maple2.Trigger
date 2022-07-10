@@ -6,11 +6,11 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {2222}, arg2: true);
-                context.SetSkill(arg1: new[] {1212}, arg2: false);
+                context.SetSkill(triggerIds: new []{2222}, arg2: true);
+                context.SetSkill(triggerIds: new []{1212}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 199) == 1) {
                     return new State낮밤변환신호Wait(context);
                 }
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "DayNightChange") == 1) {
                     return new State낮시간으로변화Wait단계(context);
                 }
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1400)) {
                     return new State낮시간으로변화하기(context);
                 }
@@ -70,14 +70,14 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() {
                 context.ChangeBackground(dds: "BG_RedLapenta_A.dds");
-                context.SetAmbientLight(arg1: new Vector3(226f, 197f, 211f));
-                context.SetDirectionalLight(arg1: new Vector3(224f, 246f, 249f), arg2: new Vector3(170f, 170f, 170f));
-                context.SetSkill(arg1: new[] {2222}, arg2: true);
-                context.SetSkill(arg1: new[] {1212}, arg2: false);
+                context.SetAmbientLight(color: new Vector3(226f, 197f, 211f));
+                context.SetDirectionalLight(diffuseColor: new Vector3(224f, 246f, 249f), specularColor: new Vector3(170f, 170f, 170f));
+                context.SetSkill(triggerIds: new []{2222}, arg2: true);
+                context.SetSkill(triggerIds: new []{1212}, arg2: false);
                 context.SetUserValue(key: "DayNightChange", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State낮밤변환신호Wait(context);
                 }
@@ -92,17 +92,17 @@ namespace Maple2.Trigger._02020120_bf {
             internal State낮시간으로변화하기_맵Reset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {299}, arg2: 50004547, arg3: 2, arg4: false);
+                context.AddBuff(boxIds: new []{299}, skillId: 50004547, level: 2, arg4: false);
                 context.SetUserValue(key: "DungeonReset", value: 0);
                 context.SetUserValue(key: "DayNightChange", value: 0);
                 context.ChangeBackground(dds: "BG_RedLapenta_A.dds");
-                context.SetAmbientLight(arg1: new Vector3(226f, 197f, 211f));
-                context.SetDirectionalLight(arg1: new Vector3(224f, 246f, 249f), arg2: new Vector3(170f, 170f, 170f));
-                context.SetSkill(arg1: new[] {2222}, arg2: true);
-                context.SetSkill(arg1: new[] {1212}, arg2: false);
+                context.SetAmbientLight(color: new Vector3(226f, 197f, 211f));
+                context.SetDirectionalLight(diffuseColor: new Vector3(224f, 246f, 249f), specularColor: new Vector3(170f, 170f, 170f));
+                context.SetSkill(triggerIds: new []{2222}, arg2: true);
+                context.SetSkill(triggerIds: new []{1212}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State낮밤변환신호Wait(context);
                 }
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1400)) {
                     return new State밤시간으로변화하기(context);
                 }
@@ -134,14 +134,14 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() {
                 context.ChangeBackground(dds: "BG_RedLapenta_B.dds");
-                context.SetAmbientLight(arg1: new Vector3(120f, 119f, 183f));
-                context.SetDirectionalLight(arg1: new Vector3(193f, 100f, 119f), arg2: new Vector3(170f, 170f, 170f));
-                context.SetSkill(arg1: new[] {2222}, arg2: false);
-                context.SetSkill(arg1: new[] {1212}, arg2: true);
+                context.SetAmbientLight(color: new Vector3(120f, 119f, 183f));
+                context.SetDirectionalLight(diffuseColor: new Vector3(193f, 100f, 119f), specularColor: new Vector3(170f, 170f, 170f));
+                context.SetSkill(triggerIds: new []{2222}, arg2: false);
+                context.SetSkill(triggerIds: new []{1212}, arg2: true);
                 context.SetUserValue(key: "DayNightChange", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State낮밤변환신호Wait(context);
                 }
@@ -156,11 +156,11 @@ namespace Maple2.Trigger._02020120_bf {
             internal State디Buff모조리Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {299}, arg2: 50005315, arg3: 1, arg4: false);
+                context.AddBuff(boxIds: new []{299}, skillId: 50005315, level: 1, arg4: false);
                 context.SetUserValue(key: "DayNightChange", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1100)) {
                     return new State낮밤변환신호Wait(context);
                 }
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

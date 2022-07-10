@@ -8,7 +8,7 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetUserValue(triggerId: 2040323, key: "Warp", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Boss") == 1) {
                     return new StateWarp_condition(context);
                 }
@@ -24,12 +24,12 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1999})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1999})) {
                     return new StateEnd(context);
                 }
 
-                if (context.GetNpcHpRate(spawnPointId: 1999) <= 0.70f) {
+                if (context.GetNpcHpRate(spawnId: 1999) <= 0.70f) {
                     return new StateWarp_1st(context);
                 }
 
@@ -43,14 +43,14 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateWarp_1st(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002106, 10002107}, arg2: 1);
-                context.SetMesh(arg1: new[] {1207, 1208}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEventUI(arg1: 1, script: "$02000471_BF__WARPCHECK__0$", arg3: 5000, arg4: "0");
-                context.AddBuff(arg1: new[] {720}, arg2: 70002061, arg3: 1, arg4: false, arg5: false);
+                context.SetInteractObject(interactIds: new []{10002106, 10002107}, state: 1);
+                context.SetMesh(triggerIds: new []{1207, 1208}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEventUI(arg1: 1, script: "$02000471_BF__WARPCHECK__0$", duration: 5000, boxId: 0);
+                context.AddBuff(boxIds: new []{720}, skillId: 70002061, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1999})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1999})) {
                     return new StateEnd(context);
                 }
 
@@ -58,11 +58,11 @@ namespace Maple2.Trigger._02000471_bf {
                     return new StateWarp_go(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002106}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002106}, arg2: 0)) {
                     return new StateWarp_cancel(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002107}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002107}, arg2: 0)) {
                     return new StateWarp_cancel(context);
                 }
 
@@ -76,18 +76,18 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateWarp_cancel(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002106, 10002107}, arg2: 0);
-                context.SetMesh(arg1: new[] {1207, 1208}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEventUI(arg1: 1, script: "$02000471_BF__WARPCHECK__1$", arg3: 5000, arg4: "0");
-                context.AddBuff(arg1: new[] {720}, arg2: 70002062, arg3: 1, arg4: false, arg5: false);
+                context.SetInteractObject(interactIds: new []{10002106, 10002107}, state: 0);
+                context.SetMesh(triggerIds: new []{1207, 1208}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEventUI(arg1: 1, script: "$02000471_BF__WARPCHECK__1$", duration: 5000, boxId: 0);
+                context.AddBuff(boxIds: new []{720}, skillId: 70002062, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1999})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1999})) {
                     return new StateEnd(context);
                 }
 
-                if (context.GetNpcHpRate(spawnPointId: 1999) <= 0.30f) {
+                if (context.GetNpcHpRate(spawnId: 1999) <= 0.30f) {
                     return new StateWarp_2nd(context);
                 }
 
@@ -101,18 +101,18 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateWarp_go(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002106, 10002107}, arg2: 0);
-                context.SetMesh(arg1: new[] {1207, 1208}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10002106, 10002107}, state: 0);
+                context.SetMesh(triggerIds: new []{1207, 1208}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(triggerId: 2040323, key: "Warp", value: 1);
-                context.AddBuff(arg1: new[] {720}, arg2: 70002062, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{720}, skillId: 70002062, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1999})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1999})) {
                     return new StateEnd(context);
                 }
 
-                if (context.GetNpcHpRate(spawnPointId: 1999) <= 0.30f) {
+                if (context.GetNpcHpRate(spawnId: 1999) <= 0.30f) {
                     return new StateWarp_2nd(context);
                 }
 
@@ -126,14 +126,14 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateWarp_2nd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002106, 10002107}, arg2: 1);
-                context.SetMesh(arg1: new[] {1207, 1208}, arg2: true, arg3: 0, arg4: 0, arg5: 10f);
-                context.SetEventUI(arg1: 1, script: "$02000471_BF__WARPCHECK__0$", arg3: 5000, arg4: "0");
-                context.AddBuff(arg1: new[] {720}, arg2: 70002061, arg3: 1, arg4: false, arg5: false);
+                context.SetInteractObject(interactIds: new []{10002106, 10002107}, state: 1);
+                context.SetMesh(triggerIds: new []{1207, 1208}, visible: true, arg3: 0, arg4: 0, arg5: 10f);
+                context.SetEventUI(arg1: 1, script: "$02000471_BF__WARPCHECK__0$", duration: 5000, boxId: 0);
+                context.AddBuff(boxIds: new []{720}, skillId: 70002061, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1999})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1999})) {
                     return new StateEnd(context);
                 }
 
@@ -141,11 +141,11 @@ namespace Maple2.Trigger._02000471_bf {
                     return new StateWarp_go2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002106}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002106}, arg2: 0)) {
                     return new StateWarp2_cancel(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002107}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002107}, arg2: 0)) {
                     return new StateWarp2_cancel(context);
                 }
 
@@ -159,14 +159,14 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateWarp2_cancel(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002106, 10002107}, arg2: 0);
-                context.SetMesh(arg1: new[] {1207, 1208}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEventUI(arg1: 1, script: "$02000471_BF__WARPCHECK__1$", arg3: 5000, arg4: "0");
-                context.AddBuff(arg1: new[] {720}, arg2: 70002062, arg3: 1, arg4: false, arg5: false);
+                context.SetInteractObject(interactIds: new []{10002106, 10002107}, state: 0);
+                context.SetMesh(triggerIds: new []{1207, 1208}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEventUI(arg1: 1, script: "$02000471_BF__WARPCHECK__1$", duration: 5000, boxId: 0);
+                context.AddBuff(boxIds: new []{720}, skillId: 70002062, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1999})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1999})) {
                     return new StateEnd(context);
                 }
 
@@ -180,14 +180,14 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateWarp_go2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002106, 10002107}, arg2: 0);
-                context.SetMesh(arg1: new[] {1207, 1208}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10002106, 10002107}, state: 0);
+                context.SetMesh(triggerIds: new []{1207, 1208}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(triggerId: 2040323, key: "Warp", value: 2);
-                context.AddBuff(arg1: new[] {720}, arg2: 70002062, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{720}, skillId: 70002062, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1999})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1999})) {
                     return new StateEnd(context);
                 }
 
@@ -202,7 +202,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

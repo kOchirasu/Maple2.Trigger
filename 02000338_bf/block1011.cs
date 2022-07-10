@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000338_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1011}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{1011}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {10011})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{10011})) {
                     return new StateSetup(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02000338_bf {
             internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 2);
+                context.SetTimer(timerId: "1", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State진행1(context);
                 }
 
@@ -40,12 +40,12 @@ namespace Maple2.Trigger._02000338_bf {
             internal State진행1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 30);
-                context.SetMesh(arg1: new[] {1000}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetTimer(timerId: "2", seconds: 30);
+                context.SetMesh(triggerIds: new []{1000}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateWait(context);
                 }
 

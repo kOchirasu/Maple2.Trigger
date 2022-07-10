@@ -6,11 +6,11 @@ namespace Maple2.Trigger._02000241_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {2001, 2002, 2003}, arg2: false);
-                context.SetMesh(arg1: new[] {709, 710}, arg2: true);
+                context.SetEffect(triggerIds: new []{2001, 2002, 2003}, visible: false);
+                context.SetMesh(triggerIds: new []{709, 710}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 205) == 1) {
                     return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
@@ -26,8 +26,8 @@ namespace Maple2.Trigger._02000241_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {205})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{205})) {
                     return new State어나운스0(context);
                 }
 
@@ -41,13 +41,13 @@ namespace Maple2.Trigger._02000241_bf {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "88", arg2: 5, arg3: false);
-                context.SetEffect(arg1: new[] {2001}, arg2: true);
-                context.SetEventUI(arg1: 1, script: "$02000241_BF__TIMER__0$", arg3: 5000, arg4: "0");
+                context.SetTimer(timerId: "88", seconds: 5, clearAtZero: false);
+                context.SetEffect(triggerIds: new []{2001}, visible: true);
+                context.SetEventUI(arg1: 1, script: "$02000241_BF__TIMER__0$", duration: 5000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "88")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "88")) {
                     return new State어나운스1(context);
                 }
 
@@ -61,13 +61,13 @@ namespace Maple2.Trigger._02000241_bf {
             internal State어나운스1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "88", arg2: 5, arg3: false);
-                context.SetEffect(arg1: new[] {2002}, arg2: true);
-                context.SetEventUI(arg1: 1, script: "$02000241_BF__TIMER__1$", arg3: 5000, arg4: "0");
+                context.SetTimer(timerId: "88", seconds: 5, clearAtZero: false);
+                context.SetEffect(triggerIds: new []{2002}, visible: true);
+                context.SetEventUI(arg1: 1, script: "$02000241_BF__TIMER__1$", duration: 5000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "88")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "88")) {
                     return new State초재기0(context);
                 }
 
@@ -81,11 +81,11 @@ namespace Maple2.Trigger._02000241_bf {
             internal State초재기0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "98", arg2: 1);
+                context.SetTimer(timerId: "98", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "98")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "98")) {
                     return new StateStart0(context);
                 }
 
@@ -100,11 +100,11 @@ namespace Maple2.Trigger._02000241_bf {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
-                context.SetTimer(id: "98", arg2: 1);
+                context.SetTimer(timerId: "98", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "98")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "98")) {
                     return new StateStart(context);
                 }
 
@@ -119,13 +119,13 @@ namespace Maple2.Trigger._02000241_bf {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
-                context.SetEventUI(arg1: 1, script: "$02000241_BF__TIMER__4$", arg3: 5000, arg4: "0");
-                context.SetMesh(arg1: new[] {709, 710}, arg2: false);
-                context.SetTimer(id: "44", arg2: 6);
+                context.SetEventUI(arg1: 1, script: "$02000241_BF__TIMER__4$", duration: 5000, boxId: 0);
+                context.SetMesh(triggerIds: new []{709, 710}, visible: false);
+                context.SetTimer(timerId: "44", seconds: 6);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "44")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "44")) {
                     return new State초재기2(context);
                 }
 
@@ -140,8 +140,8 @@ namespace Maple2.Trigger._02000241_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "99")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "99")) {
                     return new State유저이동음성(context);
                 }
 
@@ -155,11 +155,11 @@ namespace Maple2.Trigger._02000241_bf {
             internal State유저이동음성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 3);
+                context.SetTimer(timerId: "1", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State유저이동(context);
                 }
 
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._02000241_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State끝(context);
             }
 
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._02000241_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

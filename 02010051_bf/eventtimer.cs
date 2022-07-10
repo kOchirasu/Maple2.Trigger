@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9003})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9003})) {
                     return new State시간체크(context);
                 }
 
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "timercheck") == 1) {
                     return new StateAchievement(context);
                 }
@@ -40,15 +40,15 @@ namespace Maple2.Trigger._02010051_bf {
             internal StateAchievement(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 9003, arg2: "trigger", arg3: "CaboTimeEvent");
+                context.SetAchievement(triggerId: 9003, type: "trigger", code: "CaboTimeEvent");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateAchievement(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {99})) {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new StateEnd(context);
                 }
 
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

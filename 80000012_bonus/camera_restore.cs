@@ -4,12 +4,12 @@ namespace Maple2.Trigger._80000012_bonus {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetTimer(id: "2", arg2: 2);
+                context.CameraSelect(triggerId: 8001, enable: true);
+                context.SetTimer(timerId: "2", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateCamera_restore(context);
                 }
 
@@ -23,12 +23,12 @@ namespace Maple2.Trigger._80000012_bonus {
             internal StateCamera_restore(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetTimer(id: "2", arg2: 2);
+                context.CameraSelect(triggerId: 8001, enable: true);
+                context.SetTimer(timerId: "2", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateIdle(context);
                 }
 

@@ -4,27 +4,27 @@ namespace Maple2.Trigger._99999873 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000069, 12000077}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000088, 12000089, 12000090, 12000091, 12000092}, arg2: 0);
-                context.SetActor(arg1: 14011, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14021, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14022, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14031, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14032, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14033, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14041, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14042, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14043, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14044, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14051, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14052, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14053, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14054, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14055, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetEffect(arg1: new[] {14200, 14201, 14202}, arg2: false);
+                context.SetInteractObject(interactIds: new []{12000069, 12000077}, state: 2);
+                context.SetInteractObject(interactIds: new []{12000088, 12000089, 12000090, 12000091, 12000092}, state: 0);
+                context.SetActor(triggerId: 14011, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14021, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14022, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14031, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14032, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14033, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14041, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14042, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14043, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14044, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14051, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14052, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14053, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14054, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14055, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetEffect(triggerIds: new []{14200, 14201, 14202}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TimeEventOn") == 1) {
                     return new StateSettingDelay(context);
                 }
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._99999873 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateSetting(context);
                 }
@@ -59,12 +59,12 @@ namespace Maple2.Trigger._99999873 {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000077}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{12000077}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000077}, arg2: 0)) {
-                    context.SetTimer(id: "1", arg2: 90, arg3: true, arg4: false, arg5: 0);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000077}, arg2: 0)) {
+                    context.SetTimer(timerId: "1", seconds: 90, clearAtZero: true, display: false, arg5: 0);
                     return new StateTouchingInNumericalOrder_Start_Delay(context);
                 }
 
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._99999873 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateTouchingInNumericalOrder_Play01(context);
                 }
@@ -98,47 +98,47 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Play01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {14201}, arg2: true);
-                context.SetInteractObject(arg1: new[] {12000088, 12000089, 12000090, 12000091, 12000092}, arg2: 1);
-                context.SetActor(arg1: 14011, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14021, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14022, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14031, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14032, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14033, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14041, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14042, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14043, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14044, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14051, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14052, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14053, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14054, arg2: true, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14055, arg2: true, arg3: "Interaction_luminous_A02_off");
+                context.SetEffect(triggerIds: new []{14201}, visible: true);
+                context.SetInteractObject(interactIds: new []{12000088, 12000089, 12000090, 12000091, 12000092}, state: 1);
+                context.SetActor(triggerId: 14011, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14021, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14022, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14031, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14032, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14033, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14041, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14042, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14043, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14044, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14051, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14052, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14053, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14054, visible: true, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14055, visible: true, initialSequence: "Interaction_luminous_A02_off");
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateResetTimer(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000088}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000088}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_Play02(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000089}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000089}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000090}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000090}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000091}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000091}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000092}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
@@ -152,29 +152,29 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Play02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000088}, arg2: 0);
-                context.SetEffect(arg1: new[] {14201}, arg2: true);
-                context.SetActor(arg1: 14011, arg2: true, arg3: "Interaction_luminous_A02_on");
+                context.SetInteractObject(interactIds: new []{12000088}, state: 0);
+                context.SetEffect(triggerIds: new []{14201}, visible: true);
+                context.SetActor(triggerId: 14011, visible: true, initialSequence: "Interaction_luminous_A02_on");
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateResetTimer(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000089}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000089}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_Play03(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000090}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000090}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000091}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000091}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000092}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
@@ -188,26 +188,26 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Play03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000089}, arg2: 0);
-                context.SetEffect(arg1: new[] {14201}, arg2: true);
-                context.SetActor(arg1: 14021, arg2: true, arg3: "Interaction_luminous_A02_on");
-                context.SetActor(arg1: 14022, arg2: true, arg3: "Interaction_luminous_A02_on");
+                context.SetInteractObject(interactIds: new []{12000089}, state: 0);
+                context.SetEffect(triggerIds: new []{14201}, visible: true);
+                context.SetActor(triggerId: 14021, visible: true, initialSequence: "Interaction_luminous_A02_on");
+                context.SetActor(triggerId: 14022, visible: true, initialSequence: "Interaction_luminous_A02_on");
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateResetTimer(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000090}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000090}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_Play04(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000091}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000091}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000092}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
@@ -221,23 +221,23 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Play04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000090}, arg2: 0);
-                context.SetEffect(arg1: new[] {14201}, arg2: true);
-                context.SetActor(arg1: 14031, arg2: true, arg3: "Interaction_luminous_A02_on");
-                context.SetActor(arg1: 14032, arg2: true, arg3: "Interaction_luminous_A02_on");
-                context.SetActor(arg1: 14033, arg2: true, arg3: "Interaction_luminous_A02_on");
+                context.SetInteractObject(interactIds: new []{12000090}, state: 0);
+                context.SetEffect(triggerIds: new []{14201}, visible: true);
+                context.SetActor(triggerId: 14031, visible: true, initialSequence: "Interaction_luminous_A02_on");
+                context.SetActor(triggerId: 14032, visible: true, initialSequence: "Interaction_luminous_A02_on");
+                context.SetActor(triggerId: 14033, visible: true, initialSequence: "Interaction_luminous_A02_on");
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateResetTimer(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000091}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000091}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_Play05(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000092}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
@@ -251,20 +251,20 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Play05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000091}, arg2: 0);
-                context.SetEffect(arg1: new[] {14201}, arg2: true);
-                context.SetActor(arg1: 14041, arg2: true, arg3: "Interaction_luminous_A02_on");
-                context.SetActor(arg1: 14042, arg2: true, arg3: "Interaction_luminous_A02_on");
-                context.SetActor(arg1: 14043, arg2: true, arg3: "Interaction_luminous_A02_on");
-                context.SetActor(arg1: 14044, arg2: true, arg3: "Interaction_luminous_A02_on");
+                context.SetInteractObject(interactIds: new []{12000091}, state: 0);
+                context.SetEffect(triggerIds: new []{14201}, visible: true);
+                context.SetActor(triggerId: 14041, visible: true, initialSequence: "Interaction_luminous_A02_on");
+                context.SetActor(triggerId: 14042, visible: true, initialSequence: "Interaction_luminous_A02_on");
+                context.SetActor(triggerId: 14043, visible: true, initialSequence: "Interaction_luminous_A02_on");
+                context.SetActor(triggerId: 14044, visible: true, initialSequence: "Interaction_luminous_A02_on");
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateResetTimer(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000092}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_End(context);
                 }
 
@@ -278,16 +278,16 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000092}, arg2: 0);
-                context.SetEffect(arg1: new[] {14201}, arg2: true);
-                context.SetActor(arg1: 14051, arg2: true, arg3: "Interaction_luminous_A02_on");
-                context.SetActor(arg1: 14052, arg2: true, arg3: "Interaction_luminous_A02_on");
-                context.SetActor(arg1: 14053, arg2: true, arg3: "Interaction_luminous_A02_on");
-                context.SetActor(arg1: 14054, arg2: true, arg3: "Interaction_luminous_A02_on");
-                context.SetActor(arg1: 14055, arg2: true, arg3: "Interaction_luminous_A02_on");
+                context.SetInteractObject(interactIds: new []{12000092}, state: 0);
+                context.SetEffect(triggerIds: new []{14201}, visible: true);
+                context.SetActor(triggerId: 14051, visible: true, initialSequence: "Interaction_luminous_A02_on");
+                context.SetActor(triggerId: 14052, visible: true, initialSequence: "Interaction_luminous_A02_on");
+                context.SetActor(triggerId: 14053, visible: true, initialSequence: "Interaction_luminous_A02_on");
+                context.SetActor(triggerId: 14054, visible: true, initialSequence: "Interaction_luminous_A02_on");
+                context.SetActor(triggerId: 14055, visible: true, initialSequence: "Interaction_luminous_A02_on");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateTouchingInNumericalOrder_Success(context);
                 }
@@ -302,18 +302,18 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "10", arg2: 61, arg3: true, arg4: false, arg5: 0);
-                context.AddBuff(arg1: new[] {140001}, arg2: 71001042, arg3: 1, arg4: false, arg5: false);
-                context.SetEffect(arg1: new[] {14200}, arg2: true);
-                context.SetInteractObject(arg1: new[] {12000069}, arg2: 1);
+                context.SetTimer(timerId: "10", seconds: 61, clearAtZero: true, display: false, arg5: 0);
+                context.AddBuff(boxIds: new []{140001}, skillId: 71001042, level: 1, arg4: false, arg5: false);
+                context.SetEffect(triggerIds: new []{14200}, visible: true);
+                context.SetInteractObject(interactIds: new []{12000069}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000069}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000069}, arg2: 0)) {
                     return new StateTouchingInNumericalOrder_SuccessDelay(context);
                 }
 
-                if (context.TimeExpired(arg1: "10")) {
+                if (context.TimeExpired(timerId: "10")) {
                     return new StateResetTimer(context);
                 }
 
@@ -328,7 +328,7 @@ namespace Maple2.Trigger._99999873 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateTouchingInNumericalOrder_Quit(context);
                 }
@@ -344,11 +344,11 @@ namespace Maple2.Trigger._99999873 {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 14000, key: "TimeEventOn", value: 0);
-                context.ResetTimer(id: "1");
-                context.ResetTimer(id: "10");
+                context.ResetTimer(timerId: "1");
+                context.ResetTimer(timerId: "10");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }
@@ -363,15 +363,15 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_FailDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {14202}, arg2: true);
+                context.SetEffect(triggerIds: new []{14202}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateTouchingInNumericalOrder_Fail(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateResetTimer(context);
                 }
 
@@ -389,30 +389,30 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Fail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000088, 12000089, 12000090, 12000091, 12000092}, arg2: 0);
-                context.SetActor(arg1: 14011, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14021, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14022, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14031, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14032, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14033, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14041, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14042, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14043, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14044, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14051, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14052, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14053, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14054, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetActor(arg1: 14055, arg2: false, arg3: "Interaction_luminous_A02_off");
+                context.SetInteractObject(interactIds: new []{12000088, 12000089, 12000090, 12000091, 12000092}, state: 0);
+                context.SetActor(triggerId: 14011, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14021, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14022, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14031, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14032, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14033, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14041, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14042, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14043, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14044, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14051, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14052, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14053, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14054, visible: false, initialSequence: "Interaction_luminous_A02_off");
+                context.SetActor(triggerId: 14055, visible: false, initialSequence: "Interaction_luminous_A02_off");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateTouchingInNumericalOrder_Play01(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateResetTimer(context);
                 }
 
@@ -430,10 +430,10 @@ namespace Maple2.Trigger._99999873 {
             internal StateResetTimer(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

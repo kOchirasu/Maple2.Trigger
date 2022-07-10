@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52000036_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateCameraEffect01(context);
                 }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52000036_qd {
                 context.SetCinematicUI(type: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCameraEffect02(context);
                 }
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._52000036_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCameraEffect03(context);
                 }
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._52000036_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelect(arg1: 1000, arg2: true);
+                context.CameraSelect(triggerId: 1000, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCameraEffect4(context);
                 }
@@ -74,10 +74,10 @@ namespace Maple2.Trigger._52000036_qd {
             internal StateCameraEffect4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 1001, arg2: true);
+                context.CameraSelect(triggerId: 1001, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateCameraEffect5(context);
                 }
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52000036_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateQuit(context);
                 }
@@ -110,10 +110,10 @@ namespace Maple2.Trigger._52000036_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 99999890, arg2: 0);
+                context.MoveUser(mapId: 99999890, portalId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Message") == 0) {
                     return new State메세지출력(context);
                 }
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._02020111_bf {
             internal State메세지출력(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02020111_BF__MESSAGE__0$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02020111_BF__MESSAGE__0$", duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Message") == 1) {
                     return new StateStart(context);
                 }

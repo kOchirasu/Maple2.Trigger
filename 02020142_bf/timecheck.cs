@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new State던전시간체크(context);
                 }
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetPortal(portalId: 49, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.DungeonTimeOut()) {
                     return new StateDungeonFailure(context);
                 }
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02020142_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
                 context.SetPortal(portalId: 41, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 42, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 43, visible: true, enabled: true, minimapVisible: true);
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetPortal(portalId: 49, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     context.DungeonFail();
                     return new StateEnd(context);
@@ -80,10 +80,10 @@ namespace Maple2.Trigger._02020142_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(isEnable: false);
+                context.DungeonEnableGiveUp(enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

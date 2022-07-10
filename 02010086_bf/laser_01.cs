@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 712) == 1) {
                     return new State레이저_02(context);
                 }
@@ -14,7 +14,7 @@ namespace Maple2.Trigger._02010086_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {999});
+                context.DestroyMonster(spawnIds: new []{999});
             }
         }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 707) == 1) {
                     return new State레이저_02_Creation(context);
                 }
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._02010086_bf {
             internal State레이저_02_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {998}, arg2: true);
+                context.CreateMonster(spawnIds: new []{998}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 708) == 1) {
                     return new State레이저_03_Creation(context);
                 }
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._02010086_bf {
             internal State레이저_03_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {995}, arg2: true);
+                context.CreateMonster(spawnIds: new []{995}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

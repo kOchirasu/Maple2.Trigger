@@ -7,8 +7,8 @@ namespace Maple2.Trigger._61000006_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {402})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{402})) {
                     return new StateWait(context);
                 }
 
@@ -23,10 +23,10 @@ namespace Maple2.Trigger._61000006_me {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 999, visible: true, enabled: true, minimapVisible: true);
-                context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509}, arg2: true);
+                context.SetMesh(triggerIds: new []{501, 502, 503, 504, 505, 506, 507, 508, 509}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 60000)) {
                     return new State어나운스0(context);
                 }
@@ -45,11 +45,11 @@ namespace Maple2.Trigger._61000006_me {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "ME_Trigger_03_00");
-                context.SetEventUI(arg1: 1, script: "$61000006_ME__TRIGGER_03__0$", arg3: 7000, arg4: "0");
+                context.PlaySystemSoundInBox(sound: "ME_Trigger_03_00");
+                context.SetEventUI(arg1: 1, script: "$61000006_ME__TRIGGER_03__0$", duration: 7000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new State어나운스1(context);
                 }
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._61000006_me {
                 context.ShowCountUI(text: "$61000006_ME__TRIGGER_03__1$", stage: 0, count: 5);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateStart(context);
                 }
@@ -83,18 +83,18 @@ namespace Maple2.Trigger._61000006_me {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999111, key: "gameStart", value: 1);
-                context.SetTimer(id: "160", arg2: 160, arg3: false, arg4: true);
-                context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000224, 10000214}, arg2: 1);
-                context.SetAchievement(arg1: 402, arg2: "trigger", arg3: "dailyquest_start");
-                context.GiveGuildExp(boxId: false, type: 2);
+                context.SetTimer(timerId: "160", seconds: 160, clearAtZero: false, display: true);
+                context.SetMesh(triggerIds: new []{501, 502, 503, 504, 505, 506, 507, 508, 509}, visible: false);
+                context.SetInteractObject(interactIds: new []{10000224, 10000214}, state: 1);
+                context.SetAchievement(triggerId: 402, type: "trigger", code: "dailyquest_start");
+                context.GiveGuildExp(boxId: 0, type: 2);
                 context.StartMiniGame(boxId: 499, round: 1, type: MiniGame.CrazyRunners);
                 context.StartMiniGameRound(boxId: 499, round: 1);
-                context.MoveUserToBox(boxId: 400, portalId: true);
+                context.MoveUserToBox(boxId: 400, portalId: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "160")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "160")) {
                     return new State경기종료(context);
                 }
 
@@ -108,13 +108,13 @@ namespace Maple2.Trigger._61000006_me {
             internal State경기종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 401, arg2: "trigger", arg3: "crazyrunner_win");
-                context.SetEventUI(arg1: 3, script: "$61000006_ME__TRIGGER_03__2$", arg3: 5000, arg4: "401");
-                context.SetEventUI(arg1: 6, script: "$61000006_ME__TRIGGER_03__3$", arg3: 5000, arg4: "!401");
-                context.AddBuff(arg1: new[] {401}, arg2: 70000019, arg3: 1);
+                context.SetAchievement(triggerId: 401, type: "trigger", code: "crazyrunner_win");
+                context.SetEventUI(arg1: 3, script: "$61000006_ME__TRIGGER_03__2$", duration: 5000, boxId: 401);
+                context.SetEventUI(arg1: 6, script: "$61000006_ME__TRIGGER_03__3$", duration: 5000, notBoxId: 401);
+                context.AddBuff(boxIds: new []{401}, skillId: 70000019, level: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.EndMiniGameRound(winnerBoxId: 401, expRate: 0.25f, isGainLoserBonus: true);
                     context.MiniGameGiveReward(winnerBoxId: 401, contentType: "miniGame");
@@ -133,9 +133,9 @@ namespace Maple2.Trigger._61000006_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.MoveUser(arg1: 0, arg2: 0);
+                    context.MoveUser(mapId: 0, portalId: 0);
                     return new StateEnd(context);
                 }
 
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._61000006_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

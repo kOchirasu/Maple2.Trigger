@@ -4,11 +4,11 @@ namespace Maple2.Trigger._80000012_bonus {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 8001, arg2: true);
+                context.CameraSelect(triggerId: 8001, enable: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {701})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{701})) {
                     return new StateStart(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._80000012_bonus {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {199}, arg2: false);
+                context.CreateMonster(spawnIds: new []{199}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "60")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "60")) {
                     return new StateEnd(context);
                 }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._80000012_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

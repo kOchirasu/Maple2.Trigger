@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: new[] {28011, 28012, 28013, 28014}, arg2: true);
-                context.SetMesh(arg1: new[] {230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123, 430100, 430101, 430102, 430103, 430104, 430105, 430106, 430107, 430108, 430109, 430110, 430111, 430112, 430113, 430114, 430115, 430116, 430117, 430118, 430119, 430120, 430121, 430122, 430123}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetAgent(triggerIds: new []{28011, 28012, 28013, 28014}, visible: true);
+                context.SetMesh(triggerIds: new []{230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123, 430100, 430101, 430102, 430103, 430104, 430105, 430106, 430107, 430108, 430109, 430110, 430111, 430112, 430113, 430114, 430115, 430116, 430117, 430118, 430119, 430120, 430121, 430122, 430123}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9000) == 1) {
                     return new StateStartDazzling01(context);
                 }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000378_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "RouteSelected") == 1) {
                     return new StateStartDazzlingRandom01(context);
                 }
@@ -39,10 +39,10 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateStartDazzlingRandom01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetRandomMesh(arg1: new[] {230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123}, arg2: true, arg3: 8, arg4: 100, arg5: 500);
+                context.SetRandomMesh(triggerIds: new []{230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123}, visible: true, meshCount: 8, arg4: 100, delay: 500);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateStartDazzlingRandom02(context);
                 }
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000378_bf {
             }
 
             public override void OnExit() {
-                context.SetRandomMesh(arg1: new[] {230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123}, arg2: false, arg3: 24, arg4: 0, arg5: 0);
+                context.SetRandomMesh(triggerIds: new []{230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123}, visible: false, meshCount: 24, arg4: 0, delay: 0);
             }
         }
 
@@ -67,10 +67,10 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateStartDazzlingRandom02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetRandomMesh(arg1: new[] {230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123}, arg2: true, arg3: 8, arg4: 100, arg5: 500);
+                context.SetRandomMesh(triggerIds: new []{230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123}, visible: true, meshCount: 8, arg4: 100, delay: 500);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateStartDazzlingRandom01(context);
                 }
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02000378_bf {
             }
 
             public override void OnExit() {
-                context.SetRandomMesh(arg1: new[] {230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123}, arg2: false, arg3: 24, arg4: 0, arg5: 0);
+                context.SetRandomMesh(triggerIds: new []{230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123}, visible: false, meshCount: 24, arg4: 0, delay: 0);
             }
         }
 
@@ -95,13 +95,13 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateMakeTrue(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetMesh(arg1: new[] {230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetRandomMesh(arg1: new[] {430100, 430101, 430102, 430103, 430104, 430105, 430106, 430107, 430108, 430109, 430110, 430111, 430112, 430113, 430114, 430115, 430116, 430117, 430118, 430119, 430120, 430121, 430122, 430123}, arg2: true, arg3: 24, arg4: 100, arg5: 50);
-                context.SetAgent(arg1: new[] {28011, 28012, 28013, 28014}, arg2: false);
+                context.SetEffect(triggerIds: new []{5001}, visible: true);
+                context.SetMesh(triggerIds: new []{230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123}, visible: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetRandomMesh(triggerIds: new []{430100, 430101, 430102, 430103, 430104, 430105, 430106, 430107, 430108, 430109, 430110, 430111, 430112, 430113, 430114, 430115, 430116, 430117, 430118, 430119, 430120, 430121, 430122, 430123}, visible: true, meshCount: 24, arg4: 100, delay: 50);
+                context.SetAgent(triggerIds: new []{28011, 28012, 28013, 28014}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateQuit(context);
                 }
@@ -116,10 +116,10 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateMakeFalse(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123}, arg2: false, arg3: 500, arg4: 0, arg5: 5f);
+                context.SetMesh(triggerIds: new []{230100, 230101, 230102, 230103, 230104, 230105, 230106, 230107, 230108, 230109, 230110, 230111, 230112, 230113, 230114, 230115, 230116, 230117, 230118, 230119, 230120, 230121, 230122, 230123}, visible: false, arg3: 500, arg4: 0, arg5: 5f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateQuit(context);
                 }
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._02000378_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,8 +5,8 @@ namespace Maple2.Trigger._80000015_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103})) {
                     return new StateWaitTime(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {720, 721, 722, 723, 724, 725}, arg2: false);
+                context.SetSkill(triggerIds: new []{720, 721, 722, 723, 724, 725}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateSkill01(context);
                 }
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {720}, arg2: true);
+                context.SetSkill(triggerIds: new []{720}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateSkill02(context);
                 }
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {721}, arg2: true);
+                context.SetSkill(triggerIds: new []{721}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateSkill03(context);
                 }
@@ -74,10 +74,10 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {722}, arg2: true);
+                context.SetSkill(triggerIds: new []{722}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateSkill04(context);
                 }
@@ -92,10 +92,10 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {723}, arg2: true);
+                context.SetSkill(triggerIds: new []{723}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 200)) {
                     return new StateSkill05(context);
                 }
@@ -110,10 +110,10 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {724}, arg2: true);
+                context.SetSkill(triggerIds: new []{724}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateSkill06(context);
                 }
@@ -128,10 +128,10 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {725}, arg2: true);
+                context.SetSkill(triggerIds: new []{725}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateWaitTime(context);
                 }
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._80000015_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

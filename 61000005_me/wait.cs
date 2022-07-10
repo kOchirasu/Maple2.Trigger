@@ -4,11 +4,11 @@ namespace Maple2.Trigger._61000005_me {
             internal State입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "90", arg2: 90, arg3: true, arg4: false);
+                context.SetTimer(timerId: "90", seconds: 90, clearAtZero: true, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {196})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{196})) {
                     return new StateWait(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._61000005_me {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$61000005_ME__WAIT__0$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$61000005_ME__WAIT__0$", duration: 5000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 196) == 20) {
                     return new StateStart(context);
                 }
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._61000005_me {
                     return new StateWait(context);
                 }
 
-                if (context.TimeExpired(arg1: "90")) {
+                if (context.TimeExpired(timerId: "90")) {
                     return new StateStart(context);
                 }
 
@@ -48,10 +48,10 @@ namespace Maple2.Trigger._61000005_me {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$61000005_ME__WAIT__1$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$61000005_ME__WAIT__1$", duration: 3000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEnd(context);
                 }
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._61000005_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

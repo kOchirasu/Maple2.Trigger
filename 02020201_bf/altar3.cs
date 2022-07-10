@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {901})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{901})) {
                     return new StateBattleStart체크(context);
                 }
 
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{101})) {
                     return new StateCreationWait(context);
                 }
 
@@ -37,7 +37,7 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "gogo") == 1) {
                     return new StateCreationWait2(context);
                 }
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
                     return new State전투체크(context);
                 }
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{101})) {
                     return new State제단Creation(context);
                 }
 
@@ -84,10 +84,10 @@ namespace Maple2.Trigger._02020201_bf {
             internal State제단Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {203}, arg2: false);
+                context.CreateMonster(spawnIds: new []{203}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State제단파괴체크(context);
                 }
@@ -103,8 +103,8 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {203})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{203})) {
                     return new State제단재Creation시간(context);
                 }
 
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._02020201_bf {
                 context.SetAiExtraData(key: "Sidephase", value: 1, isModify: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 40000)) {
                     context.SetAiExtraData(key: "Sidephase", value: -1, isModify: true);
                     return new State전투체크(context);
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

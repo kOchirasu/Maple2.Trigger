@@ -5,7 +5,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BannerCheckIn") == 1) {
                     return new StateBannerCheckIn(context);
                 }
@@ -20,13 +20,13 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateBannerCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValueFromUserCount(triggerBoxId: 9021, key: "BannerNumberOfBlue", userTagId: 1);
+                context.SetUserValueFromUserCount(boxId: 9021, key: "BannerNumberOfBlue", userTagId: 1);
                 context.UserValueToNumberMesh(key: "BannerNumberOfBlue", startMeshId: 1500, digitCount: 2);
-                context.SetUserValueFromUserCount(triggerBoxId: 9022, key: "BannerNumberOfRed", userTagId: 2);
+                context.SetUserValueFromUserCount(boxId: 9022, key: "BannerNumberOfRed", userTagId: 2);
                 context.UserValueToNumberMesh(key: "BannerNumberOfRed", startMeshId: 2500, digitCount: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateNextWait(context);
                 }
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BannerCheckIn") == 1) {
                     return new StateBannerCheckIn(context);
                 }
@@ -61,13 +61,13 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValueFromUserCount(triggerBoxId: 9021, key: "BannerNumberOfBlue", userTagId: 1);
+                context.SetUserValueFromUserCount(boxId: 9021, key: "BannerNumberOfBlue", userTagId: 1);
                 context.UserValueToNumberMesh(key: "BannerNumberOfBlue", startMeshId: 1500, digitCount: 2);
-                context.SetUserValueFromUserCount(triggerBoxId: 9022, key: "BannerNumberOfRed", userTagId: 2);
+                context.SetUserValueFromUserCount(boxId: 9022, key: "BannerNumberOfRed", userTagId: 2);
                 context.UserValueToNumberMesh(key: "BannerNumberOfRed", startMeshId: 2500, digitCount: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

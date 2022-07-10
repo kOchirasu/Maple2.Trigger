@@ -4,12 +4,12 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000507, 10000508, 10000509, 10000510, 10000511, 10000512, 10000513, 10000514, 10000515, 10000516, 10000517, 10000518}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{10000507, 10000508, 10000509, 10000510, 10000511, 10000512, 10000513, 10000514, 10000515, 10000516, 10000517, 10000518}, isStart: false);
                 context.SetUserValue(key: "BattleRidingOnCount", value: 0);
                 context.SetUserValue(key: "BattleRidingOff", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleRidingOnCount") == 1) {
                     return new StateRidingSpawn(context);
                 }
@@ -24,51 +24,51 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateRidingSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000507, 10000508, 10000509, 10000510, 10000511, 10000512, 10000513, 10000514}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{10000507, 10000508, 10000509, 10000510, 10000511, 10000512, 10000513, 10000514}, isStart: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 10f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRidingSpawn_Extra_none(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRidingSpawn_Extra_north(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRidingSpawn_Extra_south(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRidingSpawn_Extra_east(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRidingSpawn_Extra_west(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRidingSpawn_Extra_northsouth(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRidingSpawn_Extra_northeast(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRidingSpawn_Extra_northwest(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRidingSpawn_Extra_eastwest(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRidingSpawn_Extra_southeast(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRidingSpawn_Extra_southwest(context);
                 }
 
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
                     return new StateQuit(context);
                 }
@@ -98,10 +98,10 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateRidingSpawn_Extra_north(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000515}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{10000515}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
                     return new StateQuit(context);
                 }
@@ -116,10 +116,10 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateRidingSpawn_Extra_south(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000517}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{10000517}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
                     return new StateQuit(context);
                 }
@@ -134,10 +134,10 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateRidingSpawn_Extra_east(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000516}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{10000516}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
                     return new StateQuit(context);
                 }
@@ -152,10 +152,10 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateRidingSpawn_Extra_west(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000518}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{10000518}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
                     return new StateQuit(context);
                 }
@@ -170,10 +170,10 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateRidingSpawn_Extra_northsouth(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000515, 10000517}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{10000515, 10000517}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
                     return new StateQuit(context);
                 }
@@ -188,10 +188,10 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateRidingSpawn_Extra_northeast(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000515, 10000516}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{10000515, 10000516}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
                     return new StateQuit(context);
                 }
@@ -206,10 +206,10 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateRidingSpawn_Extra_northwest(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000515, 10000518}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{10000515, 10000518}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
                     return new StateQuit(context);
                 }
@@ -224,10 +224,10 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateRidingSpawn_Extra_eastwest(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000516, 10000518}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{10000516, 10000518}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
                     return new StateQuit(context);
                 }
@@ -242,10 +242,10 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateRidingSpawn_Extra_southeast(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000516, 10000517}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{10000516, 10000517}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
                     return new StateQuit(context);
                 }
@@ -260,10 +260,10 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateRidingSpawn_Extra_southwest(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000518, 10000517}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{10000518, 10000517}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
                     return new StateQuit(context);
                 }
@@ -278,10 +278,10 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {10000507, 10000508, 10000509, 10000510, 10000511, 10000512, 10000513, 10000514, 10000515, 10000516, 10000517, 10000518}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{10000507, 10000508, 10000509, 10000510, 10000511, 10000512, 10000513, 10000514, 10000515, 10000516, 10000517, 10000518}, isStart: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

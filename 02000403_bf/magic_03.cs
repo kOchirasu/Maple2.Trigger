@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000403_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000033}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000033}, arg2: 0)) {
                     return new StateReady(context);
                 }
 
@@ -20,14 +20,14 @@ namespace Maple2.Trigger._02000403_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7003}, arg2: false);
-                context.SetMesh(arg1: new[] {1103}, arg2: false, arg3: 0, arg4: 200, arg5: 15f);
-                context.SetMesh(arg1: new[] {1203}, arg2: true, arg3: 0, arg4: 200, arg5: 15f);
-                context.CreateMonster(arg1: new[] {203}, arg2: false);
+                context.SetEffect(triggerIds: new []{7003}, visible: false);
+                context.SetMesh(triggerIds: new []{1103}, visible: false, arg3: 0, arg4: 200, arg5: 15f);
+                context.SetMesh(triggerIds: new []{1203}, visible: true, arg3: 0, arg4: 200, arg5: 15f);
+                context.CreateMonster(spawnIds: new []{203}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {203})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{203})) {
                     return new StateEvent_03(context);
                 }
 
@@ -41,12 +41,12 @@ namespace Maple2.Trigger._02000403_bf {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 713, arg2: "trigger", arg3: "Hauntedmansion");
-                context.CreateMonster(arg1: new[] {165, 166, 167, 168, 169}, arg2: false);
-                context.SetNpcEmotionLoop(arg1: 165, arg2: "Down_Idle_A", arg3: 600000f);
+                context.SetAchievement(triggerId: 713, type: "trigger", code: "Hauntedmansion");
+                context.CreateMonster(spawnIds: new []{165, 166, 167, 168, 169}, arg2: false);
+                context.SetNpcEmotionLoop(spawnId: 165, sequenceName: "Down_Idle_A", duration: 600000f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEvent_03_b(context);
                 }
@@ -61,15 +61,15 @@ namespace Maple2.Trigger._02000403_bf {
             internal StateEvent_03_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 168, arg2: "MS2PatrolData_2138");
-                context.SetNpcEmotionLoop(arg1: 165, arg2: "Down_Idle_A", arg3: 600000f);
-                context.SetConversation(arg1: 1, arg2: 165, script: "$02000403_BF__MAGIC_03__0$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 169, script: "$02000403_BF__MAGIC_03__1$", arg4: 3, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 168, script: "$02000403_BF__MAGIC_03__2$", arg4: 3, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 168, script: "$02000403_BF__MAGIC_03__3$", arg4: 3, arg5: 6);
+                context.MoveNpc(spawnId: 168, patrolName: "MS2PatrolData_2138");
+                context.SetNpcEmotionLoop(spawnId: 165, sequenceName: "Down_Idle_A", duration: 600000f);
+                context.SetConversation(type: 1, spawnId: 165, script: "$02000403_BF__MAGIC_03__0$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 169, script: "$02000403_BF__MAGIC_03__1$", arg4: 3, arg5: 2);
+                context.SetConversation(type: 1, spawnId: 168, script: "$02000403_BF__MAGIC_03__2$", arg4: 3, arg5: 1);
+                context.SetConversation(type: 1, spawnId: 168, script: "$02000403_BF__MAGIC_03__3$", arg4: 3, arg5: 6);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
                     return new StateEvent_03_c(context);
                 }
@@ -84,10 +84,10 @@ namespace Maple2.Trigger._02000403_bf {
             internal StateEvent_03_c(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {165, 166, 167, 168, 169});
+                context.DestroyMonster(spawnIds: new []{165, 166, 167, 168, 169});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

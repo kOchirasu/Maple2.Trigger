@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000524_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new State난이도별BossSpawn(context);
                 }
 
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02000524_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonId() == 23046003) {
                     return new State일반난이도_BossSpawn(context);
                 }
@@ -45,11 +45,11 @@ namespace Maple2.Trigger._02000524_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
-                context.CreateMonster(arg1: new[] {98}, arg2: false);
+                context.CreateMonster(spawnIds: new []{98}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {98})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{98})) {
                     return new StateClear처리(context);
                 }
 
@@ -64,11 +64,11 @@ namespace Maple2.Trigger._02000524_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
-                context.CreateMonster(arg1: new[] {99}, arg2: false);
+                context.CreateMonster(spawnIds: new []{99}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {99})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new StateClear처리(context);
                 }
 
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02000524_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.DungeonClear();
                     return new StateEnd처리(context);
@@ -99,11 +99,11 @@ namespace Maple2.Trigger._02000524_bf {
             internal StateEnd처리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

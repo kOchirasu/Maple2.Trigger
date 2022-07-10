@@ -5,16 +5,16 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 702, arg2: new[] {111})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 702, spawnIds: new []{111})) {
                     return new StateNpc_out(context);
                 }
 
-                if (context.NpcDetected(arg1: 702, arg2: new[] {112})) {
+                if (context.NpcDetected(boxId: 702, spawnIds: new []{112})) {
                     return new StateNpc_out(context);
                 }
 
-                if (context.NpcDetected(arg1: 702, arg2: new[] {113})) {
+                if (context.NpcDetected(boxId: 702, spawnIds: new []{113})) {
                     return new StateNpc_out(context);
                 }
 
@@ -28,10 +28,10 @@ namespace Maple2.Trigger._52010009_qd {
             internal StateNpc_out(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {111, 112, 113});
+                context.DestroyMonster(spawnIds: new []{111, 112, 113});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateIdle(context);
             }
 

@@ -11,7 +11,7 @@ namespace Maple2.Trigger._63000054_cs {
                 context.CreateWidget(type: WidgetType.ReverseRaidPortal);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

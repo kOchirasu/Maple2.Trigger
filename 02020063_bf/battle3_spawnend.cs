@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {811, 812, 813, 814})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{811, 812, 813, 814})) {
                     context.SetUserValue(triggerId: 99990006, key: "Battle_3_SpawnStart", value: 0);
                 }
 

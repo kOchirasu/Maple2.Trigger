@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000242_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {701, 702}, arg2: false);
-                context.DestroyMonster(arg1: new[] {631, 632, 633, 634, 635, 636, 637, 638, 639});
+                context.SetMesh(triggerIds: new []{701, 702}, visible: false);
+                context.DestroyMonster(spawnIds: new []{631, 632, 633, 634, 635, 636, 637, 638, 639});
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {201})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{201})) {
                     return new StateMobCreation(context);
                 }
 
@@ -23,11 +23,11 @@ namespace Maple2.Trigger._02000242_bf {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {631, 632, 633, 634, 635, 636, 637, 638, 639}, arg2: false);
+                context.CreateMonster(spawnIds: new []{631, 632, 633, 634, 635, 636, 637, 638, 639}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {631, 632, 633, 634, 635, 636, 637, 638, 639})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{631, 632, 633, 634, 635, 636, 637, 638, 639})) {
                     return new State통과(context);
                 }
 
@@ -41,10 +41,10 @@ namespace Maple2.Trigger._02000242_bf {
             internal State통과(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateItem(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520});
+                context.CreateItem(spawnIds: new []{501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001101}, arg2: 0);
+                context.SetInteractObject(interactIds: new []{10001101}, state: 0);
                 context.SetUserValue(key: "CustomerEnter", value: 0);
                 context.SetUserValue(key: "ItemNumber", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "CustomerEnter") == 1) {
                     return new StateCustomerEnterDelay(context);
                 }
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCustomerEnter(context);
                 }
@@ -40,15 +40,15 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateCustomerEnter(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {3111}, arg2: false);
+                context.CreateMonster(spawnIds: new []{3111}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 9130, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 9130, spawnIds: new []{0})) {
                     return new StatePatrol03(context);
                 }
 
-                if (!context.NpcDetected(arg1: 9131, arg2: new[] {0})) {
+                if (!context.NpcDetected(boxId: 9131, spawnIds: new []{0})) {
                     return new StatePatrol01(context);
                 }
 
@@ -62,11 +62,11 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePatrol01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 3111, arg2: "MS2PatrolData_301");
+                context.MoveNpc(spawnId: 3111, patrolName: "MS2PatrolData_301");
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 9132, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 9132, spawnIds: new []{0})) {
                     return new StatePatrol02Delay(context);
                 }
 
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePatrol02(context);
                 }
@@ -96,11 +96,11 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePatrol02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 3111, arg2: "MS2PatrolData_302");
+                context.MoveNpc(spawnId: 3111, patrolName: "MS2PatrolData_302");
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 9133, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 9133, spawnIds: new []{0})) {
                     return new StatePatrol03Delay(context);
                 }
 
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePatrol03(context);
                 }
@@ -130,11 +130,11 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePatrol03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 3111, arg2: "MS2PatrolData_303");
+                context.MoveNpc(spawnId: 3111, patrolName: "MS2PatrolData_303");
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 9133, arg2: new[] {0})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 9133, spawnIds: new []{0})) {
                     return new StatePatrolEndDelay(context);
                 }
 
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePatrolEnd(context);
                 }
@@ -165,8 +165,8 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 9133, arg2: new[] {3111})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 9133, spawnIds: new []{3111})) {
                     return new StateWaitGreeting(context);
                 }
 
@@ -180,11 +180,11 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateWaitGreeting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001101}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001101}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001101}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001101}, arg2: 0)) {
                     return new StateOrderRandomPick(context);
                 }
 
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override void OnExit() {
-                context.SetInteractObject(arg1: new[] {10001101}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{10001101}, state: 2);
             }
         }
 
@@ -201,28 +201,28 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 1f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StatePickItem_30000644(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StatePickItem_30000679(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StatePickItem_30000683(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StatePickItem_30000685(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StatePickItem_30000686(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StatePickItem_30000716(context);
                 }
 
@@ -236,13 +236,13 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePickItem_30000644(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5103}, arg2: true);
+                context.SetEffect(triggerIds: new []{5103}, visible: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000644);
-                context.AddEffectNif(spawnPointId: 3111, nifPath: @"Map/Iceland/Indoor/ic_in_cubric_box_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnId: 3111, nifPath: @"Map/Iceland/Indoor/ic_in_cubric_box_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 0)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{9203}, itemId: 0)) {
                     return new StateDetectItem_30000644(context);
                 }
 
@@ -257,12 +257,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 30000644)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{9203}, itemId: 30000644)) {
                     return new StateRightItem(context);
                 }
 
-                if (!context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 30000644)) {
+                if (!context.DetectLiftableObject(boxIds: new []{9203}, itemId: 30000644)) {
                     return new StateWrongItem(context);
                 }
 
@@ -276,13 +276,13 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePickItem_30000679(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5103}, arg2: true);
+                context.SetEffect(triggerIds: new []{5103}, visible: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000679);
-                context.AddEffectNif(spawnPointId: 3111, nifPath: @"Map/Royalcity/Field/ry_fi_prop_yacht_A02.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnId: 3111, nifPath: @"Map/Royalcity/Field/ry_fi_prop_yacht_A02.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 0)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{9203}, itemId: 0)) {
                     return new StateDetectItem_30000679(context);
                 }
 
@@ -297,12 +297,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 30000679)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{9203}, itemId: 30000679)) {
                     return new StateRightItem(context);
                 }
 
-                if (!context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 30000679)) {
+                if (!context.DetectLiftableObject(boxIds: new []{9203}, itemId: 30000679)) {
                     return new StateWrongItem(context);
                 }
 
@@ -316,13 +316,13 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePickItem_30000683(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5103}, arg2: true);
+                context.SetEffect(triggerIds: new []{5103}, visible: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000683);
-                context.AddEffectNif(spawnPointId: 3111, nifPath: @"Map/Orient/Field/or_fi_prop_ship_A02.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnId: 3111, nifPath: @"Map/Orient/Field/or_fi_prop_ship_A02.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 0)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{9203}, itemId: 0)) {
                     return new StateDetectItem_30000683(context);
                 }
 
@@ -337,12 +337,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 30000683)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{9203}, itemId: 30000683)) {
                     return new StateRightItem(context);
                 }
 
-                if (!context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 30000683)) {
+                if (!context.DetectLiftableObject(boxIds: new []{9203}, itemId: 30000683)) {
                     return new StateWrongItem(context);
                 }
 
@@ -356,13 +356,13 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePickItem_30000685(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5103}, arg2: true);
+                context.SetEffect(triggerIds: new []{5103}, visible: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000685);
-                context.AddEffectNif(spawnPointId: 3111, nifPath: @"Map/Lith/Field/li_fi_prop_anchor_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnId: 3111, nifPath: @"Map/Lith/Field/li_fi_prop_anchor_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 0)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{9203}, itemId: 0)) {
                     return new StateDetectItem_30000685(context);
                 }
 
@@ -377,12 +377,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 30000685)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{9203}, itemId: 30000685)) {
                     return new StateRightItem(context);
                 }
 
-                if (!context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 30000685)) {
+                if (!context.DetectLiftableObject(boxIds: new []{9203}, itemId: 30000685)) {
                     return new StateWrongItem(context);
                 }
 
@@ -396,13 +396,13 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePickItem_30000686(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5103}, arg2: true);
+                context.SetEffect(triggerIds: new []{5103}, visible: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000686);
-                context.AddEffectNif(spawnPointId: 3111, nifPath: @"Map/Lith/Field/li_fi_prop_tube_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnId: 3111, nifPath: @"Map/Lith/Field/li_fi_prop_tube_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 0)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{9203}, itemId: 0)) {
                     return new StateDetectItem_30000686(context);
                 }
 
@@ -417,12 +417,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 30000686)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{9203}, itemId: 30000686)) {
                     return new StateRightItem(context);
                 }
 
-                if (!context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 30000686)) {
+                if (!context.DetectLiftableObject(boxIds: new []{9203}, itemId: 30000686)) {
                     return new StateWrongItem(context);
                 }
 
@@ -436,13 +436,13 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePickItem_30000716(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5103}, arg2: true);
+                context.SetEffect(triggerIds: new []{5103}, visible: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000716);
-                context.AddEffectNif(spawnPointId: 3111, nifPath: @"Map/Kerningcity/Field/ke_fi_prop_tire_A02.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnId: 3111, nifPath: @"Map/Kerningcity/Field/ke_fi_prop_tire_A02.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 0)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{9203}, itemId: 0)) {
                     return new StateDetectItem_30000716(context);
                 }
 
@@ -457,12 +457,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 30000716)) {
+            public override TriggerState? Execute() {
+                if (context.DetectLiftableObject(boxIds: new []{9203}, itemId: 30000716)) {
                     return new StateRightItem(context);
                 }
 
-                if (!context.DetectLiftableObject(triggerBoxIds: new[] {9203}, itemId: 30000716)) {
+                if (!context.DetectLiftableObject(boxIds: new []{9203}, itemId: 30000716)) {
                     return new StateWrongItem(context);
                 }
 
@@ -476,14 +476,14 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateRightItem(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5103}, arg2: false);
-                context.PlaySystemSoundInBox(arg1: new[] {9900}, arg2: "System_PartTimeJob_Right_01");
-                context.RemoveEffectNif(spawnPointId: 3111);
-                context.SetConversation(arg1: 1, arg2: 3111, script: "$02000387_BF__3111_CUSTOMER__0$", arg4: 3, arg5: 0);
-                context.AddBuff(arg1: new[] {9900}, arg2: 70000112, arg3: 1, arg4: false, arg5: false);
+                context.SetEffect(triggerIds: new []{5103}, visible: false);
+                context.PlaySystemSoundInBox(boxIds: new []{9900}, sound: "System_PartTimeJob_Right_01");
+                context.RemoveEffectNif(spawnId: 3111);
+                context.SetConversation(type: 1, spawnId: 3111, script: "$02000387_BF__3111_CUSTOMER__0$", arg4: 3, arg5: 0);
+                context.AddBuff(boxIds: new []{9900}, skillId: 70000112, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateCustomerLeave(context);
                 }
@@ -498,11 +498,11 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateCustomerLeave(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 3111, arg2: "MS2PatrolData_333");
+                context.MoveNpc(spawnId: 3111, patrolName: "MS2PatrolData_333");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 9303, arg2: new[] {3111})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 9303, spawnIds: new []{3111})) {
                     return new StateQuit(context);
                 }
 
@@ -516,10 +516,10 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {3111});
+                context.DestroyMonster(spawnIds: new []{3111});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -534,13 +534,13 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateWrongItem(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5103}, arg2: false);
-                context.PlaySystemSoundInBox(arg1: new[] {9900}, arg2: "System_PartTimeJob_Wrong_01");
-                context.RemoveEffectNif(spawnPointId: 3111);
-                context.SetConversation(arg1: 1, arg2: 3111, script: "$02000387_BF__3111_CUSTOMER__1$", arg4: 3, arg5: 0);
+                context.SetEffect(triggerIds: new []{5103}, visible: false);
+                context.PlaySystemSoundInBox(boxIds: new []{9900}, sound: "System_PartTimeJob_Wrong_01");
+                context.RemoveEffectNif(spawnId: 3111);
+                context.SetConversation(type: 1, spawnId: 3111, script: "$02000387_BF__3111_CUSTOMER__1$", arg4: 3, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
                     return new StateWrongItemReturn(context);
                 }
@@ -556,7 +556,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ItemNumber") == 30000644) {
                     return new StatePickItem_30000644(context);
                 }

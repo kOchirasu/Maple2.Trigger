@@ -4,19 +4,19 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3006, 3007, 3008}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3005, 3008, 3100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.DestroyMonster(arg1: new[] {102, 202, 300, 301, 900, 901, 910, 911, 912, 913, 920, 921, 922});
-                context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
-                context.SetMesh(arg1: new[] {3202, 3203}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3200, 3201}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10002025}, arg2: 0);
+                context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3006, 3007, 3008}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3005, 3008, 3100}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.DestroyMonster(spawnIds: new []{102, 202, 300, 301, 900, 901, 910, 911, 912, 913, 920, 921, 922});
+                context.CreateMonster(spawnIds: new []{101, 201}, arg2: false);
+                context.SetMesh(triggerIds: new []{3202, 3203}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3200, 3201}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3300, 3301, 3302, 3303}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetBreakable(triggerIds: new []{4000, 4001, 4002, 4003}, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10002025}, state: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "start") == 1) {
                     return new StateDungeonStart(context);
                 }
@@ -31,10 +31,10 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {300, 301}, arg2: true);
+                context.CreateMonster(spawnIds: new []{300, 301}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateNpcTalk01(context);
                 }
@@ -51,11 +51,11 @@ namespace Maple2.Trigger._02000481_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetConversation(arg1: 2, arg2: 11000119, script: "$02000481_BF__01_ENTER__0$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11000119, script: "$02000481_BF__01_ENTER__0$", arg4: 4);
                 context.SetSkip(state: new StateNpcTalk01Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateNpcTalk01Skip(context);
                 }
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000481_bf {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNpcTalk02(context);
             }
 
@@ -85,11 +85,11 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateNpcTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000015, script: "$02000481_BF__01_ENTER__1$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11000015, script: "$02000481_BF__01_ENTER__1$", arg4: 5);
                 context.SetSkip(state: new StateNpcTalk02Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateNpcTalk02Skip(context);
                 }
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02000481_bf {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNpcMonologue01(context);
             }
 
@@ -121,12 +121,12 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateNpcMonologue01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, script: "$02000481_BF__01_ENTER__2$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 201, script: "$02000481_BF__01_ENTER__3$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 101, script: "$02000481_BF__01_ENTER__2$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 201, script: "$02000481_BF__01_ENTER__3$", arg4: 2, arg5: 0);
                 context.SetUserValue(triggerId: 2, key: "MobSpawn", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateNpcChange01(context);
                 }
@@ -141,13 +141,13 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateNpcChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBalloonTalk(spawnPointId: 101);
-                context.RemoveBalloonTalk(spawnPointId: 201);
-                context.DestroyMonster(arg1: new[] {101, 201});
-                context.CreateMonster(arg1: new[] {102, 202}, arg2: false);
+                context.RemoveBalloonTalk(spawnId: 101);
+                context.RemoveBalloonTalk(spawnId: 201);
+                context.DestroyMonster(spawnIds: new []{101, 201});
+                context.CreateMonster(spawnIds: new []{102, 202}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateNpcMonologue02(context);
                 }
@@ -162,15 +162,15 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateNpcMonologue02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, script: "$02000481_BF__01_ENTER__4$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 202, script: "$02000481_BF__01_ENTER__5$", arg4: 2, arg5: 1);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.SetConversation(type: 1, spawnId: 102, script: "$02000481_BF__01_ENTER__4$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 202, script: "$02000481_BF__01_ENTER__5$", arg4: 2, arg5: 1);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039501, textId: 20039501, duration: 4000);
-                context.SetInteractObject(arg1: new[] {10002025}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002025}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10002025}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10002025}, arg2: 0)) {
                     return new StateGratingOpen01(context);
                 }
 
@@ -184,14 +184,14 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateGratingOpen01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039502, textId: 20039502, duration: 4000);
-                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303}, arg2: false, arg3: 500, arg4: 0, arg5: 0f);
-                context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003}, arg2: true);
+                context.SetMesh(triggerIds: new []{3300, 3301, 3302, 3303}, visible: false, arg3: 500, arg4: 0, arg5: 0f);
+                context.SetBreakable(triggerIds: new []{4000, 4001, 4002, 4003}, enabled: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateGratingOpen02(context);
                 }
@@ -206,12 +206,12 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateGratingOpen02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {910}, arg2: false);
-                context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3200, 3201}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(spawnIds: new []{910}, arg2: false);
+                context.SetMesh(triggerIds: new []{3100}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3200, 3201}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateGratingOpen03(context);
                 }
@@ -226,13 +226,13 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateGratingOpen03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
-                context.CreateMonster(arg1: new[] {911, 912, 913}, arg2: false);
+                context.SetBreakable(triggerIds: new []{4000, 4001, 4002, 4003}, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, arg2: false);
+                context.CreateMonster(spawnIds: new []{911, 912, 913}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9100})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9100})) {
                     return new StateMobSpawn_Hallway01(context);
                 }
 
@@ -246,13 +246,13 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateMobSpawn_Hallway01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039503, textId: 20039503, duration: 4000);
-                context.CreateMonster(arg1: new[] {920}, arg2: false);
+                context.CreateMonster(spawnIds: new []{920}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9200})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9200})) {
                     return new StateMobSpawn_Hallway02(context);
                 }
 
@@ -266,11 +266,11 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateMobSpawn_Hallway02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {921, 922}, arg2: false);
+                context.CreateMonster(spawnIds: new []{921, 922}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9300})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9300})) {
                     return new StateQuit(context);
                 }
 
@@ -284,11 +284,11 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039504, textId: 20039504, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

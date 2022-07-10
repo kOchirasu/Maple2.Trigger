@@ -7,8 +7,8 @@ namespace Maple2.Trigger._52000194_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003427}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{10003427}, questStates: new byte[]{2})) {
                     return new StateWait_02(context);
                 }
 
@@ -24,10 +24,10 @@ namespace Maple2.Trigger._52000194_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
-                context.MoveUser(arg1: 52000194, arg2: 5001);
+                context.MoveUser(mapId: 52000194, portalId: 5001);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State영상재생(context);
                 }
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._52000194_qd {
                 context.PlaySceneMovie(fileName: @"common\unconsciousEmpress.usm", movieId: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
+            public override TriggerState? Execute() {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, condition: "IsStop", value: "1")) {
                     return new State시공의균열(context);
                 }
 
@@ -69,7 +69,7 @@ namespace Maple2.Trigger._52000194_qd {
                 context.SetCinematicUI(type: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State시공의균열_02(context);
                 }
@@ -84,11 +84,11 @@ namespace Maple2.Trigger._52000194_qd {
             internal State시공의균열_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4001, 4002}, returnView: false);
                 context.ShowCaption(type: CaptionType.Vertical, title: "$52000194_QD__52000194__0$", script: "$52000194_QD__52000194__1$", align: Align.Bottom | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State시공의균열_03(context);
                 }
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._52000194_qd {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State시공의균열_04(context);
                 }
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._52000194_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

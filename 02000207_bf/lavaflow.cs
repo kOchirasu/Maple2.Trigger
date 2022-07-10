@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000207_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {2001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{2001})) {
                     return new StateWait(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._02000207_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {600}, arg2: false);
+                context.SetEffect(triggerIds: new []{600}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "LavaflowHigh") == 1) {
                     return new State3칸분기(context);
                 }
@@ -55,17 +55,17 @@ namespace Maple2.Trigger._02000207_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999102, key: "LavaflowHigh", value: 0);
-                context.SetEffect(arg1: new[] {600}, arg2: true);
-                context.CreateMonster(arg1: new[] {1001}, arg2: false);
-                context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1001A");
+                context.SetEffect(triggerIds: new []{600}, visible: true);
+                context.CreateMonster(spawnIds: new []{1001}, arg2: false);
+                context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_1001A");
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 52f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 52f)) {
                     return new State3칸이동(context);
                 }
 
-                if (context.RandomCondition(arg1: 48f)) {
+                if (context.RandomCondition(rate: 48f)) {
                     return new State리턴(context);
                 }
 
@@ -83,10 +83,10 @@ namespace Maple2.Trigger._02000207_bf {
             internal State3칸이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1001A");
+                context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_1001A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 28000)) {
                     return new State리턴(context);
                 }
@@ -106,17 +106,17 @@ namespace Maple2.Trigger._02000207_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999102, key: "LavaflowLow", value: 0);
-                context.SetEffect(arg1: new[] {600}, arg2: true);
-                context.CreateMonster(arg1: new[] {1001}, arg2: false);
-                context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1001A");
+                context.SetEffect(triggerIds: new []{600}, visible: true);
+                context.CreateMonster(spawnIds: new []{1001}, arg2: false);
+                context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_1001A");
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 99f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 99f)) {
                     return new State2칸이동(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new State리턴(context);
                 }
 
@@ -134,10 +134,10 @@ namespace Maple2.Trigger._02000207_bf {
             internal State2칸이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1001A");
+                context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_1001A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
                     return new State리턴(context);
                 }
@@ -156,12 +156,12 @@ namespace Maple2.Trigger._02000207_bf {
             internal State리턴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1001C");
+                context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_1001C");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.DestroyMonster(arg1: new[] {1001});
+                    context.DestroyMonster(spawnIds: new []{1001});
                     return new StateWait(context);
                 }
 
@@ -177,12 +177,12 @@ namespace Maple2.Trigger._02000207_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999102, key: "LavaflowLeft", value: 0);
                 context.SetUserValue(triggerId: 999102, key: "LavaflowLeftStop", value: 0);
-                context.SetEffect(arg1: new[] {600}, arg2: true);
-                context.CreateMonster(arg1: new[] {1002}, arg2: false);
-                context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002A");
+                context.SetEffect(triggerIds: new []{600}, visible: true);
+                context.CreateMonster(spawnIds: new []{1002}, arg2: false);
+                context.MoveNpc(spawnId: 1002, patrolName: "MS2PatrolData_1002A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "LavaflowLeftStop") == 1) {
                     return new State왼쪽용암내려가기(context);
                 }
@@ -203,12 +203,12 @@ namespace Maple2.Trigger._02000207_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999102, key: "LavaflowLeft", value: 0);
                 context.SetUserValue(triggerId: 999102, key: "LavaflowLeftStop", value: 0);
-                context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002C");
+                context.MoveNpc(spawnId: 1002, patrolName: "MS2PatrolData_1002C");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.DestroyMonster(arg1: new[] {1002});
+                    context.DestroyMonster(spawnIds: new []{1002});
                     return new StateWait(context);
                 }
 
@@ -224,12 +224,12 @@ namespace Maple2.Trigger._02000207_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999102, key: "LavaflowRight", value: 0);
                 context.SetUserValue(triggerId: 999102, key: "LavaflowRightStop", value: 0);
-                context.SetEffect(arg1: new[] {600}, arg2: true);
-                context.CreateMonster(arg1: new[] {1003}, arg2: false);
-                context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003A");
+                context.SetEffect(triggerIds: new []{600}, visible: true);
+                context.CreateMonster(spawnIds: new []{1003}, arg2: false);
+                context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "LavaflowRightStop") == 1) {
                     return new State오른쪽용암내려가기(context);
                 }
@@ -250,12 +250,12 @@ namespace Maple2.Trigger._02000207_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999102, key: "LavaflowRight", value: 0);
                 context.SetUserValue(triggerId: 999102, key: "LavaflowRightStop", value: 0);
-                context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003C");
+                context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003C");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.DestroyMonster(arg1: new[] {1003});
+                    context.DestroyMonster(spawnIds: new []{1003});
                     return new StateWait(context);
                 }
 
@@ -269,10 +269,10 @@ namespace Maple2.Trigger._02000207_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1001, 1002, 1003});
+                context.DestroyMonster(spawnIds: new []{1001, 1002, 1003});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

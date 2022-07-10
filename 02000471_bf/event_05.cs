@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {706})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{706})) {
                     return new StateIdle(context);
                 }
 
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {121, 154, 122, 156, 110})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{121, 154, 122, 156, 110})) {
                     return new StateReady(context);
                 }
 
@@ -36,11 +36,11 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 706, arg2: "trigger", arg3: "Hauntedmansion");
-                context.CreateMonster(arg1: new[] {1110, 1111, 1112, 1113}, arg2: false);
+                context.SetAchievement(triggerId: 706, type: "trigger", code: "Hauntedmansion");
+                context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateStart(context);
                 }
@@ -55,13 +55,13 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1110, script: "$02000471_BF__EVENT_05__0$", arg4: 3, arg5: 4);
-                context.SetConversation(arg1: 1, arg2: 1111, script: "$02000471_BF__EVENT_05__1$", arg4: 3, arg5: 5);
-                context.SetConversation(arg1: 1, arg2: 1112, script: "$02000471_BF__EVENT_05__2$", arg4: 3, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 1113, script: "$02000471_BF__EVENT_05__3$", arg4: 3, arg5: 2);
+                context.SetConversation(type: 1, spawnId: 1110, script: "$02000471_BF__EVENT_05__0$", arg4: 3, arg5: 4);
+                context.SetConversation(type: 1, spawnId: 1111, script: "$02000471_BF__EVENT_05__1$", arg4: 3, arg5: 5);
+                context.SetConversation(type: 1, spawnId: 1112, script: "$02000471_BF__EVENT_05__2$", arg4: 3, arg5: 1);
+                context.SetConversation(type: 1, spawnId: 1113, script: "$02000471_BF__EVENT_05__3$", arg4: 3, arg5: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     return new StateExit(context);
                 }
@@ -76,10 +76,10 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateExit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1110, 1111, 1112, 1113});
+                context.DestroyMonster(spawnIds: new []{1110, 1111, 1112, 1113});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

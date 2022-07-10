@@ -12,17 +12,17 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetPortal(portalId: 49, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 50, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 51, visible: false, enabled: false, minimapVisible: false);
-                context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {4100, 4101, 4102, 4103, 4104, 4105, 4106}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMeshAnimation(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0);
-                context.SetEffect(arg1: new[] {5201, 5000}, arg2: false);
+                context.SetMesh(triggerIds: new []{3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{4100, 4101, 4102, 4103, 4104, 4105, 4106}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3001}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMeshAnimation(triggerIds: new []{3001}, visible: true, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 0);
+                context.SetEffect(triggerIds: new []{5201, 5000}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9000) == 1) {
                     return new StateLodingDelay01(context);
                 }
@@ -37,10 +37,10 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateLodingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {100, 200}, arg2: false);
+                context.CreateMonster(spawnIds: new []{100, 200}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateReadyToWalkIn01(context);
                 }
@@ -55,12 +55,12 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateReadyToWalkIn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_100");
-                context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_200");
-                context.SetConversation(arg1: 1, arg2: 200, script: "$02000378_BF__01_FINDWAY__0$", arg4: 3, arg5: 0);
+                context.MoveNpc(spawnId: 100, patrolName: "MS2PatrolData_100");
+                context.MoveNpc(spawnId: 200, patrolName: "MS2PatrolData_200");
+                context.SetConversation(type: 1, spawnId: 200, script: "$02000378_BF__01_FINDWAY__0$", arg4: 3, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateReadyToWalkIn02(context);
                 }
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(triggerId: 2301, key: "RouteSelected", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateReadyToWalkIn03(context);
                 }
@@ -94,11 +94,11 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateReadyToWalkIn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 200, script: "$02000378_BF__01_FINDWAY__1$", arg4: 3, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 100, script: "$02000378_BF__01_FINDWAY__2$", arg4: 2, arg5: 3);
+                context.SetConversation(type: 1, spawnId: 200, script: "$02000378_BF__01_FINDWAY__1$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 100, script: "$02000378_BF__01_FINDWAY__2$", arg4: 2, arg5: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5300)) {
                     return new StateRound01_Start(context);
                 }
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._02000378_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {100, 200});
+                context.DestroyMonster(spawnIds: new []{100, 200});
             }
         }
 
@@ -115,11 +115,11 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound01_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1001, 2001}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1001, 2001}, arg2: false);
                 context.SetUserValue(triggerId: 901, key: "MobWaveStart", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "01RoundSuccess") == 1) {
                     return new StateRound01_Sucess(context);
                 }
@@ -134,18 +134,18 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound01_Sucess(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 2001, arg2: "MS2PatrolData_2001");
-                context.DestroyMonster(arg1: new[] {1001});
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.SetEffect(arg1: new[] {5201}, arg2: true);
-                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3101}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMeshAnimation(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new[] {3101}, arg2: true, arg3: 0, arg4: 0);
-                context.SetConversation(arg1: 1, arg2: 101, script: "$02000378_BF__01_FINDWAY__3$", arg4: 2, arg5: 1);
+                context.MoveNpc(spawnId: 2001, patrolName: "MS2PatrolData_2001");
+                context.DestroyMonster(spawnIds: new []{1001});
+                context.CreateMonster(spawnIds: new []{101}, arg2: false);
+                context.SetEffect(triggerIds: new []{5201}, visible: true);
+                context.SetMesh(triggerIds: new []{3001}, visible: false, arg3: 100, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3101}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMeshAnimation(triggerIds: new []{3001}, visible: false, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(triggerIds: new []{3101}, visible: true, arg3: 0, arg4: 0);
+                context.SetConversation(type: 1, spawnId: 101, script: "$02000378_BF__01_FINDWAY__3$", arg4: 2, arg5: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateRound01_RouteSelect(context);
                 }
@@ -160,48 +160,48 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound01_RouteSelect(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {2001});
-                context.CreateMonster(arg1: new[] {201}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{2001});
+                context.CreateMonster(spawnIds: new []{201}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 10f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRound01_PickRoute_Left(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRound01_PickRoute_Right(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRound01_PortalOn_04(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRound01_PortalOn_05(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRound01_PortalOn_06(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRound01_PortalOn_07(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRound01_PortalOn_08(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRound01_PortalOn_09(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRound01_PortalOn_10(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateRound01_PortalOn_11(context);
                 }
 
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(triggerId: 2301, key: "MakeFalse", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateGoToRound02(context);
                 }
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(triggerId: 2, key: "FindWay", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateQuit(context);
                 }
@@ -256,7 +256,7 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(triggerId: 2301, key: "MakeTrue", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateGoToRound03(context);
                 }
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(triggerId: 3, key: "FindWay", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateQuit(context);
                 }
@@ -289,12 +289,12 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound01_PortalOn_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
-                context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
+                context.SetMesh(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMeshAnimation(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 3);
                 context.SetPortal(portalId: 44, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGoToRound04(context);
                 }
@@ -309,11 +309,11 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateGoToRound04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101New");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101New");
                 context.SetUserValue(triggerId: 4, key: "FindWay", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateMoveToPortal(context);
                 }
@@ -328,12 +328,12 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound01_PortalOn_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
-                context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
+                context.SetMesh(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMeshAnimation(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 3);
                 context.SetPortal(portalId: 45, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGoToRound05(context);
                 }
@@ -348,11 +348,11 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateGoToRound05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101New");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101New");
                 context.SetUserValue(triggerId: 5, key: "FindWay", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateMoveToPortal(context);
                 }
@@ -367,12 +367,12 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound01_PortalOn_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
-                context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
+                context.SetMesh(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMeshAnimation(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 3);
                 context.SetPortal(portalId: 46, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGoToRound06(context);
                 }
@@ -387,11 +387,11 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateGoToRound06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101New");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101New");
                 context.SetUserValue(triggerId: 6, key: "FindWay", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateMoveToPortal(context);
                 }
@@ -406,12 +406,12 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound01_PortalOn_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
-                context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
+                context.SetMesh(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMeshAnimation(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 3);
                 context.SetPortal(portalId: 47, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGoToRound07(context);
                 }
@@ -426,11 +426,11 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateGoToRound07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101New");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101New");
                 context.SetUserValue(triggerId: 7, key: "FindWay", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateMoveToPortal(context);
                 }
@@ -445,12 +445,12 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound01_PortalOn_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
-                context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
+                context.SetMesh(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMeshAnimation(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 3);
                 context.SetPortal(portalId: 48, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGoToRound08(context);
                 }
@@ -465,11 +465,11 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateGoToRound08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101New");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101New");
                 context.SetUserValue(triggerId: 8, key: "FindWay", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateMoveToPortal(context);
                 }
@@ -484,12 +484,12 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound01_PortalOn_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
-                context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
+                context.SetMesh(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMeshAnimation(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 3);
                 context.SetPortal(portalId: 49, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGoToRound09(context);
                 }
@@ -504,11 +504,11 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateGoToRound09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101New");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101New");
                 context.SetUserValue(triggerId: 9, key: "FindWay", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateMoveToPortal(context);
                 }
@@ -523,12 +523,12 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound01_PortalOn_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
-                context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
+                context.SetMesh(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMeshAnimation(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 3);
                 context.SetPortal(portalId: 50, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGoToRound10(context);
                 }
@@ -543,11 +543,11 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateGoToRound10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101New");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101New");
                 context.SetUserValue(triggerId: 10, key: "FindWay", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateMoveToPortal(context);
                 }
@@ -562,12 +562,12 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound01_PortalOn_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
-                context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 3);
+                context.SetMesh(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMeshAnimation(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 3);
                 context.SetPortal(portalId: 51, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGoToRound11(context);
                 }
@@ -582,11 +582,11 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateGoToRound11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101New");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101New");
                 context.SetUserValue(triggerId: 11, key: "FindWay", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateMoveToPortal(context);
                 }
@@ -601,11 +601,11 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateMoveToPortal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {101});
-                context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201New");
+                context.DestroyMonster(spawnIds: new []{101});
+                context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_201New");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateQuit(context);
                 }
@@ -614,7 +614,7 @@ namespace Maple2.Trigger._02000378_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {201});
+                context.DestroyMonster(spawnIds: new []{201});
             }
         }
 
@@ -623,7 +623,7 @@ namespace Maple2.Trigger._02000378_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

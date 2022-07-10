@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
                     return new State신호받기Waiting(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "WarningMessage", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "WarningMessage") == 1) {
                     return new StateSkill브레이크DisplayGuide(context);
                 }
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02020130_bf {
                 context.ShowGuideSummary(entityId: 20051001, textId: 20051001);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new State천천히다시처음으로돌아가기직전(context);
                 }
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "DeathIshuraRbladerDark", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
                     return new State신호받기Waiting(context);
                 }
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "DeathRenduebianRbladerDark", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
                     return new State신호받기Waiting(context);
                 }
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "DeathYuperiaRbladerDark", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
                     return new State신호받기Waiting(context);
                 }
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
                     return new State신호받기Waiting(context);
                 }
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

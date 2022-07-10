@@ -4,10 +4,10 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001258, 10001259, 10001260, 10001261, 10001262, 10001263, 10001264, 10001265}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{10001258, 10001259, 10001260, 10001261, 10001262, 10001263, 10001264, 10001265}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "WoundStart") == 1) {
                     return new StateRandom조건(context);
                 }
@@ -23,36 +23,36 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 13f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 13f)) {
                     return new State10001258체크(context);
                 }
 
-                if (context.RandomCondition(arg1: 13f)) {
+                if (context.RandomCondition(rate: 13f)) {
                     return new State10001259체크(context);
                 }
 
-                if (context.RandomCondition(arg1: 13f)) {
+                if (context.RandomCondition(rate: 13f)) {
                     return new State10001260체크(context);
                 }
 
-                if (context.RandomCondition(arg1: 13f)) {
+                if (context.RandomCondition(rate: 13f)) {
                     return new State10001261체크(context);
                 }
 
-                if (context.RandomCondition(arg1: 13f)) {
+                if (context.RandomCondition(rate: 13f)) {
                     return new State10001262체크(context);
                 }
 
-                if (context.RandomCondition(arg1: 13f)) {
+                if (context.RandomCondition(rate: 13f)) {
                     return new State10001263체크(context);
                 }
 
-                if (context.RandomCondition(arg1: 13f)) {
+                if (context.RandomCondition(rate: 13f)) {
                     return new State10001264체크(context);
                 }
 
-                if (context.RandomCondition(arg1: 13f)) {
+                if (context.RandomCondition(rate: 13f)) {
                     return new State10001265체크(context);
                 }
 
@@ -72,8 +72,8 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001258}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001258}, arg2: 1)) {
                     return new StateRandom조건(context);
                 }
 
@@ -91,10 +91,10 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001258Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001258}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001258}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRandom조건(context);
                 }
@@ -115,8 +115,8 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001259}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001259}, arg2: 1)) {
                     return new StateRandom조건(context);
                 }
 
@@ -134,10 +134,10 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001259Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001259}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001259}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRandom조건(context);
                 }
@@ -158,8 +158,8 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001260}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001260}, arg2: 1)) {
                     return new StateRandom조건(context);
                 }
 
@@ -177,10 +177,10 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001260Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001260}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001260}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRandom조건(context);
                 }
@@ -201,8 +201,8 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001261}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001261}, arg2: 1)) {
                     return new StateRandom조건(context);
                 }
 
@@ -220,10 +220,10 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001261Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001261}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001261}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRandom조건(context);
                 }
@@ -244,8 +244,8 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001262}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001262}, arg2: 1)) {
                     return new StateRandom조건(context);
                 }
 
@@ -263,10 +263,10 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001262Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001262}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001262}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRandom조건(context);
                 }
@@ -287,8 +287,8 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001263}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001263}, arg2: 1)) {
                     return new StateRandom조건(context);
                 }
 
@@ -306,10 +306,10 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001263Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001263}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001263}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRandom조건(context);
                 }
@@ -330,8 +330,8 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001264}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001264}, arg2: 1)) {
                     return new StateRandom조건(context);
                 }
 
@@ -349,10 +349,10 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001264Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001264}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001264}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRandom조건(context);
                 }
@@ -373,8 +373,8 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001265}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001265}, arg2: 1)) {
                     return new StateRandom조건(context);
                 }
 
@@ -392,10 +392,10 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001265Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001265}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001265}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
                     return new StateRandom조건(context);
                 }

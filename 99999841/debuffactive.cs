@@ -5,7 +5,7 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 801) == true) {
                     return new StateReduceMoveSpeed(context);
                 }
@@ -29,11 +29,11 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 801, value: false);
-                context.SetEventUI(arg1: 1, script: "이동속도 감소 디Buff에 걸립니다.", arg3: 5000);
-                context.AddBuff(arg1: new[] {9001}, arg2: 70002581, arg3: 1, arg5: false);
+                context.SetEventUI(arg1: 1, script: "이동속도 감소 디Buff에 걸립니다.", duration: 5000);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70002581, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 // return new StateEnd(context);
                     return null;
             }
@@ -46,11 +46,11 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 802, value: false);
-                context.SetEventUI(arg1: 1, script: "공격력 감소 디Buff에 걸립니다.", arg3: 5000);
-                context.AddBuff(arg1: new[] {9001}, arg2: 70002591, arg3: 1, arg5: false);
+                context.SetEventUI(arg1: 1, script: "공격력 감소 디Buff에 걸립니다.", duration: 5000);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70002591, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 // return new StateEnd(context);
                     return null;
             }
@@ -63,11 +63,11 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 803, value: false);
-                context.SetEventUI(arg1: 1, script: "체력 감소 디Buff에 걸립니다.", arg3: 5000);
-                context.AddBuff(arg1: new[] {9001}, arg2: 70002601, arg3: 1, arg5: false);
+                context.SetEventUI(arg1: 1, script: "체력 감소 디Buff에 걸립니다.", duration: 5000);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70002601, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 // return new StateEnd(context);
                     return null;
             }

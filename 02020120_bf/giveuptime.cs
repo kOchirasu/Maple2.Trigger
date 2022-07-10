@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new State타이머(context);
                 }
 
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
                     return new StateEnd(context);
                 }
@@ -37,7 +37,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

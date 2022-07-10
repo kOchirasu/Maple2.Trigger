@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000051_tw_perion {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000382}, arg2: 1);
-                context.SetMesh(arg1: new[] {101}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10000382}, state: 1);
+                context.SetMesh(triggerIds: new []{101}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000382}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000382}, arg2: 0)) {
                     return new State열림(context);
                 }
 
@@ -23,12 +23,12 @@ namespace Maple2.Trigger._02000051_tw_perion {
             internal State열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {101}, arg2: true);
-                context.SetTimer(id: "1", arg2: 15, arg3: false);
+                context.SetMesh(triggerIds: new []{101}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 15, clearAtZero: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWait(context);
                 }
 

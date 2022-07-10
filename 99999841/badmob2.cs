@@ -7,7 +7,7 @@ namespace Maple2.Trigger._99999841 {
                 context.SetUserValue(triggerId: 99990004, key: "BadMob", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 902) == true) {
                     return new StateMonsterSpawn(context);
                 }
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._99999841 {
             internal StateMonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {992}, arg2: false);
+                context.CreateMonster(spawnIds: new []{992}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {991, 992, 993})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{991, 992, 993})) {
                     return new State신호쏴주기(context);
                 }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._99999841 {
                 context.SetUserValue(triggerId: 99990004, key: "BadMob", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEnd(context);
             }
 
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 902) == false) {
                     return new StateWait(context);
                 }

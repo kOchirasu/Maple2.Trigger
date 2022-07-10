@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02000163_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000102}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000102}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWait(context);
             }
 
@@ -18,11 +18,11 @@ namespace Maple2.Trigger._02000163_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {401}, arg2: true);
+                context.SetMesh(triggerIds: new []{401}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000102}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000102}, arg2: 0)) {
                     return new State로봇사라짐(context);
                 }
 
@@ -36,11 +36,11 @@ namespace Maple2.Trigger._02000163_bf {
             internal State로봇사라짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {401}, arg2: false);
+                context.SetMesh(triggerIds: new []{401}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000102}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000102}, arg2: 1)) {
                     return new StateWait(context);
                 }
 

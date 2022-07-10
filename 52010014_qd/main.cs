@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52010014_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 102, 103, 104});
+                context.CreateMonster(spawnIds: new []{101, 102, 103, 104});
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {1002797}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{1002797}, questStates: new byte[]{2})) {
                     return new StateEvent_01(context);
                 }
 
@@ -22,16 +22,16 @@ namespace Maple2.Trigger._52010014_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 8001, arg2: true);
+                context.CameraSelect(triggerId: 8001, enable: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetTimer(id: "3", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11001292, script: "$52010014_QD__MAIN__0$", arg4: 3);
+                context.SetTimer(timerId: "3", seconds: 3);
+                context.SetConversation(type: 2, spawnId: 11001292, script: "$52010014_QD__MAIN__0$", arg4: 3);
                 context.SetSkip(state: new StateEvent_02(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateEvent_02(context);
                 }
 
@@ -47,13 +47,13 @@ namespace Maple2.Trigger._52010014_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010014_QD__MAIN__1$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 11001285, script: "$52010014_QD__MAIN__1$", arg4: 3);
                 context.SetSkip(state: new StateEvent_03(context));
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateEvent_03(context);
                 }
 
@@ -69,13 +69,13 @@ namespace Maple2.Trigger._52010014_qd {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010014_QD__MAIN__2$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 11001285, script: "$52010014_QD__MAIN__2$", arg4: 3);
                 context.SetSkip(state: new StateEvent_04(context));
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateEvent_04(context);
                 }
 
@@ -91,13 +91,13 @@ namespace Maple2.Trigger._52010014_qd {
             internal StateEvent_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001292, script: "$52010014_QD__MAIN__3$", arg4: 3);
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetConversation(type: 2, spawnId: 11001292, script: "$52010014_QD__MAIN__3$", arg4: 3);
+                context.SetTimer(timerId: "3", seconds: 3);
                 context.SetSkip(state: new StateEvent_05(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateEvent_05(context);
                 }
 
@@ -115,10 +115,10 @@ namespace Maple2.Trigger._52010014_qd {
             internal StateEvent_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 8001, arg2: false);
+                context.CameraSelect(triggerId: 8001, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

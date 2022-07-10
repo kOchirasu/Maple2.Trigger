@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9001})) {
                     return new StateStart(context);
                 }
 
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02020063_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002147}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002147}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10002147}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10002147}, arg2: 0)) {
                     return new State재활성Wait(context);
                 }
 
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 9107, additionalEffectId: 99910370, level: 1)) {
+            public override TriggerState? Execute() {
+                if (!context.CheckAnyUserAdditionalEffect(boxId: 9107, additionalEffectId: 99910370, level: 1)) {
                     return new StateStart(context);
                 }
 
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

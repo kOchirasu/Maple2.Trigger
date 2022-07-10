@@ -5,7 +5,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "GameGuide") == 1) {
                     return new StateGameGuide_20(context);
                 }
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateGameGuide_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 19, arg3: true, arg4: false);
+                context.SetTimer(timerId: "1", seconds: 19, clearAtZero: true, display: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNormalGameGuide_01(context);
             }
 
@@ -37,7 +37,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.ShowGuideSummary(entityId: 26620104, textId: 26620104, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateNormalGameGuide_02(context);
                 }
@@ -55,12 +55,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.ShowGuideSummary(entityId: 26620105, textId: 26620105, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateNormalGameGuide_03(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateReset(context);
                 }
 
@@ -77,12 +77,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.ShowGuideSummary(entityId: 26620104, textId: 26620104, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateNormalGameGuide_04(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateReset(context);
                 }
 
@@ -99,8 +99,8 @@ namespace Maple2.Trigger._66200001_gd {
                 context.ShowGuideSummary(entityId: 26620105, textId: 26620105, duration: 4000);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateReset(context);
                 }
 
@@ -115,10 +115,10 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "GameGuide", value: 0);
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

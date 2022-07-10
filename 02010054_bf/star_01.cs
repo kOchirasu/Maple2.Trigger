@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02010054_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3301, 3302, 3303, 3304, 3305}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3301, 3302, 3303, 3304, 3305}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000856}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000856}, arg2: 0)) {
                     return new State소멸(context);
                 }
 
@@ -22,13 +22,13 @@ namespace Maple2.Trigger._02010054_bf {
             internal State소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3301, 3302, 3303, 3304, 3305}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetMesh(triggerIds: new []{3301, 3302, 3303, 3304, 3305}, visible: true, arg3: 0, arg4: 500, arg5: 3f);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
-                    context.SetMesh(arg1: new[] {3301, 3302, 3303, 3304, 3305}, arg2: false, arg3: 0, arg4: 900, arg5: 2f);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
+                    context.SetMesh(triggerIds: new []{3301, 3302, 3303, 3304, 3305}, visible: false, arg3: 0, arg4: 900, arg5: 2f);
                     return new StateEnd(context);
                 }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

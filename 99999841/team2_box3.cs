@@ -5,10 +5,10 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 913, value: false);
-                context.SetInteractObject(arg1: new[] {10002181}, arg2: 0, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002181}, state: 0, arg3: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
                     return new StateEnd(context);
                 }
@@ -35,13 +35,13 @@ namespace Maple2.Trigger._99999841 {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002179}, arg2: 1, arg3: false);
-                context.SetInteractObject(arg1: new[] {10002180}, arg2: 1, arg3: false);
-                context.SetInteractObject(arg1: new[] {10002181}, arg2: 1, arg3: false);
-                context.SetInteractObject(arg1: new[] {10002182}, arg2: 1, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002179}, state: 1, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002180}, state: 1, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002181}, state: 1, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002182}, state: 1, arg3: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
                     return new StateEnd(context);
                 }
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._99999841 {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002181}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002181}, arg2: 0)) {
                     return new State애디셔널_중첩1(context);
                 }
 
@@ -69,10 +69,10 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 913, value: true);
-                context.AddBuff(arg1: new[] {9001}, arg2: 70002531, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70002531, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
                     return new StateEnd(context);
                 }
@@ -99,10 +99,10 @@ namespace Maple2.Trigger._99999841 {
             internal State애디셔널_중첩2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9001}, arg2: 70002531, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70002531, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
                     return new StateEnd(context);
                 }
@@ -129,10 +129,10 @@ namespace Maple2.Trigger._99999841 {
             internal State애디셔널_중첩3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9001}, arg2: 70002531, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70002531, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
                     return new StateEnd(context);
                 }
@@ -159,10 +159,10 @@ namespace Maple2.Trigger._99999841 {
             internal State애디셔널_중첩4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9001}, arg2: 70002531, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70002531, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
                     return new StateEnd(context);
                 }
@@ -189,10 +189,10 @@ namespace Maple2.Trigger._99999841 {
             internal State애디셔널_중첩5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9001}, arg2: 70002531, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70002531, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
                     return new StateEnd(context);
                 }
@@ -219,10 +219,10 @@ namespace Maple2.Trigger._99999841 {
             internal State애디셔널_중첩6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9001}, arg2: 70002531, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70002531, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
                     return new StateEnd(context);
                 }
@@ -249,10 +249,10 @@ namespace Maple2.Trigger._99999841 {
             internal State애디셔널_중첩7(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9001}, arg2: 70002531, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70002531, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
                     return new StateEnd(context);
                 }
@@ -279,10 +279,10 @@ namespace Maple2.Trigger._99999841 {
             internal State애디셔널_중첩8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9001}, arg2: 70002531, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70002531, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
                     return new StateEnd(context);
                 }
@@ -309,10 +309,10 @@ namespace Maple2.Trigger._99999841 {
             internal State애디셔널_중첩9(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9001}, arg2: 70002531, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70002531, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
                     return new StateEnd(context);
                 }
@@ -339,10 +339,10 @@ namespace Maple2.Trigger._99999841 {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002181}, arg2: 0, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002181}, state: 0, arg3: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BadMob") == 1) {
                     return new StateWait(context);
                 }

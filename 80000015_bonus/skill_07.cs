@@ -4,13 +4,13 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {712, 726}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {7701, 7702, 7703, 7704}, arg2: false);
-                context.SetBreakable(arg1: new[] {7701, 7702, 7703, 7704}, arg2: false);
+                context.SetSkill(triggerIds: new []{712, 726}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{7701, 7702, 7703, 7704}, arg2: false);
+                context.SetBreakable(triggerIds: new []{7701, 7702, 7703, 7704}, enabled: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateWaitTime(context);
                 }
 
@@ -24,10 +24,10 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(arg1: new[] {7701, 7702, 7703, 7704}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{7701, 7702, 7703, 7704}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateStart(context);
                 }
@@ -42,10 +42,10 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {7701, 7702, 7703, 7704}, arg2: true);
+                context.SetBreakable(triggerIds: new []{7701, 7702, 7703, 7704}, enabled: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateActivateSkill(context);
                 }
@@ -60,11 +60,11 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateActivateSkill(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {712, 726}, arg2: true);
-                context.SetBreakable(arg1: new[] {7701, 7702, 7703, 7704}, arg2: false);
+                context.SetSkill(triggerIds: new []{712, 726}, arg2: true);
+                context.SetBreakable(triggerIds: new []{7701, 7702, 7703, 7704}, enabled: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateStart(context);
                 }
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._80000015_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

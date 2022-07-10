@@ -5,12 +5,12 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "DungeonRoomOpened", value: 0);
-                context.SetActor(arg1: 4002, arg2: true, arg3: "Interaction_vrmachine_A01_off");
-                context.SetActor(arg1: 4001, arg2: true, arg3: "Interaction_vrmachine_A01_off");
-                context.SetActor(arg1: 4003, arg2: true, arg3: "Interaction_vrmachine_A01_off");
+                context.SetActor(triggerId: 4002, visible: true, initialSequence: "Interaction_vrmachine_A01_off");
+                context.SetActor(triggerId: 4001, visible: true, initialSequence: "Interaction_vrmachine_A01_off");
+                context.SetActor(triggerId: 4003, visible: true, initialSequence: "Interaction_vrmachine_A01_off");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.CheckDungeonLobbyUserCount()) {
                     return new StateDungeonStart(context);
                 }
@@ -30,10 +30,10 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 3, key: "machineon", value: 1);
-                context.SetActor(arg1: 4002, arg2: true, arg3: "Interaction_vrmachine_A01_on");
+                context.SetActor(triggerId: 4002, visible: true, initialSequence: "Interaction_vrmachine_A01_on");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 800)) {
                     return new StateDungeonStart01(context);
                 }
@@ -48,12 +48,12 @@ namespace Maple2.Trigger._50000006_dl {
             internal StateDungeonStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "GuildRaid_Laboratory_DungeonOpen_01");
+                context.PlaySystemSoundInBox(sound: "GuildRaid_Laboratory_DungeonOpen_01");
                 context.ShowGuideSummary(entityId: 25100206, textId: 25100206, duration: 3000);
-                context.SetActor(arg1: 4002, arg2: false, arg3: "Interaction_vrmachine_A01_on");
+                context.SetActor(triggerId: 4002, visible: false, initialSequence: "Interaction_vrmachine_A01_on");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "DungeonRoomOpened") == 1) {
                     return new StateDungeonStart02(context);
                 }
@@ -70,11 +70,11 @@ namespace Maple2.Trigger._50000006_dl {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 2, key: "machineon", value: 1);
                 context.SetUserValue(triggerId: 4, key: "machineon", value: 1);
-                context.SetActor(arg1: 4001, arg2: true, arg3: "Interaction_vrmachine_A01_on");
-                context.SetActor(arg1: 4003, arg2: true, arg3: "Interaction_vrmachine_A01_on");
+                context.SetActor(triggerId: 4001, visible: true, initialSequence: "Interaction_vrmachine_A01_on");
+                context.SetActor(triggerId: 4003, visible: true, initialSequence: "Interaction_vrmachine_A01_on");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 800)) {
                     return new StateDungeonStart03(context);
                 }
@@ -89,11 +89,11 @@ namespace Maple2.Trigger._50000006_dl {
             internal StateDungeonStart03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 4001, arg2: false, arg3: "Interaction_vrmachine_A01_on");
-                context.SetActor(arg1: 4003, arg2: false, arg3: "Interaction_vrmachine_A01_on");
+                context.SetActor(triggerId: 4001, visible: false, initialSequence: "Interaction_vrmachine_A01_on");
+                context.SetActor(triggerId: 4003, visible: false, initialSequence: "Interaction_vrmachine_A01_on");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateDungeonStart04(context);
                 }
@@ -108,11 +108,11 @@ namespace Maple2.Trigger._50000006_dl {
             internal StateDungeonStart04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "GuildRaid_Laboratory_DungeonOpen_01");
+                context.PlaySystemSoundInBox(sound: "GuildRaid_Laboratory_DungeonOpen_01");
                 context.ShowGuideSummary(entityId: 25100206, textId: 25100206, duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateDungeonStart04(context);
                 }
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._50000006_dl {
                 context.ShowGuideSummary(entityId: 25100204, textId: 25100204, duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateWaitDungeon02(context);
                 }
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.CheckDungeonLobbyUserCount()) {
                     return new StateDungeonStart(context);
                 }
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._50000006_dl {
                 context.ShowGuideSummary(entityId: 25100205, textId: 25100205, duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateWaitDungeon04(context);
                 }
@@ -184,7 +184,7 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.CheckDungeonLobbyUserCount()) {
                     return new StateDungeonStart(context);
                 }
@@ -206,7 +206,7 @@ namespace Maple2.Trigger._50000006_dl {
                 context.ShowGuideSummary(entityId: 25100204, textId: 25100204, duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateWaitDungeon06(context);
                 }
@@ -222,7 +222,7 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.CheckDungeonLobbyUserCount()) {
                     return new StateDungeonStart(context);
                 }
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._50000006_dl {
                 context.ShowGuideSummary(entityId: 25100205, textId: 25100205, duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateWaitDungeon08(context);
                 }
@@ -260,7 +260,7 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.CheckDungeonLobbyUserCount()) {
                     return new StateDungeonStart(context);
                 }
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._50000006_dl {
                 context.ShowGuideSummary(entityId: 25100204, textId: 25100204, duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateWaitDungeon10(context);
                 }
@@ -298,7 +298,7 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.CheckDungeonLobbyUserCount()) {
                     return new StateDungeonStart(context);
                 }
@@ -320,7 +320,7 @@ namespace Maple2.Trigger._50000006_dl {
                 context.ShowGuideSummary(entityId: 25100205, textId: 25100205, duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateDungeonStart(context);
                 }

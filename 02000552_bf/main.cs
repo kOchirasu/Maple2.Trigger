@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateDefaultSetting(context);
                 }
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000552_bf {
                 context.SetUserValue(key: "VacuumMessage", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State난이도체크(context);
                 }
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonId() == 23050003) {
                     return new StateEasyDifficultyBossSpawn(context);
                 }
@@ -69,10 +69,10 @@ namespace Maple2.Trigger._02000552_bf {
             internal StateHardDifficultyBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
                     return new StateBossCombat(context);
                 }
@@ -87,10 +87,10 @@ namespace Maple2.Trigger._02000552_bf {
             internal StateEasyDifficultyBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(spawnIds: new []{102}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
                     return new StateBossCombat(context);
                 }
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SmallRemove") == 1) {
                     return new State작아짐Remove(context);
                 }
@@ -145,7 +145,7 @@ namespace Maple2.Trigger._02000552_bf {
                 context.SetUserValue(key: "VacuumMessage", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 800)) {
                     return new StateBossCombat(context);
                 }
@@ -160,12 +160,12 @@ namespace Maple2.Trigger._02000552_bf {
             internal State작아짐Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {702}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
-                context.AddBuff(arg1: new[] {701}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{702}, skillId: 50001556, level: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 50001556, level: 1, arg4: false, arg5: false);
                 context.SetUserValue(key: "SmallRemove", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateBossCombat(context);
                 }
@@ -182,13 +182,13 @@ namespace Maple2.Trigger._02000552_bf {
             public override void OnEnter() {
                 context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 20, visible: true, enabled: true, minimapVisible: true);
-                context.AddBuff(arg1: new[] {702}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
-                context.AddBuff(arg1: new[] {701}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{702}, skillId: 50001556, level: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 50001556, level: 1, arg4: false, arg5: false);
                 context.SetUserValue(key: "NextPortal", value: 0);
                 context.SetUserValue(key: "SmallRemove", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2300)) {
                     return new StateBossCombat(context);
                 }
@@ -205,10 +205,10 @@ namespace Maple2.Trigger._02000552_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     context.DungeonFail();
                     return new State게임오버(context);
@@ -224,12 +224,12 @@ namespace Maple2.Trigger._02000552_bf {
             internal State게임오버(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(isEnable: false);
-                context.AddBuff(arg1: new[] {701}, arg2: 50000266, arg3: 1, arg4: false, arg5: false);
-                context.AddBuff(arg1: new[] {702}, arg2: 50000266, arg3: 1, arg4: false, arg5: false);
+                context.DungeonEnableGiveUp(enable: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 50000266, level: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{702}, skillId: 50000266, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd(context);
                 }
@@ -244,11 +244,11 @@ namespace Maple2.Trigger._02000552_bf {
             internal StateEndDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 50000266, arg3: 1, arg4: false, arg5: false);
-                context.AddBuff(arg1: new[] {702}, arg2: 50000266, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 50000266, level: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{702}, skillId: 50000266, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateClear처리(context);
                 }
@@ -264,10 +264,10 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() {
                 context.DungeonClear();
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd(context);
                 }
@@ -287,7 +287,7 @@ namespace Maple2.Trigger._02000552_bf {
                 context.SetPortal(portalId: 13, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

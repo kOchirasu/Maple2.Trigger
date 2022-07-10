@@ -4,11 +4,11 @@ namespace Maple2.Trigger._99999886 {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 200, arg2: false, arg3: "Idle_A");
+                context.SetActor(triggerId: 200, visible: false, initialSequence: "Idle_A");
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {100})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{100})) {
                     return new StateStartCinematic(context);
                 }
 
@@ -16,7 +16,7 @@ namespace Maple2.Trigger._99999886 {
             }
 
             public override void OnExit() {
-                context.CameraSelectPath(pathIds: new[] {101, 102}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{101, 102}, returnView: false);
             }
         }
 
@@ -24,12 +24,12 @@ namespace Maple2.Trigger._99999886 {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 7);
-                context.SetActor(arg1: 200, arg2: true, arg3: "Skill_Chain_Ready_A");
+                context.SetTimer(timerId: "1", seconds: 7);
+                context.SetActor(triggerId: 200, visible: true, initialSequence: "Skill_Chain_Ready_A");
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWaitStart(context);
                 }
 
@@ -37,7 +37,7 @@ namespace Maple2.Trigger._99999886 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
         }
     }

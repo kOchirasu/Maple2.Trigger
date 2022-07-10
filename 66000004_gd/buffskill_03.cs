@@ -4,11 +4,11 @@ namespace Maple2.Trigger._66000004_gd {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 203, arg2: true, arg3: "Idle_A");
+                context.SetActor(triggerId: 203, visible: true, initialSequence: "Idle_A");
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {10603})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{10603})) {
                     return new StateSkillRandom(context);
                 }
 
@@ -22,23 +22,23 @@ namespace Maple2.Trigger._66000004_gd {
             internal StateSkillRandom(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 203, arg2: true, arg3: "Dead_A");
+                context.SetActor(triggerId: 203, visible: true, initialSequence: "Dead_A");
             }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {10603})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{10603})) {
                     return new StateReset(context);
                 }
 
-                if (context.RandomCondition(arg1: 33f)) {
+                if (context.RandomCondition(rate: 33f)) {
                     return new StateASkillCast(context);
                 }
 
-                if (context.RandomCondition(arg1: 33f)) {
+                if (context.RandomCondition(rate: 33f)) {
                     return new StateBSkillCast(context);
                 }
 
-                if (context.RandomCondition(arg1: 34f)) {
+                if (context.RandomCondition(rate: 34f)) {
                     return new StateCSkillCast(context);
                 }
 
@@ -52,13 +52,13 @@ namespace Maple2.Trigger._66000004_gd {
             internal StateASkillCast(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {7301}, arg2: true);
-                context.SetTimer(id: "60", arg2: 60);
+                context.SetSkill(triggerIds: new []{7301}, arg2: true);
+                context.SetTimer(timerId: "60", seconds: 60);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "60")) {
-                    context.SetSkill(arg1: new[] {7301}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "60")) {
+                    context.SetSkill(triggerIds: new []{7301}, arg2: false);
                     return new StateWaitStart(context);
                 }
 
@@ -72,13 +72,13 @@ namespace Maple2.Trigger._66000004_gd {
             internal StateBSkillCast(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {7302}, arg2: true);
-                context.SetTimer(id: "60", arg2: 60);
+                context.SetSkill(triggerIds: new []{7302}, arg2: true);
+                context.SetTimer(timerId: "60", seconds: 60);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "60")) {
-                    context.SetSkill(arg1: new[] {7302}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "60")) {
+                    context.SetSkill(triggerIds: new []{7302}, arg2: false);
                     return new StateWaitStart(context);
                 }
 
@@ -92,13 +92,13 @@ namespace Maple2.Trigger._66000004_gd {
             internal StateCSkillCast(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {7303}, arg2: true);
-                context.SetTimer(id: "60", arg2: 60);
+                context.SetSkill(triggerIds: new []{7303}, arg2: true);
+                context.SetTimer(timerId: "60", seconds: 60);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "60")) {
-                    context.SetSkill(arg1: new[] {7303}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "60")) {
+                    context.SetSkill(triggerIds: new []{7303}, arg2: false);
                     return new StateWaitStart(context);
                 }
 
@@ -112,12 +112,12 @@ namespace Maple2.Trigger._66000004_gd {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {7301, 7302, 7303}, arg2: false);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{7301, 7302, 7303}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWaitStart(context);
                 }
 

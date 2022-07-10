@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {711})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{711})) {
                     return new State동굴전환시작(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._02000329_bf {
             internal State동굴전환시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6701}, arg2: false);
+                context.SetEffect(triggerIds: new []{6701}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

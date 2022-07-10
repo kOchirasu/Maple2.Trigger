@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000229_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {10002180}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{101}, questIds: new []{10002180}, questStates: new byte[]{1})) {
                     return new StateNPC이동(context);
                 }
 
@@ -14,7 +14,7 @@ namespace Maple2.Trigger._02000229_bf {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new[] {1001});
+                context.CreateMonster(spawnIds: new []{1001});
             }
         }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02000229_bf {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1001, arg2: "Patrol_1001");
+                context.MoveNpc(spawnId: 1001, patrolName: "Patrol_1001");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new[] {1001})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{1001})) {
                     return new StateNPCDestroy(context);
                 }
 
@@ -40,12 +40,12 @@ namespace Maple2.Trigger._02000229_bf {
             internal StateNPCDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1001});
-                context.SetTimer(id: "1", arg2: 20);
+                context.DestroyMonster(spawnIds: new []{1001});
+                context.SetTimer(timerId: "1", seconds: 20);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWaitStart(context);
                 }
 

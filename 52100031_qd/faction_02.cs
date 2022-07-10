@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52100031_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBuff(arg1: 199, arg2: 99910140);
-                context.SetInteractObject(arg1: new[] {10002060, 10002061, 10002062, 10002063, 10002068}, arg2: 2);
+                context.RemoveBuff(boxId: 199, skillId: 99910140);
+                context.SetInteractObject(interactIds: new []{10002060, 10002061, 10002062, 10002063, 10002068}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "faction02") == 1) {
                     return new State말Prepare(context);
                 }
@@ -26,14 +26,14 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetSkip(state: new StateQuest(context));
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
-                context.CameraSelect(arg1: 301, arg2: true);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1104}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1101, script: "$52100031_QD__FACTION_02__0$", arg4: 5, arg5: 0);
-                context.SetInteractObject(arg1: new[] {10002068}, arg2: 1);
+                context.AddBuff(boxIds: new []{199}, skillId: 70000107, level: 1, arg4: false, arg5: false);
+                context.CameraSelect(triggerId: 301, enable: true);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1104}, arg2: false);
+                context.SetConversation(type: 1, spawnId: 1101, script: "$52100031_QD__FACTION_02__0$", arg4: 5, arg5: 0);
+                context.SetInteractObject(interactIds: new []{10002068}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateQuest(context);
                 }
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateEnd체크(context);
                 }
@@ -70,11 +70,11 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20040102, textId: 20040102, duration: 3000);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.RemoveBuff(arg1: 199, arg2: 70000107);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.RemoveBuff(boxId: 199, skillId: 70000107);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State2차안내(context);
                 }
@@ -90,15 +90,15 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20040105, textId: 20040105, duration: 3500);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.RemoveBuff(arg1: 199, arg2: 70000107);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.RemoveBuff(boxId: 199, skillId: 70000107);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "DungeonClear") == 1) {
-                    context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1104}, arg2: false);
-                    context.SetInteractObject(arg1: new[] {10002060, 10002061, 10002062, 10002063, 10002068}, arg2: 0);
-                    context.RemoveBuff(arg1: 199, arg2: 99910140);
+                    context.DestroyMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1104}, arg2: false);
+                    context.SetInteractObject(interactIds: new []{10002060, 10002061, 10002062, 10002063, 10002068}, state: 0);
+                    context.RemoveBuff(boxId: 199, skillId: 99910140);
                     return new StateEnd(context);
                 }
 
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

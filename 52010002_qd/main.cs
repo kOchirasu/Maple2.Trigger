@@ -5,12 +5,12 @@ namespace Maple2.Trigger._52010002_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002789}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{10002789}, questStates: new byte[]{1})) {
                     return new StateEvent_01(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002789}, arg3: new byte[] {1})) {
+                if (!context.QuestUserDetected(boxIds: new []{701}, questIds: new []{10002789}, questStates: new byte[]{1})) {
                     return new StateEvent_02(context);
                 }
 
@@ -24,15 +24,15 @@ namespace Maple2.Trigger._52010002_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
+                context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 110, textId: 40010);
-                context.SetMesh(arg1: new[] {1001, 1002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1003, 1004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
+                context.SetMesh(triggerIds: new []{1001, 1002}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{1003, 1004}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(spawnIds: new []{101, 102, 103}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101, 102, 103})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101, 102, 103})) {
                     return new StateEvent_03(context);
                 }
 
@@ -48,12 +48,12 @@ namespace Maple2.Trigger._52010002_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1001, 1002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1003, 1004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {111, 112, 113}, arg2: false);
+                context.SetMesh(triggerIds: new []{1001, 1002}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{1003, 1004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(spawnIds: new []{111, 112, 113}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -64,12 +64,12 @@ namespace Maple2.Trigger._52010002_qd {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "Clearbadman");
-                context.SetMesh(arg1: new[] {1001, 1002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1003, 1004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetAchievement(triggerId: 701, type: "trigger", code: "Clearbadman");
+                context.SetMesh(triggerIds: new []{1001, 1002}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{1003, 1004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._52010002_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

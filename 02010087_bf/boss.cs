@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02010087_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7301, 7302, 7303, 7304, 7305, 7306, 7307, 7308, 7309}, arg2: false);
-                context.SetEffect(arg1: new[] {7310}, arg2: true);
+                context.SetEffect(triggerIds: new []{7301, 7302, 7303, 7304, 7305, 7306, 7307, 7308, 7309}, visible: false);
+                context.SetEffect(triggerIds: new []{7310}, visible: true);
                 context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new State폭발예고(context);
                 }
 
@@ -18,7 +18,7 @@ namespace Maple2.Trigger._02010087_bf {
             }
 
             public override void OnExit() {
-                context.AddBuff(arg1: new[] {706}, arg2: 50000453, arg3: 1);
+                context.AddBuff(boxIds: new []{706}, skillId: 50000453, level: 1);
             }
         }
 
@@ -28,14 +28,14 @@ namespace Maple2.Trigger._02010087_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 8002, arg2: true);
-                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetEffect(arg1: new[] {7308}, arg2: true);
-                context.SetTimer(id: "2", arg2: 2, arg4: false);
+                context.CameraSelect(triggerId: 8002, enable: true);
+                context.SetMesh(triggerIds: new []{6001, 6002, 6003, 6004}, visible: false, arg4: 0, arg5: 10f);
+                context.SetEffect(triggerIds: new []{7308}, visible: true);
+                context.SetTimer(timerId: "2", seconds: 2, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State폭발(context);
                 }
 
@@ -49,13 +49,13 @@ namespace Maple2.Trigger._02010087_bf {
             internal State폭발(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7306}, arg2: true);
-                context.SetSkill(arg1: new[] {8306, 8307}, arg2: true);
-                context.SetTimer(id: "2", arg2: 2, arg4: false);
+                context.SetEffect(triggerIds: new []{7306}, visible: true);
+                context.SetSkill(triggerIds: new []{8306, 8307}, arg2: true);
+                context.SetTimer(timerId: "2", seconds: 2, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State폭발후(context);
                 }
 
@@ -73,12 +73,12 @@ namespace Maple2.Trigger._02010087_bf {
             internal State폭발후(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 8002, arg2: false);
-                context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
+                context.CameraSelect(triggerId: 8002, enable: false);
+                context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 111, textId: 20003371);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 705) == 1) {
                     return new State폭발후_02(context);
                 }
@@ -95,13 +95,13 @@ namespace Maple2.Trigger._02010087_bf {
             internal State폭발후_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
+                context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 112, textId: 20003372);
-                context.SetInteractObject(arg1: new[] {10000891}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000891}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000891}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000891}, arg2: 0)) {
                     return new StateClear(context);
                 }
 
@@ -117,23 +117,23 @@ namespace Maple2.Trigger._02010087_bf {
             internal StateClear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201});
-                context.CreateMonster(arg1: new[] {202});
-                context.SetEffect(arg1: new[] {7301, 7302, 7303, 7304, 7305, 7306, 7307, 7308, 7309, 7310, 7311}, arg2: false);
-                context.PlaySystemSoundInBox(arg2: "System_Dark_Ending_Chord_01");
-                context.SetActor(arg1: 5001, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 5002, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 5003, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 5004, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 5005, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 5006, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 5007, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 5008, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.CreateMonster(spawnIds: new []{201});
+                context.CreateMonster(spawnIds: new []{202});
+                context.SetEffect(triggerIds: new []{7301, 7302, 7303, 7304, 7305, 7306, 7307, 7308, 7309, 7310, 7311}, visible: false);
+                context.PlaySystemSoundInBox(sound: "System_Dark_Ending_Chord_01");
+                context.SetActor(triggerId: 5001, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 5002, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 5003, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 5004, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 5005, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 5006, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 5007, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 5008, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetTimer(timerId: "3", seconds: 3, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State웨이홍_Script01(context);
                 }
 
@@ -150,15 +150,15 @@ namespace Maple2.Trigger._02010087_bf {
             internal State웨이홍_Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {199});
-                context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11003125, script: "$02010087_BF__BOSS__0$", arg4: 3);
+                context.CreateMonster(spawnIds: new []{199});
+                context.CameraSelect(triggerId: 8001, enable: true);
+                context.SetConversation(type: 2, spawnId: 11003125, script: "$02010087_BF__BOSS__0$", arg4: 3);
                 context.SetSkip(state: new State웨이홍_Script02(context));
-                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.SetTimer(timerId: "3", seconds: 3, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State웨이홍_Script02(context);
                 }
 
@@ -174,13 +174,13 @@ namespace Maple2.Trigger._02010087_bf {
             internal State웨이홍_Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11003125, script: "$02010087_BF__BOSS__1$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 11003125, script: "$02010087_BF__BOSS__1$", arg4: 3);
                 context.SetSkip(state: new StateEnd(context));
-                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.SetTimer(timerId: "3", seconds: 3, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateEnd(context);
                 }
 
@@ -198,13 +198,13 @@ namespace Maple2.Trigger._02010087_bf {
             internal State웨이홍_Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11003125, script: "$02010087_BF__BOSS__2$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 11003125, script: "$02010087_BF__BOSS__2$", arg4: 3);
                 context.SetSkip(state: new StateEnd(context));
-                context.SetTimer(id: "4", arg2: 4, arg4: false);
+                context.SetTimer(timerId: "4", seconds: 4, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "4")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "4")) {
                     return new StateEnd(context);
                 }
 
@@ -223,7 +223,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.DungeonClear();
                     return new StateEnd_02(context);
@@ -239,12 +239,12 @@ namespace Maple2.Trigger._02010087_bf {
             internal StateEnd_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 8001, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 199, script: "$02000337_BF__BOSS__3$", arg4: 3, arg5: 2);
+                context.CameraSelect(triggerId: 8001, enable: false);
+                context.SetConversation(type: 1, spawnId: 199, script: "$02000337_BF__BOSS__3$", arg4: 3, arg5: 2);
                 context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

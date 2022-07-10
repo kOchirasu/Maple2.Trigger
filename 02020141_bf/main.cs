@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateDefaultSetting(context);
                 }
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02020141_bf {
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {102})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{102})) {
                     return new StateBossSpawnPrepare(context);
                 }
 
@@ -42,10 +42,10 @@ namespace Maple2.Trigger._02020141_bf {
             internal StateBossSpawnPrepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {301}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{301}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateBossSpawn(context);
                 }
@@ -60,10 +60,10 @@ namespace Maple2.Trigger._02020141_bf {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {99}, arg2: false);
+                context.CreateMonster(spawnIds: new []{99}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1100)) {
                     return new StateClearSuccess유무체크시작(context);
                 }
@@ -87,8 +87,8 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {99})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new StateCinematicDelay(context);
                 }
 
@@ -112,11 +112,11 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     context.DungeonFail();
                     return new StateEnd(context);
@@ -132,10 +132,10 @@ namespace Maple2.Trigger._02020141_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(isEnable: false);
+                context.DungeonEnableGiveUp(enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -147,10 +147,10 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 23090000);
-                context.SetAchievement(arg2: "trigger", arg3: "TurkaDungeonClear");
+                context.SetAchievement(type: "trigger", code: "TurkaDungeonClear");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateStopCinematic(context);
                 }
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02020141_bf {
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

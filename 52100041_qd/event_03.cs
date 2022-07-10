@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52100041_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {171}, arg2: false);
+                context.CreateMonster(spawnIds: new []{171}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {704})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{704})) {
                     return new StateReady(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._52100041_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 171, arg2: "MS2PatrolData_2139");
+                context.MoveNpc(spawnId: 171, patrolName: "MS2PatrolData_2139");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateReady_02(context);
                 }
@@ -40,10 +40,10 @@ namespace Maple2.Trigger._52100041_qd {
             internal StateReady_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {171});
+                context.DestroyMonster(spawnIds: new []{171});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

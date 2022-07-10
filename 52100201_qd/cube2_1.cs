@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52100201_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "CubeOff") == 1) {
                     return new StateOff_1(context);
                 }
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOff_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateOn_1(context);
                 }
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOn_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateOff_2(context);
                 }
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOff_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateOn_2(context);
                 }
@@ -74,10 +74,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOn_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateOff_3(context);
                 }
@@ -92,10 +92,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOff_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateOn_3(context);
                 }
@@ -110,10 +110,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOn_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateOff_4(context);
                 }
@@ -128,10 +128,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOff_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 150)) {
                     return new StateOn_4(context);
                 }
@@ -146,10 +146,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOn_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 150)) {
                     return new StateOff_5(context);
                 }
@@ -164,10 +164,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOff_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 150)) {
                     return new StateOn_5(context);
                 }
@@ -182,10 +182,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOn_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 150)) {
                     return new StateOff_6(context);
                 }
@@ -200,10 +200,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOff_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 150)) {
                     return new StateOn_6(context);
                 }
@@ -218,10 +218,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOn_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 150)) {
                     return new StateOff_7(context);
                 }
@@ -236,10 +236,10 @@ namespace Maple2.Trigger._52100201_qd {
             internal StateOff_7(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 200)) {
                     context.SetUserValue(triggerId: 920002, key: "CubeOff", value: 0);
                     context.SetUserValue(triggerId: 910002, key: "Cube", value: 2);

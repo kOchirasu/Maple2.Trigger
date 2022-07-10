@@ -8,11 +8,11 @@ namespace Maple2.Trigger._02020097_bf {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 28, visible: false, enabled: false, minimapVisible: false);
-                context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 201, 202, 203, 204, 205, 206, 207, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 201, 202, 203, 204, 205, 206, 207, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {10})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{10})) {
                     return new StateBossSpawn(context);
                 }
 
@@ -26,10 +26,10 @@ namespace Maple2.Trigger._02020097_bf {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {99}, arg2: false);
+                context.CreateMonster(spawnIds: new []{99}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait상태(context);
                 }
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02020097_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StairsOk") == 1) {
                     return new State계단Creation시작중(context);
                 }
@@ -54,11 +54,11 @@ namespace Maple2.Trigger._02020097_bf {
                     return new State계단Creation시작중2nd(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {11})) {
+                if (context.UserDetected(boxIds: new []{11})) {
                     return new State플레이어3페이지전투판으로오기(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {99})) {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new StateCinematicDelay(context);
                 }
 
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02020097_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State계단Creation(context);
                 }
@@ -88,12 +88,12 @@ namespace Maple2.Trigger._02020097_bf {
             internal State계단Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {301}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {201, 202, 203, 204, 205, 206, 207}, arg2: true, arg3: 1, arg4: 120, arg5: 0.5f);
+                context.SetMesh(triggerIds: new []{301}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{201, 202, 203, 204, 205, 206, 207}, visible: true, arg3: 1, arg4: 120, arg5: 0.5f);
                 context.SetUserValue(key: "StairsOk", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait상태(context);
                 }
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02020097_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State계단Creation2nd(context);
                 }
@@ -124,11 +124,11 @@ namespace Maple2.Trigger._02020097_bf {
             internal State계단Creation2nd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239}, arg2: true, arg3: 1, arg4: 50, arg5: 0.5f);
+                context.SetMesh(triggerIds: new []{211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239}, visible: true, arg3: 1, arg4: 50, arg5: 0.5f);
                 context.SetUserValue(key: "StairsOk2nd", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new State칸막이Remove2nd(context);
                 }
@@ -143,10 +143,10 @@ namespace Maple2.Trigger._02020097_bf {
             internal State칸막이Remove2nd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {302}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{302}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait상태(context);
                 }
@@ -165,8 +165,8 @@ namespace Maple2.Trigger._02020097_bf {
                 context.SetPortal(portalId: 28, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {99})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new StateCinematicDelay(context);
                 }
 
@@ -185,10 +185,10 @@ namespace Maple2.Trigger._02020097_bf {
             internal StateCinematicDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg3: "BalrogKritiasClear");
+                context.SetAchievement(type: "trigger", code: "BalrogKritiasClear");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateStopCinematic(context);
                 }
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._02020097_bf {
                 context.DungeonClear();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

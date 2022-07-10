@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02020145_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1001})) {
                     return new State소환Prepare(context);
                 }
 
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02020145_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Summon_Enemy_1") == 0) {
                     return new StateStart(context);
                 }
@@ -40,10 +40,10 @@ namespace Maple2.Trigger._02020145_bf {
             internal StateMonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {121, 122, 123, 124, 131, 132, 133, 134});
+                context.CreateMonster(spawnIds: new []{121, 122, 123, 124, 131, 132, 133, 134});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Summon_Enemy_1") == 0) {
                     return new StateStart(context);
                 }
@@ -62,10 +62,10 @@ namespace Maple2.Trigger._02020145_bf {
             internal StateMonsterSpawn_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {121, 122, 123, 124, 131, 132, 133, 134});
+                context.CreateMonster(spawnIds: new []{121, 122, 123, 124, 131, 132, 133, 134});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Summon_Enemy_1") == 0) {
                     return new StateStart(context);
                 }

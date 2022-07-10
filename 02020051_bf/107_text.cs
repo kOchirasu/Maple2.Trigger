@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Text") == 1) {
                     return new StateWait(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
                     return new StateGuide_1(context);
                 }
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02020051_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_surprise", script: "$02020051_BF__107_TEXT__0$", duration: 5684, voice: @"ko/Npc/00002201");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateEnd(context);
                 }
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Text") == 2) {
                     return new StateGuide시작(context);
                 }

@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {106})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{106})) {
                     return new StateBuff(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._02100000_bf {
             internal StateBuff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {101}, arg2: 70000130, arg3: 1, arg4: false, arg5: true);
+                context.AddBuff(boxIds: new []{101}, skillId: 70000130, level: 1, arg4: false, arg5: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateBuff_2(context);
                 }
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._02100000_bf {
             internal StateBuff_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {101}, arg2: 70000130, arg3: 1, arg4: false, arg5: true);
+                context.AddBuff(boxIds: new []{101}, skillId: 70000130, level: 1, arg4: false, arg5: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateBuff_3(context);
                 }
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._02100000_bf {
             internal StateBuff_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {101}, arg2: 70000130, arg3: 1, arg4: false, arg5: true);
+                context.AddBuff(boxIds: new []{101}, skillId: 70000130, level: 1, arg4: false, arg5: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateBuff_4(context);
                 }
@@ -74,10 +74,10 @@ namespace Maple2.Trigger._02100000_bf {
             internal StateBuff_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {101}, arg2: 70000130, arg3: 1, arg4: false, arg5: true);
+                context.AddBuff(boxIds: new []{101}, skillId: 70000130, level: 1, arg4: false, arg5: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateBuff_5(context);
                 }
@@ -92,10 +92,10 @@ namespace Maple2.Trigger._02100000_bf {
             internal StateBuff_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {101}, arg2: 70000131, arg3: 1, arg4: false, arg5: true);
+                context.AddBuff(boxIds: new []{101}, skillId: 70000131, level: 1, arg4: false, arg5: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     return new StateBuff(context);
                 }

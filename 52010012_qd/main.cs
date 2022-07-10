@@ -5,11 +5,11 @@ namespace Maple2.Trigger._52010012_qd {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.SetMesh(arg1: new[] {1003, 1004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{1003, 1004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002797}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{10002797}, questStates: new byte[]{1})) {
                     return new StateEvent_01(context);
                 }
 
@@ -23,11 +23,11 @@ namespace Maple2.Trigger._52010012_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105});
+                context.CreateMonster(spawnIds: new []{101, 102, 103, 104, 105});
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101, 102, 103, 104, 105})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101, 102, 103, 104, 105})) {
                     return new StateEvent_02(context);
                 }
 
@@ -41,14 +41,14 @@ namespace Maple2.Trigger._52010012_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {106});
-                context.MoveNpc(arg1: 106, arg2: "MS2PatrolData_1001");
-                context.SetConversation(arg1: 1, arg2: 106, script: "$52010012_QD__MAIN__0$", arg4: 3);
-                context.SetTimer(id: "3", arg2: 3);
+                context.CreateMonster(spawnIds: new []{106});
+                context.MoveNpc(spawnId: 106, patrolName: "MS2PatrolData_1001");
+                context.SetConversation(type: 1, spawnId: 106, script: "$52010012_QD__MAIN__0$", arg4: 3);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateEvent_03(context);
                 }
 
@@ -62,16 +62,16 @@ namespace Maple2.Trigger._52010012_qd {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 8001, arg2: true);
+                context.CameraSelect(triggerId: 8001, enable: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetMesh(arg1: new[] {1003, 1004}, arg2: true, arg3: 0, arg4: 80, arg5: 10f);
-                context.SetMesh(arg1: new[] {1001, 1002}, arg2: false, arg3: 0, arg4: 80, arg5: 10f);
-                context.SetTimer(id: "2", arg2: 2);
+                context.SetMesh(triggerIds: new []{1003, 1004}, visible: true, arg3: 0, arg4: 80, arg5: 10f);
+                context.SetMesh(triggerIds: new []{1001, 1002}, visible: false, arg3: 0, arg4: 80, arg5: 10f);
+                context.SetTimer(timerId: "2", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateEvent_04(context);
                 }
 
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52010012_qd {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 7);
-                context.CameraSelect(arg1: 8001, arg2: false);
+                context.CameraSelect(triggerId: 8001, enable: false);
             }
         }
 
@@ -90,11 +90,11 @@ namespace Maple2.Trigger._52010012_qd {
             internal StateEvent_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 106, arg2: "MS2PatrolData_1002");
+                context.MoveNpc(spawnId: 106, patrolName: "MS2PatrolData_1002");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 702, arg2: new[] {106})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 702, spawnIds: new []{106})) {
                     return new StateEnd(context);
                 }
 
@@ -109,10 +109,10 @@ namespace Maple2.Trigger._52010012_qd {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
-                context.DestroyMonster(arg1: new[] {106});
+                context.DestroyMonster(spawnIds: new []{106});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,17 +4,17 @@ namespace Maple2.Trigger._02000139_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {401, 402, 403, 404}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000131}, arg2: 1);
-                context.SetMesh(arg1: new[] {201, 202, 203}, arg2: false);
-                context.SetLadder(arg1: 301, arg2: false, arg3: false);
-                context.SetLadder(arg1: 302, arg2: false, arg3: false);
-                context.SetLadder(arg1: 303, arg2: false, arg3: false);
-                context.SetLadder(arg1: 304, arg2: false, arg3: false);
+                context.SetEffect(triggerIds: new []{401, 402, 403, 404}, visible: false);
+                context.SetInteractObject(interactIds: new []{10000131}, state: 1);
+                context.SetMesh(triggerIds: new []{201, 202, 203}, visible: false);
+                context.SetLadder(triggerId: 301, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 302, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 303, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 304, visible: false, animationEffect: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000131}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000131}, arg2: 0)) {
                     return new StateSetupSpawn1(context);
                 }
 
@@ -28,12 +28,12 @@ namespace Maple2.Trigger._02000139_bf {
             internal StateSetupSpawn1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {201}, arg2: true);
-                context.SetTimer(id: "2", arg2: 1);
+                context.SetMesh(triggerIds: new []{201}, visible: true);
+                context.SetTimer(timerId: "2", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateSetupSpawn2(context);
                 }
 
@@ -47,12 +47,12 @@ namespace Maple2.Trigger._02000139_bf {
             internal StateSetupSpawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {202}, arg2: true);
-                context.SetTimer(id: "3", arg2: 1);
+                context.SetMesh(triggerIds: new []{202}, visible: true);
+                context.SetTimer(timerId: "3", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateSetupSpawn3(context);
                 }
 
@@ -66,12 +66,12 @@ namespace Maple2.Trigger._02000139_bf {
             internal StateSetupSpawn3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {203}, arg2: true);
-                context.SetTimer(id: "4", arg2: 1);
+                context.SetMesh(triggerIds: new []{203}, visible: true);
+                context.SetTimer(timerId: "4", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "4")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "4")) {
                     return new StateLadder(context);
                 }
 
@@ -85,19 +85,19 @@ namespace Maple2.Trigger._02000139_bf {
             internal StateLadder(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 301, arg2: true, arg3: true);
-                context.SetEffect(arg1: new[] {401}, arg2: true);
-                context.SetLadder(arg1: 302, arg2: true, arg3: true);
-                context.SetEffect(arg1: new[] {402}, arg2: true);
-                context.SetLadder(arg1: 303, arg2: true, arg3: true);
-                context.SetEffect(arg1: new[] {403}, arg2: true);
-                context.SetLadder(arg1: 304, arg2: true, arg3: true);
-                context.SetEffect(arg1: new[] {404}, arg2: true);
-                context.SetTimer(id: "4", arg2: 20);
+                context.SetLadder(triggerId: 301, visible: true, animationEffect: true);
+                context.SetEffect(triggerIds: new []{401}, visible: true);
+                context.SetLadder(triggerId: 302, visible: true, animationEffect: true);
+                context.SetEffect(triggerIds: new []{402}, visible: true);
+                context.SetLadder(triggerId: 303, visible: true, animationEffect: true);
+                context.SetEffect(triggerIds: new []{403}, visible: true);
+                context.SetLadder(triggerId: 304, visible: true, animationEffect: true);
+                context.SetEffect(triggerIds: new []{404}, visible: true);
+                context.SetTimer(timerId: "4", seconds: 20);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "4")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "4")) {
                     return new StateWait(context);
                 }
 

@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {106})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{106})) {
                     return new StateBuff(context);
                 }
 
@@ -20,12 +20,12 @@ namespace Maple2.Trigger._02000350_bf {
             internal StateBuff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3600", arg2: 3600);
-                context.AddBuff(arg1: new[] {106}, arg2: 70000071, arg3: 5, arg4: false, arg5: false);
+                context.SetTimer(timerId: "3600", seconds: 3600);
+                context.AddBuff(boxIds: new []{106}, skillId: 70000071, level: 5, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3600")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3600")) {
                     return new StateWait(context);
                 }
 

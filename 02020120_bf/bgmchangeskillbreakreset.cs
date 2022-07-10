@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetUserValue(key: "DungeonReset", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 299) == 1) {
                     return new State던전시간작동Wait(context);
                 }
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 399) == 1) {
                     return new StateSkill브레이크신호Wait_BGM교체(context);
                 }
@@ -44,10 +44,10 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateSkill브레이크신호Wait_BGM교체(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(arg1: 19600, arg2: true);
+                context.SetSound(triggerId: 19600, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakStart") >= 1) {
                     return new StateSkill브레이크로직작동(context);
                 }
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(portalId: 6201, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateSkill브레이크실패Reset처리(context);
                 }
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(portalId: 1220, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateSkill브레이크실패Cinematic출력(context);
                 }
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "DungeonReset") == 1) {
                     return new StateReady(context);
                 }
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetUserValue(key: "SkillBreakStart", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     // return new StateSkill브레이크신호Wait_시간다시Setting(context);
                     return null;
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateBoss한테보내는PortalCreation_시간Reset안함02(context);
                 }
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetUserValue(key: "SkillBreakStart", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     // return new StateSkill브레이크신호Wait_시간Setting안함(context);
                     return null;

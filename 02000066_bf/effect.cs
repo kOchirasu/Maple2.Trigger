@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6001}, arg2: false);
+                context.SetEffect(triggerIds: new []{6001}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 103, arg2: new[] {99})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 103, spawnIds: new []{99})) {
                     return new State이펙트Creation(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02000066_bf {
             internal State이펙트Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6001}, arg2: true);
+                context.SetEffect(triggerIds: new []{6001}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {99})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new State이펙트소멸(context);
                 }
 
@@ -40,12 +40,12 @@ namespace Maple2.Trigger._02000066_bf {
             internal State이펙트소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "15", arg2: 15);
-                context.SetEffect(arg1: new[] {6001}, arg2: false);
+                context.SetTimer(timerId: "15", seconds: 15);
+                context.SetEffect(triggerIds: new []{6001}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "15")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "15")) {
                     return new StateStart(context);
                 }
 

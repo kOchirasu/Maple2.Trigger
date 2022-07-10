@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52000025_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {702})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{702})) {
                     return new StateTalk_01(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._52000025_qd {
             internal StateTalk_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 201, script: "$52000025_QD__TALK_EVENT__0$", arg4: 3, arg5: 1);
+                context.SetConversation(type: 1, spawnId: 201, script: "$52000025_QD__TALK_EVENT__0$", arg4: 3, arg5: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateTalk_02(context);
                 }
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._52000025_qd {
             internal StateTalk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 201, script: "$52000025_QD__TALK_EVENT__1$", arg4: 2, arg5: 1);
+                context.SetConversation(type: 1, spawnId: 201, script: "$52000025_QD__TALK_EVENT__1$", arg4: 2, arg5: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

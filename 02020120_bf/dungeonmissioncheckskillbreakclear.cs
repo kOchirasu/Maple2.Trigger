@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakSuccess") == 1) {
                     return new StateSkill브레이크Success_Dungeon미션랭크(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02020120_bf {
                 context.DungeonMissionComplete(missionId: 23037005);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnd(context);
                 }
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

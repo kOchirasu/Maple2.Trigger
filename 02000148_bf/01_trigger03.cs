@@ -4,14 +4,14 @@ namespace Maple2.Trigger._02000148_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000171}, arg2: 1);
-                context.SetEffect(arg1: new[] {209, 210, 211, 212}, arg2: false);
-                context.SetMesh(arg1: new[] {317, 318, 319, 320}, arg2: true);
-                context.SetMesh(arg1: new[] {321, 322, 323, 324}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10000171}, state: 1);
+                context.SetEffect(triggerIds: new []{209, 210, 211, 212}, visible: false);
+                context.SetMesh(triggerIds: new []{317, 318, 319, 320}, visible: true);
+                context.SetMesh(triggerIds: new []{321, 322, 323, 324}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000171}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000171}, arg2: 0)) {
                     return new State개봉박두(context);
                 }
 
@@ -25,14 +25,14 @@ namespace Maple2.Trigger._02000148_bf {
             internal State개봉박두(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {317, 318, 319, 320}, arg2: false);
-                context.CreateMonster(arg1: new[] {99, 100, 101, 102}, arg2: true);
-                context.SetMesh(arg1: new[] {321, 322, 323, 324}, arg2: true);
-                context.SetEffect(arg1: new[] {209, 210, 211, 212}, arg2: true);
+                context.SetMesh(triggerIds: new []{317, 318, 319, 320}, visible: false);
+                context.CreateMonster(spawnIds: new []{99, 100, 101, 102}, arg2: true);
+                context.SetMesh(triggerIds: new []{321, 322, 323, 324}, visible: true);
+                context.SetEffect(triggerIds: new []{209, 210, 211, 212}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {99, 100, 101, 102})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{99, 100, 101, 102})) {
                     return new StateUserDetection(context);
                 }
 
@@ -46,11 +46,11 @@ namespace Maple2.Trigger._02000148_bf {
             internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 2);
+                context.SetTimer(timerId: "1", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {403})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{403})) {
                     return new StateWait(context);
                 }
 

@@ -4,15 +4,15 @@ namespace Maple2.Trigger._02000247_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {303}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{303}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {403})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{403})) {
                     return new State버튼눌림(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {405})) {
+                if (context.UserDetected(boxIds: new []{405})) {
                     return new State사라짐(context);
                 }
 
@@ -26,15 +26,15 @@ namespace Maple2.Trigger._02000247_bf {
             internal State버튼눌림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {303}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{303}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {403})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{403})) {
                     return new StateWait(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {405})) {
+                if (context.UserDetected(boxIds: new []{405})) {
                     return new State사라짐(context);
                 }
 
@@ -48,10 +48,10 @@ namespace Maple2.Trigger._02000247_bf {
             internal State사라짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {303}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{303}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

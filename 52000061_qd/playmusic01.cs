@@ -4,18 +4,18 @@ namespace Maple2.Trigger._52000061_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5100, 5200}, arg2: false);
-                context.SetSound(arg1: 10000, arg2: false);
-                context.CreateMonster(arg1: new[] {101, 201, 202, 203, 204}, arg2: false);
+                context.SetEffect(triggerIds: new []{5000, 5001, 5002, 5003, 5004, 5100, 5200}, visible: false);
+                context.SetSound(triggerId: 10000, arg2: false);
+                context.CreateMonster(spawnIds: new []{101, 201, 202, 203, 204}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000550}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{90000550}, questStates: new byte[]{1})) {
                     return new StateLodingDelay01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000550}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{90000550}, questStates: new byte[]{2})) {
                     return new StateQuit(context);
                 }
 
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._52000061_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateLodingDelay02(context);
                 }
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52000061_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePCWalkInStage01(context);
                 }
@@ -65,10 +65,10 @@ namespace Maple2.Trigger._52000061_qd {
             internal StatePCWalkInStage01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52000061, arg2: 10);
+                context.MoveUser(mapId: 52000061, portalId: 10);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePCWalkInStage02(context);
                 }
@@ -83,11 +83,11 @@ namespace Maple2.Trigger._52000061_qd {
             internal StatePCWalkInStage02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUserPath(arg1: "MS2PatrolData_1000");
-                context.CameraSelect(arg1: 600, arg2: true);
+                context.MoveUserPath(patrolName: "MS2PatrolData_1000");
+                context.CameraSelect(triggerId: 600, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePCWalkInStage03(context);
                 }
@@ -103,11 +103,11 @@ namespace Maple2.Trigger._52000061_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(pathIds: new[] {601, 602}, arg2: true);
+                context.CameraSelectPath(pathIds: new []{601, 602}, returnView: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new StatePCWalkInStage04(context);
                 }
 
@@ -121,10 +121,10 @@ namespace Maple2.Trigger._52000061_qd {
             internal StatePCWalkInStage04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 603, arg2: true);
+                context.CameraSelect(triggerId: 603, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePCBow01(context);
                 }
@@ -139,10 +139,10 @@ namespace Maple2.Trigger._52000061_qd {
             internal StatePCBow01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPcEmotionSequence(arg1: "Emotion_Chin_Chin_A");
+                context.SetPcEmotionSequence(sequenceNames: new []{"Emotion_Chin_Chin_A"});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new StatePCBow02(context);
                 }
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._52000061_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePCBow03(context);
                 }
@@ -176,11 +176,11 @@ namespace Maple2.Trigger._52000061_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);
-                context.CameraSelect(arg1: 610, arg2: true);
-                context.MoveUser(arg1: 52000061, arg2: 20);
+                context.CameraSelect(triggerId: 610, enable: true);
+                context.MoveUser(mapId: 52000061, portalId: 20);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePCReadyToPlayThePiano01(context);
                 }
@@ -195,11 +195,11 @@ namespace Maple2.Trigger._52000061_qd {
             internal StatePCReadyToPlayThePiano01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPcEmotionLoop(arg1: "Music_Piano_Idle_A", arg2: 31500f);
-                context.SetEffect(arg1: new[] {5100}, arg2: true);
+                context.SetPcEmotionLoop(sequenceName: "Music_Piano_Idle_A", duration: 31500f);
+                context.SetEffect(triggerIds: new []{5100}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePCPlayMusic01(context);
                 }
@@ -215,10 +215,10 @@ namespace Maple2.Trigger._52000061_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSound(arg1: 10000, arg2: true);
+                context.SetSound(triggerId: 10000, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePCPlayMusic02(context);
                 }
@@ -233,14 +233,14 @@ namespace Maple2.Trigger._52000061_qd {
             internal StatePCPlayMusic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004}, arg2: true);
-                context.SetNpcEmotionLoop(arg1: 201, arg2: "Play_A", arg3: 30500f);
-                context.SetNpcEmotionLoop(arg1: 202, arg2: "Play_A", arg3: 30500f);
-                context.SetNpcEmotionLoop(arg1: 203, arg2: "Play_A", arg3: 30500f);
-                context.SetNpcEmotionLoop(arg1: 204, arg2: "Play_A", arg3: 30500f);
+                context.SetEffect(triggerIds: new []{5000, 5001, 5002, 5003, 5004}, visible: true);
+                context.SetNpcEmotionLoop(spawnId: 201, sequenceName: "Play_A", duration: 30500f);
+                context.SetNpcEmotionLoop(spawnId: 202, sequenceName: "Play_A", duration: 30500f);
+                context.SetNpcEmotionLoop(spawnId: 203, sequenceName: "Play_A", duration: 30500f);
+                context.SetNpcEmotionLoop(spawnId: 204, sequenceName: "Play_A", duration: 30500f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30500)) {
                     return new StatePCPlayMusic03(context);
                 }
@@ -255,12 +255,12 @@ namespace Maple2.Trigger._52000061_qd {
             internal StatePCPlayMusic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(arg1: 10000, arg2: false);
-                context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004}, arg2: false);
-                context.SetEffect(arg1: new[] {5200}, arg2: true);
+                context.SetSound(triggerId: 10000, arg2: false);
+                context.SetEffect(triggerIds: new []{5000, 5001, 5002, 5003, 5004}, visible: false);
+                context.SetEffect(triggerIds: new []{5200}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePCPlayQuit01(context);
                 }
@@ -276,10 +276,10 @@ namespace Maple2.Trigger._52000061_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetEffect(arg1: new[] {5100}, arg2: false);
+                context.SetEffect(triggerIds: new []{5100}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StatePCPlayQuit02(context);
                 }
@@ -294,10 +294,10 @@ namespace Maple2.Trigger._52000061_qd {
             internal StatePCPlayQuit02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52000061, arg2: 30);
+                context.MoveUser(mapId: 52000061, portalId: 30);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePCPlayQuit03(context);
                 }
@@ -316,11 +316,11 @@ namespace Maple2.Trigger._52000061_qd {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "PerformanceWithNPC");
+                context.SetAchievement(triggerId: 9900, type: "trigger", code: "PerformanceWithNPC");
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000550}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{90000550}, questStates: new byte[]{3})) {
                     return new StateQuit(context);
                 }
 
@@ -335,7 +335,7 @@ namespace Maple2.Trigger._52000061_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

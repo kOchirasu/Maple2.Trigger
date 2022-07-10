@@ -4,10 +4,10 @@ namespace Maple2.Trigger._52100302_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000513, 12000514, 12000515, 12000516, 12000517, 12000518}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{12000513, 12000514, 12000515, 12000516, 12000517, 12000518}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Block") == 1) {
                     context.SetUserValue(triggerId: 900004, key: "Block", value: 0);
                     return new StateArriveBlock_1(context);
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9004})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9004})) {
                     return new StateArriveBlock_Delay_1(context);
                 }
 
@@ -55,19 +55,19 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.CreateMonster(arg1: new[] {2004}, arg2: false);
+                    context.CreateMonster(spawnIds: new []{2004}, arg2: false);
                     return new StateBlock_1(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1110, 1303, 1304, 1309, 1310, 1311, 1312, 1313, 1314})) {
+                if (context.MonsterDead(spawnIds: new []{1110, 1303, 1304, 1309, 1310, 1311, 1312, 1313, 1314})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new[] {12000513}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnPointId: 106, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointId: 108, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointId: 109, isEnable: true);
+                    context.SetInteractObject(interactIds: new []{12000513}, state: 1);
+                    context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
+                    context.EnableSpawnPointPc(spawnId: 106, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 108, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 109, isEnable: true);
                     return new StateCableOn_13(context);
                 }
 
@@ -82,14 +82,14 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1110, 1303, 1304, 1309, 1310, 1311, 1312, 1313, 1314})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1110, 1303, 1304, 1309, 1310, 1311, 1312, 1313, 1314})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new[] {12000513}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnPointId: 106, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointId: 108, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointId: 109, isEnable: true);
+                    context.SetInteractObject(interactIds: new []{12000513}, state: 1);
+                    context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
+                    context.EnableSpawnPointPc(spawnId: 106, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 108, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 109, isEnable: true);
                     return new StateCableOn_13(context);
                 }
 
@@ -104,8 +104,8 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9005})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9005})) {
                     return new StateArriveBlock_Delay_2(context);
                 }
 
@@ -120,19 +120,19 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.CreateMonster(arg1: new[] {2005}, arg2: false);
+                    context.CreateMonster(spawnIds: new []{2005}, arg2: false);
                     return new StateBlock_2(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1111, 1301, 1302, 1321, 1322, 1323, 1324, 1325, 1326})) {
+                if (context.MonsterDead(spawnIds: new []{1111, 1301, 1302, 1321, 1322, 1323, 1324, 1325, 1326})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new[] {12000514, 12000515}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnPointId: 106, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointId: 107, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointId: 110, isEnable: true);
+                    context.SetInteractObject(interactIds: new []{12000514, 12000515}, state: 1);
+                    context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
+                    context.EnableSpawnPointPc(spawnId: 106, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 107, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 110, isEnable: true);
                     return new StateCableOn_14_15(context);
                 }
 
@@ -147,14 +147,14 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1111, 1301, 1302, 1321, 1322, 1323, 1324, 1325, 1326})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1111, 1301, 1302, 1321, 1322, 1323, 1324, 1325, 1326})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new[] {12000514, 12000515}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnPointId: 106, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointId: 107, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointId: 110, isEnable: true);
+                    context.SetInteractObject(interactIds: new []{12000514, 12000515}, state: 1);
+                    context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
+                    context.EnableSpawnPointPc(spawnId: 106, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 107, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 110, isEnable: true);
                     return new StateCableOn_14_15(context);
                 }
 
@@ -169,8 +169,8 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9006})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9006})) {
                     return new StateArriveBlock_Delay_3(context);
                 }
 
@@ -185,18 +185,18 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.CreateMonster(arg1: new[] {2006}, arg2: false);
+                    context.CreateMonster(spawnIds: new []{2006}, arg2: false);
                     return new StateBlock_3(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1112, 1307, 1308, 1327, 1328, 1329, 1330, 1331, 1332})) {
+                if (context.MonsterDead(spawnIds: new []{1112, 1307, 1308, 1327, 1328, 1329, 1330, 1331, 1332})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new[] {12000516, 12000517}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnPointId: 107, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointId: 111, isEnable: true);
+                    context.SetInteractObject(interactIds: new []{12000516, 12000517}, state: 1);
+                    context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
+                    context.EnableSpawnPointPc(spawnId: 107, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 111, isEnable: true);
                     return new StateCableOn_16_17(context);
                 }
 
@@ -211,13 +211,13 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1112, 1307, 1308, 1327, 1328, 1329, 1330, 1331, 1332})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1112, 1307, 1308, 1327, 1328, 1329, 1330, 1331, 1332})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new[] {12000516, 12000517}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnPointId: 107, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointId: 111, isEnable: true);
+                    context.SetInteractObject(interactIds: new []{12000516, 12000517}, state: 1);
+                    context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
+                    context.EnableSpawnPointPc(spawnId: 107, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 111, isEnable: true);
                     return new StateCableOn_16_17(context);
                 }
 
@@ -232,8 +232,8 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9007})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9007})) {
                     return new StateArriveBlock_Delay_4(context);
                 }
 
@@ -248,18 +248,18 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.CreateMonster(arg1: new[] {2007}, arg2: false);
+                    context.CreateMonster(spawnIds: new []{2007}, arg2: false);
                     return new StateBlock_4(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1113, 1305, 1306, 1315, 1316, 1317, 1318, 1319, 1320})) {
+                if (context.MonsterDead(spawnIds: new []{1113, 1305, 1306, 1315, 1316, 1317, 1318, 1319, 1320})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new[] {12000518}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnPointId: 108, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointId: 112, isEnable: true);
+                    context.SetInteractObject(interactIds: new []{12000518}, state: 1);
+                    context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
+                    context.EnableSpawnPointPc(spawnId: 108, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 112, isEnable: true);
                     return new StateCableOn_18(context);
                 }
 
@@ -274,13 +274,13 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1113, 1305, 1306, 1315, 1316, 1317, 1318, 1319, 1320})) {
-                    context.DestroyMonster(arg1: new[] {2007}, arg2: false);
-                    context.SetInteractObject(arg1: new[] {12000518}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnPointId: 108, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointId: 112, isEnable: true);
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1113, 1305, 1306, 1315, 1316, 1317, 1318, 1319, 1320})) {
+                    context.DestroyMonster(spawnIds: new []{2007}, arg2: false);
+                    context.SetInteractObject(interactIds: new []{12000518}, state: 1);
+                    context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
+                    context.EnableSpawnPointPc(spawnId: 108, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 112, isEnable: true);
                     return new StateCableOn_18(context);
                 }
 
@@ -295,10 +295,10 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000513}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000513}, arg2: 0);
-                    context.SetMesh(arg1: new[] {1110001, 1110002, 1110003, 1110004, 1110005, 1110006, 1110007, 1110008, 1110009, 1110010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000513}, arg2: 0)) {
+                    context.SetInteractObject(interactIds: new []{12000513}, state: 0);
+                    context.SetMesh(triggerIds: new []{1110001, 1110002, 1110003, 1110004, 1110005, 1110006, 1110007, 1110008, 1110009, 1110010}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateCableDelay_13(context);
                 }
 
@@ -313,17 +313,17 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000514}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000514, 12000515}, arg2: 0);
-                    context.SetMesh(arg1: new[] {1120001, 1120002, 1120003, 1120004, 1120005, 1120006, 1120007, 1120008, 1120009, 1120010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000514}, arg2: 0)) {
+                    context.SetInteractObject(interactIds: new []{12000514, 12000515}, state: 0);
+                    context.SetMesh(triggerIds: new []{1120001, 1120002, 1120003, 1120004, 1120005, 1120006, 1120007, 1120008, 1120009, 1120010}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateCableDelay_14(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000515}, arg2: 0)) {
-                    context.SetVisibleBreakableObject(arg1: new[] {1016}, arg2: false);
-                    context.SetInteractObject(arg1: new[] {12000514, 12000515}, arg2: 0);
-                    context.SetMesh(arg1: new[] {1130001, 1130002, 1130003, 1130004, 1130005, 1130006, 1130007, 1130008, 1130009, 1130010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{12000515}, arg2: 0)) {
+                    context.SetVisibleBreakableObject(triggerIds: new []{1016}, arg2: false);
+                    context.SetInteractObject(interactIds: new []{12000514, 12000515}, state: 0);
+                    context.SetMesh(triggerIds: new []{1130001, 1130002, 1130003, 1130004, 1130005, 1130006, 1130007, 1130008, 1130009, 1130010}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateCableDelay_15(context);
                 }
 
@@ -338,16 +338,16 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000516}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000516, 12000517}, arg2: 0);
-                    context.SetMesh(arg1: new[] {1140001, 1140002, 1140003, 1140004, 1140005, 1140006, 1140007, 1140008, 1140009, 1140010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000516}, arg2: 0)) {
+                    context.SetInteractObject(interactIds: new []{12000516, 12000517}, state: 0);
+                    context.SetMesh(triggerIds: new []{1140001, 1140002, 1140003, 1140004, 1140005, 1140006, 1140007, 1140008, 1140009, 1140010}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateCableDelay_16(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000517}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000516, 12000517}, arg2: 0);
-                    context.SetMesh(arg1: new[] {1150001, 1150002, 1150003, 1150004, 1150005, 1150006, 1150007, 1150008, 1150009, 1150010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{12000517}, arg2: 0)) {
+                    context.SetInteractObject(interactIds: new []{12000516, 12000517}, state: 0);
+                    context.SetMesh(triggerIds: new []{1150001, 1150002, 1150003, 1150004, 1150005, 1150006, 1150007, 1150008, 1150009, 1150010}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateCableDelay_17(context);
                 }
 
@@ -362,10 +362,10 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000518}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000518}, arg2: 0);
-                    context.SetMesh(arg1: new[] {1160001, 1160002, 1160003, 1160004, 1160005, 1160006, 1160007, 1160008, 1160009, 1160010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000518}, arg2: 0)) {
+                    context.SetInteractObject(interactIds: new []{12000518}, state: 0);
+                    context.SetMesh(triggerIds: new []{1160001, 1160002, 1160003, 1160004, 1160005, 1160006, 1160007, 1160008, 1160009, 1160010}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateCableDelay_18(context);
                 }
 
@@ -380,9 +380,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__0$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__0$", duration: 3000);
                     return new StateCableDelay_13_2(context);
                 }
 
@@ -397,9 +397,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__1$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__1$", duration: 3000);
                     return new StateCableDelay_14_2(context);
                 }
 
@@ -414,9 +414,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__2$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__2$", duration: 3000);
                     return new StateCableDelay_15_2(context);
                 }
 
@@ -431,9 +431,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__3$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__3$", duration: 3000);
                     return new StateCableDelay_16_2(context);
                 }
 
@@ -448,9 +448,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__4$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__4$", duration: 3000);
                     return new StateCableDelay_17_2(context);
                 }
 
@@ -465,9 +465,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__5$", arg3: 3000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__5$", duration: 3000);
                     return new StateCableDelay_18_2(context);
                 }
 
@@ -482,9 +482,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__6$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__6$", duration: 1000);
                     return new StateCableDelay_13_3(context);
                 }
 
@@ -499,9 +499,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__7$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__7$", duration: 1000);
                     return new StateCableDelay_14_3(context);
                 }
 
@@ -516,9 +516,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__8$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__8$", duration: 1000);
                     return new StateCableDelay_15_3(context);
                 }
 
@@ -533,9 +533,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__9$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__9$", duration: 1000);
                     return new StateCableDelay_16_3(context);
                 }
 
@@ -550,9 +550,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__10$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__10$", duration: 1000);
                     return new StateCableDelay_17_3(context);
                 }
 
@@ -567,9 +567,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__11$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__11$", duration: 1000);
                     return new StateCableDelay_18_3(context);
                 }
 
@@ -584,9 +584,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__12$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__12$", duration: 1000);
                     return new StateCableDelay_13_4(context);
                 }
 
@@ -601,9 +601,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__13$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__13$", duration: 1000);
                     return new StateCableDelay_14_4(context);
                 }
 
@@ -618,9 +618,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__14$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__14$", duration: 1000);
                     return new StateCableDelay_15_4(context);
                 }
 
@@ -635,9 +635,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__15$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__15$", duration: 1000);
                     return new StateCableDelay_16_4(context);
                 }
 
@@ -652,9 +652,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__16$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__16$", duration: 1000);
                     return new StateCableDelay_17_4(context);
                 }
 
@@ -669,9 +669,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__17$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__17$", duration: 1000);
                     return new StateCableDelay_18_4(context);
                 }
 
@@ -686,9 +686,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__18$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__18$", duration: 1000);
                     return new StateCableDelay_13_5(context);
                 }
 
@@ -703,9 +703,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__19$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__19$", duration: 1000);
                     return new StateCableDelay_14_5(context);
                 }
 
@@ -720,9 +720,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__20$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__20$", duration: 1000);
                     return new StateCableDelay_15_5(context);
                 }
 
@@ -737,9 +737,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__21$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__21$", duration: 1000);
                     return new StateCableDelay_16_5(context);
                 }
 
@@ -754,9 +754,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__22$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__22$", duration: 1000);
                     return new StateCableDelay_17_5(context);
                 }
 
@@ -771,9 +771,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__23$", arg3: 1000);
+                    context.SetEventUI(arg1: 1, script: "$52100302_QD__FIELD_3__23$", duration: 1000);
                     return new StateCableDelay_18_5(context);
                 }
 
@@ -788,9 +788,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new[] {1013}, arg2: true);
+                    context.SetBreakable(triggerIds: new []{1013}, enabled: true);
                     return new StateCableOff_13(context);
                 }
 
@@ -805,9 +805,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new[] {1014}, arg2: true);
+                    context.SetBreakable(triggerIds: new []{1014}, enabled: true);
                     return new StateCableOff_14(context);
                 }
 
@@ -822,9 +822,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new[] {1015}, arg2: true);
+                    context.SetBreakable(triggerIds: new []{1015}, enabled: true);
                     return new StateCableOff_15(context);
                 }
 
@@ -839,9 +839,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new[] {1016}, arg2: true);
+                    context.SetBreakable(triggerIds: new []{1016}, enabled: true);
                     return new StateCableOff_16(context);
                 }
 
@@ -856,9 +856,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new[] {1017}, arg2: true);
+                    context.SetBreakable(triggerIds: new []{1017}, enabled: true);
                     return new StateCableOff_17(context);
                 }
 
@@ -873,9 +873,9 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new[] {1018}, arg2: true);
+                    context.SetBreakable(triggerIds: new []{1018}, enabled: true);
                     return new StateCableOff_18(context);
                 }
 
@@ -890,7 +890,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900005, key: "Block", value: 1);
                     return new StateEnd_03(context);
@@ -907,7 +907,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900005, key: "Block", value: 1);
                     return new StateEnd_03(context);
@@ -924,7 +924,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900005, key: "Block", value: 2);
                     return new StateEnd_03(context);
@@ -941,7 +941,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900005, key: "Block", value: 1);
                     return new StateEnd_03(context);
@@ -958,7 +958,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900005, key: "Block", value: 2);
                     return new StateEnd_03(context);
@@ -975,7 +975,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900005, key: "Block", value: 3);
                     return new StateEnd_03(context);
@@ -992,7 +992,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateWait(context);
                 }

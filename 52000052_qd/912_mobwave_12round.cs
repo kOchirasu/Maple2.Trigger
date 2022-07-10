@@ -6,10 +6,10 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() {
                 context.SetUserValue(key: "PenaltyFinish", value: 0);
                 context.SetUserValue(key: "WaveTime", value: 0);
-                context.SetEffect(arg1: new[] {5112}, arg2: false);
+                context.SetEffect(triggerIds: new []{5112}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MobWaveStart") == 1) {
                     return new StateReady(context);
                 }
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State1stWaveStart(context);
                 }
@@ -40,19 +40,19 @@ namespace Maple2.Trigger._52000052_qd {
             internal State1stWaveStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, script: "$52000052_QD__901_MOBWAVE_01ROUND__0$", arg3: 6000, arg4: "0");
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
+                context.SetEventUI(arg1: 1, script: "$52000052_QD__901_MOBWAVE_01ROUND__0$", duration: 6000, boxId: 0);
                 context.SetUserValue(key: "WaveTime", value: 1);
-                context.SetEffect(arg1: new[] {5112}, arg2: true);
-                context.CreateMonster(arg1: new[] {91200, 91202, 91204, 91206, 91208}, arg2: false);
+                context.SetEffect(triggerIds: new []{5112}, visible: true);
+                context.CreateMonster(spawnIds: new []{91200, 91202, 91204, 91206, 91208}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State1stWaveDelayRandom(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -66,19 +66,19 @@ namespace Maple2.Trigger._52000052_qd {
             internal State1stWaveDelayRandom(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91201, 91203, 91205}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91201, 91203, 91205}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 30f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 30f)) {
                     return new State1stWaveDelay3000(context);
                 }
 
-                if (context.RandomCondition(arg1: 30f)) {
+                if (context.RandomCondition(rate: 30f)) {
                     return new State1stWaveDelay4000(context);
                 }
 
-                if (context.RandomCondition(arg1: 30f)) {
+                if (context.RandomCondition(rate: 30f)) {
                     return new State1stWaveDelay5000(context);
                 }
 
@@ -93,12 +93,12 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State2ndWaveStart(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -113,12 +113,12 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State2ndWaveStart(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -133,12 +133,12 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State2ndWaveStart(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -154,15 +154,15 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 712, key: "TotemApp", value: 1);
                 context.SetUserValue(key: "WaveTime", value: 2);
-                context.CreateMonster(arg1: new[] {91210, 91212, 91214}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91210, 91212, 91214}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State2ndWaveDelayRandom(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -176,19 +176,19 @@ namespace Maple2.Trigger._52000052_qd {
             internal State2ndWaveDelayRandom(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91211, 91213, 91215}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91211, 91213, 91215}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 30f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 30f)) {
                     return new State2ndWaveDelay3000(context);
                 }
 
-                if (context.RandomCondition(arg1: 30f)) {
+                if (context.RandomCondition(rate: 30f)) {
                     return new State2ndWaveDelay4000(context);
                 }
 
-                if (context.RandomCondition(arg1: 30f)) {
+                if (context.RandomCondition(rate: 30f)) {
                     return new State2ndWaveDelay5000(context);
                 }
 
@@ -203,12 +203,12 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State3rdWaveStart(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -223,12 +223,12 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State3rdWaveStart(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -243,12 +243,12 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State3rdWaveStart(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -265,7 +265,7 @@ namespace Maple2.Trigger._52000052_qd {
                 context.SetUserValue(key: "WaveTime", value: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State3rdWaveDirectionRandom(context);
             }
 
@@ -277,28 +277,28 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 20f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 20f)) {
                     return new State3rdWaveDirection10(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new State3rdWaveDirection20(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new State3rdWaveDirection30(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new State3rdWaveDirection40(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new State3rdWaveDirection50(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new State3rdWaveDirection60(context);
                 }
 
@@ -312,15 +312,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State3rdWaveDirection10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91220, 91222, 91224}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91220, 91222, 91224}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3rdWaveDirection11(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -334,15 +334,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State3rdWaveDirection11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91221, 91223, 91225}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91221, 91223, 91225}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3rdWaveDelayRandom(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -356,15 +356,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State3rdWaveDirection20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91230, 91232, 91234}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91230, 91232, 91234}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3rdWaveDirection21(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -378,15 +378,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State3rdWaveDirection21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91231, 91233, 91235}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91231, 91233, 91235}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3rdWaveDelayRandom(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -400,15 +400,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State3rdWaveDirection30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91240, 91242, 91244}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91240, 91242, 91244}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3rdWaveDirection31(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -422,15 +422,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State3rdWaveDirection31(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91241, 91243, 91245}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91241, 91243, 91245}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3rdWaveDelayRandom(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -444,15 +444,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State3rdWaveDirection40(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91250, 91252, 91254}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91250, 91252, 91254}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3rdWaveDirection41(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -466,15 +466,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State3rdWaveDirection41(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91251, 91253, 91255}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91251, 91253, 91255}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3rdWaveDelayRandom(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -488,15 +488,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State3rdWaveDirection50(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91260, 91262, 91264}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91260, 91262, 91264}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3rdWaveDirection51(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -510,15 +510,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State3rdWaveDirection51(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91261, 91263, 91265}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91261, 91263, 91265}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3rdWaveDelayRandom(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -532,15 +532,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State3rdWaveDirection60(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91270, 91272, 91274}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91270, 91272, 91274}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3rdWaveDirection61(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -554,15 +554,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State3rdWaveDirection61(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91271, 91273, 91275}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91271, 91273, 91275}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3rdWaveDelayRandom(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -577,16 +577,16 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 30f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 30f)) {
                     return new State3rdWaveDelay3000(context);
                 }
 
-                if (context.RandomCondition(arg1: 30f)) {
+                if (context.RandomCondition(rate: 30f)) {
                     return new State3rdWaveDelay4000(context);
                 }
 
-                if (context.RandomCondition(arg1: 30f)) {
+                if (context.RandomCondition(rate: 30f)) {
                     return new State3rdWaveDelay5000(context);
                 }
 
@@ -601,12 +601,12 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State4thWaveStart(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -621,12 +621,12 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State4thWaveStart(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -641,12 +641,12 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State4thWaveStart(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -663,7 +663,7 @@ namespace Maple2.Trigger._52000052_qd {
                 context.SetUserValue(key: "WaveTime", value: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State4thWaveDirectionRandom(context);
             }
 
@@ -675,28 +675,28 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 20f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 20f)) {
                     return new State4thWaveDirection10(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new State4thWaveDirection20(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new State4thWaveDirection30(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new State4thWaveDirection40(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new State4thWaveDirection50(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new State4thWaveDirection60(context);
                 }
 
@@ -710,15 +710,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDirection10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91220, 91222, 91224}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91220, 91222, 91224}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State4thWaveDirection11(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -732,15 +732,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDirection11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91221, 91223, 91225}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91221, 91223, 91225}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State4thWaveDelay(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -754,15 +754,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDirection20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91230, 91232, 91234}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91230, 91232, 91234}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State4thWaveDirection21(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -776,15 +776,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDirection21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91231, 91233, 91235}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91231, 91233, 91235}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State4thWaveDelay(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -798,15 +798,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDirection30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91240, 91242, 91244}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91240, 91242, 91244}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State4thWaveDirection31(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -820,15 +820,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDirection31(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91241, 91243, 91245}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91241, 91243, 91245}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State4thWaveDelay(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -842,15 +842,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDirection40(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91250, 91252, 91254}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91250, 91252, 91254}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State4thWaveDirection41(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -864,15 +864,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDirection41(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91251, 91253, 91255}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91251, 91253, 91255}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State4thWaveDelay(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -886,15 +886,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDirection50(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91260, 91262, 91264}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91260, 91262, 91264}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State4thWaveDirection51(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -908,15 +908,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDirection51(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91261, 91263, 91265}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91261, 91263, 91265}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State4thWaveDelay(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -930,15 +930,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDirection60(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91270, 91272, 91274}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91270, 91272, 91274}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State4thWaveDirection61(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -952,15 +952,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDirection61(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91271, 91273, 91275}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91271, 91273, 91275}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State4thWaveDelay(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -974,15 +974,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State4thWaveDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91271, 91273, 91275}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91271, 91273, 91275}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateDefenceSucess01(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -997,15 +997,15 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "WaveTime", value: 7);
-                context.CreateMonster(arg1: new[] {91290, 91292, 91294}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91290, 91292, 91294}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State7thWaveDelay(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -1019,15 +1019,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal State7thWaveDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {91291, 91293, 91295}, arg2: false);
+                context.CreateMonster(spawnIds: new []{91291, 91293, 91295}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateDefenceSucess01(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -1042,12 +1042,12 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {91200, 91201, 91202, 91203, 91204, 91205, 91206, 91207, 91208, 91209, 91210, 91211, 91212, 91213, 91214, 91215, 91216, 91217, 91218, 91219, 91220, 91221, 91222, 91223, 91224, 91225, 91226, 91227, 91228, 91229, 91230, 91231, 91232, 91233, 91234, 91235, 91236, 91237, 91238, 91239, 91240, 91241, 91242, 91243, 91244, 91245, 91246, 91247, 91248, 91249, 91250, 91251, 91252, 91253, 91254, 91255, 91256, 91257, 91258, 91259, 91260, 91261, 91262, 91263, 91264, 91265, 91266, 91267, 91268, 91269, 91270, 91271, 91272, 91273, 91274, 91275, 91276, 91277, 91278, 91279, 91280, 91281, 91282, 91283, 91284, 91285, 91286, 91287, 91288, 91289, 91290, 91291, 91292, 91293, 91294, 91295, 91296, 91297, 91298, 91299})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{91200, 91201, 91202, 91203, 91204, 91205, 91206, 91207, 91208, 91209, 91210, 91211, 91212, 91213, 91214, 91215, 91216, 91217, 91218, 91219, 91220, 91221, 91222, 91223, 91224, 91225, 91226, 91227, 91228, 91229, 91230, 91231, 91232, 91233, 91234, 91235, 91236, 91237, 91238, 91239, 91240, 91241, 91242, 91243, 91244, 91245, 91246, 91247, 91248, 91249, 91250, 91251, 91252, 91253, 91254, 91255, 91256, 91257, 91258, 91259, 91260, 91261, 91262, 91263, 91264, 91265, 91266, 91267, 91268, 91269, 91270, 91271, 91272, 91273, 91274, 91275, 91276, 91277, 91278, 91279, 91280, 91281, 91282, 91283, 91284, 91285, 91286, 91287, 91288, 91289, 91290, 91291, 91292, 91293, 91294, 91295, 91296, 91297, 91298, 91299})) {
                     return new StateDefenceSucess02(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1012})) {
+                if (context.MonsterDead(spawnIds: new []{1012})) {
                     return new StateNpcDownPenaltyStart(context);
                 }
 
@@ -1061,11 +1061,11 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateDefenceSucess02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5112}, arg2: false);
+                context.SetEffect(triggerIds: new []{5112}, visible: false);
                 context.SetUserValue(triggerId: 12, key: "12RoundSuccess", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuit(context);
                 }
@@ -1081,14 +1081,14 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 812, key: "PenaltyMob", value: 1);
-                context.DestroyMonster(arg1: new[] {1012});
-                context.CreateMonster(arg1: new[] {1112}, arg2: false);
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, script: "$52000052_QD__901_MOBWAVE_01ROUND__1$", arg3: 4000, arg4: "0");
-                context.SetConversation(arg1: 1, arg2: 1112, script: "$52000052_QD__901_MOBWAVE_01ROUND__2$", arg4: 4, arg5: 4);
+                context.DestroyMonster(spawnIds: new []{1012});
+                context.CreateMonster(spawnIds: new []{1112}, arg2: false);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
+                context.SetEventUI(arg1: 1, script: "$52000052_QD__901_MOBWAVE_01ROUND__1$", duration: 4000, boxId: 0);
+                context.SetConversation(type: 1, spawnId: 1112, script: "$52000052_QD__901_MOBWAVE_01ROUND__2$", arg4: 4, arg5: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateNpcDownPenaltyEnd(context);
                 }
@@ -1104,7 +1104,7 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PenaltyFinish") == 1) {
                     return new StateReturnToWave(context);
                 }
@@ -1120,14 +1120,14 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "PenaltyFinish", value: 0);
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, script: "$52000052_QD__901_MOBWAVE_01ROUND__3$", arg3: 4000, arg4: "0");
-                context.DestroyMonster(arg1: new[] {1112});
-                context.CreateMonster(arg1: new[] {1012}, arg2: false);
-                context.RemoveBalloonTalk(spawnPointId: 1112);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
+                context.SetEventUI(arg1: 1, script: "$52000052_QD__901_MOBWAVE_01ROUND__3$", duration: 4000, boxId: 0);
+                context.DestroyMonster(spawnIds: new []{1112});
+                context.CreateMonster(spawnIds: new []{1012}, arg2: false);
+                context.RemoveBalloonTalk(spawnId: 1112);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "WaveTime") == 1) {
                     return new State2ndWaveStart(context);
                 }
@@ -1159,7 +1159,7 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

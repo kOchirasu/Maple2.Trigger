@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000499_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 102, 103, 104}, arg2: false);
-                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101, 102, 103, 104}, arg2: false);
+                context.SetEffect(triggerIds: new []{5001, 5002, 5003, 5004}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateStart(context);
                 }
@@ -23,14 +23,14 @@ namespace Maple2.Trigger._02000499_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_3008");
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_3009");
-                context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_3010");
-                context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_3011");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_3008");
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_3009");
+                context.MoveNpc(spawnId: 103, patrolName: "MS2PatrolData_3010");
+                context.MoveNpc(spawnId: 104, patrolName: "MS2PatrolData_3011");
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101, 102, 103, 104})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101, 102, 103, 104})) {
                     return new StateCompleteEffect(context);
                 }
 
@@ -44,10 +44,10 @@ namespace Maple2.Trigger._02000499_bf {
             internal StateCompleteEffect(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: true);
+                context.SetEffect(triggerIds: new []{5001, 5002, 5003, 5004}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     return new StateIdle(context);
                 }

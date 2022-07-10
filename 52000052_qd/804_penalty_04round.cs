@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52000052_qd {
                 context.SetUserValue(key: "PenaltyMob", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PenaltyMob") == 1) {
                     return new StateReady(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State1stWaveStart01(context);
                 }
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._52000052_qd {
             internal State1stWaveStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {90482, 90486}, arg2: false);
+                context.CreateMonster(spawnIds: new []{90482, 90486}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State1stWaveStart02(context);
                 }
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._52000052_qd {
             internal State1stWaveStart02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {90481, 90489}, arg2: false);
+                context.CreateMonster(spawnIds: new []{90481, 90489}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State2ndWaveStart01(context);
                 }
@@ -74,10 +74,10 @@ namespace Maple2.Trigger._52000052_qd {
             internal State2ndWaveStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {90494, 90496}, arg2: false);
+                context.CreateMonster(spawnIds: new []{90494, 90496}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State2ndWaveStart02(context);
                 }
@@ -92,11 +92,11 @@ namespace Maple2.Trigger._52000052_qd {
             internal State2ndWaveStart02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {90491, 90495}, arg2: false);
+                context.CreateMonster(spawnIds: new []{90491, 90495}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {90480, 90481, 90482, 90483, 90484, 90485, 90486, 90487, 90488, 90489, 90490, 90491, 90492, 90493, 90494, 90495, 90496, 90497, 90498, 90499})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{90480, 90481, 90482, 90483, 90484, 90485, 90486, 90487, 90488, 90489, 90490, 90491, 90492, 90493, 90494, 90495, 90496, 90497, 90498, 90499})) {
                     return new StatePenaltyFinished01(context);
                 }
 
@@ -110,11 +110,11 @@ namespace Maple2.Trigger._52000052_qd {
             internal StatePenaltyFinished01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {90480, 90481, 90482, 90483, 90484, 90485, 90486, 90487, 90488, 90489, 90490, 90491, 90492, 90493, 90494, 90495, 90496, 90497, 90498, 90499});
+                context.DestroyMonster(spawnIds: new []{90480, 90481, 90482, 90483, 90484, 90485, 90486, 90487, 90488, 90489, 90490, 90491, 90492, 90493, 90494, 90495, 90496, 90497, 90498, 90499});
                 context.SetUserValue(triggerId: 904, key: "PenaltyFinish", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePenaltyFinished02(context);
                 }
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateTeleportationPortalHide(context);
                 }
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetPortal(portalId: 13091, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpeedRacingMode") == 1) {
                     return new StateTeleportationPortalSpawn(context);
                 }
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetPortal(portalId: 13091, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpeedRacingMode") == 0) {
                     return new StateWait(context);
                 }
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateTeleportationPortalHide(context);
                 }
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3800)) {
                     return new StateTeleportationPortalSpawn(context);
                 }
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

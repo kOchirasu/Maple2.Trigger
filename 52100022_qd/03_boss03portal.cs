@@ -7,8 +7,8 @@ namespace Maple2.Trigger._52100022_qd {
                 context.SetPortal(portalId: 40, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 9900, arg2: new[] {903})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 9900, spawnIds: new []{903})) {
                     return new StateActionPortal01(context);
                 }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52100022_qd {
                 context.SetPortal(portalId: 40, visible: false, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

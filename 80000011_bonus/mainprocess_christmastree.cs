@@ -5,8 +5,8 @@ namespace Maple2.Trigger._80000011_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new State이벤트Waiting(context);
                 }
 
@@ -20,13 +20,13 @@ namespace Maple2.Trigger._80000011_bonus {
             internal State이벤트Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 201, arg2: false, arg3: false);
-                context.SetLadder(arg1: 202, arg2: false, arg3: false);
-                context.SetLadder(arg1: 203, arg2: false, arg3: false);
-                context.SetLadder(arg1: 204, arg2: false, arg3: false);
+                context.SetLadder(triggerId: 201, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 202, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 203, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 204, visible: false, animationEffect: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
                     return new StateLadder나타남(context);
                 }
@@ -41,16 +41,16 @@ namespace Maple2.Trigger._80000011_bonus {
             internal StateLadder나타남(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 201, arg2: true, arg3: true);
-                context.SetLadder(arg1: 202, arg2: true, arg3: true);
-                context.SetLadder(arg1: 203, arg2: true, arg3: true);
-                context.SetLadder(arg1: 204, arg2: true, arg3: true);
-                context.SetTimer(id: "2", arg2: 30, arg3: true, arg4: true, arg5: -90);
+                context.SetLadder(triggerId: 201, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 202, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 203, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 204, visible: true, animationEffect: true);
+                context.SetTimer(timerId: "2", seconds: 30, clearAtZero: true, display: true, arg5: -90);
                 context.ShowGuideSummary(entityId: 26300385, textId: 26300385);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State유저이동(context);
                 }
 
@@ -65,9 +65,9 @@ namespace Maple2.Trigger._80000011_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1)) {
-                    context.MoveUser(arg1: 0, arg2: 0);
+                    context.MoveUser(mapId: 0, portalId: 0);
                     return new StateEnd(context);
                 }
 
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._80000011_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

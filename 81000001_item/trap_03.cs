@@ -4,12 +4,12 @@ namespace Maple2.Trigger._81000001_item {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000128}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000128}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000128}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {601, 602, 603, 604}, arg2: false, arg3: 0, arg4: 0);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000128}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{601, 602, 603, 604}, visible: false, arg3: 0, arg4: 0);
                     return new State완료(context);
                 }
 
@@ -23,12 +23,12 @@ namespace Maple2.Trigger._81000001_item {
             internal State완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "128", arg2: 5, arg3: false);
+                context.SetTimer(timerId: "128", seconds: 5, clearAtZero: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "128")) {
-                    context.SetMesh(arg1: new[] {601, 602, 603, 604}, arg2: true, arg3: 0, arg4: 0);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "128")) {
+                    context.SetMesh(triggerIds: new []{601, 602, 603, 604}, visible: true, arg3: 0, arg4: 0);
                     return new StateStart(context);
                 }
 
@@ -36,7 +36,7 @@ namespace Maple2.Trigger._81000001_item {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "128");
+                context.ResetTimer(timerId: "128");
             }
         }
     }

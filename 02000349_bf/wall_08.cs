@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000349_bf {
             internal State벽재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {38001, 38002, 38003, 38004, 38005, 38006, 38007, 38008, 38009, 38010, 38011, 38012, 38013, 38014, 38015, 38016, 38017, 38018, 38019, 38020, 38021, 38022}, arg2: true, arg3: 0, arg4: 10, arg5: 3f);
+                context.SetMesh(triggerIds: new []{38001, 38002, 38003, 38004, 38005, 38006, 38007, 38008, 38009, 38010, 38011, 38012, 38013, 38014, 38015, 38016, 38017, 38018, 38019, 38020, 38021, 38022}, visible: true, arg3: 0, arg4: 10, arg5: 3f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {108})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{108})) {
                     return new State벽삭제(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02000349_bf {
             internal State벽삭제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {38001, 38002, 38003, 38004, 38005, 38006, 38007, 38008, 38009, 38010, 38011, 38012, 38013, 38014, 38015, 38016, 38017, 38018, 38019, 38020, 38021, 38022}, arg2: false, arg3: 0, arg4: 10, arg5: 3f);
+                context.SetMesh(triggerIds: new []{38001, 38002, 38003, 38004, 38005, 38006, 38007, 38008, 38009, 38010, 38011, 38012, 38013, 38014, 38015, 38016, 38017, 38018, 38019, 38020, 38021, 38022}, visible: false, arg3: 0, arg4: 10, arg5: 3f);
             }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {108})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{108})) {
                     return new StateDelay(context);
                 }
 
@@ -40,11 +40,11 @@ namespace Maple2.Trigger._02000349_bf {
             internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State벽재생(context);
                 }
 

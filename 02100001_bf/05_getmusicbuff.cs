@@ -7,8 +7,8 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetUserValue(key: "GiveBuffSlowly", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9900})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9900})) {
                     return new StateGiveBuff01(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateGiveBuff01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9900}, arg2: 71000030, arg3: 1);
+                context.AddBuff(boxIds: new []{9900}, skillId: 71000030, level: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGiveBuff01(context);
                 }
@@ -44,11 +44,11 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateGiveBuff02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9901}, arg2: 71000030, arg3: 1);
+                context.AddBuff(boxIds: new []{9901}, skillId: 71000030, level: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9901})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9901})) {
                     return new StateGiveBuff02(context);
                 }
 
@@ -66,10 +66,10 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9900}, arg2: 71000034, arg3: 1);
+                context.AddBuff(boxIds: new []{9900}, skillId: 71000034, level: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

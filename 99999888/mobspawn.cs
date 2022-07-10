@@ -5,9 +5,9 @@ namespace Maple2.Trigger._99999888 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 911) == 1) {
-                    context.CreateMonster(arg1: new[] {101}, arg2: true);
+                    context.CreateMonster(spawnIds: new []{101}, arg2: true);
                     return new StateMobCreation(context);
                 }
 
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._99999888 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 50000900, level: 1)) {
+            public override TriggerState? Execute() {
+                if (context.CheckNpcAdditionalEffect(spawnId: 101, additionalEffectId: 50000900, level: 1)) {
                     context.DebugString(message: "버프가감지되었습니다. 20초 후 삭제합니다");
                     return new StateBuff삭제(context);
                 }
@@ -39,10 +39,10 @@ namespace Maple2.Trigger._99999888 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     context.DebugString(message: "버프가 삭제되었습니다.");
-                    context.NpcRemoveAdditionalEffect(spawnPointId: 101, additionalEffectId: 50000900);
+                    context.NpcRemoveAdditionalEffect(spawnId: 101, additionalEffectId: 50000900);
                     return new StateEnd(context);
                 }
 
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._99999888 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

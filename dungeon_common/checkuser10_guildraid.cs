@@ -8,10 +8,10 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 30, arg3: true, arg4: false, arg5: 0);
+                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: true, display: false, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9900) >= 10) {
                     return new StateMaxCount10_Start(context, startDungeon);
                 }
@@ -37,12 +37,12 @@ namespace Maple2.Trigger._dungeon_common {
                 context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9900) >= 10) {
                     return new StateMaxCount10_Start(context, startDungeon);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateMaxCount10_Start(context, startDungeon);
                 }
 
@@ -64,10 +64,10 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return startDungeon;
             }
 

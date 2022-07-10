@@ -5,28 +5,28 @@ namespace Maple2.Trigger._52000045_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 702, arg2: new[] {301})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 702, spawnIds: new []{301})) {
                     return new StateNpc_exit_01(context);
                 }
 
-                if (context.NpcDetected(arg1: 702, arg2: new[] {302})) {
+                if (context.NpcDetected(boxId: 702, spawnIds: new []{302})) {
                     return new StateNpc_exit_02(context);
                 }
 
-                if (context.NpcDetected(arg1: 702, arg2: new[] {303})) {
+                if (context.NpcDetected(boxId: 702, spawnIds: new []{303})) {
                     return new StateNpc_exit_03(context);
                 }
 
-                if (context.NpcDetected(arg1: 702, arg2: new[] {304})) {
+                if (context.NpcDetected(boxId: 702, spawnIds: new []{304})) {
                     return new StateNpc_exit_04(context);
                 }
 
-                if (context.NpcDetected(arg1: 702, arg2: new[] {305})) {
+                if (context.NpcDetected(boxId: 702, spawnIds: new []{305})) {
                     return new StateNpc_exit_05(context);
                 }
 
-                if (context.NpcDetected(arg1: 702, arg2: new[] {306})) {
+                if (context.NpcDetected(boxId: 702, spawnIds: new []{306})) {
                     return new StateNpc_exit_06(context);
                 }
 
@@ -40,10 +40,10 @@ namespace Maple2.Trigger._52000045_qd {
             internal StateNpc_exit_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {301});
+                context.DestroyMonster(spawnIds: new []{301});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateIdle(context);
                 }
@@ -58,10 +58,10 @@ namespace Maple2.Trigger._52000045_qd {
             internal StateNpc_exit_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {302});
+                context.DestroyMonster(spawnIds: new []{302});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateIdle(context);
                 }
@@ -76,10 +76,10 @@ namespace Maple2.Trigger._52000045_qd {
             internal StateNpc_exit_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {303});
+                context.DestroyMonster(spawnIds: new []{303});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateIdle(context);
                 }
@@ -94,10 +94,10 @@ namespace Maple2.Trigger._52000045_qd {
             internal StateNpc_exit_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {304});
+                context.DestroyMonster(spawnIds: new []{304});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateIdle(context);
                 }
@@ -112,10 +112,10 @@ namespace Maple2.Trigger._52000045_qd {
             internal StateNpc_exit_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {305});
+                context.DestroyMonster(spawnIds: new []{305});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateIdle(context);
                 }
@@ -130,10 +130,10 @@ namespace Maple2.Trigger._52000045_qd {
             internal StateNpc_exit_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {306});
+                context.DestroyMonster(spawnIds: new []{306});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateIdle(context);
                 }

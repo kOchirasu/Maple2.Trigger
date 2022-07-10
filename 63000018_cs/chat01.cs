@@ -4,11 +4,11 @@ namespace Maple2.Trigger._63000018_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 102}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101, 102}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9900})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9900})) {
                     return new StateDelay01(context);
                 }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._63000018_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateChat01(context);
                 }
@@ -38,13 +38,13 @@ namespace Maple2.Trigger._63000018_cs {
             internal StateChat01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, script: "$63000018_CS__CHAT01__0$", arg4: 4, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 102, script: "$63000018_CS__CHAT01__1$", arg4: 4, arg5: 4);
-                context.SetConversation(arg1: 1, arg2: 101, script: "$63000018_CS__CHAT01__2$", arg4: 4, arg5: 8);
-                context.SetConversation(arg1: 1, arg2: 102, script: "$63000018_CS__CHAT01__3$", arg4: 4, arg5: 12);
+                context.SetConversation(type: 1, spawnId: 101, script: "$63000018_CS__CHAT01__0$", arg4: 4, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 102, script: "$63000018_CS__CHAT01__1$", arg4: 4, arg5: 4);
+                context.SetConversation(type: 1, spawnId: 101, script: "$63000018_CS__CHAT01__2$", arg4: 4, arg5: 8);
+                context.SetConversation(type: 1, spawnId: 102, script: "$63000018_CS__CHAT01__3$", arg4: 4, arg5: 12);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 16000)) {
                     return new StateDelay02(context);
                 }
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._63000018_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {9900})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{9900})) {
                     return new StateQuit(context);
                 }
 
@@ -80,8 +80,8 @@ namespace Maple2.Trigger._63000018_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9900})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9900})) {
                     return new StateDelay01(context);
                 }
 

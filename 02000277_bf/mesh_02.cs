@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000277_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000770}, arg2: 1);
-                context.SetMesh(arg1: new[] {10001}, arg2: true);
+                context.SetInteractObject(interactIds: new []{10000770}, state: 1);
+                context.SetMesh(triggerIds: new []{10001}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000770}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000770}, arg2: 0)) {
                     return new State열기(context);
                 }
 
@@ -23,12 +23,12 @@ namespace Maple2.Trigger._02000277_bf {
             internal State열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {10001}, arg2: false);
-                context.SetTimer(id: "1", arg2: 7);
+                context.SetMesh(triggerIds: new []{10001}, visible: false);
+                context.SetTimer(timerId: "1", seconds: 7);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWait(context);
                 }
 

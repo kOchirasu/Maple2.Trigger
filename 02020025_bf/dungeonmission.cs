@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {901})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{901})) {
                     return new State던전미션체크Wait(context);
                 }
 
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 904, arg2: new[] {201})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 904, spawnIds: new []{201})) {
                     return new State체력90이하체크(context);
                 }
 
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 201) <= 0.90f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 201) <= 0.90f) {
                     return new State지하1층(context);
                 }
 
@@ -55,8 +55,8 @@ namespace Maple2.Trigger._02020025_bf {
                 context.DungeonMissionComplete(missionId: 24092001);
             }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 201) <= 0.70f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 201) <= 0.70f) {
                     return new State지하2층(context);
                 }
 
@@ -73,8 +73,8 @@ namespace Maple2.Trigger._02020025_bf {
                 context.DungeonMissionComplete(missionId: 24092002);
             }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 201) <= 0.55f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 201) <= 0.55f) {
                     return new State지하3층(context);
                 }
 
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._02020025_bf {
                 context.DungeonMissionComplete(missionId: 24092003);
             }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 201) <= 0.40f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 201) <= 0.40f) {
                     return new State지하4층(context);
                 }
 
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02020025_bf {
                 context.DungeonMissionComplete(missionId: 24092004);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEnd(context);
             }
 
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

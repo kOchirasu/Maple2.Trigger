@@ -4,10 +4,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {421, 422, 423, 424, 425, 426, 427, 428, 429, 430});
+                context.DestroyMonster(spawnIds: new []{421, 422, 423, 424, 425, 426, 427, 428, 429, 430});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Round_00") == 1) {
                     return new StateRound_00_Ready(context);
                 }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateRound_00(context);
                 }
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateRound_01(context);
                 }
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     // return new StateRound_03(context);
                     return null;
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateRound_04(context);
                 }
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateRound_05(context);
                 }
@@ -124,12 +124,12 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 1f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_00_Random_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_00_Random_02(context);
                 }
 
@@ -143,12 +143,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_00_Random_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {403}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{403}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_00(context);
                 }
 
@@ -170,12 +170,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_00_Random_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {404}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{404}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_00(context);
                 }
 
@@ -198,20 +198,20 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 1f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_01_Random_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_01_Random_02(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_01_Random_03(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_01_Random_04(context);
                 }
 
@@ -225,12 +225,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {401}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{401}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_01(context);
                 }
 
@@ -252,12 +252,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {402}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{402}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_01(context);
                 }
 
@@ -279,12 +279,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {403}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{403}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_01(context);
                 }
 
@@ -306,12 +306,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {404}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{404}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_01(context);
                 }
 
@@ -334,20 +334,20 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 1f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_02_Random_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_02_Random_02(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_02_Random_03(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_02_Random_04(context);
                 }
 
@@ -361,12 +361,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_02_Random_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {405, 406}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{405, 406}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_02(context);
                 }
 
@@ -388,12 +388,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_02_Random_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {407, 408}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{407, 408}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_02(context);
                 }
 
@@ -415,12 +415,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_02_Random_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {410, 411}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{410, 411}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_02(context);
                 }
 
@@ -442,12 +442,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_02_Random_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {412, 413}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{412, 413}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_02(context);
                 }
 
@@ -470,20 +470,20 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 1f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_04_Random_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_04_Random_02(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_04_Random_03(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_04_Random_04(context);
                 }
 
@@ -497,12 +497,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Random_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {408}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{408}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_04(context);
                 }
 
@@ -524,12 +524,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Random_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {406}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{406}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_04(context);
                 }
 
@@ -551,12 +551,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Random_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {403}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{403}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_04(context);
                 }
 
@@ -578,12 +578,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Random_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {405}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{405}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_04(context);
                 }
 
@@ -606,20 +606,20 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 1f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_05_Random_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_05_Random_02(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_05_Random_03(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_05_Random_04(context);
                 }
 
@@ -633,12 +633,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Random_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {408}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{408}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_05(context);
                 }
 
@@ -660,12 +660,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Random_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {406}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{406}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_05(context);
                 }
 
@@ -687,12 +687,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Random_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {403}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{403}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_05(context);
                 }
 
@@ -714,12 +714,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Random_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {405}, arg2: true, arg3: 0);
-                context.SetTimer(id: "9", arg2: 9);
+                context.CreateMonster(spawnIds: new []{405}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "9", seconds: 9);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "9")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "9")) {
                     return new StateRound_05(context);
                 }
 
@@ -742,20 +742,20 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 1f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_06_Random_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_06_Random_02(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_06_Random_03(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateRound_06_Random_04(context);
                 }
 
@@ -769,13 +769,13 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_06_Random_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {421}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new[] {422}, arg2: true, arg3: 2000);
-                context.SetTimer(id: "7", arg2: 7);
+                context.CreateMonster(spawnIds: new []{421}, arg2: true, arg3: 0);
+                context.CreateMonster(spawnIds: new []{422}, arg2: true, arg3: 2000);
+                context.SetTimer(timerId: "7", seconds: 7);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "7")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "7")) {
                     return new StateRound_06(context);
                 }
 
@@ -797,14 +797,14 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_06_Random_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {423}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new[] {424}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new[] {425}, arg2: true, arg3: 0);
-                context.SetTimer(id: "7", arg2: 7);
+                context.CreateMonster(spawnIds: new []{423}, arg2: true, arg3: 0);
+                context.CreateMonster(spawnIds: new []{424}, arg2: true, arg3: 2000);
+                context.CreateMonster(spawnIds: new []{425}, arg2: true, arg3: 0);
+                context.SetTimer(timerId: "7", seconds: 7);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "7")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "7")) {
                     return new StateRound_06(context);
                 }
 
@@ -826,13 +826,13 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_06_Random_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {426}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new[] {427}, arg2: true, arg3: 2000);
-                context.SetTimer(id: "7", arg2: 7);
+                context.CreateMonster(spawnIds: new []{426}, arg2: true, arg3: 0);
+                context.CreateMonster(spawnIds: new []{427}, arg2: true, arg3: 2000);
+                context.SetTimer(timerId: "7", seconds: 7);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "7")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "7")) {
                     return new StateRound_06(context);
                 }
 
@@ -854,13 +854,13 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_06_Random_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {428}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new[] {429}, arg2: true, arg3: 2000);
-                context.SetTimer(id: "7", arg2: 7);
+                context.CreateMonster(spawnIds: new []{428}, arg2: true, arg3: 0);
+                context.CreateMonster(spawnIds: new []{429}, arg2: true, arg3: 2000);
+                context.SetTimer(timerId: "7", seconds: 7);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "7")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "7")) {
                     return new StateRound_06(context);
                 }
 
@@ -883,7 +883,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

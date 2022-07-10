@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52000053_qd {
                 context.SetUserValue(key: "SpyKandura", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpyKandura") == 1) {
                     return new StateDelay01(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     return new StateKanduraAppRightRandom(context);
                 }
@@ -43,28 +43,28 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 10f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppRight01(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppRight02(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppRight03(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppRight04(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppRight05(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppRight06(context);
                 }
 
@@ -79,28 +79,28 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 10f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppLeft01(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppLeft02(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppLeft03(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppLeft04(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppLeft05(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppLeft06(context);
                 }
 
@@ -115,20 +115,20 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 10f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppCenter01(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppCenter02(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppCenter03(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateKanduraAppCenter04(context);
                 }
 
@@ -142,10 +142,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppRight01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {430}, arg2: false);
+                context.CreateMonster(spawnIds: new []{430}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppRight01(context);
                 }
@@ -164,10 +164,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppRight01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {430});
+                context.DestroyMonster(spawnIds: new []{430});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppCenterRandom(context);
                 }
@@ -186,10 +186,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppRight02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {431}, arg2: false);
+                context.CreateMonster(spawnIds: new []{431}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppRight02(context);
                 }
@@ -208,10 +208,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppRight02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {431});
+                context.DestroyMonster(spawnIds: new []{431});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppCenterRandom(context);
                 }
@@ -230,10 +230,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppRight03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {432}, arg2: false);
+                context.CreateMonster(spawnIds: new []{432}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppRight03(context);
                 }
@@ -252,10 +252,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppRight03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {432});
+                context.DestroyMonster(spawnIds: new []{432});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppCenterRandom(context);
                 }
@@ -274,10 +274,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppRight04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {433}, arg2: false);
+                context.CreateMonster(spawnIds: new []{433}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppRight04(context);
                 }
@@ -296,10 +296,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppRight04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {433});
+                context.DestroyMonster(spawnIds: new []{433});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppCenterRandom(context);
                 }
@@ -318,10 +318,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppRight05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {434}, arg2: false);
+                context.CreateMonster(spawnIds: new []{434}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppRight05(context);
                 }
@@ -340,10 +340,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppRight05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {434});
+                context.DestroyMonster(spawnIds: new []{434});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppCenterRandom(context);
                 }
@@ -362,10 +362,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppRight06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {435}, arg2: false);
+                context.CreateMonster(spawnIds: new []{435}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppRight06(context);
                 }
@@ -384,10 +384,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppRight06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {435});
+                context.DestroyMonster(spawnIds: new []{435});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppCenterRandom(context);
                 }
@@ -406,10 +406,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppCenter01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {420}, arg2: false);
+                context.CreateMonster(spawnIds: new []{420}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppCenter01(context);
                 }
@@ -428,10 +428,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppCenter01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {420});
+                context.DestroyMonster(spawnIds: new []{420});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppLeftRandom(context);
                 }
@@ -450,10 +450,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppCenter02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {421}, arg2: false);
+                context.CreateMonster(spawnIds: new []{421}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppCenter02(context);
                 }
@@ -472,10 +472,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppCenter02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {421});
+                context.DestroyMonster(spawnIds: new []{421});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppLeftRandom(context);
                 }
@@ -494,10 +494,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppCenter03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {422}, arg2: false);
+                context.CreateMonster(spawnIds: new []{422}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppCenter03(context);
                 }
@@ -516,10 +516,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppCenter03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {422});
+                context.DestroyMonster(spawnIds: new []{422});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppLeftRandom(context);
                 }
@@ -538,10 +538,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppCenter04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {423}, arg2: false);
+                context.CreateMonster(spawnIds: new []{423}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppCenter04(context);
                 }
@@ -560,10 +560,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppCenter04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {423});
+                context.DestroyMonster(spawnIds: new []{423});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppLeftRandom(context);
                 }
@@ -582,10 +582,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppLeft01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {410}, arg2: false);
+                context.CreateMonster(spawnIds: new []{410}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppLeft01(context);
                 }
@@ -604,10 +604,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppLeft01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {410});
+                context.DestroyMonster(spawnIds: new []{410});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppRightRandom(context);
                 }
@@ -626,10 +626,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppLeft02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {411}, arg2: false);
+                context.CreateMonster(spawnIds: new []{411}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppLeft02(context);
                 }
@@ -648,10 +648,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppLeft02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {411});
+                context.DestroyMonster(spawnIds: new []{411});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppRightRandom(context);
                 }
@@ -670,10 +670,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppLeft03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {412}, arg2: false);
+                context.CreateMonster(spawnIds: new []{412}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppLeft03(context);
                 }
@@ -692,10 +692,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppLeft03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {412});
+                context.DestroyMonster(spawnIds: new []{412});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppRightRandom(context);
                 }
@@ -714,10 +714,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppLeft04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {413}, arg2: false);
+                context.CreateMonster(spawnIds: new []{413}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppLeft04(context);
                 }
@@ -736,10 +736,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppLeft04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {413});
+                context.DestroyMonster(spawnIds: new []{413});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppRightRandom(context);
                 }
@@ -758,10 +758,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppLeft05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {414}, arg2: false);
+                context.CreateMonster(spawnIds: new []{414}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppLeft05(context);
                 }
@@ -780,10 +780,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppLeft05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {414});
+                context.DestroyMonster(spawnIds: new []{414});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppRightRandom(context);
                 }
@@ -802,10 +802,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppLeft06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {415}, arg2: false);
+                context.CreateMonster(spawnIds: new []{415}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateKanduraDisAppLeft06(context);
                 }
@@ -824,10 +824,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppLeft06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {415});
+                context.DestroyMonster(spawnIds: new []{415});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateKanduraAppRightRandom(context);
                 }
@@ -846,11 +846,11 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {410, 411, 412, 413, 414, 415, 420, 421, 422, 423, 430, 431, 432, 433, 434, 435});
+                context.DestroyMonster(spawnIds: new []{410, 411, 412, 413, 414, 415, 420, 421, 422, 423, 430, 431, 432, 433, 434, 435});
                 context.SetUserValue(key: "SpyKandura", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

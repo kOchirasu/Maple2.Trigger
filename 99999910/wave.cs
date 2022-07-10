@@ -5,8 +5,8 @@ namespace Maple2.Trigger._99999910 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {701})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{701})) {
                     // return new StateReady(context);
                     return null;
                 }
@@ -22,28 +22,28 @@ namespace Maple2.Trigger._99999910 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 12f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 12f)) {
                     return new StatePattern_a_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 12f)) {
+                if (context.RandomCondition(rate: 12f)) {
                     return new StatePattern_b_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 12f)) {
+                if (context.RandomCondition(rate: 12f)) {
                     return new StatePattern_c_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 12f)) {
+                if (context.RandomCondition(rate: 12f)) {
                     return new StatePattern_d_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 6f)) {
+                if (context.RandomCondition(rate: 6f)) {
                     return new StatePattern_e_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 6f)) {
+                if (context.RandomCondition(rate: 6f)) {
                     return new StatePattern_f_01(context);
                 }
 
@@ -57,10 +57,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_a_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(spawnIds: new []{201}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_a_02(context);
                 }
@@ -75,10 +75,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_a_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {202}, arg2: true);
+                context.CreateMonster(spawnIds: new []{202}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_a_03(context);
                 }
@@ -93,10 +93,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_a_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {203}, arg2: true);
+                context.CreateMonster(spawnIds: new []{203}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_a_04(context);
                 }
@@ -111,10 +111,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_a_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {204}, arg2: true);
+                context.CreateMonster(spawnIds: new []{204}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     // return new StateReady(context);
                     return null;
@@ -130,10 +130,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_b_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {204}, arg2: true);
+                context.CreateMonster(spawnIds: new []{204}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_b_02(context);
                 }
@@ -148,10 +148,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_b_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {203}, arg2: true);
+                context.CreateMonster(spawnIds: new []{203}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_b_03(context);
                 }
@@ -166,10 +166,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_b_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {202}, arg2: true);
+                context.CreateMonster(spawnIds: new []{202}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_b_04(context);
                 }
@@ -184,10 +184,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_b_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(spawnIds: new []{201}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     // return new StateReady(context);
                     return null;
@@ -203,10 +203,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_c_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(spawnIds: new []{201}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_c_02(context);
                 }
@@ -221,10 +221,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_c_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(spawnIds: new []{201}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_c_03(context);
                 }
@@ -239,10 +239,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_c_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(spawnIds: new []{201}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_c_04(context);
                 }
@@ -257,10 +257,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_c_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(spawnIds: new []{201}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     // return new StateReady(context);
                     return null;
@@ -276,10 +276,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_d_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {204}, arg2: true);
+                context.CreateMonster(spawnIds: new []{204}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_d_02(context);
                 }
@@ -294,10 +294,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_d_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {204}, arg2: true);
+                context.CreateMonster(spawnIds: new []{204}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_d_03(context);
                 }
@@ -312,10 +312,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_d_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {204}, arg2: true);
+                context.CreateMonster(spawnIds: new []{204}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_d_04(context);
                 }
@@ -330,10 +330,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_d_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {204}, arg2: true);
+                context.CreateMonster(spawnIds: new []{204}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     // return new StateReady(context);
                     return null;
@@ -349,10 +349,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_e_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {205}, arg2: true);
+                context.CreateMonster(spawnIds: new []{205}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_e_02(context);
                 }
@@ -367,10 +367,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_e_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {205}, arg2: true);
+                context.CreateMonster(spawnIds: new []{205}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_e_03(context);
                 }
@@ -385,10 +385,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_e_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {205}, arg2: true);
+                context.CreateMonster(spawnIds: new []{205}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_e_04(context);
                 }
@@ -403,10 +403,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_e_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {205}, arg2: true);
+                context.CreateMonster(spawnIds: new []{205}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     // return new StateReady(context);
                     return null;
@@ -422,10 +422,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_f_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {205}, arg2: true);
+                context.CreateMonster(spawnIds: new []{205}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_f_02(context);
                 }
@@ -440,10 +440,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_f_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {205}, arg2: true);
+                context.CreateMonster(spawnIds: new []{205}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_f_03(context);
                 }
@@ -458,10 +458,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_f_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {205}, arg2: true);
+                context.CreateMonster(spawnIds: new []{205}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StatePattern_f_04(context);
                 }
@@ -476,10 +476,10 @@ namespace Maple2.Trigger._99999910 {
             internal StatePattern_f_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {205}, arg2: true);
+                context.CreateMonster(spawnIds: new []{205}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     // return new StateReady(context);
                     return null;

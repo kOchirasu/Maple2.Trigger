@@ -5,17 +5,17 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.SetActor(arg1: 10001, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 10002, arg2: true, arg3: "Closed");
-                context.SetMesh(arg1: new[] {10011, 10012}, arg2: true);
+                context.SetActor(triggerId: 10001, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 10002, visible: true, initialSequence: "Closed");
+                context.SetMesh(triggerIds: new []{10011, 10012}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002610}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{10002610}, questStates: new byte[]{2})) {
                     return new State문열림1(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002610}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{10002610}, questStates: new byte[]{3})) {
                     return new State문열림1(context);
                 }
 
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._52000012_qd {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new[] {2000}, arg2: false);
-                context.DestroyMonster(arg1: new[] {5000, 101, 102, 103});
+                context.CreateMonster(spawnIds: new []{2000}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{5000, 101, 102, 103});
             }
         }
 
@@ -32,13 +32,13 @@ namespace Maple2.Trigger._52000012_qd {
             internal State문열림1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "19", arg2: 1);
-                context.SetActor(arg1: 10001, arg2: true, arg3: "Opened");
-                context.SetMesh(arg1: new[] {10011}, arg2: false);
+                context.SetTimer(timerId: "19", seconds: 1);
+                context.SetActor(triggerId: 10001, visible: true, initialSequence: "Opened");
+                context.SetMesh(triggerIds: new []{10011}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "19")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "19")) {
                     return new State문열림2(context);
                 }
 
@@ -52,16 +52,16 @@ namespace Maple2.Trigger._52000012_qd {
             internal State문열림2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 10002, arg2: true, arg3: "Opened");
-                context.SetMesh(arg1: new[] {10012}, arg2: false);
+                context.SetActor(triggerId: 10002, visible: true, initialSequence: "Opened");
+                context.SetMesh(triggerIds: new []{10012}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {10002611}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{10002611}, questStates: new byte[]{2})) {
                     return new StatePortalCreation(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {10002611}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{10002611}, questStates: new byte[]{3})) {
                     return new StatePortalCreation(context);
                 }
 
@@ -78,8 +78,8 @@ namespace Maple2.Trigger._52000012_qd {
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {9001})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{9001})) {
                     return new StateEnd(context);
                 }
 
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWait(context);
             }
 

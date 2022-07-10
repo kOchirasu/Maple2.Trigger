@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52000004_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3112}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3112}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {122})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{122})) {
                     return new StateSetup01(context);
                 }
 
@@ -22,12 +22,12 @@ namespace Maple2.Trigger._52000004_qd {
             internal StateSetup01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
-                    context.SetMesh(arg1: new[] {3112}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
+                    context.SetMesh(triggerIds: new []{3112}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateWaitTime(context);
                 }
 
@@ -41,11 +41,11 @@ namespace Maple2.Trigger._52000004_qd {
             internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "10", arg2: 10);
+                context.SetTimer(timerId: "10", seconds: 10);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "10")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "10")) {
                     return new StateWait(context);
                 }
 

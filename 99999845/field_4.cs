@@ -6,10 +6,10 @@ namespace Maple2.Trigger._99999845 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000319, 12000320, 12000321}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{12000319, 12000320, 12000321}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Block") == 1) {
                     context.SetUserValue(triggerId: 900005, key: "Block", value: 0);
                     return new StateBlock_1(context);
@@ -36,11 +36,11 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1114})) {
-                    context.SetVisibleBreakableObject(arg1: new[] {1019}, arg2: true);
-                    context.SetInteractObject(arg1: new[] {12000319}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1117}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1114})) {
+                    context.SetVisibleBreakableObject(triggerIds: new []{1019}, arg2: true);
+                    context.SetInteractObject(interactIds: new []{12000319}, state: 1);
+                    context.CreateMonster(spawnIds: new []{1117}, arg2: false);
                     return new StateCableOn_19(context);
                 }
 
@@ -55,11 +55,11 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1115})) {
-                    context.SetVisibleBreakableObject(arg1: new[] {1020}, arg2: true);
-                    context.SetInteractObject(arg1: new[] {12000320}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1117}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1115})) {
+                    context.SetVisibleBreakableObject(triggerIds: new []{1020}, arg2: true);
+                    context.SetInteractObject(interactIds: new []{12000320}, state: 1);
+                    context.CreateMonster(spawnIds: new []{1117}, arg2: false);
                     return new StateCableOn_20(context);
                 }
 
@@ -74,11 +74,11 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1116})) {
-                    context.SetVisibleBreakableObject(arg1: new[] {1021}, arg2: true);
-                    context.SetInteractObject(arg1: new[] {12000321}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1117}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1116})) {
+                    context.SetVisibleBreakableObject(triggerIds: new []{1021}, arg2: true);
+                    context.SetInteractObject(interactIds: new []{12000321}, state: 1);
+                    context.CreateMonster(spawnIds: new []{1117}, arg2: false);
                     return new StateCableOn_21(context);
                 }
 
@@ -93,10 +93,10 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000319}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000319}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(1974.56885f, 372.1966f, 289f), rot: new Vector3(0f, 0f, 0f));
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000319}, arg2: 0)) {
+                    context.SetInteractObject(interactIds: new []{12000319}, state: 2);
+                    context.MoveUserToPos(position: new Vector3(1974.56885f, 372.1966f, 289f));
                     return new StateCableDelay_19(context);
                 }
 
@@ -111,10 +111,10 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000320}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000320}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(3971.3916f, -4325.10742f, 1492f), rot: new Vector3(0f, 0f, 0f));
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000320}, arg2: 0)) {
+                    context.SetInteractObject(interactIds: new []{12000320}, state: 2);
+                    context.MoveUserToPos(position: new Vector3(3971.3916f, -4325.10742f, 1492f));
                     return new StateCableDelay_20(context);
                 }
 
@@ -129,10 +129,10 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000321}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000321}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(3528.33643f, 2824.1394f, 2528f), rot: new Vector3(0f, 0f, 0f));
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000321}, arg2: 0)) {
+                    context.SetInteractObject(interactIds: new []{12000321}, state: 2);
+                    context.MoveUserToPos(position: new Vector3(3528.33643f, 2824.1394f, 2528f));
                     return new StateCableDelay_21(context);
                 }
 
@@ -147,9 +147,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new[] {1019}, arg2: true);
+                    context.SetBreakable(triggerIds: new []{1019}, enabled: true);
                     return new StateCableOff_19(context);
                 }
 
@@ -164,9 +164,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new[] {1020}, arg2: true);
+                    context.SetBreakable(triggerIds: new []{1020}, enabled: true);
                     return new StateCableOff_20(context);
                 }
 
@@ -181,9 +181,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new[] {1021}, arg2: true);
+                    context.SetBreakable(triggerIds: new []{1021}, enabled: true);
                     return new StateCableOff_21(context);
                 }
 
@@ -198,7 +198,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900006, key: "Block", value: 1);
                     return new StateEnd_04(context);
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900006, key: "Block", value: 1);
                     return new StateEnd_04(context);
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900006, key: "Block", value: 1);
                     return new StateEnd_04(context);
@@ -249,7 +249,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateWait(context);
                 }

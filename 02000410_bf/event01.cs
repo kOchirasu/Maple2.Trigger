@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
                     return new StateWaitCombat(context);
                 }
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateBattleStart_InfernoWarship(context);
                 }
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.ShowGuideSummary(entityId: 20041002, textId: 20041002);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new State첫번째Phase_InfernoWarship(context);
                 }
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "AirshipBalrogCrimsonBroken") == 1) {
                     return new StateInfernoWarship파괴Cinematic(context);
                 }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000, script: "$02000410_BF__Event01__0$", voice: @"ko/Npc/00002167");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateInfernoWarship파괴Cinematic2(context);
                 }
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 5000, script: "$02000410_BF__Event01__1$", voice: @"ko/Npc/00002158");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State두번째Phase_InfernoWarship(context);
                 }
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "AirshipBalrogCrimsonFlameBroken") == 1) {
                     return new StateInfernoWarship파괴_인페르녹SpawnCinematic(context);
                 }
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000, script: "$02000410_BF__Event01__2$", voice: @"ko/Npc/00002168");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateInfernoWarship파괴_인페르녹SpawnCinematic2(context);
                 }
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 3000, script: "$02000410_BF__Event01__3$", voice: @"ko/Npc/00002169");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateInfernoWarship파괴_인페르녹SpawnCinematic3(context);
                 }
@@ -169,7 +169,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003533, illust: "Bliche_closeEye", duration: 4000, script: "$02000410_BF__Event01__4$", voice: @"ko/Npc/00002159");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateInfernoWarship파괴_인페르녹SpawnCinematic4(context);
                 }
@@ -187,7 +187,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02000410_BF__Event01__5$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateInfernoWarship파괴_인페르녹SpawnCinematic5(context);
                 }
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02000410_BF__Event01__6$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateInfernoWarship파괴_인페르녹SpawnCinematic6(context);
                 }
@@ -223,7 +223,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 5000, script: "$02000410_BF__Event01__7$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new State세번째Phase_인페르녹Spawn(context);
                 }
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BalrogMagicBursterBattlePhase") == 1) {
                     // return new StateSuccess이벤트실행(context);
                     return null;

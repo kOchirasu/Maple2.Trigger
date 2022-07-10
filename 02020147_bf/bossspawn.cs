@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020147_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateDefaultSetting(context);
                 }
@@ -25,8 +25,8 @@ namespace Maple2.Trigger._02020147_bf {
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {601})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{601})) {
                     return new StateBossSpawn(context);
                 }
 
@@ -40,10 +40,10 @@ namespace Maple2.Trigger._02020147_bf {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {701, 702, 703}, arg2: false);
+                context.CreateMonster(spawnIds: new []{701, 702, 703}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateClear체크시작(context);
                 }
@@ -61,8 +61,8 @@ namespace Maple2.Trigger._02020147_bf {
                 context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {701, 702, 703})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{701, 702, 703})) {
                     return new StateEndDelay(context);
                 }
 
@@ -77,9 +77,9 @@ namespace Maple2.Trigger._02020147_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetAchievement(arg3: "IshuraFinalDungeonClear_Quest");
+                    context.SetAchievement(type: "trigger", code: "IshuraFinalDungeonClear_Quest");
                     return new StateEnd(context);
                 }
 
@@ -97,7 +97,7 @@ namespace Maple2.Trigger._02020147_bf {
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,10 +4,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateSpawn_check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7711, 7721}, arg2: false);
+                context.SetEffect(triggerIds: new []{7711, 7721}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "item_711_spawn") == 1) {
                     return new StateSpawnItem(context);
                 }
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateSpawnItem(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7711}, arg2: true);
+                context.SetEffect(triggerIds: new []{7711}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {721})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{721})) {
                     return new StateGetItem_Random(context);
                 }
 
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991118, key: "item_711_spawn", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateSpawn_check(context);
                 }
@@ -62,29 +62,29 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateGetItem_Random(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "random_buff_box");
-                context.SetEffect(arg1: new[] {7711}, arg2: false);
-                context.SetEffect(arg1: new[] {7721}, arg2: true);
+                context.SetAchievement(triggerId: 701, type: "trigger", code: "random_buff_box");
+                context.SetEffect(triggerIds: new []{7711}, visible: false);
+                context.SetEffect(triggerIds: new []{7721}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 1f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateBuff_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateBuff_02(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateBuff_03(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f)) {
+                if (context.RandomCondition(rate: 10f)) {
                     return new StateBuff_04(context);
                 }
 
-                if (context.RandomCondition(arg1: 1f)) {
+                if (context.RandomCondition(rate: 1f)) {
                     return new StateBuff_05(context);
                 }
 
@@ -98,10 +98,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateBuff_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 70000080, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 70000080, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSpawn_check(context);
                 }
@@ -118,10 +118,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateBuff_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 70000081, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 70000081, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSpawn_check(context);
                 }
@@ -138,10 +138,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateBuff_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 70000082, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 70000082, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSpawn_check(context);
                 }
@@ -158,10 +158,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateBuff_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 70000083, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 70000083, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSpawn_check(context);
                 }
@@ -178,10 +178,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateBuff_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 70000085, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 70000085, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSpawn_check(context);
                 }

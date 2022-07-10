@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000079_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -16,12 +16,12 @@ namespace Maple2.Trigger._02000079_bf {
             internal State독수리비행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
-                    context.MoveNpc(arg1: 99, arg2: "MS2PatrolData_99");
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
+                    context.MoveNpc(spawnId: 99, patrolName: "MS2PatrolData_99");
                     return new StateEnd(context);
                 }
 
@@ -35,11 +35,11 @@ namespace Maple2.Trigger._02000079_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1800000", arg2: 1800000);
+                context.SetTimer(timerId: "1800000", seconds: 1800000);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1800000")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1800000")) {
                     // return new StateEnd2(context);
                     return null;
                 }

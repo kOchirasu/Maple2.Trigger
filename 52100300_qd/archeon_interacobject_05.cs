@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {901})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{901})) {
                     return new StateStart(context);
                 }
 
@@ -20,12 +20,12 @@ namespace Maple2.Trigger._52100300_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002290}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002290}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10002290}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {10002290}, arg2: 2);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10002290}, arg2: 0)) {
+                    context.SetInteractObject(interactIds: new []{10002290}, state: 2);
                     return new State재활성Wait(context);
                 }
 
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
                     return new StateStart(context);
                 }
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

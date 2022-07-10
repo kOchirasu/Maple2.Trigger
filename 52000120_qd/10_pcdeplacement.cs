@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetUserValue(key: "DefencePhase", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "DefencePhase") == 1) {
                     return new StateDefencePhase01(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9000) == 1) {
                     return new StateMoveToTheWall(context);
                 }
@@ -42,10 +42,10 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateMoveToTheWall(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52000120, arg2: 10);
+                context.MoveUser(mapId: 52000120, portalId: 10);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateDefencePhase01(context);
                 }
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9000) == 1) {
                     return new StateOutsideOfTheWall(context);
                 }
@@ -84,10 +84,10 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateOutsideOfTheWall(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52000120, arg2: 40);
+                context.MoveUser(mapId: 52000120, portalId: 40);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateDefencePhase02(context);
                 }
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,20 +4,20 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetActor(arg1: 4000, arg2: true, arg3: "he_in_prop_fireplace_A01_Closed");
-                context.SetLadder(arg1: 510, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 511, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 512, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 513, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 514, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 515, arg2: false, arg3: false, arg4: 0);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10001140}, arg2: 0);
+                context.SetEffect(triggerIds: new []{5001}, visible: false);
+                context.SetActor(triggerId: 4000, visible: true, initialSequence: "he_in_prop_fireplace_A01_Closed");
+                context.SetLadder(triggerId: 510, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 511, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 512, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 513, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 514, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 515, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetMesh(triggerIds: new []{3100, 3101, 3102}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10001140}, state: 0);
                 context.SetUserValue(key: "HiddenRouteOpen", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "HiddenRouteOpen") == 1) {
                     return new StateOpened(context);
                 }
@@ -36,12 +36,12 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateOpened(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 4000, arg2: false, arg3: "he_in_prop_fireplace_A01_Closed");
-                context.SetInteractObject(arg1: new[] {10001140}, arg2: 1);
+                context.SetActor(triggerId: 4000, visible: false, initialSequence: "he_in_prop_fireplace_A01_Closed");
+                context.SetInteractObject(interactIds: new []{10001140}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001140}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001140}, arg2: 0)) {
                     return new StateLadderOn(context);
                 }
 
@@ -55,19 +55,19 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateLadderOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetMesh(arg1: new[] {3102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetLadder(arg1: 510, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 511, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 512, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 513, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 514, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 515, arg2: true, arg3: true, arg4: 2);
-                context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
-                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetEffect(triggerIds: new []{5001}, visible: true);
+                context.SetMesh(triggerIds: new []{3102}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetLadder(triggerId: 510, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 511, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 512, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 513, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 514, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 515, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetMesh(triggerIds: new []{3100}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMesh(triggerIds: new []{3101}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -78,12 +78,12 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateClosed(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 4000, arg2: false, arg3: "he_in_prop_fireplace_A01_Closed");
-                context.SetInteractObject(arg1: new[] {10001140}, arg2: 1);
+                context.SetActor(triggerId: 4000, visible: false, initialSequence: "he_in_prop_fireplace_A01_Closed");
+                context.SetInteractObject(interactIds: new []{10001140}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001140}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001140}, arg2: 0)) {
                     return new StateNothingHappened(context);
                 }
 
@@ -97,10 +97,10 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateNothingHappened(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 4000, arg2: true, arg3: "he_in_prop_fireplace_A01_Opened");
+                context.SetActor(triggerId: 4000, visible: true, initialSequence: "he_in_prop_fireplace_A01_Opened");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

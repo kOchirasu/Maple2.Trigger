@@ -5,10 +5,10 @@ namespace Maple2.Trigger._99999876 {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "ChangeNpc", value: 0);
-                context.DestroyMonster(arg1: new[] {17101, 17102});
+                context.DestroyMonster(spawnIds: new []{17101, 17102});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateSettingDelay(context);
                 }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._99999876 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateSetting(context);
                 }
@@ -39,10 +39,10 @@ namespace Maple2.Trigger._99999876 {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {17101}, arg2: false);
+                context.CreateMonster(spawnIds: new []{17101}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ChangeNpc") == 1) {
                     return new StateChatchUpNpc(context);
                 }
@@ -57,12 +57,12 @@ namespace Maple2.Trigger._99999876 {
             internal StateChatchUpNpc(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 30, arg3: true, arg4: false, arg5: 0);
-                context.ChangeMonster(arg1: 17101, arg2: 17102);
+                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: true, display: false, arg5: 0);
+                context.ChangeMonster(removeSpawnId: 17101, addSpawnId: 17102);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateChatchUpNpc_Quit(context);
                 }
 
@@ -76,11 +76,11 @@ namespace Maple2.Trigger._99999876 {
             internal StateChatchUpNpc_Quit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(id: "1");
-                context.DestroyMonster(arg1: new[] {17101, 17102});
+                context.ResetTimer(timerId: "1");
+                context.DestroyMonster(spawnIds: new []{17101, 17102});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }

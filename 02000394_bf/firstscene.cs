@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000394_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {100})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{100})) {
                     return new StateCameraCinematic01(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._02000394_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 3000, arg2: false);
+                context.CameraSelect(triggerId: 3000, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCameraCinematic02(context);
                 }
@@ -40,10 +40,10 @@ namespace Maple2.Trigger._02000394_bf {
             internal StateCameraCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {3000, 3001, 3002, 3003}, arg2: true);
+                context.CameraSelectPath(pathIds: new []{3000, 3001, 3002, 3003}, returnView: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     return new StateEnd(context);
                 }
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02000394_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

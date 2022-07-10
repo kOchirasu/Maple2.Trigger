@@ -9,8 +9,8 @@ namespace Maple2.Trigger._02000314_bf {
                 context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateDelay(context);
                 }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000314_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateBossSpawn(context);
                 }
@@ -41,14 +41,14 @@ namespace Maple2.Trigger._02000314_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003140, textId: 20003140, duration: 4000);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.CameraSelect(arg1: 301, arg2: true);
-                context.AddBuff(arg1: new[] {102}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
-                context.CreateMonster(arg1: new[] {99}, arg2: false);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.CameraSelect(triggerId: 301, enable: true);
+                context.AddBuff(boxIds: new []{102}, skillId: 70000107, level: 1, arg4: false, arg5: false);
+                context.CreateMonster(spawnIds: new []{99}, arg2: false);
                 context.SetSkip(state: new StateEnd체크(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEnd체크(context);
                 }
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02000314_bf {
             }
 
             public override void OnExit() {
-                context.CameraSelect(arg1: 301, arg2: false);
-                context.RemoveBuff(arg1: 102, arg2: 70000107);
+                context.CameraSelect(triggerId: 301, enable: false);
+                context.RemoveBuff(boxId: 102, skillId: 70000107);
             }
         }
 
@@ -67,8 +67,8 @@ namespace Maple2.Trigger._02000314_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {99})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new StateEndDelay(context);
                 }
 
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02000314_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnd(context);
                 }
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._02000314_bf {
                 context.SetPortal(portalId: 13, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

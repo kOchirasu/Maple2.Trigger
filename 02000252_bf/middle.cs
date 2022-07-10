@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8201, 8202, 8203, 8204, 8205, 8206, 8207, 8208, 8209, 8210, 8211, 8212, 8213, 8214, 8215, 8216, 8217, 8218}, arg2: false);
+                context.SetEffect(triggerIds: new []{8201, 8202, 8203, 8204, 8205, 8206, 8207, 8208, 8209, 8210, 8211, 8212, 8213, 8214, 8215, 8216, 8217, 8218}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 902) == 1) {
                     return new State바닥삭제(context);
                 }
@@ -22,14 +22,14 @@ namespace Maple2.Trigger._02000252_bf {
             internal State바닥삭제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 5);
-                context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142}, arg2: false, arg3: 0, arg4: 100);
-                context.CreateMonster(arg1: new[] {1075, 1076, 1077, 1078, 1079, 1080, 1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088, 1089, 1090, 1091, 1092, 1093, 1094}, arg2: false);
-                context.SetEffect(arg1: new[] {8201, 8202, 8203, 8204, 8205, 8206, 8207, 8208, 8209, 8210, 8211, 8212, 8213, 8214, 8215, 8216, 8217, 8218}, arg2: true);
+                context.SetTimer(timerId: "2", seconds: 5);
+                context.SetMesh(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142}, visible: false, arg3: 0, arg4: 100);
+                context.CreateMonster(spawnIds: new []{1075, 1076, 1077, 1078, 1079, 1080, 1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088, 1089, 1090, 1091, 1092, 1093, 1094}, arg2: false);
+                context.SetEffect(triggerIds: new []{8201, 8202, 8203, 8204, 8205, 8206, 8207, 8208, 8209, 8210, 8211, 8212, 8213, 8214, 8215, 8216, 8217, 8218}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateSkill01(context);
                 }
 
@@ -43,13 +43,13 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetEffect(arg1: new[] {8201, 8202, 8203, 8204, 8205, 8206, 8207, 8208, 8209, 8210, 8211, 8212, 8213, 8214, 8215, 8216, 8217, 8218}, arg2: false);
-                context.SetSkill(arg1: new[] {1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetEffect(triggerIds: new []{8201, 8202, 8203, 8204, 8205, 8206, 8207, 8208, 8209, 8210, 8211, 8212, 8213, 8214, 8215, 8216, 8217, 8218}, visible: false);
+                context.SetSkill(triggerIds: new []{1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill02Wait(context);
                 }
 
@@ -63,10 +63,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill02Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318}, arg2: false);
+                context.SetSkill(triggerIds: new []{1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill02(context);
             }
 
@@ -77,12 +77,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill03Wait(context);
                 }
 
@@ -96,10 +96,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill03Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324}, arg2: false);
+                context.SetSkill(triggerIds: new []{1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill03(context);
             }
 
@@ -110,12 +110,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1328, 1330}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1328, 1330}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill04Wait(context);
                 }
 
@@ -129,10 +129,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill04Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1328, 1330}, arg2: false);
+                context.SetSkill(triggerIds: new []{1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1328, 1330}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill04(context);
             }
 
@@ -143,12 +143,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1328, 1330, 1331, 1332, 1333, 1334, 1335, 1336}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1328, 1330, 1331, 1332, 1333, 1334, 1335, 1336}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill05Wait(context);
                 }
 
@@ -162,10 +162,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill05Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1328, 1330, 1331, 1332, 1333, 1334, 1335, 1336}, arg2: false);
+                context.SetSkill(triggerIds: new []{1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1328, 1330, 1331, 1332, 1333, 1334, 1335, 1336}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill05(context);
             }
 
@@ -176,12 +176,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1325, 1326, 1327, 1328, 1328, 1330, 1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1325, 1326, 1327, 1328, 1328, 1330, 1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill06Wait(context);
                 }
 
@@ -195,10 +195,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill06Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1325, 1326, 1327, 1328, 1328, 1330, 1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342}, arg2: false);
+                context.SetSkill(triggerIds: new []{1325, 1326, 1327, 1328, 1328, 1330, 1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill06(context);
             }
 
@@ -209,12 +209,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill07Wait(context);
                 }
 
@@ -228,10 +228,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill07Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348}, arg2: false);
+                context.SetSkill(triggerIds: new []{1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill07(context);
             }
 
@@ -242,12 +242,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill08Wait(context);
                 }
 
@@ -261,10 +261,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill08Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354}, arg2: false);
+                context.SetSkill(triggerIds: new []{1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill08(context);
             }
 
@@ -275,12 +275,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill09Wait(context);
                 }
 
@@ -294,10 +294,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill09Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360}, arg2: false);
+                context.SetSkill(triggerIds: new []{1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill09(context);
             }
 
@@ -308,12 +308,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill10Wait(context);
                 }
 
@@ -327,10 +327,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill10Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366}, arg2: false);
+                context.SetSkill(triggerIds: new []{1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill10(context);
             }
 
@@ -341,12 +341,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill11Wait(context);
                 }
 
@@ -360,10 +360,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill11Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372}, arg2: false);
+                context.SetSkill(triggerIds: new []{1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill11(context);
             }
 
@@ -374,12 +374,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill12Wait(context);
                 }
 
@@ -393,10 +393,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill12Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378}, arg2: false);
+                context.SetSkill(triggerIds: new []{1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill12(context);
             }
 
@@ -407,12 +407,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill13Wait(context);
                 }
 
@@ -426,10 +426,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill13Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384}, arg2: false);
+                context.SetSkill(triggerIds: new []{1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill13(context);
             }
 
@@ -440,12 +440,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill14Wait(context);
                 }
 
@@ -459,10 +459,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill14Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390}, arg2: false);
+                context.SetSkill(triggerIds: new []{1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill14(context);
             }
 
@@ -473,12 +473,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill15Wait(context);
                 }
 
@@ -492,10 +492,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill15Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396}, arg2: false);
+                context.SetSkill(triggerIds: new []{1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill15(context);
             }
 
@@ -506,12 +506,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill16Wait(context);
                 }
 
@@ -525,10 +525,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill16Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402}, arg2: false);
+                context.SetSkill(triggerIds: new []{1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill16(context);
             }
 
@@ -539,12 +539,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill17Wait(context);
                 }
 
@@ -558,10 +558,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill17Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408}, arg2: false);
+                context.SetSkill(triggerIds: new []{1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill17(context);
             }
 
@@ -572,12 +572,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill18Wait(context);
                 }
 
@@ -591,10 +591,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill18Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408}, arg2: false);
+                context.SetSkill(triggerIds: new []{1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill18(context);
             }
 
@@ -605,12 +605,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill19Wait(context);
                 }
 
@@ -624,10 +624,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill19Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414}, arg2: false);
+                context.SetSkill(triggerIds: new []{1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill19(context);
             }
 
@@ -638,12 +638,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1409, 1410, 1411, 1412, 1413, 1414}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1409, 1410, 1411, 1412, 1413, 1414}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill20Wait(context);
                 }
 
@@ -657,10 +657,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill20Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420}, arg2: false);
+                context.SetSkill(triggerIds: new []{1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill20(context);
             }
 
@@ -671,12 +671,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill21Wait(context);
                 }
 
@@ -690,10 +690,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill21Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426}, arg2: false);
+                context.SetSkill(triggerIds: new []{1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill21(context);
             }
 
@@ -704,12 +704,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill22Wait(context);
                 }
 
@@ -723,10 +723,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill22Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432}, arg2: false);
+                context.SetSkill(triggerIds: new []{1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill22(context);
             }
 
@@ -737,12 +737,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill23Wait(context);
                 }
 
@@ -756,10 +756,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill23Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438}, arg2: false);
+                context.SetSkill(triggerIds: new []{1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill23(context);
             }
 
@@ -770,12 +770,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill24Wait(context);
                 }
 
@@ -789,10 +789,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill24Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444}, arg2: false);
+                context.SetSkill(triggerIds: new []{1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill24(context);
             }
 
@@ -803,12 +803,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill24(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill25Wait(context);
                 }
 
@@ -822,10 +822,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill25Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450}, arg2: false);
+                context.SetSkill(triggerIds: new []{1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill25(context);
             }
 
@@ -836,12 +836,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill25(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill26Wait(context);
                 }
 
@@ -855,10 +855,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill26Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456}, arg2: false);
+                context.SetSkill(triggerIds: new []{1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill26(context);
             }
 
@@ -869,12 +869,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill26(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill27Wait(context);
                 }
 
@@ -888,10 +888,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill27Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462}, arg2: false);
+                context.SetSkill(triggerIds: new []{1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill27(context);
             }
 
@@ -902,12 +902,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill27(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill28Wait(context);
                 }
 
@@ -921,10 +921,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill28Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468}, arg2: false);
+                context.SetSkill(triggerIds: new []{1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill28(context);
             }
 
@@ -935,12 +935,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill28(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1474}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1474}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill29Wait(context);
                 }
 
@@ -954,10 +954,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill29Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1474}, arg2: false);
+                context.SetSkill(triggerIds: new []{1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1474}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill29(context);
             }
 
@@ -968,12 +968,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill29(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1474, 1475, 1476, 1477, 1478, 1479, 1480}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1474, 1475, 1476, 1477, 1478, 1479, 1480}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill30Wait(context);
                 }
 
@@ -987,10 +987,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill30Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1475, 1474, 1476, 1477, 1478, 1479, 1480}, arg2: false);
+                context.SetSkill(triggerIds: new []{1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1475, 1474, 1476, 1477, 1478, 1479, 1480}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill30(context);
             }
 
@@ -1001,12 +1001,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1469, 1470, 1471, 1472, 1473, 1474, 1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1469, 1470, 1471, 1472, 1473, 1474, 1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill31Wait(context);
                 }
 
@@ -1020,10 +1020,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill31Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1469, 1470, 1471, 1472, 1473, 1474, 1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486}, arg2: false);
+                context.SetSkill(triggerIds: new []{1469, 1470, 1471, 1472, 1473, 1474, 1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill31(context);
             }
 
@@ -1034,12 +1034,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill31(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill32Wait(context);
                 }
 
@@ -1053,10 +1053,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill32Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492}, arg2: false);
+                context.SetSkill(triggerIds: new []{1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill32(context);
             }
 
@@ -1067,12 +1067,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill32(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill33Wait(context);
                 }
 
@@ -1086,10 +1086,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill33Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498}, arg2: false);
+                context.SetSkill(triggerIds: new []{1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateSkill33(context);
             }
 
@@ -1100,12 +1100,12 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill33(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498, 1499, 1500, 1501, 1502, 1503, 1504}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetSkill(triggerIds: new []{1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498, 1499, 1500, 1501, 1502, 1503, 1504}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSkill34Wait(context);
                 }
 
@@ -1119,10 +1119,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateSkill34Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498, 1499, 1500, 1501, 1502, 1503, 1504}, arg2: false);
+                context.SetSkill(triggerIds: new []{1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498, 1499, 1500, 1501, 1502, 1503, 1504}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

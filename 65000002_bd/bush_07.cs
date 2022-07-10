@@ -4,10 +4,10 @@ namespace Maple2.Trigger._65000002_bd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBuff(arg1: 1001007, arg2: 70000075);
+                context.RemoveBuff(boxId: 1001007, skillId: 70000075);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 1001007) == 1) {
                     return new StateBuff발동(context);
                 }
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._65000002_bd {
             internal StateBuff발동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {1001007}, arg2: 70000075, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{1001007}, skillId: 70000075, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateBuff발동(context);
                 }
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._65000002_bd {
                     return new StateWait(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {1001007})) {
+                if (!context.UserDetected(boxIds: new []{1001007})) {
                     return new StateWait(context);
                 }
 
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._65000002_bd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

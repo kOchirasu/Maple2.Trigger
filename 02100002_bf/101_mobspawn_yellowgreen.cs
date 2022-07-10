@@ -7,11 +7,11 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetUserValue(key: "Gauge", value: 0);
                 context.SetUserValue(key: "StopSpawn", value: 0);
                 context.SetUserValue(key: "SpawnHold", value: 0);
-                context.DestroyMonster(arg1: new[] {10100, 10075, 10050, 10025, 10001, 11001, 11002, 11003});
-                context.SetEffect(arg1: new[] {5101, 5201}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{10100, 10075, 10050, 10025, 10001, 11001, 11002, 11003});
+                context.SetEffect(triggerIds: new []{5101, 5201}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Gauge") == 100) {
                     return new StateGauge100_Normal(context);
                 }
@@ -26,11 +26,11 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge100_Normal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5101}, arg2: true);
-                context.CreateMonster(arg1: new[] {10100}, arg2: false);
+                context.SetEffect(triggerIds: new []{5101}, visible: true);
+                context.CreateMonster(spawnIds: new []{10100}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateGauge_SpawnRamdom(context);
                 }
@@ -57,11 +57,11 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge75_Normal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5101}, arg2: true);
-                context.CreateMonster(arg1: new[] {10075}, arg2: false);
+                context.SetEffect(triggerIds: new []{5101}, visible: true);
+                context.CreateMonster(spawnIds: new []{10075}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateGauge_SpawnRamdom(context);
                 }
@@ -92,11 +92,11 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge50_Normal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5101}, arg2: true);
-                context.CreateMonster(arg1: new[] {10050}, arg2: false);
+                context.SetEffect(triggerIds: new []{5101}, visible: true);
+                context.CreateMonster(spawnIds: new []{10050}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateGauge_SpawnRamdom(context);
                 }
@@ -127,11 +127,11 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge25_Normal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5101}, arg2: true);
-                context.CreateMonster(arg1: new[] {10025}, arg2: false);
+                context.SetEffect(triggerIds: new []{5101}, visible: true);
+                context.CreateMonster(spawnIds: new []{10025}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateGauge_SpawnRamdom(context);
                 }
@@ -162,11 +162,11 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge1_Normal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5101}, arg2: true);
-                context.CreateMonster(arg1: new[] {10001}, arg2: false);
+                context.SetEffect(triggerIds: new []{5101}, visible: true);
+                context.CreateMonster(spawnIds: new []{10001}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateGauge_SpawnRamdom(context);
                 }
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpawnHold") == 0) {
                     return new StateBackToGaugeState(context);
                 }
@@ -214,16 +214,16 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 100f, desc: "Normal")) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 100f, description: "Normal")) {
                     return new StateSpawn_Normal(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f, desc: "Eater")) {
+                if (context.RandomCondition(rate: 5f, description: "Eater")) {
                     return new StateSpawn_Eater(context);
                 }
 
-                if (context.RandomCondition(arg1: 10f, desc: "Runner")) {
+                if (context.RandomCondition(rate: 10f, description: "Runner")) {
                     return new StateSpawn_Runner(context);
                 }
 
@@ -238,7 +238,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateBackToGaugeState(context);
             }
 
@@ -249,11 +249,11 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateSpawn_Eater(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5201}, arg2: true);
-                context.CreateMonster(arg1: new[] {11001}, arg2: false);
+                context.SetEffect(triggerIds: new []{5201}, visible: true);
+                context.CreateMonster(spawnIds: new []{11001}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateBackToGaugeState(context);
                 }
@@ -268,11 +268,11 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateSpawn_Runner(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5201}, arg2: true);
-                context.CreateMonster(arg1: new[] {11002}, arg2: false);
+                context.SetEffect(triggerIds: new []{5201}, visible: true);
+                context.CreateMonster(spawnIds: new []{11002}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateBackToGaugeState(context);
                 }
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Gauge") == 100) {
                     return new StateGauge100_Normal(context);
                 }
@@ -319,10 +319,10 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {10100, 10075, 10050, 10025, 10001, 11001, 11002, 11003});
+                context.DestroyMonster(spawnIds: new []{10100, 10075, 10050, 10025, 10001, 11001, 11002, 11003});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

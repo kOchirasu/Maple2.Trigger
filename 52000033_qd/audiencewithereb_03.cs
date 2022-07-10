@@ -7,8 +7,8 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100245}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{60100245}, questStates: new byte[]{2})) {
                     return new StateReady(context);
                 }
 
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52000033_qd {
                 context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePcmove(context);
                 }
@@ -42,10 +42,10 @@ namespace Maple2.Trigger._52000033_qd {
             internal StatePcmove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUserPath(arg1: "MS2PatrolData_1007");
+                context.MoveUserPath(patrolName: "MS2PatrolData_1007");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateErebTalk_01(context);
                 }
@@ -62,11 +62,11 @@ namespace Maple2.Trigger._52000033_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelectPath(pathIds: new[] {700}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{700}, returnView: false);
                 context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_normal", script: "$52000033_QD__AUDIENCEWITHEREB_03__0$", duration: 3000, delayTick: 0, align: Align.Left);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateErebTalk_02(context);
                 }
@@ -81,11 +81,11 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {901}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{901}, returnView: false);
                 context.AddCinematicTalk(npcId: 11001663, script: "$52000033_QD__AUDIENCEWITHEREB_03__1$", duration: 3000, delayTick: 0, align: Align.Left);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateErebTalk_03(context);
                 }
@@ -100,10 +100,10 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {601}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{601}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateFadeout(context);
                 }
@@ -119,10 +119,10 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CreateMonster(arg1: new[] {601}, arg2: true);
+                context.CreateMonster(spawnIds: new []{601}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateStory_01(context);
                 }
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._52000033_qd {
                 context.SetCinematicUI(type: 9, script: "$52000033_QD__AUDIENCEWITHEREB_03__2$", arg3: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateStory_02(context);
                 }
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._52000033_qd {
                 context.SetCinematicUI(type: 9, script: "$52000033_QD__AUDIENCEWITHEREB_03__3$", arg3: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateStory_03(context);
                 }
@@ -174,10 +174,10 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 9, script: "$52000033_QD__AUDIENCEWITHEREB_03__4$", arg3: false);
-                context.MoveNpc(arg1: 601, arg2: "MS2PatrolData_1005");
+                context.MoveNpc(spawnId: 601, patrolName: "MS2PatrolData_1005");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateFadein(context);
                 }
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._52000033_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateErebTalk_04(context);
                 }
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52000033_qd {
                 context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_surprise", script: "$52000033_QD__AUDIENCEWITHEREB_03__5$", duration: 3000, delayTick: 0, align: Align.Left);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateErebTalk_05(context);
                 }
@@ -230,12 +230,12 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(arg1: 7001, arg2: true);
+                context.SetSound(triggerId: 7001, arg2: true);
                 context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_closeEye", script: "$52000033_QD__AUDIENCEWITHEREB_03__6$", duration: 3000, delayTick: 0, align: Align.Left);
-                context.AddBalloonTalk(spawnPointId: 401, msg: "$52000033_QD__AUDIENCEWITHEREB_03__7$", duration: 3000);
+                context.AddBalloonTalk(spawnId: 401, msg: "$52000033_QD__AUDIENCEWITHEREB_03__7$", duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateErebTalk_06(context);
                 }
@@ -251,10 +251,10 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_serious", script: "$52000033_QD__AUDIENCEWITHEREB_03__8$", duration: 3000, delayTick: 0, align: Align.Left);
-                context.MoveNpc(arg1: 601, arg2: "MS2PatrolData_1006");
+                context.MoveNpc(spawnId: 601, patrolName: "MS2PatrolData_1006");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateErebTalk_07(context);
                 }
@@ -270,11 +270,11 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_closeEye", script: "$52000033_QD__AUDIENCEWITHEREB_03__9$", duration: 3000, delayTick: 0, align: Align.Left);
-                context.DestroyMonster(arg1: new[] {601});
+                context.DestroyMonster(spawnIds: new []{601});
                 context.SetSceneSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd(context);
                 }
@@ -290,13 +290,13 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.DestroyMonster(arg1: new[] {601});
+                context.DestroyMonster(spawnIds: new []{601});
                 context.CameraReset(interpolationTime: 1.0f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

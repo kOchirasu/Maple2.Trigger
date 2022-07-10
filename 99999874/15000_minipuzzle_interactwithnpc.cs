@@ -6,14 +6,14 @@ namespace Maple2.Trigger._99999874 {
             public override void OnEnter() {
                 context.SetUserValue(key: "StandAsideTypeA", value: 0);
                 context.SetUserValue(key: "StandAsideTypeB", value: 0);
-                context.SetMesh(arg1: new[] {15101, 15102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetActor(arg1: 15100, arg2: false, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {12000070, 12000078, 12000093}, arg2: 2);
-                context.DestroyMonster(arg1: new[] {15401, 15402, 15501, 15502});
-                context.SetEffect(arg1: new[] {15300, 15301, 15302, 15303, 15304}, arg2: false);
+                context.SetMesh(triggerIds: new []{15101, 15102}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetActor(triggerId: 15100, visible: false, initialSequence: "Idle_A");
+                context.SetInteractObject(interactIds: new []{12000070, 12000078, 12000093}, state: 2);
+                context.DestroyMonster(spawnIds: new []{15401, 15402, 15501, 15502});
+                context.SetEffect(triggerIds: new []{15300, 15301, 15302, 15303, 15304}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TimeEventOn") == 1) {
                     return new StateSettingDelay(context);
                 }
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._99999874 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateInteractWithNpc_NpcTypeRandomPick(context);
                 }
@@ -44,17 +44,17 @@ namespace Maple2.Trigger._99999874 {
             internal StateInteractWithNpc_NpcTypeRandomPick(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {15101, 15002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetActor(arg1: 15100, arg2: true, arg3: "Idle_A");
+                context.SetMesh(triggerIds: new []{15101, 15002}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetActor(triggerId: 15100, visible: true, initialSequence: "Idle_A");
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 50f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateInteractWithNpc_NpcTypeA_Setting(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateInteractWithNpc_NpcTypeB_Setting(context);
                 }
 
@@ -68,12 +68,12 @@ namespace Maple2.Trigger._99999874 {
             internal StateInteractWithNpc_NpcTypeA_Setting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000078}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{12000078}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000078}, arg2: 0)) {
-                    context.SetTimer(id: "1", arg2: 90, arg3: true, arg4: false, arg5: 0);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000078}, arg2: 0)) {
+                    context.SetTimer(timerId: "1", seconds: 90, clearAtZero: true, display: false, arg5: 0);
                     return new StateInteractWithNpc_NpcTypeA_NpcSpawn(context);
                 }
 
@@ -91,18 +91,18 @@ namespace Maple2.Trigger._99999874 {
             internal StateInteractWithNpc_NpcTypeA_NpcSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000078}, arg2: 2);
-                context.CreateMonster(arg1: new[] {15401}, arg2: true);
+                context.SetInteractObject(interactIds: new []{12000078}, state: 2);
+                context.CreateMonster(spawnIds: new []{15401}, arg2: true);
                 context.SetUserValue(triggerId: 1000051, key: "NPCTalk", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StandAsideTypeA") == 1) {
                     context.SetUserValue(triggerId: 1000051, key: "NPCTalk", value: 0);
                     return new StateInteractWithNpc_NpcTypeA_NpcChange(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateInteractWithNpc_Fail(context);
                 }
 
@@ -116,17 +116,17 @@ namespace Maple2.Trigger._99999874 {
             internal StateInteractWithNpc_NpcTypeA_NpcChange(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {15300}, arg2: false);
-                context.DestroyMonster(arg1: new[] {15401});
-                context.CreateMonster(arg1: new[] {15402}, arg2: true);
+                context.SetEffect(triggerIds: new []{15300}, visible: false);
+                context.DestroyMonster(spawnIds: new []{15401});
+                context.CreateMonster(spawnIds: new []{15402}, arg2: true);
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 2);
-                context.SetMesh(arg1: new[] {15101, 15102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.AddBuff(arg1: new[] {150001}, arg2: 71001052, arg3: 1, arg4: false, arg5: false);
-                context.SetTimer(id: "10", arg2: 60, arg3: true, arg4: false, arg5: 0);
+                context.SetMesh(triggerIds: new []{15101, 15102}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.AddBuff(boxIds: new []{150001}, skillId: 71001052, level: 1, arg4: false, arg5: false);
+                context.SetTimer(timerId: "10", seconds: 60, clearAtZero: true, display: false, arg5: 0);
                 context.SetUserValue(triggerId: 151001, key: "NPCKill", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateInteractWithNpc_NpcTypeA_StandAside(context);
                 }
@@ -141,12 +141,12 @@ namespace Maple2.Trigger._99999874 {
             internal StateInteractWithNpc_NpcTypeA_StandAside(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {15303}, arg2: true);
-                context.MoveNpc(arg1: 15402, arg2: "MS2PatrolData_15600");
+                context.SetEffect(triggerIds: new []{15303}, visible: true);
+                context.MoveNpc(spawnId: 15402, patrolName: "MS2PatrolData_15600");
             }
 
-            public override TriggerState Execute() {
-                context.SetEffect(arg1: new[] {15303}, arg2: false);
+            public override TriggerState? Execute() {
+                context.SetEffect(triggerIds: new []{15303}, visible: false);
                     return new StateInteractWithNpc_Success(context);
             }
 
@@ -157,12 +157,12 @@ namespace Maple2.Trigger._99999874 {
             internal StateInteractWithNpc_NpcTypeB_Setting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000093}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{12000093}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000093}, arg2: 0)) {
-                    context.SetTimer(id: "1", arg2: 90, arg3: true, arg4: false, arg5: 0);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000093}, arg2: 0)) {
+                    context.SetTimer(timerId: "1", seconds: 90, clearAtZero: true, display: false, arg5: 0);
                     return new StateInteractWithNpc_NpcTypeB_NpcSpawn(context);
                 }
 
@@ -180,18 +180,18 @@ namespace Maple2.Trigger._99999874 {
             internal StateInteractWithNpc_NpcTypeB_NpcSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000093}, arg2: 2);
-                context.CreateMonster(arg1: new[] {15501}, arg2: true);
+                context.SetInteractObject(interactIds: new []{12000093}, state: 2);
+                context.CreateMonster(spawnIds: new []{15501}, arg2: true);
                 context.SetUserValue(triggerId: 1000052, key: "NPCTalk", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StandAsideTypeB") == 1) {
                     context.SetUserValue(triggerId: 1000052, key: "NPCTalk", value: 0);
                     return new StateInteractWithNpc_NpcTypeB_NpcChange(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateInteractWithNpc_Fail(context);
                 }
 
@@ -205,17 +205,17 @@ namespace Maple2.Trigger._99999874 {
             internal StateInteractWithNpc_NpcTypeB_NpcChange(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {15300}, arg2: false);
-                context.DestroyMonster(arg1: new[] {15501});
-                context.CreateMonster(arg1: new[] {15502}, arg2: true);
+                context.SetEffect(triggerIds: new []{15300}, visible: false);
+                context.DestroyMonster(spawnIds: new []{15501});
+                context.CreateMonster(spawnIds: new []{15502}, arg2: true);
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 2);
-                context.SetMesh(arg1: new[] {15101, 15102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.AddBuff(arg1: new[] {150001}, arg2: 71001052, arg3: 1, arg4: false, arg5: false);
-                context.SetTimer(id: "10", arg2: 60, arg3: true, arg4: false, arg5: 0);
+                context.SetMesh(triggerIds: new []{15101, 15102}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.AddBuff(boxIds: new []{150001}, skillId: 71001052, level: 1, arg4: false, arg5: false);
+                context.SetTimer(timerId: "10", seconds: 60, clearAtZero: true, display: false, arg5: 0);
                 context.SetUserValue(triggerId: 151001, key: "NPCKill", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateInteractWithNpc_NpcTypeB_StandAside(context);
                 }
@@ -230,11 +230,11 @@ namespace Maple2.Trigger._99999874 {
             internal StateInteractWithNpc_NpcTypeB_StandAside(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {15304}, arg2: true);
-                context.MoveNpc(arg1: 15502, arg2: "MS2PatrolData_15600");
+                context.SetEffect(triggerIds: new []{15304}, visible: true);
+                context.MoveNpc(spawnId: 15502, patrolName: "MS2PatrolData_15600");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateInteractWithNpc_Success(context);
             }
 
@@ -246,16 +246,16 @@ namespace Maple2.Trigger._99999874 {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 15000, key: "TimeEventOn", value: 0);
-                context.SetActor(arg1: 15100, arg2: false, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {12000070}, arg2: 1);
+                context.SetActor(triggerId: 15100, visible: false, initialSequence: "Idle_A");
+                context.SetInteractObject(interactIds: new []{12000070}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000070}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000070}, arg2: 0)) {
                     return new StateInteractWithNpc_SuccessDelay(context);
                 }
 
-                if (context.TimeExpired(arg1: "10")) {
+                if (context.TimeExpired(timerId: "10")) {
                     return new StateInteractWithNpc_Fail(context);
                 }
 
@@ -270,7 +270,7 @@ namespace Maple2.Trigger._99999874 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateInteractWithNpc_Quit(context);
                 }
@@ -285,11 +285,11 @@ namespace Maple2.Trigger._99999874 {
             internal StateInteractWithNpc_Fail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000070, 12000078, 12000093}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{12000070, 12000078, 12000093}, state: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateInteractWithNpc_Quit(context);
                 }
 
@@ -303,13 +303,13 @@ namespace Maple2.Trigger._99999874 {
             internal StateInteractWithNpc_Quit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(id: "1");
-                context.ResetTimer(id: "10");
+                context.ResetTimer(timerId: "1");
+                context.ResetTimer(timerId: "10");
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 0);
-                context.DestroyMonster(arg1: new[] {15401, 15402, 15501, 15502});
+                context.DestroyMonster(spawnIds: new []{15401, 15402, 15501, 15502});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

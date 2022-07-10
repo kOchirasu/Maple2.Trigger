@@ -7,15 +7,15 @@ namespace Maple2.Trigger._83000002_colosseum {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(arg1: 11000, arg2: false);
-                context.SetSound(arg1: 11001, arg2: false);
-                context.SetSound(arg1: 12000, arg2: false);
-                context.SetSound(arg1: 12001, arg2: false);
-                context.SetSound(arg1: 13000, arg2: false);
-                context.SetSound(arg1: 13001, arg2: false);
+                context.SetSound(triggerId: 11000, arg2: false);
+                context.SetSound(triggerId: 11001, arg2: false);
+                context.SetSound(triggerId: 12000, arg2: false);
+                context.SetSound(triggerId: 12001, arg2: false);
+                context.SetSound(triggerId: 13000, arg2: false);
+                context.SetSound(triggerId: 13001, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartRound9") == 1) {
                     return new StateStartDelay(context);
                 }
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State라운드ConditionCheck(context);
                 }
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonRoundsRequired() == 9) {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004288, illust: "nagi_normal", script: "$83000002_COLOSSEUM__ROUND9__0$", duration: 5000);
                     return new State라운드Wait(context);
@@ -65,11 +65,11 @@ namespace Maple2.Trigger._83000002_colosseum {
             internal State라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(arg1: 11000, arg2: true);
-                context.SetSound(arg1: 11001, arg2: true);
+                context.SetSound(triggerId: 11000, arg2: true);
+                context.SetSound(triggerId: 11001, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SideNpcTalk(type: SideNpcTalkType.CutIn, illust: "VasaraChen_normal", duration: 3000);
                     context.ShowRoundUI(round: 9, duration: 3000);
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateMonsterSpawn(context);
                 }
@@ -102,11 +102,11 @@ namespace Maple2.Trigger._83000002_colosseum {
             internal StateMonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {109}, arg2: false);
-                context.AddBuff(arg1: new[] {109}, arg2: 69000501, arg3: 1, arg4: true);
+                context.CreateMonster(spawnIds: new []{109}, arg2: false);
+                context.AddBuff(boxIds: new []{109}, skillId: 69000501, level: 1, arg4: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateCount(context);
                 }
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.ShowCountUI(text: "$83000002_COLOSSEUM__ROUND9__2$", count: 3, soundType: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
                     return new StateBattleStart(context);
                 }
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.LockMyPc(isLock: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State기믹더미소환(context);
                 }
@@ -158,14 +158,14 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 50f)) {
-                    context.CreateMonster(arg1: new[] {10000}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 50f)) {
+                    context.CreateMonster(spawnIds: new []{10000}, arg2: false);
                     return new State스폰대사(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
-                    context.CreateMonster(arg1: new[] {10001}, arg2: false);
+                if (context.RandomCondition(rate: 50f)) {
+                    context.CreateMonster(spawnIds: new []{10001}, arg2: false);
                     return new State스폰대사(context);
                 }
 
@@ -179,41 +179,41 @@ namespace Maple2.Trigger._83000002_colosseum {
             internal State스폰대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 109, msg: "$83000002_COLOSSEUM__ROUND9__3$", duration: 3000);
-                context.SetTimer(id: "LimitTimer", arg2: 180, arg3: true);
-                context.SetNpcDuelHpBar(isOpen: true, spawnPointId: 109, durationTick: 180000, npcHpStep: 10);
+                context.AddBalloonTalk(spawnId: 109, msg: "$83000002_COLOSSEUM__ROUND9__3$", duration: 3000);
+                context.SetTimer(timerId: "LimitTimer", seconds: 180, clearAtZero: true);
+                context.SetNpcDuelHpBar(isOpen: true, spawnId: 109, durationTick: 180000, npcHpStep: 10);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {109})) {
-                    context.AddBalloonTalk(spawnPointId: 109, msg: "$83000002_COLOSSEUM__ROUND9__4$", duration: 3000);
-                    context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 109);
-                    context.DestroyMonster(arg1: new[] {10000, 10001});
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{109})) {
+                    context.AddBalloonTalk(spawnId: 109, msg: "$83000002_COLOSSEUM__ROUND9__4$", duration: 3000);
+                    context.SetNpcDuelHpBar(isOpen: false, spawnId: 109);
+                    context.DestroyMonster(spawnIds: new []{10000, 10001});
                     return new StateClearRoundDelay(context);
                 }
 
-                if (context.TimeExpired(arg1: "LimitTimer")) {
+                if (context.TimeExpired(timerId: "LimitTimer")) {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004288, illust: "nagi_switchon", script: "$83000002_COLOSSEUM__ROUND9__5$", duration: 3000);
-                    context.DestroyMonster(arg1: new[] {109});
-                    context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 109);
-                    context.DestroyMonster(arg1: new[] {10000, 10001});
+                    context.DestroyMonster(spawnIds: new []{109});
+                    context.SetNpcDuelHpBar(isOpen: false, spawnId: 109);
+                    context.DestroyMonster(spawnIds: new []{10000, 10001});
                     return new StateFailRoundDelay(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {902})) {
+                if (context.UserDetected(boxIds: new []{902})) {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004288, illust: "nagi_switchon", script: "$83000002_COLOSSEUM__ROUND9__6$", duration: 3000);
-                    context.DestroyMonster(arg1: new[] {109});
-                    context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 109);
-                    context.DestroyMonster(arg1: new[] {10000, 10001});
+                    context.DestroyMonster(spawnIds: new []{109});
+                    context.SetNpcDuelHpBar(isOpen: false, spawnId: 109);
+                    context.DestroyMonster(spawnIds: new []{10000, 10001});
                     return new StateFailRoundDelay(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {904})) {
-                    context.SetEventUI(arg1: 1, script: "$83000002_COLOSSEUM__ROUND9__7$", arg3: 3000);
+                if (!context.UserDetected(boxIds: new []{904})) {
+                    context.SetEventUI(arg1: 1, script: "$83000002_COLOSSEUM__ROUND9__7$", duration: 3000);
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004288, illust: "nagi_switchon", script: "$83000002_COLOSSEUM__ROUND9__8$", duration: 3000);
-                    context.DestroyMonster(arg1: new[] {109});
-                    context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 109);
-                    context.DestroyMonster(arg1: new[] {10000, 10001});
+                    context.DestroyMonster(spawnIds: new []{109});
+                    context.SetNpcDuelHpBar(isOpen: false, spawnId: 109);
+                    context.DestroyMonster(spawnIds: new []{10000, 10001});
                     return new StateFailRoundDelay(context);
                 }
 
@@ -228,14 +228,14 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() {
                 context.LockMyPc(isLock: true);
-                context.SetSound(arg1: 12000, arg2: true);
-                context.SetSound(arg1: 12001, arg2: true);
+                context.SetSound(triggerId: 12000, arg2: true);
+                context.SetSound(triggerId: 12001, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.AddBuff(arg1: new[] {904}, arg2: 69000503, arg3: 1, arg4: false, arg5: false);
-                    context.SetEventUI(arg1: 3, script: "$83000002_COLOSSEUM__ROUND9__9$", arg3: 3000);
+                    context.AddBuff(boxIds: new []{904}, skillId: 69000503, level: 1, arg4: false, arg5: false);
+                    context.SetEventUI(arg1: 3, script: "$83000002_COLOSSEUM__ROUND9__9$", duration: 3000);
                     return new StateClearRound(context);
                 }
 
@@ -249,13 +249,13 @@ namespace Maple2.Trigger._83000002_colosseum {
             internal StateFailRoundDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(arg1: 13000, arg2: true);
-                context.SetSound(arg1: 13001, arg2: true);
+                context.SetSound(triggerId: 13000, arg2: true);
+                context.SetSound(triggerId: 13001, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 5, script: "$83000002_COLOSSEUM__ROUND9__10$", arg3: 3000);
+                    context.SetEventUI(arg1: 5, script: "$83000002_COLOSSEUM__ROUND9__10$", duration: 3000);
                     return new StateFailRound(context);
                 }
 
@@ -270,9 +270,9 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.MoveUserToPos(pos: new Vector3(300f, -225f, 1500f), rot: new Vector3(0f, 0f, 270f));
+                    context.MoveUserToPos(position: new Vector3(300f, -225f, 1500f), rotation: new Vector3(0f, 0f, 270f));
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004285, illust: "Queencbean_Smile", script: "$83000002_COLOSSEUM__ROUND9__11$", duration: 3000);
                     context.SetUserValue(triggerId: 900001, key: "StartRound9", value: 2);
                     return new State이동Wait(context);
@@ -289,9 +289,9 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.MoveUserPath(arg1: "MS2PatrolData_01");
+                    context.MoveUserPath(patrolName: "MS2PatrolData_01");
                     return new StateWait(context);
                 }
 
@@ -306,7 +306,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 900001, key: "StartRound9", value: 3);
                     return new StateWait(context);

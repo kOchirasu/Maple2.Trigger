@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {3005});
+                context.DestroyMonster(spawnIds: new []{3005});
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103})) {
                     return new StateCreation(context);
                 }
 
@@ -22,13 +22,13 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000337}, arg2: 0);
-                context.CreateMonster(arg1: new[] {3005}, arg2: false);
+                context.SetEffect(triggerIds: new []{604}, visible: false);
+                context.SetInteractObject(interactIds: new []{10000337}, state: 0);
+                context.CreateMonster(spawnIds: new []{3005}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3005})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3005})) {
                     return new State게이트열림(context);
                 }
 
@@ -42,15 +42,15 @@ namespace Maple2.Trigger._02000066_bf {
             internal State게이트열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
-                context.SetInteractObject(arg1: new[] {10000337}, arg2: 1);
-                context.SetEffect(arg1: new[] {604}, arg2: true);
+                context.SetTimer(timerId: "3", seconds: 3);
+                context.SetInteractObject(interactIds: new []{10000337}, state: 1);
+                context.SetEffect(triggerIds: new []{604}, visible: true);
                 context.ShowGuideSummary(entityId: 20000664, textId: 20000664);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     context.HideGuideSummary(entityId: 20000664);
                     return new State게이트닫힘(context);
                 }
@@ -66,8 +66,8 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000337}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000337}, arg2: 0)) {
                     return new StateCreation(context);
                 }
 

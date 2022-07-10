@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02000392_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {602, 603}, arg2: false);
+                context.SetEffect(triggerIds: new []{602, 603}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SummonSister") == 1) {
                     return new StateRoomCheck(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000392_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.IsDungeonRoom()) {
                     return new State소환(context);
                 }
@@ -44,14 +44,14 @@ namespace Maple2.Trigger._02000392_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 300, arg2: true);
-                context.CreateMonster(arg1: new[] {2002}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24003015, script: "$02000392_BF__SUMMON__0$", arg4: 2, arg5: 0);
+                context.CameraSelect(triggerId: 300, enable: true);
+                context.CreateMonster(spawnIds: new []{2002}, arg2: false);
+                context.SetEffect(triggerIds: new []{602}, visible: true);
+                context.SetConversation(type: 2, spawnId: 24003015, script: "$02000392_BF__SUMMON__0$", arg4: 2, arg5: 0);
                 context.SetSkip(state: new State죽음Wait(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.CameraReset(interpolationTime: 1.0f);
                     context.SetCinematicUI(type: 0);
@@ -71,14 +71,14 @@ namespace Maple2.Trigger._02000392_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 300, arg2: true);
-                context.CreateMonster(arg1: new[] {2102}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24003015, script: "$02000392_BF__SUMMON__0$", arg4: 2, arg5: 0);
+                context.CameraSelect(triggerId: 300, enable: true);
+                context.CreateMonster(spawnIds: new []{2102}, arg2: false);
+                context.SetEffect(triggerIds: new []{602}, visible: true);
+                context.SetConversation(type: 2, spawnId: 24003015, script: "$02000392_BF__SUMMON__0$", arg4: 2, arg5: 0);
                 context.SetSkip(state: new StateQuest죽음Wait(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.CameraReset(interpolationTime: 1.0f);
                     context.SetCinematicUI(type: 0);
@@ -102,12 +102,12 @@ namespace Maple2.Trigger._02000392_bf {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2101})) {
                     return new StateQuest셀린Dead(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {2102})) {
+                if (context.MonsterDead(spawnIds: new []{2102})) {
                     return new StateQuest피리스Dead(context);
                 }
 
@@ -121,11 +121,11 @@ namespace Maple2.Trigger._02000392_bf {
             internal StateQuest셀린Dead(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2102, script: "$02000392_BF__SUMMON__1$", arg4: 4, arg5: 0);
-                context.AddBuff(arg1: new[] {2102}, arg2: 40442003, arg3: 1, arg4: true, arg5: false);
+                context.SetConversation(type: 1, spawnId: 2102, script: "$02000392_BF__SUMMON__1$", arg4: 4, arg5: 0);
+                context.AddBuff(boxIds: new []{2102}, skillId: 40442003, level: 1, arg4: true, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnd(context);
                 }
@@ -140,12 +140,12 @@ namespace Maple2.Trigger._02000392_bf {
             internal StateQuest피리스Dead(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 2101, script: "$02000392_BF__SUMMON__2$", arg4: 4, arg5: 0);
-                context.AddBuff(arg1: new[] {2101}, arg2: 40442003, arg3: 1, arg4: true, arg5: false);
+                context.SetEffect(triggerIds: new []{603}, visible: true);
+                context.SetConversation(type: 1, spawnId: 2101, script: "$02000392_BF__SUMMON__2$", arg4: 4, arg5: 0);
+                context.AddBuff(boxIds: new []{2101}, skillId: 40442003, level: 1, arg4: true, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnd(context);
                 }
@@ -166,12 +166,12 @@ namespace Maple2.Trigger._02000392_bf {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2001})) {
                     return new State셀린Dead(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {2002})) {
+                if (context.MonsterDead(spawnIds: new []{2002})) {
                     return new State피리스Dead(context);
                 }
 
@@ -185,13 +185,13 @@ namespace Maple2.Trigger._02000392_bf {
             internal State셀린Dead(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2002, script: "$02000392_BF__SUMMON__1$", arg4: 4, arg5: 0);
-                context.AddBuff(arg1: new[] {2002}, arg2: 40442003, arg3: 1, arg4: true, arg5: false);
+                context.SetConversation(type: 1, spawnId: 2002, script: "$02000392_BF__SUMMON__1$", arg4: 4, arg5: 0);
+                context.AddBuff(boxIds: new []{2002}, skillId: 40442003, level: 1, arg4: true, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2002})) {
-                    context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "SirenDualKill");
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2002})) {
+                    context.SetAchievement(triggerId: 199, type: "trigger", code: "SirenDualKill");
                     return new StateEnd(context);
                 }
 
@@ -209,15 +209,15 @@ namespace Maple2.Trigger._02000392_bf {
             internal State피리스Dead(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "BigSisterFirst");
-                context.SetConversation(arg1: 1, arg2: 2001, script: "$02000392_BF__SUMMON__2$", arg4: 4, arg5: 0);
-                context.AddBuff(arg1: new[] {2001}, arg2: 40442003, arg3: 1, arg4: true, arg5: false);
+                context.SetEffect(triggerIds: new []{603}, visible: true);
+                context.SetAchievement(triggerId: 199, type: "trigger", code: "BigSisterFirst");
+                context.SetConversation(type: 1, spawnId: 2001, script: "$02000392_BF__SUMMON__2$", arg4: 4, arg5: 0);
+                context.AddBuff(boxIds: new []{2001}, skillId: 40442003, level: 1, arg4: true, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2001})) {
-                    context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "SirenDualKill");
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2001})) {
+                    context.SetAchievement(triggerId: 199, type: "trigger", code: "SirenDualKill");
                     return new StateEnd(context);
                 }
 
@@ -236,7 +236,7 @@ namespace Maple2.Trigger._02000392_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

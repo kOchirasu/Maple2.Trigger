@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {1002}, arg2: new[] {10002041}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{1002}, questIds: new []{10002041}, questStates: new byte[]{1})) {
                     return new StateReinforcementsCreation(context);
                 }
 
@@ -20,12 +20,12 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             internal StateReinforcementsCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {205}, arg2: false);
-                context.MoveNpc(arg1: 205, arg2: "MS2PatrolData_25");
+                context.CreateMonster(spawnIds: new []{205}, arg2: false);
+                context.MoveNpc(spawnId: 205, patrolName: "MS2PatrolData_25");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 4005, arg2: new[] {205})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 4005, spawnIds: new []{205})) {
                     return new StateMoveReinforcements(context);
                 }
 
@@ -39,11 +39,11 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             internal StateMoveReinforcements(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 205, arg2: "MS2PatrolData_205");
+                context.MoveNpc(spawnId: 205, patrolName: "MS2PatrolData_205");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 2001, arg2: new[] {205})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 2001, spawnIds: new []{205})) {
                     return new StateReinforcementsDead(context);
                 }
 
@@ -57,12 +57,12 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             internal StateReinforcementsDead(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {205});
-                context.SetTimer(id: "1", arg2: 60);
+                context.DestroyMonster(spawnIds: new []{205});
+                context.SetTimer(timerId: "1", seconds: 60);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWait(context);
                 }
 

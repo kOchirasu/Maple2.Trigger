@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000317_bf {
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 101) == 1) {
                     return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
@@ -29,10 +29,10 @@ namespace Maple2.Trigger._02000317_bf {
                 context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false, arg5: false);
                 context.SetPortal(portalId: 5, visible: false, enabled: false, minimapVisible: false, arg5: false);
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false, arg5: false);
-                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{2001, 2002, 2003, 2004}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateStart(context);
                 }
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000317_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateStep_1(context);
                 }
@@ -64,17 +64,17 @@ namespace Maple2.Trigger._02000317_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
-                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7}, arg2: false);
-                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 301, 302, 303, 304, 305, 306, 307, 401, 402, 403, 404, 405, 406}, arg2: false);
+                context.SetMesh(triggerIds: new []{1, 2, 3, 4, 5, 6, 7}, visible: false);
+                context.CreateMonster(spawnIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 301, 302, 303, 304, 305, 306, 307, 401, 402, 403, 404, 405, 406}, arg2: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {105})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{105})) {
                     return new StateStep_1_B_Ready(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {104})) {
+                if (context.UserDetected(boxIds: new []{104})) {
                     return new StateStep_2(context);
                 }
 
@@ -88,12 +88,12 @@ namespace Maple2.Trigger._02000317_bf {
             internal StateStep_1_B_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 100, textId: 20031701, duration: 3000);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {205, 208})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{205, 208})) {
                     return new StateStep_1_B(context);
                 }
 
@@ -110,12 +110,12 @@ namespace Maple2.Trigger._02000317_bf {
                 context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {106})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{106})) {
                     return new StateStep_1_C(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {104})) {
+                if (context.UserDetected(boxIds: new []{104})) {
                     return new StateStep_2(context);
                 }
 
@@ -129,16 +129,16 @@ namespace Maple2.Trigger._02000317_bf {
             internal StateStep_1_C(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 100, textId: 20031701, duration: 3000);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {301, 302})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{301, 302})) {
                     return new StateStep_1_D_Ready(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {104})) {
+                if (context.UserDetected(boxIds: new []{104})) {
                     return new StateStep_2(context);
                 }
 
@@ -152,15 +152,15 @@ namespace Maple2.Trigger._02000317_bf {
             internal StateStep_1_D_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {8, 9, 10, 11}, arg2: false);
+                context.SetMesh(triggerIds: new []{8, 9, 10, 11}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {107})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{107})) {
                     return new StateStep_1_D(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {104})) {
+                if (context.UserDetected(boxIds: new []{104})) {
                     return new StateStep_2(context);
                 }
 
@@ -177,12 +177,12 @@ namespace Maple2.Trigger._02000317_bf {
                 context.ShowGuideSummary(entityId: 100, textId: 20031701, duration: 3000);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {405})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{405})) {
                     return new StateStep_1_E(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {104})) {
+                if (context.UserDetected(boxIds: new []{104})) {
                     return new StateStep_2(context);
                 }
 
@@ -199,8 +199,8 @@ namespace Maple2.Trigger._02000317_bf {
                 context.SetPortal(portalId: 5, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {104})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{104})) {
                     return new StateStep_2(context);
                 }
 
@@ -215,11 +215,11 @@ namespace Maple2.Trigger._02000317_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 7, visible: true, enabled: true, minimapVisible: true);
-                context.CreateMonster(arg1: new[] {100}, arg2: false);
+                context.CreateMonster(spawnIds: new []{100}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {100})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{100})) {
                     return new StateEnd체크(context);
                 }
 
@@ -227,7 +227,7 @@ namespace Maple2.Trigger._02000317_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {100});
+                context.DestroyMonster(spawnIds: new []{100});
             }
         }
 
@@ -236,7 +236,7 @@ namespace Maple2.Trigger._02000317_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.DungeonClear();
                     return new StateEnd(context);
@@ -256,7 +256,7 @@ namespace Maple2.Trigger._02000317_bf {
                 context.SetPortal(portalId: 8, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

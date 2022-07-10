@@ -6,10 +6,10 @@ namespace Maple2.Trigger._99999913 {
             public override void OnEnter() {
                 context.SetUserValue(key: "RareBoxOnCount", value: 0);
                 context.SetUserValue(key: "RareBoxOff", value: 0);
-                context.SetInteractObject(arg1: new[] {11000038}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{11000038}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "RareBoxOnCount") == 1) {
                     return new StateDelay(context);
                 }
@@ -24,10 +24,10 @@ namespace Maple2.Trigger._99999913 {
             internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {11000038}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{11000038}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 180000)) {
                     return new StateBoxOn(context);
                 }
@@ -42,11 +42,11 @@ namespace Maple2.Trigger._99999913 {
             internal StateBoxOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: @"머쉬룸 타워 근처에 황금 상자가 나타났습니다!\n황금 상자를 차지해보세요!", arg3: 5000, arg4: "0");
-                context.SetInteractObject(arg1: new[] {11000038}, arg2: 1);
+                context.SetEventUI(arg1: 1, script: @"머쉬룸 타워 근처에 황금 상자가 나타났습니다!\n황금 상자를 차지해보세요!", duration: 5000, boxId: 0);
+                context.SetInteractObject(interactIds: new []{11000038}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "RareBoxOff") == 1) {
                     return new StateQuit(context);
                 }
@@ -61,10 +61,10 @@ namespace Maple2.Trigger._99999913 {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {11000038}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{11000038}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateSetting(context);
                 }

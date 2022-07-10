@@ -4,16 +4,16 @@ namespace Maple2.Trigger._02000368_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3005}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(arg1: new[] {7501}, arg2: false);
+                context.SetMesh(triggerIds: new []{3005}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetSkill(triggerIds: new []{7501}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1001})) {
                     return new State전투01(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {1002})) {
+                if (context.UserDetected(boxIds: new []{1002})) {
                     return new State전투01(context);
                 }
 
@@ -27,11 +27,11 @@ namespace Maple2.Trigger._02000368_bf {
             internal State전투01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {501, 511}, arg2: false);
+                context.CreateMonster(spawnIds: new []{501, 511}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {501, 511})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{501, 511})) {
                     return new State전투02(context);
                 }
 
@@ -45,13 +45,13 @@ namespace Maple2.Trigger._02000368_bf {
             internal State전투02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(arg1: new[] {7501}, arg2: true);
-                context.CreateMonster(arg1: new[] {502}, arg2: false);
+                context.SetMesh(triggerIds: new []{3005}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetSkill(triggerIds: new []{7501}, arg2: true);
+                context.CreateMonster(spawnIds: new []{502}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {502})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{502})) {
                     return new StateEnd(context);
                 }
 
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000368_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

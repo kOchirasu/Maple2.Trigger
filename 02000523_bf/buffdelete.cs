@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000523_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateDefaultSetting(context);
                 }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000523_bf {
                 context.SetUserValue(key: "BuffDeleteOk", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateTrigger작동01(context);
                 }
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02000523_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BuffDeleteOk") == 1) {
                     return new StateTrigger작동02Waiting(context);
                 }
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02000523_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
                     return new StateTrigger작동02(context);
                 }
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._02000523_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MonsterMany") == 0) {
                     return new StateBuffRemove(context);
                 }
@@ -87,11 +87,11 @@ namespace Maple2.Trigger._02000523_bf {
             internal StateBuffRemove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {900}, arg2: 50001098, arg3: 1, arg4: true);
+                context.AddBuff(boxIds: new []{900}, skillId: 50001098, level: 1, arg4: true);
                 context.SetUserValue(key: "BuffDeleteOk", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3700)) {
                     return new StateTrigger작동01(context);
                 }

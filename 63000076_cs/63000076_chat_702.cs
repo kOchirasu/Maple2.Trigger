@@ -5,8 +5,8 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {30000375}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{702}, questIds: new []{30000375}, questStates: new byte[]{1})) {
                     return new State702잡담_01(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._63000076_cs {
             internal State702잡담_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 103, msg: "$63000076_CS__63000076_CHAT_702__0$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 103, msg: "$63000076_CS__63000076_CHAT_702__0$", duration: 2000, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new State702잡담_02(context);
                 }
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._63000076_cs {
             internal State702잡담_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$63000076_CS__63000076_CHAT_702__1$", duration: 2500, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 101, msg: "$63000076_CS__63000076_CHAT_702__1$", duration: 2500, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new State702잡담_03(context);
                 }
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._63000076_cs {
             internal State702잡담_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$63000076_CS__63000076_CHAT_702__2$", duration: 3000, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 102, msg: "$63000076_CS__63000076_CHAT_702__2$", duration: 3000, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd(context);
                 }
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

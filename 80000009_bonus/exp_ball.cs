@@ -5,9 +5,9 @@ namespace Maple2.Trigger._80000009_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {402})) {
-                    context.CreateItem(arg1: new[] {9001, 9002, 9003, 9004, 9005});
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{402})) {
+                    context.CreateItem(spawnIds: new []{9001, 9002, 9003, 9004, 9005});
                     return new State5초(context);
                 }
 
@@ -21,12 +21,12 @@ namespace Maple2.Trigger._80000009_bonus {
             internal State5초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "5", arg2: 5);
+                context.SetTimer(timerId: "5", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
-                    context.CreateItem(arg1: new[] {9001});
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
+                    context.CreateItem(spawnIds: new []{9001});
                     return new State10초(context);
                 }
 
@@ -40,12 +40,12 @@ namespace Maple2.Trigger._80000009_bonus {
             internal State10초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "5", arg2: 5);
+                context.SetTimer(timerId: "5", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
-                    context.CreateItem(arg1: new[] {9001});
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
+                    context.CreateItem(spawnIds: new []{9001});
                     return new State15초(context);
                 }
 
@@ -59,12 +59,12 @@ namespace Maple2.Trigger._80000009_bonus {
             internal State15초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "5", arg2: 5);
+                context.SetTimer(timerId: "5", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
-                    context.CreateItem(arg1: new[] {9001});
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
+                    context.CreateItem(spawnIds: new []{9001});
                     return new State20초(context);
                 }
 
@@ -78,12 +78,12 @@ namespace Maple2.Trigger._80000009_bonus {
             internal State20초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "5", arg2: 5);
+                context.SetTimer(timerId: "5", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
-                    context.CreateItem(arg1: new[] {9001});
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
+                    context.CreateItem(spawnIds: new []{9001});
                     return new State25초(context);
                 }
 
@@ -97,12 +97,12 @@ namespace Maple2.Trigger._80000009_bonus {
             internal State25초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "5", arg2: 5);
+                context.SetTimer(timerId: "5", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
-                    context.CreateItem(arg1: new[] {9001});
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
+                    context.CreateItem(spawnIds: new []{9001});
                     return new State완료(context);
                 }
 
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._80000009_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

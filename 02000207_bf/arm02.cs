@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000207_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ZakumArmDeath02") == 1) {
                     return new State트로피지급(context);
                 }
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._02000207_bf {
             internal State트로피지급(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "ZakumArmDeath02");
+                context.SetAchievement(triggerId: 199, type: "trigger", code: "ZakumArmDeath02");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd(context);
                 }
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000207_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

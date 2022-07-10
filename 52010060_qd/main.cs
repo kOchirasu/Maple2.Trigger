@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52010060_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {102});
+                context.DestroyMonster(spawnIds: new []{102});
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9001}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9001}, jobCode: 0)) {
                     return new State크림슨발록Spawn(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._52010060_qd {
             internal State크림슨발록Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {102}, arg2: true);
+                context.CreateMonster(spawnIds: new []{102}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd(context);
                 }
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52010060_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

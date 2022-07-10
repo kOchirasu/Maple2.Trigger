@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Phase_2_Interect_06") == 1) {
                     return new StateStart(context);
                 }
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02020301_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {705}, arg2: true);
+                context.CreateMonster(spawnIds: new []{705}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {705})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{705})) {
                     return new State재Creation(context);
                 }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     return new StateStart(context);
                 }

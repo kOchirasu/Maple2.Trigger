@@ -4,17 +4,17 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002088, 10002089, 10002090}, arg2: 0);
-                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3300}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetActor(arg1: 4000, arg2: true, arg3: "Closed");
+                context.SetInteractObject(interactIds: new []{10002088, 10002089, 10002090}, state: 0);
+                context.SetMesh(triggerIds: new []{3200, 3201, 3202, 3300}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{5000}, visible: false);
+                context.SetActor(triggerId: 4000, visible: true, initialSequence: "Closed");
                 context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 20, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 30, visible: false, enabled: false, minimapVisible: false);
                 context.SetUserValue(key: "SearchStart", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SearchStart") == 1) {
                     return new StatePickRandomPortal(context);
                 }
@@ -30,16 +30,16 @@ namespace Maple2.Trigger._52100052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 30f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 30f)) {
                     return new StateToWall01(context);
                 }
 
-                if (context.RandomCondition(arg1: 30f)) {
+                if (context.RandomCondition(rate: 30f)) {
                     return new StateToRoom01(context);
                 }
 
-                if (context.RandomCondition(arg1: 30f)) {
+                if (context.RandomCondition(rate: 30f)) {
                     return new StateToTower01(context);
                 }
 
@@ -53,13 +53,13 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateToWall01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002088}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002088}, state: 1);
                 context.SetUserValue(triggerId: 6, key: "ToRoomFalse", value: 1);
                 context.SetUserValue(triggerId: 7, key: "ToTowerFalse", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10002088}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10002088}, arg2: 0)) {
                     return new StateToWall02(context);
                 }
 
@@ -73,13 +73,13 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateToWall02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3200}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3201, 3202}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMesh(triggerIds: new []{3200}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3201, 3202}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: false);
-                context.SetEventUI(arg1: 1, script: "$02000396_BF__04_RANDOMPORTAL__0$", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000396_BF__04_RANDOMPORTAL__0$", duration: 2000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateToWallGuide01(context);
                 }
@@ -96,11 +96,11 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetConversation(arg1: 2, arg2: 11001563, script: "$52100052_QD__04_RANDOMPORTAL__0$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001563, script: "$52100052_QD__04_RANDOMPORTAL__0$", arg4: 5);
                 context.SetSkip(state: new StateToWallGuide01Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateToWallGuide01Skip(context);
                 }
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuit(context);
                 }
@@ -136,13 +136,13 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateToRoom01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002089}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002089}, state: 1);
                 context.SetUserValue(triggerId: 5, key: "ToWallFalse", value: 1);
                 context.SetUserValue(triggerId: 7, key: "ToTowerFalse", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10002089}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10002089}, arg2: 0)) {
                     return new StateToRoom02(context);
                 }
 
@@ -156,11 +156,11 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateToRoom02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$52100052_QD__04_RANDOMPORTAL__1$", arg3: 2000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$52100052_QD__04_RANDOMPORTAL__1$", duration: 2000, boxId: 0);
                 context.SetPortal(portalId: 20, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateToRoomGuide01(context);
                 }
@@ -177,11 +177,11 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetConversation(arg1: 2, arg2: 11001563, script: "$52100052_QD__04_RANDOMPORTAL__2$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001563, script: "$52100052_QD__04_RANDOMPORTAL__2$", arg4: 5);
                 context.SetSkip(state: new StateToRoomGuide01Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateToRoomGuide01Skip(context);
                 }
@@ -202,7 +202,7 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuit(context);
                 }
@@ -219,11 +219,11 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 5, key: "ToWallFalse", value: 1);
                 context.SetUserValue(triggerId: 6, key: "ToRoomFalse", value: 1);
-                context.SetInteractObject(arg1: new[] {10002090}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002090}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10002090}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10002090}, arg2: 0)) {
                     return new StateToTower02(context);
                 }
 
@@ -237,14 +237,14 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateToTower02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$52100052_QD__04_RANDOMPORTAL__3$", arg3: 2000, arg4: "0");
-                context.SetMesh(arg1: new[] {3300}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetActor(arg1: 4000, arg2: true, arg3: "Opened");
+                context.SetEventUI(arg1: 1, script: "$52100052_QD__04_RANDOMPORTAL__3$", duration: 2000, boxId: 0);
+                context.SetMesh(triggerIds: new []{3300}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
+                context.SetActor(triggerId: 4000, visible: true, initialSequence: "Opened");
                 context.SetPortal(portalId: 30, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateToTowerGuide01(context);
                 }
@@ -261,11 +261,11 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetConversation(arg1: 2, arg2: 11001563, script: "$52100052_QD__04_RANDOMPORTAL__4$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001563, script: "$52100052_QD__04_RANDOMPORTAL__4$", arg4: 5);
                 context.SetSkip(state: new StateToTowerGuide01Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateToTowerGuide01Skip(context);
                 }
@@ -286,7 +286,7 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuit(context);
                 }
@@ -304,7 +304,7 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetUserValue(triggerId: 1, key: "FindWay", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

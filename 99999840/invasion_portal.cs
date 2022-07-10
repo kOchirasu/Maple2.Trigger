@@ -5,10 +5,10 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990010, key: "PCmove", value: 0);
-                context.SetInteractObject(arg1: new[] {10002183}, arg2: 2, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002183}, state: 2, arg3: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -19,21 +19,21 @@ namespace Maple2.Trigger._99999840 {
             internal StatePortal열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 30, arg3: true);
-                context.SetInteractObject(arg1: new[] {10002183}, arg2: 1, arg3: false);
+                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: true);
+                context.SetInteractObject(interactIds: new []{10002183}, state: 1, arg3: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
-                    context.ResetTimer(id: "1");
+                if (context.TimeExpired(timerId: "1")) {
+                    context.ResetTimer(timerId: "1");
                     return new StatePortal닫힘(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002183}, arg2: 2)) {
+                if (context.ObjectInteracted(interactIds: new []{10002183}, arg2: 2)) {
                     return new State유저이동(context);
                 }
 
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._99999840 {
                 context.SetUserValue(triggerId: 99990010, key: "PCmove", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
                     return new StateEnd(context);
                 }
@@ -70,17 +70,17 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990010, key: "PCmove", value: 0);
-                context.SetTimer(id: "2", arg2: 60, arg3: true);
-                context.SetInteractObject(arg1: new[] {10002183}, arg2: 2, arg3: false);
+                context.SetTimer(timerId: "2", seconds: 60, clearAtZero: true);
+                context.SetInteractObject(interactIds: new []{10002183}, state: 2, arg3: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.TimeExpired(arg1: "2")) {
-                    context.ResetTimer(id: "2");
+                if (context.TimeExpired(timerId: "2")) {
+                    context.ResetTimer(timerId: "2");
                     return new StateWait(context);
                 }
 
@@ -94,10 +94,10 @@ namespace Maple2.Trigger._99999840 {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002183}, arg2: 2, arg3: false);
+                context.SetInteractObject(interactIds: new []{10002183}, state: 2, arg3: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

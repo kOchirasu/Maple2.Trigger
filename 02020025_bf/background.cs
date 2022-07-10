@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {903})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{903})) {
                     return new State지하배경(context);
                 }
 
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02020025_bf {
                 context.ChangeBackground(dds: "BG_Cave_D.dds");
             }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {903})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{903})) {
                     return new State지상배경(context);
                 }
 
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._02020025_bf {
                 context.ChangeBackground(dds: "BG_Tria.dds");
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {903})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{903})) {
                     return new State지하배경(context);
                 }
 

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Reconnect") == 1) {
                     return new StateBuff쏴주기(context);
                 }
@@ -20,16 +20,16 @@ namespace Maple2.Trigger._02020112_bf {
             internal StateBuff쏴주기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {916}, arg2: 70002105, arg3: 1, arg5: false);
-                context.SetTimer(id: "1", arg2: 5, arg3: false, arg4: false);
+                context.AddBuff(boxIds: new []{916}, skillId: 70002105, level: 1, arg5: false);
+                context.SetTimer(timerId: "1", seconds: 5, clearAtZero: false, display: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Reconnect") == 2) {
                     return new StateEnd(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWait(context);
                 }
 
@@ -43,10 +43,10 @@ namespace Maple2.Trigger._02020112_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {931}, arg2: 70002112, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{931}, skillId: 70002112, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

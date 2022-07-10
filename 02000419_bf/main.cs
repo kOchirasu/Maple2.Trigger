@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02000419_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004}, arg2: false);
+                context.SetMesh(triggerIds: new []{6001, 6002, 6003, 6004}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 700) == 1) {
                     return new StateReady_Idle(context);
                 }
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._02000419_bf {
             internal StateReady_Idle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1, arg4: false);
+                context.SetTimer(timerId: "1", seconds: 1, display: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

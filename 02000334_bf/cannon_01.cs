@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {98010}, arg2: false);
+                context.SetEffect(triggerIds: new []{98010}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "cannon_01") == 1) {
                     return new State마킹비표시(context);
                 }
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State마킹비표시(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {98010}, arg2: false);
+                context.SetEffect(triggerIds: new []{98010}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 90011, arg2: new[] {190})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 90011, spawnIds: new []{190})) {
                     return new State마킹표시(context);
                 }
 
@@ -40,11 +40,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State마킹표시(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {98010}, arg2: true);
+                context.SetEffect(triggerIds: new []{98010}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 90011, arg2: new[] {190})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 90011, spawnIds: new []{190})) {
                     return new State마킹비표시(context);
                 }
 

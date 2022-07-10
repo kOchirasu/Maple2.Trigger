@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 702) == 1) {
                     return new StateMobCreation(context);
                 }
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._02000335_bf {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {118, 119}, arg2: false);
+                context.CreateMonster(spawnIds: new []{118, 119}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

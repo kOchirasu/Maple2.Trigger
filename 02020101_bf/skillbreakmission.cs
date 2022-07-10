@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 62100024, level: 1)) {
+            public override TriggerState? Execute() {
+                if (context.CheckNpcAdditionalEffect(spawnId: 101, additionalEffectId: 62100024, level: 1)) {
                     return new State던전미션_체크(context);
                 }
 
@@ -21,12 +21,12 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcExtraData(spawnPointId: 101, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002171, level: 1)) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcExtraData(spawnId: 101, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnId: 101, additionalEffectId: 70002171, level: 1)) {
                     return new State던전미션_스킬브레이크저지_Success(context);
                 }
 
-                if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002181, level: 1)) {
+                if (context.CheckNpcAdditionalEffect(spawnId: 101, additionalEffectId: 70002181, level: 1)) {
                     return new State던전미션_스킬브레이크저지_실패(context);
                 }
 
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._02020101_bf {
                 context.DungeonMissionComplete(missionId: 23038004);
             }
 
-            public override TriggerState Execute() {
-                if (!context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 62100024, level: 1)) {
+            public override TriggerState? Execute() {
+                if (!context.CheckNpcAdditionalEffect(spawnId: 101, additionalEffectId: 62100024, level: 1)) {
                     return new StateWait(context);
                 }
 
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (!context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 62100024, level: 1)) {
+            public override TriggerState? Execute() {
+                if (!context.CheckNpcAdditionalEffect(spawnId: 101, additionalEffectId: 62100024, level: 1)) {
                     return new StateWait(context);
                 }
 
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

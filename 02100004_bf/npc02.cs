@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new State소환Wait(context);
                 }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02100004_bf {
                 context.SetUserValue(triggerId: 999992, key: "NpcSpawned02", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "NpcSpawn02") == 1) {
                     return new State소환(context);
                 }
@@ -39,10 +39,10 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999992, key: "NpcSpawned02", value: 1);
-                context.CreateMonster(arg1: new[] {2002}, arg2: true);
+                context.CreateMonster(spawnIds: new []{2002}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateEnd(context);
                 }
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

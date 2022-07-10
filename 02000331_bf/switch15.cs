@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000801}, arg2: 2);
-                context.SetEffect(arg1: new[] {4200}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10000801}, state: 2);
+                context.SetEffect(triggerIds: new []{4200}, visible: false);
                 context.SetUserValue(key: "SecondBridgeOff", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {99993})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{99993})) {
                     return new State전투체크(context);
                 }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SecondBridgeOff") == 1) {
                     return new State스위치Prepare(context);
                 }
@@ -40,11 +40,11 @@ namespace Maple2.Trigger._02000331_bf {
             internal State스위치Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {777703, 777804}, arg2: false);
+                context.SetEffect(triggerIds: new []{777703, 777804}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {99995})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{99995})) {
                     return new State스위치켜기(context);
                 }
 
@@ -58,14 +58,14 @@ namespace Maple2.Trigger._02000331_bf {
             internal State스위치켜기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7771}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000801}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000801}, arg2: 1);
-                context.SetEffect(arg1: new[] {4200}, arg2: true);
+                context.SetEffect(triggerIds: new []{7771}, visible: true);
+                context.SetInteractObject(interactIds: new []{10000801}, state: 0);
+                context.SetInteractObject(interactIds: new []{10000801}, state: 1);
+                context.SetEffect(triggerIds: new []{4200}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000801})) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000801})) {
                     return new State외다리재Creation(context);
                 }
 
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new[] {7775}, arg2: true);
+                context.SetEffect(triggerIds: new []{7775}, visible: true);
             }
         }
 
@@ -81,14 +81,14 @@ namespace Maple2.Trigger._02000331_bf {
             internal State외다리재Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {90008}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetRandomMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044}, arg2: true, arg3: 5, arg4: 100, arg5: 100);
-                context.SetEffect(arg1: new[] {777703}, arg2: true);
-                context.SetEffect(arg1: new[] {4200}, arg2: false);
+                context.SetMesh(triggerIds: new []{90008}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetRandomMesh(triggerIds: new []{10040, 10041, 10042, 10043, 10044}, visible: true, meshCount: 5, arg4: 100, delay: 100);
+                context.SetEffect(triggerIds: new []{777703}, visible: true);
+                context.SetEffect(triggerIds: new []{4200}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {99992})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{99992})) {
                     return new State이동안내(context);
                 }
 
@@ -102,12 +102,12 @@ namespace Maple2.Trigger._02000331_bf {
             internal State이동안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7771}, arg2: true);
-                context.SetMesh(arg1: new[] {90008}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetRandomMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044}, arg2: true, arg3: 5, arg4: 150, arg5: 150);
+                context.SetEffect(triggerIds: new []{7771}, visible: true);
+                context.SetMesh(triggerIds: new []{90008}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetRandomMesh(triggerIds: new []{10040, 10041, 10042, 10043, 10044}, visible: true, meshCount: 5, arg4: 150, delay: 150);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd(context);
                 }
@@ -123,7 +123,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

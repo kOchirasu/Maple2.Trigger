@@ -4,13 +4,13 @@ namespace Maple2.Trigger._99999883 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001010}, arg2: 0);
-                context.SetBreakable(arg1: new[] {4000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10001010}, state: 0);
+                context.SetBreakable(triggerIds: new []{4000}, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9900})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9900})) {
                     return new StateEnter01(context);
                 }
 
@@ -24,11 +24,11 @@ namespace Maple2.Trigger._99999883 {
             internal StateEnter01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001010}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001010}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001010}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001010}, arg2: 0)) {
                     return new StateTakeOffFlyingCloud01(context);
                 }
 
@@ -45,12 +45,12 @@ namespace Maple2.Trigger._99999883 {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.SetInteractObject(arg1: new[] {10001010}, arg2: 2);
-                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: true);
-                context.SetBreakable(arg1: new[] {4000}, arg2: true);
+                context.SetInteractObject(interactIds: new []{10001010}, state: 2);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000}, arg2: true);
+                context.SetBreakable(triggerIds: new []{4000}, enabled: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateTakeOffFlyingCloud02(context);
                 }
@@ -65,10 +65,10 @@ namespace Maple2.Trigger._99999883 {
             internal StateTakeOffFlyingCloud02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 99999883, arg2: 100, arg3: 9900);
+                context.MoveUser(mapId: 99999883, portalId: 100, boxId: 9900);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateTakeOffFlyingCloud03(context);
                 }
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._99999883 {
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateTakeOffFlyingCloud04(context);
                 }
@@ -104,10 +104,10 @@ namespace Maple2.Trigger._99999883 {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.MoveUser(arg1: 99999883, arg2: 101, arg3: 9900);
+                context.MoveUser(mapId: 99999883, portalId: 101, boxId: 9900);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateQuit(context);
                 }
@@ -122,11 +122,11 @@ namespace Maple2.Trigger._99999883 {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {4000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
+                context.SetBreakable(triggerIds: new []{4000}, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

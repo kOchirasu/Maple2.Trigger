@@ -4,15 +4,15 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {4023, 3003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3103}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMeshAnimation(arg1: new[] {3003}, arg2: true, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new[] {3103}, arg2: false, arg3: 0, arg4: 0);
-                context.SetEffect(arg1: new[] {5203}, arg2: false);
+                context.SetMesh(triggerIds: new []{4023, 3003}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3103}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMeshAnimation(triggerIds: new []{3003}, visible: true, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(triggerIds: new []{3103}, visible: false, arg3: 0, arg4: 0);
+                context.SetEffect(triggerIds: new []{5203}, visible: false);
                 context.SetUserValue(key: "FindWay", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "FindWay") == 1) {
                     return new StateReadyToWalkIn01(context);
                 }
@@ -27,13 +27,13 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateReadyToWalkIn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {4023}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_103");
-                context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_203");
-                context.SetConversation(arg1: 1, arg2: 201, script: "$52000052_QD__02_FINDWAY__0$", arg4: 2, arg5: 0);
+                context.SetMesh(triggerIds: new []{4023}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_103");
+                context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_203");
+                context.SetConversation(type: 1, spawnId: 201, script: "$52000052_QD__02_FINDWAY__0$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateReadyToWalkIn02(context);
                 }
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._52000052_qd {
                 context.SetUserValue(triggerId: 2303, key: "RouteSelected", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateReadyToWalkIn03(context);
                 }
@@ -67,10 +67,10 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateReadyToWalkIn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000052_QD__02_FINDWAY__2$", arg4: 2, arg5: 2);
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000052_QD__02_FINDWAY__2$", arg4: 2, arg5: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateRound03_Start(context);
                 }
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._52000052_qd {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {101, 201});
+                context.DestroyMonster(spawnIds: new []{101, 201});
             }
         }
 
@@ -87,12 +87,12 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateRound03_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1003, 2003}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1003, script: "$52000052_QD__02_FINDWAY__3$", arg4: 3, arg5: 2);
+                context.CreateMonster(spawnIds: new []{1003, 2003}, arg2: false);
+                context.SetConversation(type: 1, spawnId: 1003, script: "$52000052_QD__02_FINDWAY__3$", arg4: 3, arg5: 2);
                 context.SetUserValue(triggerId: 903, key: "MobWaveStart", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "03RoundSuccess") == 1) {
                     return new StateRound03_Sucess01(context);
                 }
@@ -108,8 +108,8 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 9003, arg2: new[] {2203})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 9003, spawnIds: new []{2203})) {
                     return new StateRound03_Sucess02(context);
                 }
 
@@ -123,18 +123,18 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateRound03_Sucess02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 2203, arg2: "MS2PatrolData_2003");
-                context.DestroyMonster(arg1: new[] {1003});
-                context.CreateMonster(arg1: new[] {103}, arg2: false);
-                context.SetMesh(arg1: new[] {3003}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3103}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMeshAnimation(arg1: new[] {3003}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new[] {3103}, arg2: true, arg3: 0, arg4: 0);
-                context.SetEffect(arg1: new[] {5203}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 103, script: "$52000052_QD__02_FINDWAY__4$", arg4: 2, arg5: 1);
+                context.MoveNpc(spawnId: 2203, patrolName: "MS2PatrolData_2003");
+                context.DestroyMonster(spawnIds: new []{1003});
+                context.CreateMonster(spawnIds: new []{103}, arg2: false);
+                context.SetMesh(triggerIds: new []{3003}, visible: false, arg3: 100, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3103}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMeshAnimation(triggerIds: new []{3003}, visible: false, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(triggerIds: new []{3103}, visible: true, arg3: 0, arg4: 0);
+                context.SetEffect(triggerIds: new []{5203}, visible: true);
+                context.SetConversation(type: 1, spawnId: 103, script: "$52000052_QD__02_FINDWAY__4$", arg4: 2, arg5: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateRound03_RouteSelect(context);
                 }
@@ -149,16 +149,16 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateRound03_RouteSelect(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {2203});
-                context.CreateMonster(arg1: new[] {203}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{2203});
+                context.CreateMonster(spawnIds: new []{203}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 50f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateRound03_PickRoute_Left(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateRound03_PickRoute_Right(context);
                 }
 
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._52000052_qd {
                 context.SetUserValue(triggerId: 2303, key: "MakeFalse", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateGoToRound04(context);
                 }
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._52000052_qd {
                 context.SetUserValue(triggerId: 4, key: "FindWayRight", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateQuit(context);
                 }
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._52000052_qd {
                 context.SetUserValue(triggerId: 2303, key: "MakeTrue", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateGoToRound08(context);
                 }
@@ -231,7 +231,7 @@ namespace Maple2.Trigger._52000052_qd {
                 context.SetUserValue(triggerId: 8, key: "FindWay", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateQuit(context);
                 }
@@ -247,7 +247,7 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

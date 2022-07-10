@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new State칸막이Wait시작(context);
                 }
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02020140_bf {
             internal State칸막이Wait시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601, 602, 603, 604, 605}, arg2: false);
-                context.SetMesh(arg1: new[] {608, 609}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{601, 602, 603, 604, 605}, visible: false);
+                context.SetMesh(triggerIds: new []{608, 609}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State칸막이Wait알림(context);
                 }
@@ -39,11 +39,11 @@ namespace Maple2.Trigger._02020140_bf {
             internal State칸막이Wait알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02020140_BF__BARRICADE__0$", arg3: 3000);
-                context.DungeonEnableGiveUp(isEnable: true);
+                context.SetEventUI(arg1: 1, script: "$02020140_BF__BARRICADE__0$", duration: 3000);
+                context.DungeonEnableGiveUp(enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.DungeonTimeOut()) {
                     return new StateDungeonFailure종료(context);
                 }
@@ -66,11 +66,11 @@ namespace Maple2.Trigger._02020140_bf {
             internal State칸막이막기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601, 602, 603, 604, 605}, arg2: true);
-                context.SetMesh(arg1: new[] {608, 609}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{601, 602, 603, 604, 605}, visible: true);
+                context.SetMesh(triggerIds: new []{608, 609}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.DungeonTimeOut()) {
                     return new StateDungeonFailure종료(context);
                 }
@@ -89,11 +89,11 @@ namespace Maple2.Trigger._02020140_bf {
             internal StateDungeonFailure종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601, 602, 603, 604, 605}, arg2: false);
-                context.SetMesh(arg1: new[] {608, 609}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{601, 602, 603, 604, 605}, visible: false);
+                context.SetMesh(triggerIds: new []{608, 609}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

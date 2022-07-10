@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003086, 10003087}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{10003086, 10003087}, questStates: new byte[]{2})) {
                     return new StateNpcSpawn(context);
                 }
 
@@ -20,12 +20,12 @@ namespace Maple2.Trigger._52010032_qd {
             internal StateNpcSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {601, 602}, arg2: true);
-                context.SetNpcEmotionSequence(arg1: 601, arg2: "Idle_A");
-                context.SetNpcEmotionSequence(arg1: 602, arg2: "Idle_A");
+                context.CreateMonster(spawnIds: new []{601, 602}, arg2: true);
+                context.SetNpcEmotionSequence(spawnId: 601, sequenceName: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 602, sequenceName: "Idle_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

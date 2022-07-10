@@ -5,8 +5,8 @@ namespace Maple2.Trigger._65010008_bd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StatePvP종료(context);
                 }
 
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._65010008_bd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.PvpZoneEnded(arg1: 101)) {
+            public override TriggerState? Execute() {
+                if (context.PvpZoneEnded(boxId: 101)) {
                     return new State완료(context);
                 }
 
@@ -37,9 +37,9 @@ namespace Maple2.Trigger._65010008_bd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.MoveUser(arg1: 0, arg2: 0);
+                    context.MoveUser(mapId: 0, portalId: 0);
                     return new StateEnd(context);
                 }
 
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._65010008_bd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

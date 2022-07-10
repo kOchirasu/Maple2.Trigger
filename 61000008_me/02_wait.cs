@@ -4,11 +4,11 @@ namespace Maple2.Trigger._61000008_me {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 60, arg3: true, arg4: false);
+                context.SetTimer(timerId: "1", seconds: 60, clearAtZero: true, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9001})) {
                     return new StateWait(context);
                 }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100001, textId: 26100001, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9001) == 50) {
                     return new StateEnd(context);
                 }
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._61000008_me {
                     return new StateWait2(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateEnd(context);
                 }
 
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100002, textId: 26100002, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9001) == 50) {
                     return new StateEnd(context);
                 }
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._61000008_me {
                     return new StateWait(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateEnd(context);
                 }
 
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

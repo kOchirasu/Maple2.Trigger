@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000041_bf {
             internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1001, 1002}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1001, 1002}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1001, 1002})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1001, 1002})) {
                     return new StateWait(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02000041_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "30", arg2: 30, arg3: false, arg4: false);
+                context.SetTimer(timerId: "30", seconds: 30, clearAtZero: false, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "30")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "30")) {
                     return new StateCreation(context);
                 }
 

@@ -4,15 +4,15 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 501, arg2: true, arg3: true);
-                context.SetLadder(arg1: 502, arg2: true, arg3: true);
-                context.SetLadder(arg1: 503, arg2: true, arg3: true);
-                context.DestroyMonster(arg1: new[] {1006, 1007, 1008, 1009, 1010, 2006, 2007, 2008, 2009, 2010});
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001061}, arg2: 0);
+                context.SetLadder(triggerId: 501, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 502, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 503, visible: true, animationEffect: true);
+                context.DestroyMonster(spawnIds: new []{1006, 1007, 1008, 1009, 1010, 2006, 2007, 2008, 2009, 2010});
+                context.SetEffect(triggerIds: new []{5001}, visible: false);
+                context.SetInteractObject(interactIds: new []{10001061}, state: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateMobSpawn01(context);
                 }
@@ -27,11 +27,11 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateMobSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1006, 1007, 1008, 1009, 1010}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1006, 1007, 1008, 1009, 1010}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {1006, 1007, 1008, 1009, 1010})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{1006, 1007, 1008, 1009, 1010})) {
                     return new StateMobBattle01(context);
                 }
 
@@ -45,18 +45,18 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateMobBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.ChangeMonster(arg1: 1006, arg2: 2006);
-                context.ChangeMonster(arg1: 1007, arg2: 2007);
-                context.ChangeMonster(arg1: 1008, arg2: 2008);
-                context.ChangeMonster(arg1: 1009, arg2: 2009);
-                context.ChangeMonster(arg1: 1010, arg2: 2010);
-                context.SetLadder(arg1: 501, arg2: false, arg3: false);
-                context.SetLadder(arg1: 502, arg2: false, arg3: false);
-                context.SetLadder(arg1: 503, arg2: false, arg3: false);
+                context.SetEffect(triggerIds: new []{5001}, visible: true);
+                context.ChangeMonster(removeSpawnId: 1006, addSpawnId: 2006);
+                context.ChangeMonster(removeSpawnId: 1007, addSpawnId: 2007);
+                context.ChangeMonster(removeSpawnId: 1008, addSpawnId: 2008);
+                context.ChangeMonster(removeSpawnId: 1009, addSpawnId: 2009);
+                context.ChangeMonster(removeSpawnId: 1010, addSpawnId: 2010);
+                context.SetLadder(triggerId: 501, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 502, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 503, visible: false, animationEffect: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateLadderOff01(context);
                 }
@@ -71,13 +71,13 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateLadderOff01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(boxIds: new []{9001}, sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002921, textId: 20002921, duration: 5000);
-                context.SetInteractObject(arg1: new[] {10001061}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001061}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001061}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001061}, arg2: 0)) {
                     return new StateLadderOn01(context);
                 }
 
@@ -91,12 +91,12 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateLadderOn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 501, arg2: true, arg3: true);
-                context.SetLadder(arg1: 502, arg2: true, arg3: true);
-                context.SetLadder(arg1: 503, arg2: true, arg3: true);
+                context.SetLadder(triggerId: 501, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 502, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 503, visible: true, animationEffect: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateQuit(context);
                 }
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02000292_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

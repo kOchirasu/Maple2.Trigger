@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52100031_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {691}, arg2: false);
-                context.SetMesh(arg1: new[] {3901}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{691}, visible: false);
+                context.SetMesh(triggerIds: new []{3901}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "cannon01") == 1) {
                     return new StateCreation(context);
                 }
@@ -23,14 +23,14 @@ namespace Maple2.Trigger._52100031_qd {
             internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2901}, arg2: true);
-                context.AddBuff(arg1: new[] {2901}, arg2: 40444001, arg3: 1, arg4: true, arg5: false);
+                context.CreateMonster(spawnIds: new []{2901}, arg2: true);
+                context.AddBuff(boxIds: new []{2901}, skillId: 40444001, level: 1, arg4: true, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2901})) {
-                    context.SetEffect(arg1: new[] {691}, arg2: true);
-                    context.SetMesh(arg1: new[] {3901}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2901})) {
+                    context.SetEffect(triggerIds: new []{691}, visible: true);
+                    context.SetMesh(triggerIds: new []{3901}, visible: false, arg3: 0, arg4: 0, arg5: 5f);
                     return new StateEnd(context);
                 }
 
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

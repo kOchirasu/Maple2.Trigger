@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52020031_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(triggerIds: new []{5001}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000333}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{30000333}, questStates: new byte[]{1})) {
                     return new State두번째SetupCinematic(context);
                 }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52020031_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State두번째SetupCinematic_01(context);
                 }
@@ -42,12 +42,12 @@ namespace Maple2.Trigger._52020031_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.DestroyMonster(arg1: new[] {102});
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.CameraSelectPath(pathIds: new[] {4003}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{102});
+                context.CreateMonster(spawnIds: new []{101}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4003}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State두번째SetupCinematic_02(context);
                 }
@@ -62,10 +62,10 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째SetupCinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52020031, arg2: 6001);
+                context.MoveUser(mapId: 52020031, portalId: 6001);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State두번째Cinematic(context);
                 }
@@ -82,10 +82,10 @@ namespace Maple2.Trigger._52020031_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 0, script: "천공의 심장을 돌려줘.", duration: 3000);
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_3003");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_3003");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
                     return new State두번째Cinematic_01(context);
                 }
@@ -100,11 +100,11 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째Cinematic_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4010}, arg2: false);
-                context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
+                context.CameraSelectPath(pathIds: new []{4010}, returnView: false);
+                context.SetNpcEmotionSequence(spawnId: 101, sequenceName: "Talk_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State두번째Cinematic_02(context);
                 }
@@ -123,7 +123,7 @@ namespace Maple2.Trigger._52020031_qd {
                 context.AddCinematicTalk(npcId: 11003756, script: "꿈도 야무지다니까... 호호호", duration: 2000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State두번째Cinematic_03(context);
                 }
@@ -138,10 +138,10 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째Cinematic_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4012}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4012}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State두번째Cinematic전투Prepare_01(context);
                 }
@@ -159,7 +159,7 @@ namespace Maple2.Trigger._52020031_qd {
                 context.SetOnetimeEffect(id: 5, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State두번째Cinematic전투Prepare(context);
                 }
@@ -174,13 +174,13 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째Cinematic전투Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {101});
+                context.DestroyMonster(spawnIds: new []{101});
                 context.CameraReset(interpolationTime: 2.0f);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State두번째Cinematic전투Prepare1(context);
                 }
@@ -196,13 +196,13 @@ namespace Maple2.Trigger._52020031_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CreateMonster(arg1: new[] {601}, arg2: false);
-                context.SetEventUI(arg1: 1, script: "하렌을 처치하세요!", arg3: 2000, arg4: "0");
-                context.AddBalloonTalk(spawnPointId: 601, msg: "숨통을 끊어주마.", duration: 3000, delayTick: 3000);
+                context.CreateMonster(spawnIds: new []{601}, arg2: false);
+                context.SetEventUI(arg1: 1, script: "하렌을 처치하세요!", duration: 2000, boxId: 0);
+                context.AddBalloonTalk(spawnId: 601, msg: "숨통을 끊어주마.", duration: 3000, delayTick: 3000);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {601})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{601})) {
                     return new State두번째Cinematic전투종료1(context);
                 }
 
@@ -218,11 +218,11 @@ namespace Maple2.Trigger._52020031_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 6, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 0.5f);
-                context.MoveUser(arg1: 52020031, arg2: 6001);
-                context.DestroyMonster(arg1: new[] {601});
+                context.MoveUser(mapId: 52020031, portalId: 6001);
+                context.DestroyMonster(spawnIds: new []{601});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State두번째Cinematic전투종료2(context);
                 }
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._52020031_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

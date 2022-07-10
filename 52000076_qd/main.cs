@@ -6,21 +6,21 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001}, arg2: false);
-                context.SetActor(arg1: 201, arg2: true, arg3: "Idle_A");
-                context.SetActor(arg1: 202, arg2: true, arg3: "Idle_A");
-                context.SetActor(arg1: 203, arg2: true, arg3: "Idle_A");
-                context.SetActor(arg1: 204, arg2: true, arg3: "Idle_A");
-                context.SetActor(arg1: 205, arg2: true, arg3: "Idle_A");
-                context.SetActor(arg1: 206, arg2: true, arg3: "Idle_A");
-                context.SetActor(arg1: 207, arg2: true, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {10000806, 10000806, 10000807, 10000808, 10000809, 10000810, 10000811, 10000812}, arg2: 2);
-                context.SetMesh(arg1: new[] {39101, 39102, 39103, 39104, 39105, 39106, 3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {600, 601, 602, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6201, 6202, 6203, 6204, 6205}, arg2: false);
-                context.SetSkill(arg1: new[] {701, 702, 703, 704}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2001}, arg2: false);
+                context.SetActor(triggerId: 201, visible: true, initialSequence: "Idle_A");
+                context.SetActor(triggerId: 202, visible: true, initialSequence: "Idle_A");
+                context.SetActor(triggerId: 203, visible: true, initialSequence: "Idle_A");
+                context.SetActor(triggerId: 204, visible: true, initialSequence: "Idle_A");
+                context.SetActor(triggerId: 205, visible: true, initialSequence: "Idle_A");
+                context.SetActor(triggerId: 206, visible: true, initialSequence: "Idle_A");
+                context.SetActor(triggerId: 207, visible: true, initialSequence: "Idle_A");
+                context.SetInteractObject(interactIds: new []{10000806, 10000806, 10000807, 10000808, 10000809, 10000810, 10000811, 10000812}, state: 2);
+                context.SetMesh(triggerIds: new []{39101, 39102, 39103, 39104, 39105, 39106, 3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{600, 601, 602, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6201, 6202, 6203, 6204, 6205}, visible: false);
+                context.SetSkill(triggerIds: new []{701, 702, 703, 704}, arg2: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: true);
+                context.SetAgent(triggerIds: new []{901, 902, 903, 904}, visible: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetOnetimeEffect(id: 11, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
                 context.SetOnetimeEffect(id: 12, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetUserValue(key: "saveEveIntheDark", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {100})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{100})) {
                     return new StateCheckQuestCondition(context);
                 }
 
@@ -55,12 +55,12 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetCinematicUI(type: 4);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {40002688}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{100}, questIds: new []{40002688}, questStates: new byte[]{1})) {
                     return new StateDungeonReady(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {40002688}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{100}, questIds: new []{40002688}, questStates: new byte[]{2})) {
                     return new StateQuestOnGoing01(context);
                 }
 
@@ -78,10 +78,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateQuestOnGoing01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52000076, arg2: 30, arg3: 100);
+                context.MoveUser(mapId: 52000076, portalId: 30, boxId: 100);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateQuestOnGoing02(context);
                 }
@@ -96,11 +96,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateQuestOnGoing02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 320, arg2: true);
-                context.CreateMonster(arg1: new[] {1310, 1410}, arg2: false);
+                context.CameraSelect(triggerId: 320, enable: true);
+                context.CreateMonster(spawnIds: new []{1310, 1410}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateQuestOnGoing03(context);
                 }
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEveTalk30(context);
                 }
@@ -138,8 +138,8 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateDungeonStart(context);
                 }
 
@@ -158,8 +158,8 @@ namespace Maple2.Trigger._52000076_qd {
                 context.PlaySceneMovie(fileName: "KatvanIntroMovie.swf", movieId: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
+            public override TriggerState? Execute() {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, condition: "IsStop", value: "1")) {
                     return new State진행01벽Remove(context);
                 }
 
@@ -173,16 +173,16 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행01벽Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 201, arg2: false, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {10000806}, arg2: 1);
+                context.SetActor(triggerId: 201, visible: false, initialSequence: "Idle_A");
+                context.SetInteractObject(interactIds: new []{10000806}, state: 1);
                 context.ShowGuideSummary(entityId: 20003492, textId: 20003492);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000806}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000806}, arg2: 0)) {
                     context.HideGuideSummary(entityId: 20003492);
-                    context.SetMesh(arg1: new[] {39101}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(triggerIds: new []{39101}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new State진행01Monster(context);
                 }
 
@@ -196,11 +196,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행01Monster(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1001, 1002, 1003}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1001, 1002, 1003}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1101})) {
                     return new State진행01오브젝트(context);
                 }
 
@@ -215,13 +215,13 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003496, textId: 20003496);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetActor(arg1: 202, arg2: false, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {10000807}, arg2: 1);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.SetActor(triggerId: 202, visible: false, initialSequence: "Idle_A");
+                context.SetInteractObject(interactIds: new []{10000807}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000807}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000807}, arg2: 0)) {
                     context.HideGuideSummary(entityId: 20003496);
                     return new State진행02Monster(context);
                 }
@@ -236,12 +236,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행02Monster(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {39102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {1004, 1005, 1006}, arg2: false);
+                context.SetMesh(triggerIds: new []{39102}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(spawnIds: new []{1004, 1005, 1006}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1102})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1102})) {
                     return new State진행02오브젝트(context);
                 }
 
@@ -256,13 +256,13 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003497, textId: 20003497);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetActor(arg1: 203, arg2: false, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {10000808}, arg2: 1);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.SetActor(triggerId: 203, visible: false, initialSequence: "Idle_A");
+                context.SetInteractObject(interactIds: new []{10000808}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000808}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000808}, arg2: 0)) {
                     context.HideGuideSummary(entityId: 20003497);
                     return new State진행03Monster(context);
                 }
@@ -277,12 +277,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행03Monster(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {39103}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {1007, 1008, 1009}, arg2: false);
+                context.SetMesh(triggerIds: new []{39103}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(spawnIds: new []{1007, 1008, 1009}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1103})) {
                     return new State진행04오브젝트(context);
                 }
 
@@ -297,13 +297,13 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003498, textId: 20003498);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetActor(arg1: 204, arg2: false, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {10000809}, arg2: 1);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.SetActor(triggerId: 204, visible: false, initialSequence: "Idle_A");
+                context.SetInteractObject(interactIds: new []{10000809}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000809}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000809}, arg2: 0)) {
                     context.HideGuideSummary(entityId: 20003498);
                     return new State진행04Monster(context);
                 }
@@ -318,12 +318,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행04Monster(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {39104}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {1010, 1011, 1012}, arg2: false);
+                context.SetMesh(triggerIds: new []{39104}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(spawnIds: new []{1010, 1011, 1012}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1104})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1104})) {
                     return new State진행05오브젝트(context);
                 }
 
@@ -338,13 +338,13 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003499, textId: 20003499);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetActor(arg1: 205, arg2: false, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {10000810}, arg2: 1);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.SetActor(triggerId: 205, visible: false, initialSequence: "Idle_A");
+                context.SetInteractObject(interactIds: new []{10000810}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000810}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000810}, arg2: 0)) {
                     context.HideGuideSummary(entityId: 20003499);
                     return new State진행05Monster(context);
                 }
@@ -359,12 +359,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행05Monster(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {39105}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {1013, 1014, 1015}, arg2: false);
+                context.SetMesh(triggerIds: new []{39105}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(spawnIds: new []{1013, 1014, 1015}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1105})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1105})) {
                     return new State진행06오브젝트(context);
                 }
 
@@ -379,14 +379,14 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003500, textId: 20003500);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetActor(arg1: 206, arg2: false, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {10000811}, arg2: 1);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.SetActor(triggerId: 206, visible: false, initialSequence: "Idle_A");
+                context.SetInteractObject(interactIds: new []{10000811}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000811}, arg2: 0)) {
-                    context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "rescue_boroboro");
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000811}, arg2: 0)) {
+                    context.SetAchievement(triggerId: 100, type: "trigger", code: "rescue_boroboro");
                     context.HideGuideSummary(entityId: 20003500);
                     return new State진행06Monster(context);
                 }
@@ -401,12 +401,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행06Monster(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {39106}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {1016, 1017, 1018, 1019, 1020}, arg2: true);
+                context.SetMesh(triggerIds: new []{39106}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(spawnIds: new []{1016, 1017, 1018, 1019, 1020}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1106})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1106})) {
                     return new State레논오브젝트(context);
                 }
 
@@ -421,14 +421,14 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003495, textId: 20003495);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetActor(arg1: 207, arg2: false, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {10000812}, arg2: 1);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.SetActor(triggerId: 207, visible: false, initialSequence: "Idle_A");
+                context.SetInteractObject(interactIds: new []{10000812}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000812}, arg2: 0)) {
-                    context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020});
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000812}, arg2: 0)) {
+                    context.DestroyMonster(spawnIds: new []{1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020});
                     context.HideGuideSummary(entityId: 20003495);
                     return new State레논구출(context);
                 }
@@ -443,16 +443,16 @@ namespace Maple2.Trigger._52000076_qd {
             internal State레논구출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 301, arg2: true);
+                context.CameraSelect(triggerId: 301, enable: true);
                 context.SetSkip(state: new State레논구출종료(context));
-                context.DestroyMonster(arg1: new[] {2001});
-                context.CreateMonster(arg1: new[] {2002}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{2001});
+                context.CreateMonster(spawnIds: new []{2002}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State레논Script01(context);
                 }
@@ -467,12 +467,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal State레논Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6101}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000064, script: "$02000349_BF__MAIN__3$", arg4: 3);
+                context.SetEffect(triggerIds: new []{6101}, visible: true);
+                context.SetConversation(type: 2, spawnId: 11000064, script: "$02000349_BF__MAIN__3$", arg4: 3);
                 context.SetSkip(state: new State레논구출종료(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State레논Script02(context);
                 }
@@ -487,12 +487,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal State레논Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6102}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000064, script: "$02000349_BF__MAIN__4$", arg4: 3);
+                context.SetEffect(triggerIds: new []{6102}, visible: true);
+                context.SetConversation(type: 2, spawnId: 11000064, script: "$02000349_BF__MAIN__4$", arg4: 3);
                 context.SetSkip(state: new State레논구출종료(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State레논구출종료(context);
                 }
@@ -507,10 +507,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal State레논구출종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {301}, arg2: true);
+                context.CameraSelectPath(pathIds: new []{301}, returnView: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State진행07(context);
             }
 
@@ -523,14 +523,14 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(arg1: 301, arg2: false);
-                context.MoveNpc(arg1: 2002, arg2: "MS2PatrolData2002_AB");
+                context.CameraSelect(triggerId: 301, enable: false);
+                context.MoveNpc(spawnId: 2002, patrolName: "MS2PatrolData2002_AB");
                 context.ShowGuideSummary(entityId: 20003501, textId: 20003501, duration: 4000);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 127, arg2: new[] {2002})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 127, spawnIds: new []{2002})) {
                     return new State진행07Monster(context);
                 }
 
@@ -544,11 +544,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행07Monster(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1021}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1021}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1021})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1021})) {
                     return new State진행08(context);
                 }
 
@@ -562,15 +562,15 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 2002, arg2: "MS2PatrolData2002_C");
+                context.MoveNpc(spawnId: 2002, patrolName: "MS2PatrolData2002_C");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 128, arg2: new[] {2002})) {
-                    context.SetSkill(arg1: new[] {701}, arg2: true);
-                    context.SetEffect(arg1: new[] {6201}, arg2: true);
-                    context.DestroyMonster(arg1: new[] {2002});
-                    context.CreateMonster(arg1: new[] {2003}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 128, spawnIds: new []{2002})) {
+                    context.SetSkill(triggerIds: new []{701}, arg2: true);
+                    context.SetEffect(triggerIds: new []{6201}, visible: true);
+                    context.DestroyMonster(spawnIds: new []{2002});
+                    context.CreateMonster(spawnIds: new []{2003}, arg2: false);
                     return new State진행09(context);
                 }
 
@@ -584,11 +584,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 2002, arg2: "MS2PatrolData2002_C");
+                context.MoveNpc(spawnId: 2002, patrolName: "MS2PatrolData2002_C");
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {129})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{129})) {
                     return new State진행09Monster(context);
                 }
 
@@ -602,12 +602,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행09Monster(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 2003, arg2: "MS2PatrolData2003_A");
-                context.CreateMonster(arg1: new[] {1022}, arg2: false);
+                context.MoveNpc(spawnId: 2003, patrolName: "MS2PatrolData2003_A");
+                context.CreateMonster(spawnIds: new []{1022}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1022})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1022})) {
                     return new State진행10(context);
                 }
 
@@ -621,15 +621,15 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 2003, arg2: "MS2PatrolData2003_B");
+                context.MoveNpc(spawnId: 2003, patrolName: "MS2PatrolData2003_B");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 130, arg2: new[] {2003})) {
-                    context.SetSkill(arg1: new[] {702}, arg2: true);
-                    context.SetEffect(arg1: new[] {6202}, arg2: true);
-                    context.DestroyMonster(arg1: new[] {2003});
-                    context.CreateMonster(arg1: new[] {2004}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 130, spawnIds: new []{2003})) {
+                    context.SetSkill(triggerIds: new []{702}, arg2: true);
+                    context.SetEffect(triggerIds: new []{6202}, visible: true);
+                    context.DestroyMonster(spawnIds: new []{2003});
+                    context.CreateMonster(spawnIds: new []{2004}, arg2: false);
                     return new State진행11(context);
                 }
 
@@ -644,8 +644,8 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {131})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{131})) {
                     return new State진행11Monster(context);
                 }
 
@@ -659,12 +659,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행11Monster(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 2004, arg2: "MS2PatrolData2004_A");
-                context.CreateMonster(arg1: new[] {1023}, arg2: false);
+                context.MoveNpc(spawnId: 2004, patrolName: "MS2PatrolData2004_A");
+                context.CreateMonster(spawnIds: new []{1023}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1023})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1023})) {
                     return new State진행12(context);
                 }
 
@@ -678,15 +678,15 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 2004, arg2: "MS2PatrolData2004_B");
+                context.MoveNpc(spawnId: 2004, patrolName: "MS2PatrolData2004_B");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 132, arg2: new[] {2004})) {
-                    context.SetSkill(arg1: new[] {703}, arg2: true);
-                    context.SetEffect(arg1: new[] {6203}, arg2: true);
-                    context.DestroyMonster(arg1: new[] {2004});
-                    context.CreateMonster(arg1: new[] {2005}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 132, spawnIds: new []{2004})) {
+                    context.SetSkill(triggerIds: new []{703}, arg2: true);
+                    context.SetEffect(triggerIds: new []{6203}, visible: true);
+                    context.DestroyMonster(spawnIds: new []{2004});
+                    context.CreateMonster(spawnIds: new []{2005}, arg2: false);
                     return new State진행13(context);
                 }
 
@@ -701,8 +701,8 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {133})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{133})) {
                     return new State진행13Monster(context);
                 }
 
@@ -716,12 +716,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행13Monster(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 2005, arg2: "MS2PatrolData2005_A");
-                context.CreateMonster(arg1: new[] {1024}, arg2: false);
+                context.MoveNpc(spawnId: 2005, patrolName: "MS2PatrolData2005_A");
+                context.CreateMonster(spawnIds: new []{1024}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1024})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1024})) {
                     return new State진행14(context);
                 }
 
@@ -735,15 +735,15 @@ namespace Maple2.Trigger._52000076_qd {
             internal State진행14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 2005, arg2: "MS2PatrolData2005_B");
+                context.MoveNpc(spawnId: 2005, patrolName: "MS2PatrolData2005_B");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 134, arg2: new[] {2005})) {
-                    context.SetSkill(arg1: new[] {704}, arg2: true);
-                    context.SetEffect(arg1: new[] {6204}, arg2: true);
-                    context.DestroyMonster(arg1: new[] {2005});
-                    context.CreateMonster(arg1: new[] {2007}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 134, spawnIds: new []{2005})) {
+                    context.SetSkill(triggerIds: new []{704}, arg2: true);
+                    context.SetEffect(triggerIds: new []{6204}, visible: true);
+                    context.DestroyMonster(spawnIds: new []{2005});
+                    context.CreateMonster(spawnIds: new []{2007}, arg2: false);
                     return new State진행15(context);
                 }
 
@@ -758,8 +758,8 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {135})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{135})) {
                     return new State카트반CinematicDelay(context);
                 }
 
@@ -773,10 +773,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal State카트반CinematicDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1099}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1099}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State카드반StartCinematic(context);
                 }
@@ -792,13 +792,13 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new State카드반StopCinematic(context), arg2: "nextState");
-                context.SetEffect(arg1: new[] {602}, arg2: true);
+                context.SetEffect(triggerIds: new []{602}, visible: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 302, arg2: true);
+                context.CameraSelect(triggerId: 302, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State카드반Script01(context);
                 }
@@ -813,10 +813,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal State카드반Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__5$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$02000349_BF__MAIN__5$", arg4: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State카드반Script02(context);
                 }
@@ -831,10 +831,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal State카드반Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__6$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$02000349_BF__MAIN__6$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State레논Script05(context);
                 }
@@ -849,11 +849,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal State레논Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 303, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000064, script: "$02000349_BF__MAIN__7$", arg4: 4);
+                context.CameraSelect(triggerId: 303, enable: true);
+                context.SetConversation(type: 2, spawnId: 11000064, script: "$02000349_BF__MAIN__7$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State카드반Script03(context);
                 }
@@ -868,11 +868,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal State카드반Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 302, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__8$", arg4: 6);
+                context.CameraSelect(triggerId: 302, enable: true);
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$02000349_BF__MAIN__8$", arg4: 6);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new State카드반Script04(context);
                 }
@@ -887,11 +887,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal State카드반Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 302, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__9$", arg4: 8);
+                context.CameraSelect(triggerId: 302, enable: true);
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$02000349_BF__MAIN__9$", arg4: 8);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new State카드반Script05(context);
                 }
@@ -906,12 +906,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal State카드반Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 302, arg2: true);
-                context.CreateMonster(arg1: new[] {1025, 1026}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$02000349_BF__MAIN__10$", arg4: 7);
+                context.CameraSelect(triggerId: 302, enable: true);
+                context.CreateMonster(spawnIds: new []{1025, 1026}, arg2: false);
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$02000349_BF__MAIN__10$", arg4: 7);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new State카드반StopCinematic(context);
                 }
@@ -928,15 +928,15 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.ShowGuideSummary(entityId: 20003502, textId: 20003502, duration: 4000);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.DestroyMonster(arg1: new[] {1025, 1026, 1099});
-                context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: false);
-                context.DestroyMonster(arg1: new[] {2007});
-                context.CreateMonster(arg1: new[] {2006}, arg2: false);
-                context.CameraSelectPath(pathIds: new[] {302}, arg2: true);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.DestroyMonster(spawnIds: new []{1025, 1026, 1099});
+                context.SetAgent(triggerIds: new []{901, 902, 903, 904}, visible: false);
+                context.DestroyMonster(spawnIds: new []{2007});
+                context.CreateMonster(spawnIds: new []{2006}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{302}, returnView: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State진행16(context);
             }
 
@@ -949,13 +949,13 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(arg1: 302, arg2: false);
-                context.CameraSelect(arg1: 303, arg2: false);
-                context.MoveNpc(arg1: 2006, arg2: "MS2PatrolData2006_A");
+                context.CameraSelect(triggerId: 302, enable: false);
+                context.CameraSelect(triggerId: 303, enable: false);
+                context.MoveNpc(spawnId: 2006, patrolName: "MS2PatrolData2006_A");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 136, arg2: new[] {2006})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 136, spawnIds: new []{2006})) {
                     return new StateBossBattleStart01(context);
                 }
 
@@ -969,17 +969,17 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateBossBattleStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1025, 1026, 1099}, arg2: false);
-                context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: true);
-                context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
+                context.CreateMonster(spawnIds: new []{1025, 1026, 1099}, arg2: false);
+                context.SetAgent(triggerIds: new []{901, 902, 903, 904}, visible: true);
+                context.SetMesh(triggerIds: new []{3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, visible: false, arg3: 0, arg4: 200, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "saveEveIntheDark") == 1) {
                     return new StateBossNpcChange01(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1099})) {
+                if (context.MonsterDead(spawnIds: new []{1099})) {
                     return new StateBossNpcChange01(context);
                 }
 
@@ -996,11 +996,11 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: false);
-                context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetAgent(triggerIds: new []{901, 902, 903, 904}, visible: false);
+                context.SetMesh(triggerIds: new []{3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateBossNpcChange02(context);
                 }
@@ -1015,13 +1015,13 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateBossNpcChange02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1025, 1026, 1099, 2006});
-                context.MoveUser(arg1: 52000076, arg2: 20, arg3: 100);
-                context.CreateMonster(arg1: new[] {1200, 1300}, arg2: false);
-                context.CameraSelect(arg1: 310, arg2: true);
+                context.DestroyMonster(spawnIds: new []{1025, 1026, 1099, 2006});
+                context.MoveUser(mapId: 52000076, portalId: 20, boxId: 100);
+                context.CreateMonster(spawnIds: new []{1200, 1300}, arg2: false);
+                context.CameraSelect(triggerId: 310, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateBossNpcChange03(context);
                 }
@@ -1037,10 +1037,10 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetNpcEmotionLoop(arg1: 1200, arg2: "Attack_Idle_A", arg3: 15000f);
+                context.SetNpcEmotionLoop(spawnId: 1200, sequenceName: "Attack_Idle_A", duration: 15000f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateBossNpcChange04(context);
                 }
@@ -1055,10 +1055,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateBossNpcChange04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 311, arg2: true);
+                context.CameraSelect(triggerId: 311, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateEveEnter01(context);
                 }
@@ -1073,14 +1073,14 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveEnter01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1400}, arg2: false);
-                context.MoveNpc(arg1: 1400, arg2: "MS2PatrolData_1400");
-                context.CameraSelect(arg1: 312, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 1400, script: "$52000076_QD__MAIN__0$", arg4: 4, arg5: 2);
+                context.CreateMonster(spawnIds: new []{1400}, arg2: false);
+                context.MoveNpc(spawnId: 1400, patrolName: "MS2PatrolData_1400");
+                context.CameraSelect(triggerId: 312, enable: true);
+                context.SetConversation(type: 1, spawnId: 1400, script: "$52000076_QD__MAIN__0$", arg4: 4, arg5: 2);
                 context.SetSceneSkip(state: new StateEvilKatvanLeave04(context), arg2: "nextState");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateEveEnter02(context);
                 }
@@ -1095,10 +1095,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveEnter02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 313, arg2: true);
+                context.CameraSelect(triggerId: 313, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEveEnter03(context);
                 }
@@ -1113,13 +1113,13 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveEnter03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1300, arg2: "MS2PatrolData_1300");
-                context.MoveUserPath(arg1: "MS2PatrolData_1000");
-                context.SetConversation(arg1: 1, arg2: 1300, script: "$52000076_QD__MAIN__1$", arg4: 2, arg5: 2);
-                context.SetConversation(arg1: 1, arg2: 0, script: "$52000076_QD__MAIN__2$", arg4: 2, arg5: 1);
+                context.MoveNpc(spawnId: 1300, patrolName: "MS2PatrolData_1300");
+                context.MoveUserPath(patrolName: "MS2PatrolData_1000");
+                context.SetConversation(type: 1, spawnId: 1300, script: "$52000076_QD__MAIN__1$", arg4: 2, arg5: 2);
+                context.SetConversation(type: 1, spawnId: 0, script: "$52000076_QD__MAIN__2$", arg4: 2, arg5: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateEveEnter04(context);
                 }
@@ -1135,10 +1135,10 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 11, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
-                context.SetConversation(arg1: 1, arg2: 1200, script: "$52000076_QD__MAIN__3$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 1200, script: "$52000076_QD__MAIN__3$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEveTalk01(context);
                 }
@@ -1155,12 +1155,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 314, arg2: true);
+                context.CameraSelect(triggerId: 314, enable: true);
                 context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__4$", duration: 5000, align: Align.Center);
-                context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
+                context.SetNpcEmotionSequence(spawnId: 1400, sequenceName: "Talk_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEveTalk01Skip(context);
                 }
@@ -1175,11 +1175,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk01Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1400, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1400, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEveTalk02(context);
                 }
@@ -1195,10 +1195,10 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__5$", duration: 5000, align: Align.Center);
-                context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
+                context.SetNpcEmotionSequence(spawnId: 1400, sequenceName: "Talk_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEveTalk02Skip(context);
                 }
@@ -1213,11 +1213,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk02Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1400, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1400, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateLennonTalk01(context);
                 }
@@ -1232,11 +1232,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__6$", arg4: 5);
-                context.SetNpcEmotionSequence(arg1: 1300, arg2: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 11000064, script: "$52000076_QD__MAIN__6$", arg4: 5);
+                context.SetNpcEmotionSequence(spawnId: 1300, sequenceName: "Talk_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateLennonTalk01Skip(context);
                 }
@@ -1251,11 +1251,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk01Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1300, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1300, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateLennonTurnAround01(context);
                 }
@@ -1270,10 +1270,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTurnAround01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 315, arg2: true);
+                context.CameraSelect(triggerId: 315, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateLennonTurnAround02(context);
                 }
@@ -1288,12 +1288,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTurnAround02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1300, arg2: "MS2PatrolData_1301");
-                context.MoveNpc(arg1: 1400, arg2: "MS2PatrolData_1401");
-                context.MoveUserPath(arg1: "MS2PatrolData_1001");
+                context.MoveNpc(spawnId: 1300, patrolName: "MS2PatrolData_1301");
+                context.MoveNpc(spawnId: 1400, patrolName: "MS2PatrolData_1401");
+                context.MoveUserPath(patrolName: "MS2PatrolData_1001");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateLennonTalk02(context);
                 }
@@ -1308,11 +1308,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1300, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__7$", arg4: 5);
+                context.SetNpcEmotionSequence(spawnId: 1300, sequenceName: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 11000064, script: "$52000076_QD__MAIN__7$", arg4: 5);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateLennonTalk02Skip(context);
                 }
@@ -1327,11 +1327,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk02Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1300, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1300, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEvilKatvanTalk01(context);
                 }
@@ -1347,11 +1347,11 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 12, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__8$", arg4: 7);
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__8$", arg4: 7);
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateEvilKatvanTalk01Skip(context);
                 }
@@ -1368,11 +1368,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk01Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEvilKatvanTalk02(context);
             }
 
@@ -1384,11 +1384,11 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 13, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__9$", arg4: 7);
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__9$", arg4: 7);
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateEvilKatvanTalk02Skip(context);
                 }
@@ -1405,11 +1405,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk02Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEvilKatvanTalk03(context);
             }
 
@@ -1421,11 +1421,11 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 14, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__10$", arg4: 6);
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__10$", arg4: 6);
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateEvilKatvanTalk03Skip(context);
                 }
@@ -1445,7 +1445,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateEveWalkFront01(context);
                 }
@@ -1460,11 +1460,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveWalkFront01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Idle_A");
-                context.MoveNpc(arg1: 1400, arg2: "MS2PatrolData_1402");
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Idle_A");
+                context.MoveNpc(spawnId: 1400, patrolName: "MS2PatrolData_1402");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEveTalk10(context);
                 }
@@ -1479,11 +1479,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
+                context.SetNpcEmotionSequence(spawnId: 1400, sequenceName: "Talk_A");
                 context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__11$", duration: 5000, align: Align.Center);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEveTalk10Skip(context);
                 }
@@ -1501,7 +1501,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEveTalk11(context);
                 }
@@ -1510,7 +1510,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetNpcEmotionSequence(arg1: 1400, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1400, sequenceName: "Idle_A");
             }
         }
 
@@ -1518,11 +1518,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
+                context.SetNpcEmotionSequence(spawnId: 1400, sequenceName: "Talk_A");
                 context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__12$", duration: 7000, align: Align.Center);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateEveTalk11Skip(context);
                 }
@@ -1540,7 +1540,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEveTalk12(context);
                 }
@@ -1549,7 +1549,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetNpcEmotionSequence(arg1: 1400, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1400, sequenceName: "Idle_A");
             }
         }
 
@@ -1557,11 +1557,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000523, script: "$52000076_QD__MAIN__13$", arg4: 5);
+                context.SetNpcEmotionSequence(spawnId: 1400, sequenceName: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 11000523, script: "$52000076_QD__MAIN__13$", arg4: 5);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEveTalk12Skip(context);
                 }
@@ -1579,7 +1579,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEvilKatvanTalk10(context);
                 }
@@ -1588,7 +1588,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetNpcEmotionSequence(arg1: 1400, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1400, sequenceName: "Idle_A");
             }
         }
 
@@ -1597,11 +1597,11 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 15, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__14$", arg4: 6);
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__14$", arg4: 6);
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateEvilKatvanTalk10Skip(context);
                 }
@@ -1621,7 +1621,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateLennonTalk10(context);
                 }
@@ -1636,12 +1636,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Idle_A");
-                context.MoveNpc(arg1: 1300, arg2: "MS2PatrolData_1302");
-                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__15$", arg4: 3);
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Idle_A");
+                context.MoveNpc(spawnId: 1300, patrolName: "MS2PatrolData_1302");
+                context.SetConversation(type: 2, spawnId: 11000064, script: "$52000076_QD__MAIN__15$", arg4: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateLennonTalk10Skip(context);
                 }
@@ -1657,10 +1657,10 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelect(arg1: 316, arg2: true);
+                context.CameraSelect(triggerId: 316, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEvilKatvanTalk20(context);
                 }
@@ -1676,11 +1676,11 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 16, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__16$", arg4: 5);
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__16$", arg4: 5);
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEvilKatvanTalk20Skip(context);
                 }
@@ -1700,7 +1700,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEvilKatvanTalk21(context);
                 }
@@ -1709,7 +1709,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Idle_A");
             }
         }
 
@@ -1718,11 +1718,11 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 17, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__17$", arg4: 6);
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__17$", arg4: 6);
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateEvilKatvanTalk21Skip(context);
                 }
@@ -1742,7 +1742,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEvilKatvanTalk22(context);
                 }
@@ -1751,7 +1751,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Idle_A");
             }
         }
 
@@ -1760,10 +1760,10 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 18, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__18$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__18$", arg4: 5);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEvilKatvanTalk22Skip(context);
                 }
@@ -1781,10 +1781,10 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelect(arg1: 317, arg2: true);
+                context.CameraSelect(triggerId: 317, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateLennonTalk20(context);
                 }
@@ -1799,11 +1799,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1300, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__19$", arg4: 4);
+                context.SetNpcEmotionSequence(spawnId: 1300, sequenceName: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 11000064, script: "$52000076_QD__MAIN__19$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateLennonTalk20Skip(context);
                 }
@@ -1818,11 +1818,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk20Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1300, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1300, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEvilKatvanTalk30(context);
                 }
@@ -1837,10 +1837,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1200, arg2: "MS2PatrolData_1200");
+                context.MoveNpc(spawnId: 1200, patrolName: "MS2PatrolData_1200");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEvilKatvanTalk31(context);
                 }
@@ -1856,11 +1856,11 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 19, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__20$", arg4: 9);
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__20$", arg4: 9);
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateEvilKatvanTalk31Skip(context);
                 }
@@ -1878,10 +1878,10 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Idle_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEvilKatvanTalk32(context);
                 }
@@ -1897,11 +1897,11 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
-                context.SetConversation(arg1: 2, arg2: 24001705, script: "$52000076_QD__MAIN__21$", arg4: 6);
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__21$", arg4: 6);
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateEvilKatvanTalk32Skip(context);
                 }
@@ -1918,11 +1918,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk32Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1200, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEvilKatvanLeave01(context);
                 }
@@ -1937,10 +1937,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1200, arg2: "MS2PatrolData_1201");
+                context.MoveNpc(spawnId: 1200, patrolName: "MS2PatrolData_1201");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new StateEvilKatvanLeave02(context);
                 }
@@ -1955,10 +1955,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanLeave02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1200});
+                context.DestroyMonster(spawnIds: new []{1200});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateEvilKatvanLeave03(context);
                 }
@@ -1973,11 +1973,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanLeave03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1300, arg2: "MS2PatrolData_1303");
-                context.SetConversation(arg1: 1, arg2: 1300, script: "$52000076_QD__MAIN__22$", arg4: 2, arg5: 0);
+                context.MoveNpc(spawnId: 1300, patrolName: "MS2PatrolData_1303");
+                context.SetConversation(type: 1, spawnId: 1300, script: "$52000076_QD__MAIN__22$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEvilKatvanLeave04(context);
                 }
@@ -1996,7 +1996,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StatePositionArrange01(context);
                 }
@@ -2011,13 +2011,13 @@ namespace Maple2.Trigger._52000076_qd {
             internal StatePositionArrange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1200, 1300, 1400});
-                context.MoveUser(arg1: 52000076, arg2: 30, arg3: 100);
-                context.CreateMonster(arg1: new[] {1310, 1410}, arg2: false);
-                context.CameraSelect(arg1: 320, arg2: true);
+                context.DestroyMonster(spawnIds: new []{1200, 1300, 1400});
+                context.MoveUser(mapId: 52000076, portalId: 30, boxId: 100);
+                context.CreateMonster(spawnIds: new []{1310, 1410}, arg2: false);
+                context.CameraSelect(triggerId: 320, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePositionArrange02(context);
                 }
@@ -2035,7 +2035,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateLennonTalk30(context);
                 }
@@ -2051,11 +2051,11 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateEveTalk31Skip(context), arg2: "nextState");
-                context.SetNpcEmotionSequence(arg1: 1310, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__23$", arg4: 5);
+                context.SetNpcEmotionSequence(spawnId: 1310, sequenceName: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 11000064, script: "$52000076_QD__MAIN__23$", arg4: 5);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateLennonTalk30Skip(context);
                 }
@@ -2070,11 +2070,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk30Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1310, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1310, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateLennonTalk31(context);
                 }
@@ -2089,11 +2089,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk31(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1310, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__24$", arg4: 5);
+                context.SetNpcEmotionSequence(spawnId: 1310, sequenceName: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 11000064, script: "$52000076_QD__MAIN__24$", arg4: 5);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateLennonTalk31Skip(context);
                 }
@@ -2108,11 +2108,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk31Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1310, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1310, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEveTalk20(context);
                 }
@@ -2127,11 +2127,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1410, arg2: "Talk_A");
+                context.SetNpcEmotionSequence(spawnId: 1410, sequenceName: "Talk_A");
                 context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__25$", duration: 6000, align: Align.Center);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateEveTalk20Skip(context);
                 }
@@ -2146,11 +2146,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk20Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1410, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1410, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEveTalk21(context);
                 }
@@ -2165,11 +2165,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1410, arg2: "Talk_A");
+                context.SetNpcEmotionSequence(spawnId: 1410, sequenceName: "Talk_A");
                 context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__26$", duration: 6000, align: Align.Center);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateEveTalk21Skip(context);
                 }
@@ -2184,11 +2184,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk21Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1410, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1410, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateLennonTalk40(context);
                 }
@@ -2203,11 +2203,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk40(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1310, arg2: "Talk_A");
-                context.SetConversation(arg1: 2, arg2: 11000064, script: "$52000076_QD__MAIN__27$", arg4: 6);
+                context.SetNpcEmotionSequence(spawnId: 1310, sequenceName: "Talk_A");
+                context.SetConversation(type: 2, spawnId: 11000064, script: "$52000076_QD__MAIN__27$", arg4: 6);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateLennonTalk40Skip(context);
                 }
@@ -2222,11 +2222,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk40Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1310, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1310, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEveTalk30(context);
                 }
@@ -2241,11 +2241,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1410, arg2: "Talk_A");
+                context.SetNpcEmotionSequence(spawnId: 1410, sequenceName: "Talk_A");
                 context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__28$", duration: 3000, align: Align.Center);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEveTalk30Skip(context);
                 }
@@ -2260,12 +2260,12 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk30Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1410, arg2: "Idle_A");
+                context.SetNpcEmotionSequence(spawnId: 1410, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
-                context.CameraSelect(arg1: 321, arg2: true);
+                context.CameraSelect(triggerId: 321, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateEveTalk31(context);
                 }
@@ -2283,7 +2283,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__29$", duration: 5000, align: Align.Center);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEveTalk31Skip(context);
                 }
@@ -2303,7 +2303,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuestComplete01(context);
                 }
@@ -2318,13 +2318,13 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateQuestComplete01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "saveEveIntheDark");
-                context.SetEffect(arg1: new[] {6205}, arg2: true);
-                context.SetMesh(arg1: new[] {3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetAchievement(triggerId: 100, type: "trigger", code: "saveEveIntheDark");
+                context.SetEffect(triggerIds: new []{6205}, visible: true);
+                context.SetMesh(triggerIds: new []{3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(portalId: 2, visible: true, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuestComplete02(context);
                 }
@@ -2345,8 +2345,8 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {40002688}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{100}, questIds: new []{40002688}, questStates: new byte[]{2})) {
                     return new StateQuestComplete03(context);
                 }
 
@@ -2360,10 +2360,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateQuestComplete03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1310, arg2: "MS2PatrolData_1304");
+                context.MoveNpc(spawnId: 1310, patrolName: "MS2PatrolData_1304");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateGotoTria01(context);
                 }
@@ -2378,10 +2378,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateGotoTria01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 1310, script: "$52000076_QD__MAIN__30$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 1310, script: "$52000076_QD__MAIN__30$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateGotoTria02(context);
                 }
@@ -2396,11 +2396,11 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateGotoTria02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1410, arg2: "MS2PatrolData_1403");
-                context.MoveUserPath(arg1: "MS2PatrolData_1002");
+                context.MoveNpc(spawnId: 1410, patrolName: "MS2PatrolData_1403");
+                context.MoveUserPath(patrolName: "MS2PatrolData_1002");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateGotoTria03(context);
                 }
@@ -2415,10 +2415,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateGotoTria03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1310, 1410});
+                context.DestroyMonster(spawnIds: new []{1310, 1410});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateGotoTria04(context);
                 }
@@ -2436,10 +2436,10 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateGotoTria04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 63000050, arg2: 1, arg3: 100);
+                context.MoveUser(mapId: 63000050, portalId: 1, boxId: 100);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "flower") == 1) {
                     return new StateRandom대상선정(context);
                 }
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateRandom대상선정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RandomAdditionalEffect(target: "pc", triggerBoxId: 1003, spawnPointId: 0, targetCount: 1, tick: 3, waitTick: 2, targetEffect: @"Additional/Etc/Eff_Target_Select_Keep.xml", additionalEffectId: 62100021);
+                context.RandomAdditionalEffect(target: "pc", boxId: 1003, spawnId: 0, targetCount: 1, tick: 3, waitTick: 2, targetEffect: @"Additional/Etc/Eff_Target_Select_Keep.xml", additionalEffectId: 62100021);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     context.SetUserValue(triggerId: 900007, key: "flower", value: 0);
                     return new StateEnd(context);
                 }
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "flower") == 0) {
                     return new StateWait(context);
                 }
@@ -60,12 +60,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBuff(arg1: 1004, arg2: 62100021, arg3: true);
-                context.RemoveBuff(arg1: 1004, arg2: 62100022, arg3: true);
-                context.RemoveBuff(arg1: 1004, arg2: 62100023, arg3: true);
+                context.RemoveBuff(boxId: 1004, skillId: 62100021, arg3: true);
+                context.RemoveBuff(boxId: 1004, skillId: 62100022, arg3: true);
+                context.RemoveBuff(boxId: 1004, skillId: 62100023, arg3: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWait(context);
             }
 

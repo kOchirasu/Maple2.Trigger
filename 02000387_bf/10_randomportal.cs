@@ -4,8 +4,8 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {2011, 2012, 2013, 2014}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: false);
+                context.SetMesh(triggerIds: new []{2011, 2012, 2013, 2014}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{5001, 5002, 5003, 5004}, visible: false);
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 12, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
@@ -14,16 +14,16 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetPortal(portalId: 22, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 23, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 24, visible: false, enabled: false, minimapVisible: false);
-                context.SetActor(arg1: 4101, arg2: true, arg3: "ry_functobj_door_B01_off");
-                context.SetActor(arg1: 4102, arg2: true, arg3: "ry_functobj_door_B01_off");
-                context.SetActor(arg1: 4103, arg2: true, arg3: "ry_functobj_door_B01_off");
-                context.SetActor(arg1: 4104, arg2: true, arg3: "ry_functobj_door_B01_off");
+                context.SetActor(triggerId: 4101, visible: true, initialSequence: "ry_functobj_door_B01_off");
+                context.SetActor(triggerId: 4102, visible: true, initialSequence: "ry_functobj_door_B01_off");
+                context.SetActor(triggerId: 4103, visible: true, initialSequence: "ry_functobj_door_B01_off");
+                context.SetActor(triggerId: 4104, visible: true, initialSequence: "ry_functobj_door_B01_off");
                 context.SetUserValue(key: "RandomPortalOn", value: 0);
                 context.SetUserValue(key: "CounterDoorPick", value: 0);
                 context.SetUserValue(key: "DungeonClear", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "RandomPortalOn") == 1) {
                     return new StateGuide01(context);
                 }
@@ -38,11 +38,11 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02000387_BF__10_RANDOMPORTAL__0$", arg3: 3000, arg4: "0");
-                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: true);
+                context.SetEventUI(arg1: 1, script: "$02000387_BF__10_RANDOMPORTAL__0$", duration: 3000, boxId: 0);
+                context.SetEffect(triggerIds: new []{5001, 5002, 5003, 5004}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCheckMember01(context);
                 }
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9001) == 1) {
                     return new StateCheckMember02(context);
                 }
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9001) != 1) {
                     return new StateCheckMember01(context);
                 }
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9001) != 1) {
                     return new StateCheckMember01(context);
                 }
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9001) != 1) {
                     return new StateCheckMember01(context);
                 }
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateDoorActivate02(context);
                 }
@@ -164,13 +164,13 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateDoorActivate02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 4101, arg2: true, arg3: "ry_functobj_door_B01_on");
-                context.SetActor(arg1: 4102, arg2: true, arg3: "ry_functobj_door_B01_on");
-                context.SetActor(arg1: 4103, arg2: true, arg3: "ry_functobj_door_B01_on");
-                context.SetActor(arg1: 4104, arg2: true, arg3: "ry_functobj_door_B01_on");
+                context.SetActor(triggerId: 4101, visible: true, initialSequence: "ry_functobj_door_B01_on");
+                context.SetActor(triggerId: 4102, visible: true, initialSequence: "ry_functobj_door_B01_on");
+                context.SetActor(triggerId: 4103, visible: true, initialSequence: "ry_functobj_door_B01_on");
+                context.SetActor(triggerId: 4104, visible: true, initialSequence: "ry_functobj_door_B01_on");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePickPortalPattern(context);
                 }
@@ -186,20 +186,20 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 25f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 25f)) {
                     return new State1stDoorPick(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new State2ndDoorPick(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new State3rdDoorPick(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new State4rdDoorPick(context);
                 }
 
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetPortal(portalId: 24, visible: false, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateGameStart00(context);
                 }
@@ -240,7 +240,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetPortal(portalId: 24, visible: false, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateGameStart00(context);
                 }
@@ -261,7 +261,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetPortal(portalId: 24, visible: false, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateGameStart00(context);
                 }
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetPortal(portalId: 23, visible: false, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateGameStart00(context);
                 }
@@ -298,7 +298,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9800) == 4) {
                     return new StateGameStart01(context);
                 }
@@ -318,7 +318,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateGameStart01(context);
                 }
@@ -343,14 +343,14 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetPortal(portalId: 22, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 23, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 24, visible: false, enabled: false, minimapVisible: false);
-                context.SetActor(arg1: 4101, arg2: true, arg3: "ry_functobj_door_B01_off");
-                context.SetActor(arg1: 4102, arg2: true, arg3: "ry_functobj_door_B01_off");
-                context.SetActor(arg1: 4103, arg2: true, arg3: "ry_functobj_door_B01_off");
-                context.SetActor(arg1: 4104, arg2: true, arg3: "ry_functobj_door_B01_off");
-                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: false);
+                context.SetActor(triggerId: 4101, visible: true, initialSequence: "ry_functobj_door_B01_off");
+                context.SetActor(triggerId: 4102, visible: true, initialSequence: "ry_functobj_door_B01_off");
+                context.SetActor(triggerId: 4103, visible: true, initialSequence: "ry_functobj_door_B01_off");
+                context.SetActor(triggerId: 4104, visible: true, initialSequence: "ry_functobj_door_B01_off");
+                context.SetEffect(triggerIds: new []{5001, 5002, 5003, 5004}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9005) == 1) {
                     return new StateGameStart02(context);
                 }
@@ -370,7 +370,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9006) == 3) {
                     return new State10secondsWait(context);
                 }
@@ -390,7 +390,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "DungeonClear") == 1) {
                     return new StateQuit(context);
                 }
@@ -410,7 +410,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9900) == 4) {
                     return new State10secondsWait(context);
                 }
@@ -433,10 +433,10 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateEndGame01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02000387_BF__10_RANDOMPORTAL__1$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000387_BF__10_RANDOMPORTAL__1$", duration: 3000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StatePCMoveOut01(context);
                 }
@@ -455,10 +455,10 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePCMoveOut01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 02000387, arg2: 1, arg3: 9900);
+                context.MoveUser(mapId: 02000387, portalId: 1, boxId: 9900);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateFieredNotice01(context);
                 }
@@ -475,11 +475,11 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetConversation(arg1: 2, arg2: 11000491, script: "$02000387_BF__10_RANDOMPORTAL__2$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11000491, script: "$02000387_BF__10_RANDOMPORTAL__2$", arg4: 4);
                 context.SetSkip(state: new StateFieredNotice01Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateFieredNotice01Skip(context);
                 }
@@ -498,7 +498,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateFieredNotice02(context);
             }
 
@@ -509,11 +509,11 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateFieredNotice02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000491, script: "$02000387_BF__10_RANDOMPORTAL__3$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11000491, script: "$02000387_BF__10_RANDOMPORTAL__3$", arg4: 4);
                 context.SetSkip(state: new StateFieredNotice02Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateFieredNotice02Skip(context);
                 }
@@ -534,7 +534,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePCForceToLeave(context);
                 }
@@ -549,15 +549,15 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePCForceToLeave(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 0, arg2: 0);
+                context.MoveUser(mapId: 0, portalId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {100});
+                context.DestroyMonster(spawnIds: new []{100});
             }
         }
 
@@ -566,7 +566,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

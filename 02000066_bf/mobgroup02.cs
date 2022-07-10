@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108});
+                context.DestroyMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108});
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103})) {
                     return new StateWaitTime(context);
                 }
 
@@ -23,52 +23,52 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new[] {900})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{900})) {
                     return new State1차타이머(context);
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new[] {901})) {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{901})) {
                     return new State2차타이머(context);
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new[] {902})) {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{902})) {
                     return new State3차타이머(context);
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new[] {904})) {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{904})) {
                     return new State4차타이머(context);
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new[] {905})) {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{905})) {
                     return new State5차타이머(context);
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new[] {906})) {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{906})) {
                     return new State6차타이머(context);
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new[] {908})) {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{908})) {
                     return new State7차타이머(context);
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new[] {909})) {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{909})) {
                     return new State8차타이머(context);
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new[] {910})) {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{910})) {
                     return new State9차타이머(context);
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new[] {912})) {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{912})) {
                     return new State10차타이머(context);
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new[] {913})) {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{913})) {
                     return new State11차타이머(context);
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new[] {914})) {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{914})) {
                     return new State12차타이머(context);
                 }
 
@@ -82,16 +82,16 @@ namespace Maple2.Trigger._02000066_bf {
             internal State1차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "45", arg2: 45);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetTimer(timerId: "45", seconds: 45);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {900})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{900})) {
                     return new StateWaitTime(context);
                 }
 
-                if (context.TimeExpired(arg1: "45")) {
+                if (context.TimeExpired(timerId: "45")) {
                     return new StateWaitTime(context);
                 }
 
@@ -105,16 +105,16 @@ namespace Maple2.Trigger._02000066_bf {
             internal State2차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "22", arg2: 22);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetTimer(timerId: "22", seconds: 22);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {901})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{901})) {
                     return new StateWaitTime(context);
                 }
 
-                if (context.TimeExpired(arg1: "22")) {
+                if (context.TimeExpired(timerId: "22")) {
                     return new StateWaitTime(context);
                 }
 
@@ -128,16 +128,16 @@ namespace Maple2.Trigger._02000066_bf {
             internal State3차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "40", arg2: 40);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetTimer(timerId: "40", seconds: 40);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {902})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{902})) {
                     return new State소멸(context);
                 }
 
-                if (context.TimeExpired(arg1: "40")) {
+                if (context.TimeExpired(timerId: "40")) {
                     return new StateWaitTime(context);
                 }
 
@@ -151,16 +151,16 @@ namespace Maple2.Trigger._02000066_bf {
             internal State4차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "33", arg2: 33);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetTimer(timerId: "33", seconds: 33);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {904})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{904})) {
                     return new StateWaitTime(context);
                 }
 
-                if (context.TimeExpired(arg1: "33")) {
+                if (context.TimeExpired(timerId: "33")) {
                     return new StateWaitTime(context);
                 }
 
@@ -174,16 +174,16 @@ namespace Maple2.Trigger._02000066_bf {
             internal State5차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "16", arg2: 16);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetTimer(timerId: "16", seconds: 16);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {905})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{905})) {
                     return new StateWaitTime(context);
                 }
 
-                if (context.TimeExpired(arg1: "16")) {
+                if (context.TimeExpired(timerId: "16")) {
                     return new StateWaitTime(context);
                 }
 
@@ -197,16 +197,16 @@ namespace Maple2.Trigger._02000066_bf {
             internal State6차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "28", arg2: 28);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetTimer(timerId: "28", seconds: 28);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {906})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{906})) {
                     return new State소멸(context);
                 }
 
-                if (context.TimeExpired(arg1: "28")) {
+                if (context.TimeExpired(timerId: "28")) {
                     return new StateWaitTime(context);
                 }
 
@@ -220,16 +220,16 @@ namespace Maple2.Trigger._02000066_bf {
             internal State7차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "25", arg2: 25);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetTimer(timerId: "25", seconds: 25);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {908})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{908})) {
                     return new StateWaitTime(context);
                 }
 
-                if (context.TimeExpired(arg1: "25")) {
+                if (context.TimeExpired(timerId: "25")) {
                     return new StateWaitTime(context);
                 }
 
@@ -243,16 +243,16 @@ namespace Maple2.Trigger._02000066_bf {
             internal State8차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "13", arg2: 13);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetTimer(timerId: "13", seconds: 13);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {909})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{909})) {
                     return new StateWaitTime(context);
                 }
 
-                if (context.TimeExpired(arg1: "13")) {
+                if (context.TimeExpired(timerId: "13")) {
                     return new StateWaitTime(context);
                 }
 
@@ -266,16 +266,16 @@ namespace Maple2.Trigger._02000066_bf {
             internal State9차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "22", arg2: 22);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetTimer(timerId: "22", seconds: 22);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {910})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{910})) {
                     return new State소멸(context);
                 }
 
-                if (context.TimeExpired(arg1: "22")) {
+                if (context.TimeExpired(timerId: "22")) {
                     return new StateWaitTime(context);
                 }
 
@@ -289,16 +289,16 @@ namespace Maple2.Trigger._02000066_bf {
             internal State10차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "20", arg2: 20);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetTimer(timerId: "20", seconds: 20);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {912})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{912})) {
                     return new StateWaitTime(context);
                 }
 
-                if (context.TimeExpired(arg1: "20")) {
+                if (context.TimeExpired(timerId: "20")) {
                     return new StateWaitTime(context);
                 }
 
@@ -312,16 +312,16 @@ namespace Maple2.Trigger._02000066_bf {
             internal State11차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "10", arg2: 10);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetTimer(timerId: "10", seconds: 10);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {913})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{913})) {
                     return new StateWaitTime(context);
                 }
 
-                if (context.TimeExpired(arg1: "10")) {
+                if (context.TimeExpired(timerId: "10")) {
                     return new StateWaitTime(context);
                 }
 
@@ -335,16 +335,16 @@ namespace Maple2.Trigger._02000066_bf {
             internal State12차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "16", arg2: 16);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetTimer(timerId: "16", seconds: 16);
+                context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {914})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{914})) {
                     return new State소멸(context);
                 }
 
-                if (context.TimeExpired(arg1: "16")) {
+                if (context.TimeExpired(timerId: "16")) {
                     return new StateWaitTime(context);
                 }
 
@@ -358,10 +358,10 @@ namespace Maple2.Trigger._02000066_bf {
             internal State소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108});
+                context.DestroyMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWaitTime(context);
             }
 

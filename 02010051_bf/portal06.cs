@@ -4,19 +4,19 @@ namespace Maple2.Trigger._02010051_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {900}, arg2: false);
-                context.SetMesh(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1511, 1512, 1513}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {914}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000914}, arg2: 0);
-                context.SetMesh(arg1: new[] {1601, 1602, 1603, 1604, 1605, 1606}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {6000, 6001, 6002, 6003, 6005}, arg2: false);
+                context.SetEffect(triggerIds: new []{900}, visible: false);
+                context.SetMesh(triggerIds: new []{1501, 1502, 1503, 1504, 1505, 1506}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{1511, 1512, 1513}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{914}, visible: false);
+                context.SetInteractObject(interactIds: new []{10000914}, state: 0);
+                context.SetMesh(triggerIds: new []{1601, 1602, 1603, 1604, 1605, 1606}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{6000, 6001, 6002, 6003, 6005}, visible: false);
                 context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9002})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9002})) {
                     return new State입장Delay01(context);
                 }
 
@@ -30,11 +30,11 @@ namespace Maple2.Trigger._02010051_bf {
             internal State입장Delay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 6);
+                context.SetTimer(timerId: "1", seconds: 6);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State대화SetupCinematic01(context);
                 }
 
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02010051_bf {
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateCinematic대화01(context);
             }
 
@@ -63,13 +63,13 @@ namespace Maple2.Trigger._02010051_bf {
             internal StateCinematic대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11001319, script: "$02010051_BF__PORTAL06__0$", arg4: 3);
+                context.SetTimer(timerId: "2", seconds: 3);
+                context.SetConversation(type: 2, spawnId: 11001319, script: "$02010051_BF__PORTAL06__0$", arg4: 3);
                 context.SetSkip(state: new StateCinematic대화02Wait(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateCinematic대화02Wait(context);
                 }
 
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02010051_bf {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateCinematic대화02(context);
             }
 
@@ -97,13 +97,13 @@ namespace Maple2.Trigger._02010051_bf {
             internal StateCinematic대화02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 4);
-                context.SetConversation(arg1: 2, arg2: 11001319, script: "$02010051_BF__PORTAL06__1$", arg4: 3);
+                context.SetTimer(timerId: "3", seconds: 4);
+                context.SetConversation(type: 2, spawnId: 11001319, script: "$02010051_BF__PORTAL06__1$", arg4: 3);
                 context.SetSkip(state: new State대화StopCinematic01(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State대화StopCinematic01(context);
                 }
 
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._02010051_bf {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State문열기01(context);
             }
 
@@ -131,16 +131,16 @@ namespace Maple2.Trigger._02010051_bf {
             internal State문열기01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "5", arg2: 1);
+                context.SetTimer(timerId: "5", seconds: 1);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.SetEffect(arg1: new[] {6005}, arg2: true);
-                context.SetMesh(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
-                context.SetMesh(arg1: new[] {1511, 1512, 1513}, arg2: true, arg3: 1, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{6005}, visible: true);
+                context.SetMesh(triggerIds: new []{1501, 1502, 1503, 1504, 1505, 1506}, visible: false, arg3: 0, arg4: 0, arg5: 10f);
+                context.SetMesh(triggerIds: new []{1511, 1512, 1513}, visible: true, arg3: 1, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
                     return new State유저입장01(context);
                 }
 
@@ -155,8 +155,8 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9001})) {
                     return new StateGuidePrepare(context);
                 }
 
@@ -170,11 +170,11 @@ namespace Maple2.Trigger._02010051_bf {
             internal StateGuidePrepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "10", arg2: 7);
+                context.SetTimer(timerId: "10", seconds: 7);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "10")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "10")) {
                     return new StateGuide시작(context);
                 }
 
@@ -189,11 +189,11 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20105101, textId: 20105101, duration: 4000);
-                context.SetInteractObject(arg1: new[] {10000914}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000914}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000914}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000914}, arg2: 0)) {
                     return new StatePortalEnable01(context);
                 }
 
@@ -207,13 +207,13 @@ namespace Maple2.Trigger._02010051_bf {
             internal StatePortalEnable01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "11", arg2: 1);
-                context.SetEffect(arg1: new[] {914, 6000}, arg2: true);
-                context.SetMesh(arg1: new[] {1601, 1602, 1603, 1604, 1605, 1606}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
+                context.SetTimer(timerId: "11", seconds: 1);
+                context.SetEffect(triggerIds: new []{914, 6000}, visible: true);
+                context.SetMesh(triggerIds: new []{1601, 1602, 1603, 1604, 1605, 1606}, visible: false, arg3: 0, arg4: 0, arg5: 10f);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "11")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "11")) {
                     return new StatePortalEnable02(context);
                 }
 
@@ -231,8 +231,8 @@ namespace Maple2.Trigger._02010051_bf {
                 context.SetPortal(portalId: 11, visible: true, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000835}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000835}, arg2: 0)) {
                     return new StatePortalDisable(context);
                 }
 
@@ -248,11 +248,11 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnEnter() {
                 context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
-                context.SetMesh(arg1: new[] {1601, 1602, 1603, 1604, 1605, 1606}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetEffect(arg1: new[] {6000, 6005}, arg2: false);
+                context.SetMesh(triggerIds: new []{1601, 1602, 1603, 1604, 1605, 1606}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetEffect(triggerIds: new []{6000, 6005}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

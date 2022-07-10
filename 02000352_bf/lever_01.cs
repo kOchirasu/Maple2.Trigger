@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000352_bf {
             internal State닫힘상태(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {6111}, arg2: true, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {6101}, arg2: false, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{6111}, visible: true, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{6101}, visible: false, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000822}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000822}, arg2: 1)) {
                     return new State작동(context);
                 }
 
@@ -23,12 +23,12 @@ namespace Maple2.Trigger._02000352_bf {
             internal State작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
+                context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 111, textId: 20000080);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000822}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000822}, arg2: 0)) {
                     return new StateOpen(context);
                 }
 
@@ -44,14 +44,14 @@ namespace Maple2.Trigger._02000352_bf {
             internal StateOpen(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetEffect(arg1: new[] {9000002}, arg2: true);
-                context.SetMesh(arg1: new[] {6111}, arg2: false, arg4: 200, arg5: 15f);
-                context.SetMesh(arg1: new[] {6101}, arg2: true, arg4: 200, arg5: 15f);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetEffect(triggerIds: new []{9000002}, visible: true);
+                context.SetMesh(triggerIds: new []{6111}, visible: false, arg4: 200, arg5: 15f);
+                context.SetMesh(triggerIds: new []{6101}, visible: true, arg4: 200, arg5: 15f);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State열림(context);
                 }
 
@@ -65,12 +65,12 @@ namespace Maple2.Trigger._02000352_bf {
             internal State열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {6002}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{6002}, visible: false, arg4: 0, arg5: 10f);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State열림_끝(context);
                 }
 
@@ -85,10 +85,10 @@ namespace Maple2.Trigger._02000352_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 113, textId: 40011);
-                context.CameraSelect(arg1: 8001, arg2: false);
+                context.CameraSelect(triggerId: 8001, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

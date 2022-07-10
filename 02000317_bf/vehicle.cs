@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000317_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001047}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001047}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001047}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001047}, arg2: 0)) {
                     return new StateHide(context);
                 }
 
@@ -16,7 +16,7 @@ namespace Maple2.Trigger._02000317_bf {
             }
 
             public override void OnExit() {
-                context.SetInteractObject(arg1: new[] {10001047}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{10001047}, state: 2);
             }
         }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000317_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,12 +5,12 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "notice") == 1) {
                     return new State경고(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {101})) {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -24,12 +24,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal State경고(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02020101_BF__DEATHFLOWERNOTICE__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02020101_BF__DEATHFLOWERNOTICE__0$", duration: 3000);
                 context.SetUserValue(triggerId: 900005, key: "notice", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetUserValue(triggerId: 900005, key: "notice", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWait(context);
             }
 

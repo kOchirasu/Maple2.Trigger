@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001242}, arg2: 1);
-                context.SetBreakable(arg1: new[] {4501}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4501}, arg2: true);
+                context.SetInteractObject(interactIds: new []{10001242}, state: 1);
+                context.SetBreakable(triggerIds: new []{4501}, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4501}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001242}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001242}, arg2: 0)) {
                     return new StateMoveStart(context);
                 }
 
@@ -24,10 +24,10 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateMoveStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {4501}, arg2: true);
+                context.SetBreakable(triggerIds: new []{4501}, enabled: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateMoveStop(context);
                 }
@@ -42,10 +42,10 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateMoveStop(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {4501}, arg2: false);
+                context.SetBreakable(triggerIds: new []{4501}, enabled: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     return new StateReset(context);
                 }
@@ -60,11 +60,11 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001242}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001242}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001242}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001242}, arg2: 0)) {
                     return new StateMoveStart(context);
                 }
 

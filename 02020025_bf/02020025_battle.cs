@@ -8,7 +8,7 @@ namespace Maple2.Trigger._02020025_bf {
                 context.SetUserValue(triggerId: 99999001, key: "End", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "battlesetting") == 1) {
                     return new State전투_시작(context);
                 }
@@ -24,30 +24,30 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override void OnEnter() {
                 context.DungeonResetTime(seconds: 300);
-                context.SetNpcDuelHpBar(isOpen: true, spawnPointId: 201, durationTick: 300000, npcHpStep: 100);
+                context.SetNpcDuelHpBar(isOpen: true, spawnId: 201, durationTick: 300000, npcHpStep: 100);
             }
 
-            public override TriggerState Execute() {
-                if (context.GetDungeonPlayTime() <= 180 && context.MonsterDead(arg1: new[] {201})) {
+            public override TriggerState? Execute() {
+                if (context.GetDungeonPlayTime() <= 180 && context.MonsterDead(spawnIds: new []{201})) {
                     context.DungeonMissionComplete(missionId: 24092005);
                     return new State전투_종료(context);
                 }
 
-                if (context.GetDungeonPlayTime() <= 70 && context.MonsterDead(arg1: new[] {201})) {
+                if (context.GetDungeonPlayTime() <= 70 && context.MonsterDead(spawnIds: new []{201})) {
                     context.DungeonMissionComplete(missionId: 24092006);
                     return new State전투_종료(context);
                 }
 
-                if (context.GetDungeonPlayTime() <= 270 && context.MonsterDead(arg1: new[] {201})) {
+                if (context.GetDungeonPlayTime() <= 270 && context.MonsterDead(spawnIds: new []{201})) {
                     context.DungeonMissionComplete(missionId: 24092010);
                     return new State전투_종료(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {201})) {
+                if (context.MonsterDead(spawnIds: new []{201})) {
                     return new State전투_종료(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {902})) {
+                if (!context.UserDetected(boxIds: new []{902})) {
                     return new State전투_종료(context);
                 }
 
@@ -66,12 +66,12 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override void OnEnter() {
                 context.DungeonSetEndTime();
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
                 context.SideNpcTalk(npcId: 24110001, illust: "Conder_normal", duration: 4000, script: "$02020025_BF__02020025_battle__0$", voice: @"ko/Npc/00002258");
-                context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 201);
+                context.SetNpcDuelHpBar(isOpen: false, spawnId: 201);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd신호(context);
                 }
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02020025_bf {
                 context.SetUserValue(triggerId: 99999001, key: "End", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

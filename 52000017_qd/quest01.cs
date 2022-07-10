@@ -6,12 +6,12 @@ namespace Maple2.Trigger._52000017_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000, 5001}, arg2: false);
-                context.CreateMonster(arg1: new[] {1001}, arg2: false);
+                context.SetEffect(triggerIds: new []{5000, 5001}, visible: false);
+                context.CreateMonster(spawnIds: new []{1001}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001444}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{50001444}, questStates: new byte[]{2})) {
                     return new StateStart(context);
                 }
 
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._52000017_qd {
                 context.PlaySceneMovie(fileName: "Cut_Remember_Vision.swf", movieId: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
+            public override TriggerState? Execute() {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, condition: "IsStop", value: "1")) {
                     return new State말풍선Delay(context);
                 }
 
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52000017_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StatePC말풍선01(context);
                 }
@@ -63,11 +63,11 @@ namespace Maple2.Trigger._52000017_qd {
             internal StatePC말풍선01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, script: "$52000017_QD__QUEST01__0$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 0, script: "$52000017_QD__QUEST01__0$", arg4: 3, arg5: 0);
                 context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateNPCScript01(context);
                 }
@@ -82,12 +82,12 @@ namespace Maple2.Trigger._52000017_qd {
             internal StateNPCScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001560, script: "$52000017_QD__QUEST01__1$", arg4: 4);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
+                context.SetConversation(type: 2, spawnId: 11001560, script: "$52000017_QD__QUEST01__1$", arg4: 4);
                 context.SetSkip(state: new StateNPCScript01스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateNPCScript02(context);
                 }
@@ -102,12 +102,12 @@ namespace Maple2.Trigger._52000017_qd {
             internal StateNPCScript01스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(triggerIds: new []{5000}, visible: false);
                 context.RemoveCinematicTalk();
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNPCScript02(context);
             }
 
@@ -118,12 +118,12 @@ namespace Maple2.Trigger._52000017_qd {
             internal StateNPCScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001560, script: "$52000017_QD__QUEST01__2$", arg4: 3);
+                context.SetEffect(triggerIds: new []{5001}, visible: true);
+                context.SetConversation(type: 2, spawnId: 11001560, script: "$52000017_QD__QUEST01__2$", arg4: 3);
                 context.SetSkip(state: new StateNPCScript02스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateStopCinematic(context);
                 }
@@ -138,12 +138,12 @@ namespace Maple2.Trigger._52000017_qd {
             internal StateNPCScript02스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(triggerIds: new []{5001}, visible: false);
                 context.RemoveCinematicTalk();
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateStopCinematic(context);
             }
 
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._52000017_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateEnd(context);
                 }
@@ -173,10 +173,10 @@ namespace Maple2.Trigger._52000017_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52000040, arg2: 1);
+                context.MoveUser(mapId: 52000040, portalId: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateBossSpawn때까지Wait(context);
                 }
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateTrigger영역체크시작(context);
                 }
@@ -37,16 +37,16 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MobSpawnStop") == 4) {
                     return new State졸MonsterRemove작업(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {99})) {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new State졸MonsterRemove작업(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {11200})) {
+                if (context.UserDetected(boxIds: new []{11200})) {
                     return new State졸MonsterSpawnWaiting(context);
                 }
 
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateTrigger영역안플레이어Final체크(context);
                 }
@@ -77,16 +77,16 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MobSpawnStop") == 4) {
                     return new State졸MonsterRemove작업(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {99})) {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new State졸MonsterRemove작업(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {11200})) {
+                if (context.UserDetected(boxIds: new []{11200})) {
                     return new State졸MonsterSpawn하기(context);
                 }
 
@@ -104,10 +104,10 @@ namespace Maple2.Trigger._02020141_bf {
             internal State졸MonsterSpawn하기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {11201, 11202, 11203, 11204}, arg2: false);
+                context.CreateMonster(spawnIds: new []{11201, 11202, 11203, 11204}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateTrigger영역에계속있는지체크(context);
                 }
@@ -123,20 +123,20 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MobSpawnStop") == 4) {
                     return new State졸MonsterRemove작업(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {99})) {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new State졸MonsterRemove작업(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {11200})) {
+                if (context.UserDetected(boxIds: new []{11200})) {
                     return new State졸Monster리젠단계시작(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {11200})) {
+                if (!context.UserDetected(boxIds: new []{11200})) {
                     return new State졸MonsterRemove작동Wait(context);
                 }
 
@@ -151,12 +151,12 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {11200})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{11200})) {
                     return new State졸Monster리젠Waiting(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {11200})) {
+                if (!context.UserDetected(boxIds: new []{11200})) {
                     return new State졸MonsterRemove작동Wait(context);
                 }
 
@@ -171,16 +171,16 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MobSpawnStop") == 4) {
                     return new State졸MonsterRemove작업(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {99})) {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new State졸MonsterRemove작업(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {11200})) {
+                if (!context.UserDetected(boxIds: new []{11200})) {
                     return new State졸MonsterRemove작동Wait(context);
                 }
 
@@ -199,20 +199,20 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MobSpawnStop") == 4) {
                     return new State졸MonsterRemove작업(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {99})) {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new State졸MonsterRemove작업(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {11200})) {
+                if (context.UserDetected(boxIds: new []{11200})) {
                     return new State졸MonsterSpawn하기(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {11200})) {
+                if (!context.UserDetected(boxIds: new []{11200})) {
                     return new State졸MonsterRemove작동Wait(context);
                 }
 
@@ -227,8 +227,8 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {11200})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{11200})) {
                     return new StateTrigger영역에계속있는지체크(context);
                 }
 
@@ -246,15 +246,15 @@ namespace Maple2.Trigger._02020141_bf {
             internal State졸MonsterRemove작업(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {11201, 11202, 11203, 11204});
+                context.DestroyMonster(spawnIds: new []{11201, 11202, 11203, 11204});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MobSpawnStop") == 4) {
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {99})) {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new StateEnd(context);
                 }
 
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

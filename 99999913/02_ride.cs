@@ -8,7 +8,7 @@ namespace Maple2.Trigger._99999913 {
                 context.SetUserValue(key: "StartPatrol", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SetRide") == 1) {
                     return new StateRide01_Ready(context);
                 }
@@ -51,11 +51,11 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide01_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {110}, arg2: false);
-                context.WriteLog(arg1: "Survival", arg3: "bus_01");
+                context.CreateMonster(spawnIds: new []{110}, arg2: false);
+                context.WriteLog(logName: "Survival", @event: "bus_01");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
                     return new StateRide01_StartPatrolDelay(context);
                 }
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateRide01_StartPatrol(context);
                 }
@@ -86,10 +86,10 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide01_StartPatrol(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_110");
+                context.MoveNpc(spawnId: 110, patrolName: "MS2PatrolData_110");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 36000)) {
                     return new StateQuit(context);
                 }
@@ -104,11 +104,11 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide02_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {120}, arg2: false);
-                context.WriteLog(arg1: "Survival", arg3: "bus_02");
+                context.CreateMonster(spawnIds: new []{120}, arg2: false);
+                context.WriteLog(logName: "Survival", @event: "bus_02");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
                     return new StateRide02_StartPatrolDelay(context);
                 }
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateRide02_StartPatrol(context);
                 }
@@ -139,10 +139,10 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide02_StartPatrol(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 120, arg2: "MS2PatrolData_120");
+                context.MoveNpc(spawnId: 120, patrolName: "MS2PatrolData_120");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 36000)) {
                     return new StateQuit(context);
                 }
@@ -157,11 +157,11 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide03_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {130}, arg2: false);
-                context.WriteLog(arg1: "Survival", arg3: "bus_03");
+                context.CreateMonster(spawnIds: new []{130}, arg2: false);
+                context.WriteLog(logName: "Survival", @event: "bus_03");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
                     return new StateRide03_StartPatrolDelay(context);
                 }
@@ -177,7 +177,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateRide03_StartPatrol(context);
                 }
@@ -192,10 +192,10 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide03_StartPatrol(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 130, arg2: "MS2PatrolData_130");
+                context.MoveNpc(spawnId: 130, patrolName: "MS2PatrolData_130");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 36000)) {
                     return new StateQuit(context);
                 }
@@ -210,11 +210,11 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide04_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {140}, arg2: false);
-                context.WriteLog(arg1: "Survival", arg3: "bus_04");
+                context.CreateMonster(spawnIds: new []{140}, arg2: false);
+                context.WriteLog(logName: "Survival", @event: "bus_04");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
                     return new StateRide04_StartPatrolDelay(context);
                 }
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateRide04_StartPatrol(context);
                 }
@@ -245,10 +245,10 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide04_StartPatrol(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 140, arg2: "MS2PatrolData_140");
+                context.MoveNpc(spawnId: 140, patrolName: "MS2PatrolData_140");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 36000)) {
                     return new StateQuit(context);
                 }
@@ -263,11 +263,11 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide05_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {150}, arg2: false);
-                context.WriteLog(arg1: "Survival", arg3: "bus_05");
+                context.CreateMonster(spawnIds: new []{150}, arg2: false);
+                context.WriteLog(logName: "Survival", @event: "bus_05");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
                     return new StateRide05_StartPatrolDelay(context);
                 }
@@ -283,7 +283,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateRide05_StartPatrol(context);
                 }
@@ -298,10 +298,10 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide05_StartPatrol(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 150, arg2: "MS2PatrolData_150");
+                context.MoveNpc(spawnId: 150, patrolName: "MS2PatrolData_150");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 36000)) {
                     return new StateQuit(context);
                 }
@@ -316,11 +316,11 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide06_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {160}, arg2: false);
-                context.WriteLog(arg1: "Survival", arg3: "bus_06");
+                context.CreateMonster(spawnIds: new []{160}, arg2: false);
+                context.WriteLog(logName: "Survival", @event: "bus_06");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
                     return new StateRide06_StartPatrolDelay(context);
                 }
@@ -336,7 +336,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateRide06_StartPatrol(context);
                 }
@@ -351,10 +351,10 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide06_StartPatrol(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 160, arg2: "MS2PatrolData_160");
+                context.MoveNpc(spawnId: 160, patrolName: "MS2PatrolData_160");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 36000)) {
                     return new StateQuit(context);
                 }
@@ -369,11 +369,11 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide07_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {170}, arg2: false);
-                context.WriteLog(arg1: "Survival", arg3: "bus_07");
+                context.CreateMonster(spawnIds: new []{170}, arg2: false);
+                context.WriteLog(logName: "Survival", @event: "bus_07");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
                     return new StateRide07_StartPatrolDelay(context);
                 }
@@ -389,7 +389,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateRide07_StartPatrol(context);
                 }
@@ -404,10 +404,10 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide07_StartPatrol(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 170, arg2: "MS2PatrolData_170");
+                context.MoveNpc(spawnId: 170, patrolName: "MS2PatrolData_170");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 36000)) {
                     return new StateQuit(context);
                 }
@@ -422,11 +422,11 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide08_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {180}, arg2: false);
-                context.WriteLog(arg1: "Survival", arg3: "bus_08");
+                context.CreateMonster(spawnIds: new []{180}, arg2: false);
+                context.WriteLog(logName: "Survival", @event: "bus_08");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
                     return new StateRide08_StartPatrolDelay(context);
                 }
@@ -442,7 +442,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateRide08_StartPatrol(context);
                 }
@@ -457,10 +457,10 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide08_StartPatrol(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 180, arg2: "MS2PatrolData_180");
+                context.MoveNpc(spawnId: 180, patrolName: "MS2PatrolData_180");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 36000)) {
                     return new StateQuit(context);
                 }
@@ -475,11 +475,11 @@ namespace Maple2.Trigger._99999913 {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {110, 120, 130, 140, 150, 160, 170, 180});
-                context.WriteLog(arg1: "Survival", arg3: "bus_end");
+                context.DestroyMonster(spawnIds: new []{110, 120, 130, 140, 150, 160, 170, 180});
+                context.WriteLog(logName: "Survival", @event: "bus_end");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

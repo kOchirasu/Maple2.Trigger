@@ -5,7 +5,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "DanceGuide") == 1) {
                     return new StateDanceGuideP1_Random(context);
                 }
@@ -61,12 +61,12 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 50f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateDanceGuideP11_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateDanceGuideP12_01(context);
                 }
 
@@ -81,12 +81,12 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 50f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateDanceGuideP21_01(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateDanceGuideP22_01(context);
                 }
 
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateDanceGuideP11_02(context);
                 }
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateReset(context);
                 }
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateDanceGuideP12_02(context);
                 }
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateReset(context);
                 }
@@ -175,7 +175,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateDanceGuideP21_02(context);
                 }
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateReset(context);
                 }
@@ -211,7 +211,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateDanceGuideP22_02(context);
                 }
@@ -229,7 +229,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateReset(context);
                 }
@@ -247,7 +247,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateDanceGuideP3_02(context);
                 }
@@ -265,7 +265,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateDanceGuideP3_03(context);
                 }
@@ -283,7 +283,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateReset(context);
                 }
@@ -301,7 +301,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 6000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateReset(context);
                 }
@@ -319,7 +319,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateDanceGuideP42_02(context);
                 }
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateReset(context);
                 }
@@ -355,7 +355,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateDanceGuideP51_02(context);
                 }
@@ -373,7 +373,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateReset(context);
                 }
@@ -391,7 +391,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 6000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateReset(context);
                 }
@@ -409,7 +409,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateDanceGuideP61_02(context);
                 }
@@ -427,7 +427,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateReset(context);
                 }
@@ -445,7 +445,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 6000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateReset(context);
                 }
@@ -463,7 +463,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 6000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateReset(context);
                 }
@@ -481,7 +481,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateDanceGuideP72_02(context);
                 }
@@ -499,7 +499,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateReset(context);
                 }
@@ -517,7 +517,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "DanceGuide", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

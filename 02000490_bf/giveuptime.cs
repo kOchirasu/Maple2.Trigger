@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000490_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new State타이머(context);
                 }
 
@@ -21,10 +21,10 @@ namespace Maple2.Trigger._02000490_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.SetEventUI(arg1: 1, script: "$DUNGEON__GIVEUP__TIME__0$", arg3: 3000);
-                    context.DungeonEnableGiveUp(isEnable: true);
+                    context.SetEventUI(arg1: 1, script: "$DUNGEON__GIVEUP__TIME__0$", duration: 3000);
+                    context.DungeonEnableGiveUp(enable: true);
                     return new StateEnd(context);
                 }
 
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000490_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

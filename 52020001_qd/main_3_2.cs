@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "respawn") == 1) {
                     return new State경고텍스트(context);
                 }
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._52020001_qd {
             internal State경고텍스트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: @"더이상 상대할 수 없습니다.\n포탑을 이용해 다른 곳으로 이동하세요.", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: @"더이상 상대할 수 없습니다.\n포탑을 이용해 다른 곳으로 이동하세요.", duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new State경고텍스트_2(context);
                 }
@@ -42,10 +42,10 @@ namespace Maple2.Trigger._52020001_qd {
             internal State경고텍스트_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: @"더이상 상대할 수 없습니다.\n포탑을 이용해 다른 곳으로 이동하세요.", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: @"더이상 상대할 수 없습니다.\n포탑을 이용해 다른 곳으로 이동하세요.", duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new State경고텍스트(context);
                 }
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) { }
 
                 return null;

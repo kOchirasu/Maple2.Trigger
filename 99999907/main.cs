@@ -4,15 +4,15 @@ namespace Maple2.Trigger._99999907 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000019, 12000020}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{12000019, 12000020}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000019}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000019}, arg2: 0)) {
                     return new State리셋(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {12000020}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{12000020}, arg2: 0)) {
                     return new State리셋(context);
                 }
 
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._99999907 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }

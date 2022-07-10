@@ -5,8 +5,8 @@ namespace Maple2.Trigger._61000010_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {102})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{102})) {
                     return new StateAchievement(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._61000010_me {
             internal StateAchievement(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 102, arg2: "trigger", arg3: "WinSanghaiRunners");
+                context.SetAchievement(triggerId: 102, type: "trigger", code: "WinSanghaiRunners");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

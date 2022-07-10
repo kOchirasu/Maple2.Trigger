@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateDefaultSetting(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000552_bf {
                 context.SetUserValue(key: "MonsterMany", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateTrigger작동시작(context);
                 }
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MonsterMany") >= 1) {
                     return new State블랙빈에게Buff부여(context);
                 }
@@ -54,11 +54,11 @@ namespace Maple2.Trigger._02000552_bf {
             internal State블랙빈에게Buff부여(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {101}, arg2: 50003307, arg3: 2, arg4: true);
-                context.AddBuff(arg1: new[] {102}, arg2: 50003307, arg3: 2, arg4: true);
+                context.AddBuff(boxIds: new []{101}, skillId: 50003307, level: 2, arg4: true);
+                context.AddBuff(boxIds: new []{102}, skillId: 50003307, level: 2, arg4: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State블랙빈에게Buff삭제체크(context);
                 }
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MonsterMany") == 0) {
                     return new State블랙빈에게Buff삭제Wait(context);
                 }
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 900)) {
                     return new State블랙빈에게Buff삭제실시(context);
                 }
@@ -105,11 +105,11 @@ namespace Maple2.Trigger._02000552_bf {
             internal State블랙빈에게Buff삭제실시(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {101}, arg2: 50003309, arg3: 1, arg4: true);
-                context.AddBuff(arg1: new[] {102}, arg2: 50003309, arg3: 1, arg4: true);
+                context.AddBuff(boxIds: new []{101}, skillId: 50003309, level: 1, arg4: true);
+                context.AddBuff(boxIds: new []{102}, skillId: 50003309, level: 1, arg4: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateTrigger작동시작(context);
                 }

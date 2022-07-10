@@ -5,20 +5,20 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{60100210}, questStates: new byte[]{2})) {
                     return new StateReady(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{60100210}, questStates: new byte[]{3})) {
                     return new StateReady(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100215}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{60100215}, questStates: new byte[]{1})) {
                     return new StateReady(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100215}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{60100215}, questStates: new byte[]{2})) {
                     return new StateReady(context);
                 }
 
@@ -32,15 +32,15 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52000126, arg2: 6001);
-                context.SetSound(arg1: 7002, arg2: true);
+                context.MoveUser(mapId: 52000126, portalId: 6001);
+                context.SetSound(triggerId: 7002, arg2: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(spawnIds: new []{201}, arg2: true);
                 context.SetSceneSkip(state: new StateEndwaiting(context), arg2: "exit");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateMove(context);
                 }
@@ -55,11 +55,11 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateMove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_3001");
-                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__0$", duration: 7000, delayTick: 1);
+                context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_3001");
+                context.AddBalloonTalk(spawnId: 201, msg: "$52000126_QD__MAIN_01__0$", duration: 7000, delayTick: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateTalk(context);
                 }
@@ -74,11 +74,11 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateTalk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 201, arg2: "Clap_A");
-                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__1$", duration: 3000, delayTick: 0);
+                context.SetNpcEmotionSequence(spawnId: 201, sequenceName: "Clap_A");
+                context.AddBalloonTalk(spawnId: 201, msg: "$52000126_QD__MAIN_01__1$", duration: 3000, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateEndtalk(context);
                 }
@@ -93,10 +93,10 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateEndtalk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__2$", duration: 3000, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 201, msg: "$52000126_QD__MAIN_01__2$", duration: 3000, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateEndwaiting(context);
                 }
@@ -114,11 +114,11 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.DestroyMonster(arg1: new[] {201});
-                context.CreateMonster(arg1: new[] {202}, arg2: true);
+                context.DestroyMonster(spawnIds: new []{201});
+                context.CreateMonster(spawnIds: new []{202}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnd(context);
                 }
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

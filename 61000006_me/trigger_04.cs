@@ -4,12 +4,12 @@ namespace Maple2.Trigger._61000006_me {
             internal StateLever(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {510, 511, 512, 513, 514, 515, 516}, arg2: true);
-                context.SetEffect(arg1: new[] {701, 702}, arg2: false);
+                context.SetMesh(triggerIds: new []{510, 511, 512, 513, 514, 515, 516}, visible: true);
+                context.SetEffect(triggerIds: new []{701, 702}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {401})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{401})) {
                     return new State끝(context);
                 }
 
@@ -23,13 +23,13 @@ namespace Maple2.Trigger._61000006_me {
             internal State끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {510, 511, 512, 513, 514, 515, 516}, arg2: false);
-                context.SetEffect(arg1: new[] {701, 702}, arg2: true);
-                context.SetTimer(id: "11", arg2: 6);
+                context.SetMesh(triggerIds: new []{510, 511, 512, 513, 514, 515, 516}, visible: false);
+                context.SetEffect(triggerIds: new []{701, 702}, visible: true);
+                context.SetTimer(timerId: "11", seconds: 6);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "11")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "11")) {
                     return new State폭죽끄기(context);
                 }
 
@@ -43,12 +43,12 @@ namespace Maple2.Trigger._61000006_me {
             internal State폭죽끄기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "12", arg2: 120);
-                context.SetEffect(arg1: new[] {701, 702}, arg2: false);
+                context.SetTimer(timerId: "12", seconds: 120);
+                context.SetEffect(triggerIds: new []{701, 702}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "12")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "12")) {
                     return new StateLever(context);
                 }
 

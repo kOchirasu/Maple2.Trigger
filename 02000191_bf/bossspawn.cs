@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000191_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {10})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{10})) {
                     return new StateBossSpawn(context);
                 }
 
@@ -23,11 +23,11 @@ namespace Maple2.Trigger._02000191_bf {
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 12, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
-                context.CreateMonster(arg1: new[] {900});
+                context.CreateMonster(spawnIds: new []{900});
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {900})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{900})) {
                     return new StateEnd체크(context);
                 }
 
@@ -35,7 +35,7 @@ namespace Maple2.Trigger._02000191_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {900});
+                context.DestroyMonster(spawnIds: new []{900});
             }
         }
 
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000191_bf {
                 context.SetPortal(portalId: 13, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

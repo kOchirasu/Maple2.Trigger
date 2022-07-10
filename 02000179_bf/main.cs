@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000179_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     // return new StateQuestConditionCheck(context);
                     return null;
                 }
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000179_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

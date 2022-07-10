@@ -4,18 +4,18 @@ namespace Maple2.Trigger._52000004_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601, 602}, arg2: false);
-                context.DestroyMonster(arg1: new[] {2001, 2099, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016});
+                context.SetEffect(triggerIds: new []{601, 602}, visible: false);
+                context.DestroyMonster(spawnIds: new []{2001, 2099, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016});
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateDungeonInit(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {199})) {
+                if (!context.UserDetected(boxIds: new []{199})) {
                     return new StateEnd(context);
                 }
 
@@ -29,15 +29,15 @@ namespace Maple2.Trigger._52000004_qd {
             internal StateDungeonInit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State1차목표(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {199})) {
+                if (!context.UserDetected(boxIds: new []{199})) {
                     return new StateEnd(context);
                 }
 
@@ -51,15 +51,15 @@ namespace Maple2.Trigger._52000004_qd {
             internal State1차목표(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetTimer(id: "2", arg2: 2);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
+                context.SetTimer(timerId: "2", seconds: 2);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$52000004_QD__MAIN__0$");
                 context.SetSkip(state: new StateStopCinematic(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateCamera이동(context);
                 }
 
@@ -73,13 +73,13 @@ namespace Maple2.Trigger._52000004_qd {
             internal StateCamera이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
-                context.CameraSelect(arg1: 301, arg2: true);
+                context.SetTimer(timerId: "3", seconds: 3);
+                context.CameraSelect(triggerId: 301, enable: true);
                 context.SetSkip(state: new StateStopCinematic(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateStopCinematic(context);
                 }
 
@@ -93,18 +93,18 @@ namespace Maple2.Trigger._52000004_qd {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.CameraSelectPath(pathIds: new[] {301}, arg2: true);
+                context.SetEffect(triggerIds: new []{602}, visible: true);
+                context.CameraSelectPath(pathIds: new []{301}, returnView: true);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {100})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{100})) {
                     return new State피자들기(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {199})) {
+                if (!context.UserDetected(boxIds: new []{199})) {
                     return new StateEnd(context);
                 }
 
@@ -118,16 +118,16 @@ namespace Maple2.Trigger._52000004_qd {
             internal State피자들기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetTimer(timerId: "3", seconds: 3);
                 context.ShowGuideSummary(entityId: 25200401, textId: 25200401);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateEliteSpawnWait(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {199})) {
+                if (!context.UserDetected(boxIds: new []{199})) {
                     return new StateEnd(context);
                 }
 
@@ -143,16 +143,16 @@ namespace Maple2.Trigger._52000004_qd {
             internal StateEliteSpawnWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016}, arg2: false);
+                context.SetEffect(triggerIds: new []{602}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateEliteSpawn(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {199})) {
+                if (!context.UserDetected(boxIds: new []{199})) {
                     return new StateEnd(context);
                 }
 
@@ -167,17 +167,17 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 25200402, textId: 25200402);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.CreateMonster(arg1: new[] {2001}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 2001, script: "$52000004_QD__MAIN__3$", arg4: 3);
+                context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.CreateMonster(spawnIds: new []{2001}, arg2: false);
+                context.SetConversation(type: 1, spawnId: 2001, script: "$52000004_QD__MAIN__3$", arg4: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2001})) {
                     return new State벽해제(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {199})) {
+                if (!context.UserDetected(boxIds: new []{199})) {
                     return new StateEnd(context);
                 }
 
@@ -193,15 +193,15 @@ namespace Maple2.Trigger._52000004_qd {
             internal State벽해제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {102})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{102})) {
                     return new StateNPCSpawn(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {199})) {
+                if (!context.UserDetected(boxIds: new []{199})) {
                     return new StateEnd(context);
                 }
 
@@ -215,19 +215,19 @@ namespace Maple2.Trigger._52000004_qd {
             internal StateNPCSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.CreateMonster(arg1: new[] {2099}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 2099, script: "$52000004_QD__MAIN__4$", arg4: 3);
-                context.MoveNpc(arg1: 2099, arg2: "MS2PatrolData_2099");
-                context.SetTimer(id: "5", arg2: 5);
+                context.SetEffect(triggerIds: new []{601}, visible: false);
+                context.CreateMonster(spawnIds: new []{2099}, arg2: false);
+                context.SetConversation(type: 1, spawnId: 2099, script: "$52000004_QD__MAIN__4$", arg4: 3);
+                context.MoveNpc(spawnId: 2099, patrolName: "MS2PatrolData_2099");
+                context.SetTimer(timerId: "5", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{199})) {
                     return new StateEnd(context);
                 }
 
-                if (context.TimeExpired(arg1: "5")) {
+                if (context.TimeExpired(timerId: "5")) {
                     return new State미션Success(context);
                 }
 
@@ -241,25 +241,25 @@ namespace Maple2.Trigger._52000004_qd {
             internal State미션Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {10001852}, arg3: new byte[] {2})) {
-                    context.SetEventUI(arg1: 7, script: "$52000004_QD__MAIN__5$", arg3: 3000, arg4: "0");
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{199}, questIds: new []{10001852}, questStates: new byte[]{2})) {
+                    context.SetEventUI(arg1: 7, script: "$52000004_QD__MAIN__5$", duration: 3000, boxId: 0);
                     return new StatePortalCreation(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {10001851}, arg3: new byte[] {2})) {
-                    context.SetEventUI(arg1: 7, script: "$52000004_QD__MAIN__6$", arg3: 3000, arg4: "0");
+                if (context.QuestUserDetected(boxIds: new []{199}, questIds: new []{10001851}, questStates: new byte[]{2})) {
+                    context.SetEventUI(arg1: 7, script: "$52000004_QD__MAIN__6$", duration: 3000, boxId: 0);
                     return new StatePortalCreation(context);
                 }
 
-                if (context.TimeExpired(arg1: "3")) {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StatePortalCreation(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {199})) {
+                if (!context.UserDetected(boxIds: new []{199})) {
                     return new StateEnd(context);
                 }
 
@@ -273,17 +273,17 @@ namespace Maple2.Trigger._52000004_qd {
             internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.ShowGuideSummary(entityId: 25200403, textId: 25200403);
                     return new StateEndWait(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {199})) {
+                if (!context.UserDetected(boxIds: new []{199})) {
                     return new StateEnd(context);
                 }
 
@@ -297,16 +297,16 @@ namespace Maple2.Trigger._52000004_qd {
             internal StateEndWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "30", arg2: 30);
+                context.SetTimer(timerId: "30", seconds: 30);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "30")) {
-                    context.MoveUser(arg1: 02000166, arg2: 30, arg3: 199);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "30")) {
+                    context.MoveUser(mapId: 02000166, portalId: 30, boxId: 199);
                     return new StateEnd(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {199})) {
+                if (!context.UserDetected(boxIds: new []{199})) {
                     return new StateEnd(context);
                 }
 
@@ -322,12 +322,12 @@ namespace Maple2.Trigger._52000004_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {2001, 2099, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016});
+                context.DestroyMonster(spawnIds: new []{2001, 2099, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016});
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWait(context);
             }
 

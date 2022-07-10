@@ -5,8 +5,8 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9001})) {
                     return new State다리흔들기Prepare(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._63000006_cs {
             internal State다리흔들기Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {910, 911, 912, 913}, arg2: false);
+                context.SetSkill(triggerIds: new []{910, 911, 912, 913}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateActivateSkill01(context);
             }
 
@@ -34,16 +34,16 @@ namespace Maple2.Trigger._63000006_cs {
             internal StateActivateSkill01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 42);
-                context.SetSkill(arg1: new[] {910, 911, 912, 913}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 42);
+                context.SetSkill(triggerIds: new []{910, 911, 912, 913}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State다리흔들기Prepare(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {9002})) {
+                if (context.UserDetected(boxIds: new []{9002})) {
                     return new StateEnd(context);
                 }
 
@@ -57,10 +57,10 @@ namespace Maple2.Trigger._63000006_cs {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {910, 911, 912, 913}, arg2: false);
+                context.SetSkill(triggerIds: new []{910, 911, 912, 913}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

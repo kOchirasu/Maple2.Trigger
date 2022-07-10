@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Sidetalk") == 1) {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004715, illust: "Eone_serious", script: "$02020311_BF__SIdETALK__0$", duration: 3000);
                     return new State세번째(context);
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Sidetalk") == 2) {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004715, illust: "Eone_serious", script: "$02020311_BF__SIdETALK__1$", duration: 3000);
                     return new State네번째(context);
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Sidetalk") == 3) {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004715, illust: "Eone_serious", script: "$02020311_BF__SIdETALK__2$", duration: 3000);
                     return new State대사Wait(context);
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State계속(context);
                 }
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{101})) {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004715, illust: "Eone_serious", script: "$02020311_BF__SIdETALK__3$", duration: 3000);
                     return new StateEnd(context);
                 }
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -7,12 +7,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetUserValue(key: "CageDoorOpen", value: 0);
                 context.SetUserValue(key: "MissionStart", value: 0);
                 context.SetUserValue(key: "MissionComplete", value: 0);
-                context.SetActor(arg1: 4000, arg2: true, arg3: "Closed");
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
+                context.SetActor(triggerId: 4000, visible: true, initialSequence: "Closed");
+                context.SetMesh(triggerIds: new []{3100, 3101, 3102, 3103}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{5001, 5002}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "CageDoorOpen") == 1) {
                     return new StateCageDoorOpenDelay(context);
                 }
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCageDoorOpen(context);
                 }
@@ -43,12 +43,12 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateCageDoorOpen(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetActor(arg1: 4000, arg2: true, arg3: "Open");
-                context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 300, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{5001}, visible: true);
+                context.SetActor(triggerId: 4000, visible: true, initialSequence: "Open");
+                context.SetMesh(triggerIds: new []{3100}, visible: false, arg3: 300, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MissionStart") == 1) {
                     return new StateCountDown(context);
                 }
@@ -63,11 +63,11 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateCountDown(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, script: "$02100001_BF__99_BARRICADE__0$", arg3: 3000);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.SetEventUI(arg1: 1, script: "$02100001_BF__99_BARRICADE__0$", duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
                     return new StateShutDown(context);
                 }
@@ -82,13 +82,13 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateShutDown(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
+                context.SetEffect(triggerIds: new []{5002}, visible: true);
                 context.SetUserValue(triggerId: 5, key: "GiveBuffSlowly", value: 1);
-                context.SetActor(arg1: 4000, arg2: true, arg3: "Closed");
-                context.SetMesh(arg1: new[] {3100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetActor(triggerId: 4000, visible: true, initialSequence: "Closed");
+                context.SetMesh(triggerIds: new []{3100}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MissionComplete") == 1) {
                     return new StateRelease(context);
                 }
@@ -103,12 +103,12 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateRelease(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetActor(arg1: 4000, arg2: true, arg3: "Open");
-                context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 300, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{5001}, visible: true);
+                context.SetActor(triggerId: 4000, visible: true, initialSequence: "Open");
+                context.SetMesh(triggerIds: new []{3100}, visible: false, arg3: 300, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuit(context);
                 }
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

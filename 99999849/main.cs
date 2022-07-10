@@ -5,7 +5,7 @@ namespace Maple2.Trigger._99999849 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Test") == 2) {
                     // return new State두번(context);
                     return null;

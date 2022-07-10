@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 12, arg2: new[] {91})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 12, spawnIds: new []{91})) {
                     return new State소환몹Spawn(context);
                 }
 
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02000313_bf {
             internal State소환몹Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 102});
+                context.CreateMonster(spawnIds: new []{101, 102});
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101, 102})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101, 102})) {
                     return new StateWaitTime(context);
                 }
 
@@ -38,11 +38,11 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 20);
+                context.SetTimer(timerId: "1", seconds: 20);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWaitStart(context);
                 }
 
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000313_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
         }
     }

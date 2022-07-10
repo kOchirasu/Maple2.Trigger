@@ -7,13 +7,13 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
-                context.SetMesh(arg1: new[] {301, 302, 303}, arg2: true, arg3: 0, arg4: 0);
-                context.SetMesh(arg1: new[] {3101, 3102, 3201, 3202, 3301, 3302, 3401, 3402, 3403, 3404}, arg2: false, arg3: 0, arg4: 0);
-                context.SetEffect(arg1: new[] {71011, 71012, 71021, 71022, 72011, 72021, 73011, 73021, 73022, 73023}, arg2: false);
+                context.SetMesh(triggerIds: new []{301, 302, 303}, visible: true, arg3: 0, arg4: 0);
+                context.SetMesh(triggerIds: new []{3101, 3102, 3201, 3202, 3301, 3302, 3401, 3402, 3403, 3404}, visible: false, arg3: 0, arg4: 0);
+                context.SetEffect(triggerIds: new []{71011, 71012, 71021, 71022, 72011, 72021, 73011, 73021, 73022, 73023}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateRandom블록01(context);
                 }
 
@@ -28,16 +28,16 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 50f)) {
-                    context.SetMesh(arg1: new[] {3101}, arg2: true, arg3: 0, arg4: 0);
-                    context.SetEffect(arg1: new[] {71011, 71012}, arg2: true);
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 50f)) {
+                    context.SetMesh(triggerIds: new []{3101}, visible: true, arg3: 0, arg4: 0);
+                    context.SetEffect(triggerIds: new []{71011, 71012}, visible: true);
                     return new StateRandom블록02(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
-                    context.SetMesh(arg1: new[] {3102}, arg2: true, arg3: 0, arg4: 0);
-                    context.SetEffect(arg1: new[] {71021, 71022}, arg2: true);
+                if (context.RandomCondition(rate: 50f)) {
+                    context.SetMesh(triggerIds: new []{3102}, visible: true, arg3: 0, arg4: 0);
+                    context.SetEffect(triggerIds: new []{71021, 71022}, visible: true);
                     return new StateRandom블록02(context);
                 }
 
@@ -52,16 +52,16 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 50f)) {
-                    context.SetMesh(arg1: new[] {3201}, arg2: true, arg3: 0, arg4: 0);
-                    context.SetEffect(arg1: new[] {72011}, arg2: true);
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 50f)) {
+                    context.SetMesh(triggerIds: new []{3201}, visible: true, arg3: 0, arg4: 0);
+                    context.SetEffect(triggerIds: new []{72011}, visible: true);
                     return new StateRandom블록03(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
-                    context.SetMesh(arg1: new[] {3202}, arg2: true, arg3: 0, arg4: 0);
-                    context.SetEffect(arg1: new[] {72021}, arg2: true);
+                if (context.RandomCondition(rate: 50f)) {
+                    context.SetMesh(triggerIds: new []{3202}, visible: true, arg3: 0, arg4: 0);
+                    context.SetEffect(triggerIds: new []{72021}, visible: true);
                     return new StateRandom블록03(context);
                 }
 
@@ -76,16 +76,16 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 50f)) {
-                    context.SetMesh(arg1: new[] {3301}, arg2: true, arg3: 0, arg4: 0);
-                    context.SetEffect(arg1: new[] {73011}, arg2: true);
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 50f)) {
+                    context.SetMesh(triggerIds: new []{3301}, visible: true, arg3: 0, arg4: 0);
+                    context.SetEffect(triggerIds: new []{73011}, visible: true);
                     return new StateRandom블록04(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
-                    context.SetMesh(arg1: new[] {3302}, arg2: true, arg3: 0, arg4: 0);
-                    context.SetEffect(arg1: new[] {73021, 73022, 73023}, arg2: true);
+                if (context.RandomCondition(rate: 50f)) {
+                    context.SetMesh(triggerIds: new []{3302}, visible: true, arg3: 0, arg4: 0);
+                    context.SetEffect(triggerIds: new []{73021, 73022, 73023}, visible: true);
                     return new StateRandom블록04(context);
                 }
 
@@ -100,14 +100,14 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 50f)) {
-                    context.SetMesh(arg1: new[] {3401, 3402}, arg2: true, arg3: 0, arg4: 0);
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 50f)) {
+                    context.SetMesh(triggerIds: new []{3401, 3402}, visible: true, arg3: 0, arg4: 0);
                     return new StateStartConditionCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
-                    context.SetMesh(arg1: new[] {3403, 3404}, arg2: true, arg3: 0, arg4: 0);
+                if (context.RandomCondition(rate: 50f)) {
+                    context.SetMesh(triggerIds: new []{3403, 3404}, visible: true, arg3: 0, arg4: 0);
                     return new StateStartConditionCheck(context);
                 }
 
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 60000)) {
                     return new State어나운스0(context);
                 }
@@ -141,11 +141,11 @@ namespace Maple2.Trigger._61000004_me {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "ME_Trigger_01_00");
-                context.SetEventUI(arg1: 1, script: "$61000004_ME__TRIGGER_01__0$", arg3: 7000, arg4: "0");
+                context.PlaySystemSoundInBox(sound: "ME_Trigger_01_00");
+                context.SetEventUI(arg1: 1, script: "$61000004_ME__TRIGGER_01__0$", duration: 7000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new State어나운스1(context);
                 }
@@ -163,14 +163,14 @@ namespace Maple2.Trigger._61000004_me {
                 context.ShowCountUI(text: "$61000004_ME__TRIGGER_01__1$", stage: 0, count: 5);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5500)) {
-                    context.SetMesh(arg1: new[] {301, 302, 303}, arg2: false, arg3: 12, arg4: 0);
-                    context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "dailyquest_start");
-                    context.GiveGuildExp(boxId: false, type: 2);
+                    context.SetMesh(triggerIds: new []{301, 302, 303}, visible: false, arg3: 12, arg4: 0);
+                    context.SetAchievement(triggerId: 101, type: "trigger", code: "dailyquest_start");
+                    context.GiveGuildExp(boxId: 0, type: 2);
                     context.StartMiniGame(boxId: 105, round: 1, type: MiniGame.LudibriumEscape);
                     context.StartMiniGameRound(boxId: 105, round: 1);
-                    context.MoveUserToBox(boxId: 101, portalId: true);
+                    context.MoveUserToBox(boxId: 101, portalId: 1);
                     return new StateStart(context);
                 }
 
@@ -185,11 +185,11 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999111, key: "gameStart", value: 1);
-                context.SetTimer(id: "180", arg2: 180, arg3: false, arg4: true);
+                context.SetTimer(timerId: "180", seconds: 180, clearAtZero: false, display: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "180")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "180")) {
                     return new State경기종료(context);
                 }
 
@@ -203,13 +203,13 @@ namespace Maple2.Trigger._61000004_me {
             internal State경기종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 102, arg2: "trigger", arg3: "escape_win");
-                context.SetEventUI(arg1: 3, script: "$61000004_ME__TRIGGER_01__2$", arg3: 5000, arg4: "102");
-                context.SetEventUI(arg1: 6, script: "$61000004_ME__TRIGGER_01__3$", arg3: 5000, arg4: "!102");
-                context.AddBuff(arg1: new[] {102}, arg2: 70000019, arg3: 1);
+                context.SetAchievement(triggerId: 102, type: "trigger", code: "escape_win");
+                context.SetEventUI(arg1: 3, script: "$61000004_ME__TRIGGER_01__2$", duration: 5000, boxId: 102);
+                context.SetEventUI(arg1: 6, script: "$61000004_ME__TRIGGER_01__3$", duration: 5000, notBoxId: 102);
+                context.AddBuff(boxIds: new []{102}, skillId: 70000019, level: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.EndMiniGameRound(winnerBoxId: 102, expRate: 0.25f, isGainLoserBonus: true);
                     context.MiniGameGiveReward(winnerBoxId: 102, contentType: "miniGame");
@@ -228,9 +228,9 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.MoveUser(arg1: 0, arg2: 0);
+                    context.MoveUser(mapId: 0, portalId: 0);
                     return new StateEnd(context);
                 }
 
@@ -245,7 +245,7 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

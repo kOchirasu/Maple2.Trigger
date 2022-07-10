@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1002})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1002})) {
                     return new State소환Prepare(context);
                 }
 
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateMonsterSpawn(context);
                 }
@@ -36,15 +36,15 @@ namespace Maple2.Trigger._02020111_bf {
             internal StateMonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {141, 142, 143, 144, 145, 146});
+                context.CreateMonster(spawnIds: new []{141, 142, 143, 144, 145, 146});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "monster_die") == 1) {
                     return new StateMonsterDestroy(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {141, 142, 143, 144, 145, 146})) {
+                if (context.MonsterDead(spawnIds: new []{141, 142, 143, 144, 145, 146})) {
                     return new StateWait(context);
                 }
 
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "monster_die") == 1) {
                     return new StateMonsterDestroy(context);
                 }
@@ -78,10 +78,10 @@ namespace Maple2.Trigger._02020111_bf {
             internal StateMonsterDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {141, 142, 143, 144, 145, 146});
+                context.DestroyMonster(spawnIds: new []{141, 142, 143, 144, 145, 146});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakFail") == 1) {
                     return new StateStart(context);
                 }

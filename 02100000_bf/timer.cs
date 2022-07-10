@@ -7,8 +7,8 @@ namespace Maple2.Trigger._02100000_bf {
                 context.SetPortal(portalId: 19, visible: false, enabled: false, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {106})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{106})) {
                     return new State타이머시작(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._02100000_bf {
             internal State타이머시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "10000", arg2: 360, arg3: true, arg4: true, arg5: 0);
+                context.SetTimer(timerId: "10000", seconds: 360, clearAtZero: true, display: true, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateUserDetection_2(context);
             }
 
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {104})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{104})) {
                     return new StateMonsterSpawn_Boss(context);
                 }
 
@@ -52,10 +52,10 @@ namespace Maple2.Trigger._02100000_bf {
             internal StateMonsterSpawn_Boss(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {82001}, arg2: true);
+                context.CreateMonster(spawnIds: new []{82001}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd선택(context);
                 }
@@ -71,12 +71,12 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {82001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{82001})) {
                     return new StateSuccess(context);
                 }
 
-                if (context.TimeExpired(arg1: "10000")) {
+                if (context.TimeExpired(timerId: "10000")) {
                     return new State실패(context);
                 }
 
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._02100000_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "10000");
+                context.ResetTimer(timerId: "10000");
             }
         }
 
@@ -92,12 +92,12 @@ namespace Maple2.Trigger._02100000_bf {
             internal StateSuccess(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {-1});
-                context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "Find02100000");
-                context.SetEventUI(arg1: 7, script: "$02100000_BF__TIMER__1$", arg3: 2000, arg4: "0");
+                context.DestroyMonster(spawnIds: new []{-1});
+                context.SetAchievement(triggerId: 9900, type: "trigger", code: "Find02100000");
+                context.SetEventUI(arg1: 7, script: "$02100000_BF__TIMER__1$", duration: 2000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.DungeonClear();
                     return new StateEnd(context);
@@ -113,11 +113,11 @@ namespace Maple2.Trigger._02100000_bf {
             internal State실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 5, script: "$02100000_BF__TIMER__0$", arg3: 2000, arg4: "0");
-                context.DestroyMonster(arg1: new[] {-1});
+                context.SetEventUI(arg1: 5, script: "$02100000_BF__TIMER__0$", duration: 2000, boxId: 0);
+                context.DestroyMonster(spawnIds: new []{-1});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.DungeonFail();
                     return new StateEnd(context);
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._02100000_bf {
                 context.SetPortal(portalId: 5, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

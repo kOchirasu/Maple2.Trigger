@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateWait99(context);
                 }
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetPortal(portalId: 428, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
                     return new StatePortalCreation(context);
                 }
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetPortal(portalId: 428, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd(context);
                 }
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

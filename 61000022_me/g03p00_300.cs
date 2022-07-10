@@ -4,25 +4,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {110, 111, 112, 113, 114, 115}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {120, 121, 122, 123, 124, 125}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {130, 131, 132, 133, 134, 135}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {140, 141, 142, 143, 144, 145}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {210, 211, 212, 213, 214, 215}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {220, 221, 222, 223, 224, 225}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {230, 231, 232, 233, 234, 235}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {240, 241, 242, 243, 244, 245}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {310, 311, 312, 313, 314, 315}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {320, 321, 322, 323, 324, 325}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {330, 331, 332, 333, 334, 335}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {340, 341, 342, 343, 344, 345}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {410, 411, 412, 413, 414, 415}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {420, 421, 422, 423, 424, 425}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {430, 431, 432, 433, 434, 435}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {440, 441, 442, 443, 444, 445}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{110, 111, 112, 113, 114, 115}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{120, 121, 122, 123, 124, 125}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{130, 131, 132, 133, 134, 135}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{140, 141, 142, 143, 144, 145}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{210, 211, 212, 213, 214, 215}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{220, 221, 222, 223, 224, 225}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{230, 231, 232, 233, 234, 235}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{240, 241, 242, 243, 244, 245}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{310, 311, 312, 313, 314, 315}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{320, 321, 322, 323, 324, 325}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{330, 331, 332, 333, 334, 335}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{340, 341, 342, 343, 344, 345}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{410, 411, 412, 413, 414, 415}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{420, 421, 422, 423, 424, 425}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{430, 431, 432, 433, 434, 435}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new int[]{440, 441, 442, 443, 444, 445}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P01Set") == 1) {
                     return new StateNumberOnP01(context);
                 }
@@ -170,23 +170,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {110}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {135}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {212}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {224}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {230}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {243}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {325}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {342}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {434}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{110}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{135}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{212}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{224}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{230}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{243}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{325}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{342}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{434}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 5);
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P01TimeLimit") == 1) {
                     return new StateCheckP01(context);
                 }
@@ -238,7 +238,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP01(context);
             }
 
@@ -249,25 +249,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {110}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {135}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {212}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {224}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {230}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {243}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {325}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {342}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {434}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{110}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{135}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{212}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{224}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{230}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{243}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{325}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{342}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{434}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP01(context);
             }
 
@@ -283,7 +283,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P01TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -298,23 +298,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {113}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {145}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {210}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {230}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {244}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {315}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {343}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {424}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{113}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{145}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{210}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{230}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{244}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{315}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{343}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{424}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
@@ -333,7 +333,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P02TimeLimit") == 1) {
                     return new StateCheckP02(context);
                 }
@@ -366,7 +366,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP02(context);
             }
 
@@ -377,25 +377,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {113}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {145}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {210}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {230}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {244}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {315}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {343}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {424}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{113}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{145}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{210}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{230}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{244}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{315}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{343}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{424}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP02(context);
             }
 
@@ -411,7 +411,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P02TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -426,23 +426,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {113}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {125}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {214}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {233}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {312}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {334}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {445}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{113}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{125}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{214}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{233}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{312}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{334}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{445}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 5);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
@@ -461,7 +461,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 5);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P03TimeLimit") == 1) {
                     return new StateCheckP03(context);
                 }
@@ -494,7 +494,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 5);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP03(context);
             }
 
@@ -505,25 +505,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {113}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {125}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {214}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {233}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {312}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {334}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {445}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{113}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{125}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{214}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{233}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{312}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{334}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{445}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP03(context);
             }
 
@@ -539,7 +539,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P03TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -554,23 +554,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {111}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {122}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {130}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {141}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {214}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {222}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {235}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {243}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {310}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {324}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {345}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {410}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {423}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{111}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{122}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{130}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{141}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{214}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{222}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{235}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{243}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{310}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{324}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{345}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{410}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{423}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 1);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 2);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 0);
@@ -589,7 +589,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P04TimeLimit") == 1) {
                     return new StateCheckP04(context);
                 }
@@ -622,7 +622,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP04(context);
             }
 
@@ -633,25 +633,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {111}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {122}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {130}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {141}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {214}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {222}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {235}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {243}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {310}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {324}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {345}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {410}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {423}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{111}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{122}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{130}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{141}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{214}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{222}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{235}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{243}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{310}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{324}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{345}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{410}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{423}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP04(context);
             }
 
@@ -667,7 +667,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P04TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -682,23 +682,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {115}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {144}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {223}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {230}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {241}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {314}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {343}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {413}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {435}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{115}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{144}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{223}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{230}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{241}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{314}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{343}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{413}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{435}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 5);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
@@ -717,7 +717,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P05TimeLimit") == 1) {
                     return new StateCheckP05(context);
                 }
@@ -750,7 +750,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP05(context);
             }
 
@@ -761,25 +761,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {115}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {144}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {223}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {230}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {241}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {314}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {343}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {413}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {435}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{115}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{144}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{223}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{230}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{241}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{314}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{343}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{413}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{435}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP05(context);
             }
 
@@ -795,7 +795,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P05TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -810,23 +810,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {114}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {122}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {141}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {213}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {235}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {241}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {311}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {324}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {343}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {421}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {432}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {441}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{114}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{122}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{141}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{213}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{235}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{241}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{311}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{324}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{343}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{421}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{432}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{441}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 4);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 2);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
@@ -845,7 +845,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P06TimeLimit") == 1) {
                     return new StateCheckP06(context);
                 }
@@ -878,7 +878,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP06(context);
             }
 
@@ -889,25 +889,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {114}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {122}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {141}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {213}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {235}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {241}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {311}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {324}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {343}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {421}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {432}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {441}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{114}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{122}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{141}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{213}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{235}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{241}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{311}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{324}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{343}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{421}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{432}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{441}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP06(context);
             }
 
@@ -923,7 +923,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P06TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -938,23 +938,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {112}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {122}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {222}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {232}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {242}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {312}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {322}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {332}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {432}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{112}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{122}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{222}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{232}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{242}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{312}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{322}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{332}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{432}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 2);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
@@ -973,7 +973,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P07TimeLimit") == 1) {
                     return new StateCheckP07(context);
                 }
@@ -1006,7 +1006,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP07(context);
             }
 
@@ -1017,25 +1017,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {112}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {122}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {222}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {232}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {242}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {312}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {322}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {332}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {432}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{112}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{122}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{222}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{232}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{242}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{312}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{322}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{332}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{432}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP07(context);
             }
 
@@ -1051,7 +1051,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P07TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -1066,23 +1066,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {112}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {122}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {212}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {222}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {232}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {242}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {312}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {332}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {342}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {432}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{112}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{122}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{212}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{222}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{232}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{242}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{312}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{332}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{342}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{432}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 2);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
@@ -1101,7 +1101,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P08TimeLimit") == 1) {
                     return new StateCheckP08(context);
                 }
@@ -1134,7 +1134,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP08(context);
             }
 
@@ -1145,25 +1145,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {112}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {122}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {212}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {222}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {232}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {242}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {312}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {332}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {342}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {432}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{112}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{122}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{212}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{222}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{232}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{242}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{312}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{332}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{342}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{432}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP08(context);
             }
 
@@ -1179,7 +1179,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P08TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -1194,23 +1194,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {113}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {143}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {223}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {230}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {243}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {312}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {323}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {333}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {343}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {413}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {431}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {443}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{113}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{143}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{223}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{230}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{243}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{312}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{323}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{333}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{343}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{413}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{431}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{443}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
@@ -1229,7 +1229,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P09TimeLimit") == 1) {
                     return new StateCheckP09(context);
                 }
@@ -1262,7 +1262,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP09(context);
             }
 
@@ -1273,25 +1273,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {113}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {143}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {223}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {230}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {243}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {312}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {323}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {333}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {343}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {413}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {431}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{113}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{143}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{223}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{230}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{243}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{312}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{323}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{333}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{343}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{413}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{431}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{443}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP09(context);
             }
 
@@ -1307,7 +1307,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P09TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -1322,23 +1322,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {110}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {130}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {143}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {215}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {220}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {235}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {325}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {345}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {413}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {421}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{110}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{130}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{143}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{215}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{220}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{235}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{325}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{345}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{413}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{421}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 0);
@@ -1357,7 +1357,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P10TimeLimit") == 1) {
                     return new StateCheckP10(context);
                 }
@@ -1390,7 +1390,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP10(context);
             }
 
@@ -1401,25 +1401,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {110}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {130}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {143}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {215}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {220}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {235}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {325}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {345}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {413}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {421}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{110}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{130}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{143}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{215}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{220}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{235}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{325}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{345}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{413}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{421}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP10(context);
             }
 
@@ -1435,7 +1435,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P10TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -1450,23 +1450,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {112}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {134}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {141}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {214}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {222}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {230}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {244}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {314}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {332}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {344}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {424}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{112}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{134}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{141}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{214}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{222}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{230}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{244}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{314}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{332}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{344}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{424}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 4);
@@ -1485,7 +1485,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P11TimeLimit") == 1) {
                     return new StateCheckP11(context);
                 }
@@ -1518,7 +1518,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP11(context);
             }
 
@@ -1529,25 +1529,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {112}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {134}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {141}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {214}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {222}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {230}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {244}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {314}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {332}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {344}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {424}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{112}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{134}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{141}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{214}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{222}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{230}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{244}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{314}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{332}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{344}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{424}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP11(context);
             }
 
@@ -1563,7 +1563,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P11TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -1578,23 +1578,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {111}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {133}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {141}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {214}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {225}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {231}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {241}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {311}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {322}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {344}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {415}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {421}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {431}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {441}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{111}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{133}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{141}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{214}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{225}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{231}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{241}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{311}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{322}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{344}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{415}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{421}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{431}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{441}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 1);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 3);
@@ -1613,7 +1613,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P12TimeLimit") == 1) {
                     return new StateCheckP12(context);
                 }
@@ -1646,7 +1646,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP12(context);
             }
 
@@ -1657,25 +1657,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {111}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {133}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {141}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {214}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {225}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {231}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {241}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {311}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {322}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {344}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {415}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {421}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {431}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {441}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{111}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{133}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{141}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{214}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{225}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{231}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{241}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{311}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{322}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{344}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{415}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{421}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{431}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{441}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP12(context);
             }
 
@@ -1691,7 +1691,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P12TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -1706,23 +1706,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {112}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {143}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {222}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {231}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {245}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {311}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {323}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {424}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {432}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {441}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{112}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{143}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{222}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{231}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{245}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{311}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{323}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{424}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{432}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{441}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
@@ -1741,7 +1741,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P13TimeLimit") == 1) {
                     return new StateCheckP13(context);
                 }
@@ -1774,7 +1774,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP13(context);
             }
 
@@ -1785,25 +1785,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {112}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {143}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {222}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {231}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {245}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {311}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {323}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {424}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {432}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {441}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{112}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{143}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{222}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{231}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{245}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{311}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{323}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{424}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{432}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{441}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP13(context);
             }
 
@@ -1819,7 +1819,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P13TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -1834,23 +1834,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {110}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {123}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {143}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {213}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {222}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {233}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {241}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {332}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {343}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {423}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{110}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{123}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{143}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{213}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{222}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{233}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{241}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{332}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{343}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{423}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 3);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
@@ -1869,7 +1869,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P14TimeLimit") == 1) {
                     return new StateCheckP14(context);
                 }
@@ -1902,7 +1902,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP14(context);
             }
 
@@ -1913,25 +1913,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {110}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {123}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {143}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {213}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {222}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {233}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {241}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {332}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {343}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {423}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{110}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{123}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{143}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{213}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{222}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{233}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{241}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{332}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{343}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{423}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP14(context);
             }
 
@@ -1947,7 +1947,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P14TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -1962,23 +1962,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {113}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {133}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {141}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {213}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {220}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {233}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {243}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {323}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {343}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {423}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {431}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {443}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{113}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{133}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{141}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{213}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{220}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{233}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{243}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{323}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{343}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{423}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{431}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{443}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 3);
@@ -1997,7 +1997,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P15TimeLimit") == 1) {
                     return new StateCheckP15(context);
                 }
@@ -2030,7 +2030,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP15(context);
             }
 
@@ -2041,25 +2041,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {113}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {133}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {141}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {213}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {220}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {233}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {243}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {323}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {343}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {423}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {431}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{113}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{133}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{141}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{213}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{220}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{233}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{243}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{323}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{343}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{423}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{431}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{443}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP15(context);
             }
 
@@ -2075,7 +2075,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P15TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -2090,23 +2090,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {111}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {130}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {143}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {212}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {220}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {234}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {245}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {315}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {323}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {340}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {414}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {432}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{111}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{130}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{143}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{212}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{220}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{234}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{245}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{315}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{323}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{340}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{414}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{432}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 1);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 0);
@@ -2125,7 +2125,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P16TimeLimit") == 1) {
                     return new StateCheckP16(context);
                 }
@@ -2158,7 +2158,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP16(context);
             }
 
@@ -2169,25 +2169,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {111}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {130}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {143}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {212}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {220}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {234}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {245}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {315}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {323}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {340}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {414}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {432}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{111}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{130}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{143}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{212}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{220}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{234}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{245}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{315}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{323}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{340}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{414}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{432}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP16(context);
             }
 
@@ -2203,7 +2203,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P16TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -2218,23 +2218,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {110}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {123}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {135}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {210}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {230}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {314}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {335}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {340}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {413}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {434}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{110}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{123}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{135}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{210}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{230}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{314}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{335}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{340}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{413}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{434}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 3);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 5);
@@ -2253,7 +2253,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P17TimeLimit") == 1) {
                     return new StateCheckP17(context);
                 }
@@ -2286,7 +2286,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP17(context);
             }
 
@@ -2297,25 +2297,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {110}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {123}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {135}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {210}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {230}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {314}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {335}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {340}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {413}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {434}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{110}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{123}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{135}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{210}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{230}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{314}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{335}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{340}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{413}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{434}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP17(context);
             }
 
@@ -2331,7 +2331,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P17TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -2346,23 +2346,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {113}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {133}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {144}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {223}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {234}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {241}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {310}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {324}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {333}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {340}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {414}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {421}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {444}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{113}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{133}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{144}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{223}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{234}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{241}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{310}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{324}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{333}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{340}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{414}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{421}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{444}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 3);
@@ -2381,7 +2381,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P18TimeLimit") == 1) {
                     return new StateCheckP18(context);
                 }
@@ -2414,7 +2414,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP18(context);
             }
 
@@ -2425,25 +2425,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {113}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {133}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {144}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {223}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {234}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {241}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {310}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {324}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {333}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {340}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {414}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {421}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {444}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{113}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{133}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{144}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{223}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{234}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{241}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{310}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{324}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{333}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{340}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{414}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{421}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{444}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP18(context);
             }
 
@@ -2459,7 +2459,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P18TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -2474,23 +2474,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {112}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {134}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {214}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {232}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {244}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {310}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {324}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {334}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {410}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {434}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {444}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{112}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{134}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{214}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{232}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{244}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{310}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{324}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{334}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{410}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{434}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{444}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 4);
@@ -2509,7 +2509,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P19TimeLimit") == 1) {
                     return new StateCheckP19(context);
                 }
@@ -2542,7 +2542,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP19(context);
             }
 
@@ -2553,25 +2553,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {112}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {134}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {214}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {232}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {244}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {310}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {324}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {334}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {410}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {434}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {444}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{112}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{134}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{214}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{232}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{244}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{310}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{324}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{334}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{410}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{434}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{444}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP19(context);
             }
 
@@ -2587,7 +2587,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P19TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -2602,23 +2602,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {113}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {122}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {133}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {213}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {232}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {242}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {333}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {342}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {423}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{113}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{122}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{133}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{213}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{232}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{242}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{333}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{342}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{423}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 2);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 3);
@@ -2637,7 +2637,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P20TimeLimit") == 1) {
                     return new StateCheckP20(context);
                 }
@@ -2670,7 +2670,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP20(context);
             }
 
@@ -2681,25 +2681,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {113}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {122}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {133}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {213}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {232}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {242}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {333}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {342}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {423}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{113}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{122}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{133}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{213}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{232}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{242}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{333}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{342}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{423}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP20(context);
             }
 
@@ -2715,7 +2715,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P20TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -2730,23 +2730,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {110}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {135}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {210}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {225}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {232}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {245}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {311}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {335}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {415}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{110}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{135}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{210}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{225}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{232}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{245}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{311}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{335}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{415}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 5);
@@ -2765,7 +2765,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P21TimeLimit") == 1) {
                     return new StateCheckP21(context);
                 }
@@ -2798,7 +2798,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP21(context);
             }
 
@@ -2809,25 +2809,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {110}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {135}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {210}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {225}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {232}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {245}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {311}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {335}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {415}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{110}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{135}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{210}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{225}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{232}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{245}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{311}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{335}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{415}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP21(context);
             }
 
@@ -2843,7 +2843,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P21TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -2858,23 +2858,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {114}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {144}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {224}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {234}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {314}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {424}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {444}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{114}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{144}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{224}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{234}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{314}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{424}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{444}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 4);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
@@ -2893,7 +2893,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P22TimeLimit") == 1) {
                     return new StateCheckP22(context);
                 }
@@ -2926,7 +2926,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP22(context);
             }
 
@@ -2937,25 +2937,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {114}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {132}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {144}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {224}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {234}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {314}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {424}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {444}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{114}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{132}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{144}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{224}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{234}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{314}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{424}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{444}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP22(context);
             }
 
@@ -2971,7 +2971,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P22TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -2986,23 +2986,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {113}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {123}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {130}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {215}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {220}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {235}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {243}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {311}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {323}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {345}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {410}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{113}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{123}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{130}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{215}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{220}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{235}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{243}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{311}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{323}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{345}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{410}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 3);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 0);
@@ -3021,7 +3021,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P23TimeLimit") == 1) {
                     return new StateCheckP23(context);
                 }
@@ -3054,7 +3054,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP23(context);
             }
 
@@ -3065,25 +3065,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {113}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {123}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {130}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {215}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {220}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {235}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {243}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {311}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {323}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {345}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {410}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {433}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{113}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{123}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{130}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{215}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{220}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{235}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{243}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{311}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{323}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{345}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{410}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{433}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP23(context);
             }
 
@@ -3099,7 +3099,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P23TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -3114,23 +3114,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP24(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {112}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {122}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {133}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {141}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {213}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {223}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {232}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {242}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {333}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {423}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {432}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {441}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{112}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{122}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{133}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{141}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{213}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{223}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{232}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{242}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{333}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{423}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{432}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{441}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 2);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 3);
@@ -3149,7 +3149,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P24TimeLimit") == 1) {
                     return new StateCheckP24(context);
                 }
@@ -3182,7 +3182,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP24(context);
             }
 
@@ -3193,25 +3193,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP24(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {112}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {122}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {133}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {141}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {213}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {223}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {232}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {242}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {333}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {423}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {432}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {441}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{112}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{122}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{133}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{141}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{213}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{223}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{232}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{242}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{333}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{423}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{432}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{441}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP24(context);
             }
 
@@ -3227,7 +3227,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P24TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -3242,23 +3242,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP25(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {110}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {124}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {214}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {233}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {244}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {324}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {334}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {410}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{110}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{124}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{214}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{233}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{244}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{324}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{334}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{410}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 4);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
@@ -3277,7 +3277,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P25TimeLimit") == 1) {
                     return new StateCheckP25(context);
                 }
@@ -3310,7 +3310,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP25(context);
             }
 
@@ -3321,25 +3321,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP25(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {110}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {124}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {214}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {233}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {244}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {313}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {324}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {334}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {341}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {410}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{110}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{124}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{214}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{233}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{244}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{313}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{324}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{334}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{341}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{410}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP25(context);
             }
 
@@ -3355,7 +3355,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P25TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -3370,23 +3370,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP26(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {112}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {124}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {130}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {145}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {210}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {224}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {231}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {242}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {315}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {334}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {340}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {425}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {431}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{112}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{124}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{130}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{145}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{210}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{224}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{231}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{242}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{315}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{334}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{340}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{425}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{431}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 4);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 0);
@@ -3405,7 +3405,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P26TimeLimit") == 1) {
                     return new StateCheckP26(context);
                 }
@@ -3438,7 +3438,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP26(context);
             }
 
@@ -3449,25 +3449,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP26(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {112}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {124}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {130}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {145}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {210}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {224}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {231}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {242}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {315}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {334}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {340}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {412}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {425}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {431}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{112}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{124}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{130}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{145}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{210}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{224}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{231}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{242}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{315}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{334}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{340}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{412}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{425}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{431}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP26(context);
             }
 
@@ -3483,7 +3483,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P26TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -3498,23 +3498,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP27(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {110}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {124}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {215}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {220}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {233}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {312}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {324}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {345}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {410}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {423}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {441}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{110}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{124}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{215}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{220}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{233}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{312}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{324}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{345}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{410}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{423}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{441}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 4);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
@@ -3533,7 +3533,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P27TimeLimit") == 1) {
                     return new StateCheckP27(context);
                 }
@@ -3566,7 +3566,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP27(context);
             }
 
@@ -3577,25 +3577,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP27(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {110}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {124}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {215}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {220}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {233}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {312}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {324}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {330}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {345}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {410}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {423}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {441}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{110}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{124}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{215}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{220}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{233}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{312}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{324}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{330}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{345}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{410}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{423}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{441}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP27(context);
             }
 
@@ -3611,7 +3611,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P27TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -3626,23 +3626,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP28(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {112}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {133}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {225}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {235}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {314}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {344}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {413}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{112}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{133}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{225}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{235}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{314}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{344}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{413}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 3);
@@ -3661,7 +3661,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P28TimeLimit") == 1) {
                     return new StateCheckP28(context);
                 }
@@ -3694,7 +3694,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP28(context);
             }
 
@@ -3705,25 +3705,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP28(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {112}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {120}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {133}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {225}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {235}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {314}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {320}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {344}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {413}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {420}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {430}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{112}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{120}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{133}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{225}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{235}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{314}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{320}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{344}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{413}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{420}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{430}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{442}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP28(context);
             }
 
@@ -3739,7 +3739,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P28TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -3754,23 +3754,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP29(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {110}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {125}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {235}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {315}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {345}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {410}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {425}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {431}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{110}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{125}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{235}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{315}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{345}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{410}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{425}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{431}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 5);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
@@ -3789,7 +3789,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P29TimeLimit") == 1) {
                     return new StateCheckP29(context);
                 }
@@ -3822,7 +3822,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP29(context);
             }
 
@@ -3833,25 +3833,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP29(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {110}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {125}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {140}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {211}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {221}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {235}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {240}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {315}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {321}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {331}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {345}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {410}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {425}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {431}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{110}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{125}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{140}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{211}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{221}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{235}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{240}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{315}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{321}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{331}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{345}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{410}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{425}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{431}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{440}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP29(context);
             }
 
@@ -3867,7 +3867,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P29TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }
@@ -3882,23 +3882,23 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOnP30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DDStop_Stage_Number_01");
-                context.SetMesh(arg1: new int[] {113}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {212}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {223}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {231}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {243}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {311}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {323}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {332}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {342}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {431}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {443}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.PlaySystemSoundInBox(boxIds: new int[]{9000}, sound: "DDStop_Stage_Number_01");
+                context.SetMesh(triggerIds: new int[]{113}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{212}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{223}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{231}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{243}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{311}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{323}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{332}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{342}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{431}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{443}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
@@ -3917,7 +3917,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "G03P30TimeLimit") == 1) {
                     return new StateCheckP30(context);
                 }
@@ -3950,7 +3950,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNumberOffP30(context);
             }
 
@@ -3961,25 +3961,25 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNumberOffP30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {113}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {121}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {131}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {142}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {212}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {223}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {231}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {243}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {311}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {323}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {332}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {342}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {411}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {422}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {431}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{113}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{121}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{131}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{142}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{212}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{223}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{231}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{243}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{311}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{323}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{332}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{342}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{411}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{422}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{431}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new int[]{443}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateResetP30(context);
             }
 
@@ -3995,7 +3995,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "G03P30TimeLimit", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWait(context);
                 }

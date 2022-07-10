@@ -5,17 +5,17 @@ namespace Maple2.Trigger._02000483_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 2, visible: true, enabled: false, minimapVisible: false);
-                context.SetInteractObject(arg1: new[] {10002046}, arg2: 0);
-                context.DestroyMonster(arg1: new[] {940, 941, 942});
-                context.SetBreakable(arg1: new[] {6200}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {6200}, arg2: false);
-                context.SetMesh(arg1: new[] {3910}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3920}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5300}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10002046}, state: 0);
+                context.DestroyMonster(spawnIds: new []{940, 941, 942});
+                context.SetBreakable(triggerIds: new []{6200}, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{6200}, arg2: false);
+                context.SetMesh(triggerIds: new []{3910}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3920}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{5300}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9400})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9400})) {
                     return new StateLoadingDelay(context);
                 }
 
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000483_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateGuideFindPortal(context);
                 }
@@ -45,11 +45,11 @@ namespace Maple2.Trigger._02000483_bf {
             internal StateGuideFindPortal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039706, textId: 20039706);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateMobTrapOn(context);
                 }
@@ -64,10 +64,10 @@ namespace Maple2.Trigger._02000483_bf {
             internal StateMobTrapOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {940, 941, 942}, arg2: false);
+                context.CreateMonster(spawnIds: new []{940, 941, 942}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateMobTrapOnEnd(context);
             }
 
@@ -79,8 +79,8 @@ namespace Maple2.Trigger._02000483_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {940, 941, 942})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{940, 941, 942})) {
                     return new StateSwichOn(context);
                 }
 
@@ -94,11 +94,11 @@ namespace Maple2.Trigger._02000483_bf {
             internal StateSwichOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002046}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002046}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10002046}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10002046}, arg2: 0)) {
                     return new StateRockMove01(context);
                 }
 
@@ -112,13 +112,13 @@ namespace Maple2.Trigger._02000483_bf {
             internal StateRockMove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3910}, arg2: false, arg3: 100, arg4: 0, arg5: 2f);
-                context.SetBreakable(arg1: new[] {6200}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {6200}, arg2: true);
-                context.SetEffect(arg1: new[] {5300}, arg2: true);
+                context.SetMesh(triggerIds: new []{3910}, visible: false, arg3: 100, arg4: 0, arg5: 2f);
+                context.SetBreakable(triggerIds: new []{6200}, enabled: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{6200}, arg2: true);
+                context.SetEffect(triggerIds: new []{5300}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateRockMove02(context);
                 }
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._02000483_bf {
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateRockMove03(context);
                 }
@@ -151,12 +151,12 @@ namespace Maple2.Trigger._02000483_bf {
             internal StateRockMove03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3920}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetBreakable(arg1: new[] {6200}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {6200}, arg2: false);
+                context.SetMesh(triggerIds: new []{3920}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetBreakable(triggerIds: new []{6200}, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{6200}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

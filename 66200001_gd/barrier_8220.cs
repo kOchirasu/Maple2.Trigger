@@ -4,12 +4,12 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {8220}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001190, 10001206}, arg2: 2);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{8220}, visible: false);
+                context.SetInteractObject(interactIds: new []{10001190, 10001206}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Barrier22") == 1) {
                     return new StateSensor7221(context);
                 }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 1) {
                     return new StateActivate7221(context);
                 }
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) != 1) {
                     return new StateSensor7221(context);
                 }
@@ -85,12 +85,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 1);
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {8220}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001190, 10001206}, arg2: 0);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{8220}, visible: false);
+                context.SetInteractObject(interactIds: new []{10001190, 10001206}, state: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 2) {
                     return new StateSafeGreen7222(context);
                 }
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 2) {
                     return new StateCheckSameUserTag7222(context);
                 }
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.CheckSameUserTag(triggerBoxId: 9220) && context.GetUserCount(boxId: 9220) == 2) {
+            public override TriggerState? Execute() {
+                if (context.CheckSameUserTag(boxId: 9220) && context.GetUserCount(boxId: 9220) == 2) {
                     return new StateEnable7222(context);
                 }
 
@@ -145,7 +145,7 @@ namespace Maple2.Trigger._66200001_gd {
                     return new StateSensor7222(context);
                 }
 
-                if (!context.CheckSameUserTag(triggerBoxId: 9220)) {
+                if (!context.CheckSameUserTag(boxId: 9220)) {
                     return new StateSafeGreen7222(context);
                 }
 
@@ -163,12 +163,12 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateEnable7222(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {9220}, arg2: "DDStop_Stage_Shiled_01");
-                context.SetInteractObject(arg1: new[] {10001190}, arg2: 1);
+                context.PlaySystemSoundInBox(boxIds: new []{9220}, sound: "DDStop_Stage_Shiled_01");
+                context.SetInteractObject(interactIds: new []{10001190}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001190}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001190}, arg2: 0)) {
                     return new StateActivate7222(context);
                 }
 
@@ -190,12 +190,12 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateActivate7222(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8220}, arg2: true);
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10001190}, arg2: 2);
+                context.SetEffect(triggerIds: new []{8220}, visible: true);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10001190}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) != 2) {
                     return new StateSensor7222(context);
                 }
@@ -218,10 +218,10 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateDelay7222(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001206}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001206}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) != 2) {
                     return new StateSensor7222(context);
                 }
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._66200001_gd {
                     return new StateReset(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001206}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001206}, arg2: 0)) {
                     return new StateDeActivate7222(context);
                 }
 
@@ -244,11 +244,11 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateDeActivate7222(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8220}, arg2: false);
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{8220}, visible: false);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSensor7222(context);
                 }
@@ -268,12 +268,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 1);
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {8220}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001190, 10001206}, arg2: 0);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{8220}, visible: false);
+                context.SetInteractObject(interactIds: new []{10001190, 10001206}, state: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 3) {
                     return new StateSafeGreen7223(context);
                 }
@@ -295,7 +295,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 3) {
                     return new StateCheckSameUserTag7223(context);
                 }
@@ -319,8 +319,8 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.CheckSameUserTag(triggerBoxId: 9220) && context.GetUserCount(boxId: 9220) == 3) {
+            public override TriggerState? Execute() {
+                if (context.CheckSameUserTag(boxId: 9220) && context.GetUserCount(boxId: 9220) == 3) {
                     return new StateEnable7223(context);
                 }
 
@@ -328,7 +328,7 @@ namespace Maple2.Trigger._66200001_gd {
                     return new StateSensor7223(context);
                 }
 
-                if (!context.CheckSameUserTag(triggerBoxId: 9220)) {
+                if (!context.CheckSameUserTag(boxId: 9220)) {
                     return new StateSafeGreen7223(context);
                 }
 
@@ -346,12 +346,12 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateEnable7223(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {9220}, arg2: "DDStop_Stage_Shiled_01");
-                context.SetInteractObject(arg1: new[] {10001190}, arg2: 1);
+                context.PlaySystemSoundInBox(boxIds: new []{9220}, sound: "DDStop_Stage_Shiled_01");
+                context.SetInteractObject(interactIds: new []{10001190}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001190}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001190}, arg2: 0)) {
                     return new StateActivate7223(context);
                 }
 
@@ -373,12 +373,12 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateActivate7223(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8220}, arg2: true);
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10001190}, arg2: 2);
+                context.SetEffect(triggerIds: new []{8220}, visible: true);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10001190}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) != 3) {
                     return new StateSensor7223(context);
                 }
@@ -401,10 +401,10 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateDelay7223(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001206}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001206}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) != 3) {
                     return new StateSensor7223(context);
                 }
@@ -413,7 +413,7 @@ namespace Maple2.Trigger._66200001_gd {
                     return new StateReset(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001206}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001206}, arg2: 0)) {
                     return new StateDeActivate7223(context);
                 }
 
@@ -427,11 +427,11 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateDeActivate7223(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8220}, arg2: false);
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{8220}, visible: false);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSensor7223(context);
                 }
@@ -451,12 +451,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 1);
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {8220}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001190, 10001206}, arg2: 0);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{8220}, visible: false);
+                context.SetInteractObject(interactIds: new []{10001190, 10001206}, state: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 4) {
                     return new StateSafeGreen7224(context);
                 }
@@ -478,7 +478,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 4) {
                     return new StateCheckSameUserTag7224(context);
                 }
@@ -502,8 +502,8 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.CheckSameUserTag(triggerBoxId: 9220) && context.GetUserCount(boxId: 9220) == 4) {
+            public override TriggerState? Execute() {
+                if (context.CheckSameUserTag(boxId: 9220) && context.GetUserCount(boxId: 9220) == 4) {
                     return new StateEnable7224(context);
                 }
 
@@ -511,7 +511,7 @@ namespace Maple2.Trigger._66200001_gd {
                     return new StateSensor7224(context);
                 }
 
-                if (!context.CheckSameUserTag(triggerBoxId: 9220)) {
+                if (!context.CheckSameUserTag(boxId: 9220)) {
                     return new StateSafeGreen7224(context);
                 }
 
@@ -529,12 +529,12 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateEnable7224(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {9220}, arg2: "DDStop_Stage_Shiled_01");
-                context.SetInteractObject(arg1: new[] {10001190}, arg2: 1);
+                context.PlaySystemSoundInBox(boxIds: new []{9220}, sound: "DDStop_Stage_Shiled_01");
+                context.SetInteractObject(interactIds: new []{10001190}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001190}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001190}, arg2: 0)) {
                     return new StateActivate7224(context);
                 }
 
@@ -556,12 +556,12 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateActivate7224(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8220}, arg2: true);
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10001190}, arg2: 2);
+                context.SetEffect(triggerIds: new []{8220}, visible: true);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10001190}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) != 4) {
                     return new StateSensor7224(context);
                 }
@@ -584,10 +584,10 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateDelay7224(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001206}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001206}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) != 4) {
                     return new StateSensor7224(context);
                 }
@@ -596,7 +596,7 @@ namespace Maple2.Trigger._66200001_gd {
                     return new StateReset(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001206}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001206}, arg2: 0)) {
                     return new StateDeActivate7224(context);
                 }
 
@@ -610,11 +610,11 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateDeActivate7224(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8220}, arg2: false);
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{8220}, visible: false);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSensor7224(context);
                 }
@@ -634,12 +634,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 1);
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {8220}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001190, 10001206}, arg2: 0);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{8220}, visible: false);
+                context.SetInteractObject(interactIds: new []{10001190, 10001206}, state: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 5) {
                     return new StateSafeGreen7225(context);
                 }
@@ -661,7 +661,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 5) {
                     return new StateCheckSameUserTag7225(context);
                 }
@@ -685,8 +685,8 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.CheckSameUserTag(triggerBoxId: 9220) && context.GetUserCount(boxId: 9220) == 5) {
+            public override TriggerState? Execute() {
+                if (context.CheckSameUserTag(boxId: 9220) && context.GetUserCount(boxId: 9220) == 5) {
                     return new StateEnable7225(context);
                 }
 
@@ -694,7 +694,7 @@ namespace Maple2.Trigger._66200001_gd {
                     return new StateSensor7225(context);
                 }
 
-                if (!context.CheckSameUserTag(triggerBoxId: 9220)) {
+                if (!context.CheckSameUserTag(boxId: 9220)) {
                     return new StateSafeGreen7225(context);
                 }
 
@@ -712,12 +712,12 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateEnable7225(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {9220}, arg2: "DDStop_Stage_Shiled_01");
-                context.SetInteractObject(arg1: new[] {10001190}, arg2: 1);
+                context.PlaySystemSoundInBox(boxIds: new []{9220}, sound: "DDStop_Stage_Shiled_01");
+                context.SetInteractObject(interactIds: new []{10001190}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001190}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001190}, arg2: 0)) {
                     return new StateActivate7225(context);
                 }
 
@@ -739,12 +739,12 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateActivate7225(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8220}, arg2: true);
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10001190}, arg2: 2);
+                context.SetEffect(triggerIds: new []{8220}, visible: true);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10001190}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) != 5) {
                     return new StateSensor7225(context);
                 }
@@ -767,10 +767,10 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateDelay7225(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001206}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001206}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) != 5) {
                     return new StateSensor7225(context);
                 }
@@ -779,7 +779,7 @@ namespace Maple2.Trigger._66200001_gd {
                     return new StateReset(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001206}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001206}, arg2: 0)) {
                     return new StateDeActivate7225(context);
                 }
 
@@ -793,11 +793,11 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateDeActivate7225(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8220}, arg2: false);
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{8220}, visible: false);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSensor7225(context);
                 }
@@ -816,13 +816,13 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {8220}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001190, 10001206}, arg2: 0);
+                context.SetMesh(triggerIds: new []{8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{8220}, visible: false);
+                context.SetInteractObject(interactIds: new []{10001190, 10001206}, state: 0);
                 context.SetUserValue(key: "Barrier22", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

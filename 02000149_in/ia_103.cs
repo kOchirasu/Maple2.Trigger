@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000149_in {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000192}, arg2: 1);
-                context.SetActor(arg1: 203, arg2: true, arg3: "Sit_Chair_Idle_A");
+                context.SetInteractObject(interactIds: new []{10000192}, state: 1);
+                context.SetActor(triggerId: 203, visible: true, initialSequence: "Sit_Chair_Idle_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateInteractObject(context);
             }
 
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000149_in {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000192}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000192}, arg2: 0)) {
                     return new StateNPC이동(context);
                 }
 
@@ -29,8 +29,8 @@ namespace Maple2.Trigger._02000149_in {
             }
 
             public override void OnExit() {
-                context.SetActor(arg1: 203, arg2: false, arg3: "Sit_Chair_Idle_A");
-                context.CreateMonster(arg1: new[] {403});
+                context.SetActor(triggerId: 203, visible: false, initialSequence: "Sit_Chair_Idle_A");
+                context.CreateMonster(spawnIds: new []{403});
             }
         }
 
@@ -38,13 +38,13 @@ namespace Maple2.Trigger._02000149_in {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 403, arg2: "MS2PatrolData_503");
-                context.SetConversation(arg1: 1, arg2: 403, script: "$02000149_IN__IA_103__0$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 403, script: "$02000149_IN__IA_103__1$", arg4: 2, arg5: 2);
+                context.MoveNpc(spawnId: 403, patrolName: "MS2PatrolData_503");
+                context.SetConversation(type: 1, spawnId: 403, script: "$02000149_IN__IA_103__0$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 403, script: "$02000149_IN__IA_103__1$", arg4: 2, arg5: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 603, arg2: new[] {403})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 603, spawnIds: new []{403})) {
                     return new StateNPCDestroy(context);
                 }
 
@@ -58,12 +58,12 @@ namespace Maple2.Trigger._02000149_in {
             internal StateNPCDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {403});
-                context.SetTimer(id: "1", arg2: 5);
+                context.DestroyMonster(spawnIds: new []{403});
+                context.SetTimer(timerId: "1", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWaitStart(context);
                 }
 

@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000355_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {610}, arg2: false);
-                context.SetActor(arg1: 210, arg2: true, arg3: "Damg_B");
+                context.SetEffect(triggerIds: new []{610}, visible: false);
+                context.SetActor(triggerId: 210, visible: true, initialSequence: "Damg_B");
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {10001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{10001})) {
                     return new StateMonster소환Wait(context);
                 }
 
@@ -23,10 +23,10 @@ namespace Maple2.Trigger._02000355_bf {
             internal StateMonster소환Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {610}, arg2: true);
+                context.SetEffect(triggerIds: new []{610}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
                     return new StateMonster소환(context);
                 }
@@ -41,10 +41,10 @@ namespace Maple2.Trigger._02000355_bf {
             internal StateMonster소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2010}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2010}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State더미해제(context);
                 }
@@ -59,20 +59,20 @@ namespace Maple2.Trigger._02000355_bf {
             internal State더미해제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 210, arg2: false, arg3: "Damg_B");
+                context.SetActor(triggerId: 210, visible: false, initialSequence: "Damg_B");
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2010})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2010})) {
                     return new State소멸(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {2099})) {
+                if (context.MonsterDead(spawnIds: new []{2099})) {
                     return new State소멸(context);
                 }
 
-                if (context.NpcDetected(arg1: 105, arg2: new[] {2010})) {
-                    context.DestroyMonster(arg1: new[] {2010});
+                if (context.NpcDetected(boxId: 105, spawnIds: new []{2010})) {
+                    context.DestroyMonster(spawnIds: new []{2010});
                     return new State리젠Prepare(context);
                 }
 
@@ -87,12 +87,12 @@ namespace Maple2.Trigger._02000355_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
                     return new State리젠Prepare(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {2099})) {
+                if (context.MonsterDead(spawnIds: new []{2099})) {
                     return new State소멸(context);
                 }
 
@@ -106,10 +106,10 @@ namespace Maple2.Trigger._02000355_bf {
             internal State리젠Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 210, arg2: true, arg3: "Regen_A");
+                context.SetActor(triggerId: 210, visible: true, initialSequence: "Regen_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -124,10 +124,10 @@ namespace Maple2.Trigger._02000355_bf {
             internal State소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {2010});
+                context.DestroyMonster(spawnIds: new []{2010});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,11 +5,11 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
-                context.SetInteractObject(arg1: new[] {10000259, 10000260, 10000261}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000259, 10000260, 10000261}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000259, 10000260, 10000261}, arg2: 2)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000259, 10000260, 10000261}, arg2: 2)) {
                     return new StateBossSpawn(context);
                 }
 
@@ -23,11 +23,11 @@ namespace Maple2.Trigger._02000213_bf {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1099});
+                context.CreateMonster(spawnIds: new []{1099});
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1099})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1099})) {
                     return new StateEnd체크(context);
                 }
 
@@ -35,7 +35,7 @@ namespace Maple2.Trigger._02000213_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {1099});
+                context.DestroyMonster(spawnIds: new []{1099});
             }
         }
 
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000213_bf {
                 context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

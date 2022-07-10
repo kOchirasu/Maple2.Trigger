@@ -6,11 +6,11 @@ namespace Maple2.Trigger._52000005_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {103, 202}, arg2: true);
+                context.CreateMonster(spawnIds: new []{103, 202}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002781}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{10002781}, questStates: new byte[]{1})) {
                     return new StateDelay01(context);
                 }
 
@@ -25,12 +25,12 @@ namespace Maple2.Trigger._52000005_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 4);
-                context.DestroyMonster(arg1: new[] {103, 202});
-                context.SetTimer(id: "1", arg2: 2);
+                context.DestroyMonster(spawnIds: new []{103, 202});
+                context.SetTimer(timerId: "1", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State영감대화Prepare(context);
                 }
 
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State영감대화01(context);
             }
 
@@ -60,13 +60,13 @@ namespace Maple2.Trigger._52000005_qd {
             internal State영감대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000005_QD__ACT01__0$", arg4: 3);
+                context.SetTimer(timerId: "2", seconds: 3);
+                context.SetConversation(type: 2, spawnId: 11000031, script: "$52000005_QD__ACT01__0$", arg4: 3);
                 context.SetSkip(state: new State영감대화02Wait(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State영감대화02Wait(context);
                 }
 
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52000005_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State영감대화02(context);
             }
 
@@ -94,14 +94,14 @@ namespace Maple2.Trigger._52000005_qd {
             internal State영감대화02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11000001, script: "$52000005_QD__ACT01__1$", arg4: 3);
-                context.CreateMonster(arg1: new[] {101, 201}, arg2: true);
+                context.SetTimer(timerId: "3", seconds: 3);
+                context.SetConversation(type: 2, spawnId: 11000001, script: "$52000005_QD__ACT01__1$", arg4: 3);
+                context.CreateMonster(spawnIds: new []{101, 201}, arg2: true);
                 context.SetSkip(state: new State여제입장01(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State여제입장01(context);
                 }
 
@@ -116,12 +116,12 @@ namespace Maple2.Trigger._52000005_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetTimer(id: "10", arg2: 1);
-                context.CameraSelect(arg1: 601, arg2: true);
+                context.SetTimer(timerId: "10", seconds: 1);
+                context.CameraSelect(triggerId: 601, enable: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "10")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "10")) {
                     return new StateDelay03(context);
                 }
 
@@ -135,11 +135,11 @@ namespace Maple2.Trigger._52000005_qd {
             internal StateDelay03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "12", arg2: 2);
+                context.SetTimer(timerId: "12", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "12")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "12")) {
                     return new State여제대화01(context);
                 }
 
@@ -153,13 +153,13 @@ namespace Maple2.Trigger._52000005_qd {
             internal State여제대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "20", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11000075, script: "$52000005_QD__ACT01__2$", arg4: 3);
+                context.SetTimer(timerId: "20", seconds: 3);
+                context.SetConversation(type: 2, spawnId: 11000075, script: "$52000005_QD__ACT01__2$", arg4: 3);
                 context.SetSkip(state: new State영상Prepare(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "20")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "20")) {
                     return new State영상Prepare(context);
                 }
 
@@ -174,12 +174,12 @@ namespace Maple2.Trigger._52000005_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetTimer(id: "21", arg2: 3);
-                context.CameraSelectPath(pathIds: new[] {601, 602}, arg2: false);
+                context.SetTimer(timerId: "21", seconds: 3);
+                context.CameraSelectPath(pathIds: new []{601, 602}, returnView: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "21")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "21")) {
                     return new State영상재생(context);
                 }
 
@@ -198,12 +198,12 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.PlaySceneMovie(fileName: "lumieragonhistory.swf", movieId: 1);
-                context.DestroyMonster(arg1: new[] {101});
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{101});
+                context.CreateMonster(spawnIds: new []{102}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
+            public override TriggerState? Execute() {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, condition: "IsStop", value: "1")) {
                     return new State영상종료(context);
                 }
 
@@ -217,15 +217,15 @@ namespace Maple2.Trigger._52000005_qd {
             internal State영상종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "31", arg2: 4);
+                context.SetTimer(timerId: "31", seconds: 4);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetConversation(arg1: 2, arg2: 11000075, script: "$52000005_QD__ACT01__3$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11000075, script: "$52000005_QD__ACT01__3$", arg4: 4);
                 context.SetSkip(state: new StateStopCinematic(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "31")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "31")) {
                     return new StateStopCinematic(context);
                 }
 
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._52000005_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateAchievement(context);
             }
 
@@ -253,14 +253,14 @@ namespace Maple2.Trigger._52000005_qd {
             internal StateAchievement(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "Lumieragon_History");
-                context.CameraSelect(arg1: 601, arg2: false);
-                context.CameraSelect(arg1: 602, arg2: false);
+                context.SetAchievement(triggerId: 9001, type: "trigger", code: "Lumieragon_History");
+                context.CameraSelect(triggerId: 601, enable: false);
+                context.CameraSelect(triggerId: 602, enable: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

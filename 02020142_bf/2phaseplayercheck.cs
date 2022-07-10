@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new State안잡힌플레이어체크(context);
                 }
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "2PhasePlayerCheckStart") == 1) {
                     return new State1Phase지점체크하기(context);
                 }
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {98})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{98})) {
                     return new StateEnd(context);
                 }
 
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {99})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{99})) {
                     return new StateEnd(context);
                 }
 
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetAiExtraData(key: "TwoPhaseMainBattle", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State2Phase복격진행_안내DisplayGuide(context);
                 }
@@ -94,11 +94,11 @@ namespace Maple2.Trigger._02020142_bf {
             internal State2Phase복격진행_안내DisplayGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {91}, arg2: true);
+                context.SetSkill(triggerIds: new []{91}, arg2: true);
                 context.ShowGuideSummary(entityId: 29200003, textId: 29200003);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6500)) {
                     return new StateEnd(context);
                 }
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

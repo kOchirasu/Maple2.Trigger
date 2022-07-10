@@ -7,8 +7,8 @@ namespace Maple2.Trigger._02000491_bf {
                 context.SetPortal(portalId: 807, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000989}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000989}, arg2: 0)) {
                     return new StatePortalEnable(context);
                 }
 
@@ -25,9 +25,9 @@ namespace Maple2.Trigger._02000491_bf {
                 context.SetPortal(portalId: 807, visible: false, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetInteractObject(arg1: new[] {10000989}, arg2: 1);
+                    context.SetInteractObject(interactIds: new []{10000989}, state: 1);
                     return new StateStart(context);
                 }
 
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000491_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

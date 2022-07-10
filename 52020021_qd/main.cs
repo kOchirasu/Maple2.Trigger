@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52020021_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003073}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{10003073}, questStates: new byte[]{1})) {
                     return new StateIdle(context);
                 }
 

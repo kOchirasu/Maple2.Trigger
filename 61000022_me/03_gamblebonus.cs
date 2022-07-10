@@ -4,10 +4,10 @@ namespace Maple2.Trigger._61000022_me {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8001}, arg2: false);
+                context.SetEffect(triggerIds: new []{8001}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "GamblePass") == 22) {
                     return new StateGambleBonusDelay01(context);
                 }
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 1, key: "GambleSuccess", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateGambleBonusDelay02(context);
                 }
@@ -68,10 +68,10 @@ namespace Maple2.Trigger._61000022_me {
             internal StateGambleBonusDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8001}, arg2: true);
+                context.SetEffect(triggerIds: new []{8001}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateGambleBonus(context);
                 }
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.MiniGameGiveExp(boxId: 9001, expRate: 0.1f, isOutSide: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateQuit(context);
             }
 
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 1, key: "GambleSuccess", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateJackpotBonusDelay02(context);
                 }
@@ -118,10 +118,10 @@ namespace Maple2.Trigger._61000022_me {
             internal StateJackpotBonusDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8001}, arg2: true);
+                context.SetEffect(triggerIds: new []{8001}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateJackpotBonus(context);
                 }
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.MiniGameGiveExp(boxId: 9001, expRate: 0.1f, isOutSide: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateQuit(context);
             }
 
@@ -150,11 +150,11 @@ namespace Maple2.Trigger._61000022_me {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8001}, arg2: false);
+                context.SetEffect(triggerIds: new []{8001}, visible: false);
                 context.SetUserValue(key: "GamblePass", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

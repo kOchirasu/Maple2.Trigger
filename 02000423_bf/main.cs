@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000423_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateDefaultSetting시작(context);
             }
 
@@ -17,16 +17,16 @@ namespace Maple2.Trigger._02000423_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PortalHidden") == 1) {
                     return new StateBoss사냥후PortalCreation(context);
                 }
 
-                if (context.NpcDetected(arg1: 101, arg2: new[] {100})) {
+                if (context.NpcDetected(boxId: 101, spawnIds: new []{100})) {
                     return new StatePortalHide(context);
                 }
 
-                if (!context.NpcDetected(arg1: 101, arg2: new[] {100})) {
+                if (!context.NpcDetected(boxId: 101, spawnIds: new []{100})) {
                     return new State디폴트PortalCreation(context);
                 }
 
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02000423_bf {
                 context.SetPortal(portalId: 14, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePortal다시체크Wait(context);
                 }
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02000423_bf {
                 context.ShowGuideSummary(entityId: 20043001, textId: 20043001);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StatePortal다시체크Wait이전(context);
                 }
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._02000423_bf {
                 context.SetPortal(portalId: 14, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StatePortal다시체크Wait(context);
             }
 
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02000423_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
                     return new StateWaitStart(context);
                 }
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._02000423_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWaitStart(context);
                 }

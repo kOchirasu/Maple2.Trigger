@@ -4,15 +4,15 @@ namespace Maple2.Trigger._99999907 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000013}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{12000013}, state: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 50f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 50f)) {
                     return new State반응Wait(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateEnd(context);
                 }
 
@@ -26,11 +26,11 @@ namespace Maple2.Trigger._99999907 {
             internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000013}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{12000013}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000013}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000013}, arg2: 0)) {
                     return new StateRandomBuff(context);
                 }
 
@@ -45,19 +45,19 @@ namespace Maple2.Trigger._99999907 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 30f)) {
-                    context.AddBuff(arg1: new[] {199}, arg2: 70000008, arg3: 1, arg4: false, arg5: false);
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 30f)) {
+                    context.AddBuff(boxIds: new []{199}, skillId: 70000008, level: 1, arg4: false, arg5: false);
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(arg1: 30f)) {
-                    context.AddBuff(arg1: new[] {199}, arg2: 70000008, arg3: 1, arg4: false, arg5: false);
+                if (context.RandomCondition(rate: 30f)) {
+                    context.AddBuff(boxIds: new []{199}, skillId: 70000008, level: 1, arg4: false, arg5: false);
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(arg1: 40f)) {
-                    context.AddBuff(arg1: new[] {199}, arg2: 70000008, arg3: 1, arg4: false, arg5: false);
+                if (context.RandomCondition(rate: 40f)) {
+                    context.AddBuff(boxIds: new []{199}, skillId: 70000008, level: 1, arg4: false, arg5: false);
                     return new StateEnd(context);
                 }
 
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._99999907 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

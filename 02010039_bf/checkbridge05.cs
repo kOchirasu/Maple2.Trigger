@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02010039_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {5001}, arg2: new[] {40002110}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{5001}, questIds: new []{40002110}, questStates: new byte[]{1})) {
                     return new StateAchievement(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._02010039_bf {
             internal StateAchievement(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 5001, arg2: "trigger", arg3: "checkBridge");
+                context.SetAchievement(triggerId: 5001, type: "trigger", code: "checkBridge");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateReset(context);
             }
 
@@ -34,11 +34,11 @@ namespace Maple2.Trigger._02010039_bf {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 5);
+                context.SetTimer(timerId: "1", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateStart(context);
                 }
 

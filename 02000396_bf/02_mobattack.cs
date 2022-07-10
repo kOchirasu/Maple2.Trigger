@@ -4,17 +4,17 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001, 5002, 5003}, arg2: false);
-                context.SetActor(arg1: 4001, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 4002, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 4003, arg2: true, arg3: "Closed");
-                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005}, arg2: true);
-                context.DestroyMonster(arg1: new[] {910, 911, 920, 921, 930, 931});
+                context.SetEffect(triggerIds: new []{5001, 5002, 5003}, visible: false);
+                context.SetActor(triggerId: 4001, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 4002, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 4003, visible: true, initialSequence: "Closed");
+                context.SetAgent(triggerIds: new []{8000, 8001, 8002, 8003, 8004, 8005}, visible: true);
+                context.DestroyMonster(spawnIds: new []{910, 911, 920, 921, 930, 931});
                 context.SetUserValue(key: "MobSpawn", value: 0);
                 context.SetUserValue(key: "MobAttack", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MobSpawn") == 1) {
                     return new StateMobSpawn01(context);
                 }
@@ -29,10 +29,10 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateMobSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {910, 911, 920, 921, 930, 931}, arg2: false);
+                context.CreateMonster(spawnIds: new []{910, 911, 920, 921, 930, 931}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MobAttack") == 1) {
                     return new StateMobAttackDelay(context);
                 }
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._02000396_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9001})) {
                     return new StateMobAttack01(context);
                 }
 
@@ -63,12 +63,12 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateMobAttack01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: new[] {8000, 8001}, arg2: false);
-                context.SetActor(arg1: 4001, arg2: true, arg3: "Opened");
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.SetAgent(triggerIds: new []{8000, 8001}, visible: false);
+                context.SetActor(triggerId: 4001, visible: true, initialSequence: "Opened");
+                context.SetEffect(triggerIds: new []{5001}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateMobAttack02(context);
                 }
@@ -83,12 +83,12 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateMobAttack02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: new[] {8002, 8003}, arg2: false);
-                context.SetActor(arg1: 4002, arg2: true, arg3: "Opened");
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
+                context.SetAgent(triggerIds: new []{8002, 8003}, visible: false);
+                context.SetActor(triggerId: 4002, visible: true, initialSequence: "Opened");
+                context.SetEffect(triggerIds: new []{5002}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateMobAttack03(context);
                 }
@@ -103,13 +103,13 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateMobAttack03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: new[] {8004, 8005}, arg2: false);
-                context.SetActor(arg1: 4003, arg2: true, arg3: "Opened");
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
+                context.SetAgent(triggerIds: new []{8004, 8005}, visible: false);
+                context.SetActor(triggerId: 4003, visible: true, initialSequence: "Opened");
+                context.SetEffect(triggerIds: new []{5003}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {910, 911, 920, 921, 930, 931, 901, 902, 903})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{910, 911, 920, 921, 930, 931, 901, 902, 903})) {
                     return new StateMobClear(context);
                 }
 
@@ -126,7 +126,7 @@ namespace Maple2.Trigger._02000396_bf {
                 context.SetUserValue(triggerId: 1, key: "MobClear", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -8,7 +8,7 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetUserValue(key: "MarbleTurkaSupportMany", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateTrigger작동신호받기Waiting(context);
                 }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "2PhaseTubeStep") >= 1) {
                     return new StateTrigger작동Waiting(context);
                 }
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateTrigger작동시작(context);
                 }
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "2PhaseTubeStep") == 1) {
                     return new State튜브대미지필드_1단계진행(context);
                 }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MarbleTurkaSupportMany") >= 1) {
                     return new State1단계_튜브대미지필드_Creation(context);
                 }
@@ -95,10 +95,10 @@ namespace Maple2.Trigger._02020140_bf {
             internal State1단계_튜브대미지필드_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {102}, arg2: 50004566, arg3: 1, arg4: true, arg5: true);
+                context.AddBuff(boxIds: new []{102}, skillId: 50004566, level: 1, arg4: true, arg5: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "2PhaseTubeStep") == 2) {
                     return new State튜브대미지필드_2단계전환_우선1단계Remove(context);
                 }
@@ -117,10 +117,10 @@ namespace Maple2.Trigger._02020140_bf {
             internal State1단계_튜브대미지필드_Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.NpcRemoveAdditionalEffect(spawnPointId: 102, additionalEffectId: 50004566);
+                context.NpcRemoveAdditionalEffect(spawnId: 102, additionalEffectId: 50004566);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "2PhaseTubeStep") == 2) {
                     return new State튜브대미지필드_2단계전환_우선1단계Remove(context);
                 }
@@ -139,11 +139,11 @@ namespace Maple2.Trigger._02020140_bf {
             internal State튜브대미지필드_2단계전환_우선1단계Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.NpcRemoveAdditionalEffect(spawnPointId: 102, additionalEffectId: 50004566);
+                context.NpcRemoveAdditionalEffect(spawnId: 102, additionalEffectId: 50004566);
                 context.SetUserValue(key: "TubeLeveStep", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
                     return new State2단계_튜브대미지필드_처음단계(context);
                 }
@@ -159,7 +159,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MarbleTurkaSupportMany") >= 1) {
                     return new State2단계_튜브대미지필드_1LvCreation(context);
                 }
@@ -178,10 +178,10 @@ namespace Maple2.Trigger._02020140_bf {
             internal State2단계_튜브대미지필드_1LvCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {102}, arg2: 50004563, arg3: 1, arg4: true, arg5: true);
+                context.AddBuff(boxIds: new []{102}, skillId: 50004563, level: 1, arg4: true, arg5: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State2단계_튜브대미지필드_TubeLeveStep_더하기(context);
                 }
@@ -196,11 +196,11 @@ namespace Maple2.Trigger._02020140_bf {
             internal State2단계_튜브대미지필드_2LvCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.NpcRemoveAdditionalEffect(spawnPointId: 102, additionalEffectId: 50004563);
-                context.AddBuff(arg1: new[] {102}, arg2: 50004564, arg3: 1, arg4: true, arg5: true);
+                context.NpcRemoveAdditionalEffect(spawnId: 102, additionalEffectId: 50004563);
+                context.AddBuff(boxIds: new []{102}, skillId: 50004564, level: 1, arg4: true, arg5: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State2단계_튜브대미지필드_TubeLeveStep_더하기(context);
                 }
@@ -215,11 +215,11 @@ namespace Maple2.Trigger._02020140_bf {
             internal State2단계_튜브대미지필드_3LvCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.NpcRemoveAdditionalEffect(spawnPointId: 102, additionalEffectId: 50004564);
-                context.AddBuff(arg1: new[] {102}, arg2: 50004565, arg3: 1, arg4: true, arg5: true);
+                context.NpcRemoveAdditionalEffect(spawnId: 102, additionalEffectId: 50004564);
+                context.AddBuff(boxIds: new []{102}, skillId: 50004565, level: 1, arg4: true, arg5: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State2단계_튜브대미지필드_TubeLeveStep_더하기(context);
                 }
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._02020140_bf {
                 context.AddUserValue(key: "TubeLeveStep", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State2단계_튜브대미지필드_TubeLeveStep_체크(context);
                 }
@@ -257,7 +257,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TubeLeveStep") == 10) {
                     return new State2단계_튜브대미지필드_2LvCreation(context);
                 }
@@ -285,11 +285,11 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() {
                 context.AddUserValue(key: "TubeLeveStep", value: -9);
-                context.AddBuff(arg1: new[] {102}, arg2: 50000348, arg3: 2, arg4: true, arg5: true);
+                context.AddBuff(boxIds: new []{102}, skillId: 50000348, level: 2, arg4: true, arg5: true);
                 context.ShowGuideSummary(entityId: 29200005, textId: 29200005, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State2단계_튜브대미지필드_TubeLeveStep_체크(context);
                 }
@@ -304,15 +304,15 @@ namespace Maple2.Trigger._02020140_bf {
             internal State2단계_튜브대미지필드_Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.NpcRemoveAdditionalEffect(spawnPointId: 102, additionalEffectId: 50004563);
-                context.NpcRemoveAdditionalEffect(spawnPointId: 102, additionalEffectId: 50004564);
-                context.NpcRemoveAdditionalEffect(spawnPointId: 102, additionalEffectId: 50004565);
-                context.NpcRemoveAdditionalEffect(spawnPointId: 102, additionalEffectId: 50000348);
+                context.NpcRemoveAdditionalEffect(spawnId: 102, additionalEffectId: 50004563);
+                context.NpcRemoveAdditionalEffect(spawnId: 102, additionalEffectId: 50004564);
+                context.NpcRemoveAdditionalEffect(spawnId: 102, additionalEffectId: 50004565);
+                context.NpcRemoveAdditionalEffect(spawnId: 102, additionalEffectId: 50000348);
                 context.SetUserValue(key: "TubeLeveStep", value: 0);
                 context.HideGuideSummary(entityId: 29200005);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State2단계_튜브대미지필드_처음단계(context);
                 }
@@ -328,7 +328,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

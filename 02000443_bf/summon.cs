@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000443_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "special_1") == 1) {
                     return new StateSpecial_1_2(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateSpecial_2_1(context);
                 }
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "special_2") == 1) {
                     return new StateSpecial_2_2(context);
                 }
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateSpecial_3_1(context);
                 }
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "special_3") == 1) {
                     return new StateSpecial_3_2(context);
                 }
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateSpecial_4_1(context);
                 }
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "special_4") == 1) {
                     return new StateSpecial_4_2(context);
                 }
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateSpecial_5_1(context);
                 }
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "special_5") == 1) {
                     return new StateSpecial_5_2(context);
                 }
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     return new StateEnd(context);
                 }
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) { }
 
                 return null;

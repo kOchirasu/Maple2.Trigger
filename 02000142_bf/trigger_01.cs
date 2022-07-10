@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000142_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {7000}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000245}, arg2: 1);
+                context.SetBreakable(triggerIds: new []{7000}, enabled: false);
+                context.SetInteractObject(interactIds: new []{10000245}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000245}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000245}, arg2: 0)) {
                     return new State이동(context);
                 }
 
@@ -23,12 +23,12 @@ namespace Maple2.Trigger._02000142_bf {
             internal State이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 15, arg3: false);
-                context.SetBreakable(arg1: new[] {7000}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 15, clearAtZero: false);
+                context.SetBreakable(triggerIds: new []{7000}, enabled: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWait(context);
                 }
 
@@ -36,7 +36,7 @@ namespace Maple2.Trigger._02000142_bf {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
         }
     }

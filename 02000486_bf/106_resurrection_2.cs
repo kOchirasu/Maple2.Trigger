@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {901})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{901})) {
                     return new State타임(context);
                 }
 
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 240000)) {
                     return new StateBuff(context);
                 }
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000486_bf {
                 context.SetAiExtraData(key: "RageBuff_3", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateBuff_종료(context);
                 }
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000486_bf {
                 context.SetAiExtraData(key: "RageBuff_3", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) { }
 
                 return null;

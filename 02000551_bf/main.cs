@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateDefaultSetting(context);
                 }
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetPortal(portalId: 25, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State난이도체크(context);
                 }
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonId() == 23050003) {
                     return new StateEasyDifficultyBossSpawn(context);
                 }
@@ -77,10 +77,10 @@ namespace Maple2.Trigger._02000551_bf {
             internal StateHardDifficultyBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1800)) {
                     return new State일러스트대화창(context);
                 }
@@ -95,10 +95,10 @@ namespace Maple2.Trigger._02000551_bf {
             internal StateEasyDifficultyBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(spawnIds: new []{102}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1800)) {
                     return new State일러스트대화창(context);
                 }
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23000101, illust: "BlackBean_Smile", script: "$02000551_BF__BOSSSPAWN__0$", duration: 7000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2100)) {
                     return new State전투진행중(context);
                 }
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetUserValue(key: "GuideMessage", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "GuideMessage") == 1) {
                     return new StateDisplayGuide(context);
                 }
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.ShowGuideSummary(entityId: 29200007, textId: 29200007, duration: 7000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
                     return new State전투진행중(context);
                 }
@@ -181,10 +181,10 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     context.DungeonFail();
                     return new State게임오버(context);
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._02000551_bf {
             internal State게임오버(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(isEnable: false);
+                context.DungeonEnableGiveUp(enable: false);
                 context.SetPortal(portalId: 21, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 22, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 23, visible: true, enabled: true, minimapVisible: true);
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -221,7 +221,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5800)) {
                     return new StateNext맵가는PortalSpawn(context);
                 }
@@ -248,7 +248,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

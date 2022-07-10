@@ -6,50 +6,50 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(arg1: 7101, arg2: true);
-                context.SetActor(arg1: 4001, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 4002, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 4003, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 4004, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 4005, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 4006, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 4007, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 4008, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 4009, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 4010, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 4011, arg2: true, arg3: "Closed");
-                context.SetActor(arg1: 1001, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1002, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1003, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1004, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1005, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1006, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1007, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1008, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1009, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1010, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1011, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1012, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1013, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1014, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1015, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1016, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1017, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1018, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1019, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1020, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1021, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1022, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1023, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1024, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1025, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1026, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1027, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 1028, arg2: true, arg3: "sf_quest_light_A01_Off");
+                context.SetSound(triggerId: 7101, arg2: true);
+                context.SetActor(triggerId: 4001, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 4002, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 4003, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 4004, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 4005, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 4006, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 4007, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 4008, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 4009, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 4010, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 4011, visible: true, initialSequence: "Closed");
+                context.SetActor(triggerId: 1001, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1002, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1003, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1004, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1005, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1006, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1007, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1008, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1009, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1010, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1011, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1012, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1013, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1014, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1015, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1016, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1017, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1018, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1019, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1020, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1021, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1022, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1023, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1024, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1025, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1026, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1027, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 1028, visible: true, initialSequence: "sf_quest_light_A01_Off");
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {701})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{701})) {
                     return new StateReady(context);
                 }
 
@@ -65,14 +65,14 @@ namespace Maple2.Trigger._52000138_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG\weather\Eff_monochrome_03.xml");
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/Sound/Eff_ Object_Train_alert.xml");
-                context.SetAmbientLight(arg1: new Vector3(0f, 0f, 0f));
-                context.SetAmbientLight(arg1: new Vector3(1f, 1f, 1f));
-                context.AddBuff(arg1: new[] {701}, arg2: 99910230, arg3: 1, arg4: false, arg5: true);
-                context.AddBuff(arg1: new[] {701}, arg2: 99910230, arg3: 1, arg4: false, arg5: false);
-                context.CreateMonster(arg1: new[] {101});
+                context.SetAmbientLight(color: default);
+                context.SetAmbientLight(color: new Vector3(1f, 1f, 1f));
+                context.AddBuff(boxIds: new []{701}, skillId: 99910230, level: 1, arg4: false, arg5: true);
+                context.AddBuff(boxIds: new []{701}, skillId: 99910230, level: 1, arg4: false, arg5: false);
+                context.CreateMonster(spawnIds: new []{101});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateAct1_wave1(context);
                 }
@@ -87,23 +87,23 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct1_wave1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$52000138_QD__MAIN__0$", arg3: 3000, arg4: "0");
-                context.SetActor(arg1: 1001, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1002, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1003, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1004, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1009, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1010, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1025, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1026, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1027, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1028, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000138_QD__MAIN__1$", arg4: 3, arg5: 0);
-                context.SetSound(arg1: 10000, arg2: true);
-                context.SetSound(arg1: 7002, arg2: true);
+                context.SetEventUI(arg1: 1, script: "$52000138_QD__MAIN__0$", duration: 3000, boxId: 0);
+                context.SetActor(triggerId: 1001, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1002, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1003, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1004, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1009, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1010, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1025, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1026, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1027, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1028, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000138_QD__MAIN__1$", arg4: 3, arg5: 0);
+                context.SetSound(triggerId: 10000, arg2: true);
+                context.SetSound(triggerId: 7002, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1)) {
                     return new StateAct1_wave2(context);
                 }
@@ -118,10 +118,10 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct1_wave2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {102});
+                context.CreateMonster(spawnIds: new []{102});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1)) {
                     return new StateAct1_wave2_move(context);
                 }
@@ -136,11 +136,11 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct1_wave2_move(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 4001, arg2: true, arg3: "Opened");
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52000138_QD__MAIN__2$", arg4: 3, arg5: 4);
+                context.SetActor(triggerId: 4001, visible: true, initialSequence: "Opened");
+                context.SetConversation(type: 1, spawnId: 102, script: "$52000138_QD__MAIN__2$", arg4: 3, arg5: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateAct1_wave2_1(context);
                 }
@@ -155,10 +155,10 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct1_wave2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {104});
+                context.CreateMonster(spawnIds: new []{104});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1)) {
                     return new StateAct1_wave2_move_1(context);
                 }
@@ -173,11 +173,11 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct1_wave2_move_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 4002, arg2: true, arg3: "Opened");
-                context.SetConversation(arg1: 1, arg2: 104, script: "$52000138_QD__MAIN__3$", arg4: 3, arg5: 4);
+                context.SetActor(triggerId: 4002, visible: true, initialSequence: "Opened");
+                context.SetConversation(type: 1, spawnId: 104, script: "$52000138_QD__MAIN__3$", arg4: 3, arg5: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateAct1_wave3(context);
                 }
@@ -192,10 +192,10 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct1_wave3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {103, 105});
+                context.CreateMonster(spawnIds: new []{103, 105});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateAct1_wave3_move(context);
                 }
@@ -210,12 +210,12 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct1_wave3_move(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 105, script: "$52000138_QD__MAIN__4$", arg4: 3, arg5: 3);
-                context.SetActor(arg1: 4003, arg2: true, arg3: "Opened");
+                context.SetConversation(type: 1, spawnId: 105, script: "$52000138_QD__MAIN__4$", arg4: 3, arg5: 3);
+                context.SetActor(triggerId: 4003, visible: true, initialSequence: "Opened");
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {702})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{702})) {
                     return new StateReady_1(context);
                 }
 
@@ -229,10 +229,10 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateReady_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {110, 111});
+                context.CreateMonster(spawnIds: new []{110, 111});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateAct2_wave1(context);
                 }
@@ -247,21 +247,21 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct2_wave1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 1005, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1006, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1007, arg2: true, arg3: "sf_quest_light_A01_Of");
-                context.SetActor(arg1: 1008, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1011, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1012, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1011, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1012, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1023, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1024, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetConversation(arg1: 1, arg2: 110, script: "$52000138_QD__MAIN__5$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 111, script: "$52000138_QD__MAIN__6$", arg4: 3, arg5: 1);
+                context.SetActor(triggerId: 1005, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1006, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1007, visible: true, initialSequence: "sf_quest_light_A01_Of");
+                context.SetActor(triggerId: 1008, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1011, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1012, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1011, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1012, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1023, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1024, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetConversation(type: 1, spawnId: 110, script: "$52000138_QD__MAIN__5$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 111, script: "$52000138_QD__MAIN__6$", arg4: 3, arg5: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1)) {
                     return new StateAct2_wave2(context);
                 }
@@ -276,11 +276,11 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct2_wave2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 4004, arg2: true, arg3: "Opened");
-                context.CreateMonster(arg1: new[] {106, 107});
+                context.SetActor(triggerId: 4004, visible: true, initialSequence: "Opened");
+                context.CreateMonster(spawnIds: new []{106, 107});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1)) {
                     return new StateAct2_wave2_move(context);
                 }
@@ -295,10 +295,10 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct2_wave2_move(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 106, script: "$52000138_QD__MAIN__7$", arg4: 3, arg5: 3);
+                context.SetConversation(type: 1, spawnId: 106, script: "$52000138_QD__MAIN__7$", arg4: 3, arg5: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateAct2_wave3(context);
                 }
@@ -313,11 +313,11 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct2_wave3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 4005, arg2: true, arg3: "Opened");
-                context.CreateMonster(arg1: new[] {108, 109});
+                context.SetActor(triggerId: 4005, visible: true, initialSequence: "Opened");
+                context.CreateMonster(spawnIds: new []{108, 109});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateAct2_wave3_move(context);
                 }
@@ -332,12 +332,12 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct2_wave3_move(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 4006, arg2: true, arg3: "Opened");
-                context.SetConversation(arg1: 1, arg2: 109, script: "$52000138_QD__MAIN__8$", arg4: 3, arg5: 3);
-                context.CreateMonster(arg1: new[] {112});
+                context.SetActor(triggerId: 4006, visible: true, initialSequence: "Opened");
+                context.SetConversation(type: 1, spawnId: 109, script: "$52000138_QD__MAIN__8$", arg4: 3, arg5: 3);
+                context.CreateMonster(spawnIds: new []{112});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateAct2_wave3_move_1(context);
                 }
@@ -352,11 +352,11 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct2_wave3_move_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 112, script: "$52000138_QD__MAIN__9$", arg4: 3, arg5: 4);
+                context.SetConversation(type: 1, spawnId: 112, script: "$52000138_QD__MAIN__9$", arg4: 3, arg5: 4);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {703})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{703})) {
                     return new StateReady_2(context);
                 }
 
@@ -370,10 +370,10 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateReady_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {113});
+                context.CreateMonster(spawnIds: new []{113});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1)) {
                     return new StateAct3_wave1_move(context);
                 }
@@ -388,20 +388,20 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct3_wave1_move(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 1013, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1014, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1015, arg2: true, arg3: "sf_quest_light_A01_Of");
-                context.SetActor(arg1: 1016, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1017, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1018, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1019, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1020, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1021, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 1022, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetConversation(arg1: 1, arg2: 113, script: "$52000138_QD__MAIN__10$", arg4: 2, arg5: 0);
+                context.SetActor(triggerId: 1013, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1014, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1015, visible: true, initialSequence: "sf_quest_light_A01_Of");
+                context.SetActor(triggerId: 1016, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1017, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1018, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1019, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1020, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1021, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 1022, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetConversation(type: 1, spawnId: 113, script: "$52000138_QD__MAIN__10$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1)) {
                     return new StateAct3_wave2_1(context);
                 }
@@ -416,10 +416,10 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct3_wave2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {114, 115, 120, 121});
+                context.CreateMonster(spawnIds: new []{114, 115, 120, 121});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateAct3_wave2_2(context);
                 }
@@ -434,11 +434,11 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct3_wave2_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 114, script: "$52000138_QD__MAIN__11$", arg4: 2, arg5: 2);
-                context.CreateMonster(arg1: new[] {116, 117, 118, 119});
+                context.SetConversation(type: 1, spawnId: 114, script: "$52000138_QD__MAIN__11$", arg4: 2, arg5: 2);
+                context.CreateMonster(spawnIds: new []{116, 117, 118, 119});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateAct3_wave2_move(context);
                 }
@@ -453,11 +453,11 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateAct3_wave2_move(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 116, script: "$52000138_QD__MAIN__12$", arg4: 2, arg5: 2);
+                context.SetConversation(type: 1, spawnId: 116, script: "$52000138_QD__MAIN__12$", arg4: 2, arg5: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123})) {
                     return new StateEscape(context);
                 }
 
@@ -473,12 +473,12 @@ namespace Maple2.Trigger._52000138_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CreateMonster(arg1: new[] {122});
-                context.CameraSelectPath(pathIds: new[] {8001}, arg2: false);
+                context.CreateMonster(spawnIds: new []{122});
+                context.CameraSelectPath(pathIds: new []{8001}, returnView: false);
                 context.SetSceneSkip(state: new StateEndready(context), arg2: "exit");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePlot(context);
                 }
@@ -493,12 +493,12 @@ namespace Maple2.Trigger._52000138_qd {
             internal StatePlot(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(arg1: 7102, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 122, script: "$52000138_QD__MAIN__13$", arg4: 3, arg5: 4);
-                context.MoveNpc(arg1: 122, arg2: "MS2PatrolData_2001");
+                context.SetSound(triggerId: 7102, arg2: true);
+                context.SetConversation(type: 1, spawnId: 122, script: "$52000138_QD__MAIN__13$", arg4: 3, arg5: 4);
+                context.MoveNpc(spawnId: 122, patrolName: "MS2PatrolData_2001");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateScheme1(context);
                 }
@@ -513,10 +513,10 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateScheme1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 122, script: "$52000138_QD__MAIN__14$", arg4: 5, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 122, script: "$52000138_QD__MAIN__14$", arg4: 5, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateScheme2(context);
                 }
@@ -531,10 +531,10 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateScheme2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 122, script: "$52000138_QD__MAIN__15$", arg4: 5, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 122, script: "$52000138_QD__MAIN__15$", arg4: 5, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateScheme3(context);
                 }
@@ -549,10 +549,10 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateScheme3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 122, script: "$52000138_QD__MAIN__16$", arg4: 5, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 122, script: "$52000138_QD__MAIN__16$", arg4: 5, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateScheme4(context);
                 }
@@ -561,7 +561,7 @@ namespace Maple2.Trigger._52000138_qd {
             }
 
             public override void OnExit() {
-                context.CameraSelectPath(pathIds: new[] {8002}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{8002}, returnView: false);
             }
         }
 
@@ -569,12 +569,12 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateScheme4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionLoop(arg1: 122, arg2: "Talk_A", arg3: 1500f);
-                context.SetConversation(arg1: 1, arg2: 122, script: "$52000138_QD__MAIN__17$", arg4: 5, arg5: 0);
+                context.SetNpcEmotionLoop(spawnId: 122, sequenceName: "Talk_A", duration: 1500f);
+                context.SetConversation(type: 1, spawnId: 122, script: "$52000138_QD__MAIN__17$", arg4: 5, arg5: 0);
                 context.SetSceneSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEndready(context);
                 }
@@ -589,10 +589,10 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateEndready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "windead");
+                context.SetAchievement(triggerId: 701, type: "trigger", code: "windead");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateEnd(context);
                 }
@@ -607,11 +607,11 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "windead");
-                context.MoveUser(arg1: 02000153, arg2: 2);
+                context.SetAchievement(triggerId: 701, type: "trigger", code: "windead");
+                context.MoveUser(mapId: 02000153, portalId: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

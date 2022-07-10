@@ -6,15 +6,15 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
+                context.SetEffect(triggerIds: new []{5001, 5002}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200135}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{60200135}, questStates: new byte[]{2})) {
                     return new StateReady(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200135, 60200136, 60200137, 60200138, 60200139, 60200140}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{60200135, 60200136, 60200137, 60200138, 60200139, 60200140}, questStates: new byte[]{3})) {
                     return new StateEndReady(context);
                 }
 
@@ -31,10 +31,10 @@ namespace Maple2.Trigger._52020020_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.MoveUser(arg1: 52020020, arg2: 6002);
+                context.MoveUser(mapId: 52020020, portalId: 6002);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateMonologue_01(context);
                 }
@@ -52,11 +52,11 @@ namespace Maple2.Trigger._52020020_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.AddCinematicTalk(npcId: 0, script: "곧 알현식이 열린다고?", duration: 2500);
-                context.SetPcEmotionLoop(arg1: "Object_React_H", arg2: 16000f);
+                context.SetPcEmotionLoop(sequenceName: "Object_React_H", duration: 16000f);
                 context.SetSceneSkip(state: new StateEndReady(context), arg2: "exit");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new StateMonologue_02(context);
                 }
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._52020020_qd {
                 context.AddCinematicTalk(npcId: 0, script: "그럼 여기가 $map:02000001$$pp:라는,이라는$거야?", duration: 2500);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new StateMonologue_03(context);
                 }
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._52020020_qd {
                 context.AddCinematicTalk(npcId: 0, script: "분명 알현식은 취소되었을텐데?", duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWalk(context);
                 }
@@ -109,10 +109,10 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateWalk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.SetEffect(triggerIds: new []{5001}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateDoor(context);
                 }
@@ -127,10 +127,10 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateDoor(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
+                context.SetEffect(triggerIds: new []{5002}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEventTalk_01(context);
                 }
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._52020020_qd {
                 context.AddCinematicTalk(npcId: 11003590, script: "앗! 일어나 계셨습니까?", duration: 2500);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new StateEventTalk_02(context);
                 }
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._52020020_qd {
                 context.SetSceneSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new StateEventTalk_03(context);
                 }
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._52020020_qd {
                 context.SetSceneSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEndReady(context);
                 }
@@ -202,12 +202,12 @@ namespace Maple2.Trigger._52020020_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 4);
-                context.SetSound(arg1: 7001, arg2: true);
-                context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 100f);
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.SetSound(triggerId: 7001, arg2: true);
+                context.SetPcEmotionLoop(sequenceName: "Idle_A", duration: 100f);
+                context.CreateMonster(spawnIds: new []{201}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateExit(context);
                 }
@@ -227,7 +227,7 @@ namespace Maple2.Trigger._52020020_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

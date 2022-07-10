@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBuff(arg1: 199, arg2: 70000115);
+                context.RemoveBuff(boxId: 199, skillId: 70000115);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateBuff(context);
                 }
 
@@ -22,15 +22,15 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateBuff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {199}, arg2: 70000115, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{199}, skillId: 70000115, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateBuff(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {199})) {
+                if (!context.UserDetected(boxIds: new []{199})) {
                     return new StateEnd(context);
                 }
 
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52000084_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

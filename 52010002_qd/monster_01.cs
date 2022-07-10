@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52010002_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 701, arg2: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 701, spawnIds: new []{101})) {
                     return new StateEvent_01(context);
                 }
 
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._52010002_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEvent_02(context);
                 }
 
@@ -36,11 +36,11 @@ namespace Maple2.Trigger._52010002_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {111}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 111, script: "$52010002_QD__MONSTER_01__0$", arg4: 2, arg5: 1);
+                context.CreateMonster(spawnIds: new []{111}, arg2: false);
+                context.SetConversation(type: 1, spawnId: 111, script: "$52010002_QD__MONSTER_01__0$", arg4: 2, arg5: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._52010002_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

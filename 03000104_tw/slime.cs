@@ -5,8 +5,8 @@ namespace Maple2.Trigger._03000104_tw {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new State알림(context);
                 }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._03000104_tw {
                 context.ShowGuideSummary(entityId: 23000005, textId: 23000005, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new State알림(context);
                 }
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._03000104_tw {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

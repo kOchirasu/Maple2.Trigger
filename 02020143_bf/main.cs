@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020143_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateDefaultSetting(context);
                 }
@@ -25,16 +25,16 @@ namespace Maple2.Trigger._02020143_bf {
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003330}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{10003330}, questStates: new byte[]{2})) {
                     return new State이동(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003330}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{10003330}, questStates: new byte[]{3})) {
                     return new State이동(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {102})) {
+                if (context.UserDetected(boxIds: new []{102})) {
                     return new StateBossSpawnPrepare(context);
                 }
 
@@ -48,11 +48,11 @@ namespace Maple2.Trigger._02020143_bf {
             internal StateBossSpawnPrepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {301}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.AddBuff(arg1: new[] {102}, arg2: 50000554, arg3: 1, arg4: false, arg5: false);
+                context.SetMesh(triggerIds: new []{301}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.AddBuff(boxIds: new []{102}, skillId: 50000554, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateBossSpawn(context);
                 }
@@ -67,10 +67,10 @@ namespace Maple2.Trigger._02020143_bf {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {99}, arg2: false);
+                context.CreateMonster(spawnIds: new []{99}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1100)) {
                     return new StateClearSuccess유무체크시작(context);
                 }
@@ -86,8 +86,8 @@ namespace Maple2.Trigger._02020143_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {99})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new StateCinematicDelay(context);
                 }
 
@@ -111,11 +111,11 @@ namespace Maple2.Trigger._02020143_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     context.DungeonFail();
                     return new StateEnd(context);
@@ -131,10 +131,10 @@ namespace Maple2.Trigger._02020143_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(isEnable: false);
+                context.DungeonEnableGiveUp(enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -145,10 +145,10 @@ namespace Maple2.Trigger._02020143_bf {
             internal StateCinematicDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg3: "TurkaQuestDungeonClear");
+                context.SetAchievement(type: "trigger", code: "TurkaQuestDungeonClear");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateStopCinematic(context);
                 }
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._02020143_bf {
                 context.DungeonClear();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State영상재생Prepare(context);
                 }
@@ -187,7 +187,7 @@ namespace Maple2.Trigger._02020143_bf {
                 context.SetCinematicUI(type: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State영상재생(context);
                 }
@@ -207,8 +207,8 @@ namespace Maple2.Trigger._02020143_bf {
                 context.SetSceneSkip();
             }
 
-            public override TriggerState Execute() {
-                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
+            public override TriggerState? Execute() {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, condition: "IsStop", value: "1")) {
                     return new StateQuit(context);
                 }
 
@@ -227,8 +227,8 @@ namespace Maple2.Trigger._02020143_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003330}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{10003330}, questStates: new byte[]{2})) {
                     return new State이동(context);
                 }
 
@@ -242,10 +242,10 @@ namespace Maple2.Trigger._02020143_bf {
             internal State이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52100304, arg2: 1);
+                context.MoveUser(mapId: 52100304, portalId: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWaitStart(context);
             }
 

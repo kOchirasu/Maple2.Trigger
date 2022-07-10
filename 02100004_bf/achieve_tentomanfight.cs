@@ -8,7 +8,7 @@ namespace Maple2.Trigger._02100004_bf {
                 context.SetUserValue(key: "LastRoundEnd", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "LastRoundStart") == 1) {
                     return new StateMobCheck01(context);
                 }
@@ -24,8 +24,8 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new[] {2000})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{2000})) {
                     return new StateMobCheck02(context);
                 }
 
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (!context.NpcDetected(arg1: 102, arg2: new[] {2001}) && !context.NpcDetected(arg1: 102, arg2: new[] {2002}) && !context.NpcDetected(arg1: 102, arg2: new[] {2003}) && !context.NpcDetected(arg1: 102, arg2: new[] {2004}) && !context.NpcDetected(arg1: 102, arg2: new[] {2005}) && !context.NpcDetected(arg1: 102, arg2: new[] {2006}) && !context.NpcDetected(arg1: 102, arg2: new[] {2008}) && !context.NpcDetected(arg1: 102, arg2: new[] {2009}) && !context.NpcDetected(arg1: 102, arg2: new[] {2010}) && !context.NpcDetected(arg1: 102, arg2: new[] {2011}) && !context.NpcDetected(arg1: 102, arg2: new[] {2012}) && !context.NpcDetected(arg1: 102, arg2: new[] {2013})) {
+            public override TriggerState? Execute() {
+                if (!context.NpcDetected(boxId: 102, spawnIds: new []{2001}) && !context.NpcDetected(boxId: 102, spawnIds: new []{2002}) && !context.NpcDetected(boxId: 102, spawnIds: new []{2003}) && !context.NpcDetected(boxId: 102, spawnIds: new []{2004}) && !context.NpcDetected(boxId: 102, spawnIds: new []{2005}) && !context.NpcDetected(boxId: 102, spawnIds: new []{2006}) && !context.NpcDetected(boxId: 102, spawnIds: new []{2008}) && !context.NpcDetected(boxId: 102, spawnIds: new []{2009}) && !context.NpcDetected(boxId: 102, spawnIds: new []{2010}) && !context.NpcDetected(boxId: 102, spawnIds: new []{2011}) && !context.NpcDetected(boxId: 102, spawnIds: new []{2012}) && !context.NpcDetected(boxId: 102, spawnIds: new []{2013})) {
                     return new StateCheckSuccess(context);
                 }
 
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2000})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2000})) {
                     return new StateMemberCheck(context);
                 }
 
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 102) == 10) {
                     return new StateAchieve(context);
                 }
@@ -99,10 +99,10 @@ namespace Maple2.Trigger._02100004_bf {
             internal StateAchieve(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 102, arg2: "trigger", arg3: "TenToOneFight");
+                context.SetAchievement(triggerId: 102, type: "trigger", code: "TenToOneFight");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuit(context);
                 }
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

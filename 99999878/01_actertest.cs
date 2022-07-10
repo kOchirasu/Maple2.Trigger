@@ -4,12 +4,12 @@ namespace Maple2.Trigger._99999878 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 1000, arg2: true, arg3: "Closed");
-                context.SetBreakable(arg1: new[] {2000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {2000}, arg2: true);
+                context.SetActor(triggerId: 1000, visible: true, initialSequence: "Closed");
+                context.SetBreakable(triggerIds: new []{2000}, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{2000}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateOpenDelay(context);
                 }
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._99999878 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateOpen(context);
                 }
@@ -40,12 +40,12 @@ namespace Maple2.Trigger._99999878 {
             internal StateOpen(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 1000, arg2: true, arg3: "Opened");
-                context.SetBreakable(arg1: new[] {2000}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {2000}, arg2: true);
+                context.SetActor(triggerId: 1000, visible: true, initialSequence: "Opened");
+                context.SetBreakable(triggerIds: new []{2000}, enabled: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{2000}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateOffDelay(context);
                 }
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._99999878 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateOff(context);
                 }
@@ -76,12 +76,12 @@ namespace Maple2.Trigger._99999878 {
             internal StateOff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 1000, arg2: false, arg3: "Opened");
-                context.SetBreakable(arg1: new[] {2000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {2000}, arg2: false);
+                context.SetActor(triggerId: 1000, visible: false, initialSequence: "Opened");
+                context.SetBreakable(triggerIds: new []{2000}, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{2000}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateWait(context);
                 }

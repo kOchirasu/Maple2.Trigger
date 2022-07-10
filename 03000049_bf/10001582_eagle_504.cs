@@ -4,12 +4,12 @@ namespace Maple2.Trigger._03000049_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000332}, arg2: 1);
-                context.SetActor(arg1: 504, arg2: true, arg3: "Idle_A");
+                context.SetInteractObject(interactIds: new []{10000332}, state: 1);
+                context.SetActor(triggerId: 504, visible: true, initialSequence: "Idle_A");
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000332}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000332}, arg2: 0)) {
                     return new StateInteractObject(context);
                 }
 
@@ -24,13 +24,13 @@ namespace Maple2.Trigger._03000049_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateNPC이동(context);
             }
 
             public override void OnExit() {
-                context.SetActor(arg1: 504, arg2: false, arg3: "Idle_A");
-                context.CreateMonster(arg1: new[] {5004}, arg2: false);
+                context.SetActor(triggerId: 504, visible: false, initialSequence: "Idle_A");
+                context.CreateMonster(spawnIds: new []{5004}, arg2: false);
             }
         }
 
@@ -38,12 +38,12 @@ namespace Maple2.Trigger._03000049_bf {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 5004, arg2: "MS2PatrolData_504");
-                context.SetTimer(id: "1", arg2: 10);
+                context.MoveNpc(spawnId: 5004, patrolName: "MS2PatrolData_504");
+                context.SetTimer(timerId: "1", seconds: 10);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateNPCDestroy(context);
                 }
 
@@ -57,12 +57,12 @@ namespace Maple2.Trigger._03000049_bf {
             internal StateNPCDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {5004});
-                context.SetTimer(id: "2", arg2: 50);
+                context.DestroyMonster(spawnIds: new []{5004});
+                context.SetTimer(timerId: "2", seconds: 50);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateWaitStart(context);
                 }
 

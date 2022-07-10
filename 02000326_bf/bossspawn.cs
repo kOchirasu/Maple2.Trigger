@@ -7,8 +7,8 @@ namespace Maple2.Trigger._02000326_bf {
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateBossSpawn(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02000326_bf {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1099});
+                context.CreateMonster(spawnIds: new []{1099});
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1099})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1099})) {
                     return new StateEndDelay(context);
                 }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000326_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.DungeonClear();
                     return new StateEnd(context);
@@ -57,11 +57,11 @@ namespace Maple2.Trigger._02000326_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 99999, arg2: "trigger", arg3: "ClearDeborak");
+                context.SetAchievement(triggerId: 99999, type: "trigger", code: "ClearDeborak");
                 context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

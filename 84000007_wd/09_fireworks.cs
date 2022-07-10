@@ -5,7 +5,7 @@ namespace Maple2.Trigger._84000007_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Fireworks") == 1) {
                     return new StateVolley_Ready(context);
                 }
@@ -24,10 +24,10 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateVolley_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$84000007_WD__09_FIREWORKS__0$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$84000007_WD__09_FIREWORKS__0$", duration: 3000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateVolley_Fire(context);
                 }
@@ -42,10 +42,10 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateVolley_Ready2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$84000007_WD__09_FIREWORKS__1$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$84000007_WD__09_FIREWORKS__1$", duration: 3000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateVolley_Fire(context);
                 }
@@ -60,10 +60,10 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateVolley_Fire(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8002}, arg2: true);
+                context.SetEffect(triggerIds: new []{8002}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 14000)) { }
 
                 return null;

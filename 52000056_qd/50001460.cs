@@ -4,13 +4,13 @@ namespace Maple2.Trigger._52000056_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611}, arg2: false);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611}, visible: false);
+                context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetGravity(gravity: -9.8f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103, 104, 105, 106})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103, 104, 105, 106})) {
                     return new StateStartCinematic(context);
                 }
 
@@ -24,13 +24,13 @@ namespace Maple2.Trigger._52000056_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52000056, arg2: 3);
+                context.MoveUser(mapId: 52000056, portalId: 3);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 301, arg2: true);
+                context.CameraSelect(triggerId: 301, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StatePC말풍선01(context);
                 }
@@ -45,10 +45,10 @@ namespace Maple2.Trigger._52000056_qd {
             internal StatePC말풍선01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, script: "$52000056_QD__50001460__0$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 0, script: "$52000056_QD__50001460__0$", arg4: 3, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new State낙하Prepare(context);
                 }
@@ -63,11 +63,11 @@ namespace Maple2.Trigger._52000056_qd {
             internal State낙하Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
+                context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, visible: false, arg3: 0, arg4: 200, arg5: 2f);
                 context.SetGravity(gravity: -37f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State낙하시작(context);
                 }
@@ -82,10 +82,10 @@ namespace Maple2.Trigger._52000056_qd {
             internal State낙하시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 302, arg2: true);
+                context.CameraSelect(triggerId: 302, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new State낙하종료(context);
                 }
@@ -100,10 +100,10 @@ namespace Maple2.Trigger._52000056_qd {
             internal State낙하종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 302, arg2: false);
+                context.CameraSelect(triggerId: 302, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StatePC말풍선02(context);
                 }
@@ -118,10 +118,10 @@ namespace Maple2.Trigger._52000056_qd {
             internal StatePC말풍선02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, script: "$52000056_QD__50001460__1$", arg4: 4, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 0, script: "$52000056_QD__50001460__1$", arg4: 4, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StatePC말풍선03(context);
                 }
@@ -136,12 +136,12 @@ namespace Maple2.Trigger._52000056_qd {
             internal StatePC말풍선03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, script: "$52000056_QD__50001460__2$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 0, script: "$52000056_QD__50001460__2$", arg4: 3, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611}, arg2: true);
+                    context.SetEffect(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611}, visible: true);
                     context.SetCinematicUI(type: 0);
                     context.SetCinematicUI(type: 2);
                     context.SetGravity(gravity: -9.8f);
@@ -159,9 +159,9 @@ namespace Maple2.Trigger._52000056_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {102})) {
-                    context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{102})) {
+                    context.SetEffect(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611}, visible: false);
                     return new StateEnd(context);
                 }
 
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._52000056_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

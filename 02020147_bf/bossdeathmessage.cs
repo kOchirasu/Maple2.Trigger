@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020147_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
                     return new State변수Reset(context);
                 }
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02020147_bf {
                 context.SetUserValue(key: "DeathYuperiaRbladerDark", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new State신호받기Waiting(context);
                 }
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02020147_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
                     return new StateIshura죽음알림(context);
                 }
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02020147_bf {
                 context.SetUserValue(key: "DeathIshuraRbladerDark", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
                     return new State신호받기Waiting(context);
                 }
@@ -97,7 +97,7 @@ namespace Maple2.Trigger._02020147_bf {
                 context.SetUserValue(key: "DeathRenduebianRbladerDark", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
                     return new State신호받기Waiting(context);
                 }
@@ -126,7 +126,7 @@ namespace Maple2.Trigger._02020147_bf {
                 context.SetUserValue(key: "DeathYuperiaRbladerDark", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
                     return new State신호받기Waiting(context);
                 }

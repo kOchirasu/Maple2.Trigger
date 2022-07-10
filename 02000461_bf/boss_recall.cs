@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000461_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new[] {2099})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{2099})) {
                     return new State발신(context);
                 }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SetAiExtraData(key: "recall", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateWait(context);
                 }
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000461_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

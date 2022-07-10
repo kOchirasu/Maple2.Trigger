@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {175, 176}, arg2: true);
-                context.SetEffect(arg1: new[] {8037, 8038}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000405}, arg2: 1);
+                context.SetMesh(triggerIds: new []{175, 176}, visible: true);
+                context.SetEffect(triggerIds: new []{8037, 8038}, visible: true);
+                context.SetInteractObject(interactIds: new []{10000405}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000405}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000405}, arg2: 0)) {
                     return new State열기(context);
                 }
 
@@ -24,17 +24,17 @@ namespace Maple2.Trigger._02000252_bf {
             internal State열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 2);
-                context.SetMesh(arg1: new[] {175, 176}, arg2: false);
-                context.SetEffect(arg1: new[] {8037, 8038}, arg2: false);
-                context.CreateMonster(arg1: new[] {1014}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1014, script: "$02000252_BF__DOOR_04__0$", arg4: 2);
-                context.MoveNpc(arg1: 1014, arg2: "MS2PatrolData_6");
-                context.CreateItem(arg1: new[] {1022});
+                context.SetTimer(timerId: "1", seconds: 2);
+                context.SetMesh(triggerIds: new []{175, 176}, visible: false);
+                context.SetEffect(triggerIds: new []{8037, 8038}, visible: false);
+                context.CreateMonster(spawnIds: new []{1014}, arg2: false);
+                context.SetConversation(type: 1, spawnId: 1014, script: "$02000252_BF__DOOR_04__0$", arg4: 2);
+                context.MoveNpc(spawnId: 1014, patrolName: "MS2PatrolData_6");
+                context.CreateItem(spawnIds: new []{1022});
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State삭제(context);
                 }
 
@@ -48,10 +48,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal State삭제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1014});
+                context.DestroyMonster(spawnIds: new []{1014});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

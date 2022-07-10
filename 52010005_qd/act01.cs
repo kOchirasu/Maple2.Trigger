@@ -4,12 +4,12 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQuest조건01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000872}, arg2: 0);
+                context.CreateMonster(spawnIds: new []{101}, arg2: true);
+                context.SetInteractObject(interactIds: new []{10000872}, state: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002820}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{10002820}, questStates: new byte[]{2})) {
                     return new StateQ1_마샤르교체01(context);
                 }
 
@@ -23,13 +23,13 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ1_마샤르교체01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.DestroyMonster(arg1: new[] {101});
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.DestroyMonster(spawnIds: new []{101});
+                context.CreateMonster(spawnIds: new []{102}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateQ1_Delay01(context);
                 }
 
@@ -43,11 +43,11 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ1_Delay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 1);
+                context.SetTimer(timerId: "2", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateQ1_미카Spawn(context);
                 }
 
@@ -61,11 +61,11 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ1_미카Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201}, arg2: false);
-                context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_2010");
+                context.CreateMonster(spawnIds: new []{201}, arg2: false);
+                context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_2010");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateQ1_마샤르이동01(context);
             }
 
@@ -76,11 +76,11 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ1_마샤르이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_1020");
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_1020");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 8001, arg2: new[] {102})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 8001, spawnIds: new []{102})) {
                     return new StateQ1_마샤르대화01(context);
                 }
 
@@ -94,11 +94,11 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ1_마샤르대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52010005_QD__ACT01__0$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 102, script: "$52010005_QD__ACT01__0$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 8002, arg2: new[] {102})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 8002, spawnIds: new []{102})) {
                     return new StateQ1_마샤르대화02(context);
                 }
 
@@ -112,12 +112,12 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ1_마샤르대화02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "4", arg2: 3);
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52010005_QD__ACT01__1$", arg4: 2, arg5: 0);
+                context.SetTimer(timerId: "4", seconds: 3);
+                context.SetConversation(type: 1, spawnId: 102, script: "$52010005_QD__ACT01__1$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "4")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "4")) {
                     return new StateQ1_CameraCinematic01(context);
                 }
 
@@ -131,16 +131,16 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ1_CameraCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "5", arg2: 3);
-                context.DestroyMonster(arg1: new[] {102});
-                context.CreateMonster(arg1: new[] {104}, arg2: false);
-                context.CameraSelect(arg1: 1001, arg2: true);
+                context.SetTimer(timerId: "5", seconds: 3);
+                context.DestroyMonster(spawnIds: new []{102});
+                context.CreateMonster(spawnIds: new []{104}, arg2: false);
+                context.CameraSelect(triggerId: 1001, enable: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
                     return new StateQ1_CameraCinematic02(context);
                 }
 
@@ -154,15 +154,15 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ1_CameraCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "6", arg2: 5);
-                context.DestroyMonster(arg1: new[] {201});
-                context.CreateMonster(arg1: new[] {202}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010005_QD__ACT01__2$", arg4: 4);
+                context.SetTimer(timerId: "6", seconds: 5);
+                context.DestroyMonster(spawnIds: new []{201});
+                context.CreateMonster(spawnIds: new []{202}, arg2: false);
+                context.SetConversation(type: 2, spawnId: 11001285, script: "$52010005_QD__ACT01__2$", arg4: 4);
                 context.SetSkip(state: new StateQ1_CameraCinematic03(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "6")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "6")) {
                     return new StateQ1_CameraCinematic03(context);
                 }
 
@@ -178,14 +178,14 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ1_CameraCinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "7", arg2: 1);
-                context.CameraSelect(arg1: 1001, arg2: false);
+                context.SetTimer(timerId: "7", seconds: 1);
+                context.CameraSelect(triggerId: 1001, enable: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "7")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "7")) {
                     return new StateQ1_마샤르교체02(context);
                 }
 
@@ -199,12 +199,12 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ1_마샤르교체02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {104});
-                context.CreateMonster(arg1: new[] {103}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{104});
+                context.CreateMonster(spawnIds: new []{103}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002821}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{10002821}, questStates: new byte[]{2})) {
                     return new StateQ1_Exit(context);
                 }
 
@@ -218,11 +218,11 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ1_Exit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {103, 202});
-                context.CreateMonster(arg1: new[] {101}, arg2: true);
+                context.DestroyMonster(spawnIds: new []{103, 202});
+                context.CreateMonster(spawnIds: new []{101}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

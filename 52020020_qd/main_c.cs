@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52020020_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200145}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{60200145}, questStates: new byte[]{1})) {
                     return new StateReady(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 201, msg: "전 밖에서 기다리고 있겠습니다.", duration: 2500, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 201, msg: "전 밖에서 기다리고 있겠습니다.", duration: 2500, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateMove(context);
                 }
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateMove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_3001");
+                context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_3001");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
                     return new StateOut(context);
                 }
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {201});
+                context.DestroyMonster(spawnIds: new []{201});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

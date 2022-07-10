@@ -5,7 +5,7 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 100) == true) {
                     return new StateStart(context);
                 }
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 901) <= 0.70f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 901) <= 0.70f) {
                     return new State70프로(context);
                 }
 
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._99999840 {
                 context.SetDungeonVariable(varId: 110, value: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 901) <= 0.50f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 901) <= 0.50f) {
                     return new State50프로(context);
                 }
 
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._99999840 {
                 context.SetDungeonVariable(varId: 120, value: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 901) <= 0.30f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 901) <= 0.30f) {
                     return new State30프로(context);
                 }
 
@@ -75,8 +75,8 @@ namespace Maple2.Trigger._99999840 {
                 context.SetDungeonVariable(varId: 130, value: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 901) <= 0.10f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 901) <= 0.10f) {
                     return new State10프로(context);
                 }
 
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._99999840 {
                 context.SetDungeonVariable(varId: 140, value: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEnd(context);
             }
 
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

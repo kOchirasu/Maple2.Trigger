@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9901})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9901})) {
                     return new State알림(context);
                 }
 
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 900) <= 0.30f || context.GetNpcHpRate(spawnPointId: 901) <= 0.30f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 900) <= 0.30f || context.GetNpcHpRate(spawnId: 901) <= 0.30f) {
                     return new State텍스트(context);
                 }
 
@@ -36,10 +36,10 @@ namespace Maple2.Trigger._02000486_bf {
             internal State텍스트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02000486_BF__107_TEXT__0$", arg3: 4000);
+                context.SetEventUI(arg1: 1, script: "$02000486_BF__107_TEXT__0$", duration: 4000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

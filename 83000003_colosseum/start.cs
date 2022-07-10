@@ -8,8 +8,8 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{2001}, jobCode: 0)) {
                     return new StateSetupCinematic(context);
                 }
 
@@ -25,11 +25,11 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
-                context.DestroyMonster(arg1: new[] {202, 203});
-                context.CreateMonster(arg1: new[] {203}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{202, 203});
+                context.CreateMonster(spawnIds: new []{203}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCinematic_01(context);
                 }
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._83000003_colosseum {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateCinematic_01_01(context);
                 }
@@ -62,11 +62,11 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateCinematic_01_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4001, 4002}, returnView: false);
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateCinematic_02(context);
                 }
@@ -81,10 +81,10 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateCinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4003, 4004}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4003, 4004}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateCinematic_03(context);
                 }
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._83000003_colosseum {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateCinematic_05(context);
                 }
@@ -118,10 +118,10 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(pathIds: new[] {4005, 4006}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4005, 4006}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateCinematic_07(context);
                 }
@@ -136,12 +136,12 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateCinematic_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4007, 4008}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4007, 4008}, returnView: false);
                 context.ShowCaption(type: CaptionType.Vertical, title: "$83000002_COLOSSEUM__START__0$", align: Align.Bottom | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
                 context.SetSceneSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetCinematicUI(type: 0);
                     context.CameraReset(interpolationTime: 0f);
@@ -160,10 +160,10 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(pathIds: new[] {4009}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4009}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetCinematicUI(type: 0);
                     context.CameraReset(interpolationTime: 0f);
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEndCinematic_01(context);
             }
 
@@ -192,12 +192,12 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateEndCinematic_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.TalkNpc(spawnPointId: 203);
+                context.TalkNpc(spawnId: 203);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {902})) {
-                    context.MoveUserToPos(pos: new Vector3(300f, -225f, 1500f), rot: new Vector3(0f, 0f, 270f));
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{902})) {
+                    context.MoveUserToPos(position: new Vector3(300f, -225f, 1500f), rotation: new Vector3(0f, 0f, 270f));
                     return new State대화Delay(context);
                 }
 
@@ -223,7 +223,7 @@ namespace Maple2.Trigger._83000003_colosseum {
                 context.SetUserValue(triggerId: 900001, key: "MainStart", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._83000003_colosseum {
                 context.SetUserValue(triggerId: 900001, key: "MainStart", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

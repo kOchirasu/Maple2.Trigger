@@ -5,10 +5,10 @@ namespace Maple2.Trigger._80000006_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
-                    context.CreateItem(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15});
-                    context.CreateItem(arg1: new[] {9001, 9002, 9003, 9004, 9005});
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
+                    context.CreateItem(spawnIds: new []{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15});
+                    context.CreateItem(spawnIds: new []{9001, 9002, 9003, 9004, 9005});
                     return new State완료(context);
                 }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._80000006_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

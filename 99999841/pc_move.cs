@@ -5,7 +5,7 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -17,12 +17,12 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 9001, additionalEffectId: 70002541, level: 1)) {
+                if (context.CheckAnyUserAdditionalEffect(boxId: 9001, additionalEffectId: 70002541, level: 1)) {
                     return new State유저이동확률(context);
                 }
 
@@ -37,20 +37,20 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(arg1: 33f)) {
+                if (context.RandomCondition(rate: 33f)) {
                     return new State유저이동1(context);
                 }
 
-                if (context.RandomCondition(arg1: 34f)) {
+                if (context.RandomCondition(rate: 34f)) {
                     return new State유저이동2(context);
                 }
 
-                if (context.RandomCondition(arg1: 33f)) {
+                if (context.RandomCondition(rate: 33f)) {
                     return new State유저이동3(context);
                 }
 
@@ -64,10 +64,10 @@ namespace Maple2.Trigger._99999841 {
             internal State유저이동1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 99999840, arg2: 2, arg3: 9102);
+                context.MoveUser(mapId: 99999840, portalId: 2, boxId: 9102);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
@@ -82,10 +82,10 @@ namespace Maple2.Trigger._99999841 {
             internal State유저이동2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 99999840, arg2: 3, arg3: 9102);
+                context.MoveUser(mapId: 99999840, portalId: 3, boxId: 9102);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
@@ -100,10 +100,10 @@ namespace Maple2.Trigger._99999841 {
             internal State유저이동3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 99999840, arg2: 4, arg3: 9102);
+                context.MoveUser(mapId: 99999840, portalId: 4, boxId: 9102);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
                     return new StateEnd(context);
                 }
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

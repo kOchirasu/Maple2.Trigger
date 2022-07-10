@@ -7,15 +7,15 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.SetInteractObject(arg1: new[] {10000739, 10000740}, arg2: 2);
-                context.SetEffect(arg1: new[] {601, 602, 611, 612}, arg2: false);
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10000752}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {13000009}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{10000739, 10000740}, state: 2);
+                context.SetEffect(triggerIds: new []{601, 602, 611, 612}, visible: false);
+                context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10000752}, state: 0);
+                context.SetInteractObject(interactIds: new []{13000009}, state: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
 
@@ -29,12 +29,12 @@ namespace Maple2.Trigger._02000325_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022}, arg2: true, arg3: 0, arg4: 200, arg5: 2f);
+                context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022}, visible: true, arg3: 0, arg4: 200, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__0$", arg3: 4000, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__0$", duration: 4000, boxId: 0);
                     return new State어나운스02(context);
                 }
 
@@ -49,9 +49,9 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__1$", arg3: 3500, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__1$", duration: 3500, boxId: 0);
                     return new State어나운스03(context);
                 }
 
@@ -66,9 +66,9 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__2$", arg3: 3500, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__2$", duration: 3500, boxId: 0);
                     return new State1라운드반응체크(context);
                 }
 
@@ -82,12 +82,12 @@ namespace Maple2.Trigger._02000325_bf {
             internal State1라운드반응체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000752}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000752}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000752}, arg2: 0)) {
-                    context.SetEffect(arg1: new[] {601}, arg2: true);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000752}, arg2: 0)) {
+                    context.SetEffect(triggerIds: new []{601}, visible: true);
                     return new State1라운드CountDelay(context);
                 }
 
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State1라운드Count(context);
                 }
@@ -117,13 +117,13 @@ namespace Maple2.Trigger._02000325_bf {
             internal State1라운드Count(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {602, 611, 612}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000739, 10000740}, arg2: 1);
+                context.SetEffect(triggerIds: new []{602, 611, 612}, visible: true);
+                context.SetInteractObject(interactIds: new []{10000739, 10000740}, state: 1);
                 context.SetEventUI(arg1: 0, script: "1,3");
                 context.ShowCountUI(text: "$02000325_BF__MAIN__3$", stage: 1, count: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State1라운드(context);
                 }
@@ -139,84 +139,84 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 5f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3001소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3002소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3003소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3004소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3005소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3006소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3007소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3008소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3009소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3010소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3011소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3012소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3013소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3014소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3015소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3016소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3017소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3018소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3019소환(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3020소환(context);
                 }
 
@@ -230,11 +230,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3001소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001, 3001}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2001, 3001}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3001})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -248,11 +248,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3002소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2002, 3002}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2002, 3002}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3002})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3002})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -266,11 +266,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3003소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2003, 3003}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2003, 3003}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3003})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3003})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -284,11 +284,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3004소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2004, 3004}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2004, 3004}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3004})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3004})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -302,11 +302,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3005소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2005, 3005}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2005, 3005}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3005})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3005})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -320,11 +320,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3006소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2006, 3006}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2006, 3006}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3006})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3006})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -338,11 +338,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3007소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2007, 3007}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2007, 3007}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3007})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3007})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -356,11 +356,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3008소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2008, 3008}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2008, 3008}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3008})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3008})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -374,11 +374,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3009소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2009, 3009}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2009, 3009}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3009})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3009})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -392,11 +392,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3010소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2010, 3010}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2010, 3010}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3010})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3010})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -410,11 +410,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3011소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2011, 3011}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2011, 3011}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3011})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3011})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -428,11 +428,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3012소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2012, 3012}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2012, 3012}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3012})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3012})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -446,11 +446,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3013소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2013, 3013}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2013, 3013}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3013})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3013})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -464,11 +464,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3014소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2014, 3014}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2014, 3014}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3014})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3014})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -482,11 +482,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3015소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2015, 3015}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2015, 3015}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3015})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3015})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -500,11 +500,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3016소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2016, 3016}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2016, 3016}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3016})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3016})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -518,11 +518,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3017소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2017, 3017}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2017, 3017}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3017})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3017})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -536,11 +536,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3018소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2018, 3018}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2018, 3018}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3018})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3018})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -554,11 +554,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3019소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2019, 3019}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2019, 3019}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3019})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3019})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -572,11 +572,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3020소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2020, 3020}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2020, 3020}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3020})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3020})) {
                     return new State2라운드Wait(context);
                 }
 
@@ -590,11 +590,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State2라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000739, 10000740}, arg2: 2);
-                context.SetEffect(arg1: new[] {601, 611, 612}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10000739, 10000740}, state: 2);
+                context.SetEffect(triggerIds: new []{601, 611, 612}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State어나운스04(context);
                 }
@@ -610,9 +610,9 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__4$", arg3: 3500, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__4$", duration: 3500, boxId: 0);
                     return new State2라운드반응체크(context);
                 }
 
@@ -626,12 +626,12 @@ namespace Maple2.Trigger._02000325_bf {
             internal State2라운드반응체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000752}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000752}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000752}, arg2: 0)) {
-                    context.SetEffect(arg1: new[] {601}, arg2: true);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000752}, arg2: 0)) {
+                    context.SetEffect(triggerIds: new []{601}, visible: true);
                     return new State어나운스04_2(context);
                 }
 
@@ -645,10 +645,10 @@ namespace Maple2.Trigger._02000325_bf {
             internal State어나운스04_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__5$", arg3: 3500, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__5$", duration: 3500, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State2라운드Count(context);
                 }
@@ -663,13 +663,13 @@ namespace Maple2.Trigger._02000325_bf {
             internal State2라운드Count(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {602, 612}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000740}, arg2: 1);
+                context.SetEffect(triggerIds: new []{602, 612}, visible: true);
+                context.SetInteractObject(interactIds: new []{10000740}, state: 1);
                 context.SetEventUI(arg1: 0, script: "2,3");
                 context.ShowCountUI(text: "$02000325_BF__MAIN__6$", stage: 2, count: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State2라운드(context);
                 }
@@ -685,84 +685,84 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 5f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3001SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3002SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3003SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3004SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3005SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3006SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3007SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3008SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3009SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3010SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3011SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3012SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3013SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3014SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3015SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3016SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3017SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3018SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3019SummonCheck(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3020SummonCheck(context);
                 }
 
@@ -777,12 +777,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2001})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2001})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2001})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2001})) {
                     return new State3001소환2(context);
                 }
 
@@ -797,12 +797,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2002})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2002})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2002})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2002})) {
                     return new State3002소환2(context);
                 }
 
@@ -817,12 +817,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2003})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2003})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2003})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2003})) {
                     return new State3003소환2(context);
                 }
 
@@ -837,12 +837,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2004})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2004})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2004})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2004})) {
                     return new State3004소환2(context);
                 }
 
@@ -857,12 +857,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2005})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2005})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2005})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2005})) {
                     return new State3005소환2(context);
                 }
 
@@ -877,12 +877,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2006})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2006})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2006})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2006})) {
                     return new State3006소환2(context);
                 }
 
@@ -897,12 +897,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2007})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2007})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2007})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2007})) {
                     return new State3007소환2(context);
                 }
 
@@ -917,12 +917,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2008})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2008})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2008})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2008})) {
                     return new State3008소환2(context);
                 }
 
@@ -937,12 +937,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2009})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2009})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2009})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2009})) {
                     return new State3009소환2(context);
                 }
 
@@ -957,12 +957,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2010})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2010})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2010})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2010})) {
                     return new State3010소환2(context);
                 }
 
@@ -977,12 +977,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2011})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2011})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2011})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2011})) {
                     return new State3011소환2(context);
                 }
 
@@ -997,12 +997,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2012})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2012})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2012})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2012})) {
                     return new State3012소환2(context);
                 }
 
@@ -1017,12 +1017,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2013})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2013})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2013})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2013})) {
                     return new State3013소환2(context);
                 }
 
@@ -1037,12 +1037,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2014})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2014})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2014})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2014})) {
                     return new State3014소환2(context);
                 }
 
@@ -1057,12 +1057,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2015})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2015})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2015})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2015})) {
                     return new State3015소환2(context);
                 }
 
@@ -1077,12 +1077,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2016})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2016})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2016})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2016})) {
                     return new State3016소환2(context);
                 }
 
@@ -1097,12 +1097,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2017})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2017})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2017})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2017})) {
                     return new State3017소환2(context);
                 }
 
@@ -1117,12 +1117,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2018})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2018})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2018})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2018})) {
                     return new State3018소환2(context);
                 }
 
@@ -1137,12 +1137,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2019})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2019})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2019})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2019})) {
                     return new State3019소환2(context);
                 }
 
@@ -1157,12 +1157,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2020})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2020})) {
                     return new State2라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2020})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2020})) {
                     return new State3020소환2(context);
                 }
 
@@ -1176,11 +1176,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3001소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001, 3001}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2001, 3001}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3001})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1194,11 +1194,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3002소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2002, 3002}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2002, 3002}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3002})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3002})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1212,11 +1212,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3003소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2003, 3003}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2003, 3003}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3003})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3003})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1230,11 +1230,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3004소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2004, 3004}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2004, 3004}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3004})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3004})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1248,11 +1248,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3005소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2005, 3005}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2005, 3005}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3005})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3005})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1266,11 +1266,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3006소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2006, 3006}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2006, 3006}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3006})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3006})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1284,11 +1284,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3007소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2007, 3007}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2007, 3007}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3007})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3007})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1302,11 +1302,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3008소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2008, 3008}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2008, 3008}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3008})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3008})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1320,11 +1320,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3009소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2009, 3009}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2009, 3009}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3009})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3009})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1338,11 +1338,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3010소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2010, 3010}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2010, 3010}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3010})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3010})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1356,11 +1356,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3011소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2011, 3011}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2011, 3011}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3011})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3011})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1374,11 +1374,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3012소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2012, 3012}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2012, 3012}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3012})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3012})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1392,11 +1392,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3013소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2013, 3013}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2013, 3013}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3013})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3013})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1410,11 +1410,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3014소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2014, 3014}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2014, 3014}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3014})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3014})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1428,11 +1428,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3015소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2015, 3015}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2015, 3015}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3015})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3015})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1446,11 +1446,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3016소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2016, 3016}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2016, 3016}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3016})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3016})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1464,11 +1464,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3017소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2017, 3017}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2017, 3017}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3017})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3017})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1482,11 +1482,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3018소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2018, 3018}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2018, 3018}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3018})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3018})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1500,11 +1500,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3019소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2019, 3019}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2019, 3019}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3019})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3019})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1518,11 +1518,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3020소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2020, 3020}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2020, 3020}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3020})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3020})) {
                     return new State3라운드Wait(context);
                 }
 
@@ -1536,11 +1536,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601, 612}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000740}, arg2: 2);
+                context.SetEffect(triggerIds: new []{601, 612}, visible: false);
+                context.SetInteractObject(interactIds: new []{10000740}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State어나운스05(context);
                 }
@@ -1556,9 +1556,9 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__7$", arg3: 3500, arg4: "0");
+                    context.SetEventUI(arg1: 1, script: "$02000325_BF__MAIN__7$", duration: 3500, boxId: 0);
                     return new State3라운드반응체크(context);
                 }
 
@@ -1572,12 +1572,12 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3라운드반응체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000752}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000752}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000752}, arg2: 0)) {
-                    context.SetEffect(arg1: new[] {601}, arg2: true);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000752}, arg2: 0)) {
+                    context.SetEffect(triggerIds: new []{601}, visible: true);
                     return new State3라운드Count(context);
                 }
 
@@ -1591,13 +1591,13 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3라운드Count(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetEffect(arg1: new[] {612}, arg2: false);
+                context.SetEffect(triggerIds: new []{602}, visible: true);
+                context.SetEffect(triggerIds: new []{612}, visible: false);
                 context.SetEventUI(arg1: 0, script: "3,3");
                 context.ShowCountUI(text: "$02000325_BF__MAIN__9$", stage: 3, count: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State3라운드(context);
                 }
@@ -1613,84 +1613,84 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 5f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3001SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3002SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3003SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3004SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3005SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3006SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3007SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3008SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3009SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3010SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3011SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3012SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3013SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3014SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3015SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3016SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3017SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3018SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3019SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 5f)) {
+                if (context.RandomCondition(rate: 5f)) {
                     return new State3020SummonCheck2(context);
                 }
 
@@ -1705,12 +1705,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2001})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2001})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2001})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2001})) {
                     return new State3001소환3(context);
                 }
 
@@ -1725,12 +1725,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2002})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2002})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2002})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2002})) {
                     return new State3002소환3(context);
                 }
 
@@ -1745,12 +1745,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2003})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2003})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2003})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2003})) {
                     return new State3003소환3(context);
                 }
 
@@ -1765,12 +1765,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2004})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2004})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2004})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2004})) {
                     return new State3004소환3(context);
                 }
 
@@ -1785,12 +1785,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2005})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2005})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2005})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2005})) {
                     return new State3005소환3(context);
                 }
 
@@ -1805,12 +1805,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2006})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2006})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2006})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2006})) {
                     return new State3006소환3(context);
                 }
 
@@ -1825,12 +1825,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2007})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2007})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2007})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2007})) {
                     return new State3007소환3(context);
                 }
 
@@ -1845,12 +1845,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2008})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2008})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2008})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2008})) {
                     return new State3008소환3(context);
                 }
 
@@ -1865,12 +1865,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2009})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2009})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2009})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2009})) {
                     return new State3009소환3(context);
                 }
 
@@ -1885,12 +1885,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2010})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2010})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2010})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2010})) {
                     return new State3010소환3(context);
                 }
 
@@ -1905,12 +1905,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2011})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2011})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2011})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2011})) {
                     return new State3011소환3(context);
                 }
 
@@ -1925,12 +1925,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2012})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2012})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2012})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2012})) {
                     return new State3012소환3(context);
                 }
 
@@ -1945,12 +1945,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2013})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2013})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2013})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2013})) {
                     return new State3013소환3(context);
                 }
 
@@ -1965,12 +1965,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2014})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2014})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2014})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2014})) {
                     return new State3014소환3(context);
                 }
 
@@ -1985,12 +1985,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2015})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2015})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2015})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2015})) {
                     return new State3015소환3(context);
                 }
 
@@ -2005,12 +2005,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2016})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2016})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2016})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2016})) {
                     return new State3016소환3(context);
                 }
 
@@ -2025,12 +2025,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2017})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2017})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2017})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2017})) {
                     return new State3017소환3(context);
                 }
 
@@ -2045,12 +2045,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2018})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2018})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2018})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2018})) {
                     return new State3018소환3(context);
                 }
 
@@ -2065,12 +2065,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2019})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2019})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2019})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2019})) {
                     return new State3019소환3(context);
                 }
 
@@ -2085,12 +2085,12 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 199, arg2: new[] {2020})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 199, spawnIds: new []{2020})) {
                     return new State3라운드(context);
                 }
 
-                if (!context.NpcDetected(arg1: 199, arg2: new[] {2020})) {
+                if (!context.NpcDetected(boxId: 199, spawnIds: new []{2020})) {
                     return new State3020소환3(context);
                 }
 
@@ -2104,11 +2104,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3001소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001, 3001}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2001, 3001}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3001})) {
                     return new State미션Success(context);
                 }
 
@@ -2122,11 +2122,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3002소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2002, 3002}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2002, 3002}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3002})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3002})) {
                     return new State미션Success(context);
                 }
 
@@ -2140,11 +2140,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3003소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2003, 3003}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2003, 3003}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3003})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3003})) {
                     return new State미션Success(context);
                 }
 
@@ -2158,11 +2158,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3004소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2004, 3004}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2004, 3004}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3004})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3004})) {
                     return new State미션Success(context);
                 }
 
@@ -2176,11 +2176,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3005소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2005, 3005}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2005, 3005}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3005})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3005})) {
                     return new State미션Success(context);
                 }
 
@@ -2194,11 +2194,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3006소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2006, 3006}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2006, 3006}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3006})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3006})) {
                     return new State미션Success(context);
                 }
 
@@ -2212,11 +2212,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3007소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2007, 3007}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2007, 3007}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3007})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3007})) {
                     return new State미션Success(context);
                 }
 
@@ -2230,11 +2230,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3008소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2008, 3008}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2008, 3008}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3008})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3008})) {
                     return new State미션Success(context);
                 }
 
@@ -2248,11 +2248,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3009소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2009, 3009}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2009, 3009}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3009})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3009})) {
                     return new State미션Success(context);
                 }
 
@@ -2266,11 +2266,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3010소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2010, 3010}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2010, 3010}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3010})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3010})) {
                     return new State미션Success(context);
                 }
 
@@ -2284,11 +2284,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3011소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2011, 3011}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2011, 3011}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3011})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3011})) {
                     return new State미션Success(context);
                 }
 
@@ -2302,11 +2302,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3012소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2012, 3012}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2012, 3012}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3012})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3012})) {
                     return new State미션Success(context);
                 }
 
@@ -2320,11 +2320,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3013소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2013, 3013}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2013, 3013}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3013})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3013})) {
                     return new State미션Success(context);
                 }
 
@@ -2338,11 +2338,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3014소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2014, 3014}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2014, 3014}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3014})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3014})) {
                     return new State미션Success(context);
                 }
 
@@ -2356,11 +2356,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3015소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2015, 3015}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2015, 3015}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3015})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3015})) {
                     return new State미션Success(context);
                 }
 
@@ -2374,11 +2374,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3016소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2016, 3016}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2016, 3016}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3016})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3016})) {
                     return new State미션Success(context);
                 }
 
@@ -2392,11 +2392,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3017소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2017, 3017}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2017, 3017}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3017})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3017})) {
                     return new State미션Success(context);
                 }
 
@@ -2410,11 +2410,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3018소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2018, 3018}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2018, 3018}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3018})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3018})) {
                     return new State미션Success(context);
                 }
 
@@ -2428,11 +2428,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3019소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2019, 3019}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2019, 3019}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3019})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3019})) {
                     return new State미션Success(context);
                 }
 
@@ -2446,11 +2446,11 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3020소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2020, 3020}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2020, 3020}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {3020})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{3020})) {
                     return new State미션Success(context);
                 }
 
@@ -2464,12 +2464,12 @@ namespace Maple2.Trigger._02000325_bf {
             internal State미션Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 102, arg2: "trigger", arg3: "BraveRace");
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022}, arg2: true, arg3: 0, arg4: 200, arg5: 2f);
-                context.SetEffect(arg1: new[] {601, 612}, arg2: false);
+                context.SetAchievement(triggerId: 102, type: "trigger", code: "BraveRace");
+                context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022}, visible: true, arg3: 0, arg4: 200, arg5: 2f);
+                context.SetEffect(triggerIds: new []{601, 612}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State3라운드보상(context);
                 }
@@ -2485,7 +2485,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePortalCreation(context);
                 }
@@ -2501,7 +2501,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.SetEventUI(arg1: 0, script: "0,0");
@@ -2520,7 +2520,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02100009_bf {
             internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1000049}, arg2: false);
+                context.SetSkill(triggerIds: new []{1000049}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateWait(context);
                 }
 
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {100000002})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{100000002})) {
                     return new StateBuff(context);
                 }
 
@@ -38,11 +38,11 @@ namespace Maple2.Trigger._02100009_bf {
             internal StateBuff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {100000001}, arg2: 50000217, arg3: 1, arg4: true, arg5: false);
-                context.SetSkill(arg1: new[] {1000049}, arg2: true);
+                context.AddBuff(boxIds: new []{100000001}, skillId: 50000217, level: 1, arg4: true, arg5: false);
+                context.SetSkill(triggerIds: new []{1000049}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) { }
 
                 return null;

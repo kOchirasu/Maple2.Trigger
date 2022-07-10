@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52100053_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {920, 921});
+                context.DestroyMonster(spawnIds: new []{920, 921});
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9100})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9100})) {
                     return new StateLoadingDelay(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._52100053_qd {
             internal StateLoadingDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {920, 921}, arg2: false);
+                context.CreateMonster(spawnIds: new []{920, 921}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePickRandomRoute(context);
                 }
@@ -40,16 +40,16 @@ namespace Maple2.Trigger._52100053_qd {
             internal StatePickRandomRoute(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039702, textId: 20039702, duration: 4000);
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 50f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateBehindWoodbox(context);
                 }
 
-                if (context.RandomCondition(arg1: 50f)) {
+                if (context.RandomCondition(rate: 50f)) {
                     return new StateBehindWardrope(context);
                 }
 
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetUserValue(triggerId: 3700, key: "HiddenRouteOpen", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetUserValue(triggerId: 3700, key: "HiddenRouteOpen", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {60002})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{60002})) {
                     return new StateWait_02(context);
                 }
 
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02000347_bf {
             internal StateWait_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "8", arg2: 8);
+                context.SetTimer(timerId: "8", seconds: 8);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "8")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "8")) {
                     return new StateStart(context);
                 }
 
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._02000347_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02000347_BF__MAIN1__5$", arg3: 5000, arg4: "0");
+                context.SetEventUI(arg1: 1, script: "$02000347_BF__MAIN1__5$", duration: 5000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

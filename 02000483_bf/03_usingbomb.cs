@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000483_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5200, 5201, 5202, 5203}, arg2: false);
-                context.DestroyMonster(arg1: new[] {910, 911});
+                context.SetEffect(triggerIds: new []{5100, 5101, 5102, 5103, 5200, 5201, 5202, 5203}, visible: false);
+                context.DestroyMonster(spawnIds: new []{910, 911});
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9200})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9200})) {
                     return new StateLoadingDelay(context);
                 }
 
@@ -23,10 +23,10 @@ namespace Maple2.Trigger._02000483_bf {
             internal StateLoadingDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {910, 911}, arg2: false);
+                context.CreateMonster(spawnIds: new []{910, 911}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateArrowGuideOn(context);
                 }
@@ -41,13 +41,13 @@ namespace Maple2.Trigger._02000483_bf {
             internal StateArrowGuideOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039703, textId: 20039703, duration: 4000);
-                context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5200, 5201, 5202, 5203}, arg2: true);
+                context.SetEffect(triggerIds: new []{5100, 5101, 5102, 5103, 5200, 5201, 5202, 5203}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9201})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9201})) {
                     return new StateArrowGuideOff(context);
                 }
 
@@ -61,10 +61,10 @@ namespace Maple2.Trigger._02000483_bf {
             internal StateArrowGuideOff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5200, 5201, 5202, 5203}, arg2: false);
+                context.SetEffect(triggerIds: new []{5100, 5101, 5102, 5103, 5200, 5201, 5202, 5203}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -6,13 +6,13 @@ namespace Maple2.Trigger._52000187_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {2000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{2000}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.CreateWidget(type: WidgetType.Guide);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {90001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{90001})) {
                     return new StateStart(context);
                 }
 
@@ -27,8 +27,8 @@ namespace Maple2.Trigger._52000187_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {90002})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{90002})) {
                     return new State환영(context);
                 }
 
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._52000187_qd {
                 context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000, script: "$52000187_QD__TUTORIAL__0$");
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {11000071}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{11000071}, arg2: 0)) {
                     context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000, script: "$52000187_QD__TUTORIAL__1$");
                     context.SetQuestComplete(questId: 90000008);
                     return new State머쉬킹대화1(context);
@@ -63,20 +63,20 @@ namespace Maple2.Trigger._52000187_qd {
             internal State머쉬킹대화1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {2000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {103}, arg2: false);
+                context.SetMesh(triggerIds: new []{2000}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(spawnIds: new []{103}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{99999}, questIds: new []{90000007}, questStates: new byte[]{1})) {
                     return new State머쉬킹대화2(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{99999}, questIds: new []{90000007}, questStates: new byte[]{2})) {
                     return new State머쉬킹대화2(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{99999}, questIds: new []{90000007}, questStates: new byte[]{3})) {
                     return new State머쉬킹대화2(context);
                 }
 
@@ -90,13 +90,13 @@ namespace Maple2.Trigger._52000187_qd {
             internal State머쉬킹대화2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {2001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{2001}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {90003})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{90003})) {
                     context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000, script: "$52000187_QD__TUTORIAL__2$");
-                    context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_lazy_1");
+                    context.MoveNpc(spawnId: 103, patrolName: "MS2PatrolData_lazy_1");
                     return new State머쉬킹대화3(context);
                 }
 
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._52000187_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {90004})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{90004})) {
                     context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000, script: "$52000187_QD__TUTORIAL__3$");
                     return new State머쉬킹대화4(context);
                 }
@@ -128,8 +128,8 @@ namespace Maple2.Trigger._52000187_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {90005})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{90005})) {
                     return new State모쿰소환(context);
                 }
 
@@ -143,11 +143,11 @@ namespace Maple2.Trigger._52000187_qd {
             internal State모쿰소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$52000187_QD__TUTORIAL__4$");
+                context.CreateMonster(spawnIds: new []{102}, arg2: false);
+                context.AddBalloonTalk(spawnId: 102, msg: "$52000187_QD__TUTORIAL__4$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State모쿰이동(context);
                 }
@@ -162,15 +162,15 @@ namespace Maple2.Trigger._52000187_qd {
             internal State모쿰이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_mokum_0");
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$52000187_QD__TUTORIAL__5$");
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_mokum_0");
+                context.AddBalloonTalk(spawnId: 102, msg: "$52000187_QD__TUTORIAL__5$");
                 context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000, script: "$52000187_QD__TUTORIAL__6$");
-                context.AddBuff(arg1: new[] {99999}, arg2: 71000077, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{99999}, skillId: 71000077, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.WidgetCondition(type: WidgetType.Guide, arg2: "IsTriggerEvent", arg3: "551")) {
-                    context.CreateMonster(arg1: new[] {101}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.WidgetCondition(type: WidgetType.Guide, condition: "IsTriggerEvent", value: "551")) {
+                    context.CreateMonster(spawnIds: new []{101}, arg2: false);
                     return new State모쿰Script1(context);
                 }
 
@@ -184,13 +184,13 @@ namespace Maple2.Trigger._52000187_qd {
             internal State모쿰Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_mokum_1");
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$52000187_QD__TUTORIAL__7$");
-                context.DestroyMonster(arg1: new[] {103});
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_mokum_1");
+                context.AddBalloonTalk(spawnId: 102, msg: "$52000187_QD__TUTORIAL__7$");
+                context.DestroyMonster(spawnIds: new []{103});
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new State해제(context);
                 }
 
@@ -208,11 +208,11 @@ namespace Maple2.Trigger._52000187_qd {
             internal State모쿰Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$52000187_QD__TUTORIAL__8$");
+                context.AddBalloonTalk(spawnId: 102, msg: "$52000187_QD__TUTORIAL__8$");
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new State해제(context);
                 }
 
@@ -230,12 +230,12 @@ namespace Maple2.Trigger._52000187_qd {
             internal State해제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_mokum_2");
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_mokum_2");
                 context.GuideEvent(eventId: 560);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{99999}, questIds: new []{90000007}, questStates: new byte[]{3})) {
                     context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 }
 
@@ -250,7 +250,7 @@ namespace Maple2.Trigger._52000187_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

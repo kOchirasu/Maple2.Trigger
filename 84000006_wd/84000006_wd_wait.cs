@@ -4,11 +4,11 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 40, arg3: true, arg4: false);
+                context.SetTimer(timerId: "1", seconds: 40, clearAtZero: true, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new StateWait(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$84000006_WD__84000006_WD_WAIT__0$", duration: 5000, delayTick: 1000);
+                context.AddBalloonTalk(spawnId: 102, msg: "$84000006_WD__84000006_WD_WAIT__0$", duration: 5000, delayTick: 1000);
                 context.ShowGuideSummary(entityId: 28500001, textId: 28500001, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9000) == 70) {
                     return new StateEnd(context);
                 }
@@ -35,7 +35,7 @@ namespace Maple2.Trigger._84000006_wd {
                     return new StateWait2(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateEnd(context);
                 }
 
@@ -49,11 +49,11 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateWait2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$84000006_WD__84000006_WD_WAIT__1$", duration: 5000, delayTick: 1000);
+                context.AddBalloonTalk(spawnId: 102, msg: "$84000006_WD__84000006_WD_WAIT__1$", duration: 5000, delayTick: 1000);
                 context.ShowGuideSummary(entityId: 28500002, textId: 28500002, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9000) == 70) {
                     return new StateEnd(context);
                 }
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._84000006_wd {
                     return new StateWait(context);
                 }
 
-                if (context.TimeExpired(arg1: "1")) {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateEnd(context);
                 }
 
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._84000006_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

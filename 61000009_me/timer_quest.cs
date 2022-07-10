@@ -5,7 +5,7 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 700) == 1) {
                     return new StateReady_Idle(context);
                 }
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._61000009_me {
             internal StateReady_Idle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1, arg4: false);
+                context.SetTimer(timerId: "1", seconds: 1, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateReady_Idle_02(context);
                 }
 
@@ -38,11 +38,11 @@ namespace Maple2.Trigger._61000009_me {
             internal StateReady_Idle_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "60", arg2: 60, arg4: false);
+                context.SetTimer(timerId: "60", seconds: 60, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "60")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "60")) {
                     return new StateDaily_quest(context);
                 }
 
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._61000009_me {
             internal StateDaily_quest(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 799, arg2: "trigger", arg3: "dailyquest_start");
+                context.SetAchievement(triggerId: 799, type: "trigger", code: "dailyquest_start");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

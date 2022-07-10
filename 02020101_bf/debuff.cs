@@ -5,12 +5,12 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Debuff") == 1) {
                     return new State디Buff시작(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {101})) {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -25,15 +25,15 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900002, key: "Debuff", value: 0);
-                context.AddBuff(arg1: new[] {1004}, arg2: 70002122, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{1004}, skillId: 70002122, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Debuff") == 0) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {101})) {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -48,11 +48,11 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900002, key: "Debuff", value: 0);
-                context.RemoveBuff(arg1: 1004, arg2: 70002122, arg3: true);
-                context.AddBuff(arg1: new[] {1004}, arg2: 70002123, arg3: 1, arg5: false);
+                context.RemoveBuff(boxId: 1004, skillId: 70002122, arg3: true);
+                context.AddBuff(boxIds: new []{1004}, skillId: 70002123, level: 1, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Debuff") == 0) {
                     return new StateWait(context);
                 }

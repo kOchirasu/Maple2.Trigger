@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02000329_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6808}, arg2: false);
-                context.SetActor(arg1: 208, arg2: true, arg3: "Closed");
-                context.CreateMonster(arg1: new[] {1008, 1108}, arg2: false);
+                context.SetEffect(triggerIds: new []{6808}, visible: false);
+                context.SetActor(triggerId: 208, visible: true, initialSequence: "Closed");
+                context.CreateMonster(spawnIds: new []{1008, 1108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1108})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1108})) {
                     return new State닭Creation(context);
                 }
 
@@ -24,14 +24,14 @@ namespace Maple2.Trigger._02000329_bf {
             internal State닭Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 208, arg2: true, arg3: "Opened");
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetEffect(arg1: new[] {608}, arg2: false);
-                context.SetEffect(arg1: new[] {6808}, arg2: true);
+                context.SetActor(triggerId: 208, visible: true, initialSequence: "Opened");
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetEffect(triggerIds: new []{608}, visible: false);
+                context.SetEffect(triggerIds: new []{6808}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State닭이동(context);
                 }
 
@@ -45,12 +45,12 @@ namespace Maple2.Trigger._02000329_bf {
             internal State닭이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1008, arg2: "MS2PatrolData_1008");
-                context.SetTimer(id: "4", arg2: 4);
+                context.MoveNpc(spawnId: 1008, patrolName: "MS2PatrolData_1008");
+                context.SetTimer(timerId: "4", seconds: 4);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "4")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "4")) {
                     return new State닭소멸(context);
                 }
 
@@ -64,10 +64,10 @@ namespace Maple2.Trigger._02000329_bf {
             internal State닭소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1008});
+                context.DestroyMonster(spawnIds: new []{1008});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

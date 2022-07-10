@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "TotemApp", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TotemApp") == 1) {
                     return new StateTotemApp01(context);
                 }
@@ -23,13 +23,13 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateTotemApp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {2002});
-                context.CreateMonster(arg1: new[] {2302}, arg2: false);
-                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313}, arg2: true, arg3: 0, arg4: 0, arg5: 5f);
-                context.CreateMonster(arg1: new[] {920}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{2002});
+                context.CreateMonster(spawnIds: new []{2302}, arg2: false);
+                context.SetMesh(triggerIds: new []{3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313}, visible: true, arg3: 0, arg4: 0, arg5: 5f);
+                context.CreateMonster(spawnIds: new []{920}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateJuntaReady01(context);
                 }
@@ -44,10 +44,10 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateJuntaReady01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2302, script: "$52000052_QD__702_DARKNESSTOTEM_02ROUND__0$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 2302, script: "$52000052_QD__702_DARKNESSTOTEM_02ROUND__0$", arg4: 3, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateJuntaGoUp01(context);
                 }
@@ -62,10 +62,10 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateJuntaGoUp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 2302, arg2: "MS2PatrolData_2302");
+                context.MoveNpc(spawnId: 2302, patrolName: "MS2PatrolData_2302");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateDestoryTotem01(context);
                 }
@@ -80,10 +80,10 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateDestoryTotem01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2102}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2102}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateJuntaReturn01(context);
                 }
@@ -98,10 +98,10 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateJuntaReturn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {920, 2302, 2102});
+                context.DestroyMonster(spawnIds: new []{920, 2302, 2102});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateJuntaReturn02(context);
                 }
@@ -116,10 +116,10 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateJuntaReturn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2202}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2202}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateQuit(context);
                 }
@@ -134,10 +134,10 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMesh(triggerIds: new []{3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313}, visible: false, arg3: 0, arg4: 0, arg5: 5f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

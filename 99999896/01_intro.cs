@@ -5,8 +5,8 @@ namespace Maple2.Trigger._99999896 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {100})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{100})) {
                     return new StateMassiveEventWait(context);
                 }
 
@@ -14,7 +14,7 @@ namespace Maple2.Trigger._99999896 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
         }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._99999896 {
             internal StateMassiveEventWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateMassiveEvent_1(context);
                 }
 
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._99999896 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
         }
 
@@ -42,12 +42,12 @@ namespace Maple2.Trigger._99999896 {
             internal StateMassiveEvent_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 2);
-                context.SetEventUI(arg1: 1, script: "$99999896__01_INTRO__0$", arg3: 2000);
+                context.SetTimer(timerId: "1", seconds: 2);
+                context.SetEventUI(arg1: 1, script: "$99999896__01_INTRO__0$", duration: 2000);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateMassiveEvent_2(context);
                 }
 
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._99999896 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
         }
 
@@ -63,12 +63,12 @@ namespace Maple2.Trigger._99999896 {
             internal StateMassiveEvent_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetEventUI(arg1: 1, script: "$99999896__01_INTRO__1$", arg3: 2000);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetEventUI(arg1: 1, script: "$99999896__01_INTRO__1$", duration: 2000);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateMassiveEvent_3(context);
                 }
 
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._99999896 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
         }
 
@@ -84,13 +84,13 @@ namespace Maple2.Trigger._99999896 {
             internal StateMassiveEvent_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.SetEventUI(arg1: 1, script: "$99999896__01_INTRO__2$", arg3: 2000);
-                context.CreateItem(arg1: new[] {1, 2, 3});
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.SetEventUI(arg1: 1, script: "$99999896__01_INTRO__2$", duration: 2000);
+                context.CreateItem(spawnIds: new []{1, 2, 3});
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State완료(context);
                 }
 
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._99999896 {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
         }
 
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._99999896 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

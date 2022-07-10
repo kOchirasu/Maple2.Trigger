@@ -5,8 +5,8 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {704})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{704})) {
                     return new State704잡담_01(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._63000076_cs {
             internal State704잡담_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 107, msg: "$63000076_CS__63000076_CHAT_704__0$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 107, msg: "$63000076_CS__63000076_CHAT_704__0$", duration: 2000, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State704잡담_02(context);
                 }
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._63000076_cs {
             internal State704잡담_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 105, msg: "$63000076_CS__63000076_CHAT_704__1$", duration: 2500, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 105, msg: "$63000076_CS__63000076_CHAT_704__1$", duration: 2500, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new StateEnd(context);
                 }
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

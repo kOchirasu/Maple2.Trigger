@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "FirstBattleEnd", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
                     return new StateBoss의저주디Buff사용신호Wait(context);
                 }
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillDebuffCheck_1Phase") == 1) {
                     return new State소환몹활성화될때까지잠시기다리기(context);
                 }
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5200)) {
                     return new State소환몹전멸할때까지Wait(context);
                 }
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MonsterMany") == 0) {
                     return new State폭발저주디BuffRemoveWait(context);
                 }
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "FirstBattleEnd", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
                     return new State폭발저주디BuffRemove(context);
                 }
@@ -107,10 +107,10 @@ namespace Maple2.Trigger._02020130_bf {
             internal State폭발저주디BuffRemove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {601}, arg2: 50001413, arg3: 1, arg4: false);
+                context.AddBuff(boxIds: new []{601}, skillId: 50001413, level: 1, arg4: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1800)) {
                     return new StateBoss의저주디Buff사용신호Wait(context);
                 }
@@ -125,10 +125,10 @@ namespace Maple2.Trigger._02020130_bf {
             internal State폭발저주디BuffRemove하고종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {601}, arg2: 50001413, arg3: 1, arg4: false);
+                context.AddBuff(boxIds: new []{601}, skillId: 50001413, level: 1, arg4: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
                     return new StateEnd(context);
                 }
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,8 +5,8 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {703}, arg2: new[] {30000375}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{703}, questIds: new []{30000375}, questStates: new byte[]{1})) {
                     return new State703잡담_01(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._63000076_cs {
             internal State703잡담_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 109, msg: "$63000076_CS__63000076_CHAT_703__0$", duration: 2500, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 109, msg: "$63000076_CS__63000076_CHAT_703__0$", duration: 2500, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new State703잡담_02(context);
                 }
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._63000076_cs {
             internal State703잡담_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 113, msg: "$63000076_CS__63000076_CHAT_703__1$", duration: 2500, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 113, msg: "$63000076_CS__63000076_CHAT_703__1$", duration: 2500, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new State703잡담_03(context);
                 }
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._63000076_cs {
             internal State703잡담_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 109, msg: "$63000076_CS__63000076_CHAT_703__2$", duration: 2500, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 109, msg: "$63000076_CS__63000076_CHAT_703__2$", duration: 2500, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new State703잡담_04(context);
                 }
@@ -74,10 +74,10 @@ namespace Maple2.Trigger._63000076_cs {
             internal State703잡담_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 110, msg: "$63000076_CS__63000076_CHAT_703__3$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 110, msg: "$63000076_CS__63000076_CHAT_703__3$", duration: 2000, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new State703잡담_05(context);
                 }
@@ -92,10 +92,10 @@ namespace Maple2.Trigger._63000076_cs {
             internal State703잡담_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 112, msg: "$63000076_CS__63000076_CHAT_703__3$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 112, msg: "$63000076_CS__63000076_CHAT_703__3$", duration: 2000, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State703잡담_06(context);
                 }
@@ -110,11 +110,11 @@ namespace Maple2.Trigger._63000076_cs {
             internal State703잡담_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 111, msg: "$63000076_CS__63000076_CHAT_703__5$", duration: 2000, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 114, msg: "$63000076_CS__63000076_CHAT_703__5$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 111, msg: "$63000076_CS__63000076_CHAT_703__5$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 114, msg: "$63000076_CS__63000076_CHAT_703__5$", duration: 2000, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnd(context);
                 }
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

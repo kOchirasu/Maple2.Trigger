@@ -6,19 +6,19 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetActor(arg1: 4004, arg2: true, arg3: "Closed");
-                context.SetLadder(arg1: 511, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 512, arg2: false, arg3: false, arg4: 0);
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.DestroyMonster(arg1: new[] {101, 102, 901, 902, 903});
-                context.SetAgent(arg1: new[] {8006, 8007, 8008, 8009}, arg2: true);
+                context.SetEffect(triggerIds: new []{5004}, visible: false);
+                context.SetActor(triggerId: 4004, visible: true, initialSequence: "Closed");
+                context.SetLadder(triggerId: 511, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 512, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.DestroyMonster(spawnIds: new []{101, 102, 901, 902, 903});
+                context.SetAgent(triggerIds: new []{8006, 8007, 8008, 8009}, visible: true);
                 context.SetUserValue(key: "MobClear", value: 0);
                 context.SetUserValue(key: "FindWay", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new StateLoadingDelay(context);
                 }
 
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._52100052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateBlackeyeApp01(context);
                 }
@@ -50,10 +50,10 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateBlackeyeApp02(context);
                 }
@@ -70,13 +70,13 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 600, arg2: true);
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
+                context.CameraSelect(triggerId: 600, enable: true);
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101");
                 context.AddCinematicTalk(npcId: 11001590, illustId: "11001590", script: "$52100052_QD__01_ENTERTHEHALL__0$", duration: 3000, align: Align.Left);
                 context.SetSkip(state: new StateBlackeyeApp02Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateBlackeyeApp02Skip(context);
                 }
@@ -91,11 +91,11 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateBlackeyeApp02Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBalloonTalk(spawnPointId: 101);
+                context.RemoveBalloonTalk(spawnId: 101);
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateBlackeyeApp03(context);
             }
 
@@ -106,12 +106,12 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateBlackeyeApp03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
+                context.SetNpcEmotionLoop(spawnId: 101, sequenceName: "Talk_A", duration: 3000f);
                 context.AddCinematicTalk(npcId: 11001590, illustId: "11001590", script: "$52100052_QD__01_ENTERTHEHALL__1$", duration: 3000, align: Align.Left);
                 context.SetSkip(state: new StateBlackeyeApp03Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateBlackeyeApp03Skip(context);
                 }
@@ -126,11 +126,11 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateBlackeyeApp03Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBalloonTalk(spawnPointId: 101);
+                context.RemoveBalloonTalk(spawnId: 101);
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEnemyApp01(context);
             }
 
@@ -143,11 +143,11 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 601, arg2: true);
+                context.CameraSelect(triggerId: 601, enable: true);
                 context.SetUserValue(triggerId: 2, key: "MobSpawn", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnemyApp02(context);
                 }
@@ -164,14 +164,14 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CreateMonster(arg1: new[] {901, 902, 903}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 901, script: "$52100052_QD__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 902, script: "$52100052_QD__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 903, script: "$52100052_QD__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
+                context.CreateMonster(spawnIds: new []{901, 902, 903}, arg2: false);
+                context.SetConversation(type: 1, spawnId: 901, script: "$52100052_QD__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
+                context.SetConversation(type: 1, spawnId: 902, script: "$52100052_QD__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
+                context.SetConversation(type: 1, spawnId: 903, script: "$52100052_QD__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
                 context.SetSkip(state: new StateEnemyApp03Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateEnemyApp03Skip(context);
                 }
@@ -186,13 +186,13 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateEnemyApp03Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBalloonTalk(spawnPointId: 901);
-                context.RemoveBalloonTalk(spawnPointId: 902);
-                context.RemoveBalloonTalk(spawnPointId: 903);
+                context.RemoveBalloonTalk(spawnId: 901);
+                context.RemoveBalloonTalk(spawnId: 902);
+                context.RemoveBalloonTalk(spawnId: 903);
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEnemyApp03(context);
             }
 
@@ -205,11 +205,11 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 600, arg2: true);
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_104");
+                context.CameraSelect(triggerId: 600, enable: true);
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_104");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateBlackeyeAction01(context);
                 }
@@ -226,11 +226,11 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetConversation(arg1: 2, arg2: 11001590, script: "$52100052_QD__01_ENTERTHEHALL__5$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001590, script: "$52100052_QD__01_ENTERTHEHALL__5$", arg4: 5);
                 context.SetSkip(state: new StateBlackeyeAction01Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateBlackeyeAction01Skip(context);
                 }
@@ -252,7 +252,7 @@ namespace Maple2.Trigger._52100052_qd {
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateBlackeyeAction02(context);
                 }
@@ -267,18 +267,18 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateBlackeyeAction02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {101});
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52100052_QD__01_ENTERTHEHALL__6$", arg4: 3, arg5: 1);
-                context.SetLadder(arg1: 511, arg2: true, arg3: true, arg4: 1);
-                context.SetLadder(arg1: 512, arg2: true, arg3: true, arg4: 1);
+                context.DestroyMonster(spawnIds: new []{101});
+                context.CreateMonster(spawnIds: new []{102}, arg2: false);
+                context.SetConversation(type: 1, spawnId: 102, script: "$52100052_QD__01_ENTERTHEHALL__6$", arg4: 3, arg5: 1);
+                context.SetLadder(triggerId: 511, visible: true, animationEffect: true, animationDelay: 1);
+                context.SetLadder(triggerId: 512, visible: true, animationEffect: true, animationDelay: 1);
                 context.SetUserValue(triggerId: 2, key: "MobAttack", value: 1);
                 context.SetUserValue(triggerId: 10, key: "TrapOn", value: 1);
                 context.SetUserValue(triggerId: 11, key: "TrapOn", value: 1);
                 context.SetUserValue(triggerId: 12, key: "TrapOn", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateBlackeyeAction03(context);
                 }
@@ -293,11 +293,11 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateBlackeyeAction03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039601, textId: 20039601, duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MobClear") == 1) {
                     return new StateMoveToUpstairs01(context);
                 }
@@ -312,15 +312,15 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateMoveToUpstairs01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: new[] {8006, 8007, 8008, 8009}, arg2: false);
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_102");
-                context.SetEffect(arg1: new[] {5004}, arg2: true);
-                context.SetActor(arg1: 4004, arg2: true, arg3: "Opened");
-                context.SetMesh(arg1: new[] {3007}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetAgent(triggerIds: new []{8006, 8007, 8008, 8009}, visible: false);
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_102");
+                context.SetEffect(triggerIds: new []{5004}, visible: true);
+                context.SetActor(triggerId: 4004, visible: true, initialSequence: "Opened");
+                context.SetMesh(triggerIds: new []{3007}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(triggerId: 3, key: "EnableLadder", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateMoveToUpstairs02(context);
                 }
@@ -337,11 +337,11 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetConversation(arg1: 2, arg2: 11001590, script: "$52100052_QD__01_ENTERTHEHALL__7$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001590, script: "$52100052_QD__01_ENTERTHEHALL__7$", arg4: 5);
                 context.SetSkip(state: new StateMoveToUpstairs02Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateMoveToUpstairs02Skip(context);
                 }
@@ -360,12 +360,12 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetSkip();
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039602, textId: 20039602, duration: 3000);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9002})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9002})) {
                     return new StateFindWayOut01(context);
                 }
 
@@ -379,10 +379,10 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateFindWayOut01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_103");
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_103");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateQuit(context);
                 }
@@ -397,13 +397,13 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, script: "$52100052_QD__01_ENTERTHEHALL__8$", arg3: 4000, arg4: "0");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.SetEventUI(arg1: 1, script: "$52100052_QD__01_ENTERTHEHALL__8$", duration: 4000, boxId: 0);
                 context.SetUserValue(triggerId: 4, key: "SearchStart", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 9100, arg2: new[] {102})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 9100, spawnIds: new []{102})) {
                     return new StateNpcMonologueRandom(context);
                 }
 
@@ -418,20 +418,20 @@ namespace Maple2.Trigger._52100052_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 25f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateNpcMonologue01(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateNpcMonologue02(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateNpcMonologue03(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateNpcMonologue04(context);
                 }
 
@@ -445,10 +445,10 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateNpcMonologue01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52100052_QD__01_ENTERTHEHALL__9$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 102, script: "$52100052_QD__01_ENTERTHEHALL__9$", arg4: 3, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateNpcMonologueRandom(context);
                 }
@@ -467,10 +467,10 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateNpcMonologue02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52100052_QD__01_ENTERTHEHALL__10$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 102, script: "$52100052_QD__01_ENTERTHEHALL__10$", arg4: 3, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateNpcMonologueRandom(context);
                 }
@@ -489,10 +489,10 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateNpcMonologue03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52100052_QD__01_ENTERTHEHALL__11$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 102, script: "$52100052_QD__01_ENTERTHEHALL__11$", arg4: 3, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateNpcMonologueRandom(context);
                 }
@@ -511,10 +511,10 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateNpcMonologue04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52100052_QD__01_ENTERTHEHALL__12$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 102, script: "$52100052_QD__01_ENTERTHEHALL__12$", arg4: 3, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new StateNpcMonologueRandom(context);
                 }
@@ -533,11 +533,11 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateNpcLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBalloonTalk(spawnPointId: 102);
-                context.DestroyMonster(arg1: new[] {102});
+                context.RemoveBalloonTalk(spawnId: 102);
+                context.DestroyMonster(spawnIds: new []{102});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

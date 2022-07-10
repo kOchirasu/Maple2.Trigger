@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000299_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000490}, arg2: 1);
+                context.SetEffect(triggerIds: new []{604}, visible: false);
+                context.SetInteractObject(interactIds: new []{10000490}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000490}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000490}, arg2: 0)) {
                     return new State안내시작(context);
                 }
 
@@ -23,14 +23,14 @@ namespace Maple2.Trigger._02000299_bf {
             internal State안내시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {604}, arg2: true);
-                context.CameraSelect(arg1: 301, arg2: true);
-                context.AddBuff(arg1: new[] {104}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
+                context.SetEffect(triggerIds: new []{604}, visible: true);
+                context.CameraSelect(triggerId: 301, enable: true);
+                context.AddBuff(boxIds: new []{104}, skillId: 70000107, level: 1, arg4: false, arg5: false);
                 context.ShowGuideSummary(entityId: 20003011, textId: 20003011, duration: 2500);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new State안내01(context);
                 }
@@ -45,12 +45,12 @@ namespace Maple2.Trigger._02000299_bf {
             internal State안내01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {604}, arg2: true);
+                context.SetEffect(triggerIds: new []{604}, visible: true);
                 context.ShowGuideSummary(entityId: 20003012, textId: 20003012, duration: 3000);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State안내02(context);
                 }
@@ -65,13 +65,13 @@ namespace Maple2.Trigger._02000299_bf {
             internal State안내02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {604}, arg2: true);
-                context.CameraSelect(arg1: 302, arg2: true);
+                context.SetEffect(triggerIds: new []{604}, visible: true);
+                context.CameraSelect(triggerId: 302, enable: true);
                 context.ShowGuideSummary(entityId: 20003013, textId: 20003013, duration: 3000);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State안내03(context);
                 }
@@ -86,14 +86,14 @@ namespace Maple2.Trigger._02000299_bf {
             internal State안내03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {604}, arg2: true);
-                context.CameraSelect(arg1: 303, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000496, 10000497, 10000498, 10000499}, arg2: 1);
+                context.SetEffect(triggerIds: new []{604}, visible: true);
+                context.CameraSelect(triggerId: 303, enable: true);
+                context.SetInteractObject(interactIds: new []{10000496, 10000497, 10000498, 10000499}, state: 1);
                 context.ShowGuideSummary(entityId: 20003014, textId: 20003014, duration: 4000);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State안내04(context);
                 }
@@ -108,15 +108,15 @@ namespace Maple2.Trigger._02000299_bf {
             internal State안내04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {104}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
-                context.SetInteractObject(arg1: new[] {10000496, 10000497, 10000498, 10000499}, arg2: 0);
-                context.SetEffect(arg1: new[] {604}, arg2: true);
-                context.CameraSelect(arg1: 301, arg2: true);
+                context.AddBuff(boxIds: new []{104}, skillId: 70000107, level: 1, arg4: false, arg5: false);
+                context.SetInteractObject(interactIds: new []{10000496, 10000497, 10000498, 10000499}, state: 0);
+                context.SetEffect(triggerIds: new []{604}, visible: true);
+                context.CameraSelect(triggerId: 301, enable: true);
                 context.ShowGuideSummary(entityId: 20003015, textId: 20003015, duration: 4000);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State안내05(context);
                 }
@@ -131,14 +131,14 @@ namespace Maple2.Trigger._02000299_bf {
             internal State안내05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBuff(arg1: 104, arg2: 70000107);
-                context.SetEffect(arg1: new[] {604}, arg2: true);
-                context.CameraSelect(arg1: 303, arg2: false);
+                context.RemoveBuff(boxId: 104, skillId: 70000107);
+                context.SetEffect(triggerIds: new []{604}, visible: true);
+                context.CameraSelect(triggerId: 303, enable: false);
                 context.ShowGuideSummary(entityId: 20003016, textId: 20003016, duration: 2000);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnd(context);
                 }
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateWait(context);
                 }

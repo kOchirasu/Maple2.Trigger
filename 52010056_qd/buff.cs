@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateReady(context);
             }
 
@@ -17,32 +17,32 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000054}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{91000054}, questStates: new byte[]{3})) {
                     return new StateBuff_B(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000054}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{91000054}, questStates: new byte[]{2})) {
                     return new StateBuff_B(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000054}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{91000054}, questStates: new byte[]{1})) {
                     return new StateBuff_B(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000053}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{91000053}, questStates: new byte[]{3})) {
                     return new StateBuff_A(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000053}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{91000053}, questStates: new byte[]{2})) {
                     return new StateBuff_A(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000053}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{91000053}, questStates: new byte[]{1})) {
                     return new StateBuff_A(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000052}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{91000052}, questStates: new byte[]{3})) {
                     return new StateBuff_A(context);
                 }
 
@@ -56,11 +56,11 @@ namespace Maple2.Trigger._52010056_qd {
             internal StateBuff_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {2001}, arg2: 99910300, arg3: 1, arg4: false, arg5: true);
-                context.AddBuff(arg1: new[] {2001}, arg2: 99910300, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{2001}, skillId: 99910300, level: 1, arg4: false, arg5: true);
+                context.AddBuff(boxIds: new []{2001}, skillId: 99910300, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateReady(context);
                 }
@@ -75,11 +75,11 @@ namespace Maple2.Trigger._52010056_qd {
             internal StateBuff_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {2001}, arg2: 99910330, arg3: 1, arg4: false, arg5: true);
-                context.AddBuff(arg1: new[] {2001}, arg2: 99910330, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{2001}, skillId: 99910330, level: 1, arg4: false, arg5: true);
+                context.AddBuff(boxIds: new []{2001}, skillId: 99910330, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateReady(context);
                 }

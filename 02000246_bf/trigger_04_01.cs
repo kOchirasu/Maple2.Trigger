@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000246_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {631, 632, 633, 634, 635, 636, 637, 638, 639});
+                context.DestroyMonster(spawnIds: new []{631, 632, 633, 634, 635, 636, 637, 638, 639});
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {204})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{204})) {
                     return new StateMobCreation(context);
                 }
 
@@ -22,12 +22,12 @@ namespace Maple2.Trigger._02000246_bf {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {631, 632, 633, 634, 635, 636, 637, 638, 639}, arg2: false);
-                context.SetTimer(id: "1", arg2: 120);
+                context.CreateMonster(spawnIds: new []{631, 632, 633, 634, 635, 636, 637, 638, 639}, arg2: false);
+                context.SetTimer(timerId: "1", seconds: 120);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {631, 632, 633, 634, 635, 636, 637, 638, 639})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{631, 632, 633, 634, 635, 636, 637, 638, 639})) {
                     return new State통과(context);
                 }
 
@@ -41,10 +41,10 @@ namespace Maple2.Trigger._02000246_bf {
             internal State통과(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 180);
+                context.SetTimer(timerId: "2", seconds: 180);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

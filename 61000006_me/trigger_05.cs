@@ -4,12 +4,12 @@ namespace Maple2.Trigger._61000006_me {
             internal StateLever(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000214}, arg2: 1);
-                context.SetMesh(arg1: new[] {551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568}, arg2: true);
+                context.SetInteractObject(interactIds: new []{10000214}, state: 1);
+                context.SetMesh(triggerIds: new []{551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000214}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000214}, arg2: 0)) {
                     return new State바닥열기(context);
                 }
 
@@ -23,12 +23,12 @@ namespace Maple2.Trigger._61000006_me {
             internal State바닥열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "12", arg2: 200);
-                context.SetMesh(arg1: new[] {551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568}, arg2: false);
+                context.SetTimer(timerId: "12", seconds: 200);
+                context.SetMesh(triggerIds: new []{551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "12")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "12")) {
                     return new StateLever(context);
                 }
 

@@ -5,8 +5,8 @@ namespace Maple2.Trigger._65000003_bd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {104})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{104})) {
                     return new State대포Spawn(context);
                 }
 
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._65000003_bd {
             internal State대포Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: false);
+                context.CreateMonster(spawnIds: new []{1001, 1002, 1003, 1004}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {104})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{104})) {
                     return new State소환해제(context);
                 }
 
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._65000003_bd {
             internal State소환해제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{1001, 1002, 1003, 1004}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

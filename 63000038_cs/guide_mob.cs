@@ -5,12 +5,12 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {2101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{2101})) {
                     return new StateGuide출력(context);
                 }
 
-                if (context.MonsterInCombat(arg1: new[] {2102})) {
+                if (context.MonsterInCombat(spawnIds: new []{2102})) {
                     return new StateGuide출력(context);
                 }
 
@@ -27,8 +27,8 @@ namespace Maple2.Trigger._63000038_cs {
                 context.ShowGuideSummary(entityId: 26300383, textId: 26300383);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {102})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{102})) {
                     return new StateGuide삭제Wait(context);
                 }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGuide삭제(context);
                 }
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2103})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2103})) {
                     context.HideGuideSummary(entityId: 26300383);
                     return new StateEnd(context);
                 }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

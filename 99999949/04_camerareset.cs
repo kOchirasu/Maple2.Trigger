@@ -5,8 +5,8 @@ namespace Maple2.Trigger._99999949 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9031})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9031})) {
                     return new StateGuide(context);
                 }
 
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "4번 영역에 들어가면 CameraReset 트리거가 발동됩니다.");
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9030})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9030})) {
                     return new StateCameraReady(context);
                 }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "SetOnetimeEffect 1초 후에 시작됩니다.");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCameraWalk01(context);
                 }
@@ -59,10 +59,10 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "600번 카메라 선택");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 603, arg2: true);
+                context.CameraSelect(triggerId: 603, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateCameraWalk03(context);
                 }
@@ -78,10 +78,10 @@ namespace Maple2.Trigger._99999949 {
 
             public override void OnEnter() {
                 context.DebugString(message: "602번 카메라 선택");
-                context.CameraSelect(arg1: 604, arg2: true);
+                context.CameraSelect(triggerId: 604, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateCameraReset(context);
                 }
@@ -99,10 +99,10 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "모든 카메라 리셋");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(arg1: 604, arg2: false);
+                context.CameraSelect(triggerId: 604, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateQuit(context);
                 }
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "5초 후에 트리거가 리셋됩니다. 4번 영역 밖으로 나가세요.");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateWait(context);
                 }

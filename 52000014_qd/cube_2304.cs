@@ -4,12 +4,12 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {2304}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {12304}, arg2: false);
+                context.SetMesh(triggerIds: new []{2304}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{12304}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {92304})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{92304})) {
                     return new State무너짐01(context);
                 }
 
@@ -23,13 +23,13 @@ namespace Maple2.Trigger._52000014_qd {
             internal State무너짐01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 5);
-                context.SetEffect(arg1: new[] {12304}, arg2: true);
-                context.SetMesh(arg1: new[] {2304}, arg2: false, arg3: 200, arg4: 0, arg5: 1f);
+                context.SetTimer(timerId: "1", seconds: 5);
+                context.SetEffect(triggerIds: new []{12304}, visible: true);
+                context.SetMesh(triggerIds: new []{2304}, visible: false, arg3: 200, arg4: 0, arg5: 1f);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateEnd(context);
                 }
 
@@ -43,10 +43,10 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {12304}, arg2: false);
+                context.SetEffect(triggerIds: new []{12304}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,11 +5,11 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "machineon", value: 0);
-                context.SetInteractObject(arg1: new[] {10001246}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{10001246}, state: 2);
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "machineon") == 1) {
                     return new StateMachineOn(context);
                 }
@@ -24,11 +24,11 @@ namespace Maple2.Trigger._50000006_dl {
             internal StateMachineOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001246}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001246}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001246}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001246}, arg2: 0)) {
                     return new StatePortalOn(context);
                 }
 
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._50000006_dl {
                 context.SetPortal(portalId: 3, visible: false, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateResetDelay(context);
                 }
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateReset(context);
                 }
@@ -78,11 +78,11 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
-                context.SetInteractObject(arg1: new[] {10001246}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001246}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001246}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001246}, arg2: 0)) {
                     return new StatePortalOn(context);
                 }
 

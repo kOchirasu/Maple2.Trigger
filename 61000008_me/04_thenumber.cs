@@ -5,7 +5,7 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BannerCheckIn") == 1) {
                     return new StateBannerCheckIn(context);
                 }
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9001) == 50) {
                     context.SetUserValue(triggerId: 5, key: "BannerNumber", value: 50);
                     context.SetUserValue(triggerId: 5, key: "SetBanner", value: 1);
@@ -322,7 +322,7 @@ namespace Maple2.Trigger._61000008_me {
                     return new StateReset(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {9001})) {
+                if (!context.UserDetected(boxIds: new []{9001})) {
                     context.SetUserValue(triggerId: 5, key: "BannerNumber", value: 00);
                     context.SetUserValue(triggerId: 5, key: "SetBanner", value: 1);
                     return new StateReset(context);
@@ -342,7 +342,7 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "BannerNumber", value: 100);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

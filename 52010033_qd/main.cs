@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52010033_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003075, 10003076, 10003077, 10003078, 10003079}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{10003075, 10003076, 10003077, 10003078, 10003079}, questStates: new byte[]{1})) {
                     return new StateNpcSpawn(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._52010033_qd {
             internal StateNpcSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {105, 106, 107, 108}, arg2: true);
+                context.CreateMonster(spawnIds: new []{105, 106, 107, 108}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

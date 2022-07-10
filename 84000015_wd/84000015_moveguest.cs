@@ -10,7 +10,7 @@ namespace Maple2.Trigger._84000015_wd {
                 context.SetUserValue(key: "Weddingceremonyfail", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateStart(context);
             }
 
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._84000015_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WeddingHallState(hallState: "weddingComplete")) {
                     return new StateEnd(context);
                 }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._84000015_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WeddingHallState(hallState: "weddingComplete")) {
                     return new StateEnd(context);
                 }
@@ -67,10 +67,10 @@ namespace Maple2.Trigger._84000015_wd {
             internal State방금입장한하객은하객석으로위치이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WeddingMoveUser(type: WeddingEntryType.Guest, arg1: 84000015, arg2: new byte[] {22, 23}, arg3: 701);
+                context.WeddingMoveUser(type: WeddingEntryType.Guest, mapId: 84000015, portalIds: new []{22, 23}, boxId: 701);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State새로운하객있는지감지(context);
             }
 
@@ -81,10 +81,10 @@ namespace Maple2.Trigger._84000015_wd {
             internal State하객은버진로드밖으로위치이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WeddingMoveUser(type: WeddingEntryType.Guest, arg1: 84000015, arg2: new byte[] {22, 23}, arg3: 701);
+                context.WeddingMoveUser(type: WeddingEntryType.Guest, mapId: 84000015, portalIds: new []{22, 23}, boxId: 701);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State새로운하객있는지감지(context);
             }
 
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._84000015_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

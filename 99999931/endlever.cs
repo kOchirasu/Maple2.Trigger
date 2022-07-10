@@ -4,13 +4,13 @@ namespace Maple2.Trigger._99999931 {
             internal State게임종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {211, 212}, arg2: true);
-                context.SetMesh(arg1: new[] {551, 552}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000216}, arg2: 1);
+                context.SetMesh(triggerIds: new []{211, 212}, visible: true);
+                context.SetMesh(triggerIds: new []{551, 552}, visible: false);
+                context.SetInteractObject(interactIds: new []{10000216}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000216}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000216}, arg2: 0)) {
                     return new StateEnd안내(context);
                 }
 
@@ -24,12 +24,12 @@ namespace Maple2.Trigger._99999931 {
             internal StateEnd안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 3);
-                context.SetEventUI(arg1: 5, arg3: 3000);
+                context.SetTimer(timerId: "1", seconds: 3);
+                context.SetEventUI(arg1: 5, duration: 3000);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State문열기(context);
                 }
 
@@ -43,13 +43,13 @@ namespace Maple2.Trigger._99999931 {
             internal State문열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 7);
-                context.SetMesh(arg1: new[] {211, 212}, arg2: false);
-                context.SetMesh(arg1: new[] {551, 552}, arg2: true);
+                context.SetTimer(timerId: "2", seconds: 7);
+                context.SetMesh(triggerIds: new []{211, 212}, visible: false);
+                context.SetMesh(triggerIds: new []{551, 552}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new State문닫기(context);
                 }
 
@@ -63,10 +63,10 @@ namespace Maple2.Trigger._99999931 {
             internal State문닫기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
-                context.SetMesh(arg1: new[] {211, 212}, arg2: true);
-                context.SetMesh(arg1: new[] {551, 552}, arg2: false);
-                context.SetMesh(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208}, arg2: true);
+                context.SetTimer(timerId: "3", seconds: 3);
+                context.SetMesh(triggerIds: new []{211, 212}, visible: true);
+                context.SetMesh(triggerIds: new []{551, 552}, visible: false);
+                context.SetMesh(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208}, visible: true);
                 context.SetPortal(portalId: 101, visible: false, enabled: true);
                 context.SetPortal(portalId: 102, visible: false, enabled: true);
                 context.SetPortal(portalId: 103, visible: false, enabled: true);
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._99999931 {
                 context.SetPortal(portalId: 118, visible: false, enabled: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State게임종료(context);
                 }
 

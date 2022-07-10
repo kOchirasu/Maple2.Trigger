@@ -4,12 +4,12 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {2000, 2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {12000, 22000}, arg2: false);
+                context.SetMesh(triggerIds: new []{2000, 2001, 2002, 2003, 2004}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{12000, 22000}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9001})) {
                     return new StateDelay01(context);
                 }
 
@@ -23,11 +23,11 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 2);
+                context.SetTimer(timerId: "1", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State무너짐01(context);
                 }
 
@@ -41,12 +41,12 @@ namespace Maple2.Trigger._52000014_qd {
             internal State무너짐01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 2);
-                context.SetEventUI(arg1: 1, script: "$52000014_QD__COLLAPSE_2000__0$", arg3: 4000, arg4: "0");
+                context.SetTimer(timerId: "3", seconds: 2);
+                context.SetEventUI(arg1: 1, script: "$52000014_QD__COLLAPSE_2000__0$", duration: 4000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State무너짐02(context);
                 }
 
@@ -60,13 +60,13 @@ namespace Maple2.Trigger._52000014_qd {
             internal State무너짐02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "4", arg2: 8);
-                context.SetEffect(arg1: new[] {12000, 22000}, arg2: true);
-                context.SetRandomMesh(arg1: new[] {2000, 2001, 2002, 2003, 2004}, arg2: false, arg3: 5, arg4: 0, arg5: 200);
+                context.SetTimer(timerId: "4", seconds: 8);
+                context.SetEffect(triggerIds: new []{12000, 22000}, visible: true);
+                context.SetRandomMesh(triggerIds: new []{2000, 2001, 2002, 2003, 2004}, visible: false, meshCount: 5, arg4: 0, delay: 200);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "4")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "4")) {
                     // return new State무너짐03(context);
                     return null;
                 }
@@ -81,10 +81,10 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {12000, 22000}, arg2: false);
+                context.SetEffect(triggerIds: new []{12000, 22000}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

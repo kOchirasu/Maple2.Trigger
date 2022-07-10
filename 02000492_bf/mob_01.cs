@@ -5,12 +5,12 @@ namespace Maple2.Trigger._02000492_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1001})) {
                     return new State전투01(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {1002})) {
+                if (context.UserDetected(boxIds: new []{1002})) {
                     return new State전투01(context);
                 }
 
@@ -24,11 +24,11 @@ namespace Maple2.Trigger._02000492_bf {
             internal State전투01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 111}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101, 111}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101, 111})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101, 111})) {
                     return new State전투02(context);
                 }
 
@@ -42,11 +42,11 @@ namespace Maple2.Trigger._02000492_bf {
             internal State전투02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(spawnIds: new []{102}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {102})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{102})) {
                     return new StateEnd(context);
                 }
 
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02000492_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

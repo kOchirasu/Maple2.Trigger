@@ -5,9 +5,9 @@ namespace Maple2.Trigger._52000029_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new[] {2001})) {
-                    context.DestroyMonster(arg1: new[] {2001});
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{2001})) {
+                    context.DestroyMonster(spawnIds: new []{2001});
                     return new StateEnd(context);
                 }
 
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52000029_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

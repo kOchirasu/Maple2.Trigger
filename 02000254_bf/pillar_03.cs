@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02000254_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000442}, arg2: 0);
-                context.SetSkill(arg1: new[] {703}, arg2: false);
-                context.SetEffect(arg1: new[] {446, 447, 462}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10000442}, state: 0);
+                context.SetSkill(triggerIds: new []{703}, arg2: false);
+                context.SetEffect(triggerIds: new []{446, 447, 462}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 907, arg2: new[] {105})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 907, spawnIds: new []{105})) {
                     return new State반응Wait(context);
                 }
 
@@ -24,15 +24,15 @@ namespace Maple2.Trigger._02000254_bf {
             internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000442}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000442}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000442}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000442}, arg2: 0)) {
                     return new State스턴(context);
                 }
 
-                if (!context.NpcDetected(arg1: 907, arg2: new[] {105})) {
+                if (!context.NpcDetected(boxId: 907, spawnIds: new []{105})) {
                     return new StateWaitStart(context);
                 }
 
@@ -46,13 +46,13 @@ namespace Maple2.Trigger._02000254_bf {
             internal State스턴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {446, 447, 462}, arg2: true);
-                context.SetSkill(arg1: new[] {703}, arg2: true);
-                context.SetTimer(id: "1", arg2: 2);
+                context.SetEffect(triggerIds: new []{446, 447, 462}, visible: true);
+                context.SetSkill(triggerIds: new []{703}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State스턴2(context);
                 }
 
@@ -66,12 +66,12 @@ namespace Maple2.Trigger._02000254_bf {
             internal State스턴2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {703}, arg2: false);
-                context.SetTimer(id: "1", arg2: 10);
+                context.SetSkill(triggerIds: new []{703}, arg2: false);
+                context.SetTimer(timerId: "1", seconds: 10);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWaitStart(context);
                 }
 

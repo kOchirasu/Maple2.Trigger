@@ -5,9 +5,9 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
-                    context.SetInteractObject(arg1: new[] {10000872}, arg2: 0);
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
+                    context.SetInteractObject(interactIds: new []{10000872}, state: 0);
                     return new StateQuest조건02(context);
                 }
 
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002821}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{10002821}, questStates: new byte[]{2})) {
                     return new StateQ2_미카Spawn01(context);
                 }
 
@@ -37,10 +37,10 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ2_미카Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {401}, arg2: false);
+                context.CreateMonster(spawnIds: new []{401}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateQ2_Delay01(context);
             }
 
@@ -51,14 +51,14 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ2_Delay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "11", arg2: 2);
-                context.CameraSelect(arg1: 3001, arg2: true);
+                context.SetTimer(timerId: "11", seconds: 2);
+                context.CameraSelect(triggerId: 3001, enable: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "11")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "11")) {
                     return new StateQ2_미카대화01(context);
                 }
 
@@ -72,13 +72,13 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ2_미카대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "12", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010005_QD__ACT02__0$", arg4: 3);
+                context.SetTimer(timerId: "12", seconds: 3);
+                context.SetConversation(type: 2, spawnId: 11001285, script: "$52010005_QD__ACT02__0$", arg4: 3);
                 context.SetSkip(state: new StateQ2_미카대화02Wait(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "12")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "12")) {
                     return new StateQ2_미카대화02Wait(context);
                 }
 
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52010005_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateQ2_미카대화02(context);
             }
 
@@ -106,13 +106,13 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ2_미카대화02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "13", arg2: 3);
-                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010005_QD__ACT02__1$", arg4: 3);
+                context.SetTimer(timerId: "13", seconds: 3);
+                context.SetConversation(type: 2, spawnId: 11001285, script: "$52010005_QD__ACT02__1$", arg4: 3);
                 context.SetSkip(state: new StateQ2_미카대화종료(context));
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "13")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "13")) {
                     return new StateQ2_미카대화종료(context);
                 }
 
@@ -127,12 +127,12 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelect(arg1: 3001, arg2: false);
+                context.CameraSelect(triggerId: 3001, enable: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,11 +4,11 @@ namespace Maple2.Trigger._99999905 {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2001}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {10501})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{10501})) {
                     return new State이동(context);
                 }
 
@@ -22,12 +22,12 @@ namespace Maple2.Trigger._99999905 {
             internal State이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
+                context.SetTimer(timerId: "2", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
-                    context.MoveNpc(arg1: 2001, arg2: "MS2PatrolData_2001");
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
+                    context.MoveNpc(spawnId: 2001, patrolName: "MS2PatrolData_2001");
                     // return new StateEnd(context);
                     return null;
                 }

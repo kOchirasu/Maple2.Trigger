@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000207_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {2001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{2001})) {
                     return new StateCount(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._02000207_bf {
             internal StateCount(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02000207_BF__BARRICADE__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02000207_BF__BARRICADE__0$", duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
                     return new StateBlock(context);
                 }
@@ -40,10 +40,10 @@ namespace Maple2.Trigger._02000207_bf {
             internal StateBlock(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMesh(triggerIds: new []{3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BattleEnd") == 1) {
                     return new StateUnblock(context);
                 }
@@ -58,10 +58,10 @@ namespace Maple2.Trigger._02000207_bf {
             internal StateUnblock(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

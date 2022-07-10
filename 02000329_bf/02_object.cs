@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000329_bf {
             internal State오브젝트_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {10001}, arg2: false);
+                context.SetBreakable(triggerIds: new []{10001}, enabled: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {100})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{100})) {
                     return new State오브젝트_01_작동(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._02000329_bf {
             internal State오브젝트_01_작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {10001}, arg2: true);
+                context.SetBreakable(triggerIds: new []{10001}, enabled: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

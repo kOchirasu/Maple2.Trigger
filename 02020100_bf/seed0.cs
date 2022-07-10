@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020100_bf {
                 context.SetUserValue(triggerId: 99990001, key: "Seed0interact", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Seed0start") == 1) {
                     return new StateStart(context);
                 }
@@ -22,16 +22,16 @@ namespace Maple2.Trigger._02020100_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1301}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002115}, arg2: 1, arg3: true);
+                context.SetMesh(triggerIds: new []{1301}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002115}, state: 1, arg3: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Seed0start") == 2) {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002115}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002115}, arg2: 0)) {
                     return new StateSeed0_Wait(context);
                 }
 
@@ -45,17 +45,17 @@ namespace Maple2.Trigger._02020100_bf {
             internal StateSeed0_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1301}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10002115}, arg2: 0, arg3: true);
+                context.SetMesh(triggerIds: new []{1301}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10002115}, state: 0, arg3: true);
                 context.SetUserValue(triggerId: 99990001, key: "Seed0interact", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Seed0start") == 2) {
                     return new StateEnd(context);
                 }
 
-                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 0, additionalEffectId: 70002109, level: 1)) {
+                if (!context.CheckAnyUserAdditionalEffect(boxId: 0, additionalEffectId: 70002109, level: 1)) {
                     return new StateStart(context);
                 }
 
@@ -69,10 +69,10 @@ namespace Maple2.Trigger._02020100_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002115}, arg2: 0);
+                context.SetInteractObject(interactIds: new []{10002115}, state: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -8,13 +8,13 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "CorrectSecondPiece", value: 0);
                 context.SetUserValue(key: "CorrectThirdPiece", value: 0);
                 context.SetUserValue(key: "CorrectFouthPiece", value: 0);
-                context.SetEffect(arg1: new[] {5002, 5003}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001023}, arg2: 0);
+                context.SetEffect(triggerIds: new []{5002, 5003}, visible: false);
+                context.SetInteractObject(interactIds: new []{10001023}, state: 0);
                 context.SetUserValue(key: "PuzzleStart", value: 0);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3001, 3002, 3003, 3004, 3020}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3001, 3002, 3003, 3004, 3020}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PuzzleStart") == 1) {
                     return new StateStartPuzzle(context);
                 }
@@ -31,13 +31,13 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 5, key: "PickFirstPiece", value: 1);
                 context.SetUserValue(triggerId: 7, key: "PickThirdPiece", value: 1);
-                context.SetInteractObject(arg1: new[] {10001023}, arg2: 1);
-                context.SetMesh(arg1: new[] {3020}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
+                context.SetInteractObject(interactIds: new []{10001023}, state: 1);
+                context.SetMesh(triggerIds: new []{3020}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{5002}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001023}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001023}, arg2: 0)) {
                     return new StateCheckAnswer01(context);
                 }
 
@@ -51,14 +51,14 @@ namespace Maple2.Trigger._02000376_bf {
             internal StateCheckAnswer01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3020}, arg2: false, arg3: 200, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3020}, visible: false, arg3: 200, arg4: 0, arg5: 0f);
                 context.SetUserValue(triggerId: 5, key: "CheckFirstPiece", value: 1);
                 context.SetUserValue(triggerId: 6, key: "CheckSecondPiece", value: 1);
                 context.SetUserValue(triggerId: 7, key: "CheckThirdPiece", value: 1);
                 context.SetUserValue(triggerId: 8, key: "CheckFourthPiece", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateCheckAnswer02(context);
                 }
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "CorrectFirstPiece") == 2) {
                     return new StateRetry01(context);
                 }
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "CorrectFirstPiece") == 2) {
                     return new StateRetry01(context);
                 }
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "CorrectFirstPiece") == 2) {
                     return new StateRetry01(context);
                 }
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "CorrectFirstPiece") == 2) {
                     return new StateRetry01(context);
                 }
@@ -201,8 +201,8 @@ namespace Maple2.Trigger._02000376_bf {
             internal StateRetry01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEventUI(arg1: 1, script: "$02000376_BF__04_PUZZLEMAIN__0$", arg3: 3000, arg4: "0");
+                context.SetEffect(triggerIds: new []{5002}, visible: true);
+                context.SetEventUI(arg1: 1, script: "$02000376_BF__04_PUZZLEMAIN__0$", duration: 3000, boxId: 0);
                 context.SetUserValue(key: "CorrectFirstPiece", value: 0);
                 context.SetUserValue(key: "CorrectSecondPiece", value: 0);
                 context.SetUserValue(key: "CorrectThirdPiece", value: 0);
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 8, key: "ResetFourthPiece", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateRetry02(context);
                 }
@@ -228,12 +228,12 @@ namespace Maple2.Trigger._02000376_bf {
             internal StateRetry02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001023}, arg2: 1);
-                context.SetMesh(arg1: new[] {3020}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10001023}, state: 1);
+                context.SetMesh(triggerIds: new []{3020}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001023}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001023}, arg2: 0)) {
                     return new StateCheckAnswer01(context);
                 }
 
@@ -249,17 +249,17 @@ namespace Maple2.Trigger._02000376_bf {
             internal StatePuzzleSolved(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{5003}, visible: true);
+                context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(triggerId: 1, key: "PuzzleSolved", value: 1);
                 context.SetUserValue(triggerId: 5, key: "LockFirstPiece", value: 1);
                 context.SetUserValue(triggerId: 6, key: "LockSecondPiece", value: 1);
                 context.SetUserValue(triggerId: 7, key: "LockThirdPiece", value: 1);
                 context.SetUserValue(triggerId: 8, key: "LockFourthPiece", value: 1);
-                context.SetAchievement(arg3: "OrientPattern_Puzzle");
+                context.SetAchievement(type: "trigger", code: "OrientPattern_Puzzle");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuit(context);
                 }
@@ -275,7 +275,7 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

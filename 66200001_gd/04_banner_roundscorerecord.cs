@@ -4,11 +4,11 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {999, 1000, 1100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1001, 1002, 1003, 1100, 1101, 1102, 1103}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{999, 1000, 1100}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{1001, 1002, 1003, 1100, 1101, 1102, 1103}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateEnter(context);
                 }
@@ -17,7 +17,7 @@ namespace Maple2.Trigger._66200001_gd {
             }
 
             public override void OnExit() {
-                context.SetMesh(arg1: new[] {1000, 1100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{1000, 1100}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
         }
 
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "RedteamScore", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "RoundScoreRecord") == 1) {
                     return new StateR01BannerUpdate(context);
                 }
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "RoundScoreRecord") == 2) {
                     return new StateR02BannerUpdate(context);
                 }
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "RoundScoreRecord") == 3) {
                     return new StateR03BannerUpdate(context);
                 }
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BlueteamScore") == 3) {
                     return new StateBlueTeamWin(context);
                 }
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BlueteamScore") == 3) {
                     return new StateBlueTeamWin(context);
                 }
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BlueteamScore") == 3) {
                     return new StateBlueTeamWin(context);
                 }
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 1, key: "WinnerTeam", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 1, key: "WinnerTeam", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -212,7 +212,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

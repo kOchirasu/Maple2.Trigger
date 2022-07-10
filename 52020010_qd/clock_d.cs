@@ -4,20 +4,20 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5011, 5012, 5013, 5014, 5015}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001275}, arg2: 0);
+                context.SetEffect(triggerIds: new []{5011, 5012, 5013, 5014, 5015}, visible: false);
+                context.SetInteractObject(interactIds: new []{10001275}, state: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2005}, questIds: new []{60200050}, questStates: new byte[]{1})) {
                     return new StateReady(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{2005}, questIds: new []{60200050}, questStates: new byte[]{2})) {
                     return new StateReady_A(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{2005}, questIds: new []{60200050}, questStates: new byte[]{3})) {
                     return new StateReady_A(context);
                 }
 
@@ -31,11 +31,11 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001275}, arg2: 0);
+                context.SetInteractObject(interactIds: new []{10001275}, state: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001274}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001274}, arg2: 0)) {
                     return new StateEvent_Start(context);
                 }
 
@@ -49,11 +49,11 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5011, 5012}, arg2: true);
-                context.CreateMonster(arg1: new[] {401}, arg2: true);
+                context.SetEffect(triggerIds: new []{5011, 5012}, visible: true);
+                context.CreateMonster(spawnIds: new []{401}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateEvent_01(context);
                 }
@@ -68,10 +68,10 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 401, msg: "대체 어디 있는거야?", duration: 2800, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 401, msg: "대체 어디 있는거야?", duration: 2800, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEvent_02(context);
                 }
@@ -86,12 +86,12 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5013}, arg2: true);
-                context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_3002");
-                context.AddBalloonTalk(spawnPointId: 401, msg: "분명히 책장 어딘가에 장치가 있었는데...", duration: 2800, delayTick: 0);
+                context.SetEffect(triggerIds: new []{5013}, visible: true);
+                context.MoveNpc(spawnId: 401, patrolName: "MS2PatrolData_3002");
+                context.AddBalloonTalk(spawnId: 401, msg: "분명히 책장 어딘가에 장치가 있었는데...", duration: 2800, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEvent_03(context);
                 }
@@ -106,10 +106,10 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 401, msg: "어째서 이럴 때 기억나지 않는거야!!!", duration: 2800, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 401, msg: "어째서 이럴 때 기억나지 않는거야!!!", duration: 2800, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEvent_04(context);
                 }
@@ -124,11 +124,11 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5014}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 401, msg: "여기였나?", duration: 2800, delayTick: 0);
+                context.SetEffect(triggerIds: new []{5014}, visible: true);
+                context.AddBalloonTalk(spawnId: 401, msg: "여기였나?", duration: 2800, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEvent_05(context);
                 }
@@ -143,11 +143,11 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 401, msg: "아니... 생각해보니 소용 없군...", duration: 2800, delayTick: 0);
-                context.SetInteractObject(arg1: new[] {10001275}, arg2: 1);
+                context.AddBalloonTalk(spawnId: 401, msg: "아니... 생각해보니 소용 없군...", duration: 2800, delayTick: 0);
+                context.SetInteractObject(interactIds: new []{10001275}, state: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEvent_06(context);
                 }
@@ -162,11 +162,11 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5015}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 401, msg: "어차피 거스를 수 없는 운명인 것을...", duration: 2800, delayTick: 0);
+                context.SetEffect(triggerIds: new []{5015}, visible: true);
+                context.AddBalloonTalk(spawnId: 401, msg: "어차피 거스를 수 없는 운명인 것을...", duration: 2800, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEvent_End(context);
                 }
@@ -181,11 +181,11 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5011, 5012, 5013, 5014, 5015}, arg2: false);
-                context.DestroyMonster(arg1: new[] {401});
+                context.SetEffect(triggerIds: new []{5011, 5012, 5013, 5014, 5015}, visible: false);
+                context.DestroyMonster(spawnIds: new []{401});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -196,11 +196,11 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateReady_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001275}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001275}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001274}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001274}, arg2: 0)) {
                     return new StateEvent_Start_A(context);
                 }
 
@@ -214,11 +214,11 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_Start_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5011, 5012}, arg2: true);
-                context.CreateMonster(arg1: new[] {401}, arg2: true);
+                context.SetEffect(triggerIds: new []{5011, 5012}, visible: true);
+                context.CreateMonster(spawnIds: new []{401}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateEvent_01_A(context);
                 }
@@ -233,10 +233,10 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_01_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 401, msg: "대체 어디 있는거야?", duration: 2800, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 401, msg: "대체 어디 있는거야?", duration: 2800, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEvent_02_A(context);
                 }
@@ -251,12 +251,12 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_02_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5013}, arg2: true);
-                context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_3002");
-                context.AddBalloonTalk(spawnPointId: 401, msg: "분명히 책장 어딘가에 장치가 있었는데...", duration: 2800, delayTick: 0);
+                context.SetEffect(triggerIds: new []{5013}, visible: true);
+                context.MoveNpc(spawnId: 401, patrolName: "MS2PatrolData_3002");
+                context.AddBalloonTalk(spawnId: 401, msg: "분명히 책장 어딘가에 장치가 있었는데...", duration: 2800, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEvent_03_A(context);
                 }
@@ -271,10 +271,10 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_03_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 401, msg: "어째서 이럴 때 기억나지 않는거야!!!", duration: 2800, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 401, msg: "어째서 이럴 때 기억나지 않는거야!!!", duration: 2800, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEvent_04_A(context);
                 }
@@ -289,11 +289,11 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_04_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5014}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 401, msg: "여기였나?", duration: 2800, delayTick: 0);
+                context.SetEffect(triggerIds: new []{5014}, visible: true);
+                context.AddBalloonTalk(spawnId: 401, msg: "여기였나?", duration: 2800, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEvent_05_A(context);
                 }
@@ -308,10 +308,10 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_05_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 401, msg: "아니... 생각해보니 소용 없군...", duration: 2800, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 401, msg: "아니... 생각해보니 소용 없군...", duration: 2800, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEvent_06_A(context);
                 }
@@ -326,11 +326,11 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_06_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5015}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 401, msg: "어차피 거스를 수 없는 운명인 것을...", duration: 2800, delayTick: 0);
+                context.SetEffect(triggerIds: new []{5015}, visible: true);
+                context.AddBalloonTalk(spawnId: 401, msg: "어차피 거스를 수 없는 운명인 것을...", duration: 2800, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEvent_End_A(context);
                 }
@@ -345,11 +345,11 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_End_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5011, 5012, 5013, 5014, 5015}, arg2: false);
-                context.DestroyMonster(arg1: new[] {401});
+                context.SetEffect(triggerIds: new []{5011, 5012, 5013, 5014, 5015}, visible: false);
+                context.DestroyMonster(spawnIds: new []{401});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

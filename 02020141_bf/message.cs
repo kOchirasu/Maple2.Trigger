@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new State메시지작동Prepare(context);
                 }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02020141_bf {
                 context.SetUserValue(key: "TriggerEnd", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     return new State메시지작동WaitBuff체크(context);
                 }
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TriggerEnd") == 99) {
                     return new StateTrigger종료(context);
                 }
@@ -49,11 +49,11 @@ namespace Maple2.Trigger._02020141_bf {
                     return new State경고DisplayGuide(context);
                 }
 
-                if (context.CheckNpcAdditionalEffect(spawnPointId: 99, additionalEffectId: 50000348, level: 1)) {
+                if (context.CheckNpcAdditionalEffect(spawnId: 99, additionalEffectId: 50000348, level: 1)) {
                     return new StateCount다운체크(context);
                 }
 
-                if (!context.CheckNpcAdditionalEffect(spawnPointId: 99, additionalEffectId: 50000348, level: 1)) {
+                if (!context.CheckNpcAdditionalEffect(spawnId: 99, additionalEffectId: 50000348, level: 1)) {
                     return new StateCount다운Reset(context);
                 }
 
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02020141_bf {
                 context.AddUserValue(key: "MessageAlarm", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State메시지작동WaitBuff체크(context);
                 }
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02020141_bf {
                 context.HideGuideSummary(entityId: 29200006);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State메시지작동WaitBuff체크(context);
                 }
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._02020141_bf {
                 context.AddUserValue(key: "MessageAlarm", value: -11);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State메시지작동WaitBuff체크(context);
                 }
@@ -126,7 +126,7 @@ namespace Maple2.Trigger._02020141_bf {
                 context.HideGuideSummary(entityId: 29200006);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

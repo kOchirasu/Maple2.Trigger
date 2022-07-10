@@ -4,16 +4,16 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5016, 5017}, arg2: false);
-                context.SetBreakable(arg1: new[] {10001, 10002}, arg2: false);
+                context.SetEffect(triggerIds: new []{5016, 5017}, visible: false);
+                context.SetBreakable(triggerIds: new []{10001, 10002}, enabled: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2005}, questIds: new []{60200050}, questStates: new byte[]{2})) {
                     return new StateCheck(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{2005}, questIds: new []{60200050}, questStates: new byte[]{3})) {
                     return new StateCheck(context);
                 }
 
@@ -28,8 +28,8 @@ namespace Maple2.Trigger._52020010_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001275}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001275}, arg2: 0)) {
                     return new StateDoorOpen(context);
                 }
 
@@ -43,11 +43,11 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateDoorOpen(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5016, 5017}, arg2: true);
-                context.SetBreakable(arg1: new[] {10001, 10002}, arg2: true);
+                context.SetEffect(triggerIds: new []{5016, 5017}, visible: true);
+                context.SetBreakable(triggerIds: new []{10001, 10002}, enabled: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

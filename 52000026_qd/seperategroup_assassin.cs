@@ -6,12 +6,12 @@ namespace Maple2.Trigger._52000026_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(arg1: 10000, arg2: false);
-                context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6101, 6102, 6103, 6104, 6105}, arg2: false);
+                context.SetSound(triggerId: 10000, arg2: false);
+                context.SetEffect(triggerIds: new []{5000, 5001, 5002, 5003, 5004, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6101, 6102, 6103, 6104, 6105}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10003010}, arg3: new byte[] {1}, arg4: 80)) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{10003010}, questStates: new byte[]{1}, jobCode: 80)) {
                     return new StateSetupCinematic01(context);
                 }
 
@@ -28,10 +28,10 @@ namespace Maple2.Trigger._52000026_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.CameraSelect(arg1: 3000, arg2: true);
+                context.CameraSelect(triggerId: 3000, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateSetupCinematic02(context);
                 }
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State유저이동01(context);
                 }
@@ -68,11 +68,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State유저이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 3001, arg2: true);
-                context.MoveUserPath(arg1: "MS2PatrolData_2000");
+                context.CameraSelect(triggerId: 3001, enable: true);
+                context.MoveUserPath(patrolName: "MS2PatrolData_2000");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6500)) {
                     return new State1차입장01(context);
                 }
@@ -87,13 +87,13 @@ namespace Maple2.Trigger._52000026_qd {
             internal State1차입장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 201}, arg2: true);
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.MoveUserPath(arg1: "MS2PatrolData_2001");
-                context.CameraSelect(arg1: 3002, arg2: true);
+                context.CreateMonster(spawnIds: new []{101, 201}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
+                context.MoveUserPath(patrolName: "MS2PatrolData_2001");
+                context.CameraSelect(triggerId: 3002, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State1차입장02(context);
                 }
@@ -108,13 +108,13 @@ namespace Maple2.Trigger._52000026_qd {
             internal State1차입장02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
-                context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
-                context.CameraSelectPath(pathIds: new[] {3003}, arg2: false);
+                context.SetEffect(triggerIds: new []{5001}, visible: true);
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101");
+                context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_201");
+                context.CameraSelectPath(pathIds: new []{3003}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State1차입장03(context);
                 }
@@ -129,11 +129,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State1차입장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000601, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__0$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 2, spawnId: 11000601, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__0$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State2차입장01(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State2차입장01(context);
                 }
@@ -150,11 +150,11 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.CameraSelect(arg1: 3100, arg2: true);
+                context.SetEffect(triggerIds: new []{5002}, visible: true);
+                context.CameraSelect(triggerId: 3100, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State2차입장02(context);
                 }
@@ -169,15 +169,15 @@ namespace Maple2.Trigger._52000026_qd {
             internal State2차입장02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {301}, arg2: true);
-                context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_301");
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_102");
-                context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_202");
-                context.MoveUserPath(arg1: "MS2PatrolData_2002");
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
+                context.CreateMonster(spawnIds: new []{301}, arg2: true);
+                context.MoveNpc(spawnId: 301, patrolName: "MS2PatrolData_301");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_102");
+                context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_202");
+                context.MoveUserPath(patrolName: "MS2PatrolData_2002");
+                context.SetEffect(triggerIds: new []{5003}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State2차입장03(context);
                 }
@@ -192,11 +192,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State2차입장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {401}, arg2: true);
-                context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_401");
+                context.CreateMonster(spawnIds: new []{401}, arg2: true);
+                context.MoveNpc(spawnId: 401, patrolName: "MS2PatrolData_401");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State2차입장04(context);
                 }
@@ -211,12 +211,12 @@ namespace Maple2.Trigger._52000026_qd {
             internal State2차입장04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6104}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__1$", arg4: 4, arg5: 0);
+                context.SetEffect(triggerIds: new []{6104}, visible: true);
+                context.SetConversation(type: 2, spawnId: 11001244, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__1$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State2차입장05(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State2차입장05(context);
                 }
@@ -233,14 +233,14 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetEffect(arg1: new[] {6101}, arg2: false);
-                context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_302");
-                context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_402");
-                context.MoveUserPath(arg1: "MS2PatrolData_2003");
-                context.CameraSelect(arg1: 3101, arg2: true);
+                context.SetEffect(triggerIds: new []{6101}, visible: false);
+                context.MoveNpc(spawnId: 301, patrolName: "MS2PatrolData_302");
+                context.MoveNpc(spawnId: 401, patrolName: "MS2PatrolData_402");
+                context.MoveUserPath(patrolName: "MS2PatrolData_2003");
+                context.CameraSelect(triggerId: 3101, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State3차입장01(context);
                 }
@@ -255,12 +255,12 @@ namespace Maple2.Trigger._52000026_qd {
             internal State3차입장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.CreateMonster(arg1: new[] {501}, arg2: true);
-                context.MoveNpc(arg1: 501, arg2: "MS2PatrolData_501");
+                context.SetEffect(triggerIds: new []{5002}, visible: true);
+                context.CreateMonster(spawnIds: new []{501}, arg2: true);
+                context.MoveNpc(spawnId: 501, patrolName: "MS2PatrolData_501");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State3차입장02(context);
                 }
@@ -275,12 +275,12 @@ namespace Maple2.Trigger._52000026_qd {
             internal State3차입장02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {601}, arg2: true);
-                context.MoveNpc(arg1: 601, arg2: "MS2PatrolData_601");
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
+                context.CreateMonster(spawnIds: new []{601}, arg2: true);
+                context.MoveNpc(spawnId: 601, patrolName: "MS2PatrolData_601");
+                context.SetEffect(triggerIds: new []{5003}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State3차입장03(context);
                 }
@@ -295,13 +295,13 @@ namespace Maple2.Trigger._52000026_qd {
             internal State3차입장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 3102, arg2: true);
-                context.SetEffect(arg1: new[] {6001}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__2$", arg4: 7, arg5: 0);
+                context.CameraSelect(triggerId: 3102, enable: true);
+                context.SetEffect(triggerIds: new []{6001}, visible: true);
+                context.SetConversation(type: 2, spawnId: 11000031, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__2$", arg4: 7, arg5: 0);
                 context.SetSkip(state: new State4차입장01(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new State4차입장01(context);
                 }
@@ -318,12 +318,12 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetEffect(arg1: new[] {6001}, arg2: false);
-                context.CameraSelect(arg1: 3200, arg2: true);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
+                context.SetEffect(triggerIds: new []{6001}, visible: false);
+                context.CameraSelect(triggerId: 3200, enable: true);
+                context.SetEffect(triggerIds: new []{5002}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State4차입장02(context);
                 }
@@ -338,13 +338,13 @@ namespace Maple2.Trigger._52000026_qd {
             internal State4차입장02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 3210, arg2: true);
-                context.CreateMonster(arg1: new[] {701}, arg2: true);
-                context.MoveNpc(arg1: 701, arg2: "MS2PatrolData_701");
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
+                context.CameraSelect(triggerId: 3210, enable: true);
+                context.CreateMonster(spawnIds: new []{701}, arg2: true);
+                context.MoveNpc(spawnId: 701, patrolName: "MS2PatrolData_701");
+                context.SetEffect(triggerIds: new []{5003}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State4차입장03(context);
                 }
@@ -359,11 +359,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State4차입장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001581, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__3$", arg4: 4, arg5: 0);
+                context.SetConversation(type: 2, spawnId: 11001581, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__3$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State4차입장04(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State4차입장04(context);
                 }
@@ -380,12 +380,12 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CameraSelect(arg1: 3201, arg2: true);
-                context.CreateMonster(arg1: new[] {801}, arg2: true);
-                context.MoveNpc(arg1: 801, arg2: "MS2PatrolData_801");
+                context.CameraSelect(triggerId: 3201, enable: true);
+                context.CreateMonster(spawnIds: new []{801}, arg2: true);
+                context.MoveNpc(spawnId: 801, patrolName: "MS2PatrolData_801");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State4차입장05(context);
                 }
@@ -400,11 +400,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State4차입장05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000076, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__4$", arg4: 4, arg5: 0);
+                context.SetConversation(type: 2, spawnId: 11000076, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__4$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State4차입장06(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State4차입장06(context);
                 }
@@ -423,7 +423,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State5차입장01(context);
                 }
@@ -438,10 +438,10 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5004}, arg2: true);
+                context.SetEffect(triggerIds: new []{5004}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State5차입장02(context);
                 }
@@ -456,13 +456,13 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 701, arg2: "MS2PatrolData_702");
-                context.CameraSelect(arg1: 3300, arg2: true);
-                context.CreateMonster(arg1: new[] {901}, arg2: true);
-                context.MoveNpc(arg1: 901, arg2: "MS2PatrolData_901");
+                context.MoveNpc(spawnId: 701, patrolName: "MS2PatrolData_702");
+                context.CameraSelect(triggerId: 3300, enable: true);
+                context.CreateMonster(spawnIds: new []{901}, arg2: true);
+                context.MoveNpc(spawnId: 901, patrolName: "MS2PatrolData_901");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State5차입장03(context);
                 }
@@ -477,11 +477,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001583, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__5$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 2, spawnId: 11001583, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__5$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State5차입장04(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State5차입장04(context);
                 }
@@ -498,12 +498,12 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CameraSelect(arg1: 3301, arg2: true);
-                context.CreateMonster(arg1: new[] {1001}, arg2: true);
-                context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1001");
+                context.CameraSelect(triggerId: 3301, enable: true);
+                context.CreateMonster(spawnIds: new []{1001}, arg2: true);
+                context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_1001");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State5차입장05(context);
                 }
@@ -518,11 +518,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__6$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 2, spawnId: 11001584, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__6$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State5차입장06(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State5차입장06(context);
                 }
@@ -541,7 +541,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State2차입장07(context);
                 }
@@ -556,11 +556,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State2차입장07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__7$", arg4: 4, arg5: 0);
+                context.SetConversation(type: 2, spawnId: 11001584, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__7$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State5차입장08(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State5차입장08(context);
                 }
@@ -577,12 +577,12 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CameraSelect(arg1: 3302, arg2: true);
-                context.CreateMonster(arg1: new[] {1101}, arg2: true);
-                context.MoveNpc(arg1: 1101, arg2: "MS2PatrolData_1101");
+                context.CameraSelect(triggerId: 3302, enable: true);
+                context.CreateMonster(spawnIds: new []{1101}, arg2: true);
+                context.MoveNpc(spawnId: 1101, patrolName: "MS2PatrolData_1101");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State5차입장09(context);
                 }
@@ -597,11 +597,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000015, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__8$", arg4: 4, arg5: 0);
+                context.SetConversation(type: 2, spawnId: 11000015, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__8$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State5차입장10(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State5차입장10(context);
                 }
@@ -618,12 +618,12 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.CameraSelect(arg1: 3303, arg2: true);
-                context.CreateMonster(arg1: new[] {1201}, arg2: true);
+                context.SetEffect(triggerIds: new []{5002}, visible: true);
+                context.CameraSelect(triggerId: 3303, enable: true);
+                context.CreateMonster(spawnIds: new []{1201}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State5차입장11(context);
                 }
@@ -638,11 +638,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
-                context.MoveNpc(arg1: 1201, arg2: "MS2PatrolData_1201");
+                context.SetEffect(triggerIds: new []{5003}, visible: true);
+                context.MoveNpc(spawnId: 1201, patrolName: "MS2PatrolData_1201");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new State5차입장12(context);
                 }
@@ -657,11 +657,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001586, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__9$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 2, spawnId: 11001586, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__9$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State5차입장13(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State5차입장13(context);
                 }
@@ -678,11 +678,11 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CameraSelect(arg1: 3304, arg2: true);
-                context.MoveNpc(arg1: 801, arg2: "MS2PatrolData_802");
+                context.CameraSelect(triggerId: 3304, enable: true);
+                context.MoveNpc(spawnId: 801, patrolName: "MS2PatrolData_802");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State5차입장14(context);
                 }
@@ -697,11 +697,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000076, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__10$", arg4: 3, arg5: 0);
+                context.SetConversation(type: 2, spawnId: 11000076, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__10$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new State입장완료01(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State입장완료01(context);
                 }
@@ -718,11 +718,11 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetSound(arg1: 10000, arg2: true);
-                context.CameraSelectPath(pathIds: new[] {3400, 3401, 3402, 3403}, arg2: false);
+                context.SetSound(triggerId: 10000, arg2: true);
+                context.CameraSelectPath(pathIds: new []{3400, 3401, 3402, 3403}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State정렬01(context);
                 }
@@ -737,12 +737,12 @@ namespace Maple2.Trigger._52000026_qd {
             internal State정렬01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6002}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__11$", arg4: 5, arg5: 0);
+                context.SetEffect(triggerIds: new []{6002}, visible: true);
+                context.SetConversation(type: 2, spawnId: 11000031, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__11$", arg4: 5, arg5: 0);
                 context.SetSkip(state: new State정렬02(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State정렬02(context);
                 }
@@ -759,11 +759,11 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.MoveNpc(arg1: 501, arg2: "MS2PatrolData_502");
-                context.MoveNpc(arg1: 601, arg2: "MS2PatrolData_602");
+                context.MoveNpc(spawnId: 501, patrolName: "MS2PatrolData_502");
+                context.MoveNpc(spawnId: 601, patrolName: "MS2PatrolData_602");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State정렬03(context);
                 }
@@ -778,12 +778,12 @@ namespace Maple2.Trigger._52000026_qd {
             internal State정렬03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1002");
-                context.MoveNpc(arg1: 1201, arg2: "MS2PatrolData_1202");
-                context.MoveNpc(arg1: 901, arg2: "MS2PatrolData_902");
+                context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_1002");
+                context.MoveNpc(spawnId: 1201, patrolName: "MS2PatrolData_1202");
+                context.MoveNpc(spawnId: 901, patrolName: "MS2PatrolData_902");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State정렬04(context);
                 }
@@ -798,12 +798,12 @@ namespace Maple2.Trigger._52000026_qd {
             internal State정렬04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUserPath(arg1: "MS2PatrolData_2004");
-                context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_303");
-                context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_403");
+                context.MoveUserPath(patrolName: "MS2PatrolData_2004");
+                context.MoveNpc(spawnId: 301, patrolName: "MS2PatrolData_303");
+                context.MoveNpc(spawnId: 401, patrolName: "MS2PatrolData_403");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State정렬05(context);
                 }
@@ -818,12 +818,12 @@ namespace Maple2.Trigger._52000026_qd {
             internal State정렬05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_103");
-                context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_203");
-                context.MoveNpc(arg1: 1101, arg2: "MS2PatrolData_1102");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_103");
+                context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_203");
+                context.MoveNpc(spawnId: 1101, patrolName: "MS2PatrolData_1102");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State정렬06(context);
                 }
@@ -838,12 +838,12 @@ namespace Maple2.Trigger._52000026_qd {
             internal State정렬06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6002}, arg2: false);
-                context.MoveNpc(arg1: 701, arg2: "MS2PatrolData_703");
-                context.MoveNpc(arg1: 801, arg2: "MS2PatrolData_803");
+                context.SetEffect(triggerIds: new []{6002}, visible: false);
+                context.MoveNpc(spawnId: 701, patrolName: "MS2PatrolData_703");
+                context.MoveNpc(spawnId: 801, patrolName: "MS2PatrolData_803");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new State본론01(context);
                 }
@@ -858,12 +858,12 @@ namespace Maple2.Trigger._52000026_qd {
             internal State본론01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6003}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__12$", arg4: 10, arg5: 0);
+                context.SetEffect(triggerIds: new []{6003}, visible: true);
+                context.SetConversation(type: 2, spawnId: 11000031, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__12$", arg4: 10, arg5: 0);
                 context.SetSkip(state: new State본론02(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new State본론02(context);
                 }
@@ -882,7 +882,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State본론03(context);
                 }
@@ -897,13 +897,13 @@ namespace Maple2.Trigger._52000026_qd {
             internal State본론03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6003}, arg2: false);
-                context.SetEffect(arg1: new[] {6004}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__13$", arg4: 6, arg5: 0);
+                context.SetEffect(triggerIds: new []{6003}, visible: false);
+                context.SetEffect(triggerIds: new []{6004}, visible: true);
+                context.SetConversation(type: 2, spawnId: 11000031, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__13$", arg4: 6, arg5: 0);
                 context.SetSkip(state: new State본론04(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new State본론04(context);
                 }
@@ -920,11 +920,11 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetEffect(arg1: new[] {6004}, arg2: false);
-                context.CameraSelect(arg1: 3500, arg2: true);
+                context.SetEffect(triggerIds: new []{6004}, visible: false);
+                context.CameraSelect(triggerId: 3500, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State본론05(context);
                 }
@@ -939,10 +939,10 @@ namespace Maple2.Trigger._52000026_qd {
             internal State본론05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_304");
+                context.MoveNpc(spawnId: 301, patrolName: "MS2PatrolData_304");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State본론06(context);
                 }
@@ -957,11 +957,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State본론06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUserPath(arg1: "MS2PatrolData_2005");
-                context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_404");
+                context.MoveUserPath(patrolName: "MS2PatrolData_2005");
+                context.MoveNpc(spawnId: 401, patrolName: "MS2PatrolData_404");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new State본론07(context);
                 }
@@ -976,12 +976,12 @@ namespace Maple2.Trigger._52000026_qd {
             internal State본론07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6102}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__14$", arg4: 5, arg5: 0);
+                context.SetEffect(triggerIds: new []{6102}, visible: true);
+                context.SetConversation(type: 2, spawnId: 11001244, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__14$", arg4: 5, arg5: 0);
                 context.SetSkip(state: new State영상01(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State영상01(context);
                 }
@@ -1001,10 +1001,10 @@ namespace Maple2.Trigger._52000026_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.SetEffect(arg1: new[] {6102}, arg2: false);
+                context.SetEffect(triggerIds: new []{6102}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State영상02(context);
                 }
@@ -1024,8 +1024,8 @@ namespace Maple2.Trigger._52000026_qd {
                 context.PlaySceneMovie(fileName: "Royal_IshuraRemember.swf", movieId: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
+            public override TriggerState? Execute() {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, condition: "IsStop", value: "1")) {
                     return new State영상03(context);
                 }
 
@@ -1043,7 +1043,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State영상04(context);
                 }
@@ -1062,7 +1062,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State정리01(context);
                 }
@@ -1077,13 +1077,13 @@ namespace Maple2.Trigger._52000026_qd {
             internal State정리01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 3600, arg2: true);
-                context.SetEffect(arg1: new[] {6105}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001244, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__15$", arg4: 6, arg5: 0);
+                context.CameraSelect(triggerId: 3600, enable: true);
+                context.SetEffect(triggerIds: new []{6105}, visible: true);
+                context.SetConversation(type: 2, spawnId: 11001244, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__15$", arg4: 6, arg5: 0);
                 context.SetSkip(state: new State정리02(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new State정리02(context);
                 }
@@ -1100,10 +1100,10 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetEffect(arg1: new[] {6103}, arg2: false);
+                context.SetEffect(triggerIds: new []{6103}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State반대01(context);
                 }
@@ -1118,11 +1118,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State반대01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000076, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__16$", arg4: 4, arg5: 0);
+                context.SetConversation(type: 2, spawnId: 11000076, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__16$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State반대02(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State반대02(context);
                 }
@@ -1139,10 +1139,10 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CameraSelect(arg1: 3601, arg2: true);
+                context.CameraSelect(triggerId: 3601, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State반대03(context);
                 }
@@ -1157,11 +1157,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State반대03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001586, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__17$", arg4: 4, arg5: 0);
+                context.SetConversation(type: 2, spawnId: 11001586, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__17$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State반대04(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State반대04(context);
                 }
@@ -1178,10 +1178,10 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.MoveNpc(arg1: 1201, arg2: "MS2PatrolData_1203");
+                context.MoveNpc(spawnId: 1201, patrolName: "MS2PatrolData_1203");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State반대05(context);
                 }
@@ -1196,10 +1196,10 @@ namespace Maple2.Trigger._52000026_qd {
             internal State반대05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 3602, arg2: true);
+                context.CameraSelect(triggerId: 3602, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State반대06(context);
                 }
@@ -1214,11 +1214,11 @@ namespace Maple2.Trigger._52000026_qd {
             internal State반대06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__18$", arg4: 4, arg5: 0);
+                context.SetConversation(type: 2, spawnId: 11001584, script: "$52000026_QD__SEPERATEGROUP_ASSASSIN__18$", arg4: 4, arg5: 0);
                 context.SetSkip(state: new State반대07(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State반대07(context);
                 }
@@ -1235,11 +1235,11 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1003");
-                context.CameraSelect(arg1: 3603, arg2: true);
+                context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_1003");
+                context.CameraSelect(triggerId: 3603, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State반대09(context);
                 }
@@ -1254,10 +1254,10 @@ namespace Maple2.Trigger._52000026_qd {
             internal State반대09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 1101, arg2: "MS2PatrolData_1103");
+                context.MoveNpc(spawnId: 1101, patrolName: "MS2PatrolData_1103");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State반대10(context);
                 }
@@ -1272,10 +1272,10 @@ namespace Maple2.Trigger._52000026_qd {
             internal State반대10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 901, arg2: "MS2PatrolData_903");
+                context.MoveNpc(spawnId: 901, patrolName: "MS2PatrolData_903");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateStopCinematic01(context);
                 }
@@ -1290,12 +1290,12 @@ namespace Maple2.Trigger._52000026_qd {
             internal StateStopCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 3801, arg2: true);
+                context.CameraSelect(triggerId: 3801, enable: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateStopCinematic02(context);
                 }
@@ -1312,11 +1312,11 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.DestroyMonster(arg1: new[] {1201, 1001, 1101, 901});
-                context.CameraSelect(arg1: 3801, arg2: false);
+                context.DestroyMonster(spawnIds: new []{1201, 1001, 1101, 901});
+                context.CameraSelect(triggerId: 3801, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateAchievement(context);
                 }
@@ -1331,10 +1331,10 @@ namespace Maple2.Trigger._52000026_qd {
             internal StateAchievement(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "SeperateGroup");
+                context.SetAchievement(triggerId: 9001, type: "trigger", code: "SeperateGroup");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State강제Exit(context);
                 }
@@ -1349,15 +1349,15 @@ namespace Maple2.Trigger._52000026_qd {
             internal State강제Exit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 02000001, arg2: 17, arg3: 9001);
+                context.MoveUser(mapId: 02000001, portalId: 17, boxId: 9001);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
             public override void OnExit() {
-                context.SetSound(arg1: 10000, arg2: false);
+                context.SetSound(triggerId: 10000, arg2: false);
             }
         }
     }

@@ -6,12 +6,12 @@ namespace Maple2.Trigger._99999908 {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAmbientLight(arg1: new Vector3(1f, 1f, 1f));
-                context.SetDirectionalLight(arg1: new Vector3(1f, 1f, 1f), arg2: new Vector3(0f, 0f, 0f));
-                context.SetTimer(id: "240", arg2: 240, arg3: true, arg4: true);
+                context.SetAmbientLight(color: new Vector3(1f, 1f, 1f));
+                context.SetDirectionalLight(diffuseColor: new Vector3(1f, 1f, 1f), specularColor: default);
+                context.SetTimer(timerId: "240", seconds: 240, clearAtZero: true, display: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._99999908 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5500)) {
                     return new StateStart(context);
                 }

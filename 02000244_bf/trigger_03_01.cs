@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02000244_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {705, 706}, arg2: false);
+                context.SetMesh(triggerIds: new []{705, 706}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

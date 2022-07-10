@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetUserValue(triggerId: 2040301, key: "TimerEnd", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 1) {
                     return new StateStart(context);
                 }
@@ -22,12 +22,12 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "Timer", arg2: 420, arg3: true, arg4: true, arg5: 0);
-                context.SetEventUI(arg1: 1, script: "$02000471_BF__TIMER__0$", arg3: 5000, arg4: "0");
+                context.SetTimer(timerId: "Timer", seconds: 420, clearAtZero: true, display: true, arg5: 0);
+                context.SetEventUI(arg1: 1, script: "$02000471_BF__TIMER__0$", duration: 5000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "Timer")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "Timer")) {
                     return new StateEnd_fail(context);
                 }
 
@@ -46,10 +46,10 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 2040301, key: "TimerEnd", value: 1);
-                context.ResetTimer(id: "Timer");
+                context.ResetTimer(timerId: "Timer");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -61,10 +61,10 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 2040301, key: "InteractClear", value: 1);
-                context.ResetTimer(id: "Timer");
+                context.ResetTimer(timerId: "Timer");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

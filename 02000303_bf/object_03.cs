@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000303_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000596, 10000597, 10000598, 10000599, 10000600}, arg2: 0);
-                context.SetEffect(arg1: new[] {60596, 60597, 60598, 60599, 60600}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10000596, 10000597, 10000598, 10000599, 10000600}, state: 0);
+                context.SetEffect(triggerIds: new []{60596, 60597, 60598, 60599, 60600}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateCreationRandom(context);
                 }
 
@@ -24,24 +24,24 @@ namespace Maple2.Trigger._02000303_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 20f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 20f)) {
                     return new StateCreation01(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new StateCreation02(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new StateCreation03(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new StateCreation04(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new StateCreation05(context);
                 }
 
@@ -55,13 +55,13 @@ namespace Maple2.Trigger._02000303_bf {
             internal StateCreation01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {60596}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000596}, arg2: 1);
+                context.SetEffect(triggerIds: new []{60596}, visible: true);
+                context.SetInteractObject(interactIds: new []{10000596}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000596}, arg2: 0)) {
-                    context.SetEffect(arg1: new[] {60596}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000596}, arg2: 0)) {
+                    context.SetEffect(triggerIds: new []{60596}, visible: false);
                     return new StateEnd(context);
                 }
 
@@ -75,13 +75,13 @@ namespace Maple2.Trigger._02000303_bf {
             internal StateCreation02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {60597}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000597}, arg2: 1);
+                context.SetEffect(triggerIds: new []{60597}, visible: true);
+                context.SetInteractObject(interactIds: new []{10000597}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000597}, arg2: 0)) {
-                    context.SetEffect(arg1: new[] {60597}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000597}, arg2: 0)) {
+                    context.SetEffect(triggerIds: new []{60597}, visible: false);
                     return new StateEnd(context);
                 }
 
@@ -95,13 +95,13 @@ namespace Maple2.Trigger._02000303_bf {
             internal StateCreation03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {60598}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000598}, arg2: 1);
+                context.SetEffect(triggerIds: new []{60598}, visible: true);
+                context.SetInteractObject(interactIds: new []{10000598}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000598}, arg2: 0)) {
-                    context.SetEffect(arg1: new[] {60598}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000598}, arg2: 0)) {
+                    context.SetEffect(triggerIds: new []{60598}, visible: false);
                     return new StateEnd(context);
                 }
 
@@ -115,13 +115,13 @@ namespace Maple2.Trigger._02000303_bf {
             internal StateCreation04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {60599}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000599}, arg2: 1);
+                context.SetEffect(triggerIds: new []{60599}, visible: true);
+                context.SetInteractObject(interactIds: new []{10000599}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000599}, arg2: 0)) {
-                    context.SetEffect(arg1: new[] {60599}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000599}, arg2: 0)) {
+                    context.SetEffect(triggerIds: new []{60599}, visible: false);
                     return new StateEnd(context);
                 }
 
@@ -135,13 +135,13 @@ namespace Maple2.Trigger._02000303_bf {
             internal StateCreation05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {60600}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000600}, arg2: 1);
+                context.SetEffect(triggerIds: new []{60600}, visible: true);
+                context.SetInteractObject(interactIds: new []{10000600}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000600}, arg2: 0)) {
-                    context.SetEffect(arg1: new[] {60600}, arg2: false);
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000600}, arg2: 0)) {
+                    context.SetEffect(triggerIds: new []{60600}, visible: false);
                     return new StateEnd(context);
                 }
 
@@ -155,11 +155,11 @@ namespace Maple2.Trigger._02000303_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "120", arg2: 120);
+                context.SetTimer(timerId: "120", seconds: 120);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "120")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "120")) {
                     return new StateCreationRandom(context);
                 }
 

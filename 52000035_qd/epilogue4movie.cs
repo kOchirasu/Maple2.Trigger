@@ -5,12 +5,12 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {6000}, arg2: new[] {50001677}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{6000}, questIds: new []{50001677}, questStates: new byte[]{2})) {
                     return new StateReturnMapReadyEP6(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {6000}, arg2: new[] {50001677}, arg3: new byte[] {2})) {
+                if (!context.QuestUserDetected(boxIds: new []{6000}, questIds: new []{50001677}, questStates: new byte[]{2})) {
                     return new State한라봉에이드검사2(context);
                 }
 
@@ -25,12 +25,12 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{5000}, questIds: new []{50001625}, questStates: new byte[]{2})) {
                     return new StateReturnMapReadyEP5(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625}, arg3: new byte[] {2})) {
+                if (!context.QuestUserDetected(boxIds: new []{5000}, questIds: new []{50001625}, questStates: new byte[]{2})) {
                     return new State한라봉에이드검사3(context);
                 }
 
@@ -45,12 +45,12 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {4000}, arg2: new[] {50001613}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{4000}, questIds: new []{50001613}, questStates: new byte[]{2})) {
                     return new StateReturnMapReadyEP4(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {4000}, arg2: new[] {50001613}, arg3: new byte[] {2})) {
+                if (!context.QuestUserDetected(boxIds: new []{4000}, questIds: new []{50001613}, questStates: new byte[]{2})) {
                     return new StateStartCheckEP6(context);
                 }
 
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
                     return new StateReturnMapReadyEP6_1(context);
                 }
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetCinematicUI(type: 9, script: "$52000035_QD__EPILOGUE4MOVIE__0$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateReturnMapReadyEP6_2(context);
                 }
@@ -100,10 +100,10 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateReturnMapReadyEP6_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 02000154, arg2: 1);
+                context.MoveUser(mapId: 02000154, portalId: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
                     return new StateReturnMapReadyEP5_1(context);
                 }
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetCinematicUI(type: 9, script: "$52000035_QD__EPILOGUE4MOVIE__1$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateReturnMapReadyEP5_2(context);
                 }
@@ -150,10 +150,10 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateReturnMapReadyEP5_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 02000065, arg2: 1);
+                context.MoveUser(mapId: 02000065, portalId: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
                     return new StateReturnMapReadyEP4_1(context);
                 }
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetCinematicUI(type: 9, script: "$52000035_QD__EPILOGUE4MOVIE__2$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateReturnMapReadyEP4_2(context);
                 }
@@ -200,10 +200,10 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateReturnMapReadyEP4_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 02000001, arg2: 1);
+                context.MoveUser(mapId: 02000001, portalId: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -215,12 +215,12 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {6000}, arg2: new[] {50001677}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{6000}, questIds: new []{50001677}, questStates: new byte[]{3})) {
                     return new State3번으로보내는스테이트(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {6000}, arg2: new[] {50001677}, arg3: new byte[] {3})) {
+                if (!context.QuestUserDetected(boxIds: new []{6000}, questIds: new []{50001677}, questStates: new byte[]{3})) {
                     return new StateStartCheckEP5(context);
                 }
 
@@ -235,12 +235,12 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{5000}, questIds: new []{50001625}, questStates: new byte[]{3})) {
                     return new State2번으로보내는스테이트(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625}, arg3: new byte[] {3})) {
+                if (!context.QuestUserDetected(boxIds: new []{5000}, questIds: new []{50001625}, questStates: new byte[]{3})) {
                     return new StateStartCheckEP4(context);
                 }
 
@@ -255,8 +255,8 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {4000}, arg2: new[] {50001613}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{4000}, questIds: new []{50001613}, questStates: new byte[]{3})) {
                     return new StateLoadingDelayA0(context);
                 }
 
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetUserValue(triggerId: 2, key: "50001625", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -287,7 +287,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetUserValue(triggerId: 3, key: "50001677", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -303,10 +303,10 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CreateMonster(arg1: new[] {900, 102, 200, 300}, arg2: false);
+                context.CreateMonster(spawnIds: new []{900, 102, 200, 300}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateLoadingDelayA1(context);
                 }
@@ -321,13 +321,13 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateLoadingDelayA1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_EP4_DarkLord");
-                context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_EP4_Turka");
-                context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_EP4_Madria");
-                context.MoveNpc(arg1: 400, arg2: "MS2PatrolData_EP4_bella");
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_EP4_DarkLord");
+                context.MoveNpc(spawnId: 200, patrolName: "MS2PatrolData_EP4_Turka");
+                context.MoveNpc(spawnId: 300, patrolName: "MS2PatrolData_EP4_Madria");
+                context.MoveNpc(spawnId: 400, patrolName: "MS2PatrolData_EP4_bella");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCameraEffectA0(context);
                 }
@@ -345,12 +345,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_EP4_DarkLord");
-                context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_EP4_Turka");
-                context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_EP4_Madria");
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_EP4_DarkLord");
+                context.MoveNpc(spawnId: 200, patrolName: "MS2PatrolData_EP4_Turka");
+                context.MoveNpc(spawnId: 300, patrolName: "MS2PatrolData_EP4_Madria");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateCameraEffectA1(context);
                 }
@@ -366,10 +366,10 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 9, script: "$52000035_QD__EPILOGUE4MOVIE__3$", arg3: false);
-                context.CameraSelectPath(pathIds: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCameraEffectA2(context);
                 }
@@ -389,7 +389,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
                     return new StateCameraEffect1100(context);
                 }
@@ -407,7 +407,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateCameraEffect1101(context);
                 }
@@ -424,10 +424,10 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 02100276, enable: true, path: @"BG/Common/Sound/Eff_System_Chapter4_ZoomIn_01.xml");
-                context.CameraSelectPath(pathIds: new[] {1100, 1101, 1104}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{1100, 1101, 1104}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateCameraEffect_1103(context);
                 }
@@ -445,7 +445,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateCameraEffect_1104(context);
                 }
@@ -462,11 +462,11 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
                 context.SetOnetimeEffect(id: 02100277, enable: true, path: @"BG/Common/Sound/Eff_System_Chapter4_DarkWizard_Appear_01.xml");
-                context.CameraSelectPath(pathIds: new[] {1103, 1102, 1105}, arg2: false);
-                context.SetNpcEmotionSequence(arg1: 900, arg2: "Bore_A");
+                context.CameraSelectPath(pathIds: new []{1103, 1102, 1105}, returnView: false);
+                context.SetNpcEmotionSequence(spawnId: 900, sequenceName: "Bore_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateCameraEffect_1105(context);
                 }
@@ -484,7 +484,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetTimeScale(enable: true, startScale: 1f, endScale: 0.1f, duration: 2.5f, interpolator: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateCameraEffect_1106(context);
                 }
@@ -502,7 +502,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateCameraEffectA3(context);
                 }
@@ -518,12 +518,12 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
-                context.CameraSelectPath(pathIds: new[] {1200, 1201}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__4$", arg4: 7);
+                context.CameraSelectPath(pathIds: new []{1200, 1201}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__4$", arg4: 7);
                 context.SetSkip(state: new StateEpilogue4Talk1(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateEpilogue4Talk1(context);
                 }
@@ -542,7 +542,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk2(context);
             }
 
@@ -553,12 +553,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1300}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__5$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1300}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__5$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk3(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk3(context);
                 }
@@ -577,7 +577,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk4(context);
             }
 
@@ -588,11 +588,11 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__6$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__6$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk5(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk5(context);
                 }
@@ -611,7 +611,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk6(context);
             }
 
@@ -623,11 +623,11 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1915, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001915.xml");
-                context.SetConversation(arg1: 2, arg2: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__7$", arg4: 6);
+                context.SetConversation(type: 2, spawnId: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__7$", arg4: 6);
                 context.SetSkip(state: new StateEpilogue4Talk7(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateEpilogue4Talk7(context);
                 }
@@ -646,7 +646,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk8(context);
             }
 
@@ -657,13 +657,13 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {2100, 2101}, arg2: false);
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_EP4_DarkToTurka");
-                context.SetConversation(arg1: 2, arg2: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__8$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{2100, 2101}, returnView: false);
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_EP4_DarkToTurka");
+                context.SetConversation(type: 2, spawnId: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__8$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk9(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk9(context);
                 }
@@ -682,7 +682,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk10(context);
             }
 
@@ -693,11 +693,11 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__9$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__9$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk11(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk11(context);
                 }
@@ -716,7 +716,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk12(context);
             }
 
@@ -727,11 +727,11 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__10$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__10$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk12B(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk12B(context);
                 }
@@ -750,7 +750,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk12C(context);
             }
 
@@ -761,14 +761,14 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk12C(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_TurkaToDark");
-                context.CameraSelectPath(pathIds: new[] {2102, 2103}, arg2: false);
+                context.MoveNpc(spawnId: 200, patrolName: "MS2PatrolData_TurkaToDark");
+                context.CameraSelectPath(pathIds: new []{2102, 2103}, returnView: false);
                 context.SetOnetimeEffect(id: 1916, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001916.xml");
-                context.SetConversation(arg1: 2, arg2: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__11$", arg4: 13);
+                context.SetConversation(type: 2, spawnId: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__11$", arg4: 13);
                 context.SetSkip(state: new StateEpilogue4Talk13(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 13000)) {
                     return new StateEpilogue4Talk13(context);
                 }
@@ -787,7 +787,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateDM_AttScene01(context);
                 }
@@ -802,12 +802,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateDM_AttScene01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {2000, 2001}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{2000, 2001}, returnView: false);
                 context.SetOnetimeEffect(id: 02100278, enable: true, path: @"BG/Common/Sound/Eff_System_Chapter4_DarkWizard_Attack_01.xml");
-                context.SetNpcEmotionSequence(arg1: 900, arg2: "Attack_01_A");
+                context.SetNpcEmotionSequence(spawnId: 900, sequenceName: "Attack_01_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateDM_AttScene02(context);
                 }
@@ -824,11 +824,11 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.SetTimeScale(enable: true, startScale: 1f, endScale: 0.1f, duration: 2.5f, interpolator: 2);
                 context.SetOnetimeEffect(id: 1917, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001917.xml");
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_darkReturn");
-                context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_TurkaReturn");
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_darkReturn");
+                context.MoveNpc(spawnId: 200, patrolName: "MS2PatrolData_TurkaReturn");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateDM_AttScene03(context);
                 }
@@ -843,11 +843,11 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateDM_AttScene03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 102, arg2: "Damg_A");
-                context.SetNpcEmotionSequence(arg1: 200, arg2: "Damg_A");
+                context.SetNpcEmotionSequence(spawnId: 102, sequenceName: "Damg_A");
+                context.SetNpcEmotionSequence(spawnId: 200, sequenceName: "Damg_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateDM_AttScene04(context);
                 }
@@ -862,11 +862,11 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateDM_AttScene04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {2002, 2003}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{2002, 2003}, returnView: false);
                 context.SetTimeScale(enable: true, startScale: 1f, endScale: 0.1f, duration: 2.5f, interpolator: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateEpilogue4Talk14(context);
                 }
@@ -881,12 +881,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1501}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__12$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1501}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__12$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk15(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk15(context);
                 }
@@ -905,7 +905,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk16(context);
             }
 
@@ -916,12 +916,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1200}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__38$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1200}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__38$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk17(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEpilogue4Talk17(context);
                 }
@@ -940,7 +940,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk18(context);
             }
 
@@ -951,12 +951,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1300}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__13$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1300}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__13$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk19(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEpilogue4Talk19(context);
                 }
@@ -975,7 +975,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk20(context);
             }
 
@@ -986,12 +986,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1500}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__14$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1500}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__14$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk21(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk21(context);
                 }
@@ -1010,7 +1010,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk22(context);
             }
 
@@ -1021,12 +1021,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {3000, 3001}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__15$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{3000, 3001}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__15$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk23(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk23(context);
                 }
@@ -1045,7 +1045,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk24(context);
             }
 
@@ -1056,11 +1056,11 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk24(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__16$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__16$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk25(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk25(context);
                 }
@@ -1079,7 +1079,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk26(context);
             }
 
@@ -1090,11 +1090,11 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk26(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__17$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__17$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk27(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk27(context);
                 }
@@ -1113,7 +1113,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk27A(context);
             }
 
@@ -1124,12 +1124,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk27A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1203}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__39$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1203}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__39$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk27B(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk27B(context);
                 }
@@ -1148,7 +1148,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk28(context);
             }
 
@@ -1159,12 +1159,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk28(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1502, 1504}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__18$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1502, 1504}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__18$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk29(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk29(context);
                 }
@@ -1183,7 +1183,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk30(context);
             }
 
@@ -1194,13 +1194,13 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1400, 1406}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__19$", arg4: 8);
+                context.CameraSelectPath(pathIds: new []{1400, 1406}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__19$", arg4: 8);
                 context.SetOnetimeEffect(id: 1978, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_01_00001978.xml");
                 context.SetSkip(state: new StateEpilogue4Talk31(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new StateEpilogue4Talk31(context);
                 }
@@ -1219,7 +1219,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk32(context);
             }
 
@@ -1230,13 +1230,13 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk32(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1401}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__20$", arg4: 6);
+                context.CameraSelectPath(pathIds: new []{1401}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__20$", arg4: 6);
                 context.SetOnetimeEffect(id: 1979, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_02_00001979.xml");
                 context.SetSkip(state: new StateEpilogue4Talk33(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateEpilogue4Talk33(context);
                 }
@@ -1255,7 +1255,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk34(context);
             }
 
@@ -1266,12 +1266,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk34(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1505, 1506}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__21$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1505, 1506}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__21$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk35(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk35(context);
                 }
@@ -1290,7 +1290,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk36(context);
             }
 
@@ -1302,13 +1302,13 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 02100279, enable: true, path: @"BG/Common/Sound/Eff_System_Chapter4_ZoomOut_01.xml");
-                context.CameraSelectPath(pathIds: new[] {1403}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__22$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1403}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__22$", arg4: 5);
                 context.SetOnetimeEffect(id: 1980, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_03_00001980.xml");
                 context.SetSkip(state: new StateEpilogue4Talk37(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk37(context);
                 }
@@ -1327,7 +1327,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk38(context);
             }
 
@@ -1338,12 +1338,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk38(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1500, 1503}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__23$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1500, 1503}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__23$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk39(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk39(context);
                 }
@@ -1362,7 +1362,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk40(context);
             }
 
@@ -1373,13 +1373,13 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk40(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1407}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__24$", arg4: 7);
+                context.CameraSelectPath(pathIds: new []{1407}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__24$", arg4: 7);
                 context.SetOnetimeEffect(id: 1981, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_04_00001981.xml");
                 context.SetSkip(state: new StateEpilogue4Talk41(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateEpilogue4Talk41(context);
                 }
@@ -1398,7 +1398,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk42(context);
             }
 
@@ -1409,12 +1409,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk42(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1401}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__25$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1401}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__25$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk43(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk43(context);
                 }
@@ -1433,7 +1433,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk44(context);
             }
 
@@ -1444,12 +1444,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk44(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1402}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__26$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1402}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001955, script: "$52000035_QD__EPILOGUE4MOVIE__26$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk45(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk45(context);
                 }
@@ -1468,7 +1468,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk46(context);
             }
 
@@ -1479,13 +1479,13 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk46(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1404}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__27$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1404}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__27$", arg4: 5);
                 context.SetOnetimeEffect(id: 1982, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_05_00001982.xml");
                 context.SetSkip(state: new StateEpilogue4Talk47(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk47(context);
                 }
@@ -1504,7 +1504,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk48(context);
             }
 
@@ -1515,12 +1515,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk48(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1200, 1201}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__28$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1200, 1201}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__28$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk49(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk49(context);
                 }
@@ -1539,7 +1539,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk50(context);
             }
 
@@ -1550,11 +1550,11 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk50(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__29$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__29$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk51(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk51(context);
                 }
@@ -1573,7 +1573,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk52(context);
             }
 
@@ -1584,14 +1584,14 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk52(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_MadToDark");
-                context.CameraSelectPath(pathIds: new[] {1405}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__30$", arg4: 5);
+                context.MoveNpc(spawnId: 300, patrolName: "MS2PatrolData_MadToDark");
+                context.CameraSelectPath(pathIds: new []{1405}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001851, script: "$52000035_QD__EPILOGUE4MOVIE__30$", arg4: 5);
                 context.SetOnetimeEffect(id: 1983, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_06_00001983.xml");
                 context.SetSkip(state: new StateEpilogue4Talk53(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk53(context);
                 }
@@ -1610,7 +1610,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk54(context);
             }
 
@@ -1621,13 +1621,13 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk54(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1202}, arg2: false);
-                context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_madriaReturn");
-                context.SetConversation(arg1: 2, arg2: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__31$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1202}, returnView: false);
+                context.MoveNpc(spawnId: 300, patrolName: "MS2PatrolData_madriaReturn");
+                context.SetConversation(type: 2, spawnId: 11001957, script: "$52000035_QD__EPILOGUE4MOVIE__31$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk55(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk55(context);
                 }
@@ -1646,7 +1646,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk56(context);
             }
 
@@ -1657,13 +1657,13 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk56(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1100, 1101, 1104}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{1100, 1101, 1104}, returnView: false);
                 context.SetOnetimeEffect(id: 1918, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001918.xml");
-                context.SetConversation(arg1: 2, arg2: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__32$", arg4: 12);
+                context.SetConversation(type: 2, spawnId: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__32$", arg4: 12);
                 context.SetSkip(state: new StateEpilogue4Talk58(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
                     return new StateEpilogue4Talk58(context);
                 }
@@ -1682,7 +1682,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk59(context);
             }
 
@@ -1693,14 +1693,14 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk59(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {400}, arg2: false);
-                context.MoveNpc(arg1: 400, arg2: "MS2PatrolData_EP4_bella_go");
-                context.CameraSelectPath(pathIds: new[] {1600, 1601}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001852, script: "$52000035_QD__EPILOGUE4MOVIE__33$", arg4: 5);
+                context.CreateMonster(spawnIds: new []{400}, arg2: false);
+                context.MoveNpc(spawnId: 400, patrolName: "MS2PatrolData_EP4_bella_go");
+                context.CameraSelectPath(pathIds: new []{1600, 1601}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001852, script: "$52000035_QD__EPILOGUE4MOVIE__33$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk60(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateEpilogue4Talk60(context);
                 }
@@ -1719,7 +1719,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk61(context);
             }
 
@@ -1730,13 +1730,13 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk61(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1300, 1301}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{1300, 1301}, returnView: false);
                 context.SetOnetimeEffect(id: 1919, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001919.xml");
-                context.SetConversation(arg1: 2, arg2: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__34$", arg4: 8);
+                context.SetConversation(type: 2, spawnId: 11001956, script: "$52000035_QD__EPILOGUE4MOVIE__34$", arg4: 8);
                 context.SetSkip(state: new StateEpilogue4Talk62(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new StateEpilogue4Talk62(context);
                 }
@@ -1755,7 +1755,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk63(context);
             }
 
@@ -1766,12 +1766,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk63(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1602}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001852, script: "$52000035_QD__EPILOGUE4MOVIE__35$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1602}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001852, script: "$52000035_QD__EPILOGUE4MOVIE__35$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk64(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk64(context);
                 }
@@ -1790,7 +1790,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk65(context);
             }
 
@@ -1801,12 +1801,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk65(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1603, 1604}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001852, script: "$52000035_QD__EPILOGUE4MOVIE__36$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1603, 1604}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001852, script: "$52000035_QD__EPILOGUE4MOVIE__36$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk66(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk66(context);
                 }
@@ -1825,7 +1825,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk67(context);
             }
 
@@ -1836,12 +1836,12 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk67(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {1605, 1606}, arg2: false);
-                context.SetConversation(arg1: 2, arg2: 11001852, script: "$52000035_QD__EPILOGUE4MOVIE__37$", arg4: 5);
+                context.CameraSelectPath(pathIds: new []{1605, 1606}, returnView: false);
+                context.SetConversation(type: 2, spawnId: 11001852, script: "$52000035_QD__EPILOGUE4MOVIE__37$", arg4: 5);
                 context.SetSkip(state: new StateEpilogue4Talk68(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEpilogue4Talk68(context);
                 }
@@ -1860,7 +1860,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEpilogue4Talk69(context);
             }
 
@@ -1875,7 +1875,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new StateEpilogue4Talk70(context);
                 }
@@ -1893,7 +1893,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSceneSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuit(context);
                 }
@@ -1910,10 +1910,10 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.MoveUser(arg1: 02000001, arg2: 2);
+                context.MoveUser(mapId: 02000001, portalId: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

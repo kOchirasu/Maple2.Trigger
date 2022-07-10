@@ -4,13 +4,13 @@ namespace Maple2.Trigger._52100053_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(triggerIds: new []{5000}, visible: false);
                 context.SetUserValue(key: "PortalOn", value: 0);
                 context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new StateLoadingDelay(context);
                 }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52100053_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StatePickRandomRoute(context);
                 }
@@ -40,28 +40,28 @@ namespace Maple2.Trigger._52100053_qd {
             internal StatePickRandomRoute(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039701, textId: 20039701, duration: 4000);
             }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 20f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 20f)) {
                     return new StateBehindFireplace(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new StateBehindBookcase(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new StateFindKeyFromFabricbox(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new StateFindKeyFromCandle(context);
                 }
 
-                if (context.RandomCondition(arg1: 20f)) {
+                if (context.RandomCondition(rate: 20f)) {
                     return new StateFindKeyFromDocument(context);
                 }
 
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetUserValue(triggerId: 3500, key: "FindKey", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetUserValue(triggerId: 3500, key: "FindKey", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetUserValue(triggerId: 3500, key: "FindKey", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PortalOn") == 1) {
                     return new StatePortalOn(context);
                 }
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetUserValue(triggerId: 3500, key: "FindKey", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PortalOn") == 1) {
                     return new StatePortalOn(context);
                 }
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetUserValue(triggerId: 3500, key: "FindKey", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PortalOn") == 1) {
                     return new StatePortalOn(context);
                 }
@@ -177,11 +177,11 @@ namespace Maple2.Trigger._52100053_qd {
             internal StatePortalOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
                 context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

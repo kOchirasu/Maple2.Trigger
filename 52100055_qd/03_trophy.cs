@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52100055_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9900})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9900})) {
                     return new StateRoomCheck(context);
                 }
 
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._52100055_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.IsDungeonRoom()) {
                     return new State트로피지급(context);
                 }
@@ -36,10 +36,10 @@ namespace Maple2.Trigger._52100055_qd {
             internal State트로피지급(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "Find02000399");
+                context.SetAchievement(triggerId: 9900, type: "trigger", code: "Find02000399");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

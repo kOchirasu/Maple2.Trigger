@@ -6,11 +6,11 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() {
                 context.SetUserValue(key: "ActivateHolder", value: 0);
                 context.SetUserValue(key: "DungeonQuit", value: 0);
-                context.SetInteractObject(arg1: new[] {10001250}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001251}, arg2: 0);
+                context.SetInteractObject(interactIds: new []{10001250}, state: 2);
+                context.SetInteractObject(interactIds: new []{10001251}, state: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ActivateHolder") == 1) {
                     return new StateLoadingDelay(context);
                 }
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSpawnStart(context);
                 }
@@ -41,12 +41,12 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateSpawnStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001251}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001250}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{10001251}, state: 1);
+                context.SetInteractObject(interactIds: new []{10001250}, state: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001251}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001251}, arg2: 0)) {
                     return new StateStopDelay(context);
                 }
 
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetUserValue(triggerId: 102, key: "SpawnHold", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSpawnStop(context);
                 }
@@ -86,12 +86,12 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateSpawnStop(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001251}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001250}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001251}, state: 2);
+                context.SetInteractObject(interactIds: new []{10001250}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001250}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001250}, arg2: 0)) {
                     return new StateStartDelay(context);
                 }
 
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetUserValue(triggerId: 102, key: "SpawnHold", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSpawnStart(context);
                 }
@@ -131,11 +131,11 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001250}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001251}, arg2: 0);
+                context.SetInteractObject(interactIds: new []{10001250}, state: 2);
+                context.SetInteractObject(interactIds: new []{10001251}, state: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

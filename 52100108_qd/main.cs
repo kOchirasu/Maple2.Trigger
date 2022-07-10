@@ -7,8 +7,8 @@ namespace Maple2.Trigger._52100108_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000360}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000360}, questStates: new byte[]{1})) {
                     return new StateWait_01(context);
                 }
 
@@ -23,10 +23,10 @@ namespace Maple2.Trigger._52100108_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
+                context.SetEffect(triggerIds: new []{6000}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait_03(context);
                 }
@@ -42,10 +42,10 @@ namespace Maple2.Trigger._52100108_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.MoveUser(arg1: 52100108, arg2: 1);
+                context.MoveUser(mapId: 52100108, portalId: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State들어왔다(context);
                 }
@@ -61,10 +61,10 @@ namespace Maple2.Trigger._52100108_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(pathIds: new[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4001, 4002}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State들어왔다_02(context);
                 }
@@ -79,13 +79,13 @@ namespace Maple2.Trigger._52100108_qd {
             internal State들어왔다_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4006, 4005}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4006, 4005}, returnView: false);
                 context.SetCinematicUI(type: 3);
                 context.AddCinematicTalk(npcId: 0, script: "$52100108_QD__MAIN__0$", duration: 3000);
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State들어왔다_03(context);
                 }
@@ -100,11 +100,11 @@ namespace Maple2.Trigger._52100108_qd {
             internal State들어왔다_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4004, 4003}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4004, 4003}, returnView: false);
                 context.AddCinematicTalk(npcId: 0, script: "$52100108_QD__MAIN__1$", duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State제어기기(context);
                 }
@@ -119,12 +119,12 @@ namespace Maple2.Trigger._52100108_qd {
             internal State제어기기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4007}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4007}, returnView: false);
                 context.AddCinematicTalk(npcId: 0, script: "$52100108_QD__MAIN__2$", duration: 3000);
                 context.AddCinematicTalk(npcId: 0, script: "$52100108_QD__MAIN__3$", duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new State들킴(context);
                 }
@@ -139,22 +139,22 @@ namespace Maple2.Trigger._52100108_qd {
             internal State들킴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAmbientLight(arg1: new Vector3(232f, 92f, 53f));
-                context.SetDirectionalLight(arg1: new Vector3(41f, 21f, 18f), arg2: new Vector3(130f, 130f, 130f));
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.SetEffect(arg1: new[] {6000}, arg2: true);
-                context.SetActor(arg1: 201, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 202, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 203, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 204, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 205, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 206, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 207, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 208, arg2: true, arg3: "sf_quest_light_A01_On");
+                context.SetAmbientLight(color: new Vector3(232f, 92f, 53f));
+                context.SetDirectionalLight(diffuseColor: new Vector3(41f, 21f, 18f), specularColor: new Vector3(130f, 130f, 130f));
+                context.CreateMonster(spawnIds: new []{101}, arg2: false);
+                context.SetEffect(triggerIds: new []{6000}, visible: true);
+                context.SetActor(triggerId: 201, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 202, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 203, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 204, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 205, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 206, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 207, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 208, visible: true, initialSequence: "sf_quest_light_A01_On");
                 context.AddCinematicTalk(npcId: 0, script: "$52100108_QD__MAIN__4$", duration: 3500);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
                     return new State들킴_02(context);
                 }
@@ -169,12 +169,12 @@ namespace Maple2.Trigger._52100108_qd {
             internal State들킴_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4008}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4008}, returnView: false);
                 context.AddCinematicTalk(npcId: 25022107, script: "$52100108_QD__MAIN__5$", duration: 3000);
                 context.AddCinematicTalk(npcId: 0, script: "$52100108_QD__MAIN__6$", duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new State들킴_03(context);
                 }
@@ -189,12 +189,12 @@ namespace Maple2.Trigger._52100108_qd {
             internal State들킴_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4009}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{4009}, returnView: false);
                 context.AddCinematicTalk(npcId: 0, script: "$52100108_QD__MAIN__7$", duration: 3000);
                 context.SetSceneSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State정리_01(context);
                 }
@@ -210,23 +210,23 @@ namespace Maple2.Trigger._52100108_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.DestroyMonster(arg1: new[] {101});
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
-                context.SetEffect(arg1: new[] {6000}, arg2: true);
-                context.SetAmbientLight(arg1: new Vector3(232f, 92f, 53f));
-                context.SetDirectionalLight(arg1: new Vector3(41f, 21f, 18f), arg2: new Vector3(130f, 130f, 130f));
-                context.SetActor(arg1: 201, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 202, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 203, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 204, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 205, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 206, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 207, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 208, arg2: true, arg3: "sf_quest_light_A01_On");
+                context.DestroyMonster(spawnIds: new []{101});
+                context.CreateMonster(spawnIds: new []{101}, arg2: false);
+                context.SetEffect(triggerIds: new []{6000}, visible: false);
+                context.SetEffect(triggerIds: new []{6000}, visible: true);
+                context.SetAmbientLight(color: new Vector3(232f, 92f, 53f));
+                context.SetDirectionalLight(diffuseColor: new Vector3(41f, 21f, 18f), specularColor: new Vector3(130f, 130f, 130f));
+                context.SetActor(triggerId: 201, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 202, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 203, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 204, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 205, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 206, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 207, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 208, visible: true, initialSequence: "sf_quest_light_A01_On");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State정리_02(context);
                 }
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._52100108_qd {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State정리_02(context);
                 }
@@ -264,7 +264,7 @@ namespace Maple2.Trigger._52100108_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State밝아짐(context);
                 }
@@ -282,8 +282,8 @@ namespace Maple2.Trigger._52100108_qd {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new State경보끝_01(context);
                 }
 
@@ -297,20 +297,20 @@ namespace Maple2.Trigger._52100108_qd {
             internal State경보끝_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
-                context.SetAmbientLight(arg1: new Vector3(131f, 160f, 209f));
-                context.SetDirectionalLight(arg1: new Vector3(134f, 160f, 143f), arg2: new Vector3(130f, 130f, 130f));
-                context.SetActor(arg1: 201, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 202, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 203, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 204, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 205, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 206, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 207, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 208, arg2: true, arg3: "sf_quest_light_A01_Off");
+                context.SetEffect(triggerIds: new []{6000}, visible: false);
+                context.SetAmbientLight(color: new Vector3(131f, 160f, 209f));
+                context.SetDirectionalLight(diffuseColor: new Vector3(134f, 160f, 143f), specularColor: new Vector3(130f, 130f, 130f));
+                context.SetActor(triggerId: 201, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 202, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 203, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 204, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 205, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 206, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 207, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 208, visible: true, initialSequence: "sf_quest_light_A01_Off");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

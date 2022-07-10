@@ -5,16 +5,16 @@ namespace Maple2.Trigger._65000002_bd {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.SetTimer(id: "60", arg2: 60, arg3: false, arg4: true);
-                context.SetEffect(arg1: new[] {601, 602}, arg2: false);
+                context.SetTimer(timerId: "60", seconds: 60, clearAtZero: false, display: true);
+                context.SetEffect(triggerIds: new []{601, 602}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 102) == 10) {
                     return new State어나운스0(context);
                 }
 
-                if (context.TimeExpired(arg1: "60")) {
+                if (context.TimeExpired(timerId: "60")) {
                     return new StateWait(context);
                 }
 
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._65000002_bd {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "60");
+                context.ResetTimer(timerId: "60");
             }
         }
 
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._65000002_bd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 102) == 2) {
                     return new State어나운스0(context);
                 }
@@ -50,13 +50,13 @@ namespace Maple2.Trigger._65000002_bd {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "6", arg2: 6, arg3: false);
-                context.PlaySystemSoundInBox(arg2: "BD_PVP_00");
-                context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__0$", arg3: 6000);
+                context.SetTimer(timerId: "6", seconds: 6, clearAtZero: false);
+                context.PlaySystemSoundInBox(sound: "BD_PVP_00");
+                context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__0$", duration: 6000);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "6")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "6")) {
                     return new State어나운스1(context);
                 }
 
@@ -70,13 +70,13 @@ namespace Maple2.Trigger._65000002_bd {
             internal State어나운스1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "6", arg2: 6, arg3: false);
-                context.PlaySystemSoundInBox(arg2: "BD_PVP_01");
-                context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__1$", arg3: 6000);
+                context.SetTimer(timerId: "6", seconds: 6, clearAtZero: false);
+                context.PlaySystemSoundInBox(sound: "BD_PVP_01");
+                context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__1$", duration: 6000);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "6")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "6")) {
                     return new State어나운스2(context);
                 }
 
@@ -90,13 +90,13 @@ namespace Maple2.Trigger._65000002_bd {
             internal State어나운스2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "6", arg2: 6, arg3: false);
-                context.PlaySystemSoundInBox(arg2: "BD_PVP_02");
-                context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__2$", arg3: 6000, arg4: "101");
+                context.SetTimer(timerId: "6", seconds: 6, clearAtZero: false);
+                context.PlaySystemSoundInBox(sound: "BD_PVP_02");
+                context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__2$", duration: 6000, boxId: 101);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "6")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "6")) {
                     return new State어나운스3(context);
                 }
 
@@ -110,14 +110,14 @@ namespace Maple2.Trigger._65000002_bd {
             internal State어나운스3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3, arg3: false);
-                context.PlaySystemSoundInBox(arg2: "BD_PVP_03");
-                context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__3$", arg3: 3000);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetTimer(timerId: "3", seconds: 3, clearAtZero: false);
+                context.PlaySystemSoundInBox(sound: "BD_PVP_03");
+                context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__3$", duration: 3000);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StatePvP(context);
                 }
 
@@ -131,16 +131,16 @@ namespace Maple2.Trigger._65000002_bd {
             internal StatePvP(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "dailyquest_start");
-                context.GiveGuildExp(boxId: false, type: 2);
-                context.AddBuff(arg1: new[] {101}, arg2: 70000088, arg3: 1, arg4: false, arg5: false);
-                context.AddBuff(arg1: new[] {101}, arg2: 70000089, arg3: 1, arg4: false, arg5: false);
-                context.SetTimer(id: "1", arg2: 1, arg3: false);
+                context.SetAchievement(triggerId: 101, type: "trigger", code: "dailyquest_start");
+                context.GiveGuildExp(boxId: 0, type: 2);
+                context.AddBuff(boxIds: new []{101}, skillId: 70000088, level: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{101}, skillId: 70000089, level: 1, arg4: false, arg5: false);
+                context.SetTimer(timerId: "1", seconds: 1, clearAtZero: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
-                    context.SetPvpZone(arg1: 101, arg2: 5, arg3: 300, arg4: 90001002, arg5: 2);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
+                    context.SetPvpZone(boxId: 101, arg2: 5, duration: 300, additionalEffectId: 90001002, arg5: 2);
                     return new StatePvP종료(context);
                 }
 
@@ -155,8 +155,8 @@ namespace Maple2.Trigger._65000002_bd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.PvpZoneEnded(arg1: 101)) {
+            public override TriggerState? Execute() {
+                if (context.PvpZoneEnded(boxId: 101)) {
                     return new State경기종료(context);
                 }
 
@@ -170,14 +170,14 @@ namespace Maple2.Trigger._65000002_bd {
             internal State경기종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "4", arg2: 4, arg3: false);
-                context.PlaySystemSoundInBox(arg2: "BD_PVP_04");
-                context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__4$", arg3: 3000, arg4: "101");
-                context.SetEffect(arg1: new[] {602}, arg2: true);
+                context.SetTimer(timerId: "4", seconds: 4, clearAtZero: false);
+                context.PlaySystemSoundInBox(sound: "BD_PVP_04");
+                context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__4$", duration: 3000, boxId: 101);
+                context.SetEffect(triggerIds: new []{602}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "4")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "4")) {
                     return new State완료(context);
                 }
 
@@ -191,12 +191,12 @@ namespace Maple2.Trigger._65000002_bd {
             internal State비김(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3, arg3: false);
+                context.SetTimer(timerId: "3", seconds: 3, clearAtZero: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
-                    context.SetEventUI(arg1: 5, script: "$65000002_BD__PVP__5$", arg3: 3000, arg4: "0");
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
+                    context.SetEventUI(arg1: 5, script: "$65000002_BD__PVP__5$", duration: 3000, boxId: 0);
                     return new State완료(context);
                 }
 
@@ -210,13 +210,13 @@ namespace Maple2.Trigger._65000002_bd {
             internal State완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "5", arg2: 5);
+                context.SetTimer(timerId: "5", seconds: 5);
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
-                    context.MoveUser(arg1: 0, arg2: 0);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
+                    context.MoveUser(mapId: 0, portalId: 0);
                     return new StateEnd(context);
                 }
 
@@ -231,7 +231,7 @@ namespace Maple2.Trigger._65000002_bd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

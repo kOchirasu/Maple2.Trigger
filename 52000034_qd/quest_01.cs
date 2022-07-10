@@ -5,12 +5,12 @@ namespace Maple2.Trigger._52000034_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {40002600}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{101}, questIds: new []{40002600}, questStates: new byte[]{3})) {
                     return new StateDefaultNPCSpawn(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {40002600}, arg3: new byte[] {3})) {
+                if (!context.QuestUserDetected(boxIds: new []{101}, questIds: new []{40002600}, questStates: new byte[]{3})) {
                     return new State제이시추가배치(context);
                 }
 
@@ -24,15 +24,15 @@ namespace Maple2.Trigger._52000034_qd {
             internal State제이시추가배치(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001, 2002, 2003}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2001, 2002, 2003}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {40002603}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{101}, questIds: new []{40002603}, questStates: new byte[]{2})) {
                     return new StateCinematic01시작(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {40002603}, arg3: new byte[] {2})) {
+                if (!context.QuestUserDetected(boxIds: new []{101}, questIds: new []{40002603}, questStates: new byte[]{2})) {
                     return new StateEnd(context);
                 }
 
@@ -46,10 +46,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal StateDefaultNPCSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001, 2002}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2001, 2002}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateEnd(context);
             }
 
@@ -62,12 +62,12 @@ namespace Maple2.Trigger._52000034_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 301, arg2: true);
-                context.DestroyMonster(arg1: new[] {2001, 2002, 2003});
-                context.CreateMonster(arg1: new[] {1001, 1002, 1003}, arg2: false);
+                context.CameraSelect(triggerId: 301, enable: true);
+                context.DestroyMonster(spawnIds: new []{2001, 2002, 2003});
+                context.CreateMonster(spawnIds: new []{1001, 1002, 1003}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new State자베스Script01(context);
                 }
@@ -82,10 +82,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State자베스Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000034_QD__QUEST_01__0$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 11001546, script: "$52000034_QD__QUEST_01__0$", arg4: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State자베스Script02(context);
                 }
@@ -100,10 +100,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State자베스Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000034_QD__QUEST_01__1$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11001546, script: "$52000034_QD__QUEST_01__1$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State브라보Script01(context);
                 }
@@ -118,10 +118,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__2$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001545, script: "$52000034_QD__QUEST_01__2$", arg4: 5);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State브라보Script02(context);
                 }
@@ -136,10 +136,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__3$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11001545, script: "$52000034_QD__QUEST_01__3$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State브라보Script03(context);
                 }
@@ -154,10 +154,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__4$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11001545, script: "$52000034_QD__QUEST_01__4$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State자베스Script03(context);
                 }
@@ -172,10 +172,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State자베스Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000034_QD__QUEST_01__5$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11001546, script: "$52000034_QD__QUEST_01__5$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State자베스Script04(context);
                 }
@@ -190,10 +190,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State자베스Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000034_QD__QUEST_01__6$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11001546, script: "$52000034_QD__QUEST_01__6$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State브라보Script04(context);
                 }
@@ -208,10 +208,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__7$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 11001545, script: "$52000034_QD__QUEST_01__7$", arg4: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State브라보Script05(context);
                 }
@@ -226,10 +226,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__8$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11001545, script: "$52000034_QD__QUEST_01__8$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State자베스Script05(context);
                 }
@@ -244,10 +244,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State자베스Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000034_QD__QUEST_01__9$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 11001546, script: "$52000034_QD__QUEST_01__9$", arg4: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State자베스Script06(context);
                 }
@@ -262,10 +262,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State자베스Script06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001546, script: "$52000034_QD__QUEST_01__10$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 11001546, script: "$52000034_QD__QUEST_01__10$", arg4: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State브라보Script06(context);
                 }
@@ -280,10 +280,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__11$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 11001545, script: "$52000034_QD__QUEST_01__11$", arg4: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State브라보Script07(context);
                 }
@@ -298,10 +298,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State브라보Script07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001545, script: "$52000034_QD__QUEST_01__12$", arg4: 3);
+                context.SetConversation(type: 2, spawnId: 11001545, script: "$52000034_QD__QUEST_01__12$", arg4: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -317,7 +317,7 @@ namespace Maple2.Trigger._52000034_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State제이시Script01(context);
                 }
@@ -332,10 +332,10 @@ namespace Maple2.Trigger._52000034_qd {
             internal State제이시Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001690, script: "$52000034_QD__QUEST_01__13$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11001690, script: "$52000034_QD__QUEST_01__13$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateCinematic01종료(context);
                 }
@@ -352,14 +352,14 @@ namespace Maple2.Trigger._52000034_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CameraSelect(arg1: 301, arg2: false);
+                context.CameraSelect(triggerId: 301, enable: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.DestroyMonster(arg1: new[] {1003});
-                context.CreateMonster(arg1: new[] {2003}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{1003});
+                context.CreateMonster(spawnIds: new []{2003}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd(context);
                 }
@@ -375,7 +375,7 @@ namespace Maple2.Trigger._52000034_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

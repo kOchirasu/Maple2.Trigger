@@ -4,12 +4,12 @@ namespace Maple2.Trigger._52100110_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {10000}, arg2: false);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetMesh(triggerIds: new []{10000}, visible: false);
+                context.SetEffect(triggerIds: new []{601}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1000})) {
                     return new StateQuest체크(context);
                 }
 
@@ -24,24 +24,24 @@ namespace Maple2.Trigger._52100110_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101040}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{1000}, questIds: new []{50101040}, questStates: new byte[]{1})) {
                     return new State화이트박스Remove(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{1000}, questIds: new []{50101030}, questStates: new byte[]{3})) {
                     return new State52100105로텔레포트(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{1000}, questIds: new []{50101030}, questStates: new byte[]{2})) {
                     return new StateQuest용MonsterSpawn(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{1000}, questIds: new []{50101030}, questStates: new byte[]{1})) {
                     return new StateQuest용MonsterSpawn(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101020}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{1000}, questIds: new []{50101020}, questStates: new byte[]{3})) {
                     return new StateQuest용MonsterSpawn(context);
                 }
 
@@ -56,12 +56,12 @@ namespace Maple2.Trigger._52100110_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101040}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{1000}, questIds: new []{50101040}, questStates: new byte[]{1})) {
                     return new State화이트박스Remove(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{1000}, questIds: new []{50101030}, questStates: new byte[]{3})) {
                     // return new State(context);
                     return null;
                 }
@@ -76,11 +76,11 @@ namespace Maple2.Trigger._52100110_qd {
             internal State52100105로텔레포트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {10000}, arg2: true);
-                context.MoveUser(arg1: 52100105, arg2: 3);
+                context.SetMesh(triggerIds: new []{10000}, visible: true);
+                context.MoveUser(mapId: 52100105, portalId: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     // return new State(context);
                     return null;
@@ -96,10 +96,10 @@ namespace Maple2.Trigger._52100110_qd {
             internal StateQuest용MonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101, 102, 103}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State화이트박스Creation2(context);
                 }
@@ -114,10 +114,10 @@ namespace Maple2.Trigger._52100110_qd {
             internal State화이트박스Creation2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {10000}, arg2: true);
+                context.SetMesh(triggerIds: new []{10000}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuest체크2(context);
                 }
@@ -132,10 +132,10 @@ namespace Maple2.Trigger._52100110_qd {
             internal State화이트박스Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {10000}, arg2: false);
+                context.SetMesh(triggerIds: new []{10000}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     // return new State(context);
                     return null;

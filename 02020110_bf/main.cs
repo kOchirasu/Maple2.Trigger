@@ -13,8 +13,8 @@ namespace Maple2.Trigger._02020110_bf {
                 context.SetPortal(portalId: 7, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {901})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{901})) {
                     return new StateStart(context);
                 }
 
@@ -29,8 +29,8 @@ namespace Maple2.Trigger._02020110_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {902})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{902})) {
                     return new State1번방(context);
                 }
 
@@ -44,11 +44,11 @@ namespace Maple2.Trigger._02020110_bf {
             internal State1번방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 120}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101, 120}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101, 120})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101, 120})) {
                     context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                     context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     return new State2번방(context);
@@ -64,11 +64,11 @@ namespace Maple2.Trigger._02020110_bf {
             internal State2번방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {102, 103, 104, 105, 106, 107}, arg2: false);
+                context.CreateMonster(spawnIds: new []{102, 103, 104, 105, 106, 107}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {102, 103, 104, 105, 106, 107})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{102, 103, 104, 105, 106, 107})) {
                     context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
                     context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
                     return new State3번방(context);
@@ -84,11 +84,11 @@ namespace Maple2.Trigger._02020110_bf {
             internal State3번방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {108, 109, 110, 111, 112, 113}, arg2: false);
+                context.CreateMonster(spawnIds: new []{108, 109, 110, 111, 112, 113}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {108, 109, 110, 111, 112, 113})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{108, 109, 110, 111, 112, 113})) {
                     context.SetPortal(portalId: 5, visible: true, enabled: true, minimapVisible: true);
                     context.SetPortal(portalId: 6, visible: true, enabled: true, minimapVisible: true);
                     return new State4번방(context);
@@ -104,11 +104,11 @@ namespace Maple2.Trigger._02020110_bf {
             internal State4번방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {114, 115, 116, 117, 118, 119}, arg2: false);
+                context.CreateMonster(spawnIds: new []{114, 115, 116, 117, 118, 119}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {114, 115, 116, 117, 118, 119})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{114, 115, 116, 117, 118, 119})) {
                     return new StateNext블록이동(context);
                 }
 
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._02020110_bf {
                 context.SetPortal(portalId: 7, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

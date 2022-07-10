@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000427_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Message") == 1) {
                     return new StateDisplayGuide01(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000427_bf {
                 context.ShowGuideSummary(entityId: 20042001, textId: 20042001);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new StateDisplayGuide02Wait(context);
                 }
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000427_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Message") == 2) {
                     return new StateDisplayGuide02(context);
                 }
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000427_bf {
                 context.ShowGuideSummary(entityId: 20042002, textId: 20042002);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new StateDisplayGuide03Wait(context);
                 }
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02000427_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Message") == 3) {
                     return new StateDisplayGuide03(context);
                 }
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000427_bf {
                 context.ShowGuideSummary(entityId: 20042003, textId: 20042003);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new StateEnd(context);
                 }
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._02000427_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

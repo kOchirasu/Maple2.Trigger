@@ -7,8 +7,8 @@ namespace Maple2.Trigger._02000495_bf {
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new State레이드(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02000495_bf {
             internal State레이드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2001}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2001})) {
                     return new State2초Wait(context);
                 }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000495_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State던전Clear(context);
                 }
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000495_bf {
                 context.DungeonClear();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StatePortalEnable(context);
                 }
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02000495_bf {
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd(context);
                 }
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._02000495_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

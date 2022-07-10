@@ -4,21 +4,21 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateWait00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {51, 52, 53, 54});
-                context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, arg2: false);
-                context.SetEffect(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218}, arg2: false);
-                context.SetLadder(arg1: 151, arg2: false, arg3: false);
-                context.SetLadder(arg1: 152, arg2: false, arg3: false);
-                context.SetLadder(arg1: 153, arg2: false, arg3: false);
-                context.SetLadder(arg1: 154, arg2: false, arg3: false);
-                context.SetLadder(arg1: 155, arg2: false, arg3: false);
-                context.SetLadder(arg1: 156, arg2: false, arg3: false);
-                context.SetEffect(arg1: new[] {219, 220, 221, 222, 223, 224}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000449}, arg2: 1);
+                context.DestroyMonster(spawnIds: new []{51, 52, 53, 54});
+                context.SetMesh(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, visible: false);
+                context.SetEffect(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218}, visible: false);
+                context.SetLadder(triggerId: 151, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 152, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 153, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 154, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 155, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 156, visible: false, animationEffect: false);
+                context.SetEffect(triggerIds: new []{219, 220, 221, 222, 223, 224}, visible: false);
+                context.SetInteractObject(interactIds: new []{10000449}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000449}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000449}, arg2: 0)) {
                     return new StateWait01(context);
                 }
 
@@ -32,11 +32,11 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateWait01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {51}, arg2: true);
+                context.CreateMonster(spawnIds: new []{51}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {51})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{51})) {
                     return new StateSetup01(context);
                 }
 
@@ -50,11 +50,11 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateMonster수명설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 30);
+                context.SetTimer(timerId: "1", seconds: 30);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWait01(context);
                 }
 
@@ -68,13 +68,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {101}, arg2: true);
-                context.SetEffect(arg1: new[] {201}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{101}, visible: true);
+                context.SetEffect(triggerIds: new []{201}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup02(context);
                 }
 
@@ -88,13 +88,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {102}, arg2: true);
-                context.SetEffect(arg1: new[] {202}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{102}, visible: true);
+                context.SetEffect(triggerIds: new []{202}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup03(context);
                 }
 
@@ -108,13 +108,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {103}, arg2: true);
-                context.SetEffect(arg1: new[] {203}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{103}, visible: true);
+                context.SetEffect(triggerIds: new []{203}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup04(context);
                 }
 
@@ -128,13 +128,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {104}, arg2: true);
-                context.SetEffect(arg1: new[] {204}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{104}, visible: true);
+                context.SetEffect(triggerIds: new []{204}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup05(context);
                 }
 
@@ -148,13 +148,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {105}, arg2: true);
-                context.SetEffect(arg1: new[] {205}, arg2: true);
-                context.SetTimer(id: "1", arg2: 2);
+                context.SetMesh(triggerIds: new []{105}, visible: true);
+                context.SetEffect(triggerIds: new []{205}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWait02(context);
                 }
 
@@ -168,18 +168,18 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateWait02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {52}, arg2: true);
-                context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, arg2: false);
-                context.SetEffect(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218}, arg2: false);
-                context.SetTimer(id: "2", arg2: 15);
+                context.CreateMonster(spawnIds: new []{52}, arg2: true);
+                context.SetMesh(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, visible: false);
+                context.SetEffect(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218}, visible: false);
+                context.SetTimer(timerId: "2", seconds: 15);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {52})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{52})) {
                     return new StateSetup06(context);
                 }
 
-                if (context.TimeExpired(arg1: "2")) {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateWait00(context);
                 }
 
@@ -193,13 +193,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {106}, arg2: true);
-                context.SetEffect(arg1: new[] {206}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{106}, visible: true);
+                context.SetEffect(triggerIds: new []{206}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup07(context);
                 }
 
@@ -213,13 +213,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {107}, arg2: true);
-                context.SetEffect(arg1: new[] {207}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{107}, visible: true);
+                context.SetEffect(triggerIds: new []{207}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup08(context);
                 }
 
@@ -233,13 +233,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {108}, arg2: true);
-                context.SetEffect(arg1: new[] {208}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{108}, visible: true);
+                context.SetEffect(triggerIds: new []{208}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup09(context);
                 }
 
@@ -253,13 +253,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {109}, arg2: true);
-                context.SetEffect(arg1: new[] {209}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{109}, visible: true);
+                context.SetEffect(triggerIds: new []{209}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup10(context);
                 }
 
@@ -273,13 +273,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {110}, arg2: true);
-                context.SetEffect(arg1: new[] {210}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{110}, visible: true);
+                context.SetEffect(triggerIds: new []{210}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup11(context);
                 }
 
@@ -293,13 +293,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {111}, arg2: true);
-                context.SetEffect(arg1: new[] {211}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{111}, visible: true);
+                context.SetEffect(triggerIds: new []{211}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup12(context);
                 }
 
@@ -313,13 +313,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {112}, arg2: true);
-                context.SetEffect(arg1: new[] {212}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{112}, visible: true);
+                context.SetEffect(triggerIds: new []{212}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup13(context);
                 }
 
@@ -333,13 +333,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {113}, arg2: true);
-                context.SetEffect(arg1: new[] {213}, arg2: true);
-                context.SetTimer(id: "1", arg2: 2);
+                context.SetMesh(triggerIds: new []{113}, visible: true);
+                context.SetEffect(triggerIds: new []{213}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWait03(context);
                 }
 
@@ -353,18 +353,18 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateWait03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {53}, arg2: true);
-                context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, arg2: false);
-                context.SetEffect(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218}, arg2: false);
-                context.SetTimer(id: "2", arg2: 15);
+                context.CreateMonster(spawnIds: new []{53}, arg2: true);
+                context.SetMesh(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, visible: false);
+                context.SetEffect(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218}, visible: false);
+                context.SetTimer(timerId: "2", seconds: 15);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {53})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{53})) {
                     return new StateSetup14(context);
                 }
 
-                if (context.TimeExpired(arg1: "2")) {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateWait00(context);
                 }
 
@@ -378,13 +378,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {114}, arg2: true);
-                context.SetEffect(arg1: new[] {214}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{114}, visible: true);
+                context.SetEffect(triggerIds: new []{214}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup15(context);
                 }
 
@@ -398,13 +398,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {115}, arg2: true);
-                context.SetEffect(arg1: new[] {215}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{115}, visible: true);
+                context.SetEffect(triggerIds: new []{215}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup16(context);
                 }
 
@@ -418,13 +418,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {116}, arg2: true);
-                context.SetEffect(arg1: new[] {216}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{116}, visible: true);
+                context.SetEffect(triggerIds: new []{216}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup17(context);
                 }
 
@@ -438,13 +438,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {117}, arg2: true);
-                context.SetEffect(arg1: new[] {217}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{117}, visible: true);
+                context.SetEffect(triggerIds: new []{217}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSetup18(context);
                 }
 
@@ -458,13 +458,13 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateSetup18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {118}, arg2: true);
-                context.SetEffect(arg1: new[] {218}, arg2: true);
-                context.SetTimer(id: "1", arg2: 2);
+                context.SetMesh(triggerIds: new []{118}, visible: true);
+                context.SetEffect(triggerIds: new []{218}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWait04(context);
                 }
 
@@ -478,18 +478,18 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateWait04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {54}, arg2: true);
-                context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, arg2: false);
-                context.SetEffect(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218}, arg2: false);
-                context.SetTimer(id: "2", arg2: 15);
+                context.CreateMonster(spawnIds: new []{54}, arg2: true);
+                context.SetMesh(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, visible: false);
+                context.SetEffect(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218}, visible: false);
+                context.SetTimer(timerId: "2", seconds: 15);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {54})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{54})) {
                     return new StateLadder(context);
                 }
 
-                if (context.TimeExpired(arg1: "2")) {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateWait00(context);
                 }
 
@@ -503,18 +503,18 @@ namespace Maple2.Trigger._02000006_ad {
             internal StateLadder(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 151, arg2: true, arg3: true);
-                context.SetLadder(arg1: 152, arg2: true, arg3: true);
-                context.SetLadder(arg1: 153, arg2: true, arg3: true);
-                context.SetLadder(arg1: 154, arg2: true, arg3: true);
-                context.SetLadder(arg1: 155, arg2: true, arg3: true);
-                context.SetLadder(arg1: 156, arg2: true, arg3: true);
-                context.SetEffect(arg1: new[] {219, 220, 221, 222, 223, 224}, arg2: true);
-                context.SetTimer(id: "1", arg2: 10);
+                context.SetLadder(triggerId: 151, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 152, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 153, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 154, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 155, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 156, visible: true, animationEffect: true);
+                context.SetEffect(triggerIds: new []{219, 220, 221, 222, 223, 224}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 10);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWait00(context);
                 }
 

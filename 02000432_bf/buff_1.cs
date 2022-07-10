@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000432_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {2001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{2001})) {
                     return new StateBuff(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._02000432_bf {
             internal StateBuff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {2001}, arg2: 40501001, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(boxIds: new []{2001}, skillId: 40501001, level: 1, arg4: true, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateDead(context);
                 }
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02000432_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2001})) {
                     return new StateDead_BuffRemove(context);
                 }
 
@@ -54,10 +54,10 @@ namespace Maple2.Trigger._02000432_bf {
             internal StateDead_BuffRemove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {2002}, arg2: 40501005, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(boxIds: new []{2002}, skillId: 40501005, level: 1, arg4: true, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) { }
 
                 return null;

@@ -6,10 +6,10 @@ namespace Maple2.Trigger._99999845 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000322}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{12000322}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Block") == 1) {
                     context.SetUserValue(triggerId: 900006, key: "Block", value: 0);
                     return new StateBlock_1(context);
@@ -26,10 +26,10 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1117})) {
-                    context.SetVisibleBreakableObject(arg1: new[] {1022}, arg2: true);
-                    context.SetInteractObject(arg1: new[] {12000322}, arg2: 1);
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1117})) {
+                    context.SetVisibleBreakableObject(triggerIds: new []{1022}, arg2: true);
+                    context.SetInteractObject(interactIds: new []{12000322}, state: 1);
                     // return new StateCableOn_04(context);
                     return null;
                 }
@@ -45,10 +45,10 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000322}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000322}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(-12687.7676f, -1071.39685f, 2530f), rot: new Vector3(0f, 0f, 0f));
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000322}, arg2: 0)) {
+                    context.SetInteractObject(interactIds: new []{12000322}, state: 2);
+                    context.MoveUserToPos(position: new Vector3(-12687.7676f, -1071.39685f, 2530f));
                     return new StateCableDelay_04(context);
                 }
 
@@ -63,9 +63,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new[] {1004}, arg2: true);
+                    context.SetBreakable(triggerIds: new []{1004}, enabled: true);
                     return new StateCableOff_04(context);
                 }
 
@@ -80,9 +80,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new[] {1005}, arg2: true);
+                    context.SetBreakable(triggerIds: new []{1005}, enabled: true);
                     return new StateCableOff_05(context);
                 }
 
@@ -97,9 +97,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new[] {1006}, arg2: true);
+                    context.SetBreakable(triggerIds: new []{1006}, enabled: true);
                     return new StateCableOff_06(context);
                 }
 
@@ -114,9 +114,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.MoveUserToPos(pos: new Vector3(-9825f, -1425f, 1350f), rot: new Vector3(0f, 0f, 0f));
+                    context.MoveUserToPos(position: new Vector3(-9825f, -1425f, 1350f));
                     context.SetUserValue(triggerId: 900003, key: "Block", value: 1);
                     return new StateEnd_01(context);
                 }
@@ -132,9 +132,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.MoveUserToPos(pos: new Vector3(-9375f, -9225f, 150f), rot: new Vector3(0f, 0f, 0f));
+                    context.MoveUserToPos(position: new Vector3(-9375f, -9225f, 150f));
                     context.SetUserValue(triggerId: 900003, key: "Block", value: 2);
                     return new StateEnd_01(context);
                 }
@@ -150,9 +150,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.MoveUserToPos(pos: new Vector3(-8475f, 7275f, 2700f), rot: new Vector3(0f, 0f, 0f));
+                    context.MoveUserToPos(position: new Vector3(-8475f, 7275f, 2700f));
                     context.SetUserValue(triggerId: 900003, key: "Block", value: 3);
                     return new StateEnd_01(context);
                 }
@@ -168,9 +168,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SetVisibleBreakableObject(arg1: new[] {1004, 1005, 1006}, arg2: false);
+                    context.SetVisibleBreakableObject(triggerIds: new []{1004, 1005, 1006}, arg2: false);
                 }
 
                 return null;

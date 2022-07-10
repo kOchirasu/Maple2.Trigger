@@ -7,8 +7,8 @@ namespace Maple2.Trigger._52000056_qd {
                 context.ShowGuideSummary(entityId: 10010001, textId: 10010001);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103, 104, 105, 106})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103, 104, 105, 106})) {
                     return new StateEnd(context);
                 }
 
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._52000056_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

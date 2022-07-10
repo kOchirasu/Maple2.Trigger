@@ -7,15 +7,15 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "GaugeClear", value: 0);
-                context.StartCombineSpawn(groupId: new[] {490}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {491}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {492}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {493}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {495}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{490}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{491}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{492}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{493}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{495}, isStart: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpawnStart") == 1) {
                     return new State스폰_1_SE(context);
                 }
@@ -31,10 +31,10 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.StartCombineSpawn(groupId: new[] {490}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{490}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpawnStart") == 2) {
                     return new StateWait(context);
                 }
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020062_BF__BATTLE_1__0$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpawnStart") == 2) {
                     return new StateWait(context);
                 }
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020062_BF__BATTLE_1__1$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpawnStart") == 2) {
                     return new StateWait(context);
                 }
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020062_BF__BATTLE_1__2$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetShadowExpeditionPoints() >= 120) {
                     return new State스폰_2_SE(context);
                 }
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpawnStart") == 2) {
                     return new StateWait(context);
                 }
@@ -142,10 +142,10 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.StartCombineSpawn(groupId: new[] {491}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{491}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetShadowExpeditionPoints() >= 300) {
                     return new State스폰_3_SE(context);
                 }
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpawnStart") == 2) {
                     return new StateWait(context);
                 }
@@ -187,10 +187,10 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.StartCombineSpawn(groupId: new[] {492}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{492}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetShadowExpeditionPoints() >= 450) {
                     return new State스폰_4_SE(context);
                 }
@@ -212,7 +212,7 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpawnStart") == 2) {
                     return new StateWait(context);
                 }
@@ -232,10 +232,10 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.StartCombineSpawn(groupId: new[] {493}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{493}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetShadowExpeditionPoints() >= 600) {
                     return new State스폰_5_SE(context);
                 }
@@ -257,7 +257,7 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpawnStart") == 2) {
                     return new StateWait(context);
                 }
@@ -277,10 +277,10 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.StartCombineSpawn(groupId: new[] {495}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{495}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetShadowExpeditionPoints() >= 750) {
                     return new State오브젝트Phase(context);
                 }
@@ -300,15 +300,15 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() {
                 context.ShadowExpeditionCloseBossGauge();
-                context.StartCombineSpawn(groupId: new[] {490}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {491}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {492}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {493}, isStart: false);
-                context.StartCombineSpawn(groupId: new[] {495}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{490}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{491}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{492}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{493}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{495}, isStart: false);
                 context.SetUserValue(triggerId: 99990001, key: "GaugeClear", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SpawnStart") == 2) {
                     return new StateWait(context);
                 }

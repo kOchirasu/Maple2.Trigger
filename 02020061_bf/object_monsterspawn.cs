@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {482}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{482}, isStart: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "EliteSpawn") == 1) {
                     return new State스폰(context);
                 }
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._02020061_bf {
             internal State스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {482}, isStart: true);
+                context.StartCombineSpawn(groupId: new []{482}, isStart: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "EliteSpawn") == 0) {
                     return new StateWait(context);
                 }
@@ -44,10 +44,10 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new[] {482}, isStart: false);
+                context.StartCombineSpawn(groupId: new []{482}, isStart: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

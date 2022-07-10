@@ -5,7 +5,7 @@ namespace Maple2.Trigger._99999908 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     return new StateBuff_01(context);
                 }
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._99999908 {
             internal StateBuff_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 99910221, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateBuff_02(context);
                 }
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._99999908 {
             internal StateBuff_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 99910221, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateBuff_03(context);
                 }
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._99999908 {
             internal StateBuff_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 99910221, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateBuff_04(context);
                 }
@@ -74,10 +74,10 @@ namespace Maple2.Trigger._99999908 {
             internal StateBuff_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 99910221, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateBuff_05(context);
                 }
@@ -92,12 +92,12 @@ namespace Maple2.Trigger._99999908 {
             internal StateBuff_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120});
-                context.SpawnNpcRange(rangeId: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120}, isAutoTargeting: false, randomPickCount: 3, score: 100);
-                context.AddBuff(arg1: new[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
+                context.DestroyMonster(spawnIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120});
+                context.SpawnNpcRange(rangeId: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120}, isAutoTargeting: false, randomPickCount: 3, score: 100);
+                context.AddBuff(boxIds: new []{701}, skillId: 99910221, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateIdle(context);
                 }

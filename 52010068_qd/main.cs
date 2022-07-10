@@ -6,27 +6,27 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
+                context.SetEffect(triggerIds: new []{5001, 5002}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (!context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {20002391}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (!context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{20002391}, questStates: new byte[]{3})) {
                     return new State틴차이_준타_Spawn01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{50100420}, questStates: new byte[]{3})) {
                     return new StateOrde_Out_Effect(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{50100420}, questStates: new byte[]{2})) {
                     return new StateOrde_Out_Effect(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{50100420}, questStates: new byte[]{1})) {
                     return new StateOrde_Out_Effect(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100400}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{50100400}, questStates: new byte[]{3})) {
                     return new StateOrde_In_Effect(context);
                 }
 
@@ -40,23 +40,23 @@ namespace Maple2.Trigger._52010068_qd {
             internal State틴차이_준타_Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {102, 103}, arg2: true);
+                context.CreateMonster(spawnIds: new []{102, 103}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{50100420}, questStates: new byte[]{3})) {
                     return new StateOrde_Out_Effect(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{50100420}, questStates: new byte[]{2})) {
                     return new StateOrde_Out_Effect(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{50100420}, questStates: new byte[]{1})) {
                     return new StateOrde_Out_Effect(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100400}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{50100400}, questStates: new byte[]{3})) {
                     return new StateOrde_In_Effect(context);
                 }
 
@@ -72,10 +72,10 @@ namespace Maple2.Trigger._52010068_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.SetEffect(triggerIds: new []{5001}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateOrde_In(context);
                 }
@@ -90,10 +90,10 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateOrde_In(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: true);
+                context.CreateMonster(spawnIds: new []{101}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateOrde_In_Turn(context);
                 }
@@ -108,13 +108,13 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateOrde_In_Turn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 600, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetNpcRotation(arg1: 101, arg2: -45);
+                context.CameraSelect(triggerId: 600, enable: true);
+                context.SetEffect(triggerIds: new []{5001}, visible: true);
+                context.SetNpcRotation(spawnId: 101, rotation: -45);
                 context.AddCinematicTalk(npcId: 11004033, illustId: "Orde_normal", script: "$52010068_QD__MAIN__0$", align: Align.Left);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateOrde_In_Talk(context);
                 }
@@ -129,11 +129,11 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateOrde_In_Talk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 101, arg2: "IceSphere_A");
+                context.SetNpcEmotionSequence(spawnId: 101, sequenceName: "IceSphere_A");
                 context.AddCinematicTalk(npcId: 11004033, illustId: "Orde_normal", script: "$52010068_QD__MAIN__1$", align: Align.Left);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateOrde_In_Talk_End(context);
                 }
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateOrde_In_ReTurn(context);
                 }
@@ -168,19 +168,19 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateOrde_In_ReTurn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcRotation(arg1: 101, arg2: 360);
+                context.SetNpcRotation(spawnId: 101, rotation: 360);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{50100420}, questStates: new byte[]{3})) {
                     return new StateOrde_Out_Effect(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{50100420}, questStates: new byte[]{2})) {
                     return new StateOrde_Out_Effect(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{50100420}, questStates: new byte[]{1})) {
                     return new StateOrde_Out_Effect(context);
                 }
 
@@ -194,12 +194,12 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateOrde_Out_Effect(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 101, arg2: "Wizard_Teleport_A");
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$52010068_QD__MAIN__2$", duration: 2800, delayTick: 0);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
+                context.SetNpcEmotionSequence(spawnId: 101, sequenceName: "Wizard_Teleport_A");
+                context.AddBalloonTalk(spawnId: 101, msg: "$52010068_QD__MAIN__2$", duration: 2800, delayTick: 0);
+                context.SetEffect(triggerIds: new []{5002}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateOrde_Out(context);
                 }
@@ -214,11 +214,11 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateOrde_Out(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {101});
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{101});
+                context.SetEffect(triggerIds: new []{5002}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -234,7 +234,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State챕터10에필로그Cinematic02(context);
                 }
@@ -254,7 +254,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip(state: new State챕터10에필로그Cinematic02스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State챕터10에필로그Cinematic02스킵(context);
                 }
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic03(context);
             }
 
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip(state: new State챕터10에필로그Cinematic03스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State챕터10에필로그Cinematic03스킵(context);
                 }
@@ -307,7 +307,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic05(context);
             }
 
@@ -322,7 +322,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip(state: new State챕터10에필로그Cinematic05스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State챕터10에필로그Cinematic05스킵(context);
                 }
@@ -341,7 +341,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic05b(context);
             }
 
@@ -356,7 +356,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State챕터10에필로그Cinematic06(context);
                 }
@@ -371,13 +371,13 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(arg1: 90000, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__3$", arg4: 6);
+                context.SetSound(triggerId: 90000, arg2: true);
+                context.SetConversation(type: 2, spawnId: 11001820, script: "$52010068_QD__MAIN__3$", arg4: 6);
                 context.SetOnetimeEffect(id: 2007, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_01_00002007.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic06스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new State챕터10에필로그Cinematic06스킵(context);
                 }
@@ -396,7 +396,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic07(context);
             }
 
@@ -407,12 +407,12 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__4$", arg4: 6);
+                context.SetConversation(type: 2, spawnId: 11001820, script: "$52010068_QD__MAIN__4$", arg4: 6);
                 context.SetOnetimeEffect(id: 2008, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_02_00002008.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic07스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new State챕터10에필로그Cinematic07스킵(context);
                 }
@@ -431,7 +431,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic08(context);
             }
 
@@ -442,12 +442,12 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__5$", arg4: 9);
+                context.SetConversation(type: 2, spawnId: 11001820, script: "$52010068_QD__MAIN__5$", arg4: 9);
                 context.SetOnetimeEffect(id: 2009, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_03_00002009.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic08스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     return new State챕터10에필로그Cinematic08스킵(context);
                 }
@@ -466,7 +466,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic09(context);
             }
 
@@ -477,12 +477,12 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__6$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001820, script: "$52010068_QD__MAIN__6$", arg4: 5);
                 context.SetOnetimeEffect(id: 2009, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_03_00002009.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic9스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State챕터10에필로그Cinematic9스킵(context);
                 }
@@ -501,7 +501,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic10(context);
             }
 
@@ -515,12 +515,12 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetCinematicUI(type: 9);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__7$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001820, script: "$52010068_QD__MAIN__7$", arg4: 5);
                 context.SetOnetimeEffect(id: 2010, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_04_00002010.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic10스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State챕터10에필로그Cinematic10스킵(context);
                 }
@@ -539,7 +539,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic11(context);
             }
 
@@ -550,12 +550,12 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__8$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001820, script: "$52010068_QD__MAIN__8$", arg4: 5);
                 context.SetOnetimeEffect(id: 2011, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_05_00002011.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic11스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State챕터10에필로그Cinematic11스킵(context);
                 }
@@ -574,7 +574,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic12(context);
             }
 
@@ -585,12 +585,12 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__9$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001820, script: "$52010068_QD__MAIN__9$", arg4: 5);
                 context.SetOnetimeEffect(id: 2011, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_05_00002011.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic12스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State챕터10에필로그Cinematic12스킵(context);
                 }
@@ -609,7 +609,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic13(context);
             }
 
@@ -620,12 +620,12 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__10$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001820, script: "$52010068_QD__MAIN__10$", arg4: 5);
                 context.SetOnetimeEffect(id: 2011, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_05_00002011.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic13스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State챕터10에필로그Cinematic13스킵(context);
                 }
@@ -644,7 +644,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic13_b(context);
             }
 
@@ -658,12 +658,12 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetCinematicUI(type: 9);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__11$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001820, script: "$52010068_QD__MAIN__11$", arg4: 5);
                 context.SetOnetimeEffect(id: 2012, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_06_00002012.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic13b스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State챕터10에필로그Cinematic13b스킵(context);
                 }
@@ -682,7 +682,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic14(context);
             }
 
@@ -693,12 +693,12 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__12$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001820, script: "$52010068_QD__MAIN__12$", arg4: 5);
                 context.SetOnetimeEffect(id: 2013, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_07_00002013.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic14스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State챕터10에필로그Cinematic14스킵(context);
                 }
@@ -717,7 +717,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic15(context);
             }
 
@@ -728,12 +728,12 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__13$", arg4: 6);
+                context.SetConversation(type: 2, spawnId: 11001820, script: "$52010068_QD__MAIN__13$", arg4: 6);
                 context.SetOnetimeEffect(id: 2014, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_08_00002014.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic15스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new State챕터10에필로그Cinematic15스킵(context);
                 }
@@ -752,7 +752,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic16(context);
             }
 
@@ -763,12 +763,12 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그Cinematic16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001820, script: "$52010068_QD__MAIN__14$", arg4: 5);
+                context.SetConversation(type: 2, spawnId: 11001820, script: "$52010068_QD__MAIN__14$", arg4: 5);
                 context.SetOnetimeEffect(id: 2015, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_09_00002015.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic16스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State챕터10에필로그Cinematic16스킵(context);
                 }
@@ -787,7 +787,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic17(context);
             }
 
@@ -799,7 +799,7 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State챕터10에필로그Cinematic18(context);
                 }
@@ -818,7 +818,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip(state: new State챕터10에필로그Cinematic18스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State챕터10에필로그Cinematic18스킵(context);
                 }
@@ -837,7 +837,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic18b(context);
             }
 
@@ -852,7 +852,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip(state: new State챕터10에필로그Cinematic18b스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State챕터10에필로그Cinematic18b스킵(context);
                 }
@@ -871,7 +871,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic19(context);
             }
 
@@ -886,7 +886,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip(state: new State챕터10에필로그Cinematic19스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State챕터10에필로그Cinematic19스킵(context);
                 }
@@ -905,7 +905,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic20(context);
             }
 
@@ -920,7 +920,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip(state: new State챕터10에필로그Cinematic20스킵(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State챕터10에필로그Cinematic20스킵(context);
                 }
@@ -939,7 +939,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State챕터10에필로그Cinematic21(context);
             }
 
@@ -954,7 +954,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip(state: new State챕터10에필로그Cinematic22(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State챕터10에필로그Cinematic22(context);
                 }
@@ -973,7 +973,7 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuit(context);
                 }
@@ -991,10 +991,10 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetOnetimeEffect(id: 10, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.MoveUser(arg1: 52010068, arg2: 2);
+                context.MoveUser(mapId: 52010068, portalId: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

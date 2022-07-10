@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 799) == 1) {
                     return new StateStart(context);
                 }
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02010086_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {6001, 6002, 6003, 6004}, arg2: true);
-                context.SetEffect(arg1: new[] {6010, 6011, 6012}, arg2: true);
+                context.SetSkill(triggerIds: new []{6001, 6002, 6003, 6004}, arg2: true);
+                context.SetEffect(triggerIds: new []{6010, 6011, 6012}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

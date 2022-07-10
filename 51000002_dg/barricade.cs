@@ -4,11 +4,11 @@ namespace Maple2.Trigger._51000002_dg {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {301}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMesh(triggerIds: new []{301}, visible: false, arg3: 0, arg4: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new[] {99})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{99})) {
                     return new StateCount(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._51000002_dg {
             internal StateCount(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "90", arg2: 90);
+                context.SetTimer(timerId: "90", seconds: 90);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "90")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "90")) {
                     return new StateBlock(context);
                 }
 
@@ -40,15 +40,15 @@ namespace Maple2.Trigger._51000002_dg {
             internal StateBlock(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {301}, arg2: true, arg3: 0, arg4: 200);
+                context.SetMesh(triggerIds: new []{301}, visible: true, arg3: 0, arg4: 200);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {99})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new StateUnblock(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {102})) {
+                if (!context.UserDetected(boxIds: new []{102})) {
                     return new StateWait(context);
                 }
 
@@ -62,11 +62,11 @@ namespace Maple2.Trigger._51000002_dg {
             internal StateUnblock(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {301}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMesh(triggerIds: new []{301}, visible: false, arg3: 0, arg4: 0);
             }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {102})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{102})) {
                     return new StateWait(context);
                 }
 

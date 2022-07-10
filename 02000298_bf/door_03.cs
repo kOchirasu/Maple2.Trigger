@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02000298_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 203, arg2: true, arg3: "Closed");
-                context.SetMesh(arg1: new[] {3031, 3032}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetAgent(arg1: new[] {9031, 9032, 9033}, arg2: true);
+                context.SetActor(triggerId: 203, visible: true, initialSequence: "Closed");
+                context.SetMesh(triggerIds: new []{3031, 3032}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetAgent(triggerIds: new []{9031, 9032, 9033}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103})) {
                     return new State문열림(context);
                 }
 
@@ -24,13 +24,13 @@ namespace Maple2.Trigger._02000298_bf {
             internal State문열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 203, arg2: true, arg3: "Opened");
-                context.SetMesh(arg1: new[] {3031}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetMesh(arg1: new[] {3032}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetAgent(arg1: new[] {9031, 9032, 9033}, arg2: false);
+                context.SetActor(triggerId: 203, visible: true, initialSequence: "Opened");
+                context.SetMesh(triggerIds: new []{3031}, visible: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMesh(triggerIds: new []{3032}, visible: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetAgent(triggerIds: new []{9031, 9032, 9033}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

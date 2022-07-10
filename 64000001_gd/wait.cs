@@ -4,15 +4,15 @@ namespace Maple2.Trigger._64000001_gd {
             internal State시간표확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "10", arg2: 10, arg3: false);
+                context.SetTimer(timerId: "10", seconds: 10, clearAtZero: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 104) == 6) {
                     return new StateStart(context);
                 }
 
-                if (context.TimeExpired(arg1: "10")) {
+                if (context.TimeExpired(timerId: "10")) {
                     return new State시간표확인(context);
                 }
 
@@ -26,11 +26,11 @@ namespace Maple2.Trigger._64000001_gd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "88", arg2: 1200, arg3: false);
+                context.SetTimer(timerId: "88", seconds: 1200, clearAtZero: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "88")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "88")) {
                     return new State시간표확인(context);
                 }
 

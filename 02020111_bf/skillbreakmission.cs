@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakMissionReset") == 1) {
                     return new StateWait_1차_발동체크(context);
                 }
@@ -21,12 +21,12 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakMissionReset") == 0) {
                     return new StateWait(context);
                 }
 
-                if (context.CheckNpcAdditionalEffect(spawnPointId: 111, additionalEffectId: 62100016, level: 1)) {
+                if (context.CheckNpcAdditionalEffect(spawnId: 111, additionalEffectId: 62100016, level: 1)) {
                     return new State던전미션1차_체크(context);
                 }
 
@@ -41,16 +41,16 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakMissionReset") == 0) {
                     return new StateWait(context);
                 }
 
-                if (context.GetNpcExtraData(spawnPointId: 111, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002171, level: 1)) {
+                if (context.GetNpcExtraData(spawnId: 111, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnId: 101, additionalEffectId: 70002171, level: 1)) {
                     return new State던전미션1차_스킬브레이크저지_Success(context);
                 }
 
-                if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002181, level: 1)) {
+                if (context.CheckNpcAdditionalEffect(spawnId: 101, additionalEffectId: 70002181, level: 1)) {
                     return new State던전미션1차_스킬브레이크저지_실패(context);
                 }
 
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02020111_bf {
                 context.DungeonMissionComplete(missionId: 23039004);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakMissionReset") == 0) {
                     return new StateWait(context);
                 }
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakMissionReset") == 0) {
                     return new StateWait(context);
                 }
@@ -107,12 +107,12 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakMissionReset") == 0) {
                     return new StateWait(context);
                 }
 
-                if (context.CheckNpcAdditionalEffect(spawnPointId: 115, additionalEffectId: 62100016, level: 1)) {
+                if (context.CheckNpcAdditionalEffect(spawnId: 115, additionalEffectId: 62100016, level: 1)) {
                     return new State던전미션2차_체크(context);
                 }
 
@@ -127,16 +127,16 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakMissionReset") == 0) {
                     return new StateWait(context);
                 }
 
-                if (context.GetNpcExtraData(spawnPointId: 115, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002171, level: 1)) {
+                if (context.GetNpcExtraData(spawnId: 115, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnId: 101, additionalEffectId: 70002171, level: 1)) {
                     return new State던전미션2차_스킬브레이크저지_Success(context);
                 }
 
-                if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002181, level: 1)) {
+                if (context.CheckNpcAdditionalEffect(spawnId: 101, additionalEffectId: 70002181, level: 1)) {
                     return new State던전미션2차_스킬브레이크저지_실패(context);
                 }
 
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._02020111_bf {
                 context.DungeonMissionComplete(missionId: 23039004);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakMissionReset") == 0) {
                     return new StateWait(context);
                 }
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakMissionReset") == 0) {
                     return new StateWait(context);
                 }
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

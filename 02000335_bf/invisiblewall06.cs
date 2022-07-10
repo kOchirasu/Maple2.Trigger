@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 708) == 1) {
                     return new State벽면처리(context);
                 }
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

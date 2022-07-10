@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1105, 1106, 1107, 1108})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1105, 1106, 1107, 1108})) {
                     return new State오브젝트_04_작동(context);
                 }
 
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02000329_bf {
             internal State오브젝트_04_작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {10001}, arg2: false);
+                context.SetMesh(triggerIds: new []{10001}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {104})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{104})) {
                     return new State오브젝트_04_작동_메세지(context);
                 }
 
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

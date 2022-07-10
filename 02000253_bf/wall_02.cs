@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02000253_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: new[] {9003, 9004}, arg2: true);
-                context.SetMesh(arg1: new[] {503, 504, 604, 605, 606}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000438}, arg2: 1);
+                context.SetAgent(triggerIds: new []{9003, 9004}, visible: true);
+                context.SetMesh(triggerIds: new []{503, 504, 604, 605, 606}, visible: true);
+                context.SetInteractObject(interactIds: new []{10000438}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000438}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000438}, arg2: 0)) {
                     return new State열기(context);
                 }
 
@@ -24,11 +24,11 @@ namespace Maple2.Trigger._02000253_bf {
             internal State열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: new[] {9003, 9004}, arg2: false);
-                context.SetMesh(arg1: new[] {503, 504, 604, 605, 606}, arg2: false);
+                context.SetAgent(triggerIds: new []{9003, 9004}, visible: false);
+                context.SetMesh(triggerIds: new []{503, 504, 604, 605, 606}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

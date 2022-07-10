@@ -10,15 +10,15 @@ namespace Maple2.Trigger._02000253_bf {
                 context.HideGuideSummary(entityId: 20002530);
                 context.HideGuideSummary(entityId: 20002531);
                 context.HideGuideSummary(entityId: 20002532);
-                context.SetLadder(arg1: 1701, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 1702, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 1703, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 1704, arg2: false, arg3: false, arg4: 0);
-                context.SetInteractObject(arg1: new[] {13000005}, arg2: 2);
+                context.SetLadder(triggerId: 1701, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 1702, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 1703, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 1704, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetInteractObject(interactIds: new []{13000005}, state: 2);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 906) == 1) {
                     return new StateDelay(context);
                 }
@@ -33,11 +33,11 @@ namespace Maple2.Trigger._02000253_bf {
             internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 8);
+                context.SetTimer(timerId: "1", seconds: 8);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State몹1(context);
                 }
 
@@ -51,29 +51,29 @@ namespace Maple2.Trigger._02000253_bf {
             internal State몹1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002527, textId: 20002527);
-                context.SetTimer(id: "1", arg2: 15);
+                context.SetTimer(timerId: "1", seconds: 15);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State몹2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001050}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001050}, arg2: 0)) {
                     return new State몹2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001051}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001051}, arg2: 0)) {
                     return new State몹2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001052}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001052}, arg2: 0)) {
                     return new State몹2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001053}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10001053}, arg2: 0)) {
                     return new State몹2(context);
                 }
 
@@ -87,14 +87,14 @@ namespace Maple2.Trigger._02000253_bf {
             internal State몹2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002528, textId: 20002528);
-                context.SetTimer(id: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4002, 4004, 4008}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 20);
+                context.CreateMonster(spawnIds: new []{4002, 4004, 4008}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {4002, 4004, 4006, 4008})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{4002, 4004, 4006, 4008})) {
                     return new State몹3(context);
                 }
 
@@ -108,14 +108,14 @@ namespace Maple2.Trigger._02000253_bf {
             internal State몹3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002529, textId: 20002529);
-                context.SetTimer(id: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4001, 4003, 4007}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 20);
+                context.CreateMonster(spawnIds: new []{4001, 4003, 4007}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {4001, 4003, 4005, 4007})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{4001, 4003, 4005, 4007})) {
                     return new State몹4(context);
                 }
 
@@ -129,14 +129,14 @@ namespace Maple2.Trigger._02000253_bf {
             internal State몹4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002530, textId: 20002530);
-                context.SetTimer(id: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 20);
+                context.CreateMonster(spawnIds: new []{4001, 4002, 4003, 4004}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {4001, 4002, 4003, 4005, 4006})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{4001, 4002, 4003, 4005, 4006})) {
                     return new State몹5(context);
                 }
 
@@ -150,14 +150,14 @@ namespace Maple2.Trigger._02000253_bf {
             internal State몹5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002531, textId: 20002531);
-                context.SetTimer(id: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4005, 4006, 4007, 4008}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 20);
+                context.CreateMonster(spawnIds: new []{4005, 4006, 4007, 4008}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {4003, 4004, 4005, 4006, 4007, 4008})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{4003, 4004, 4005, 4006, 4007, 4008})) {
                     return new State몹6(context);
                 }
 
@@ -171,14 +171,14 @@ namespace Maple2.Trigger._02000253_bf {
             internal State몹6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002532, textId: 20002532);
-                context.SetTimer(id: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004, 4005}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 20);
+                context.CreateMonster(spawnIds: new []{4001, 4002, 4003, 4004, 4005}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{4001, 4002, 4003, 4004, 4005, 4006})) {
                     return new State몹10(context);
                 }
 
@@ -192,14 +192,14 @@ namespace Maple2.Trigger._02000253_bf {
             internal State몹7(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002533, textId: 20002533);
-                context.SetTimer(id: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 20);
+                context.CreateMonster(spawnIds: new []{4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State몹8(context);
                 }
 
@@ -213,12 +213,12 @@ namespace Maple2.Trigger._02000253_bf {
             internal State몹8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 20);
+                context.CreateMonster(spawnIds: new []{4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State몹9(context);
                 }
 
@@ -232,12 +232,12 @@ namespace Maple2.Trigger._02000253_bf {
             internal State몹9(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 20);
+                context.CreateMonster(spawnIds: new []{4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State몹10(context);
                 }
 
@@ -251,14 +251,14 @@ namespace Maple2.Trigger._02000253_bf {
             internal State몹10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002533, textId: 20002533);
-                context.SetTimer(id: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 20);
+                context.CreateMonster(spawnIds: new []{4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016})) {
                     return new State열려(context);
                 }
 
@@ -272,18 +272,18 @@ namespace Maple2.Trigger._02000253_bf {
             internal State열려(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002524, textId: 20002524);
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
-                context.SetLadder(arg1: 1701, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 1702, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 1703, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 1704, arg2: true, arg3: true, arg4: 2);
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetLadder(triggerId: 1701, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 1702, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 1703, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 1704, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateEnd(context);
                 }
 
@@ -300,7 +300,7 @@ namespace Maple2.Trigger._02000253_bf {
                 context.HideGuideSummary(entityId: 20002524);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

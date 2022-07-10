@@ -4,11 +4,11 @@ namespace Maple2.Trigger._84000003_wd {
             internal StateStart_타이머설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "4000", arg2: 300, arg3: true, arg4: false);
+                context.SetTimer(timerId: "4000", seconds: 300, clearAtZero: true, display: false);
                 context.SetPortal(portalId: 10001, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateCamera세팅(context);
             }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._84000003_wd {
                 context.SetPortal(portalId: 10001, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State강제ExitWait(context);
             }
 
@@ -35,12 +35,12 @@ namespace Maple2.Trigger._84000003_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "exitstudio") == 1) {
                     return new State강제ExitPrepare(context);
                 }
 
-                if (context.TimeExpired(arg1: "4000")) {
+                if (context.TimeExpired(timerId: "4000")) {
                     return new State강퇴안내(context);
                 }
 
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._84000003_wd {
                 context.ShowGuideSummary(entityId: 28400138);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State강제ExitPrepare(context);
                 }
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._84000003_wd {
                 context.HideGuideSummary(entityId: 28400138);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State강제Exit(context);
                 }
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._84000003_wd {
                 context.RoomExpire();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

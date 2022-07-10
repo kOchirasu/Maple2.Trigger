@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Main") == 1) {
                     return new State포션사용_Prepare(context);
                 }
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02020051_bf {
             internal State포션사용_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002131}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{10002131}, state: 2);
                 context.SetUserValue(triggerId: 101, key: "Potion", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 720000)) {
                     return new State포션사용(context);
                 }
@@ -39,11 +39,11 @@ namespace Maple2.Trigger._02020051_bf {
             internal State포션사용(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002131}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002131}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10002131}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10002131}, arg2: 0)) {
                     return new StateStart(context);
                 }
 
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02020051_bf {
                 context.SetUserValue(triggerId: 101, key: "Potion", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Main") == 2) {
                     return new StateSetup(context);
                 }

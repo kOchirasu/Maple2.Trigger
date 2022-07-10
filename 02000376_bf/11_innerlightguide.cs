@@ -5,10 +5,10 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "DungeonStart", value: 0);
-                context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5104}, arg2: false);
+                context.SetEffect(triggerIds: new []{5100, 5101, 5102, 5103, 5104}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "DungeonStart") == 1) {
                     return new StateLodingDelay01(context);
                 }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGuideOn(context);
                 }
@@ -39,12 +39,12 @@ namespace Maple2.Trigger._02000376_bf {
             internal StateGuideOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, script: "$02000376_BF__11_INNERLIGHTGUIdE__0$", arg3: 4000, arg4: "0");
-                context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5104}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
+                context.SetEventUI(arg1: 1, script: "$02000376_BF__11_INNERLIGHTGUIdE__0$", duration: 4000, boxId: 0);
+                context.SetEffect(triggerIds: new []{5100, 5101, 5102, 5103, 5104}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateQuit(context);
                 }
@@ -59,10 +59,10 @@ namespace Maple2.Trigger._02000376_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5104}, arg2: false);
+                context.SetEffect(triggerIds: new []{5100, 5101, 5102, 5103, 5104}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

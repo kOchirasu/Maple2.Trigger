@@ -5,56 +5,56 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000074}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000074}, questStates: new byte[]{2})) {
                     return new StateNPC리젠03_담당관과트리스탄_02(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000050}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000050}, questStates: new byte[]{2})) {
                     return new StateNPC리젠02_담당관과트리스탄(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000037}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000037}, questStates: new byte[]{2})) {
                     return new StateNPC리젠01_5대세력담당관(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000075}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000075}, questStates: new byte[]{3})) {
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000074}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000074}, questStates: new byte[]{3})) {
                     return new StateNPC리젠03_담당관과트리스탄_02(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000063}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000063}, questStates: new byte[]{3})) {
                     return new StateNPC리젠01_5대세력담당관(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000058}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000058}, questStates: new byte[]{3})) {
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000057}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000057}, questStates: new byte[]{3})) {
                     return new StateNPC리젠01_5대세력담당관(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000050}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000050}, questStates: new byte[]{3})) {
                     return new StateNPC리젠02_담당관과트리스탄(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000043}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000043}, questStates: new byte[]{3})) {
                     return new StateNPC리젠03_트리스탄솔로(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000049}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000049}, questStates: new byte[]{3})) {
                     return new StateNPC리젠02_담당관과트리스탄(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000046}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000046}, questStates: new byte[]{3})) {
                     return new StateNPC리젠01_5대세력담당관(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000019}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000019}, questStates: new byte[]{3})) {
                     return new StateEnd(context);
                 }
 
@@ -68,10 +68,10 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateNPC리젠03_트리스탄솔로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2005}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2005}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd(context);
                 }
@@ -86,10 +86,10 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateNPC리젠01_5대세력담당관(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2000, 2001, 2002, 2003, 2004}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2000, 2001, 2002, 2003, 2004}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd(context);
                 }
@@ -104,11 +104,11 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateNPC리젠02_담당관과트리스탄(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2000, 2001, 2002, 2003, 2004, 2005}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000057}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9001}, questIds: new []{91000057}, questStates: new byte[]{3})) {
                     return new State트리스탄삐짐01(context);
                 }
 
@@ -125,10 +125,10 @@ namespace Maple2.Trigger._52010068_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.AddCinematicTalk(npcId: 11003790, illustId: "Tristan_normal", script: "$52010052_QD__ACT01__0$", duration: 4000);
-                context.MoveNpc(arg1: 2005, arg2: "MS2PatrolData_1001");
+                context.MoveNpc(spawnId: 2005, patrolName: "MS2PatrolData_1001");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State트리스탄삐짐02(context);
                 }
@@ -145,10 +145,10 @@ namespace Maple2.Trigger._52010068_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.DestroyMonster(arg1: new[] {2005});
+                context.DestroyMonster(spawnIds: new []{2005});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd(context);
                 }
@@ -163,10 +163,10 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateNPC리젠03_담당관과트리스탄_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2000, 2001, 2002, 2003, 2004, 2005}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd(context);
                 }
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

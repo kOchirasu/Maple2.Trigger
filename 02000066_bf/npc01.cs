@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {605}, arg2: false);
-                context.SetActor(arg1: 201, arg2: false, arg3: "Dead_A");
-                context.SetInteractObject(arg1: new[] {10000341}, arg2: 0);
+                context.SetEffect(triggerIds: new []{605}, visible: false);
+                context.SetActor(triggerId: 201, visible: false, initialSequence: "Dead_A");
+                context.SetInteractObject(interactIds: new []{10000341}, state: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103})) {
                     return new StateNPCCreation(context);
                 }
 
@@ -24,13 +24,13 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.CreateMonster(arg1: new[] {2001}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000341}, arg2: 0);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.CreateMonster(spawnIds: new []{2001}, arg2: false);
+                context.SetInteractObject(interactIds: new []{10000341}, state: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateNPCCreation조건(context);
                 }
 
@@ -45,11 +45,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2001})) {
-                    context.SetEffect(arg1: new[] {605}, arg2: true);
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2001})) {
+                    context.SetEffect(triggerIds: new []{605}, visible: true);
                     context.ShowGuideSummary(entityId: 20000663, textId: 20000663);
-                    context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                    context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                     return new StateNPCDestroy(context);
                 }
 
@@ -63,12 +63,12 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 3);
-                context.DestroyMonster(arg1: new[] {2001});
+                context.SetTimer(timerId: "3", seconds: 3);
+                context.DestroyMonster(spawnIds: new []{2001});
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     context.HideGuideSummary(entityId: 20000663);
                     return new StateInteractObject(context);
                 }
@@ -83,12 +83,12 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateInteractObject(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 201, arg2: true, arg3: "Dead_A");
-                context.SetInteractObject(arg1: new[] {10000341}, arg2: 1);
+                context.SetActor(triggerId: 201, visible: true, initialSequence: "Dead_A");
+                context.SetInteractObject(interactIds: new []{10000341}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000341}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000341}, arg2: 0)) {
                     return new State부활(context);
                 }
 
@@ -102,12 +102,12 @@ namespace Maple2.Trigger._02000066_bf {
             internal State부활(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 1);
-                context.CreateMonster(arg1: new[] {2001}, arg2: false);
+                context.SetTimer(timerId: "1", seconds: 1);
+                context.CreateMonster(spawnIds: new []{2001}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateNPCScript(context);
                 }
 
@@ -121,12 +121,12 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 201, arg2: false, arg3: "Dead_A");
-                context.SetConversation(arg1: 1, arg2: 2001, script: "$02000066_BF__NPC01__1$", arg4: 2);
+                context.SetActor(triggerId: 201, visible: false, initialSequence: "Dead_A");
+                context.SetConversation(type: 1, spawnId: 2001, script: "$02000066_BF__NPC01__1$", arg4: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2001})) {
                     return new StateNPCCreation조건(context);
                 }
 

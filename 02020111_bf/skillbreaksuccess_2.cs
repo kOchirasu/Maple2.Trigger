@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakSuccess_5") == 1 && context.GetUserValue(key: "SkillBreakSuccess_6") == 1 && context.GetUserValue(key: "SkillBreakSuccess_7") == 1 && context.GetUserValue(key: "SkillBreakSuccess_8") == 1) {
                     return new StateBuff발동(context);
                 }
@@ -22,21 +22,21 @@ namespace Maple2.Trigger._02020111_bf {
             internal StateBuff발동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {101}, arg2: 62100027, arg3: 1, arg4: true);
-                context.AddBuff(arg1: new[] {1001}, arg2: 75000002, arg3: 1);
-                context.AddBuff(arg1: new[] {1002}, arg2: 75000002, arg3: 1);
-                context.AddBuff(arg1: new[] {1003}, arg2: 75000002, arg3: 1);
-                context.AddBuff(arg1: new[] {1004}, arg2: 75000002, arg3: 1);
-                context.AddBuff(arg1: new[] {1005}, arg2: 75000002, arg3: 1);
-                context.SetAmbientLight(arg1: new Vector3(183f, 189f, 201f));
-                context.SetDirectionalLight(arg1: new Vector3(192f, 210f, 211f), arg2: new Vector3(170f, 170f, 170f));
-                context.AddBuff(arg1: new[] {101}, arg2: 70002171, arg3: 1, arg4: true, arg5: false);
-                context.AddBuff(arg1: new[] {101}, arg2: 62100026, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(boxIds: new []{101}, skillId: 62100027, level: 1, arg4: true);
+                context.AddBuff(boxIds: new []{1001}, skillId: 75000002, level: 1);
+                context.AddBuff(boxIds: new []{1002}, skillId: 75000002, level: 1);
+                context.AddBuff(boxIds: new []{1003}, skillId: 75000002, level: 1);
+                context.AddBuff(boxIds: new []{1004}, skillId: 75000002, level: 1);
+                context.AddBuff(boxIds: new []{1005}, skillId: 75000002, level: 1);
+                context.SetAmbientLight(color: new Vector3(183f, 189f, 201f));
+                context.SetDirectionalLight(diffuseColor: new Vector3(192f, 210f, 211f), specularColor: new Vector3(170f, 170f, 170f));
+                context.AddBuff(boxIds: new []{101}, skillId: 70002171, level: 1, arg4: true, arg5: false);
+                context.AddBuff(boxIds: new []{101}, skillId: 62100026, level: 1, arg4: true, arg5: false);
                 context.SetUserValue(triggerId: 900103, key: "Lapenta_Attack_Guide", value: 2);
                 context.SetUserValue(triggerId: 900204, key: "Message", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "SkillBreakSuccess_5") == 0 && context.GetUserValue(key: "SkillBreakSuccess_6") == 0 && context.GetUserValue(key: "SkillBreakSuccess_7") == 0 && context.GetUserValue(key: "SkillBreakSuccess_8") == 0 && context.GetUserValue(key: "SkillBreakSuccess_Reset") == 0) {
                     return new StateStart(context);
                 }

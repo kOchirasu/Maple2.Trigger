@@ -4,11 +4,11 @@ namespace Maple2.Trigger._52000185_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {2001}, arg2: 99910280, arg3: 1, arg4: false, arg5: true);
-                context.AddBuff(arg1: new[] {2001}, arg2: 99910280, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{2001}, skillId: 99910280, level: 1, arg4: false, arg5: true);
+                context.AddBuff(boxIds: new []{2001}, skillId: 99910280, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateReady(context);
             }
 
@@ -19,11 +19,11 @@ namespace Maple2.Trigger._52000185_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {2001}, arg2: 99910280, arg3: 1, arg4: false, arg5: true);
-                context.AddBuff(arg1: new[] {2001}, arg2: 99910280, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{2001}, skillId: 99910280, level: 1, arg4: false, arg5: true);
+                context.AddBuff(boxIds: new []{2001}, skillId: 99910280, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateIdle(context);
             }
 

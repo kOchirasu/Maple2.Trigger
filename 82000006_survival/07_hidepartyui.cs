@@ -7,8 +7,8 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SetUserValue(key: "HidePartyUI", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new StateHidePartyUI(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._82000006_survival {
             internal StateHidePartyUI(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleUI(uiName: "PartyDialog", visible: false);
+                context.SetVisibleUI(uiNames: new []{"PartyDialog"}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateHidePartyUI(context);
                 }
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._82000006_survival {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

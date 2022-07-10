@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02020062_bf {
             internal StateSetupReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: false);
+                context.SetBreakable(triggerIds: new []{2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: false);
                 context.SetUserValue(triggerId: 99990026, key: "MovePanel03", value: 0);
-                context.SetInteractObject(arg1: new[] {12000117}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{12000117}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MovePanel03") == 1) {
                     return new StateLeverCreation(context);
                 }
@@ -25,11 +25,11 @@ namespace Maple2.Trigger._02020062_bf {
             internal StateLeverCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000117}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{12000117}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000117}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000117}, arg2: 0)) {
                     return new StateSetup이동(context);
                 }
 
@@ -43,13 +43,13 @@ namespace Maple2.Trigger._02020062_bf {
             internal StateSetup이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: true);
-                context.SetInteractObject(arg1: new[] {12000117}, arg2: 2);
+                context.SetVisibleBreakableObject(triggerIds: new []{2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: true);
+                context.SetInteractObject(interactIds: new []{12000117}, state: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9202})) {
-                    context.SetBreakable(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: true);
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9202})) {
+                    context.SetBreakable(triggerIds: new []{2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, enabled: true);
                     return new StateWait(context);
                 }
 
@@ -63,10 +63,10 @@ namespace Maple2.Trigger._02020062_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: false);
+                context.SetBreakable(triggerIds: new []{2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, enabled: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSetup이동(context);
                 }

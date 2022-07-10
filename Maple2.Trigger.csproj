@@ -5,9 +5,10 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Authors>Ochirasu</Authors>
         <Description>Trigger scripts for MapleStory2</Description>
-        <PackageVersion>1.1.0</PackageVersion>
+        <PackageVersion>1.1.1</PackageVersion>
         <RepositoryUrl>https://github.com/kOchirasu</RepositoryUrl>
         <RepositoryType>github</RepositoryType>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
 </Project>

@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "YuperiaFirstSetEnd", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
                     return new State1셋트전투판스킬TriggerSetting(context);
                 }
@@ -24,10 +24,10 @@ namespace Maple2.Trigger._02020130_bf {
             internal State1셋트전투판스킬TriggerSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1301, 1302, 1303}, arg2: true);
+                context.SetSkill(triggerIds: new []{1301, 1302, 1303}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 310)) {
                     return new State1셋트전투판마무리신호Wait(context);
                 }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "IshuraFirstSetEnd") == 1) {
                     return new StateIshura_디Buff스킬끄기(context);
                 }
@@ -67,10 +67,10 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "IshuraFirstSetEnd", value: 0);
-                context.SetSkill(arg1: new[] {1301}, arg2: false);
+                context.SetSkill(triggerIds: new []{1301}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 370)) {
                     return new State1셋트전투판마무리신호Wait(context);
                 }
@@ -86,10 +86,10 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "RenduebianFirstSetEnd", value: 0);
-                context.SetSkill(arg1: new[] {1302}, arg2: false);
+                context.SetSkill(triggerIds: new []{1302}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 370)) {
                     return new State1셋트전투판마무리신호Wait(context);
                 }
@@ -105,10 +105,10 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "YuperiaFirstSetEnd", value: 0);
-                context.SetSkill(arg1: new[] {1303}, arg2: false);
+                context.SetSkill(triggerIds: new []{1303}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 370)) {
                     return new State1셋트전투판마무리신호Wait(context);
                 }
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

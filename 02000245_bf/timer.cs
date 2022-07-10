@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000245_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {2001, 2002}, arg2: false);
+                context.SetEffect(triggerIds: new []{2001, 2002}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {205})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{205})) {
                     return new State초재기1(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02000245_bf {
             internal State초재기1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "99", arg2: 5);
+                context.SetTimer(timerId: "99", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "99")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "99")) {
                     return new State초재기2(context);
                 }
 
@@ -40,12 +40,12 @@ namespace Maple2.Trigger._02000245_bf {
             internal State초재기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {2001}, arg2: true);
-                context.SetEventUI(arg1: 1, script: "$02000245_BF__TIMER__0$", arg3: 5000, arg4: "0");
+                context.SetEffect(triggerIds: new []{2001}, visible: true);
+                context.SetEventUI(arg1: 1, script: "$02000245_BF__TIMER__0$", duration: 5000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "99")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "99")) {
                     return new State유저이동음성(context);
                 }
 
@@ -59,11 +59,11 @@ namespace Maple2.Trigger._02000245_bf {
             internal State유저이동음성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 3);
+                context.SetTimer(timerId: "1", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new State유저이동(context);
                 }
 
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000245_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

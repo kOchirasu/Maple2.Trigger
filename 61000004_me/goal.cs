@@ -7,7 +7,7 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "gameStart") == 1) {
                     return new State결승점(context);
                 }
@@ -25,10 +25,10 @@ namespace Maple2.Trigger._61000004_me {
                 context.EndMiniGameRound(winnerBoxId: 102, isOnlyWinner: true, expRate: 1.0f);
                 context.MiniGameGiveReward(winnerBoxId: 102, contentType: "miniGame");
                 context.EndMiniGame(winnerBoxId: 102, isOnlyWinner: true, type: MiniGame.LudibriumEscape);
-                context.AddBuff(arg1: new[] {102}, arg2: 70000019, arg3: 1);
+                context.AddBuff(boxIds: new []{102}, skillId: 70000019, level: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State결승점(context);
                 }
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._61000004_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

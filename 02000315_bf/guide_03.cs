@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000315_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(triggerIds: new []{5000}, visible: false);
                 context.SetUserValue(key: "CameraWalkEnd", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateLoadingDelay01(context);
                 }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000315_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "CameraWalkEnd") == 1) {
                     return new StateLoadingDelay02(context);
                 }
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02000315_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State1stBattleGuide(context);
                 }
@@ -55,12 +55,12 @@ namespace Maple2.Trigger._02000315_bf {
             internal State1stBattleGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
                 context.ShowGuideSummary(entityId: 20031501, textId: 20031501, duration: 8000);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {502})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{502})) {
                     return new State1stBridgeGuide(context);
                 }
 
@@ -74,12 +74,12 @@ namespace Maple2.Trigger._02000315_bf {
             internal State1stBridgeGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
                 context.ShowGuideSummary(entityId: 20031502, textId: 20031502, duration: 5000);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {503})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{503})) {
                     return new State2ndBattleGuide(context);
                 }
 
@@ -93,12 +93,12 @@ namespace Maple2.Trigger._02000315_bf {
             internal State2ndBattleGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
                 context.ShowGuideSummary(entityId: 20031501, textId: 20031501, duration: 8000);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {505})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{505})) {
                     return new State2ndBridgeGuide(context);
                 }
 
@@ -112,12 +112,12 @@ namespace Maple2.Trigger._02000315_bf {
             internal State2ndBridgeGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
                 context.ShowGuideSummary(entityId: 20031502, textId: 20031502, duration: 5000);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {506})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{506})) {
                     return new State3rdBattleGuide(context);
                 }
 
@@ -131,12 +131,12 @@ namespace Maple2.Trigger._02000315_bf {
             internal State3rdBattleGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
                 context.ShowGuideSummary(entityId: 20031501, textId: 20031501, duration: 8000);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {508})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{508})) {
                     return new State3rdBridgeGuide(context);
                 }
 
@@ -150,12 +150,12 @@ namespace Maple2.Trigger._02000315_bf {
             internal State3rdBridgeGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
                 context.ShowGuideSummary(entityId: 20031502, textId: 20031502, duration: 5000);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {402})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{402})) {
                     return new StateQuit(context);
                 }
 
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._02000315_bf {
                 context.HideGuideSummary(entityId: 20031502);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._99999926 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -16,11 +16,11 @@ namespace Maple2.Trigger._99999926 {
             internal StateBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {421, 422, 423, 424, 425}, arg2: false);
+                context.CreateMonster(spawnIds: new []{421, 422, 423, 424, 425}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {421, 422, 423, 424, 425})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{421, 422, 423, 424, 425})) {
                     return new StateBattle02(context);
                 }
 
@@ -34,11 +34,11 @@ namespace Maple2.Trigger._99999926 {
             internal StateBattle02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {411, 412, 413, 414, 415}, arg2: false);
+                context.CreateMonster(spawnIds: new []{411, 412, 413, 414, 415}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {411, 412, 413, 414, 415})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{411, 412, 413, 414, 415})) {
                     return new StateBattle03Random(context);
                 }
 
@@ -53,12 +53,12 @@ namespace Maple2.Trigger._99999926 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 25f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateBattle03A(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateBattle03B(context);
                 }
 
@@ -72,11 +72,11 @@ namespace Maple2.Trigger._99999926 {
             internal StateBattle03A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {421, 422, 423, 424, 425, 441}, arg2: false);
+                context.CreateMonster(spawnIds: new []{421, 422, 423, 424, 425, 441}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {421, 422, 423, 424, 425})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{421, 422, 423, 424, 425})) {
                     return new StateMevidicCinematic(context);
                 }
 
@@ -90,11 +90,11 @@ namespace Maple2.Trigger._99999926 {
             internal StateBattle03B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {411, 412, 413, 414, 415, 441}, arg2: false);
+                context.CreateMonster(spawnIds: new []{411, 412, 413, 414, 415, 441}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {411, 412, 413, 414, 415})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{411, 412, 413, 414, 415})) {
                     return new StateMevidicCinematic(context);
                 }
 
@@ -108,11 +108,11 @@ namespace Maple2.Trigger._99999926 {
             internal StateMevidicCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {451}, arg2: false);
-                context.MoveNpc(arg1: 451, arg2: "MS2PatrolData_701");
+                context.CreateMonster(spawnIds: new []{451}, arg2: false);
+                context.MoveNpc(spawnId: 451, patrolName: "MS2PatrolData_701");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 402) == 1) {
                     // return new StateLoadingStart(context);
                     return null;

@@ -8,15 +8,15 @@ namespace Maple2.Trigger._02020019_bf {
             public override void OnEnter() {
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.MoveUser(arg1: 02020019, arg2: 1);
+                context.MoveUser(mapId: 02020019, portalId: 1);
                 context.SetUserValue(triggerId: 99990002, key: "battlesetting", value: 0);
                 context.SetUserValue(triggerId: 99990004, key: "Timer", value: 0);
                 context.SetUserValue(triggerId: 99990005, key: "SpecialTimer", value: 0);
                 context.SetUserValue(triggerId: 99990002, key: "SpecialTimer", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {901})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{901})) {
                     return new StateCamera_시작(context);
                 }
 
@@ -31,13 +31,13 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateCamera_캡션(context), arg2: "exit");
-                context.MoveUser(arg1: 02020019, arg2: 1);
-                context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
+                context.MoveUser(mapId: 02020019, portalId: 1);
+                context.CreateMonster(spawnIds: new []{101, 102, 103}, arg2: false);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCamera_캡션(context);
                 }
@@ -52,11 +52,11 @@ namespace Maple2.Trigger._02020019_bf {
             internal StateCamera_캡션(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {501, 502}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{501, 502}, returnView: false);
                 context.ShowCaption(type: CaptionType.Vertical, title: "$02020019_BF__02020019_main__3$", script: "$02020019_BF__02020019_main__4$", align: Align.Center | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateCamera_네이린설명1(context);
                 }
@@ -71,12 +71,12 @@ namespace Maple2.Trigger._02020019_bf {
             internal StateCamera_네이린설명1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 503, arg2: true);
+                context.CameraSelect(triggerId: 503, enable: true);
                 context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", script: "$02020019_BF__02020019_main__0$", duration: 4000, align: Align.Left);
-                context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 6300f);
+                context.SetNpcEmotionLoop(spawnId: 101, sequenceName: "Talk_A", duration: 6300f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateCamera_네이린설명2(context);
                 }
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", script: "$02020019_BF__02020019_main__1$", duration: 4000, align: Align.Left);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateCamera_네이린설명3(context);
                 }
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.SetSceneSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateCamera_종료(context);
                 }
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.CameraReset(interpolationTime: 0.1f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State전투_Wait(context);
             }
 
@@ -145,8 +145,8 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {901})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{901})) {
                     return new State전투_진행(context);
                 }
 
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.SetUserValue(triggerId: 99990002, key: "battlesetting", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "End") == 1) {
                     return new State랭크체크대사(context);
                 }
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonFirstUserMissionScore() >= 1500) {
                     context.SideNpcTalk(npcId: 24100001, illust: "Neirin_surprise", duration: 5000, script: "$02020019_BF__02020019_main__6$", voice: @"ko/Npc/00002125");
                     return new State던전종료_A랭크이상(context);
@@ -203,7 +203,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.DungeonClear();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.DungeonFail();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

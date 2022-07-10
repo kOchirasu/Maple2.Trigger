@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02020111_bf {
                 context.SetUserValue(triggerId: 900203, key: "Movement", value: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002181, level: 1)) {
+            public override TriggerState? Execute() {
+                if (context.CheckNpcAdditionalEffect(spawnId: 101, additionalEffectId: 70002181, level: 1)) {
                     return new StateSkill브레이크_실패(context);
                 }
 
@@ -38,11 +38,11 @@ namespace Maple2.Trigger._02020111_bf {
             internal StateSkill브레이크_실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {101}, arg2: 62100026, arg3: 1, arg4: true);
-                context.AddBuff(arg1: new[] {101}, arg2: 70002185, arg3: 1, arg4: true);
-                context.SetAmbientLight(arg1: new Vector3(183f, 189f, 201f));
-                context.SetDirectionalLight(arg1: new Vector3(192f, 210f, 211f), arg2: new Vector3(170f, 170f, 170f));
-                context.AddBuff(arg1: new[] {1006}, arg2: 70002151, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{101}, skillId: 62100026, level: 1, arg4: true);
+                context.AddBuff(boxIds: new []{101}, skillId: 70002185, level: 1, arg4: true);
+                context.SetAmbientLight(color: new Vector3(183f, 189f, 201f));
+                context.SetDirectionalLight(diffuseColor: new Vector3(192f, 210f, 211f), specularColor: new Vector3(170f, 170f, 170f));
+                context.AddBuff(boxIds: new []{1006}, skillId: 70002151, level: 1, arg5: false);
                 context.SetUserValue(triggerId: 900001, key: "SkillBreakFail", value: 1);
                 context.SetUserValue(triggerId: 900008, key: "SkillBreakFail", value: 1);
                 context.SetUserValue(triggerId: 900009, key: "SkillBreakFail", value: 1);
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02020111_bf {
                 context.SetUserValue(triggerId: 900301, key: "Light_On_4", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateSkill브레이크_실패_2(context);
                 }
@@ -97,7 +97,7 @@ namespace Maple2.Trigger._02020111_bf {
                 context.SetUserValue(triggerId: 900102, key: "Phase", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWait(context);
             }
 
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

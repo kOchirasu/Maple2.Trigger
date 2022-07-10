@@ -4,11 +4,11 @@ namespace Maple2.Trigger._99999922 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {2002});
+                context.DestroyMonster(spawnIds: new []{2002});
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {999910})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{999910})) {
                     return new State진행1(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._99999922 {
             internal State진행1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "300", arg2: 1);
+                context.SetTimer(timerId: "300", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2002})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2002})) {
                     return new State진행2(context);
                 }
 
@@ -40,12 +40,12 @@ namespace Maple2.Trigger._99999922 {
             internal State진행2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {999910}, arg2: 49179111, arg3: 1, arg5: true);
-                context.SetTimer(id: "300", arg2: 3);
+                context.AddBuff(boxIds: new []{999910}, skillId: 49179111, level: 1, arg5: true);
+                context.SetTimer(timerId: "300", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "300")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "300")) {
                     return new StateStart10(context);
                 }
 
@@ -59,10 +59,10 @@ namespace Maple2.Trigger._99999922 {
             internal StateStart10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "400", arg2: 60);
+                context.SetTimer(timerId: "400", seconds: 60);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

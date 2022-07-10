@@ -6,16 +6,16 @@ namespace Maple2.Trigger._02000335_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906, 6907, 6908}, arg2: false, arg4: 0, arg5: 10f);
-                context.CreateMonster(arg1: new[] {101, 102, 103, 104, 106, 107, 111, 120, 121, 124, 125, 131, 132, 133, 134, 135, 140, 143, 144, 145, 147, 148}, arg2: false);
-                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217}, arg2: false);
-                context.SetEffect(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906}, arg2: false);
-                context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnPointId: 991, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointId: 992, isEnable: false);
+                context.SetMesh(triggerIds: new []{6901, 6902, 6903, 6904, 6905, 6906, 6907, 6908}, visible: false, arg4: 0, arg5: 10f);
+                context.CreateMonster(spawnIds: new []{101, 102, 103, 104, 106, 107, 111, 120, 121, 124, 125, 131, 132, 133, 134, 135, 140, 143, 144, 145, 147, 148}, arg2: false);
+                context.CreateMonster(spawnIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217}, arg2: false);
+                context.SetEffect(triggerIds: new []{6901, 6902, 6903, 6904, 6905, 6906}, visible: false);
+                context.EnableSpawnPointPc(spawnId: 0, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 991, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 992, isEnable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 700) == 1) {
                     return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateStart_02(context);
                 }
@@ -49,11 +49,11 @@ namespace Maple2.Trigger._02000335_bf {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateStart_03(context));
-                context.SetConversation(arg1: 1, arg2: 203, script: "$02000335_BF__MAIN__0$", arg4: 2, arg5: 0);
-                context.CameraSelectPath(pathIds: new[] {80001, 80002, 80003, 80004}, arg2: false);
+                context.SetConversation(type: 1, spawnId: 203, script: "$02000335_BF__MAIN__0$", arg4: 2, arg5: 0);
+                context.CameraSelectPath(pathIds: new []{80001, 80002, 80003, 80004}, returnView: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateStart_03(context);
                 }
@@ -73,12 +73,12 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetEventUI(arg1: 1, script: "$02000335_BF__MAIN__1$", arg3: 3000, arg4: "0");
-                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.SetEventUI(arg1: 1, script: "$02000335_BF__MAIN__1$", duration: 3000, boxId: 0);
+                context.SetTimer(timerId: "3", seconds: 3, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateStart_04(context);
                 }
 
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000335_bf {
             }
 
             public override void OnExit() {
-                context.SetMesh(arg1: new[] {6401, 6402, 6403, 6404}, arg2: false, arg4: 0, arg5: 10f);
+                context.SetMesh(triggerIds: new []{6401, 6402, 6403, 6404}, visible: false, arg4: 0, arg5: 10f);
             }
         }
 
@@ -94,12 +94,12 @@ namespace Maple2.Trigger._02000335_bf {
             internal StateStart_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 105, textId: 20003361);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {107})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{107})) {
                     return new State관문_01_개방(context);
                 }
 
@@ -115,18 +115,18 @@ namespace Maple2.Trigger._02000335_bf {
             internal State관문_01_개방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362);
-                context.SetMesh(arg1: new[] {6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.SetMesh(triggerIds: new []{6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108}, visible: false, arg4: 0, arg5: 10f);
+                context.SetTimer(timerId: "3", seconds: 3, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State관문_01_개방_02(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {106})) {
+                if (context.MonsterDead(spawnIds: new []{106})) {
                     return new State관문_02_개방(context);
                 }
 
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {106})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{106})) {
                     return new State관문_02_개방(context);
                 }
 
@@ -162,12 +162,12 @@ namespace Maple2.Trigger._02000335_bf {
             internal State관문_01_개방_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 105, textId: 20003361);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {106})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{106})) {
                     return new State관문_02_개방(context);
                 }
 
@@ -183,16 +183,16 @@ namespace Maple2.Trigger._02000335_bf {
             internal State관문_02_개방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointId: 991, isEnable: true);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 991, isEnable: true);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362);
-                context.SetMesh(arg1: new[] {6111, 6112, 6113, 6114, 6115, 6116, 6117, 6118}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.SetMesh(triggerIds: new []{6111, 6112, 6113, 6114, 6115, 6116, 6117, 6118}, visible: false, arg4: 0, arg5: 10f);
+                context.SetTimer(timerId: "3", seconds: 3, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State관문_02_개방_02(context);
                 }
 
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

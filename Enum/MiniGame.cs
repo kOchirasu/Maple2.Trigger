@@ -1,23 +1,10 @@
 ﻿namespace Maple2.Trigger.Enum {
     public enum MiniGame {
-        Unknown,
-        CrazyRunners,
-        DanceDanceStop,
-        LudibriumEscape,
-        OXQuiz,
-        ShanghaiRunners,
-        SoleSurvivor,
-        SpringBeach,
-        TrapMaster,
+        Unknown, CrazyRunners, DanceDanceStop, LudibriumEscape, OXQuiz, ShanghaiRunners, SoleSurvivor, SpringBeach, TrapMaster,
 
-        ChristmasDanceDanceStop,
-        OXQuizUgc,
+        ChristmasDanceDanceStop, OXQuizUgc,
 
-        WDPinata,
-        WDDanceDanceStop,
+        WDPinata, WDDanceDanceStop,
 
-        UserSpringBeach,
-        UserLudibriumEscape,
-        UserCrazyRunners,
-    }
+        UserSpringBeach, UserLudibriumEscape, UserCrazyRunners, }
 }

@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02000410_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {444, 666}, arg2: false);
+                context.SetSkill(triggerIds: new []{444, 666}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
                     return new StateBattleStart(context);
                 }
@@ -23,12 +23,12 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonPlayTime() == 600) {
                     return new State1단계_70000103(context);
                 }
 
-                if (!context.NpcDetected(arg1: 700, arg2: new[] {0})) {
+                if (!context.NpcDetected(boxId: 700, spawnIds: new []{0})) {
                     return new StateSkill끄기(context);
                 }
 
@@ -42,15 +42,15 @@ namespace Maple2.Trigger._02000410_bf {
             internal State1단계_70000103(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {444}, arg2: true);
+                context.SetSkill(triggerIds: new []{444}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonPlayTime() == 780) {
                     return new State2단계_70000104(context);
                 }
 
-                if (!context.NpcDetected(arg1: 700, arg2: new[] {0})) {
+                if (!context.NpcDetected(boxId: 700, spawnIds: new []{0})) {
                     return new StateSkill끄기(context);
                 }
 
@@ -64,15 +64,15 @@ namespace Maple2.Trigger._02000410_bf {
             internal State2단계_70000104(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {666}, arg2: true);
+                context.SetSkill(triggerIds: new []{666}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonPlayTime() == 900) {
                     return new StateSkill끄기(context);
                 }
 
-                if (!context.NpcDetected(arg1: 700, arg2: new[] {0})) {
+                if (!context.NpcDetected(boxId: 700, spawnIds: new []{0})) {
                     return new StateSkill끄기(context);
                 }
 
@@ -86,11 +86,11 @@ namespace Maple2.Trigger._02000410_bf {
             internal StateSkill끄기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {444, 666}, arg2: false);
-                context.AddBuff(arg1: new[] {750}, arg2: 50004524, arg3: 1, arg4: false);
+                context.SetSkill(triggerIds: new []{444, 666}, arg2: false);
+                context.AddBuff(boxIds: new []{750}, skillId: 50004524, level: 1, arg4: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd(context);
                 }
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

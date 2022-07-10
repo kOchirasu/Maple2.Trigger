@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02020062_bf {
             internal StateSetupReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: false);
+                context.SetBreakable(triggerIds: new []{2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: false);
                 context.SetUserValue(triggerId: 99990024, key: "MovePanel01", value: 0);
-                context.SetInteractObject(arg1: new[] {12000115}, arg2: 2);
+                context.SetInteractObject(interactIds: new []{12000115}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MovePanel01") == 1) {
                     return new StateLeverCreation(context);
                 }
@@ -25,11 +25,11 @@ namespace Maple2.Trigger._02020062_bf {
             internal StateLeverCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000115}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{12000115}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000115}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000115}, arg2: 0)) {
                     return new StateSetup이동(context);
                 }
 
@@ -43,18 +43,18 @@ namespace Maple2.Trigger._02020062_bf {
             internal StateSetup이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: true);
-                context.SetInteractObject(arg1: new[] {12000115}, arg2: 2);
+                context.SetVisibleBreakableObject(triggerIds: new []{2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: true);
+                context.SetInteractObject(interactIds: new []{12000115}, state: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9200})) {
-                    context.SetBreakable(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: true);
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9200})) {
+                    context.SetBreakable(triggerIds: new []{2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, enabled: true);
                     return new StateWait(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {9204})) {
-                    context.SetBreakable(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: true);
+                if (context.UserDetected(boxIds: new []{9204})) {
+                    context.SetBreakable(triggerIds: new []{2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, enabled: true);
                     return new StateWait(context);
                 }
 
@@ -69,9 +69,9 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {9204})) {
-                    context.SetBreakable(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: false);
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{9204})) {
+                    context.SetBreakable(triggerIds: new []{2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, enabled: false);
                     return new StateSetup이동(context);
                 }
 

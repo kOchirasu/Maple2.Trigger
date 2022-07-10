@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52000199_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003448}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{10003448}, questStates: new byte[]{2})) {
                     return new StateCameraEffect01(context);
                 }
 
@@ -21,10 +21,10 @@ namespace Maple2.Trigger._52000199_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.MoveUser(arg1: 52000199, arg2: 5001);
+                context.MoveUser(mapId: 52000199, portalId: 5001);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateCameraEffect02(context);
                 }
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._52000199_qd {
                 context.SetCinematicUI(type: 9, script: "$52000199_QD__52000199_2__0$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
                     return new StateCameraEffect02_2(context);
                 }
@@ -57,12 +57,12 @@ namespace Maple2.Trigger._52000199_qd {
             internal StateCameraEffect02_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser,HighlightGameMenu", visible: false);
-                context.AddBuff(arg1: new[] {2001}, arg2: 99910403, arg3: 1, arg4: false, arg5: true);
-                context.AddBuff(arg1: new[] {2001}, arg2: 99910403, arg3: 1, arg4: false, arg5: false);
+                context.SetVisibleUI(uiNames: new []{"MessengerBrowser", "GroupMessengerBrowser", "HighlightGameMenu"}, visible: false);
+                context.AddBuff(boxIds: new []{2001}, skillId: 99910403, level: 1, arg4: false, arg5: true);
+                context.AddBuff(boxIds: new []{2001}, skillId: 99910403, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCameraEffect03(context);
                 }
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52000199_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossGuide") == 1) {
                     return new StateGuide분기(context);
                 }
@@ -21,12 +21,12 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199}, arg2: 100)) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199}, jobCode: 100)) {
                     return new StateGuide출력(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {199}, arg2: 110)) {
+                if (context.UserDetected(boxIds: new []{199}, jobCode: 110)) {
                     return new StateQuest체크(context);
                 }
 
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002651}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{199}, questIds: new []{40002651}, questStates: new byte[]{1})) {
                     return new StateGuide출력(context);
                 }
 
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._63000038_cs {
                 context.ShowGuideSummary(entityId: 26300384, textId: 26300384);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {105})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{105})) {
                     context.HideGuideSummary(entityId: 26300384);
                     return new StateEnd(context);
                 }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

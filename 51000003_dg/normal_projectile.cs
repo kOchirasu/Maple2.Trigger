@@ -4,10 +4,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362});
+                context.DestroyMonster(spawnIds: new []{301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Round_01") == 1) {
                     return new StateRound_01(context);
                 }
@@ -44,13 +44,13 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {354}, arg2: true, arg3: 700);
-                context.CreateMonster(arg1: new[] {355}, arg2: true, arg3: 1400);
-                context.CreateMonster(arg1: new[] {362}, arg2: true, arg3: 2100);
-                context.CreateMonster(arg1: new[] {361}, arg2: true, arg3: 0);
+                context.CreateMonster(spawnIds: new []{354}, arg2: true, arg3: 700);
+                context.CreateMonster(spawnIds: new []{355}, arg2: true, arg3: 1400);
+                context.CreateMonster(spawnIds: new []{362}, arg2: true, arg3: 2100);
+                context.CreateMonster(spawnIds: new []{361}, arg2: true, arg3: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Round_02") == 1) {
                     return new StateRound_02(context);
                 }
@@ -69,11 +69,11 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {352}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new[] {360}, arg2: true, arg3: 1000);
+                context.CreateMonster(spawnIds: new []{352}, arg2: true, arg3: 2000);
+                context.CreateMonster(spawnIds: new []{360}, arg2: true, arg3: 1000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Round_03") == 1) {
                     return new StateRound_03(context);
                 }
@@ -92,11 +92,11 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {359}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new[] {351}, arg2: true, arg3: 1500);
+                context.CreateMonster(spawnIds: new []{359}, arg2: true, arg3: 0);
+                context.CreateMonster(spawnIds: new []{351}, arg2: true, arg3: 1500);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Round_04") == 1) {
                     return new StateRound_04(context);
                 }
@@ -115,11 +115,11 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {353}, arg2: true, arg3: 1000);
-                context.CreateMonster(arg1: new[] {358}, arg2: true, arg3: 2000);
+                context.CreateMonster(spawnIds: new []{353}, arg2: true, arg3: 1000);
+                context.CreateMonster(spawnIds: new []{358}, arg2: true, arg3: 2000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Reset") == 1) {
                     return new StateEnd(context);
                 }
@@ -134,10 +134,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362});
+                context.DestroyMonster(spawnIds: new []{301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

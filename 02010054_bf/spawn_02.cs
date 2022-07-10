@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02010054_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000885}, arg2: 2);
-                context.SetEffect(arg1: new[] {611}, arg2: false);
-                context.SetMesh(arg1: new[] {3128}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10000885}, state: 2);
+                context.SetEffect(triggerIds: new []{611}, visible: false);
+                context.SetMesh(triggerIds: new []{3128}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {106})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{106})) {
                     return new StateMobCreation(context);
                 }
 
@@ -24,14 +24,14 @@ namespace Maple2.Trigger._02010054_bf {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {611}, arg2: true);
-                context.SetMesh(arg1: new[] {3128}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                context.CreateMonster(arg1: new[] {2023}, arg2: false);
+                context.SetEffect(triggerIds: new []{611}, visible: true);
+                context.SetMesh(triggerIds: new []{3128}, visible: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.CreateMonster(spawnIds: new []{2023}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2023})) {
-                    context.SetInteractObject(arg1: new[] {10000885}, arg2: 1);
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2023})) {
+                    context.SetInteractObject(interactIds: new []{10000885}, state: 1);
                     return new StateEnd(context);
                 }
 
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

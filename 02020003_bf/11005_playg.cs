@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetUserValue(key: "PlayG", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PlayG") == 1) {
                     return new StateActorOff(context);
                 }
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02020003_bf {
             internal StateActorOff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 11005, arg2: true, arg3: "ks_quest_musical_B01_off");
+                context.SetActor(triggerId: 11005, visible: true, initialSequence: "ks_quest_musical_B01_off");
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000062}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000062}, arg2: 0)) {
                     return new StateActorOn(context);
                 }
 
@@ -44,10 +44,10 @@ namespace Maple2.Trigger._02020003_bf {
             internal StateActorOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 11005, arg2: true, arg3: "ks_quest_musical_B01_blue");
+                context.SetActor(triggerId: 11005, visible: true, initialSequence: "ks_quest_musical_B01_blue");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 700)) {
                     return new StateResetDelay(context);
                 }
@@ -66,10 +66,10 @@ namespace Maple2.Trigger._02020003_bf {
             internal StateResetDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 11005, arg2: true, arg3: "ks_quest_musical_B01_off");
+                context.SetActor(triggerId: 11005, visible: true, initialSequence: "ks_quest_musical_B01_off");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateActorOff(context);
                 }

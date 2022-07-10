@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000177_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 710) == 1) {
                     return new StateHorus_move_01(context);
                 }
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02000177_bf {
             internal StateHorus_move_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20001772, textId: 20001772, duration: 5000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateHorus_01_broken(context);
                 }
@@ -39,10 +39,10 @@ namespace Maple2.Trigger._02000177_bf {
             internal StateHorus_01_broken(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 999, arg2: "MS2PatrolData_2004");
+                context.MoveNpc(spawnId: 999, patrolName: "MS2PatrolData_2004");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateHorus_01_End(context);
                 }
@@ -57,10 +57,10 @@ namespace Maple2.Trigger._02000177_bf {
             internal StateHorus_01_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {3001}, arg2: true);
+                context.SetSkill(triggerIds: new []{3001}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2300)) {
                     return new StateHorus_01_End_02(context);
                 }
@@ -79,10 +79,10 @@ namespace Maple2.Trigger._02000177_bf {
             internal StateHorus_01_End_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {999});
+                context.DestroyMonster(spawnIds: new []{999});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 711) == 1) {
                     return new StateHorus_move_02(context);
                 }
@@ -97,17 +97,17 @@ namespace Maple2.Trigger._02000177_bf {
             internal StateHorus_move_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20001772, textId: 20001772, duration: 5000);
-                context.CreateMonster(arg1: new[] {998}, arg2: false);
+                context.CreateMonster(spawnIds: new []{998}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 751, arg2: new[] {998})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 751, spawnIds: new []{998})) {
                     return new StateHorus_02_End(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10001060}, arg2: 2)) {
+                if (context.ObjectInteracted(interactIds: new []{10001060}, arg2: 2)) {
                     return new StateHorus_move_03(context);
                 }
 
@@ -121,10 +121,10 @@ namespace Maple2.Trigger._02000177_bf {
             internal StateHorus_02_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {998});
+                context.DestroyMonster(spawnIds: new []{998});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 752) == 1) {
                     return new StateHorus_move_03(context);
                 }
@@ -139,13 +139,13 @@ namespace Maple2.Trigger._02000177_bf {
             internal StateHorus_move_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20001772, textId: 20001772, duration: 5000);
-                context.CreateMonster(arg1: new[] {997}, arg2: false);
+                context.CreateMonster(spawnIds: new []{997}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 753, arg2: new[] {997})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 753, spawnIds: new []{997})) {
                     return new StateHorus_03_End(context);
                 }
 
@@ -159,10 +159,10 @@ namespace Maple2.Trigger._02000177_bf {
             internal StateHorus_03_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {997});
+                context.DestroyMonster(spawnIds: new []{997});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

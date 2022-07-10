@@ -4,15 +4,15 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013}, arg2: true);
-                context.SetSkill(arg1: new[] {710, 711}, arg2: false);
-                context.SetEffect(arg1: new[] {6110, 6111, 6298}, arg2: false);
-                context.SetActor(arg1: 220, arg2: false);
-                context.SetActor(arg1: 221, arg2: false);
-                context.SetActor(arg1: 222, arg2: false);
+                context.SetAgent(triggerIds: new []{8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013}, visible: true);
+                context.SetSkill(triggerIds: new []{710, 711}, arg2: false);
+                context.SetEffect(triggerIds: new []{6110, 6111, 6298}, visible: false);
+                context.SetActor(triggerId: 220, visible: false);
+                context.SetActor(triggerId: 221, visible: false);
+                context.SetActor(triggerId: 222, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "EventStart") == 1) {
                     return new State이벤트조건(context);
                 }
@@ -27,11 +27,11 @@ namespace Maple2.Trigger._52010038_qd {
             internal State이벤트조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6298}, arg2: true);
+                context.SetEffect(triggerIds: new []{6298}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103})) {
                     return new State이벤트시작(context);
                 }
 
@@ -45,14 +45,14 @@ namespace Maple2.Trigger._52010038_qd {
             internal State이벤트시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1200}, arg2: false);
-                context.DestroyMonster(arg1: new[] {1201});
-                context.SetConversation(arg1: 1, arg2: 1200, script: "$52010038_QD__EVENT__0$", arg4: 2, arg5: 0);
-                context.MoveNpc(arg1: 1200, arg2: "MS2PatrolData_1200");
+                context.CreateMonster(spawnIds: new []{1200}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{1201});
+                context.SetConversation(type: 1, spawnId: 1200, script: "$52010038_QD__EVENT__0$", arg4: 2, arg5: 0);
+                context.MoveNpc(spawnId: 1200, patrolName: "MS2PatrolData_1200");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 104, arg2: new[] {1200})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 104, spawnIds: new []{1200})) {
                     return new StateCreation(context);
                 }
 
@@ -66,12 +66,12 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {710}, arg2: true);
-                context.SetEffect(arg1: new[] {6110}, arg2: true);
-                context.CreateMonster(arg1: new[] {2012, 2013, 2014, 2015}, arg2: true);
+                context.SetSkill(triggerIds: new []{710}, arg2: true);
+                context.SetEffect(triggerIds: new []{6110}, visible: true);
+                context.CreateMonster(spawnIds: new []{2012, 2013, 2014, 2015}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new State감지Wait(context);
                 }
@@ -86,12 +86,12 @@ namespace Maple2.Trigger._52010038_qd {
             internal State감지Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: new[] {8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 1200, script: "$52010038_QD__EVENT__2$", arg4: 3, arg5: 2);
+                context.SetAgent(triggerIds: new []{8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013}, visible: false);
+                context.SetConversation(type: 1, spawnId: 1200, script: "$52010038_QD__EVENT__2$", arg4: 3, arg5: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {105})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{105})) {
                     return new State폭발시퀀스시작(context);
                 }
 
@@ -105,12 +105,12 @@ namespace Maple2.Trigger._52010038_qd {
             internal State폭발시퀀스시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 220, arg2: true, arg3: "Regen_A");
-                context.SetActor(arg1: 221, arg2: true, arg3: "Regen_A");
-                context.SetActor(arg1: 222, arg2: true, arg3: "Regen_A");
+                context.SetActor(triggerId: 220, visible: true, initialSequence: "Regen_A");
+                context.SetActor(triggerId: 221, visible: true, initialSequence: "Regen_A");
+                context.SetActor(triggerId: 222, visible: true, initialSequence: "Regen_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new State폭발Delay(context);
                 }
@@ -125,12 +125,12 @@ namespace Maple2.Trigger._52010038_qd {
             internal State폭발Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 220, arg2: true, arg3: "Attack_01_A");
-                context.SetActor(arg1: 221, arg2: true, arg3: "Attack_01_A");
-                context.SetActor(arg1: 222, arg2: true, arg3: "Attack_01_A");
+                context.SetActor(triggerId: 220, visible: true, initialSequence: "Attack_01_A");
+                context.SetActor(triggerId: 221, visible: true, initialSequence: "Attack_01_A");
+                context.SetActor(triggerId: 222, visible: true, initialSequence: "Attack_01_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 800)) {
                     return new State폭발(context);
                 }
@@ -145,15 +145,15 @@ namespace Maple2.Trigger._52010038_qd {
             internal State폭발(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 220, arg2: true, arg3: "Attack_02_A");
-                context.SetActor(arg1: 221, arg2: true, arg3: "Attack_02_A");
-                context.SetActor(arg1: 222, arg2: true, arg3: "Attack_02_A");
-                context.SetSkill(arg1: new[] {711}, arg2: true);
-                context.SetEffect(arg1: new[] {6298}, arg2: false);
-                context.SetEffect(arg1: new[] {6111}, arg2: true);
+                context.SetActor(triggerId: 220, visible: true, initialSequence: "Attack_02_A");
+                context.SetActor(triggerId: 221, visible: true, initialSequence: "Attack_02_A");
+                context.SetActor(triggerId: 222, visible: true, initialSequence: "Attack_02_A");
+                context.SetSkill(triggerIds: new []{711}, arg2: true);
+                context.SetEffect(triggerIds: new []{6298}, visible: false);
+                context.SetEffect(triggerIds: new []{6111}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 200)) {
                     return new State폭탄숨김(context);
                 }
@@ -168,12 +168,12 @@ namespace Maple2.Trigger._52010038_qd {
             internal State폭탄숨김(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 220, arg2: false);
-                context.SetActor(arg1: 221, arg2: false);
-                context.SetActor(arg1: 222, arg2: false);
+                context.SetActor(triggerId: 220, visible: false);
+                context.SetActor(triggerId: 221, visible: false);
+                context.SetActor(triggerId: 222, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1300)) {
                     return new State점수(context);
                 }
@@ -188,11 +188,11 @@ namespace Maple2.Trigger._52010038_qd {
             internal State점수(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {4010, 4030}, arg2: false);
+                context.CreateMonster(spawnIds: new []{4010, 4030}, arg2: false);
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000, script: "$52010038_QD__event__4$", voice: @"ko/Npc/00002105");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd(context);
                 }
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

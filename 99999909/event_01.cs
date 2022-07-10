@@ -5,8 +5,8 @@ namespace Maple2.Trigger._99999909 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {702})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{702})) {
                     return new StateReady(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._99999909 {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$99999909__EVENT_01__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$99999909__EVENT_01__0$", duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

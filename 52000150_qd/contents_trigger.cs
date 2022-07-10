@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "52000150") == 1) {
                     return new State웨이브1알림(context);
                 }
@@ -20,12 +20,12 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브1알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {2400, 2401, 2402, 2403, 2404}, arg2: true, arg3: 0, arg4: 200);
-                context.SetEffect(arg1: new[] {2606}, arg2: true);
+                context.SetEffect(triggerIds: new []{2400, 2401, 2402, 2403, 2404}, visible: true, arg3: 0, arg4: 200);
+                context.SetEffect(triggerIds: new []{2606}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{10010}, questIds: new []{50001641}, questStates: new byte[]{2})) {
                     return new State컨텐츠종료01(context);
                 }
 
@@ -44,8 +44,8 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {400, 401, 402, 403, 404})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{400, 401, 402, 403, 404})) {
                     return new State웨이브2알림(context);
                 }
 
@@ -59,11 +59,11 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브2알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {2500, 2501, 2502, 2503, 2504}, arg2: true, arg3: 0, arg4: 200);
-                context.SetEffect(arg1: new[] {2606}, arg2: true);
+                context.SetEffect(triggerIds: new []{2500, 2501, 2502, 2503, 2504}, visible: true, arg3: 0, arg4: 200);
+                context.SetEffect(triggerIds: new []{2606}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State웨이브2Creation(context);
                 }
@@ -78,11 +78,11 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브2Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {500, 501, 502, 503, 504}, arg2: false);
+                context.CreateMonster(spawnIds: new []{500, 501, 502, 503, 504}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {500, 501, 502, 503, 504})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{500, 501, 502, 503, 504})) {
                     return new State웨이브3알림(context);
                 }
 
@@ -96,11 +96,11 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브3알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {2600, 2601, 2602, 2603, 2604}, arg2: true, arg3: 0, arg4: 200);
-                context.SetEffect(arg1: new[] {2606}, arg2: true);
+                context.SetEffect(triggerIds: new []{2600, 2601, 2602, 2603, 2604}, visible: true, arg3: 0, arg4: 200);
+                context.SetEffect(triggerIds: new []{2606}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State웨이브3Creation(context);
                 }
@@ -115,12 +115,12 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브3Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {600, 601, 602, 603, 604}, arg2: false);
-                context.SetEffect(arg1: new[] {2606}, arg2: true);
+                context.CreateMonster(spawnIds: new []{600, 601, 602, 603, 604}, arg2: false);
+                context.SetEffect(triggerIds: new []{2606}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {600, 601, 602, 603, 604})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{600, 601, 602, 603, 604})) {
                     return new State웨이브4알림(context);
                 }
 
@@ -134,11 +134,11 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브4알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {2300, 2301, 2302, 2303, 2304}, arg2: true, arg3: 0, arg4: 200);
-                context.SetEffect(arg1: new[] {2606}, arg2: true);
+                context.SetEffect(triggerIds: new []{2300, 2301, 2302, 2303, 2304}, visible: true, arg3: 0, arg4: 200);
+                context.SetEffect(triggerIds: new []{2606}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State웨이브4Creation(context);
                 }
@@ -153,12 +153,12 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브4Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {300, 301, 302, 303, 304}, arg2: false);
-                context.SetEffect(arg1: new[] {2606}, arg2: true);
+                context.CreateMonster(spawnIds: new []{300, 301, 302, 303, 304}, arg2: false);
+                context.SetEffect(triggerIds: new []{2606}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {300, 301, 302, 303, 304})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{300, 301, 302, 303, 304})) {
                     return new State웨이브5알림(context);
                 }
 
@@ -172,12 +172,12 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브5알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {2400, 2401, 2402, 2403, 2404}, arg2: true, arg3: 0, arg4: 200);
-                context.SetEffect(arg1: new[] {2600, 2601, 2602, 2603, 2604}, arg2: true, arg3: 0, arg4: 200);
-                context.SetEffect(arg1: new[] {2606}, arg2: true);
+                context.SetEffect(triggerIds: new []{2400, 2401, 2402, 2403, 2404}, visible: true, arg3: 0, arg4: 200);
+                context.SetEffect(triggerIds: new []{2600, 2601, 2602, 2603, 2604}, visible: true, arg3: 0, arg4: 200);
+                context.SetEffect(triggerIds: new []{2606}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State웨이브5Creation(context);
                 }
@@ -192,11 +192,11 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브5Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {600, 601, 602, 603, 604, 400, 401, 402, 403, 404}, arg2: false);
+                context.CreateMonster(spawnIds: new []{600, 601, 602, 603, 604, 400, 401, 402, 403, 404}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {600, 601, 602, 603, 604, 400, 401, 402, 403, 404})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{600, 601, 602, 603, 604, 400, 401, 402, 403, 404})) {
                     return new State웨이브6알림(context);
                 }
 
@@ -210,12 +210,12 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브6알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {2500, 2501, 2502, 2503, 2504}, arg2: true, arg3: 0, arg4: 200);
-                context.SetEffect(arg1: new[] {2300, 2301, 2302, 2303, 2304}, arg2: true, arg3: 0, arg4: 200);
-                context.SetEffect(arg1: new[] {2606}, arg2: true);
+                context.SetEffect(triggerIds: new []{2500, 2501, 2502, 2503, 2504}, visible: true, arg3: 0, arg4: 200);
+                context.SetEffect(triggerIds: new []{2300, 2301, 2302, 2303, 2304}, visible: true, arg3: 0, arg4: 200);
+                context.SetEffect(triggerIds: new []{2606}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State웨이브6Creation(context);
                 }
@@ -230,11 +230,11 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브6Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {500, 501, 502, 503, 504, 300, 301, 302, 303, 304}, arg2: false);
+                context.CreateMonster(spawnIds: new []{500, 501, 502, 503, 504, 300, 301, 302, 303, 304}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {300, 301, 302, 303, 304, 500, 501, 502, 503, 504})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{300, 301, 302, 303, 304, 500, 501, 502, 503, 504})) {
                     return new State웨이브7알림(context);
                 }
 
@@ -248,14 +248,14 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브7알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {2300, 2301, 2302, 2303, 2304}, arg2: true, arg3: 0, arg4: 200);
-                context.SetEffect(arg1: new[] {2400, 2401, 2402, 2403, 2404}, arg2: true, arg3: 0, arg4: 200);
-                context.SetEffect(arg1: new[] {2500, 2501, 2502, 2503, 2504}, arg2: true, arg3: 0, arg4: 200);
-                context.SetEffect(arg1: new[] {2600, 2601, 2602, 2603, 2604}, arg2: true, arg3: 0, arg4: 200);
-                context.SetEffect(arg1: new[] {2606}, arg2: true);
+                context.SetEffect(triggerIds: new []{2300, 2301, 2302, 2303, 2304}, visible: true, arg3: 0, arg4: 200);
+                context.SetEffect(triggerIds: new []{2400, 2401, 2402, 2403, 2404}, visible: true, arg3: 0, arg4: 200);
+                context.SetEffect(triggerIds: new []{2500, 2501, 2502, 2503, 2504}, visible: true, arg3: 0, arg4: 200);
+                context.SetEffect(triggerIds: new []{2600, 2601, 2602, 2603, 2604}, visible: true, arg3: 0, arg4: 200);
+                context.SetEffect(triggerIds: new []{2606}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State웨이브7Creation(context);
                 }
@@ -270,11 +270,11 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브7Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604}, arg2: false);
+                context.CreateMonster(spawnIds: new []{300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604})) {
                     return new State컨텐츠종료01(context);
                 }
 
@@ -288,12 +288,12 @@ namespace Maple2.Trigger._52000150_qd {
             internal State컨텐츠종료01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604});
+                context.DestroyMonster(spawnIds: new []{300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604});
                 context.SetCinematicUI(type: 1);
                 context.SetTimeScale(enable: true, startScale: 0.1f, endScale: 0.5f, duration: 10.0f, interpolator: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State컨텐츠종료02(context);
                 }
@@ -309,16 +309,16 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
-                context.SetEffect(arg1: new[] {2607}, arg2: false);
-                context.DestroyMonster(arg1: new[] {700});
-                context.CreateMonster(arg1: new[] {202}, arg2: false);
-                context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_caitMove01");
-                context.SetNpcEmotionSequence(arg1: 201, arg2: "Bore_A");
-                context.SetNpcEmotionLoop(arg1: 200, arg2: "Event_01_A", arg3: 999999f);
+                context.SetEffect(triggerIds: new []{2607}, visible: false);
+                context.DestroyMonster(spawnIds: new []{700});
+                context.CreateMonster(spawnIds: new []{202}, arg2: false);
+                context.MoveNpc(spawnId: 202, patrolName: "MS2PatrolData_caitMove01");
+                context.SetNpcEmotionSequence(spawnId: 201, sequenceName: "Bore_A");
+                context.SetNpcEmotionLoop(spawnId: 200, sequenceName: "Event_01_A", duration: 999999f);
                 context.SetUserValue(triggerId: 10000, key: "52000150monster", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State컨텐츠종료03(context);
                 }
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._52000150_qd {
                 context.SetUserValue(triggerId: 10000, key: "52000150monster", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

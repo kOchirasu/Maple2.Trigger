@@ -5,9 +5,9 @@ namespace Maple2.Trigger._02020069_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.StartCombineSpawn(groupId: new[] {527}, isStart: true);
+                    context.StartCombineSpawn(groupId: new []{527}, isStart: true);
                     return new State루프2(context);
                 }
 
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02020069_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 150000)) {
                     return new State루프3(context);
                 }
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02020069_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 150000)) {
                     return new State루프2(context);
                 }

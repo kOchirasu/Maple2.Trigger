@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02010057_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: true);
+                context.CreateMonster(spawnIds: new []{101, 102, 103}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -7,8 +7,8 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {103}, arg2: new[] {50001642}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{103}, questIds: new []{50001642}, questStates: new byte[]{2})) {
                     return new StatePortalEnable(context);
                 }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "woodsoflife") == 1) {
                     // return new StatePortalDisable(context);
                     return null;
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000066_bf {
                 context.GuideEvent(eventId: 10003067);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateEnd(context);
                 }
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

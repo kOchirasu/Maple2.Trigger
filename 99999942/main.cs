@@ -17,7 +17,7 @@ namespace Maple2.Trigger._99999942 {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "WaitUser") == 1) {
                     return new State유저Waiting(context);
                 }
@@ -32,10 +32,10 @@ namespace Maple2.Trigger._99999942 {
             internal State유저Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 15, arg3: false, arg4: true);
+                context.SetTimer(timerId: "1", seconds: 15, clearAtZero: false, display: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MoveUser") == 1) {
                     return new State유저이동(context);
                 }
@@ -54,11 +54,11 @@ namespace Maple2.Trigger._99999942 {
             internal State유저이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 5, arg3: false, arg4: true);
-                context.MoveUser(arg1: 99999942, arg2: 2);
+                context.SetTimer(timerId: "1", seconds: 5, clearAtZero: false, display: true);
+                context.MoveUser(mapId: 99999942, portalId: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Play") == 1) {
                     return new State게임시작(context);
                 }
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._99999942 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PlayRound1") == 1) {
                     return new State라운드1(context);
                 }
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._99999942 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PlayRound2") == 1) {
                     return new State라운드2(context);
                 }
@@ -109,10 +109,10 @@ namespace Maple2.Trigger._99999942 {
             internal State라운드2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28}, arg2: false, arg3: 2, arg4: 2);
+                context.SetMesh(triggerIds: new []{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28}, visible: false, arg3: 2, arg4: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PlayRound3") == 1) {
                     return new State라운드3(context);
                 }
@@ -131,10 +131,10 @@ namespace Maple2.Trigger._99999942 {
             internal State라운드3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48}, arg2: false, arg3: 2, arg4: 2);
+                context.SetMesh(triggerIds: new []{29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48}, visible: false, arg3: 2, arg4: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PlayRound4") == 1) {
                     return new State라운드4(context);
                 }
@@ -153,10 +153,10 @@ namespace Maple2.Trigger._99999942 {
             internal State라운드4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60}, arg2: false, arg3: 2, arg4: 2);
+                context.SetMesh(triggerIds: new []{49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60}, visible: false, arg3: 2, arg4: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "End") == 1) {
                     return new StateEnd(context);
                 }
@@ -171,11 +171,11 @@ namespace Maple2.Trigger._99999942 {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64}, arg2: true, arg3: 0, arg4: 0);
-                context.MoveUser(arg1: 99999942, arg2: 1);
+                context.SetMesh(triggerIds: new []{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64}, visible: true, arg3: 0, arg4: 0);
+                context.MoveUser(mapId: 99999942, portalId: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

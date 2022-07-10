@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02000109_in {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004}, arg2: true);
-                context.SetMesh(arg1: new[] {4011}, arg2: false);
-                context.DestroyMonster(arg1: new[] {101, 102});
+                context.SetMesh(triggerIds: new []{4001, 4002, 4003, 4004}, visible: true);
+                context.SetMesh(triggerIds: new []{4011}, visible: false);
+                context.DestroyMonster(spawnIds: new []{101, 102});
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new StateQuestConditionCheck(context);
                 }
 
@@ -25,40 +25,40 @@ namespace Maple2.Trigger._02000109_in {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001608}, questStates: new byte[]{3})) {
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001608}, questStates: new byte[]{2})) {
                     return new State일기장Spawn_Wait(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001608}, questStates: new byte[]{1})) {
                     return new State일기장Spawn_Wait(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{3})) {
                     return new State일기장Spawn_Wait(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{2})) {
                     return new State일기장Spawn_Wait(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{1})) {
                     return new State벽삭제(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001606}, questStates: new byte[]{3})) {
                     return new StateNpcSpawn_Wait(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001606}, questStates: new byte[]{2})) {
                     return new StateNpcSpawn_Wait(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001606}, questStates: new byte[]{1})) {
                     return new StateEnd(context);
                 }
 
@@ -73,43 +73,43 @@ namespace Maple2.Trigger._02000109_in {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001608}, questStates: new byte[]{3})) {
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001608}, questStates: new byte[]{2})) {
                     // return new State일기장Spawn(context);
                     return null;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001608}, questStates: new byte[]{1})) {
                     // return new State일기장Spawn(context);
                     return null;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{3})) {
                     // return new State일기장Spawn(context);
                     return null;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{2})) {
                     return new State일기장Spawn_Wait(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{1})) {
                     return new State벽삭제(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001606}, questStates: new byte[]{3})) {
                     return new StateNpcSpawn(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001606}, questStates: new byte[]{2})) {
                     return new StateNpcSpawn(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001606}, questStates: new byte[]{1})) {
                     return new StateEnd(context);
                 }
 
@@ -123,15 +123,15 @@ namespace Maple2.Trigger._02000109_in {
             internal StateNpcSpawn_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{1})) {
                     return new State벽삭제(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {1})) {
+                if (!context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{1})) {
                     return new StateQuest진행체크(context);
                 }
 
@@ -146,12 +146,12 @@ namespace Maple2.Trigger._02000109_in {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{1})) {
                     return new State벽삭제(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {1})) {
+                if (!context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{1})) {
                     return new StateQuest진행체크(context);
                 }
 
@@ -165,15 +165,15 @@ namespace Maple2.Trigger._02000109_in {
             internal State벽삭제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004}, arg2: false);
+                context.SetMesh(triggerIds: new []{4001, 4002, 4003, 4004}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{2})) {
                     return new State일기장Spawn_Wait(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
+                if (!context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{2})) {
                     return new StateQuest진행체크(context);
                 }
 
@@ -187,17 +187,17 @@ namespace Maple2.Trigger._02000109_in {
             internal State일기장Spawn_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.SetMesh(arg1: new[] {4011}, arg2: true);
-                context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004}, arg2: false);
+                context.CreateMonster(spawnIds: new []{102}, arg2: false);
+                context.SetMesh(triggerIds: new []{4011}, visible: true);
+                context.SetMesh(triggerIds: new []{4001, 4002, 4003, 4004}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{3})) {
                     return new StateEnd(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
+                if (!context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{3})) {
                     return new State일기장Spawn01(context);
                 }
 
@@ -211,24 +211,24 @@ namespace Maple2.Trigger._02000109_in {
             internal State일기장Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {4011}, arg2: true);
-                context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004}, arg2: false);
+                context.SetMesh(triggerIds: new []{4011}, visible: true);
+                context.SetMesh(triggerIds: new []{4001, 4002, 4003, 4004}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{3})) {
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{2})) {
                     return new State일기장Spawn02(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001606}, questStates: new byte[]{3})) {
                     return new State일기장없어짐(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
+                if (!context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{3})) {
                     return new State일기장Spawn02(context);
                 }
 
@@ -242,24 +242,24 @@ namespace Maple2.Trigger._02000109_in {
             internal State일기장Spawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {4011}, arg2: true);
-                context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004}, arg2: false);
+                context.SetMesh(triggerIds: new []{4011}, visible: true);
+                context.SetMesh(triggerIds: new []{4001, 4002, 4003, 4004}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{3})) {
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{2})) {
                     return new State일기장Spawn01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001606}, questStates: new byte[]{3})) {
                     return new State일기장없어짐(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
+                if (!context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{3})) {
                     return new State일기장Spawn01(context);
                 }
 
@@ -273,16 +273,16 @@ namespace Maple2.Trigger._02000109_in {
             internal State일기장없어짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {102});
-                context.SetMesh(arg1: new[] {4011, 4001, 4002, 4003, 4004}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{102});
+                context.SetMesh(triggerIds: new []{4011, 4001, 4002, 4003, 4004}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{2})) {
                     return new State일기장Spawn_Wait(context);
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
+                if (!context.QuestUserDetected(boxIds: new []{9000}, questIds: new []{50001607}, questStates: new byte[]{2})) {
                     return new StateQuest진행체크(context);
                 }
 
@@ -297,7 +297,7 @@ namespace Maple2.Trigger._02000109_in {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

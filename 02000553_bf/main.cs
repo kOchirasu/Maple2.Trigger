@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000553_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateDefaultSetting(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000553_bf {
                 context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 300)) {
                     return new StateBossSpawn(context);
                 }
@@ -38,11 +38,11 @@ namespace Maple2.Trigger._02000553_bf {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateClear처리(context);
                 }
 
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000553_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateEnd처리(context);
                 }
@@ -73,10 +73,10 @@ namespace Maple2.Trigger._02000553_bf {
 
             public override void OnEnter() {
                 context.DungeonClear();
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd(context);
                 }
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02000553_bf {
                 context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

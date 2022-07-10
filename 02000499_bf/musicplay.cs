@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02000499_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5101, 5103, 5102, 5104, 5105}, arg2: false);
-                context.SetInteractObject(arg1: new[] {11000093}, arg2: 1, arg3: false);
-                context.DestroyMonster(arg1: new[] {210});
+                context.SetEffect(triggerIds: new []{5101, 5103, 5102, 5104, 5105}, visible: false);
+                context.SetInteractObject(interactIds: new []{11000093}, state: 1, arg3: false);
+                context.DestroyMonster(spawnIds: new []{210});
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {11000093}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{11000093}, arg2: 0)) {
                     return new StateReady(context);
                 }
 
@@ -24,13 +24,13 @@ namespace Maple2.Trigger._02000499_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WriteLog(arg1: "Survival", arg3: "MushkingLand_musicPlay");
-                context.SetNpcEmotionLoop(arg1: 201, arg2: "Play_A", arg3: 30500f);
-                context.SetNpcEmotionLoop(arg1: 202, arg2: "Play_A", arg3: 30500f);
-                context.SetNpcEmotionLoop(arg1: 203, arg2: "Play_A", arg3: 30500f);
+                context.WriteLog(logName: "Survival", @event: "MushkingLand_musicPlay");
+                context.SetNpcEmotionLoop(spawnId: 201, sequenceName: "Play_A", duration: 30500f);
+                context.SetNpcEmotionLoop(spawnId: 202, sequenceName: "Play_A", duration: 30500f);
+                context.SetNpcEmotionLoop(spawnId: 203, sequenceName: "Play_A", duration: 30500f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePCPlayMusic02(context);
                 }
@@ -45,14 +45,14 @@ namespace Maple2.Trigger._02000499_bf {
             internal StatePCPlayMusic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5101, 5103, 5102, 5104, 5105}, arg2: true);
-                context.CreateMonster(arg1: new[] {210}, arg2: false, arg3: 0);
-                context.SetNpcEmotionLoop(arg1: 201, arg2: "Play_A", arg3: 30500f);
-                context.SetNpcEmotionLoop(arg1: 202, arg2: "Play_A", arg3: 30500f);
-                context.SetNpcEmotionLoop(arg1: 203, arg2: "Play_A", arg3: 30500f);
+                context.SetEffect(triggerIds: new []{5101, 5103, 5102, 5104, 5105}, visible: true);
+                context.CreateMonster(spawnIds: new []{210}, arg2: false, arg3: 0);
+                context.SetNpcEmotionLoop(spawnId: 201, sequenceName: "Play_A", duration: 30500f);
+                context.SetNpcEmotionLoop(spawnId: 202, sequenceName: "Play_A", duration: 30500f);
+                context.SetNpcEmotionLoop(spawnId: 203, sequenceName: "Play_A", duration: 30500f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30500)) {
                     return new StateEnd(context);
                 }
@@ -67,11 +67,11 @@ namespace Maple2.Trigger._02000499_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5101, 5103, 5102, 5104, 5105}, arg2: false);
-                context.DestroyMonster(arg1: new[] {210});
+                context.SetEffect(triggerIds: new []{5101, 5103, 5102, 5104, 5105}, visible: false);
+                context.DestroyMonster(spawnIds: new []{210});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

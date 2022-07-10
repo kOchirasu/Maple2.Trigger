@@ -7,8 +7,8 @@ namespace Maple2.Trigger._02000522_bf {
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {201})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{201})) {
                     return new StateMobCreation(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02000522_bf {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {301}, arg2: true);
+                context.CreateMonster(spawnIds: new []{301}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {301})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{301})) {
                     return new StateClear처리(context);
                 }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000522_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.DungeonClear();
                     return new StateEnd처리(context);
@@ -57,11 +57,11 @@ namespace Maple2.Trigger._02000522_bf {
             internal StateEnd처리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
                 context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

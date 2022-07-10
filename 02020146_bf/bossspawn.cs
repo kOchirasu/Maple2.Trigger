@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020146_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateDefaultSetting(context);
                 }
@@ -27,8 +27,8 @@ namespace Maple2.Trigger._02020146_bf {
                 context.SetPortal(portalId: 601, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateBossSpawn이벤트Wait(context);
                 }
 
@@ -42,10 +42,10 @@ namespace Maple2.Trigger._02020146_bf {
             internal StateBossSpawn이벤트Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {99}, arg2: false);
+                context.CreateMonster(spawnIds: new []{99}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateCinematicWait(context);
                 }
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02020146_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__0$", duration: 4000, voice: @"ko/Npc/00002192");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State전투진행(context);
                 }
@@ -81,8 +81,8 @@ namespace Maple2.Trigger._02020146_bf {
                 context.SetPortal(portalId: 601, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {99})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new StateEndDelay(context);
                 }
 
@@ -96,10 +96,10 @@ namespace Maple2.Trigger._02020146_bf {
             internal StateEndDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg3: "IshuraDungeonClear_Quest");
+                context.SetAchievement(type: "trigger", code: "IshuraDungeonClear_Quest");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     return new State마무리Cinematic(context);
                 }
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._02020146_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                     context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._02020146_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

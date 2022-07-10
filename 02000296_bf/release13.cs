@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {5011, 50111, 50112});
-                context.SetInteractObject(arg1: new[] {10000503}, arg2: 1);
+                context.DestroyMonster(spawnIds: new []{5011, 50111, 50112});
+                context.SetInteractObject(interactIds: new []{10000503}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000503}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000503}, arg2: 0)) {
                     return new StateNpcSpawn01(context);
                 }
 
@@ -23,10 +23,10 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateNpcSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {5011, 50111, 50112});
+                context.CreateMonster(spawnIds: new []{5011, 50111, 50112});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateNpcMove01(context);
                 }
@@ -41,15 +41,15 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateNpcMove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 5011, script: "$02000296_BF__NPC4__0$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 50111, script: "$02000296_BF__NPC11__0$", arg4: 2, arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 50112, script: "$02000296_BF__NPC12__0$", arg4: 2, arg5: 2);
-                context.MoveNpc(arg1: 5011, arg2: "MS2PatrolData2");
-                context.MoveNpc(arg1: 50111, arg2: "MS2PatrolData2");
-                context.MoveNpc(arg1: 50112, arg2: "MS2PatrolData2");
+                context.SetConversation(type: 1, spawnId: 5011, script: "$02000296_BF__NPC4__0$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 50111, script: "$02000296_BF__NPC11__0$", arg4: 2, arg5: 1);
+                context.SetConversation(type: 1, spawnId: 50112, script: "$02000296_BF__NPC12__0$", arg4: 2, arg5: 2);
+                context.MoveNpc(spawnId: 5011, patrolName: "MS2PatrolData2");
+                context.MoveNpc(spawnId: 50111, patrolName: "MS2PatrolData2");
+                context.MoveNpc(spawnId: 50112, patrolName: "MS2PatrolData2");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateNpcRemove01(context);
                 }
@@ -64,10 +64,10 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateNpcRemove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {5011, 50111, 50112});
+                context.DestroyMonster(spawnIds: new []{5011, 50111, 50112});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

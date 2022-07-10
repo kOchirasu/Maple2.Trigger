@@ -7,8 +7,8 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetPortal(portalId: 50, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {99910})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{99910})) {
                     return new StatePortalAction(context);
                 }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetPortal(portalId: 50, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     return new StateWait(context);
                 }

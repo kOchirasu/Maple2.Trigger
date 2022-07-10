@@ -7,7 +7,7 @@ namespace Maple2.Trigger._99999883 {
                 context.DebugString(message: "현재 State1");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "test") == 1) {
                     return new State2(context);
                 }
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._99999883 {
                 context.DebugString(message: "현재 State2");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State1(context);
                 }

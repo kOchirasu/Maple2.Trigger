@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000426_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{5001, 5002, 5003, 5004, 5005, 5006}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateWait중(context);
                 }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ZakumBodyAppearance") == 1) {
                     return new State3층지형의숨겨진바닥Creation(context);
                 }
@@ -38,10 +38,10 @@ namespace Maple2.Trigger._02000426_bf {
             internal State3층지형의숨겨진바닥Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006}, arg2: true, arg3: 1, arg4: 120, arg5: 0.5f);
+                context.SetMesh(triggerIds: new []{5001, 5002, 5003, 5004, 5005, 5006}, visible: true, arg3: 1, arg4: 120, arg5: 0.5f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateEnd(context);
                 }
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

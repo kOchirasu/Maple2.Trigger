@@ -4,11 +4,11 @@ namespace Maple2.Trigger._65000003_bd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "60", arg2: 60, arg3: true, arg4: false);
+                context.SetTimer(timerId: "60", seconds: 60, clearAtZero: true, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {104})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{104})) {
                     return new State어나운스01(context);
                 }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._65000003_bd {
                 context.ShowGuideSummary(entityId: 26500301, textId: 26500301, duration: 4500);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State어나운스01(context);
                 }
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._65000003_bd {
                     return new StateEnd(context);
                 }
 
-                if (context.TimeExpired(arg1: "60")) {
+                if (context.TimeExpired(timerId: "60")) {
                     return new StateEnd(context);
                 }
 
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._65000003_bd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

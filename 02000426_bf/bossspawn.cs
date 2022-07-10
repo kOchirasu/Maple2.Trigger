@@ -7,13 +7,13 @@ namespace Maple2.Trigger._02000426_bf {
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
-                context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3000, 3001}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3002}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "ZakumBodyAppearance", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateDungeonBossSpawnByDifficulty(context);
                 }
 
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonId() == 23040003) {
                     return new State어려운난이도BossSpawn(context);
                 }
@@ -51,10 +51,10 @@ namespace Maple2.Trigger._02000426_bf {
             internal State어려운난이도BossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2001}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }
@@ -69,10 +69,10 @@ namespace Maple2.Trigger._02000426_bf {
             internal StateEasyDifficultyBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2002}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2002}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ZakumBodyAppearance") == 1) {
                     return new State자쿰몸체Spawn(context);
                 }
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._02000426_bf {
                 context.SetUserValue(key: "ZakumBodyAppearance", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonId() == 23040003) {
                     return new State어려운난이도_자쿰몸Spawn(context);
                 }
@@ -141,10 +141,10 @@ namespace Maple2.Trigger._02000426_bf {
             internal State어려운난이도_자쿰몸Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2011}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2011}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }
@@ -159,10 +159,10 @@ namespace Maple2.Trigger._02000426_bf {
             internal StateEasyDifficulty_자쿰몸Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2012}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2012}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }
@@ -179,18 +179,18 @@ namespace Maple2.Trigger._02000426_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.SetAchievement(arg3: "ZakumKritiasClear");
+                context.SetAchievement(type: "trigger", code: "ZakumKritiasClear");
                 context.SetUserValue(triggerId: 999103, key: "BattleEnd", value: 1);
                 context.SetUserValue(triggerId: 999102, key: "BattleEnd2", value: 1);
                 context.SetUserValue(triggerId: 999108, key: "BattleEnd2", value: 1);
                 context.SetUserValue(triggerId: 999109, key: "BattleEnd2", value: 1);
-                context.SetMesh(arg1: new[] {3002, 3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.RemoveBuff(arg1: 199, arg2: 50005300);
-                context.RemoveBuff(arg1: 199, arg2: 50005301);
-                context.RemoveBuff(arg1: 199, arg2: 50001450);
+                context.SetMesh(triggerIds: new []{3002, 3003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.RemoveBuff(boxId: 199, skillId: 50005300);
+                context.RemoveBuff(boxId: 199, skillId: 50005301);
+                context.RemoveBuff(boxId: 199, skillId: 50001450);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.DungeonClear();
@@ -207,17 +207,17 @@ namespace Maple2.Trigger._02000426_bf {
             internal StateDungeonFailure(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
                 context.SetUserValue(triggerId: 999103, key: "BattleEnd", value: 1);
-                context.SetMesh(arg1: new[] {3002, 3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.RemoveBuff(arg1: 199, arg2: 50005300);
-                context.RemoveBuff(arg1: 199, arg2: 50005301);
-                context.RemoveBuff(arg1: 199, arg2: 50001450);
+                context.SetMesh(triggerIds: new []{3002, 3003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.RemoveBuff(boxId: 199, skillId: 50005300);
+                context.RemoveBuff(boxId: 199, skillId: 50005301);
+                context.RemoveBuff(boxId: 199, skillId: 50001450);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.DungeonFail();
@@ -234,10 +234,10 @@ namespace Maple2.Trigger._02000426_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(isEnable: false);
+                context.DungeonEnableGiveUp(enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

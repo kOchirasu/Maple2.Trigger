@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02010052_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7542}, arg2: false);
-                context.SetMesh(arg1: new[] {6083, 6084, 6085, 6086, 6087, 6088, 6089, 6090, 6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {7005}, arg2: false);
+                context.SetEffect(triggerIds: new []{7542}, visible: false);
+                context.SetMesh(triggerIds: new []{6083, 6084, 6085, 6086, 6087, 6088, 6089, 6090, 6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(triggerIds: new []{7005}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 708) == 1) {
                     return new StateFreeze(context);
                 }
@@ -24,14 +24,14 @@ namespace Maple2.Trigger._02010052_bf {
             internal StateFreeze(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7542}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 994, script: "$02010052_BF__TORCHLIGHT_05__0$", arg4: 3);
-                context.SetMesh(arg1: new[] {6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082}, arg2: true, arg3: 80, arg4: 100, arg5: 8f);
-                context.SetTimer(id: "1", arg2: 1, arg4: false);
+                context.SetEffect(triggerIds: new []{7542}, visible: true);
+                context.SetConversation(type: 1, spawnId: 994, script: "$02010052_BF__TORCHLIGHT_05__0$", arg4: 3);
+                context.SetMesh(triggerIds: new []{6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082}, visible: true, arg3: 80, arg4: 100, arg5: 8f);
+                context.SetTimer(timerId: "1", seconds: 1, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateIdle_02(context);
                 }
 
@@ -45,13 +45,13 @@ namespace Maple2.Trigger._02010052_bf {
             internal StateIdle_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 200, textId: 20105201);
-                context.CreateMonster(arg1: new[] {105}, arg2: false);
+                context.CreateMonster(spawnIds: new []{105}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {105})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{105})) {
                     return new StateBurn_state(context);
                 }
 
@@ -65,16 +65,16 @@ namespace Maple2.Trigger._02010052_bf {
             internal StateBurn_state(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7505}, arg2: true);
-                context.SetMesh(arg1: new[] {6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082}, arg2: false, arg3: 800, arg4: 100, arg5: 8f);
-                context.SetMesh(arg1: new[] {600001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEventUI(arg1: 1, script: "$02010052_BF__TORCHLIGHT_05__1$", arg3: 3000);
-                context.SetEffect(arg1: new[] {7005}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1, arg4: false);
+                context.SetEffect(triggerIds: new []{7505}, visible: true);
+                context.SetMesh(triggerIds: new []{6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082}, visible: false, arg3: 800, arg4: 100, arg5: 8f);
+                context.SetMesh(triggerIds: new []{600001}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEventUI(arg1: 1, script: "$02010052_BF__TORCHLIGHT_05__1$", duration: 3000);
+                context.SetEffect(triggerIds: new []{7005}, visible: true);
+                context.SetTimer(timerId: "1", seconds: 1, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateSpawn_state(context);
                 }
 
@@ -89,14 +89,14 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 205, textId: 20105202);
-                context.SetConversation(arg1: 1, arg2: 994, script: "$02010052_BF__TORCHLIGHT_05__2$", arg4: 3);
-                context.MoveNpc(arg1: 994, arg2: "MS2PatrolData_1007");
-                context.CreateMonster(arg1: new[] {510, 511, 512, 513, 514, 515}, arg2: true);
-                context.SetTimer(id: "1", arg2: 1, arg4: false);
+                context.SetConversation(type: 1, spawnId: 994, script: "$02010052_BF__TORCHLIGHT_05__2$", arg4: 3);
+                context.MoveNpc(spawnId: 994, patrolName: "MS2PatrolData_1007");
+                context.CreateMonster(spawnIds: new []{510, 511, 512, 513, 514, 515}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 1, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateBlock_spawn(context);
                 }
 
@@ -110,10 +110,10 @@ namespace Maple2.Trigger._02010052_bf {
             internal StateBlock_spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {6083, 6084, 6085, 6086, 6087, 6088, 6089, 6090}, arg2: true, arg3: 80, arg4: 500, arg5: 8f);
+                context.SetMesh(triggerIds: new []{6083, 6084, 6085, 6086, 6087, 6088, 6089, 6090}, visible: true, arg3: 80, arg4: 500, arg5: 8f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {701}, arg2: false);
-                context.SetEffect(arg1: new[] {601, 602, 603, 604, 605}, arg2: false);
+                context.SetSkill(triggerIds: new []{701}, arg2: false);
+                context.SetEffect(triggerIds: new []{601, 602, 603, 604, 605}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {102})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{102})) {
                     return new StateSkillRandom(context);
                 }
 
@@ -24,20 +24,20 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103})) {
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(arg1: 33f)) {
+                if (context.RandomCondition(rate: 33f)) {
                     return new StateASkillCast(context);
                 }
 
-                if (context.RandomCondition(arg1: 33f)) {
+                if (context.RandomCondition(rate: 33f)) {
                     return new StateBSkillCast(context);
                 }
 
-                if (context.RandomCondition(arg1: 34f)) {
+                if (context.RandomCondition(rate: 34f)) {
                     return new StateCSkillCast(context);
                 }
 
@@ -52,13 +52,13 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103})) {
                     return new StateEnd(context);
                 }
 
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.SetEffect(arg1: new[] {601}, arg2: true);
+                    context.SetEffect(triggerIds: new []{601}, visible: true);
                     context.ShowGuideSummary(entityId: 20002906, textId: 20002906);
                     return new StateActivateSkill(context);
                 }
@@ -74,13 +74,13 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103})) {
                     return new StateEnd(context);
                 }
 
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetEffect(arg1: new[] {601}, arg2: true);
+                    context.SetEffect(triggerIds: new []{601}, visible: true);
                     context.ShowGuideSummary(entityId: 20002906, textId: 20002906);
                     return new StateActivateSkill(context);
                 }
@@ -96,13 +96,13 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103})) {
                     return new StateEnd(context);
                 }
 
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.SetEffect(arg1: new[] {601}, arg2: true);
+                    context.SetEffect(triggerIds: new []{601}, visible: true);
                     context.ShowGuideSummary(entityId: 20002906, textId: 20002906);
                     return new StateActivateSkill(context);
                 }
@@ -118,15 +118,15 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {103})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{103})) {
                     return new StateEnd(context);
                 }
 
                 if (context.WaitTick(waitTick: 4000)) {
                     context.HideGuideSummary(entityId: 20002906);
-                    context.SetEffect(arg1: new[] {602, 603, 604, 605}, arg2: true);
-                    context.SetSkill(arg1: new[] {701}, arg2: true);
+                    context.SetEffect(triggerIds: new []{602, 603, 604, 605}, visible: true);
+                    context.SetSkill(triggerIds: new []{701}, arg2: true);
                     return new StateSkillRandom(context);
                 }
 
@@ -143,7 +143,7 @@ namespace Maple2.Trigger._02000290_bf {
                 context.HideGuideSummary(entityId: 20002906);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

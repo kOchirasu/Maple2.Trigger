@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000420_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {202})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{202})) {
                     return new State오른쪽지점견제(context);
                 }
 
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02000420_bf {
                 context.SetAiExtraData(key: "RightPositionCheck", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {202})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{202})) {
                     return new State오른쪽지점견제풀기(context);
                 }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000420_bf {
                 context.SetAiExtraData(key: "RightPositionCheck", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateStart(context);
                 }

@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000400_bf {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateRoomCheck(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000400_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.IsDungeonRoom()) {
                     return new StateDungeonInit(context);
                 }
@@ -42,10 +42,10 @@ namespace Maple2.Trigger._02000400_bf {
             internal StateDungeonInit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {900, 901}, arg2: false);
+                context.CreateMonster(spawnIds: new []{900, 901}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateBossBattle01(context);
                 }
@@ -60,10 +60,10 @@ namespace Maple2.Trigger._02000400_bf {
             internal StateQuestDungeonInit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {910, 911}, arg2: false);
+                context.CreateMonster(spawnIds: new []{910, 911}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnd체크(context);
                 }
@@ -79,8 +79,8 @@ namespace Maple2.Trigger._02000400_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {910, 911})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{910, 911})) {
                     return new StateQuestClear(context);
                 }
 
@@ -97,8 +97,8 @@ namespace Maple2.Trigger._02000400_bf {
                 context.SetUserValue(triggerId: 100, key: "CheckDualKill", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {900, 901})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{900, 901})) {
                     return new StateBossBattle02(context);
                 }
 
@@ -112,12 +112,12 @@ namespace Maple2.Trigger._02000400_bf {
             internal StateBossBattle02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {900, 901});
-                context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "Madracan02");
-                context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "Madracan_Q02");
+                context.DestroyMonster(spawnIds: new []{900, 901});
+                context.SetAchievement(triggerId: 9900, type: "trigger", code: "Madracan02");
+                context.SetAchievement(triggerId: 9900, type: "trigger", code: "Madracan_Q02");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateQuit(context);
                 }
@@ -132,10 +132,10 @@ namespace Maple2.Trigger._02000400_bf {
             internal StateQuestClear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "Madracan_Q02");
+                context.SetAchievement(triggerId: 9900, type: "trigger", code: "Madracan_Q02");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateQuit(context);
                 }
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._02000400_bf {
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -5,12 +5,12 @@ namespace Maple2.Trigger._02010038_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 50, visible: false, enabled: false, minimapVisible: false);
-                context.SetActor(arg1: 1000, arg2: true, arg3: "co_functobj_sensor_A01_Off");
-                context.SetInteractObject(arg1: new[] {10000881}, arg2: 1);
+                context.SetActor(triggerId: 1000, visible: true, initialSequence: "co_functobj_sensor_A01_Off");
+                context.SetInteractObject(interactIds: new []{10000881}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000881}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000881}, arg2: 0)) {
                     return new State이동(context);
                 }
 
@@ -25,12 +25,12 @@ namespace Maple2.Trigger._02010038_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 50, visible: false, enabled: true, minimapVisible: false);
-                context.SetActor(arg1: 1000, arg2: true, arg3: "co_functobj_sensor_A01_On");
-                context.SetTimer(id: "2", arg2: 2);
+                context.SetActor(triggerId: 1000, visible: true, initialSequence: "co_functobj_sensor_A01_On");
+                context.SetTimer(timerId: "2", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     context.SetPortal(portalId: 50, visible: false, enabled: false, minimapVisible: false);
                     return new State재사용Wait(context);
                 }
@@ -45,11 +45,11 @@ namespace Maple2.Trigger._02010038_bf {
             internal State재사용Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 5);
+                context.SetTimer(timerId: "3", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateWait(context);
                 }
 

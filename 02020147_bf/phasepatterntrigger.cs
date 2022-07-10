@@ -8,7 +8,7 @@ namespace Maple2.Trigger._02020147_bf {
                 context.SetUserValue(key: "PhasePatternTrigger", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
                     return new StateBoss3마리_Phase전환계산(context);
                 }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02020147_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PhaseSumTotal") >= 3) {
                     return new StateBoss3마리_Phase전환실행_2페이즈(context);
                 }
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02020147_bf {
                 context.SetAiExtraData(key: "PhasePatternTrigger", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PhaseSumTotal") >= 6) {
                     return new StateBoss3마리_Phase전환실행_3페이즈(context);
                 }
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02020147_bf {
                 context.SetAiExtraData(key: "PhasePatternTrigger", value: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
                     return new StateEnd(context);
                 }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02020147_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

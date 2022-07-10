@@ -7,18 +7,18 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MainStart") == 1) {
                     context.SetUserValue(triggerId: 900001, key: "MainStart", value: 0);
-                    context.DestroyMonster(arg1: new[] {203});
-                    context.CreateMonster(arg1: new[] {202}, arg2: false);
+                    context.DestroyMonster(spawnIds: new []{203});
+                    context.CreateMonster(spawnIds: new []{202}, arg2: false);
                     return new StateWaitRound1(context);
                 }
 
                 if (context.GetUserValue(key: "MainStart") == 2) {
                     context.SetUserValue(triggerId: 900001, key: "MainStart", value: 0);
-                    context.DestroyMonster(arg1: new[] {203});
-                    context.CreateMonster(arg1: new[] {202}, arg2: false);
+                    context.DestroyMonster(spawnIds: new []{203});
+                    context.CreateMonster(spawnIds: new []{202}, arg2: false);
                     return new StateContinuePlayDelay(context);
                 }
 
@@ -33,14 +33,14 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetUserValue(triggerId: 910001, key: "StartRound1", value: 1);
                     return new StateResultRound1(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {902})) {
-                    context.MoveUserToPos(pos: new Vector3(300f, -225f, 1500f), rot: new Vector3(0f, 0f, 270f));
+                if (context.UserDetected(boxIds: new []{902})) {
+                    context.MoveUserToPos(position: new Vector3(300f, -225f, 1500f), rotation: new Vector3(0f, 0f, 270f));
                     return new StateWaitRound1(context);
                 }
 
@@ -57,9 +57,9 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.LockMyPc(isLock: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.MoveUserToPos(pos: new Vector3(300f, -225f, 1500f), rot: new Vector3(0f, 0f, 270f));
+                    context.MoveUserToPos(position: new Vector3(300f, -225f, 1500f), rotation: new Vector3(0f, 0f, 270f));
                     return new StateContinuePlayDelay2(context);
                 }
 
@@ -74,9 +74,9 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.MoveUserPath(arg1: "MS2PatrolData_01");
+                    context.MoveUserPath(patrolName: "MS2PatrolData_01");
                     return new StateContinuePlay(context);
                 }
 
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.SetUserValueFromDungeonRewardCount(key: "ClearRound", dungeonRewardId: 24096001);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ClearRound") == 1) {
                     context.SetUserValue(triggerId: 910002, key: "StartRound2", value: 1);
                     return new StateResultRound2(context);
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartRound1") == 2) {
                     context.DungeonClearRound(round: 1);
                     context.SetUserValue(triggerId: 910001, key: "StartRound1", value: 0);
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910002, key: "StartRound2", value: 1);
                     return new StateResultRound2(context);
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartRound2") == 2) {
                     context.DungeonClearRound(round: 2);
                     context.SetUserValue(triggerId: 910002, key: "StartRound2", value: 0);
@@ -222,7 +222,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910003, key: "StartRound3", value: 1);
                     return new StateResultRound3(context);
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartRound3") == 2) {
                     context.DungeonClearRound(round: 3);
                     context.SetUserValue(triggerId: 910003, key: "StartRound3", value: 0);
@@ -264,7 +264,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910004, key: "StartRound4", value: 1);
                     return new StateResultRound4(context);
@@ -281,7 +281,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartRound4") == 2) {
                     context.DungeonClearRound(round: 4);
                     context.SetUserValue(triggerId: 910004, key: "StartRound4", value: 0);
@@ -306,7 +306,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910005, key: "StartRound5", value: 1);
                     return new StateResultRound5(context);
@@ -323,7 +323,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartRound5") == 2) {
                     context.DungeonClearRound(round: 5);
                     context.SetUserValue(triggerId: 910005, key: "StartRound5", value: 0);
@@ -348,7 +348,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910006, key: "StartRound6", value: 1);
                     return new StateResultRound6(context);
@@ -365,7 +365,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartRound6") == 2) {
                     context.DungeonClearRound(round: 6);
                     context.SetUserValue(triggerId: 910006, key: "StartRound6", value: 0);
@@ -390,7 +390,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910007, key: "StartRound7", value: 1);
                     return new StateResultRound7(context);
@@ -407,7 +407,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartRound7") == 2) {
                     context.DungeonClearRound(round: 7);
                     context.SetUserValue(triggerId: 910007, key: "StartRound7", value: 0);
@@ -432,7 +432,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910008, key: "StartRound8", value: 1);
                     return new StateResultRound8(context);
@@ -449,7 +449,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartRound8") == 2) {
                     context.DungeonClearRound(round: 8);
                     context.SetUserValue(triggerId: 910008, key: "StartRound8", value: 0);
@@ -474,7 +474,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910009, key: "StartRound9", value: 1);
                     return new StateResultRound9(context);
@@ -491,7 +491,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartRound9") == 2) {
                     context.DungeonClearRound(round: 9);
                     context.SetUserValue(triggerId: 910009, key: "StartRound9", value: 0);
@@ -516,7 +516,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910010, key: "StartRound10", value: 1);
                     return new StateResultRound10(context);
@@ -533,7 +533,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StartRound10") == 2) {
                     context.DungeonClearRound(round: 10);
                     context.SetUserValue(triggerId: 910010, key: "StartRound10", value: 0);
@@ -560,7 +560,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -578,7 +578,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -596,7 +596,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -614,7 +614,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -632,7 +632,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -650,7 +650,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -668,7 +668,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -686,7 +686,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -704,7 +704,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -722,7 +722,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }
@@ -740,7 +740,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonFail();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }

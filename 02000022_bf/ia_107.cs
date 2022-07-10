@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02000022_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 107, arg2: false, arg3: "Idle_A");
+                context.SetActor(triggerId: 107, visible: false, initialSequence: "Idle_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateInteractObject(context);
             }
 
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._02000022_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000096}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000096}, arg2: 0)) {
                     return new State개구리보이기(context);
                 }
 
@@ -34,11 +34,11 @@ namespace Maple2.Trigger._02000022_bf {
             internal State개구리보이기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 107, arg2: true, arg3: "Idle_A");
+                context.SetActor(triggerId: 107, visible: true, initialSequence: "Idle_A");
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000096}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000096}, arg2: 1)) {
                     return new StateWaitStart(context);
                 }
 
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000022_bf {
             }
 
             public override void OnExit() {
-                context.SetActor(arg1: 107, arg2: false, arg3: "Idle_A");
+                context.SetActor(triggerId: 107, visible: false, initialSequence: "Idle_A");
             }
         }
     }

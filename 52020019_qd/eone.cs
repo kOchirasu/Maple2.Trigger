@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52020019_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60200010}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2002}, questIds: new []{60200010}, questStates: new byte[]{1})) {
                     return new StateTalk(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._52020019_qd {
             internal StateTalk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 101, msg: "무엄하군요! 저리 가세요!", duration: 3000, delayTick: 0);
+                context.AddBalloonTalk(spawnId: 101, msg: "무엄하군요! 저리 가세요!", duration: 3000, delayTick: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
                     return new StateIdle(context);
                 }

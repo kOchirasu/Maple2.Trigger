@@ -5,10 +5,10 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "RemoveAll", value: 0);
-                context.DestroyMonster(arg1: new[] {309});
+                context.DestroyMonster(spawnIds: new []{309});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateMobSpawn(context);
                 }
@@ -23,11 +23,11 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateMobSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {309}, arg2: false);
+                context.CreateMonster(spawnIds: new []{309}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {309})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{309})) {
                     return new StateDelay01(context);
                 }
 
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 45000)) {
                     return new StateMobSpawn(context);
                 }
@@ -61,10 +61,10 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {309});
+                context.DestroyMonster(spawnIds: new []{309});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

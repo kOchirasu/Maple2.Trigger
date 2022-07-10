@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000386_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 702, arg2: new[] {901})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 702, spawnIds: new []{901})) {
                     return new StateReady(context);
                 }
 
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02000386_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 901, script: "$02000386_BF__MAIN_02__0$", arg4: 2, arg5: 0);
-                context.MoveNpc(arg1: 901, arg2: "MS2PatrolData_2002");
+                context.SetConversation(type: 1, spawnId: 901, script: "$02000386_BF__MAIN_02__0$", arg4: 2, arg5: 0);
+                context.MoveNpc(spawnId: 901, patrolName: "MS2PatrolData_2002");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateEnd(context);
                 }
@@ -39,10 +39,10 @@ namespace Maple2.Trigger._02000386_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {901});
+                context.DestroyMonster(spawnIds: new []{901});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

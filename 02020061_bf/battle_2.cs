@@ -13,7 +13,7 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SetUserValue(triggerId: 99990007, key: "ObjectStart", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 1) {
                     return new StateSummonObject(context);
                 }
@@ -28,19 +28,19 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateSummonObject(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {711, 712, 713, 714}, arg2: false);
+                context.CreateMonster(spawnIds: new []{711, 712, 713, 714}, arg2: false);
                 context.SetUserValue(triggerId: 99990004, key: "ObjectStart", value: 1);
                 context.SetUserValue(triggerId: 99990005, key: "ObjectStart", value: 1);
                 context.SetUserValue(triggerId: 99990006, key: "ObjectStart", value: 1);
                 context.SetUserValue(triggerId: 99990007, key: "ObjectStart", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {701})) {
+                if (context.MonsterDead(spawnIds: new []{701})) {
                     return new StateSummonObject_Clear(context);
                 }
 
@@ -61,12 +61,12 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020061_BF__BATTLE_2__0$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {701})) {
+                if (context.MonsterDead(spawnIds: new []{701})) {
                     return new StateSummonObject_Clear(context);
                 }
 
@@ -87,12 +87,12 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020061_BF__BATTLE_2__1$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {701})) {
+                if (context.MonsterDead(spawnIds: new []{701})) {
                     return new StateSummonObject_Clear(context);
                 }
 
@@ -113,12 +113,12 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020061_BF__BATTLE_2__2$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 2) {
                     return new StateWait(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {701})) {
+                if (context.MonsterDead(spawnIds: new []{701})) {
                     return new StateSummonObject_Clear(context);
                 }
 
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SetUserValue(triggerId: 99990007, key: "ObjectStart", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

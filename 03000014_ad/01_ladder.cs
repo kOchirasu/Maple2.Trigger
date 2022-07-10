@@ -4,22 +4,22 @@ namespace Maple2.Trigger._03000014_ad {
             internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000066}, arg2: 1);
-                context.SetEffect(arg1: new[] {201, 202, 211, 212, 221, 222, 231, 232, 241, 242}, arg2: false);
-                context.SetLadder(arg1: 101, arg2: false, arg3: false);
-                context.SetLadder(arg1: 102, arg2: false, arg3: false);
-                context.SetLadder(arg1: 111, arg2: false, arg3: false);
-                context.SetLadder(arg1: 112, arg2: false, arg3: false);
-                context.SetLadder(arg1: 121, arg2: false, arg3: false);
-                context.SetLadder(arg1: 122, arg2: false, arg3: false);
-                context.SetLadder(arg1: 131, arg2: false, arg3: false);
-                context.SetLadder(arg1: 132, arg2: false, arg3: false);
-                context.SetLadder(arg1: 141, arg2: false, arg3: false);
-                context.SetLadder(arg1: 142, arg2: false, arg3: false);
+                context.SetInteractObject(interactIds: new []{10000066}, state: 1);
+                context.SetEffect(triggerIds: new []{201, 202, 211, 212, 221, 222, 231, 232, 241, 242}, visible: false);
+                context.SetLadder(triggerId: 101, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 102, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 111, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 112, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 121, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 122, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 131, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 132, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 141, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 142, visible: false, animationEffect: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000066}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000066}, arg2: 0)) {
                     return new StateLadderCreation101(context);
                 }
 
@@ -33,14 +33,14 @@ namespace Maple2.Trigger._03000014_ad {
             internal StateLadderCreation101(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {201, 202}, arg2: true);
-                context.SetLadder(arg1: 101, arg2: true, arg3: true);
-                context.SetLadder(arg1: 102, arg2: true, arg3: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetEffect(triggerIds: new []{201, 202}, visible: true);
+                context.SetLadder(triggerId: 101, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 102, visible: true, animationEffect: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateLadderCreation102(context);
                 }
 
@@ -54,14 +54,14 @@ namespace Maple2.Trigger._03000014_ad {
             internal StateLadderCreation102(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {211, 212}, arg2: true);
-                context.SetLadder(arg1: 111, arg2: true, arg3: true);
-                context.SetLadder(arg1: 112, arg2: true, arg3: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetEffect(triggerIds: new []{211, 212}, visible: true);
+                context.SetLadder(triggerId: 111, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 112, visible: true, animationEffect: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateLadderCreation111(context);
                 }
 
@@ -75,14 +75,14 @@ namespace Maple2.Trigger._03000014_ad {
             internal StateLadderCreation111(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {221, 222}, arg2: true);
-                context.SetLadder(arg1: 121, arg2: true, arg3: true);
-                context.SetLadder(arg1: 122, arg2: true, arg3: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetEffect(triggerIds: new []{221, 222}, visible: true);
+                context.SetLadder(triggerId: 121, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 122, visible: true, animationEffect: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateLadderCreation112(context);
                 }
 
@@ -96,14 +96,14 @@ namespace Maple2.Trigger._03000014_ad {
             internal StateLadderCreation112(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {231, 232}, arg2: true);
-                context.SetLadder(arg1: 131, arg2: true, arg3: true);
-                context.SetLadder(arg1: 132, arg2: true, arg3: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetEffect(triggerIds: new []{231, 232}, visible: true);
+                context.SetLadder(triggerId: 131, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 132, visible: true, animationEffect: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateLadderCreation121(context);
                 }
 
@@ -117,14 +117,14 @@ namespace Maple2.Trigger._03000014_ad {
             internal StateLadderCreation121(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {241, 242}, arg2: true);
-                context.SetLadder(arg1: 141, arg2: true, arg3: true);
-                context.SetLadder(arg1: 142, arg2: true, arg3: true);
-                context.SetTimer(id: "1", arg2: 60);
+                context.SetEffect(triggerIds: new []{241, 242}, visible: true);
+                context.SetLadder(triggerId: 141, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 142, visible: true, animationEffect: true);
+                context.SetTimer(timerId: "1", seconds: 60);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateUserDetection(context);
                 }
 
@@ -138,12 +138,12 @@ namespace Maple2.Trigger._03000014_ad {
             internal StateLadderCreation122(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 122, arg2: true, arg3: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetLadder(triggerId: 122, visible: true, animationEffect: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateLadderCreation131(context);
                 }
 
@@ -157,12 +157,12 @@ namespace Maple2.Trigger._03000014_ad {
             internal StateLadderCreation131(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 131, arg2: true, arg3: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetLadder(triggerId: 131, visible: true, animationEffect: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateLadderCreation132(context);
                 }
 
@@ -176,12 +176,12 @@ namespace Maple2.Trigger._03000014_ad {
             internal StateLadderCreation132(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 132, arg2: true, arg3: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetLadder(triggerId: 132, visible: true, animationEffect: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateLadderCreation141(context);
                 }
 
@@ -195,12 +195,12 @@ namespace Maple2.Trigger._03000014_ad {
             internal StateLadderCreation141(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 141, arg2: true, arg3: true);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetLadder(triggerId: 141, visible: true, animationEffect: true);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateLadderCreation142(context);
                 }
 
@@ -214,12 +214,12 @@ namespace Maple2.Trigger._03000014_ad {
             internal StateLadderCreation142(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 142, arg2: true, arg3: true);
-                context.SetTimer(id: "1", arg2: 120);
+                context.SetLadder(triggerId: 142, visible: true, animationEffect: true);
+                context.SetTimer(timerId: "1", seconds: 120);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateUserDetection(context);
                 }
 

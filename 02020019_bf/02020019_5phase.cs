@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "5Phase") == 1) {
                     return new State크림슨발록Spawn체크(context);
                 }
@@ -20,24 +20,24 @@ namespace Maple2.Trigger._02020019_bf {
             internal State크림슨발록Spawn체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {241}, arg2: 49218001, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {242}, arg2: 49218001, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {243}, arg2: 49218001, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {244}, arg2: 49218001, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {245}, arg2: 49218001, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {246}, arg2: 49218001, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {247}, arg2: 49218001, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {241}, arg2: 49218002, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {242}, arg2: 49218002, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {243}, arg2: 49218002, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {244}, arg2: 49218002, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {245}, arg2: 49218002, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {246}, arg2: 49218002, arg3: 1, arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {247}, arg2: 49218002, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", boxIds: new []{241}, skillId: 49218001, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", boxIds: new []{242}, skillId: 49218001, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", boxIds: new []{243}, skillId: 49218001, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", boxIds: new []{244}, skillId: 49218001, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", boxIds: new []{245}, skillId: 49218001, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", boxIds: new []{246}, skillId: 49218001, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", boxIds: new []{247}, skillId: 49218001, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", boxIds: new []{241}, skillId: 49218002, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", boxIds: new []{242}, skillId: 49218002, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", boxIds: new []{243}, skillId: 49218002, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", boxIds: new []{244}, skillId: 49218002, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", boxIds: new []{245}, skillId: 49218002, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", boxIds: new []{246}, skillId: 49218002, level: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", boxIds: new []{247}, skillId: 49218002, level: 1, arg4: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {242})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{242})) {
                     return new State크림슨스피어죽음(context);
                 }
 
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {241})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{241})) {
                     return new State발록에게신호쏴주기(context);
                 }
 
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.SetAiExtraData(key: "SpearDead", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

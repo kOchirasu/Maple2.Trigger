@@ -5,7 +5,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Fail") == 1) {
                     return new StateFail_condition(context);
                 }
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 799) == 1) {
                     return new StateFail(context);
                 }
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return new StateFail(context);
                 }
 
-                if (!context.UserDetected(arg1: new[] {701})) {
+                if (!context.UserDetected(boxIds: new []{701})) {
                     return new StateFail(context);
                 }
 
@@ -44,9 +44,9 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateFail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_Ending_Popup_01");
-                context.SetTimer(id: "10", arg2: 10, arg4: true);
-                context.CameraSelectPath(pathIds: new[] {8800}, arg2: false);
+                context.PlaySystemSoundInBox(sound: "System_Ending_Popup_01");
+                context.SetTimer(timerId: "10", seconds: 10, display: true);
+                context.CameraSelectPath(pathIds: new []{8800}, returnView: false);
                 context.ArcadeBoomBoomOceanEndGame();
                 context.SetUserValue(triggerId: 991104, key: "Reset", value: 1);
                 context.SetUserValue(triggerId: 991105, key: "Reset", value: 1);
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991123, key: "Reset", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "10")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "10")) {
                     return new StateEnd(context);
                 }
 
@@ -75,10 +75,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 0, arg2: 0, arg3: 705);
+                context.MoveUser(mapId: 0, portalId: 0, boxId: 705);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

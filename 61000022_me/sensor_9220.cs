@@ -5,10 +5,10 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "Box22Check", value: 10);
-                context.SetMesh(arg1: new[] {522, 5220}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{522, 5220}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Box22Check") == 0) {
                     return new StateSensor0(context);
                 }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateFail(context);
             }
 
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 1) {
                     return new StateNormalPass(context);
                 }
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 2) {
                     return new StateNormalPass(context);
                 }
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 3) {
                     return new StateNormalPass(context);
                 }
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 4) {
                     return new StateNormalPass(context);
                 }
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 5) {
                     return new StateNormalPass(context);
                 }
@@ -188,7 +188,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 7) {
                     return new StateGamblePass(context);
                 }
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 8) {
                     return new StateGamblePass(context);
                 }
@@ -228,7 +228,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 9) {
                     return new StateGamblePass(context);
                 }
@@ -248,7 +248,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 10) {
                     return new StateGamblePass(context);
                 }
@@ -268,7 +268,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 15) {
                     return new StateJackpotPass(context);
                 }
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 20) {
                     return new StateJackpotPass(context);
                 }
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 25) {
                     return new StateJackpotPass(context);
                 }
@@ -328,7 +328,7 @@ namespace Maple2.Trigger._61000022_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 9220) == 30) {
                     return new StateJackpotPass(context);
                 }
@@ -347,12 +347,12 @@ namespace Maple2.Trigger._61000022_me {
             internal StateNormalPass(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {9220}, arg2: "DDStop_Stage_Pass_01");
+                context.PlaySystemSoundInBox(boxIds: new []{9220}, sound: "DDStop_Stage_Pass_01");
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 0);
-                context.SetMesh(arg1: new[] {522}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new []{522}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateReset(context);
                 }
@@ -367,14 +367,14 @@ namespace Maple2.Trigger._61000022_me {
             internal StateGamblePass(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {9220}, arg2: "DDStop_Stage_Pass_01");
+                context.PlaySystemSoundInBox(boxIds: new []{9220}, sound: "DDStop_Stage_Pass_01");
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 0);
                 context.SetUserValue(triggerId: 3, key: "GamblePass", value: 22);
-                context.SetMesh(arg1: new[] {522}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.WriteLog(arg1: "dancedancestop", arg2: 9220, arg3: "char_event", arg4: 4, arg5: "gamble");
+                context.SetMesh(triggerIds: new []{522}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.WriteLog(logName: "dancedancestop", triggerId: 9220, @event: "char_event", arg4: 4, arg5: "gamble");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateGambleReset(context);
                 }
@@ -389,14 +389,14 @@ namespace Maple2.Trigger._61000022_me {
             internal StateJackpotPass(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {9220}, arg2: "DDStop_Stage_Pass_01");
+                context.PlaySystemSoundInBox(boxIds: new []{9220}, sound: "DDStop_Stage_Pass_01");
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 0);
                 context.SetUserValue(triggerId: 3, key: "JackpotPass", value: 22);
-                context.SetMesh(arg1: new[] {522}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.WriteLog(arg1: "dancedancestop", arg2: 9220, arg3: "char_event", arg4: 4, arg5: "jackpot");
+                context.SetMesh(triggerIds: new []{522}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.WriteLog(logName: "dancedancestop", triggerId: 9220, @event: "char_event", arg4: 4, arg5: "jackpot");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateJackpotReset(context);
                 }
@@ -411,13 +411,13 @@ namespace Maple2.Trigger._61000022_me {
             internal StateFail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new[] {9220}, arg2: "DDStop_Stage_Fail_01");
-                context.SetMesh(arg1: new[] {522}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new[] {5220}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.PlaySystemSoundInBox(boxIds: new []{9220}, sound: "DDStop_Stage_Fail_01");
+                context.SetMesh(triggerIds: new []{522}, visible: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(triggerIds: new []{5220}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateReset(context);
                 }
@@ -432,12 +432,12 @@ namespace Maple2.Trigger._61000022_me {
             internal StateGambleReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 9220, arg2: "trigger", arg3: "ddstop_gamble");
+                context.SetAchievement(triggerId: 9220, type: "trigger", code: "ddstop_gamble");
                 context.MiniGameGiveExp(boxId: 9220, expRate: 0.1f, isOutSide: false);
                 context.SetUserValue(key: "Box22Check", value: 10);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }
@@ -452,12 +452,12 @@ namespace Maple2.Trigger._61000022_me {
             internal StateJackpotReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 9220, arg2: "trigger", arg3: "ddstop_gamble");
+                context.SetAchievement(triggerId: 9220, type: "trigger", code: "ddstop_gamble");
                 context.MiniGameGiveExp(boxId: 9220, expRate: 0.3f, isOutSide: false);
                 context.SetUserValue(key: "Box22Check", value: 10);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }
@@ -475,7 +475,7 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "Box22Check", value: 10);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

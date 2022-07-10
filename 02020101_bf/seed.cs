@@ -4,18 +4,18 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {1003}, arg2: 70002110, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{1003}, skillId: 70002110, level: 1, arg5: false);
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 0);
                 context.SetUserValue(triggerId: 900005, key: "TimerReset", value: 0);
-                context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
-                context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
-                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, arg2: 0);
-                context.SetSkill(arg1: new[] {901, 902}, arg2: false);
+                context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
+                context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
+                context.SetMesh(triggerIds: new []{9001, 9002, 9003, 9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, state: 0);
+                context.SetSkill(triggerIds: new []{901, 902}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1001})) {
                     return new StateBossUserDetection(context);
                 }
 
@@ -30,8 +30,8 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {1002})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{1002})) {
                     return new StateBossHealthCheck1(context);
                 }
 
@@ -46,12 +46,12 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
-                if (context.GetNpcHpRate(spawnPointId: 101) <= 0.70f) {
+                if (context.GetNpcHpRate(spawnId: 101) <= 0.70f) {
                     return new StateSeedPattern1_확률체크(context);
                 }
 
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -77,19 +77,19 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck2(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateSeedPattern1_1(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateSeedPattern1_2(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateSeedPattern1_3(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateSeedPattern1_4(context);
                 }
 
@@ -103,12 +103,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern1_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9001}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002124}, arg2: 1);
+                context.SetMesh(triggerIds: new []{9001}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002124}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -116,8 +116,8 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002124}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {9001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{10002124}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{9001}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateSeedPattern1_1_Planting(context);
                 }
 
@@ -131,12 +131,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern1_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9002}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002125}, arg2: 1);
+                context.SetMesh(triggerIds: new []{9002}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002125}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -144,8 +144,8 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002125}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {9002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{10002125}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{9002}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateSeedPattern1_2_Planting(context);
                 }
 
@@ -159,12 +159,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern1_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9003}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002126}, arg2: 1);
+                context.SetMesh(triggerIds: new []{9003}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002126}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -172,8 +172,8 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002126}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {9003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{10002126}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{9003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateSeedPattern1_3_Planting(context);
                 }
 
@@ -187,12 +187,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern1_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9004}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002127}, arg2: 1);
+                context.SetMesh(triggerIds: new []{9004}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002127}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -200,8 +200,8 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002127}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{10002127}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateSeedPattern1_4_Planting(context);
                 }
 
@@ -215,11 +215,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern1_1_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -227,7 +227,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002128}, arg2: 0) || context.ObjectInteracted(interactIds: new []{10002129}, arg2: 0)) {
                     return new StateSeedPattern1_종료(context);
                 }
 
@@ -241,11 +241,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern1_2_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002128}, arg2: 0) || context.ObjectInteracted(interactIds: new []{10002129}, arg2: 0)) {
                     return new StateSeedPattern1_종료(context);
                 }
 
@@ -267,11 +267,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern1_3_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -279,7 +279,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002128}, arg2: 0) || context.ObjectInteracted(interactIds: new []{10002129}, arg2: 0)) {
                     return new StateSeedPattern1_종료(context);
                 }
 
@@ -293,11 +293,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern1_4_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -305,7 +305,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck2(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002128}, arg2: 0) || context.ObjectInteracted(interactIds: new []{10002129}, arg2: 0)) {
                     return new StateSeedPattern1_종료(context);
                 }
 
@@ -320,14 +320,14 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 0);
-                context.SetSkill(arg1: new[] {901, 902}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 2);
-                context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_On");
-                context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_On");
+                context.SetSkill(triggerIds: new []{901, 902}, arg2: true);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 2);
+                context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
+                context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -349,20 +349,20 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateBossHealthCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {1003}, arg2: 70002110, arg3: 1, arg5: false);
-                context.SetSkill(arg1: new[] {901, 902}, arg2: false);
-                context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
-                context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
-                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, arg2: 0);
+                context.AddBuff(boxIds: new []{1003}, skillId: 70002110, level: 1, arg5: false);
+                context.SetSkill(triggerIds: new []{901, 902}, arg2: false);
+                context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
+                context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
+                context.SetMesh(triggerIds: new []{9001, 9002, 9003, 9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, state: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
-                if (context.GetNpcHpRate(spawnPointId: 101) <= 0.40f) {
+                if (context.GetNpcHpRate(spawnId: 101) <= 0.40f) {
                     return new StateSeedPattern2_확률체크(context);
                 }
 
@@ -379,8 +379,8 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -388,19 +388,19 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck3(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateSeedPattern2_1(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateSeedPattern2_2(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateSeedPattern2_3(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateSeedPattern2_4(context);
                 }
 
@@ -414,12 +414,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9001}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002124}, arg2: 1);
+                context.SetMesh(triggerIds: new []{9001}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002124}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -427,8 +427,8 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck3(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002124}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {9001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{10002124}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{9001}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateSeedPattern2_1_Planting(context);
                 }
 
@@ -442,12 +442,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern2_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9002}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002125}, arg2: 1);
+                context.SetMesh(triggerIds: new []{9002}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002125}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -455,8 +455,8 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck3(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002125}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {9002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{10002125}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{9002}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateSeedPattern2_2_Planting(context);
                 }
 
@@ -470,12 +470,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern2_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9003}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002126}, arg2: 1);
+                context.SetMesh(triggerIds: new []{9003}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002126}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -483,8 +483,8 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck3(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002126}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {9003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{10002126}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{9003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateSeedPattern2_3_Planting(context);
                 }
 
@@ -498,12 +498,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern2_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9004}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002127}, arg2: 1);
+                context.SetMesh(triggerIds: new []{9004}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002127}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -511,8 +511,8 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck3(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002127}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{10002127}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateSeedPattern2_4_Planting(context);
                 }
 
@@ -526,11 +526,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern2_1_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -538,7 +538,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck3(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002128}, arg2: 0) || context.ObjectInteracted(interactIds: new []{10002129}, arg2: 0)) {
                     return new StateSeedPattern2_종료(context);
                 }
 
@@ -552,11 +552,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern2_2_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -564,7 +564,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck3(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002128}, arg2: 0) || context.ObjectInteracted(interactIds: new []{10002129}, arg2: 0)) {
                     return new StateSeedPattern2_종료(context);
                 }
 
@@ -578,11 +578,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern2_3_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -590,7 +590,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck3(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002128}, arg2: 0) || context.ObjectInteracted(interactIds: new []{10002129}, arg2: 0)) {
                     return new StateSeedPattern2_종료(context);
                 }
 
@@ -604,11 +604,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern2_4_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -616,7 +616,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck3(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002128}, arg2: 0) || context.ObjectInteracted(interactIds: new []{10002129}, arg2: 0)) {
                     return new StateSeedPattern2_종료(context);
                 }
 
@@ -631,14 +631,14 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 0);
-                context.SetSkill(arg1: new[] {901, 902}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 2);
-                context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_On");
-                context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_On");
+                context.SetSkill(triggerIds: new []{901, 902}, arg2: true);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 2);
+                context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
+                context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -660,20 +660,20 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateBossHealthCheck3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {1003}, arg2: 70002110, arg3: 1, arg5: false);
-                context.SetSkill(arg1: new[] {901, 902}, arg2: false);
-                context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
-                context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
-                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, arg2: 0);
+                context.AddBuff(boxIds: new []{1003}, skillId: 70002110, level: 1, arg5: false);
+                context.SetSkill(triggerIds: new []{901, 902}, arg2: false);
+                context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
+                context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
+                context.SetMesh(triggerIds: new []{9001, 9002, 9003, 9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, state: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
-                if (context.GetNpcHpRate(spawnPointId: 101) <= 0.15f) {
+                if (context.GetNpcHpRate(spawnId: 101) <= 0.15f) {
                     return new StateSeedPattern3_확률체크(context);
                 }
 
@@ -690,8 +690,8 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -699,19 +699,19 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateSeedPattern3_1(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateSeedPattern3_2(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateSeedPattern3_3(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateSeedPattern3_4(context);
                 }
 
@@ -725,12 +725,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern3_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9001}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002124}, arg2: 1);
+                context.SetMesh(triggerIds: new []{9001}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002124}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -738,8 +738,8 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002124}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {9001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{10002124}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{9001}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateSeedPattern3_1_Planting(context);
                 }
 
@@ -753,12 +753,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern3_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9002}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002125}, arg2: 1);
+                context.SetMesh(triggerIds: new []{9002}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002125}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -766,8 +766,8 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002125}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {9002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{10002125}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{9002}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateSeedPattern3_2_Planting(context);
                 }
 
@@ -781,12 +781,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern3_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9003}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002126}, arg2: 1);
+                context.SetMesh(triggerIds: new []{9003}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002126}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -794,8 +794,8 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002126}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {9003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{10002126}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{9003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateSeedPattern3_3_Planting(context);
                 }
 
@@ -809,12 +809,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern3_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9004}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetInteractObject(arg1: new[] {10002127}, arg2: 1);
+                context.SetMesh(triggerIds: new []{9004}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetInteractObject(interactIds: new []{10002127}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -822,8 +822,8 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002127}, arg2: 0)) {
-                    context.SetMesh(arg1: new[] {9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                if (context.ObjectInteracted(interactIds: new []{10002127}, arg2: 0)) {
+                    context.SetMesh(triggerIds: new []{9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateSeedPattern3_4_Planting(context);
                 }
 
@@ -837,11 +837,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern3_1_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -849,7 +849,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002128}, arg2: 0) || context.ObjectInteracted(interactIds: new []{10002129}, arg2: 0)) {
                     return new StateSeedPattern3_종료(context);
                 }
 
@@ -863,11 +863,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern3_2_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -875,7 +875,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002128}, arg2: 0) || context.ObjectInteracted(interactIds: new []{10002129}, arg2: 0)) {
                     return new StateSeedPattern3_종료(context);
                 }
 
@@ -889,11 +889,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern3_3_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -901,7 +901,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002128}, arg2: 0) || context.ObjectInteracted(interactIds: new []{10002129}, arg2: 0)) {
                     return new StateSeedPattern3_종료(context);
                 }
 
@@ -915,11 +915,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern3_4_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -927,7 +927,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateEnd(context);
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(interactIds: new []{10002128}, arg2: 0) || context.ObjectInteracted(interactIds: new []{10002129}, arg2: 0)) {
                     return new StateSeedPattern3_종료(context);
                 }
 
@@ -941,14 +941,14 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern3_종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {901, 902}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 2);
-                context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_On");
-                context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_On");
+                context.SetSkill(triggerIds: new []{901, 902}, arg2: true);
+                context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 2);
+                context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
+                context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -970,16 +970,16 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {1003}, arg2: 70002110, arg3: 1, arg5: false);
+                context.AddBuff(boxIds: new []{1003}, skillId: 70002110, level: 1, arg5: false);
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 9);
-                context.SetSkill(arg1: new[] {901, 902}, arg2: false);
-                context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
-                context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
-                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, arg2: 0);
+                context.SetSkill(triggerIds: new []{901, 902}, arg2: false);
+                context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
+                context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
+                context.SetMesh(triggerIds: new []{9001, 9002, 9003, 9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, state: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

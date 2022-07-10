@@ -4,10 +4,10 @@ namespace Maple2.Trigger._99999883 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {901});
+                context.DestroyMonster(spawnIds: new []{901});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateStartDelay(context);
                 }
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._99999883 {
             internal StateStartDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {901}, arg2: true);
+                context.CreateMonster(spawnIds: new []{901}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateCheckAnyOne(context);
                 }
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._99999883 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.WaitTick(waitTick: 10000) || context.MonsterDead(arg1: new[] {901})) {
+            public override TriggerState? Execute() {
+                if (context.WaitTick(waitTick: 10000) || context.MonsterDead(spawnIds: new []{901})) {
                     return new StateQuitDelay(context);
                 }
 
@@ -56,10 +56,10 @@ namespace Maple2.Trigger._99999883 {
             internal StateQuitDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {901});
+                context.DestroyMonster(spawnIds: new []{901});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateWait(context);
                 }

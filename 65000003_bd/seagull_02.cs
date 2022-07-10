@@ -4,11 +4,11 @@ namespace Maple2.Trigger._65000003_bd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2002}, arg2: false);
+                context.CreateMonster(spawnIds: new []{2002}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {10502})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{10502})) {
                     return new State이동(context);
                 }
 
@@ -22,12 +22,12 @@ namespace Maple2.Trigger._65000003_bd {
             internal State이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
+                context.SetTimer(timerId: "2", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
-                    context.MoveNpc(arg1: 2002, arg2: "MS2PatrolData_2002");
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
+                    context.MoveNpc(spawnId: 2002, patrolName: "MS2PatrolData_2002");
                     return new StateEnd(context);
                 }
 
@@ -41,11 +41,11 @@ namespace Maple2.Trigger._65000003_bd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1800000", arg2: 1800000);
+                context.SetTimer(timerId: "1800000", seconds: 1800000);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1800000")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1800000")) {
                     // return new StateEnd2(context);
                     return null;
                 }

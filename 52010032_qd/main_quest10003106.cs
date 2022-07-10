@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003106}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{10003106}, questStates: new byte[]{1})) {
                     return new StateReady(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._52010032_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 2001, arg2: "trigger", arg3: "NewChief");
+                context.SetAchievement(triggerId: 2001, type: "trigger", code: "NewChief");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

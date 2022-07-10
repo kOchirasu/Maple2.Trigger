@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 1) {
                     return new StateStart(context);
                 }
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._52020024_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 5, arg3: true, arg4: true);
+                context.SetTimer(timerId: "1", seconds: 5, clearAtZero: true, display: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateEnd(context);
                 }
 
@@ -40,10 +40,10 @@ namespace Maple2.Trigger._52020024_qd {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "TimerStart", value: 2);
                 context.SetUserValue(triggerId: 99990003, key: "FinalPhase", value: 2);
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

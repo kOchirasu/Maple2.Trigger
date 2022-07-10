@@ -5,9 +5,9 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "randomTalk") == 1) {
-                    context.CreateMonster(arg1: new[] {5002}, arg2: false);
+                    context.CreateMonster(spawnIds: new []{5002}, arg2: false);
                     return new StateWaitCombat(context);
                 }
 
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterInCombat(arg1: new[] {5002})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterInCombat(spawnIds: new []{5002})) {
                     return new State말풍선Random(context);
                 }
 
@@ -38,20 +38,20 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 25f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateNPCScript01(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateNPCScript02(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateNPCScript03(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new StateNPCScript04(context);
                 }
 
@@ -65,10 +65,10 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 5002, script: "$02000066_BF__TRINY__0$", arg4: 3);
+                context.SetConversation(type: 1, spawnId: 5002, script: "$02000066_BF__TRINY__0$", arg4: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWaitTime(context);
             }
 
@@ -79,10 +79,10 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 5002, script: "$02000066_BF__TRINY__1$", arg4: 2);
+                context.SetConversation(type: 1, spawnId: 5002, script: "$02000066_BF__TRINY__1$", arg4: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWaitTime(context);
             }
 
@@ -93,10 +93,10 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 5002, script: "$02000066_BF__TRINY__2$", arg4: 4);
+                context.SetConversation(type: 1, spawnId: 5002, script: "$02000066_BF__TRINY__2$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWaitTime(context);
             }
 
@@ -107,10 +107,10 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPCScript04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 5002, script: "$02000066_BF__TRINY__3$", arg4: 2);
+                context.SetConversation(type: 1, spawnId: 5002, script: "$02000066_BF__TRINY__3$", arg4: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWaitTime(context);
             }
 
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateWaitCombat(context);
                 }

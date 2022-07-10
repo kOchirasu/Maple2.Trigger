@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000311_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201, 202}, arg2: false);
+                context.CreateMonster(spawnIds: new []{201, 202}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateBossSpawn(context);
                 }
 
@@ -24,11 +24,11 @@ namespace Maple2.Trigger._02000311_bf {
             public override void OnEnter() {
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.CreateMonster(arg1: new[] {99}, arg2: false);
+                context.CreateMonster(spawnIds: new []{99}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {99})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{99})) {
                     return new StateEnd체크(context);
                 }
 
@@ -36,7 +36,7 @@ namespace Maple2.Trigger._02000311_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {99});
+                context.DestroyMonster(spawnIds: new []{99});
             }
         }
 
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02000311_bf {
                 context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,14 +4,14 @@ namespace Maple2.Trigger._52100053_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3800, 3900}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3800, 3900}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(portalId: 20, visible: false, enabled: false, minimapVisible: false);
-                context.SetInteractObject(arg1: new[] {10002098}, arg2: 0);
-                context.DestroyMonster(arg1: new[] {901, 902, 903});
+                context.SetInteractObject(interactIds: new []{10002098}, state: 0);
+                context.DestroyMonster(spawnIds: new []{901, 902, 903});
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9300})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9300})) {
                     return new StateLoadingDelay(context);
                 }
 
@@ -25,10 +25,10 @@ namespace Maple2.Trigger._52100053_qd {
             internal StateLoadingDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {901, 902, 903}, arg2: false);
+                context.CreateMonster(spawnIds: new []{901, 902, 903}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateMobTrapOn01(context);
                 }
@@ -43,12 +43,12 @@ namespace Maple2.Trigger._52100053_qd {
             internal StateMobTrapOn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 901, script: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 902, script: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 903, script: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 901, script: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 902, script: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 903, script: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateMobTrapOn02(context);
                 }
@@ -64,11 +64,11 @@ namespace Maple2.Trigger._52100053_qd {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 5, key: "MobWave", value: 1);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039704, textId: 20039704, duration: 2000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateMobTrapOn03(context);
                 }
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetUserValue(triggerId: 6, key: "BlockEnable", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateGuideUseKey(context);
                 }
@@ -101,13 +101,13 @@ namespace Maple2.Trigger._52100053_qd {
             internal StateGuideUseKey(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039705, textId: 20039705);
-                context.SetInteractObject(arg1: new[] {10002098}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10002098}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10002098}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10002098}, arg2: 0)) {
                     return new StatePortalOn(context);
                 }
 
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetPortal(portalId: 20, visible: true, enabled: true, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

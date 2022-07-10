@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 6000019) <= 0.70f) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcHpRate(spawnId: 6000019) <= 0.70f) {
                     return new StateMobCreation(context);
                 }
 
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._52020001_qd {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {6000023}, arg2: false);
+                context.CreateMonster(spawnIds: new []{6000023}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) { }
 
                 return null;

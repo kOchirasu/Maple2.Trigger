@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02020098_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {10})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{10})) {
                     return new State칸막이Wait시작(context);
                 }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new State칸막이Wait알림(context);
                 }
@@ -38,11 +38,11 @@ namespace Maple2.Trigger._02020098_bf {
             internal State칸막이Wait알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02020098_BF__BARRICADE__0$", arg3: 3000);
-                context.DungeonEnableGiveUp(isEnable: true);
+                context.SetEventUI(arg1: 1, script: "$02020098_BF__BARRICADE__0$", duration: 3000);
+                context.DungeonEnableGiveUp(enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 22000)) {
                     return new State칸막이막기(context);
                 }
@@ -57,10 +57,10 @@ namespace Maple2.Trigger._02020098_bf {
             internal State칸막이막기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311}, arg2: true, arg3: 1, arg4: 120, arg5: 0.5f);
+                context.SetMesh(triggerIds: new []{301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311}, visible: true, arg3: 1, arg4: 120, arg5: 0.5f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateTrigger종료(context);
                 }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

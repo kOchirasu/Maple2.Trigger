@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
                     // return new StateStart(context);
                     return null;

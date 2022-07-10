@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.IsDungeonRoom()) {
                     return new StateWait(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000486_bf {
                 context.SetUserValue(key: "CheckDualKill", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "CheckDualKill") == 1) {
                     return new StateCheckDualKill(context);
                 }
@@ -39,12 +39,12 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {900})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{900})) {
                     return new StateLionBlueDead(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {901})) {
+                if (context.MonsterDead(spawnIds: new []{901})) {
                     return new StateLionRedDead(context);
                 }
 
@@ -59,9 +59,9 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {901})) {
-                    context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "ChangeLionDualKill");
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{901})) {
+                    context.SetAchievement(triggerId: 9900, type: "trigger", code: "ChangeLionDualKill");
                     return new StateQuit(context);
                 }
 
@@ -80,9 +80,9 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {900})) {
-                    context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "ChangeLionDualKill");
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{900})) {
+                    context.SetAchievement(triggerId: 9900, type: "trigger", code: "ChangeLionDualKill");
                     return new StateQuit(context);
                 }
 
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

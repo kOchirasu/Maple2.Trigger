@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new State5초(context);
                 }
 
@@ -20,13 +20,13 @@ namespace Maple2.Trigger._52000006_qd {
             internal State5초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2, arg3: false);
+                context.SetTimer(timerId: "2", seconds: 2, clearAtZero: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
-                    context.CreateItem(arg1: new[] {9001, 9002, 9003, 9004, 9005}, arg2: 101);
-                    context.AddBuff(arg1: new[] {101}, arg2: 70000019, arg3: 1);
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
+                    context.CreateItem(spawnIds: new []{9001, 9002, 9003, 9004, 9005}, triggerId: 101);
+                    context.AddBuff(boxIds: new []{101}, skillId: 70000019, level: 1);
                     return new State30초(context);
                 }
 
@@ -40,12 +40,12 @@ namespace Maple2.Trigger._52000006_qd {
             internal State30초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "300", arg2: 300, arg3: false);
-                context.SetEventUI(arg1: 1, script: "$52000006_QD__EXIT__0$", arg3: 4000);
+                context.SetTimer(timerId: "300", seconds: 300, clearAtZero: false);
+                context.SetEventUI(arg1: 1, script: "$52000006_QD__EXIT__0$", duration: 4000);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "300")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "300")) {
                     return new State유저이동(context);
                 }
 
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                context.MoveUser(arg1: 02000064, arg2: 800, arg3: 0);
+            public override TriggerState? Execute() {
+                context.MoveUser(mapId: 02000064, portalId: 800, boxId: 0);
                     return new StateUserDetection(context);
             }
 

@@ -53,7 +53,7 @@ namespace Maple2.Trigger._61000028_me {
                 context.FieldGameConstant(key: "EventHideAndSeekWin", value: "hideandseek_win");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "WaitForEnterUser") == 1) {
                     return new StateWaitForEnterUser(context);
                 }
@@ -68,10 +68,10 @@ namespace Maple2.Trigger._61000028_me {
             internal StateWaitForEnterUser(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 60, arg3: true, arg4: true);
+                context.SetTimer(timerId: "1", seconds: 60, clearAtZero: true, display: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "GameRuleNotice") == 1) {
                     return new StateGameRuleNotice(context);
                 }
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._61000028_me {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
                 context.HideGuideSummary(entityId: 26500301);
             }
         }
@@ -97,10 +97,10 @@ namespace Maple2.Trigger._61000028_me {
             internal StateGameRuleNotice(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$61000023_ME__61000023_MAIN__1$", arg3: 10000);
+                context.SetEventUI(arg1: 1, script: "$61000023_ME__61000023_MAIN__1$", duration: 10000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "DivideIntoTeams") == 1) {
                     return new StateDivideIntoTeams(context);
                 }
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._61000028_me {
                 context.ShowCountUI(text: "$61000023_ME__61000023_MAIN__0$", stage: 0, count: 5);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MoveGameArea") == 1) {
                     return new StateMoveGameArea(context);
                 }
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._61000028_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BeInHidingTeams") == 1) {
                     return new StateBeInHidingTeams(context);
                 }
@@ -157,12 +157,12 @@ namespace Maple2.Trigger._61000028_me {
             internal StateBeInHidingTeams(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 30, arg3: true, arg4: true);
-                context.FieldGameMessage(custom: 1, type: "SetEventUI", arg1: 1, arg2: "$61000023_ME__61000023_MAIN__2$", arg3: 30000);
-                context.FieldGameMessage(custom: 2, type: "SetEventUI", arg1: 1, arg2: "$61000023_ME__61000023_MAIN__3$", arg3: 30000);
+                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: true, display: true);
+                context.FieldGameMessage(custom: 1, type: "SetEventUI", arg1: 1, script: "$61000023_ME__61000023_MAIN__2$", duration: 30000);
+                context.FieldGameMessage(custom: 2, type: "SetEventUI", arg1: 1, script: "$61000023_ME__61000023_MAIN__3$", duration: 30000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "LookingForATeams") == 1) {
                     return new StateLookingForATeams(context);
                 }
@@ -175,7 +175,7 @@ namespace Maple2.Trigger._61000028_me {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
         }
 
@@ -183,10 +183,10 @@ namespace Maple2.Trigger._61000028_me {
             internal StateLookingForATeams(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 150, arg3: true, arg4: true);
+                context.SetTimer(timerId: "1", seconds: 150, clearAtZero: true, display: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TeamMatchResult") == 1) {
                     return new StateTeamMatchResult(context);
                 }
@@ -195,7 +195,7 @@ namespace Maple2.Trigger._61000028_me {
             }
 
             public override void OnExit() {
-                context.ResetTimer(id: "1");
+                context.ResetTimer(timerId: "1");
             }
         }
 
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._61000028_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "GameExitNotice") == 1) {
                     return new StateGameExitNotice(context);
                 }
@@ -219,10 +219,10 @@ namespace Maple2.Trigger._61000028_me {
             internal StateGameExitNotice(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$61000023_ME__61000023_MAIN__4$", arg3: 10000);
+                context.SetEventUI(arg1: 1, script: "$61000023_ME__61000023_MAIN__4$", duration: 10000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "End") == 1) {
                     return new StateEnd(context);
                 }
@@ -237,10 +237,10 @@ namespace Maple2.Trigger._61000028_me {
             internal StateShortOfUser(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$61000023_ME__61000023_MAIN__5$", arg3: 10000);
+                context.SetEventUI(arg1: 1, script: "$61000023_ME__61000023_MAIN__5$", duration: 10000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "End") == 1) {
                     return new StateEnd(context);
                 }
@@ -255,10 +255,10 @@ namespace Maple2.Trigger._61000028_me {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 0, arg2: 0);
+                context.MoveUser(mapId: 0, portalId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

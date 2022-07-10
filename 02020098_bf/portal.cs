@@ -15,8 +15,8 @@ namespace Maple2.Trigger._02020098_bf {
                 context.SetPortal(portalId: 50, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {10})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{10})) {
                     return new StatePortal체크시작(context);
                 }
 
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePortal체크Waiting(context);
                 }
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossOnePhaseEnd") == 1) {
                     return new StateTeleportationPortalOFF(context);
                 }
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02020098_bf {
                 context.SetUserValue(key: "BossOnePhaseEnd", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StatePortal체크Waiting(context);
                 }
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 9500)) {
                     return new State나가기PortalCreation(context);
                 }
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "PhasePortar") == 0) {
                     return new State졸구간만PortalCreation(context);
                 }
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._02020098_bf {
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateTrigger종료(context);
                 }
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._02020098_bf {
                 context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateTrigger종료(context);
                 }
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._02020098_bf {
                 context.SetPortal(portalId: 6, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateTrigger종료(context);
                 }
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._02020098_bf {
                 context.SetPortal(portalId: 7, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateTrigger종료(context);
                 }
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

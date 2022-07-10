@@ -7,7 +7,7 @@ namespace Maple2.Trigger._61000009_me {
                 context.ShowGuideSummary(entityId: 100, textId: 40012);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateReady(context);
                 }
@@ -27,11 +27,11 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 100);
-                context.SetTimer(id: "1200", arg2: 1200, arg3: false, arg4: true);
+                context.SetTimer(timerId: "1200", seconds: 1200, clearAtZero: false, display: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1200")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1200")) {
                     return new StateEndGame(context);
                 }
 
@@ -45,12 +45,12 @@ namespace Maple2.Trigger._61000009_me {
             internal StateEndGame(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 5, script: "$61000004_ME__TRIGGER_01__2$", arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 5, script: "$61000004_ME__TRIGGER_01__2$", duration: 3000, boxId: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.MoveUser(arg1: 0, arg2: 0);
+                    context.MoveUser(mapId: 0, portalId: 0);
                     return new StateEnd(context);
                 }
 
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

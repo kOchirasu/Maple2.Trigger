@@ -5,7 +5,7 @@ namespace Maple2.Trigger._84000006_wd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Fireworks") == 1) {
                     return new StateVolley(context);
                 }
@@ -20,10 +20,10 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateVolley(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {3000}, arg2: true);
+                context.SetEffect(triggerIds: new []{3000}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) { }
 
                 return null;

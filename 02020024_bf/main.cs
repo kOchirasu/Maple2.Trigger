@@ -6,10 +6,10 @@ namespace Maple2.Trigger._02020024_bf {
             internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101});
+                context.CreateMonster(spawnIds: new []{101});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02020024_bf {
                 context.AddCinematicTalk(npcId: 23200084, illustId: "Neirin_normal", script: "$02020024_BF__main__2$", duration: 5000, align: Align.Left);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -37,7 +37,7 @@ namespace Maple2.Trigger._02020024_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

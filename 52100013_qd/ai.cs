@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52100013_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.IsDungeonRoom()) {
                     return new StateIdle(context);
                 }
@@ -26,12 +26,12 @@ namespace Maple2.Trigger._52100013_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 99910120, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Ground") == 1) {
-                    context.RemoveBuff(arg1: 701, arg2: 99910120);
+                    context.RemoveBuff(boxId: 701, skillId: 99910120);
                     return new StateReady(context);
                 }
 
@@ -53,12 +53,12 @@ namespace Maple2.Trigger._52100013_qd {
             internal StateBuff_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 99910120, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Ground") == 1) {
-                    context.RemoveBuff(arg1: 701, arg2: 99910120);
+                    context.RemoveBuff(boxId: 701, skillId: 99910120);
                     return new StateReady(context);
                 }
 
@@ -80,20 +80,20 @@ namespace Maple2.Trigger._52100013_qd {
             internal StateQuestIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 99910120, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{50100090}, questStates: new byte[]{2})) {
                     return new StateQuestEnd_warp(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100080}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{50100080}, questStates: new byte[]{2})) {
                     return new StateEnding(context);
                 }
 
                 if (context.GetUserValue(key: "Ground") == 1) {
-                    context.RemoveBuff(arg1: 701, arg2: 99910120);
+                    context.RemoveBuff(boxId: 701, skillId: 99910120);
                     return new StateReady(context);
                 }
 
@@ -115,16 +115,16 @@ namespace Maple2.Trigger._52100013_qd {
             internal StateQuestIdle_buff_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(boxIds: new []{701}, skillId: 99910120, level: 1, arg4: false, arg5: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{50100090}, questStates: new byte[]{1})) {
                     return new StateEnding(context);
                 }
 
                 if (context.GetUserValue(key: "Ground") == 1) {
-                    context.RemoveBuff(arg1: 701, arg2: 99910120);
+                    context.RemoveBuff(boxId: 701, skillId: 99910120);
                     return new StateReady(context);
                 }
 
@@ -146,22 +146,22 @@ namespace Maple2.Trigger._52100013_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointId: 11001, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointId: 11002, isEnable: true);
-                context.RemoveBuff(arg1: 701, arg2: 99910120);
-                context.SetMesh(arg1: new[] {1001, 1002, 1004, 1005, 1006}, arg2: false);
+                context.EnableSpawnPointPc(spawnId: 11001, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 11002, isEnable: true);
+                context.RemoveBuff(boxId: 701, skillId: 99910120);
+                context.SetMesh(triggerIds: new []{1001, 1002, 1004, 1005, 1006}, visible: false);
                 context.SetLocalCamera(cameraId: 8002, enable: true);
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52100013_QD__AI__7$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52100013_QD__AI__0$", arg4: 2, arg5: 0);
-                context.DestroyMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
+                context.SetConversation(type: 1, spawnId: 102, script: "$52100013_QD__AI__7$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 101, script: "$52100013_QD__AI__0$", arg4: 2, arg5: 0);
+                context.DestroyMonster(spawnIds: new []{501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Ending") == 1) {
                     return new StateEnding(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {201, 210})) {
+                if (context.MonsterDead(spawnIds: new []{201, 210})) {
                     return new StateEnding(context);
                 }
 
@@ -175,16 +175,16 @@ namespace Maple2.Trigger._52100013_qd {
             internal StateEnding(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBuff(arg1: 701, arg2: 99910120);
-                context.SetEffect(arg1: new[] {7001}, arg2: true);
+                context.RemoveBuff(boxId: 701, skillId: 99910120);
+                context.SetEffect(triggerIds: new []{7001}, visible: true);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.DestroyMonster(arg1: new[] {201, 210, 101, 102});
-                context.CreateMonster(arg1: new[] {202, 103, 104}, arg2: true);
+                context.DestroyMonster(spawnIds: new []{201, 210, 101, 102});
+                context.CreateMonster(spawnIds: new []{202, 103, 104}, arg2: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnding_02(context);
                 }
@@ -200,17 +200,17 @@ namespace Maple2.Trigger._52100013_qd {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateEnding_04(context));
-                context.DestroyMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
-                context.CameraSelectPath(pathIds: new[] {8101, 8102, 8103}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
+                context.CameraSelectPath(pathIds: new []{8101, 8102, 8103}, returnView: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetNpcEmotionLoop(arg1: 202, arg2: "Stun_A", arg3: 9000000f);
-                context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2008");
-                context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_2007");
+                context.SetNpcEmotionLoop(spawnId: 202, sequenceName: "Stun_A", duration: 9000000f);
+                context.MoveNpc(spawnId: 103, patrolName: "MS2PatrolData_2008");
+                context.MoveNpc(spawnId: 104, patrolName: "MS2PatrolData_2007");
                 context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", script: "$52100013_QD__AI__1$", align: Align.Right, duration: 2000);
                 context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", script: "$52100013_QD__AI__2$", align: Align.Left, duration: 2000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateEnding_03(context);
                 }
@@ -225,13 +225,13 @@ namespace Maple2.Trigger._52100013_qd {
             internal StateEnding_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 202, script: "$52100013_QD__AI__3$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 202, script: "$52100013_QD__AI__3$", arg4: 2, arg5: 0);
                 context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", script: "$52100013_QD__AI__4$", align: Align.Left, duration: 2000);
                 context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", script: "$52100013_QD__AI__5$", align: Align.Right, duration: 2000);
-                context.SetConversation(arg1: 1, arg2: 202, script: "$52100013_QD__AI__6$", arg4: 2, arg5: 6);
+                context.SetConversation(type: 1, spawnId: 202, script: "$52100013_QD__AI__6$", arg4: 2, arg5: 6);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new StateEnding_04(context);
                 }
@@ -249,7 +249,7 @@ namespace Maple2.Trigger._52100013_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateEnding_04_b(context);
                 }
@@ -267,7 +267,7 @@ namespace Maple2.Trigger._52100013_qd {
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnding_05(context);
                 }
@@ -289,7 +289,7 @@ namespace Maple2.Trigger._52100013_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateIsDungeonRoom(context);
                 }
@@ -305,7 +305,7 @@ namespace Maple2.Trigger._52100013_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.IsDungeonRoom()) {
                     return new StateDungeonEnd(context);
                 }
@@ -324,17 +324,17 @@ namespace Maple2.Trigger._52100013_qd {
             internal StateDungeonEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1004, 1005, 1006}, arg2: false);
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetMesh(arg1: new[] {1001, 1002}, arg2: false);
+                context.SetMesh(triggerIds: new []{1004, 1005, 1006}, visible: false);
+                context.SetEffect(triggerIds: new []{7001}, visible: false);
+                context.SetMesh(triggerIds: new []{1001, 1002}, visible: false);
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
-                context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "clearalbanos");
-                context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "ClearOceanKing");
+                context.SetAchievement(triggerId: 701, type: "trigger", code: "clearalbanos");
+                context.SetAchievement(triggerId: 701, type: "trigger", code: "ClearOceanKing");
                 context.DungeonClear();
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{50100090}, questStates: new byte[]{2})) {
                     return new StateQuestEnd_warp(context);
                 }
 
@@ -348,15 +348,15 @@ namespace Maple2.Trigger._52100013_qd {
             internal StateQuestEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBuff(arg1: 701, arg2: 99910120);
-                context.SetMesh(arg1: new[] {1004, 1005, 1006}, arg2: false);
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetMesh(arg1: new[] {1001, 1002}, arg2: false);
-                context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "clearalbanos");
+                context.RemoveBuff(boxId: 701, skillId: 99910120);
+                context.SetMesh(triggerIds: new []{1004, 1005, 1006}, visible: false);
+                context.SetEffect(triggerIds: new []{7001}, visible: false);
+                context.SetMesh(triggerIds: new []{1001, 1002}, visible: false);
+                context.SetAchievement(triggerId: 701, type: "trigger", code: "clearalbanos");
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{50100090}, questStates: new byte[]{2})) {
                     return new StateQuestEnd_warp(context);
                 }
 
@@ -371,7 +371,7 @@ namespace Maple2.Trigger._52100013_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateQuestEnd_warp_End(context);
                 }
@@ -380,7 +380,7 @@ namespace Maple2.Trigger._52100013_qd {
             }
 
             public override void OnExit() {
-                context.MoveUser(arg1: 52010068, arg2: 6001);
+                context.MoveUser(mapId: 52010068, portalId: 6001);
             }
         }
 
@@ -389,7 +389,7 @@ namespace Maple2.Trigger._52100013_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

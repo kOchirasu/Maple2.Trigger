@@ -9,8 +9,8 @@ namespace Maple2.Trigger._02020201_bf {
                 context.SetPortal(portalId: 103, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {901})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{901})) {
                     return new State페이카Spawn(context);
                 }
 
@@ -24,12 +24,12 @@ namespace Maple2.Trigger._02020201_bf {
             internal State페이카Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101}, arg2: false);
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020201_BF__MAIN__0$");
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new State제단파괴(context);
                 }
 
@@ -44,11 +44,11 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020201_BF__MAIN__1$");
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$02020201_BF__MAIN__2$", duration: 3000, delayTick: 0);
-                context.DestroyMonster(arg1: new[] {201, 202, 203});
+                context.AddBalloonTalk(spawnId: 101, msg: "$02020201_BF__MAIN__2$", duration: 3000, delayTick: 0);
+                context.DestroyMonster(spawnIds: new []{201, 202, 203});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateEnd(context);
                 }
@@ -63,12 +63,12 @@ namespace Maple2.Trigger._02020201_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg2: "trigger", arg3: "PaikaKritiasClear");
+                context.SetAchievement(type: "trigger", code: "PaikaKritiasClear");
                 context.DungeonClear();
                 context.SetPortal(portalId: 103, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

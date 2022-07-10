@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02010051_bf {
             internal StateWait01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6000, 6001, 6002, 6003, 900}, arg2: false);
+                context.SetEffect(triggerIds: new []{6000, 6001, 6002, 6003, 900}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9001})) {
                     return new State음성Cinematic(context);
                 }
 
@@ -22,12 +22,12 @@ namespace Maple2.Trigger._02010051_bf {
             internal State음성Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 10);
-                context.SetEffect(arg1: new[] {900}, arg2: true);
+                context.SetTimer(timerId: "1", seconds: 10);
+                context.SetEffect(triggerIds: new []{900}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateWait02(context);
                 }
 
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {10000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{10000})) {
                     return new StateEnd(context);
                 }
 
@@ -57,10 +57,10 @@ namespace Maple2.Trigger._02010051_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {900}, arg2: false);
+                context.SetEffect(triggerIds: new []{900}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

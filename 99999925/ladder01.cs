@@ -5,8 +5,8 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001077}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001077}, arg2: 0)) {
                     return new StateLadderWolk(context);
                 }
 
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._99999925 {
             internal StateLadderWolk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {701}, arg2: false, arg3: 1);
+                context.SetMesh(triggerIds: new []{701}, visible: false, arg3: 1);
                 context.SetAiExtraData(key: "LadderCnt", value: 1, isModify: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateLadderEnd(context);
                 }
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

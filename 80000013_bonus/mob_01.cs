@@ -5,8 +5,8 @@ namespace Maple2.Trigger._80000013_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {701})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{701})) {
                     return new StateStart(context);
                 }
 
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._80000013_bonus {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateWait(context);
                 }
 
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._80000013_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {701})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{701})) {
                     return new StateStart(context);
                 }
 
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._80000013_bonus {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

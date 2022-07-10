@@ -4,11 +4,11 @@ namespace Maple2.Trigger._99999907 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000016}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{12000016}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {12000016}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{12000016}, arg2: 0)) {
                     return new State강제이동(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._99999907 {
             internal State강제이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 0, arg2: 11);
+                context.MoveUser(mapId: 0, portalId: 11);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateEnd(context);
                 }
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._99999907 {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateWait(context);
                 }

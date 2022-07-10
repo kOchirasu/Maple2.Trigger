@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "MonsterSpawn") == 1) {
                     return new State끝_1(context);
                 }
@@ -14,7 +14,7 @@ namespace Maple2.Trigger._02100000_bf {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new[] {81003, 810031, 810032}, arg2: true);
+                context.CreateMonster(spawnIds: new []{81003, 810031, 810032}, arg2: true);
             }
         }
 
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {82001})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{82001})) {
                     // return new StateSuccess(context);
                     return null;
                 }
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02100000_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
             }
         }
     }

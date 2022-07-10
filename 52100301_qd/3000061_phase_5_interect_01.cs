@@ -4,10 +4,10 @@ namespace Maple2.Trigger._52100301_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {200031, 200032}, arg2: false);
+                context.SetEffect(triggerIds: new []{200031, 200032}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Phase_5_Interect_01") == 1) {
                     return new StateStart(context);
                 }
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._52100301_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$52100301_QD__3000061_PHASE_5_INTERECT_01__0$", arg3: 4000);
-                context.CreateMonster(arg1: new[] {999}, arg2: false);
+                context.SetEventUI(arg1: 1, script: "$52100301_QD__3000061_PHASE_5_INTERECT_01__0$", duration: 4000);
+                context.CreateMonster(spawnIds: new []{999}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State탈것_Spawn(context);
                 }
@@ -41,12 +41,12 @@ namespace Maple2.Trigger._52100301_qd {
             internal State탈것_Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10003126}, arg2: 1);
-                context.DestroyMonster(arg1: new[] {999});
+                context.SetInteractObject(interactIds: new []{10003126}, state: 1);
+                context.DestroyMonster(spawnIds: new []{999});
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10003126}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10003126}, arg2: 0)) {
                     return new State인터렉트_동작(context);
                 }
 
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State인터렉트_리셋(context);
                 }
@@ -85,8 +85,8 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 0, additionalEffectId: 62100152, level: 1)) {
+            public override TriggerState? Execute() {
+                if (context.CheckAnyUserAdditionalEffect(boxId: 0, additionalEffectId: 62100152, level: 1)) {
                     return new State리셋_Wait(context);
                 }
 
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateStart(context);
                 }

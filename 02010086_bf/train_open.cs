@@ -4,13 +4,13 @@ namespace Maple2.Trigger._02010086_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7001, 7002}, arg2: false);
-                context.SetMesh(arg1: new[] {1061, 1062, 1063, 2011, 2012, 2013}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000896}, arg2: 0);
+                context.SetEffect(triggerIds: new []{7001, 7002}, visible: false);
+                context.SetMesh(triggerIds: new []{1061, 1062, 1063, 2011, 2012, 2013}, visible: false);
+                context.SetInteractObject(interactIds: new []{10000896}, state: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000896}, arg2: 1)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000896}, arg2: 1)) {
                     return new StateStart(context);
                 }
 
@@ -24,12 +24,12 @@ namespace Maple2.Trigger._02010086_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
+                context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 113, textId: 20003363);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000896}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000896}, arg2: 0)) {
                     return new State작동_01(context);
                 }
 
@@ -45,14 +45,14 @@ namespace Maple2.Trigger._02010086_bf {
             internal State작동_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7001, 7002}, arg2: true);
-                context.SetMesh(arg1: new[] {1071, 1072, 1073}, arg2: false, arg4: 300, arg5: 10f);
-                context.SetMesh(arg1: new[] {1061, 1062, 1063}, arg2: true, arg4: 300, arg5: 10f);
-                context.SetTimer(id: "3", arg2: 3);
+                context.SetEffect(triggerIds: new []{7001, 7002}, visible: true);
+                context.SetMesh(triggerIds: new []{1071, 1072, 1073}, visible: false, arg4: 300, arg5: 10f);
+                context.SetMesh(triggerIds: new []{1061, 1062, 1063}, visible: true, arg4: 300, arg5: 10f);
+                context.SetTimer(timerId: "3", seconds: 3);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new State작동_02(context);
                 }
 
@@ -66,15 +66,15 @@ namespace Maple2.Trigger._02010086_bf {
             internal State작동_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1055}, arg2: false, arg4: 30, arg5: 0f);
-                context.SetMesh(arg1: new[] {1061, 1062, 1063}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetMesh(arg1: new[] {1005}, arg2: false, arg4: 50, arg5: 1f);
-                context.SetActor(arg1: 1022, arg2: true, arg3: "Opened");
-                context.SetMesh(arg1: new[] {1021}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetTimer(id: "1", arg2: 1);
+                context.SetMesh(triggerIds: new []{1055}, visible: false, arg4: 30, arg5: 0f);
+                context.SetMesh(triggerIds: new []{1061, 1062, 1063}, visible: false, arg4: 0, arg5: 10f);
+                context.SetMesh(triggerIds: new []{1005}, visible: false, arg4: 50, arg5: 1f);
+                context.SetActor(triggerId: 1022, visible: true, initialSequence: "Opened");
+                context.SetMesh(triggerIds: new []{1021}, visible: false, arg4: 0, arg5: 10f);
+                context.SetTimer(timerId: "1", seconds: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,11 +4,11 @@ namespace Maple2.Trigger._63000006_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5070}, arg2: false);
+                context.SetEffect(triggerIds: new []{5070}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new StateStart(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._63000006_cs {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5070}, arg2: true);
+                context.SetEffect(triggerIds: new []{5070}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new State간격Random(context);
             }
 
@@ -37,20 +37,20 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.RandomCondition(arg1: 25f)) {
+            public override TriggerState? Execute() {
+                if (context.RandomCondition(rate: 25f)) {
                     return new State4초간격(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new State5초간격(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new State6초간격(context);
                 }
 
-                if (context.RandomCondition(arg1: 25f)) {
+                if (context.RandomCondition(rate: 25f)) {
                     return new State7초간격(context);
                 }
 
@@ -64,15 +64,15 @@ namespace Maple2.Trigger._63000006_cs {
             internal State4초간격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 4);
+                context.SetTimer(timerId: "1", seconds: 4);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "1")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "1")) {
                     return new StateReset(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {9002})) {
+                if (context.UserDetected(boxIds: new []{9002})) {
                     return new StateEnd(context);
                 }
 
@@ -86,15 +86,15 @@ namespace Maple2.Trigger._63000006_cs {
             internal State5초간격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 5);
+                context.SetTimer(timerId: "2", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateReset(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {9002})) {
+                if (context.UserDetected(boxIds: new []{9002})) {
                     return new StateEnd(context);
                 }
 
@@ -108,15 +108,15 @@ namespace Maple2.Trigger._63000006_cs {
             internal State6초간격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "3", arg2: 6);
+                context.SetTimer(timerId: "3", seconds: 6);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateReset(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {9002})) {
+                if (context.UserDetected(boxIds: new []{9002})) {
                     return new StateEnd(context);
                 }
 
@@ -130,15 +130,15 @@ namespace Maple2.Trigger._63000006_cs {
             internal State7초간격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "4", arg2: 7);
+                context.SetTimer(timerId: "4", seconds: 7);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "4")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "4")) {
                     return new StateReset(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {9002})) {
+                if (context.UserDetected(boxIds: new []{9002})) {
                     return new StateEnd(context);
                 }
 
@@ -152,10 +152,10 @@ namespace Maple2.Trigger._63000006_cs {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5070}, arg2: false);
+                context.SetEffect(triggerIds: new []{5070}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateStart(context);
             }
 
@@ -166,10 +166,10 @@ namespace Maple2.Trigger._63000006_cs {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5070}, arg2: false);
+                context.SetEffect(triggerIds: new []{5070}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

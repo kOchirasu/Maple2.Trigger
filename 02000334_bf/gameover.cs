@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {200, 999}, arg2: true);
+                context.CreateMonster(spawnIds: new []{200, 999}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {200})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{200})) {
                     return new State게임오버(context);
                 }
 
@@ -22,10 +22,10 @@ namespace Maple2.Trigger._02000334_bf {
             internal State게임오버(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {999});
+                context.DestroyMonster(spawnIds: new []{999});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

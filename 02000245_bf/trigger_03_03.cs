@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000245_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {613, 614, 615});
+                context.DestroyMonster(spawnIds: new []{613, 614, 615});
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {203})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{203})) {
                     return new StateMobCreation(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02000245_bf {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {613, 614, 615}, arg2: false);
+                context.CreateMonster(spawnIds: new []{613, 614, 615}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {613, 614, 615})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{613, 614, 615})) {
                     return new State통과(context);
                 }
 
@@ -40,10 +40,10 @@ namespace Maple2.Trigger._02000245_bf {
             internal State통과(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "1", arg2: 10);
+                context.SetTimer(timerId: "1", seconds: 10);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

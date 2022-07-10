@@ -7,60 +7,60 @@ namespace Maple2.Trigger._52000038_qd {
                 context.HideGuideSummary(entityId: 20020010);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002632}, arg3: new byte[] {3})) {
-                    context.SetActor(arg1: 3001, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3002, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3003, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3004, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3005, arg2: false, arg3: "Dead_A");
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{40002632}, questStates: new byte[]{3})) {
+                    context.SetActor(triggerId: 3001, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3002, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3003, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3004, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3005, visible: false, initialSequence: "Dead_A");
                     return new StateScene_c_01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002632}, arg3: new byte[] {2})) {
-                    context.SetActor(arg1: 3001, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3002, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3003, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3004, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3005, arg2: false, arg3: "Dead_A");
-                    context.CreateMonster(arg1: new[] {131, 132}, arg2: true);
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{40002632}, questStates: new byte[]{2})) {
+                    context.SetActor(triggerId: 3001, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3002, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3003, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3004, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3005, visible: false, initialSequence: "Dead_A");
+                    context.CreateMonster(spawnIds: new []{131, 132}, arg2: true);
                     return new StateScene_c_01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631}, arg3: new byte[] {3})) {
-                    context.SetActor(arg1: 3001, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3002, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3003, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3004, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3005, arg2: false, arg3: "Dead_A");
-                    context.CreateMonster(arg1: new[] {131, 132}, arg2: true);
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{40002631}, questStates: new byte[]{3})) {
+                    context.SetActor(triggerId: 3001, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3002, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3003, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3004, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3005, visible: false, initialSequence: "Dead_A");
+                    context.CreateMonster(spawnIds: new []{131, 132}, arg2: true);
                     return new StateScene_c_01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631}, arg3: new byte[] {2})) {
-                    context.SetActor(arg1: 3001, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3002, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3003, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3004, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3005, arg2: false, arg3: "Dead_A");
-                    context.CreateMonster(arg1: new[] {131, 132}, arg2: true);
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{40002631}, questStates: new byte[]{2})) {
+                    context.SetActor(triggerId: 3001, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3002, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3003, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3004, visible: false, initialSequence: "Dead_A");
+                    context.SetActor(triggerId: 3005, visible: false, initialSequence: "Dead_A");
+                    context.CreateMonster(spawnIds: new []{131, 132}, arg2: true);
                     return new StateScene_c_01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631}, arg3: new byte[] {1})) {
-                    context.CreateMonster(arg1: new[] {121, 122}, arg2: true);
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{40002631}, questStates: new byte[]{1})) {
+                    context.CreateMonster(spawnIds: new []{121, 122}, arg2: true);
                     return new StateScene_b_02(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002630}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{40002630}, questStates: new byte[]{3})) {
                     return new StateScene_b_01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002630}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{40002630}, questStates: new byte[]{2})) {
                     return new StateScene_b_01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002630}, arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{40002630}, questStates: new byte[]{1})) {
                     return new StateReady_02(context);
                 }
 
@@ -74,11 +74,11 @@ namespace Maple2.Trigger._52000038_qd {
             internal StateReady_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 102}, arg2: true);
+                context.CreateMonster(spawnIds: new []{101, 102}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002630}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{702}, questIds: new []{40002630}, questStates: new byte[]{1})) {
                     return new StateStart(context);
                 }
 
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._52000038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateStart_02(context);
                 }
@@ -108,13 +108,13 @@ namespace Maple2.Trigger._52000038_qd {
             internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2001");
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000038_QD__MAIN__0$", arg4: 2, arg5: 0);
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2002");
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52000038_QD__MAIN__1$", arg4: 2, arg5: 2);
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_2001");
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000038_QD__MAIN__0$", arg4: 2, arg5: 0);
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_2002");
+                context.SetConversation(type: 1, spawnId: 102, script: "$52000038_QD__MAIN__1$", arg4: 2, arg5: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateStart_03(context);
                 }
@@ -129,11 +129,11 @@ namespace Maple2.Trigger._52000038_qd {
             internal StateStart_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2003");
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000038_QD__MAIN__2$", arg4: 2, arg5: 0);
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_2003");
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000038_QD__MAIN__2$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateStart_04(context);
                 }
@@ -148,11 +148,11 @@ namespace Maple2.Trigger._52000038_qd {
             internal StateStart_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2004");
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52000038_QD__MAIN__3$", arg4: 2, arg5: 0);
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_2004");
+                context.SetConversation(type: 1, spawnId: 102, script: "$52000038_QD__MAIN__3$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateStart_05(context);
                 }
@@ -167,10 +167,10 @@ namespace Maple2.Trigger._52000038_qd {
             internal StateStart_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(spawnIds: new []{201}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateStart_05_b(context);
                 }
@@ -185,14 +185,14 @@ namespace Maple2.Trigger._52000038_qd {
             internal StateStart_05_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 3001, arg2: false, arg3: "Dead_A");
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2005");
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000038_QD__MAIN__4$", arg4: 2, arg5: 0);
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2006");
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52000038_QD__MAIN__5$", arg4: 2, arg5: 0);
+                context.SetActor(triggerId: 3001, visible: false, initialSequence: "Dead_A");
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_2005");
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000038_QD__MAIN__4$", arg4: 2, arg5: 0);
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_2006");
+                context.SetConversation(type: 1, spawnId: 102, script: "$52000038_QD__MAIN__5$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateStart_06(context);
                 }
@@ -207,10 +207,10 @@ namespace Maple2.Trigger._52000038_qd {
             internal StateStart_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {202, 203, 204, 205}, arg2: true);
+                context.CreateMonster(spawnIds: new []{202, 203, 204, 205}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateStart_07(context);
                 }
@@ -225,20 +225,20 @@ namespace Maple2.Trigger._52000038_qd {
             internal StateStart_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 3002, arg2: false, arg3: "Dead_A");
-                context.SetActor(arg1: 3003, arg2: false, arg3: "Dead_A");
-                context.SetActor(arg1: 3004, arg2: false, arg3: "Dead_A");
-                context.SetActor(arg1: 3005, arg2: false, arg3: "Dead_A");
-                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2007");
-                context.SetConversation(arg1: 1, arg2: 101, script: "$52000038_QD__MAIN__6$", arg4: 2, arg5: 2);
-                context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2008");
-                context.SetConversation(arg1: 1, arg2: 102, script: "$52000038_QD__MAIN__7$", arg4: 2, arg5: 4);
+                context.SetActor(triggerId: 3002, visible: false, initialSequence: "Dead_A");
+                context.SetActor(triggerId: 3003, visible: false, initialSequence: "Dead_A");
+                context.SetActor(triggerId: 3004, visible: false, initialSequence: "Dead_A");
+                context.SetActor(triggerId: 3005, visible: false, initialSequence: "Dead_A");
+                context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_2007");
+                context.SetConversation(type: 1, spawnId: 101, script: "$52000038_QD__MAIN__6$", arg4: 2, arg5: 2);
+                context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_2008");
+                context.SetConversation(type: 1, spawnId: 102, script: "$52000038_QD__MAIN__7$", arg4: 2, arg5: 4);
                 context.ShowGuideSummary(entityId: 40010, textId: 40010);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {201, 202, 203, 204, 205})) {
-                    context.DestroyMonster(arg1: new[] {101, 102});
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{201, 202, 203, 204, 205})) {
+                    context.DestroyMonster(spawnIds: new []{101, 102});
                     context.HideGuideSummary(entityId: 40010);
                     return new StateScene_b_01(context);
                 }
@@ -253,14 +253,14 @@ namespace Maple2.Trigger._52000038_qd {
             internal StateScene_b_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "beyondroid1");
-                context.CreateMonster(arg1: new[] {111, 112}, arg2: true);
+                context.SetAchievement(triggerId: 701, type: "trigger", code: "beyondroid1");
+                context.CreateMonster(spawnIds: new []{111, 112}, arg2: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631}, arg3: new byte[] {1})) {
-                    context.DestroyMonster(arg1: new[] {111, 112});
-                    context.CreateMonster(arg1: new[] {121, 122}, arg2: true);
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{40002631}, questStates: new byte[]{1})) {
+                    context.DestroyMonster(spawnIds: new []{111, 112});
+                    context.CreateMonster(spawnIds: new []{121, 122}, arg2: true);
                     return new StateScene_b_02(context);
                 }
 
@@ -274,11 +274,11 @@ namespace Maple2.Trigger._52000038_qd {
             internal StateScene_b_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 121, arg2: "MS2PatrolData_2009");
-                context.SetConversation(arg1: 1, arg2: 121, script: "$52000038_QD__MAIN__8$", arg4: 2, arg5: 0);
+                context.MoveNpc(spawnId: 121, patrolName: "MS2PatrolData_2009");
+                context.SetConversation(type: 1, spawnId: 121, script: "$52000038_QD__MAIN__8$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateScene_b_03(context);
                 }
@@ -293,11 +293,11 @@ namespace Maple2.Trigger._52000038_qd {
             internal StateScene_b_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 122, arg2: "MS2PatrolData_2010");
-                context.SetConversation(arg1: 1, arg2: 122, script: "$52000038_QD__MAIN__9$", arg4: 2, arg5: 3);
+                context.MoveNpc(spawnId: 122, patrolName: "MS2PatrolData_2010");
+                context.SetConversation(type: 1, spawnId: 122, script: "$52000038_QD__MAIN__9$", arg4: 2, arg5: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateScene_b_04(context);
                 }
@@ -312,15 +312,15 @@ namespace Maple2.Trigger._52000038_qd {
             internal StateScene_b_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {103}, arg2: true);
+                context.CreateMonster(spawnIds: new []{103}, arg2: true);
                 context.ShowGuideSummary(entityId: 20020010, textId: 20020010);
-                context.SetConversation(arg1: 1, arg2: 121, script: "$52000038_QD__MAIN__10$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 121, script: "$52000038_QD__MAIN__10$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631}, arg3: new byte[] {2})) {
-                    context.DestroyMonster(arg1: new[] {121, 122});
-                    context.CreateMonster(arg1: new[] {131, 132}, arg2: true);
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{40002631}, questStates: new byte[]{2})) {
+                    context.DestroyMonster(spawnIds: new []{121, 122});
+                    context.CreateMonster(spawnIds: new []{131, 132}, arg2: true);
                     context.HideGuideSummary(entityId: 20020010);
                     return new StateScene_c_01(context);
                 }
@@ -336,7 +336,7 @@ namespace Maple2.Trigger._52000038_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

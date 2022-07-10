@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020001_bf {
                 context.SetUserValue(key: "EventStart", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "EventStart") == 1) {
                     return new StatePuzzleOn(context);
                 }
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02020001_bf {
                 context.SetUserValue(triggerId: 12000, key: "TimeEventOn", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(context.GetUserValue(key: "TimeEventLifeTime"))) {
                     return new StatePuzzleOff(context);
                 }
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02020001_bf {
                 context.SetUserValue(triggerId: 12000, key: "TimeEventOn", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

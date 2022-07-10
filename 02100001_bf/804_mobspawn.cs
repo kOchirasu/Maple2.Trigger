@@ -5,11 +5,11 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "RemoveAll", value: 0);
-                context.DestroyMonster(arg1: new[] {804});
-                context.SetMesh(arg1: new[] {3204}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.DestroyMonster(spawnIds: new []{804});
+                context.SetMesh(triggerIds: new []{3204}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateMobSpawn(context);
                 }
@@ -24,12 +24,12 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateMobSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {804}, arg2: false);
-                context.SetMesh(arg1: new[] {3204}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(spawnIds: new []{804}, arg2: false);
+                context.SetMesh(triggerIds: new []{3204}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {804})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{804})) {
                     return new StateDelay01(context);
                 }
 
@@ -47,10 +47,10 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3204}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3204}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 180000)) {
                     return new StateMobSpawn(context);
                 }
@@ -65,10 +65,10 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {804});
+                context.DestroyMonster(spawnIds: new []{804});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

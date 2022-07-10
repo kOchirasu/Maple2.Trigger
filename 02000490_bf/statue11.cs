@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000490_bf {
             internal State세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {11}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{11}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new State수신Wait(context);
                 }
 
@@ -23,9 +23,9 @@ namespace Maple2.Trigger._02000490_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "StatueHuman02Death") == 1) {
-                    context.SetMesh(arg1: new[] {11}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(triggerIds: new []{11}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateEnd(context);
                 }
 
@@ -39,10 +39,10 @@ namespace Maple2.Trigger._02000490_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {11}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{11}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

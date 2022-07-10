@@ -6,10 +6,10 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017}, arg2: false);
-                context.DestroyMonster(arg1: new[] {101});
-                context.SetActor(arg1: 4000, arg2: true, arg3: "ic_fi_funct_icedoor_A01_off");
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetSkill(triggerIds: new []{8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{101});
+                context.SetActor(triggerId: 4000, visible: true, initialSequence: "ic_fi_funct_icedoor_A01_off");
+                context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 12, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
@@ -18,7 +18,7 @@ namespace Maple2.Trigger._52000084_qd {
                 context.SetUserValue(key: "BossRoomPortal03", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateQuestcheck(context);
                 }
@@ -34,16 +34,16 @@ namespace Maple2.Trigger._52000084_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{199}, questIds: new []{50100280}, questStates: new byte[]{1})) {
                     return new StateDungeonStart(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{199}, questIds: new []{50100280}, questStates: new byte[]{2})) {
                     return new StateTeleport52100085(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{199}, questIds: new []{50100280}, questStates: new byte[]{3})) {
                     return new StateTeleport52100085(context);
                 }
 
@@ -57,11 +57,11 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 500, arg2: true);
-                context.CreateMonster(arg1: new[] {201}, arg2: false);
+                context.CameraSelect(triggerId: 500, enable: true);
+                context.CreateMonster(spawnIds: new []{201}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateStartCinematic(context);
                 }
@@ -76,12 +76,12 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 501, arg2: true);
+                context.CameraSelect(triggerId: 501, enable: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateNpcTalk01(context);
                 }
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52000084_qd {
                 context.SetSkip(state: new StateNpcTalk01Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateNpcTalk02(context);
                 }
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._52000084_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateNpcTalk02(context);
                 }
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._52000084_qd {
                 context.SetSkip(state: new StateNpcTalk02Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateDoorOpen01(context);
                 }
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._52000084_qd {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new StateDoorOpen01(context);
                 }
@@ -172,11 +172,11 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateDoorOpen01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 4000, arg2: true, arg3: "ic_fi_funct_icedoor_A01_on");
-                context.SetMesh(arg1: new[] {3000, 3001, 3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetActor(triggerId: 4000, visible: true, initialSequence: "ic_fi_funct_icedoor_A01_on");
+                context.SetMesh(triggerIds: new []{3000, 3001, 3002}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCameraReset01(context);
                 }
@@ -193,13 +193,13 @@ namespace Maple2.Trigger._52000084_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
+                context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_201");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
                     return new StateNpcChange01(context);
                 }
@@ -214,11 +214,11 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateNpcChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {201});
-                context.CreateMonster(arg1: new[] {101, 102}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{201});
+                context.CreateMonster(spawnIds: new []{101, 102}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateGuide01(context);
                 }
@@ -234,11 +234,11 @@ namespace Maple2.Trigger._52000084_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20038101, textId: 20038101, duration: 4000);
-                context.SetActor(arg1: 4000, arg2: false, arg3: "ic_fi_funct_icedoor_A01_on");
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129}, arg2: false, arg3: 2000, arg4: 70, arg5: 2f);
+                context.SetActor(triggerId: 4000, visible: false, initialSequence: "ic_fi_funct_icedoor_A01_on");
+                context.SetMesh(triggerIds: new []{3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129}, visible: false, arg3: 2000, arg4: 70, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "BossRoomPortal01") == 1) {
                     return new StateBossRoomPortal01(context);
                 }
@@ -264,7 +264,7 @@ namespace Maple2.Trigger._52000084_qd {
                 context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateQuit(context);
                 }
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._52000084_qd {
                 context.SetPortal(portalId: 12, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateQuit(context);
                 }
@@ -300,7 +300,7 @@ namespace Maple2.Trigger._52000084_qd {
                 context.SetPortal(portalId: 13, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateQuit(context);
                 }
@@ -315,10 +315,10 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017}, arg2: true);
+                context.SetSkill(triggerIds: new []{8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017}, arg2: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -329,10 +329,10 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateTeleport52100085(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52000085, arg2: 1);
+                context.MoveUser(mapId: 52000085, portalId: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

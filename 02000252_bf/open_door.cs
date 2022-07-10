@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8903}, arg2: false);
+                context.SetEffect(triggerIds: new []{8903}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 909) == 1) {
                     return new StateStart(context);
                 }
@@ -22,13 +22,13 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002526, textId: 20002526);
-                context.SetEffect(arg1: new[] {8903}, arg2: true);
+                context.SetEffect(triggerIds: new []{8903}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000402}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000402}, arg2: 0)) {
                     return new StateEnd(context);
                 }
 
@@ -43,10 +43,10 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20002526);
-                context.SetEffect(arg1: new[] {8903}, arg2: false);
+                context.SetEffect(triggerIds: new []{8903}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

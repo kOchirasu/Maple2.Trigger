@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "End") == 1) {
                     return new StateSetup(context);
                 }
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02020051_bf {
                 context.SetUserValue(triggerId: 107, key: "Text", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateSetup_2(context);
                 }
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02020051_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_surprise", script: "$02020051_BF__104_END_1__0$", duration: 5684, voice: @"ko/Npc/00002201");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateMonsterDead_1(context);
                 }
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.NpcIsDeadByStringId(stringId: "Gigantika_01") || context.GetUserValue(key: "End") == 3) {
                     return new StateEnd(context);
                 }
@@ -76,10 +76,10 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 102, key: "Timmer", value: 3);
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnd_2(context);
                 }
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._02020051_bf {
                 context.SetUserValue(triggerId: 107, key: "Text", value: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "End") == 2) {
                     return new StateDead조건(context);
                 }

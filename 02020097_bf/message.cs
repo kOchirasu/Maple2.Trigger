@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02020097_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {10})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{10})) {
                     return new StateWait상태(context);
                 }
 
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02020097_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {12})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{12})) {
                     return new State경비병도움안내(context);
                 }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02020097_bf {
                 context.ShowGuideSummary(entityId: 29200001, textId: 29200001);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateTrigger종료(context);
                 }
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02020097_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

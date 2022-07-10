@@ -5,12 +5,12 @@ namespace Maple2.Trigger._63000092_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.DayOfWeek(dayOfWeeks: new byte[] {3}, desc: "1(일)-7(토)")) {
+            public override TriggerState? Execute() {
+                if (context.DayOfWeek(dayOfWeeks: new byte[]{3}, description: "1(일)-7(토)")) {
                     return new State만남(context);
                 }
 
-                if (context.DayOfWeek(dayOfWeeks: new byte[] {1, 2, 4, 5, 6, 7}, desc: "1(일)-7(토)")) {
+                if (context.DayOfWeek(dayOfWeeks: new byte[]{1, 2, 4, 5, 6, 7}, description: "1(일)-7(토)")) {
                     return new State헤어짐(context);
                 }
 
@@ -24,12 +24,12 @@ namespace Maple2.Trigger._63000092_cs {
             internal State만남(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {111, 112});
-                context.CreateMonster(arg1: new[] {121, 122}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{111, 112});
+                context.CreateMonster(spawnIds: new []{121, 122}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.DayOfWeek(dayOfWeeks: new byte[] {1, 2, 4, 5, 6, 7}, desc: "1(일)-7(토)")) {
+            public override TriggerState? Execute() {
+                if (context.DayOfWeek(dayOfWeeks: new byte[]{1, 2, 4, 5, 6, 7}, description: "1(일)-7(토)")) {
                     return new State헤어짐(context);
                 }
 
@@ -43,12 +43,12 @@ namespace Maple2.Trigger._63000092_cs {
             internal State헤어짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {121, 122});
-                context.CreateMonster(arg1: new[] {111, 112}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{121, 122});
+                context.CreateMonster(spawnIds: new []{111, 112}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.DayOfWeek(dayOfWeeks: new byte[] {3}, desc: "1(일)-7(토)")) {
+            public override TriggerState? Execute() {
+                if (context.DayOfWeek(dayOfWeeks: new byte[]{3}, description: "1(일)-7(토)")) {
                     return new State만남(context);
                 }
 

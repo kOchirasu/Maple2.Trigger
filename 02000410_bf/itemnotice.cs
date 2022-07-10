@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
                     return new StateBattleStart(context);
                 }
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ItemNotice01") == 1) {
                     return new State필수아이템01(context);
                 }
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.ShowGuideSummary(entityId: 20041008, textId: 20041008);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new StateNextWait(context);
                 }
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ItemNotice02") == 1) {
                     return new State필수아이템02(context);
                 }
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.ShowGuideSummary(entityId: 20041009, textId: 20041009);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new StateEnd(context);
                 }
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,25 +4,25 @@ namespace Maple2.Trigger._52010018_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3002, 3003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetActor(arg1: 201, arg2: false, arg3: "Eff_MassiveEvent_Door_Vanished");
-                context.SetActor(arg1: 202, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                context.SetActor(arg1: 203, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                context.SetActor(arg1: 204, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                context.SetActor(arg1: 205, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                context.SetActor(arg1: 206, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                context.SetActor(arg1: 207, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                context.SetActor(arg1: 208, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                context.SetActor(arg1: 209, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                context.SetActor(arg1: 210, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                context.SetActor(arg1: 211, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
+                context.SetMesh(triggerIds: new []{3000}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3001}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3002, 3003}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetActor(triggerId: 201, visible: false, initialSequence: "Eff_MassiveEvent_Door_Vanished");
+                context.SetActor(triggerId: 202, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                context.SetActor(triggerId: 203, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                context.SetActor(triggerId: 204, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                context.SetActor(triggerId: 205, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                context.SetActor(triggerId: 206, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                context.SetActor(triggerId: 207, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                context.SetActor(triggerId: 208, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                context.SetActor(triggerId: 209, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                context.SetActor(triggerId: 210, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                context.SetActor(triggerId: 211, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002853}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{100}, questIds: new []{10002853}, questStates: new byte[]{1})) {
                     return new State미카이동02(context);
                 }
 
@@ -38,14 +38,14 @@ namespace Maple2.Trigger._52010018_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 302, arg2: true);
-                context.DestroyMonster(arg1: new[] {1005});
-                context.CreateMonster(arg1: new[] {1007}, arg2: false);
-                context.MoveNpc(arg1: 1007, arg2: "MS2PatrolData_1007_A");
+                context.CameraSelect(triggerId: 302, enable: true);
+                context.DestroyMonster(spawnIds: new []{1005});
+                context.CreateMonster(spawnIds: new []{1007}, arg2: false);
+                context.MoveNpc(spawnId: 1007, patrolName: "MS2PatrolData_1007_A");
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 104, arg2: new[] {1007})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 104, spawnIds: new []{1007})) {
                     return new State다리CreationWait(context);
                 }
 
@@ -60,12 +60,12 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    context.SetMesh(arg1: new[] {3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.SetMesh(arg1: new[] {3004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(triggerIds: new []{3000}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(triggerIds: new []{3001}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(triggerIds: new []{3003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(triggerIds: new []{3004}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new State다리Creation(context);
                 }
 
@@ -80,19 +80,19 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetActor(arg1: 201, arg2: true, arg3: "Eff_MassiveEvent_Door_Opened");
-                    context.SetActor(arg1: 202, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                    context.SetActor(arg1: 203, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                    context.SetActor(arg1: 204, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                    context.SetActor(arg1: 205, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                    context.SetActor(arg1: 206, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                    context.SetActor(arg1: 207, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                    context.SetActor(arg1: 208, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                    context.SetActor(arg1: 209, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                    context.SetActor(arg1: 210, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                    context.SetActor(arg1: 211, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
+                    context.SetActor(triggerId: 201, visible: true, initialSequence: "Eff_MassiveEvent_Door_Opened");
+                    context.SetActor(triggerId: 202, visible: true, initialSequence: "Eff_MassiveEvent_Stair_Opened");
+                    context.SetActor(triggerId: 203, visible: true, initialSequence: "Eff_MassiveEvent_Stair_Opened");
+                    context.SetActor(triggerId: 204, visible: true, initialSequence: "Eff_MassiveEvent_Stair_Opened");
+                    context.SetActor(triggerId: 205, visible: true, initialSequence: "Eff_MassiveEvent_Stair_Opened");
+                    context.SetActor(triggerId: 206, visible: true, initialSequence: "Eff_MassiveEvent_Stair_Opened");
+                    context.SetActor(triggerId: 207, visible: true, initialSequence: "Eff_MassiveEvent_Stair_Opened");
+                    context.SetActor(triggerId: 208, visible: true, initialSequence: "Eff_MassiveEvent_Stair_Opened");
+                    context.SetActor(triggerId: 209, visible: true, initialSequence: "Eff_MassiveEvent_Stair_Opened");
+                    context.SetActor(triggerId: 210, visible: true, initialSequence: "Eff_MassiveEvent_Stair_Opened");
+                    context.SetActor(triggerId: 211, visible: true, initialSequence: "Eff_MassiveEvent_Stair_Opened");
                     return new State미카Script02(context);
                 }
 
@@ -106,10 +106,10 @@ namespace Maple2.Trigger._52010018_qd {
             internal State미카Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010018_QD__MAIN_2__0$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11001285, script: "$52010018_QD__MAIN_2__0$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
                     return new State에레브Script02(context);
                 }
@@ -124,10 +124,10 @@ namespace Maple2.Trigger._52010018_qd {
             internal State에레브Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000075, script: "$52010018_QD__MAIN_2__1$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11000075, script: "$52010018_QD__MAIN_2__1$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
                     return new State미카Script03(context);
                 }
@@ -142,12 +142,12 @@ namespace Maple2.Trigger._52010018_qd {
             internal State미카Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001285, script: "$52010018_QD__MAIN_2__2$", arg4: 4);
+                context.SetConversation(type: 2, spawnId: 11001285, script: "$52010018_QD__MAIN_2__2$", arg4: 4);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.MoveNpc(arg1: 1007, arg2: "MS2PatrolData_1007_B");
+                    context.MoveNpc(spawnId: 1007, patrolName: "MS2PatrolData_1007_B");
                     return new State미카소멸(context);
                 }
 
@@ -162,13 +162,13 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     context.SetCinematicUI(type: 0);
                     context.SetCinematicUI(type: 2);
-                    context.CameraSelect(arg1: 302, arg2: false);
-                    context.DestroyMonster(arg1: new[] {1007});
-                    context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "BacktoDrakenheim");
+                    context.CameraSelect(triggerId: 302, enable: false);
+                    context.DestroyMonster(spawnIds: new []{1007});
+                    context.SetAchievement(triggerId: 100, type: "trigger", code: "BacktoDrakenheim");
                     return new StateEnd(context);
                 }
 
@@ -183,19 +183,19 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetActor(arg1: 201, arg2: false, arg3: "Eff_MassiveEvent_Door_Vanished");
-                    context.SetActor(arg1: 202, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                    context.SetActor(arg1: 203, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                    context.SetActor(arg1: 204, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                    context.SetActor(arg1: 205, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                    context.SetActor(arg1: 206, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                    context.SetActor(arg1: 207, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                    context.SetActor(arg1: 208, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                    context.SetActor(arg1: 209, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                    context.SetActor(arg1: 210, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                    context.SetActor(arg1: 211, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
+                    context.SetActor(triggerId: 201, visible: false, initialSequence: "Eff_MassiveEvent_Door_Vanished");
+                    context.SetActor(triggerId: 202, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                    context.SetActor(triggerId: 203, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                    context.SetActor(triggerId: 204, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                    context.SetActor(triggerId: 205, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                    context.SetActor(triggerId: 206, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                    context.SetActor(triggerId: 207, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                    context.SetActor(triggerId: 208, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                    context.SetActor(triggerId: 209, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                    context.SetActor(triggerId: 210, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
+                    context.SetActor(triggerId: 211, visible: false, initialSequence: "Eff_MassiveEvent_Stair_Closed");
                     return new StateEnd2(context);
                 }
 
@@ -210,7 +210,7 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

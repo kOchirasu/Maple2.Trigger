@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 90099, arg2: new[] {150})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 90099, spawnIds: new []{150})) {
                     return new State1차타이머(context);
                 }
 
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State1차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 2);
+                context.SetTimer(timerId: "2", seconds: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateGuide_01(context);
                 }
 
@@ -38,18 +38,18 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateGuide_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 101, textId: 20000010);
-                context.SetEffect(arg1: new[] {90021}, arg2: true);
-                context.SetTimer(id: "5", arg2: 5);
+                context.SetEffect(triggerIds: new []{90021}, visible: true);
+                context.SetTimer(timerId: "5", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 90001, arg2: new[] {301})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 90001, spawnIds: new []{301})) {
                     return new State2차타이머(context);
                 }
 
-                if (context.TimeExpired(arg1: "5")) {
+                if (context.TimeExpired(timerId: "5")) {
                     return new StateGuide_01_02(context);
                 }
 
@@ -66,8 +66,8 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 90001, arg2: new[] {301})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 90001, spawnIds: new []{301})) {
                     return new State2차타이머(context);
                 }
 
@@ -81,11 +81,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State2차타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "5", arg2: 5);
+                context.SetTimer(timerId: "5", seconds: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "5")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "5")) {
                     return new StateGuide_02(context);
                 }
 
@@ -100,12 +100,12 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {90100})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{90100})) {
                     return new State오스칼_배웅(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {190})) {
+                if (context.MonsterDead(spawnIds: new []{190})) {
                     return new StateGuide_02_02(context);
                 }
 
@@ -120,8 +120,8 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {90100})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{90100})) {
                     return new State오스칼_배웅(context);
                 }
 
@@ -135,10 +135,10 @@ namespace Maple2.Trigger._02000334_bf {
             internal State오스칼_배웅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 199, arg2: "MS2PatrolData_2016");
+                context.MoveNpc(spawnId: 199, patrolName: "MS2PatrolData_2016");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

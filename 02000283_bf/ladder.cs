@@ -4,15 +4,15 @@ namespace Maple2.Trigger._02000283_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 511, arg2: false, arg3: false);
-                context.SetLadder(arg1: 512, arg2: false, arg3: false);
-                context.SetLadder(arg1: 513, arg2: false, arg3: false);
-                context.SetLadder(arg1: 514, arg2: false, arg3: false);
-                context.SetInteractObject(arg1: new[] {10000429}, arg2: 2);
+                context.SetLadder(triggerId: 511, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 512, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 513, visible: false, animationEffect: false);
+                context.SetLadder(triggerId: 514, visible: false, animationEffect: false);
+                context.SetInteractObject(interactIds: new []{10000429}, state: 2);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new[] {2001})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 102, spawnIds: new []{2001})) {
                     return new State반응Wait(context);
                 }
 
@@ -26,11 +26,11 @@ namespace Maple2.Trigger._02000283_bf {
             internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000429}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10000429}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000429}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000429}, arg2: 0)) {
                     return new StateLadderCreation(context);
                 }
 
@@ -44,15 +44,15 @@ namespace Maple2.Trigger._02000283_bf {
             internal StateLadderCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 511, arg2: true, arg3: true);
-                context.SetLadder(arg1: 512, arg2: true, arg3: true);
-                context.SetLadder(arg1: 513, arg2: true, arg3: true);
-                context.SetLadder(arg1: 514, arg2: true, arg3: true);
-                context.SetTimer(id: "10", arg2: 10, arg3: false, arg4: false);
+                context.SetLadder(triggerId: 511, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 512, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 513, visible: true, animationEffect: true);
+                context.SetLadder(triggerId: 514, visible: true, animationEffect: true);
+                context.SetTimer(timerId: "10", seconds: 10, clearAtZero: false, display: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "10")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "10")) {
                     return new StateEnd(context);
                 }
 
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02000283_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

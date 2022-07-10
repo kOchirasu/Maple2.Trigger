@@ -8,30 +8,30 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{10003053}, questStates: new byte[]{1})) {
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{10003053}, questStates: new byte[]{2})) {
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{10003053}, questStates: new byte[]{3})) {
                     return new StateEnd(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003052}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{10003052}, questStates: new byte[]{3})) {
                     return new StateStart_05(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003052}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{10003052}, questStates: new byte[]{2})) {
                     return new StateStart_05(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003052}, arg3: new byte[] {1})) {
-                    context.SetEffect(arg1: new[] {6002}, arg2: true);
-                    context.CreateMonster(arg1: new[] {401}, arg2: false);
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{10003052}, questStates: new byte[]{1})) {
+                    context.SetEffect(triggerIds: new []{6002}, visible: true);
+                    context.CreateMonster(spawnIds: new []{401}, arg2: false);
                     return new StateStart(context);
                 }
 
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetCinematicUI(type: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateStart_02(context);
                 }
@@ -64,10 +64,10 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 401, script: "$52000040_QD__MAIN_02__0$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 401, script: "$52000040_QD__MAIN_02__0$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateStart_03(context);
                 }
@@ -82,13 +82,13 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateStart_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 401, script: "$52000040_QD__MAIN_02__1$", arg4: 2, arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 401, script: "$52000040_QD__MAIN_02__2$", arg4: 2, arg5: 3);
+                context.SetConversation(type: 1, spawnId: 401, script: "$52000040_QD__MAIN_02__1$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 401, script: "$52000040_QD__MAIN_02__2$", arg4: 2, arg5: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_4001");
+                    context.MoveNpc(spawnId: 401, patrolName: "MS2PatrolData_4001");
                     context.SetCinematicUI(type: 0);
                     context.SetCinematicUI(type: 2);
                     return new StateStart_04(context);
@@ -105,8 +105,8 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 702, arg2: new[] {401})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 702, spawnIds: new []{401})) {
                     return new StateNpc_exit_01(context);
                 }
 
@@ -120,11 +120,11 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateNpc_exit_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6001}, arg2: true);
-                context.DestroyMonster(arg1: new[] {401});
+                context.SetEffect(triggerIds: new []{6001}, visible: true);
+                context.DestroyMonster(spawnIds: new []{401});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateStart_05(context);
                 }
@@ -139,12 +139,12 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateStart_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "FollowingLaoz");
-                context.CreateMonster(arg1: new[] {501}, arg2: false);
+                context.SetAchievement(triggerId: 701, type: "trigger", code: "FollowingLaoz");
+                context.CreateMonster(spawnIds: new []{501}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053}, arg3: new byte[] {1})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{701}, questIds: new []{10003053}, questStates: new byte[]{1})) {
                     return new StateEnd(context);
                 }
 
@@ -158,12 +158,12 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {501});
+                context.DestroyMonster(spawnIds: new []{501});
                 context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 4, visible: true, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

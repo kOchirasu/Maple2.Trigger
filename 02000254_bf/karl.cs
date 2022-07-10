@@ -4,15 +4,15 @@ namespace Maple2.Trigger._02000254_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {450}, arg2: false);
+                context.SetEffect(triggerIds: new []{450}, visible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {904})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{904})) {
                     return new State말풍선(context);
                 }
 
-                if (context.MonsterInCombat(arg1: new[] {106})) {
+                if (context.MonsterInCombat(spawnIds: new []{106})) {
                     return new StateEnd(context);
                 }
 
@@ -26,13 +26,13 @@ namespace Maple2.Trigger._02000254_bf {
             internal State말풍선(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "8", arg2: 8);
-                context.SetEffect(arg1: new[] {450}, arg2: true);
-                context.SetConversation(arg1: 1, arg2: 107, script: "$02000254_BF__KARL__0$", arg4: 5);
+                context.SetTimer(timerId: "8", seconds: 8);
+                context.SetEffect(triggerIds: new []{450}, visible: true);
+                context.SetConversation(type: 1, spawnId: 107, script: "$02000254_BF__KARL__0$", arg4: 5);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "8")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "8")) {
                     return new StateStart(context);
                 }
 
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

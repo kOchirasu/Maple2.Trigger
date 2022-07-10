@@ -7,8 +7,8 @@ namespace Maple2.Trigger._52000190_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003420}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{10003420}, questStates: new byte[]{2})) {
                     return new StateWait_02(context);
                 }
 
@@ -24,10 +24,10 @@ namespace Maple2.Trigger._52000190_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
-                context.MoveUser(arg1: 52000190, arg2: 5001);
+                context.MoveUser(mapId: 52000190, portalId: 5001);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State영상재생(context);
                 }
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._52000190_qd {
                 context.PlaySceneMovie(fileName: "the_empress_of_a_dungeon.swf", movieId: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
+            public override TriggerState? Execute() {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, condition: "IsStop", value: "1")) {
                     return new State영상재생_end(context);
                 }
 
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52000190_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State영상재생_end02(context);
                 }
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52000190_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

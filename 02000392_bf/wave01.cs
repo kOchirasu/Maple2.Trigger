@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000392_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "wave01") == 1) {
                     return new State소환(context);
                 }
@@ -24,10 +24,10 @@ namespace Maple2.Trigger._02000392_bf {
             internal State소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeId: new[] {1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909}, isAutoTargeting: true, randomPickCount: 3);
+                context.SpawnNpcRange(rangeId: new []{1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909}, isAutoTargeting: true, randomPickCount: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateStart(context);
                 }
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000392_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

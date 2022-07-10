@@ -5,12 +5,12 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Plant") == 1) {
                     return new StateMonster소환(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {101})) {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -24,11 +24,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateMonster소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {301, 302, 303, 304}, arg2: false);
+                context.CreateMonster(spawnIds: new []{301, 302, 303, 304}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -46,11 +46,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal State힌트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, script: "$02020101_BF__GIMMICK2__0$", arg3: 3000);
+                context.SetEventUI(arg1: 1, script: "$02020101_BF__GIMMICK2__0$", duration: 3000);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{101})) {
                     return new StateEnd(context);
                 }
 
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateEnd(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {301, 302, 303, 304})) {
+                if (context.MonsterDead(spawnIds: new []{301, 302, 303, 304})) {
                     context.SetUserValue(triggerId: 900009, key: "Seed", value: 1);
                     context.SetUserValue(triggerId: 900004, key: "Plant", value: 0);
                     return new StateWait(context);
@@ -94,12 +94,12 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {301, 302, 303, 304}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{301, 302, 303, 304}, arg2: false);
                 context.SetUserValue(triggerId: 900004, key: "Plant", value: 0);
                 context.SetUserValue(triggerId: 900009, key: "Seed", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateWait(context);
             }
 

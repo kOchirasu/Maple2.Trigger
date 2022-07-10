@@ -49,8 +49,8 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(portalId: 6304, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {199})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{199})) {
                     return new StateStage2_시작(context);
                 }
 
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Stage02") == 11) {
                     return new StateStage2_왼쪽진행(context);
                 }
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(portalId: 2101, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State혹시모를_Dungeon리셋신호_Wait(context);
                 }
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(portalId: 2201, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State혹시모를_Dungeon리셋신호_Wait(context);
                 }
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(portalId: 2301, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State혹시모를_Dungeon리셋신호_Wait(context);
                 }
@@ -143,7 +143,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "DungeonReset") == 1) {
                     return new StateReady(context);
                 }

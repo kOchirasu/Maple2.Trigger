@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "respawn_phase_1") == 1) {
                     return new State전투Phase(context);
                 }
@@ -20,11 +20,11 @@ namespace Maple2.Trigger._52020016_qd {
             internal State전투Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {4000002}, arg2: false);
+                context.CreateMonster(spawnIds: new []{4000002}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {4000002})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{4000002})) {
                     return new StateMonster리젠(context);
                 }
 
@@ -42,11 +42,11 @@ namespace Maple2.Trigger._52020016_qd {
             internal StateMonster리젠(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {4000004}, arg2: false);
+                context.CreateMonster(spawnIds: new []{4000004}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {4000004})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{4000004})) {
                     return new State전투Phase(context);
                 }
 
@@ -64,11 +64,11 @@ namespace Maple2.Trigger._52020016_qd {
             internal State끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {4000002}, arg2: false);
-                context.DestroyMonster(arg1: new[] {4000004}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{4000002}, arg2: false);
+                context.DestroyMonster(spawnIds: new []{4000004}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) { }
 
                 return null;

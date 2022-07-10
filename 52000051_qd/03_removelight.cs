@@ -8,7 +8,7 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetUserValue(key: "RemoveInnerLight", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "ResetInnerLight") == 1) {
                     return new StatePlay(context);
                 }
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetUserValue(key: "RemoveInnerLight", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "RemoveInnerLight") == 1) {
                     return new StateRemoveLight01(context);
                 }
@@ -42,10 +42,10 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateRemoveLight01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new[] {9001}, arg2: 70000103, arg3: 1);
+                context.AddBuff(boxIds: new []{9001}, skillId: 70000103, level: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWait(context);
                 }

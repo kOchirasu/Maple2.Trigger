@@ -4,17 +4,17 @@ namespace Maple2.Trigger._02000329_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6605, 6606, 6607, 6608}, arg2: false);
-                context.SetMesh(arg1: new[] {1521, 1522, 1523, 1524, 1525, 1526, 1527, 1528, 1529, 1530}, arg2: true, arg3: 0, arg4: 1000, arg5: 0f);
-                context.SetMesh(arg1: new[] {19993}, arg2: true);
+                context.SetEffect(triggerIds: new []{6605, 6606, 6607, 6608}, visible: false);
+                context.SetMesh(triggerIds: new []{1521, 1522, 1523, 1524, 1525, 1526, 1527, 1528, 1529, 1530}, visible: true, arg3: 0, arg4: 1000, arg5: 0f);
+                context.SetMesh(triggerIds: new []{19993}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {703})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{703})) {
                     return new State애플몽키소환(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1105, 1106, 1107, 1108})) {
+                if (context.MonsterDead(spawnIds: new []{1105, 1106, 1107, 1108})) {
                     return new State섹터개방(context);
                 }
 
@@ -28,14 +28,14 @@ namespace Maple2.Trigger._02000329_bf {
             internal State애플몽키소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 101, textId: 20000030);
-                context.CreateMonster(arg1: new[] {703}, arg2: false);
-                context.SetEffect(arg1: new[] {6605, 6606, 6607, 6608}, arg2: true);
+                context.CreateMonster(spawnIds: new []{703}, arg2: false);
+                context.SetEffect(triggerIds: new []{6605, 6606, 6607, 6608}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {1105, 1106, 1107, 1108})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{1105, 1106, 1107, 1108})) {
                     return new State섹터개방(context);
                 }
 
@@ -51,15 +51,15 @@ namespace Maple2.Trigger._02000329_bf {
             internal State섹터개방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetTimer(id: "3", arg2: 3, arg4: false);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.SetTimer(timerId: "3", seconds: 3, display: false);
                 context.ShowGuideSummary(entityId: 102, textId: 40011);
-                context.SetMesh(arg1: new[] {19993}, arg2: false);
-                context.SetMesh(arg1: new[] {1521, 1522, 1523, 1524, 1525, 1526, 1527, 1528, 1529, 1530}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
+                context.SetMesh(triggerIds: new []{19993}, visible: false);
+                context.SetMesh(triggerIds: new []{1521, 1522, 1523, 1524, 1525, 1526, 1527, 1528, 1529, 1530}, visible: false, arg3: 0, arg4: 0, arg5: 10f);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "3")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "3")) {
                     return new StateEnd(context);
                 }
 
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

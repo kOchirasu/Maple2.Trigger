@@ -4,15 +4,15 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 4100, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 4101, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 4102, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 4103, arg2: false, arg3: false, arg4: 0);
-                context.SetInteractObject(arg1: new[] {10001128}, arg2: 0, arg4: false);
+                context.SetLadder(triggerId: 4100, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 4101, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 4102, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 4103, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetInteractObject(interactIds: new []{10001128}, state: 0, arg4: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 9200, arg2: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 9200, spawnIds: new []{101})) {
                     return new StatePCComeDown(context);
                 }
 
@@ -27,8 +27,8 @@ namespace Maple2.Trigger._52000084_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9400})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9400})) {
                     return new StateLadderOn(context);
                 }
 
@@ -42,13 +42,13 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateLadderOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLadder(arg1: 4100, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 4101, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 4102, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 4103, arg2: true, arg3: true, arg4: 2);
+                context.SetLadder(triggerId: 4100, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 4101, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 4102, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 4103, visible: true, animationEffect: true, animationDelay: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

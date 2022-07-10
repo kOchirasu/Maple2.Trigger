@@ -7,7 +7,7 @@
         }
 
         public abstract void OnEnter();
-        public abstract TriggerState Execute();
+        public abstract TriggerState? Execute();
         public abstract void OnExit();
     }
 }

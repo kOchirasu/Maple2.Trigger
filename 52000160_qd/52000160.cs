@@ -7,16 +7,16 @@ namespace Maple2.Trigger._52000160_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002742}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{40002742}, questStates: new byte[]{3})) {
                     return new State떠난다_01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002743}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{40002743}, questStates: new byte[]{3})) {
                     return new State프론티아재단으로_01(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
+                if (context.UserDetected(boxIds: new []{2001}, jobCode: 0)) {
                     return new State전직컷씬01(context);
                 }
 
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._52000160_qd {
                 context.PlaySceneMovie(fileName: "jobChange_Assassin.swf", movieId: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
+            public override TriggerState? Execute() {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, condition: "IsStop", value: "1")) {
                     return new State다크윈드도착_01(context);
                 }
 
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._52000160_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State다크윈드도착_02(context);
                 }
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._52000160_qd {
                 context.SetCinematicUI(type: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State다크윈드도착_03(context);
                 }
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._52000160_qd {
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State다크윈드도착_04(context);
                 }
@@ -108,11 +108,11 @@ namespace Maple2.Trigger._52000160_qd {
             internal State다크윈드도착_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(pathIds: new[] {4001, 4002}, arg2: false);
-                context.MoveUserPath(arg1: "MS2PatrolData_3001");
+                context.CameraSelectPath(pathIds: new []{4001, 4002}, returnView: false);
+                context.MoveUserPath(patrolName: "MS2PatrolData_3001");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State다크윈드도착_05(context);
                 }
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._52000160_qd {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State다크윈드도착_06(context);
                 }
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._52000160_qd {
                 context.SetSceneSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State다크윈드도착_07(context);
                 }
@@ -169,7 +169,7 @@ namespace Maple2.Trigger._52000160_qd {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State다크윈드도착_07(context);
                 }
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._52000160_qd {
                 context.SetCinematicUI(type: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State전직한다(context);
                 }
@@ -205,8 +205,8 @@ namespace Maple2.Trigger._52000160_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002742}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{40002742}, questStates: new byte[]{2})) {
                     return new State전직이펙트_01(context);
                 }
 
@@ -223,7 +223,7 @@ namespace Maple2.Trigger._52000160_qd {
                 context.SetOnetimeEffect(id: 30, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State전직이펙트_02(context);
                 }
@@ -241,7 +241,7 @@ namespace Maple2.Trigger._52000160_qd {
                 context.SetOnetimeEffect(id: 30, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new State떠난다_01(context);
                 }
@@ -257,8 +257,8 @@ namespace Maple2.Trigger._52000160_qd {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002743}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{40002743}, questStates: new byte[]{3})) {
                     return new State프론티아재단으로_01(context);
                 }
 
@@ -276,7 +276,7 @@ namespace Maple2.Trigger._52000160_qd {
                 context.SetCinematicUI(type: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new State프론티아재단으로_02(context);
                 }
@@ -291,10 +291,10 @@ namespace Maple2.Trigger._52000160_qd {
             internal State프론티아재단으로_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 52000186, arg2: 1);
+                context.MoveUser(mapId: 52000186, portalId: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

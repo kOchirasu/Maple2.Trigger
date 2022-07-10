@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateTrigger작동시작(context);
                 }
@@ -21,76 +21,76 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.NpcDetected(arg1: 13, arg2: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.NpcDetected(boxId: 13, spawnIds: new []{101})) {
                     return new State중앙전투판신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 12, arg2: new[] {101})) {
+                if (context.NpcDetected(boxId: 12, spawnIds: new []{101})) {
                     return new State12시전투판신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 3, arg2: new[] {101})) {
+                if (context.NpcDetected(boxId: 3, spawnIds: new []{101})) {
                     return new State3시전투판신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 6, arg2: new[] {101})) {
+                if (context.NpcDetected(boxId: 6, spawnIds: new []{101})) {
                     return new State6시전투판신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 9, arg2: new[] {101})) {
+                if (context.NpcDetected(boxId: 9, spawnIds: new []{101})) {
                     return new State9시전투판신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 122, arg2: new[] {101})) {
+                if (context.NpcDetected(boxId: 122, spawnIds: new []{101})) {
                     return new State봄컨셉도로신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 45, arg2: new[] {101})) {
+                if (context.NpcDetected(boxId: 45, spawnIds: new []{101})) {
                     return new State여름컨셉도로신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 78, arg2: new[] {101})) {
+                if (context.NpcDetected(boxId: 78, spawnIds: new []{101})) {
                     return new State가을컨셉도로신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 1011, arg2: new[] {101})) {
+                if (context.NpcDetected(boxId: 1011, spawnIds: new []{101})) {
                     return new State겨울컨셉도로신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 13, arg2: new[] {102})) {
+                if (context.NpcDetected(boxId: 13, spawnIds: new []{102})) {
                     return new State중앙전투판신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 12, arg2: new[] {102})) {
+                if (context.NpcDetected(boxId: 12, spawnIds: new []{102})) {
                     return new State12시전투판신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 3, arg2: new[] {102})) {
+                if (context.NpcDetected(boxId: 3, spawnIds: new []{102})) {
                     return new State3시전투판신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 6, arg2: new[] {102})) {
+                if (context.NpcDetected(boxId: 6, spawnIds: new []{102})) {
                     return new State6시전투판신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 9, arg2: new[] {102})) {
+                if (context.NpcDetected(boxId: 9, spawnIds: new []{102})) {
                     return new State9시전투판신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 122, arg2: new[] {102})) {
+                if (context.NpcDetected(boxId: 122, spawnIds: new []{102})) {
                     return new State봄컨셉도로신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 45, arg2: new[] {102})) {
+                if (context.NpcDetected(boxId: 45, spawnIds: new []{102})) {
                     return new State여름컨셉도로신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 78, arg2: new[] {102})) {
+                if (context.NpcDetected(boxId: 78, spawnIds: new []{102})) {
                     return new State가을컨셉도로신호(context);
                 }
 
-                if (context.NpcDetected(arg1: 1011, arg2: new[] {102})) {
+                if (context.NpcDetected(boxId: 1011, spawnIds: new []{102})) {
                     return new State겨울컨셉도로신호(context);
                 }
 
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateTrigger작동시작(context);
                 }
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 13);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateTrigger작동시작(context);
                 }
@@ -145,7 +145,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 12);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateTrigger작동시작(context);
                 }
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 3);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateTrigger작동시작(context);
                 }
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 6);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateTrigger작동시작(context);
                 }
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 9);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateTrigger작동시작(context);
                 }
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 122);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateTrigger작동시작(context);
                 }
@@ -235,7 +235,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 45);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateTrigger작동시작(context);
                 }
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 78);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateTrigger작동시작(context);
                 }
@@ -271,7 +271,7 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 1011);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateTrigger작동시작(context);
                 }
@@ -287,7 +287,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

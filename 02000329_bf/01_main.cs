@@ -6,12 +6,12 @@ namespace Maple2.Trigger._02000329_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {701}, arg2: false);
-                context.SetEffect(arg1: new[] {6701}, arg2: true);
-                context.CreateMonster(arg1: new[] {5001, 5002, 1301, 1302, 1303, 1304}, arg2: false);
+                context.CreateMonster(spawnIds: new []{701}, arg2: false);
+                context.SetEffect(triggerIds: new []{6701}, visible: true);
+                context.CreateMonster(spawnIds: new []{5001, 5002, 1301, 1302, 1303, 1304}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 101) == 1) {
                     return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
@@ -29,10 +29,10 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateScene_02(context));
-                context.CameraSelectPath(pathIds: new[] {80001, 80002, 80003, 80004}, arg2: true);
+                context.CameraSelectPath(pathIds: new []{80001, 80002, 80003, 80004}, returnView: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateScene_01(context);
                 }
@@ -48,10 +48,10 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateScene_02(context));
-                context.SetConversation(arg1: 1, arg2: 1301, script: "$02000329_BF__01_MAIN__0$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 1301, script: "$02000329_BF__01_MAIN__0$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateScene_02(context);
                 }
@@ -73,13 +73,13 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 7);
-                context.CameraSelectPath(pathIds: new[] {80005}, arg2: true);
-                context.SetEventUI(arg1: 1, script: "$02000329_BF__01_MAIN__1$", arg3: 3000, arg4: "0");
-                context.CreateMonster(arg1: new[] {2001, 2002, 2003, 2004, 2005}, arg2: false);
-                context.SetMesh(arg1: new[] {10000, 11001, 11002, 11003, 19999}, arg2: false);
+                context.CameraSelectPath(pathIds: new []{80005}, returnView: true);
+                context.SetEventUI(arg1: 1, script: "$02000329_BF__01_MAIN__1$", duration: 3000, boxId: 0);
+                context.CreateMonster(spawnIds: new []{2001, 2002, 2003, 2004, 2005}, arg2: false);
+                context.SetMesh(triggerIds: new []{10000, 11001, 11002, 11003, 19999}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 105) == 1) {
                     return new StateNpc_talk(context);
                 }
@@ -94,13 +94,13 @@ namespace Maple2.Trigger._02000329_bf {
             internal StateNpc_talk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1301, arg2: "Talk_A");
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.SetNpcEmotionSequence(spawnId: 1301, sequenceName: "Talk_A");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 101, textId: 20000051, duration: 5000);
-                context.SetConversation(arg1: 1, arg2: 1301, script: "$02000329_BF__01_MAIN__2$", arg4: 2, arg5: 0);
+                context.SetConversation(type: 1, spawnId: 1301, script: "$02000329_BF__01_MAIN__2$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateNpc_talk_02(context);
                 }
@@ -115,11 +115,11 @@ namespace Maple2.Trigger._02000329_bf {
             internal StateNpc_talk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 1301, arg2: "Talk_A");
-                context.SetConversation(arg1: 1, arg2: 1301, script: "$02000329_BF__01_MAIN__3$", arg4: 2, arg5: 0);
+                context.SetNpcEmotionSequence(spawnId: 1301, sequenceName: "Talk_A");
+                context.SetConversation(type: 1, spawnId: 1301, script: "$02000329_BF__01_MAIN__3$", arg4: 2, arg5: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

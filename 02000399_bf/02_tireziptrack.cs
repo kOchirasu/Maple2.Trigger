@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000399_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {100});
+                context.DestroyMonster(spawnIds: new []{100});
                 context.SetUserValue(key: "TireSpawn", value: 0);
-                context.SetInteractObject(arg1: new[] {10001149}, arg2: 0);
+                context.SetInteractObject(interactIds: new []{10001149}, state: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "TireSpawn") == 1) {
                     return new StateGuideInteract(context);
                 }
@@ -24,13 +24,13 @@ namespace Maple2.Trigger._02000399_bf {
             internal StateGuideInteract(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039903, textId: 20039903);
-                context.SetInteractObject(arg1: new[] {10001149}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001149}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001149}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001149}, arg2: 0)) {
                     return new StateTireSpawn(context);
                 }
 
@@ -46,12 +46,12 @@ namespace Maple2.Trigger._02000399_bf {
             internal StateTireSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {100}, arg2: false);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.CreateMonster(spawnIds: new []{100}, arg2: false);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039904, textId: 20039904, duration: 3000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateGuideTireHold(context);
                 }
@@ -66,11 +66,11 @@ namespace Maple2.Trigger._02000399_bf {
             internal StateGuideTireHold(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20039905, textId: 20039905, duration: 2000);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateTireMove(context);
                 }
@@ -85,10 +85,10 @@ namespace Maple2.Trigger._02000399_bf {
             internal StateTireMove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_100");
+                context.MoveNpc(spawnId: 100, patrolName: "MS2PatrolData_100");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
                     return new StateTireRemove01(context);
                 }
@@ -103,10 +103,10 @@ namespace Maple2.Trigger._02000399_bf {
             internal StateTireRemove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {100});
+                context.DestroyMonster(spawnIds: new []{100});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateTireResetDelay(context);
                 }
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._02000399_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateTireReset(context);
                 }
@@ -137,11 +137,11 @@ namespace Maple2.Trigger._02000399_bf {
             internal StateTireReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001149}, arg2: 1);
+                context.SetInteractObject(interactIds: new []{10001149}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001149}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001149}, arg2: 0)) {
                     return new StateTireSpawnAgain(context);
                 }
 
@@ -155,10 +155,10 @@ namespace Maple2.Trigger._02000399_bf {
             internal StateTireSpawnAgain(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {100}, arg2: false);
+                context.CreateMonster(spawnIds: new []{100}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateTireMoveAgain(context);
                 }
@@ -173,10 +173,10 @@ namespace Maple2.Trigger._02000399_bf {
             internal StateTireMoveAgain(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_100");
+                context.MoveNpc(spawnId: 100, patrolName: "MS2PatrolData_100");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     return new StateTireRemove01(context);
                 }

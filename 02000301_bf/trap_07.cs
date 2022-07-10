@@ -4,35 +4,35 @@ namespace Maple2.Trigger._02000301_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 214, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetActor(arg1: 215, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetEffect(arg1: new[] {601, 610}, arg2: false);
-                context.CreateMonster(arg1: new[] {1005, 1103}, arg2: false);
-                context.SetMesh(arg1: new[] {3071, 3072, 3073, 3074, 3075, 3076, 4701, 4702, 4703, 4704, 4705, 4706, 4707, 4708, 4709, 4710, 4711, 4712, 4713, 3077, 3078}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetActor(triggerId: 214, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetActor(triggerId: 215, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                context.SetEffect(triggerIds: new []{601, 610}, visible: false);
+                context.CreateMonster(spawnIds: new []{1005, 1103}, arg2: false);
+                context.SetMesh(triggerIds: new []{3071, 3072, 3073, 3074, 3075, 3076, 4701, 4702, 4703, 4704, 4705, 4706, 4707, 4708, 4709, 4710, 4711, 4712, 4713, 3077, 3078}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {107})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{107})) {
                     return new State경보(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {10701})) {
+                if (context.UserDetected(boxIds: new []{10701})) {
                     return new State경보(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {10702})) {
+                if (context.UserDetected(boxIds: new []{10702})) {
                     return new State경보(context);
                 }
 
-                if (context.UserDetected(arg1: new[] {10703})) {
+                if (context.UserDetected(boxIds: new []{10703})) {
                     return new State경보(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1103})) {
+                if (context.MonsterDead(spawnIds: new []{1103})) {
                     return new State경보(context);
                 }
 
-                if (context.MonsterDead(arg1: new[] {1005})) {
+                if (context.MonsterDead(spawnIds: new []{1005})) {
                     return new State해제(context);
                 }
 
@@ -46,25 +46,25 @@ namespace Maple2.Trigger._02000301_bf {
             internal State경보(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetActor(arg1: 214, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetActor(arg1: 215, arg2: true, arg3: "sf_quest_light_A01_On");
-                context.SetEffect(arg1: new[] {601, 610}, arg2: true);
-                context.CreateMonster(arg1: new[] {1006}, arg2: false);
-                context.MoveNpc(arg1: 1006, arg2: "MS2PatrolData_1006");
-                context.CreateMonster(arg1: new[] {2008}, arg2: false);
+                context.SetActor(triggerId: 214, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetActor(triggerId: 215, visible: true, initialSequence: "sf_quest_light_A01_On");
+                context.SetEffect(triggerIds: new []{601, 610}, visible: true);
+                context.CreateMonster(spawnIds: new []{1006}, arg2: false);
+                context.MoveNpc(spawnId: 1006, patrolName: "MS2PatrolData_1006");
+                context.CreateMonster(spawnIds: new []{2008}, arg2: false);
                 context.ShowGuideSummary(entityId: 20003002, textId: 20003002);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetConversation(arg1: 1, arg2: 1005, script: "$02000301_BF__TRAP_07__1$", arg4: 2);
-                context.SetMesh(arg1: new[] {4701, 4702, 4703, 4704, 4705, 4706, 4707, 4708, 4709, 4710, 4711, 4712, 4713}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetMesh(arg1: new[] {3077, 3078}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.SetConversation(type: 1, spawnId: 1005, script: "$02000301_BF__TRAP_07__1$", arg4: 2);
+                context.SetMesh(triggerIds: new []{4701, 4702, 4703, 4704, 4705, 4706, 4707, 4708, 4709, 4710, 4711, 4712, 4713}, visible: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMesh(triggerIds: new []{3077, 3078}, visible: false, arg3: 0, arg4: 0, arg5: 5f);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2008})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2008})) {
                     context.HideGuideSummary(entityId: 20003002);
-                    context.SetEffect(arg1: new[] {610}, arg2: false);
-                    context.SetActor(arg1: 214, arg2: true, arg3: "sf_quest_light_A01_Off");
-                    context.SetActor(arg1: 215, arg2: true, arg3: "sf_quest_light_A01_Off");
+                    context.SetEffect(triggerIds: new []{610}, visible: false);
+                    context.SetActor(triggerId: 214, visible: true, initialSequence: "sf_quest_light_A01_Off");
+                    context.SetActor(triggerId: 215, visible: true, initialSequence: "sf_quest_light_A01_Off");
                     return new State해제(context);
                 }
 
@@ -79,10 +79,10 @@ namespace Maple2.Trigger._02000301_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {2008})) {
-                    context.SetMesh(arg1: new[] {3071, 3072, 3073, 3074, 3075, 3076}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                    context.SetMesh(arg1: new[] {4701, 4702, 4703, 4704, 4705, 4706, 4707, 4708, 4709, 4710, 4711, 4712, 4713}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{2008})) {
+                    context.SetMesh(triggerIds: new []{3071, 3072, 3073, 3074, 3075, 3076}, visible: false, arg3: 0, arg4: 0, arg5: 5f);
+                    context.SetMesh(triggerIds: new []{4701, 4702, 4703, 4704, 4705, 4706, 4707, 4708, 4709, 4710, 4711, 4712, 4713}, visible: false, arg3: 0, arg4: 0, arg5: 5f);
                     return new State해제(context);
                 }
 

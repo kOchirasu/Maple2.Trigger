@@ -14,8 +14,8 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetUserValue(key: "8thTreeRemove", value: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateCheckStart(context);
                 }
 
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateCheck01(context);
                 }
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "1stTreeRemove") == 1) {
                     return new StateCheck02(context);
                 }
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "2ndTreeRemove") == 1) {
                     return new StateCheck03(context);
                 }
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "3rdTreeRemove") == 1) {
                     return new StateCheck04(context);
                 }
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "4thTreeRemove") == 1) {
                     return new StateCheck05(context);
                 }
@@ -126,7 +126,7 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "5thTreeRemove") == 1) {
                     return new StateCheck06(context);
                 }
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "6thTreeRemove") == 1) {
                     return new StateCheck07(context);
                 }
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "7thTreeRemove") == 1) {
                     return new StateCheck08(context);
                 }
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "8thTreeRemove") == 1) {
                     return new StateBoardApp(context);
                 }
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetUserValue(triggerId: 11, key: "MobWaveStop", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateQuit(context);
                 }
@@ -225,7 +225,7 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

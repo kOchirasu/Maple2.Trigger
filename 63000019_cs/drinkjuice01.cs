@@ -4,12 +4,12 @@ namespace Maple2.Trigger._63000019_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5300, 5400, 5000, 5001, 5002, 5100, 5101, 5102, 5103, 5200, 5201, 5202, 8000, 8001, 8002}, arg2: false);
-                context.CreateMonster(arg1: new[] {101, 201, 301, 401, 501}, arg2: false);
+                context.SetEffect(triggerIds: new []{5300, 5400, 5000, 5001, 5002, 5100, 5101, 5102, 5103, 5200, 5201, 5202, 8000, 8001, 8002}, visible: false);
+                context.CreateMonster(spawnIds: new []{101, 201, 301, 401, 501}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9000})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9000})) {
                     return new StateLodingDelay01(context);
                 }
 
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._63000019_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateLodingDelay02(context);
                 }
@@ -40,24 +40,24 @@ namespace Maple2.Trigger._63000019_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000438}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{90000438}, questStates: new byte[]{3})) {
                     return new StateQuestComplete01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000442}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{90000442}, questStates: new byte[]{3})) {
                     return new StateQuestComplete01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000442}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{90000442}, questStates: new byte[]{2})) {
                     return new StateMoveToBartender01(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000437}, arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{90000437}, questStates: new byte[]{3})) {
                     return new StateTalkToWeiHong02(context);
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000437}, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{90000437}, questStates: new byte[]{2})) {
                     return new StateMoveToWeiHong01(context);
                 }
 
@@ -72,11 +72,11 @@ namespace Maple2.Trigger._63000019_cs {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 10024010, textId: 10024010);
-                context.SetEffect(arg1: new[] {5000, 5001, 5100, 5101, 5102, 5103, 5300}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000, 5001, 5100, 5101, 5102, 5103, 5300}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9001})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9001})) {
                     return new StateTalkToWeiHong01(context);
                 }
 
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._63000019_cs {
 
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 10024010);
-                context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5300}, arg2: false);
+                context.SetEffect(triggerIds: new []{5100, 5101, 5102, 5103, 5300}, visible: false);
             }
         }
 
@@ -94,11 +94,11 @@ namespace Maple2.Trigger._63000019_cs {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 10024020, textId: 10024020);
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000437}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{90000437}, questStates: new byte[]{3})) {
                     return new StateTalkToWeiHong02(context);
                 }
 
@@ -115,11 +115,11 @@ namespace Maple2.Trigger._63000019_cs {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 10024030, textId: 10024030);
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000438}, arg3: new byte[] {2})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{90000438}, questStates: new byte[]{2})) {
                     return new StateMoveToBartender01(context);
                 }
 
@@ -134,11 +134,11 @@ namespace Maple2.Trigger._63000019_cs {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 10024040, textId: 10024040);
-                context.SetEffect(arg1: new[] {5000, 5001, 5200, 5201, 5202, 5400}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000, 5001, 5200, 5201, 5202, 5400}, visible: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {9002})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{9002})) {
                     return new StateMoveToBartender02(context);
                 }
 
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._63000019_cs {
 
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 10024040);
-                context.SetEffect(arg1: new[] {5400, 5001, 5200, 5201, 5202}, arg2: false);
+                context.SetEffect(triggerIds: new []{5400, 5001, 5200, 5201, 5202}, visible: false);
             }
         }
 
@@ -156,10 +156,10 @@ namespace Maple2.Trigger._63000019_cs {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 10024050, textId: 10024050);
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(triggerIds: new []{5000}, visible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateTalkToBartender01(context);
             }
 
@@ -171,8 +171,8 @@ namespace Maple2.Trigger._63000019_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000438}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{90000438}, questStates: new byte[]{3})) {
                     return new StateQuestComplete01(context);
                 }
 
@@ -189,8 +189,8 @@ namespace Maple2.Trigger._63000019_cs {
                 context.HideGuideSummary(entityId: 10024050);
             }
 
-            public override TriggerState Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000442}, arg3: new byte[] {3})) {
+            public override TriggerState? Execute() {
+                if (context.QuestUserDetected(boxIds: new []{9900}, questIds: new []{90000442}, questStates: new byte[]{3})) {
                     return new StateTalkingDelay01(context);
                 }
 
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._63000019_cs {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateWeiHongTalk01(context);
                 }
@@ -222,12 +222,12 @@ namespace Maple2.Trigger._63000019_cs {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000019_CS__DRINKJUICE01__0$", arg4: 5);
-                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetConversation(type: 2, spawnId: 11000251, script: "$63000019_CS__DRINKJUICE01__0$", arg4: 5);
+                context.SetEffect(triggerIds: new []{8000}, visible: true);
                 context.SetSkip(state: new StateWeiHongTalk02(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateWeiHongTalk02(context);
                 }
@@ -244,10 +244,10 @@ namespace Maple2.Trigger._63000019_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetEffect(arg1: new[] {8000}, arg2: false);
+                context.SetEffect(triggerIds: new []{8000}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateWeiHongTalk03(context);
                 }
@@ -262,12 +262,12 @@ namespace Maple2.Trigger._63000019_cs {
             internal StateWeiHongTalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001547, script: "$63000019_CS__DRINKJUICE01__1$", arg4: 4);
-                context.SetEffect(arg1: new[] {8001}, arg2: true);
+                context.SetConversation(type: 2, spawnId: 11001547, script: "$63000019_CS__DRINKJUICE01__1$", arg4: 4);
+                context.SetEffect(triggerIds: new []{8001}, visible: true);
                 context.SetSkip(state: new StateWeiHongTalk04(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateWeiHongTalk04(context);
                 }
@@ -284,10 +284,10 @@ namespace Maple2.Trigger._63000019_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetEffect(arg1: new[] {8001}, arg2: false);
+                context.SetEffect(triggerIds: new []{8001}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     return new StateWeiHongTalk05(context);
                 }
@@ -302,12 +302,12 @@ namespace Maple2.Trigger._63000019_cs {
             internal StateWeiHongTalk05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000251, script: "$63000019_CS__DRINKJUICE01__2$", arg4: 8);
-                context.SetEffect(arg1: new[] {8002}, arg2: true);
+                context.SetConversation(type: 2, spawnId: 11000251, script: "$63000019_CS__DRINKJUICE01__2$", arg4: 8);
+                context.SetEffect(triggerIds: new []{8002}, visible: true);
                 context.SetSkip(state: new StateMovingDelay01(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     return new StateMovingDelay01(context);
                 }
@@ -324,10 +324,10 @@ namespace Maple2.Trigger._63000019_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetEffect(arg1: new[] {8002}, arg2: false);
+                context.SetEffect(triggerIds: new []{8002}, visible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuit(context);
                 }
@@ -344,10 +344,10 @@ namespace Maple2.Trigger._63000019_cs {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.MoveUser(arg1: 63000020, arg2: 1, arg3: 9900);
+                context.MoveUser(mapId: 63000020, portalId: 1, boxId: 9900);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

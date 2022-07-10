@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02020301_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {200025, 200026}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10003113}, arg2: 2);
+                context.SetEffect(triggerIds: new []{200025, 200026}, visible: false);
+                context.SetInteractObject(interactIds: new []{10003113}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "Phase_4_Interect_03") == 1) {
                     return new StateStart(context);
                 }
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     return new State인터렉트_설정(context);
                 }
@@ -43,12 +43,12 @@ namespace Maple2.Trigger._02020301_bf {
             internal State인터렉트_설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {200025, 200026}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10003113}, arg2: 1);
+                context.SetEffect(triggerIds: new []{200025, 200026}, visible: true);
+                context.SetInteractObject(interactIds: new []{10003113}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10003113}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10003113}, arg2: 0)) {
                     return new State인터렉트_동작(context);
                 }
 
@@ -66,11 +66,11 @@ namespace Maple2.Trigger._02020301_bf {
             internal State인터렉트_동작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {200025, 200026}, arg2: false);
+                context.SetEffect(triggerIds: new []{200025, 200026}, visible: false);
                 context.SetAiExtraData(key: "Phase_4_Sub_Bomb_3", value: 1, isModify: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State인터렉트_리셋(context);
                 }
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetAiExtraData(key: "Phase_4_Sub_Bomb_3", value: 0, isModify: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     return new State인터렉트_설정(context);
                 }

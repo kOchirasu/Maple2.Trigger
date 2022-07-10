@@ -5,8 +5,8 @@ namespace Maple2.Trigger._02000079_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new StateBossSpawn(context);
                 }
 
@@ -21,11 +21,11 @@ namespace Maple2.Trigger._02000079_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.CreateMonster(arg1: new[] {100}, arg2: false);
+                context.CreateMonster(spawnIds: new []{100}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {100})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{100})) {
                     return new StateEnd체크(context);
                 }
 
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02000079_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {100});
+                context.DestroyMonster(spawnIds: new []{100});
             }
         }
 
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000079_bf {
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,12 +4,12 @@ namespace Maple2.Trigger._02000245_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {707, 708}, arg2: false);
-                context.DestroyMonster(arg1: new[] {616, 617, 618, 619, 620, 621, 622, 623, 624});
+                context.SetMesh(triggerIds: new []{707, 708}, visible: false);
+                context.DestroyMonster(spawnIds: new []{616, 617, 618, 619, 620, 621, 622, 623, 624});
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {204})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{204})) {
                     return new StateMobCreation(context);
                 }
 
@@ -23,11 +23,11 @@ namespace Maple2.Trigger._02000245_bf {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {616, 617, 618, 619, 620, 621, 622, 623, 624}, arg2: false);
+                context.CreateMonster(spawnIds: new []{616, 617, 618, 619, 620, 621, 622, 623, 624}, arg2: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {616, 617, 618, 619, 620, 621, 622, 623, 624})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{616, 617, 618, 619, 620, 621, 622, 623, 624})) {
                     return new State통과(context);
                 }
 
@@ -41,11 +41,11 @@ namespace Maple2.Trigger._02000245_bf {
             internal State통과(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {707, 708}, arg2: false);
-                context.SetTimer(id: "1", arg2: 180);
+                context.SetMesh(triggerIds: new []{707, 708}, visible: false);
+                context.SetTimer(timerId: "1", seconds: 180);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000146_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000178}, arg2: 1);
-                context.SetActor(arg1: 203, arg2: true, arg3: "Attack_Idle_A");
+                context.SetInteractObject(interactIds: new []{10000178}, state: 1);
+                context.SetActor(triggerId: 203, visible: true, initialSequence: "Attack_Idle_A");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateInteractObject(context);
             }
 
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000146_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000178}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10000178}, arg2: 0)) {
                     return new StateNPCSpawn(context);
                 }
 
@@ -29,8 +29,8 @@ namespace Maple2.Trigger._02000146_bf {
             }
 
             public override void OnExit() {
-                context.SetActor(arg1: 203, arg2: false, arg3: "Attack_Idle_A");
-                context.CreateMonster(arg1: new[] {403});
+                context.SetActor(triggerId: 203, visible: false, initialSequence: "Attack_Idle_A");
+                context.CreateMonster(spawnIds: new []{403});
             }
         }
 
@@ -38,12 +38,12 @@ namespace Maple2.Trigger._02000146_bf {
             internal StateNPCSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 403, script: "$02000146_BF__IA_103__0$", arg4: 3);
-                context.SetTimer(id: "1", arg2: 15);
+                context.SetConversation(type: 1, spawnId: 403, script: "$02000146_BF__IA_103__0$", arg4: 3);
+                context.SetTimer(timerId: "1", seconds: 15);
             }
 
-            public override TriggerState Execute() {
-                if (context.MonsterDead(arg1: new[] {403})) {
+            public override TriggerState? Execute() {
+                if (context.MonsterDead(spawnIds: new []{403})) {
                     return new StateDelay(context);
                 }
 
@@ -57,11 +57,11 @@ namespace Maple2.Trigger._02000146_bf {
             internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "2", arg2: 8);
+                context.SetTimer(timerId: "2", seconds: 8);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "2")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "2")) {
                     return new StateWaitStart(context);
                 }
 

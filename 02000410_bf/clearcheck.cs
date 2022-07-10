@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
                     return new StateBattleStart(context);
                 }
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetDungeonPlayTime() == 420) {
                     return new State지금부터파티전멸체크(context);
                 }
@@ -47,8 +47,8 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {700})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{700})) {
                     return new State전멸Dungeon실패Cinematic01(context);
                 }
 
@@ -70,10 +70,10 @@ namespace Maple2.Trigger._02000410_bf {
             internal StateDungeonFailure(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new State전멸Dungeon실패Cinematic01(context);
                 }
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11000144, illust: "tristan_normal", duration: 4000, script: "$02000410_BF__ClearCheck__0$", voice: @"ko/Npc/00002171");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State전멸Dungeon실패Cinematic02(context);
                 }
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 4000, script: "$02000410_BF__ClearCheck__1$", voice: @"ko/Npc/00002156");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State전멸Dungeon실패(context);
                 }
@@ -124,10 +124,10 @@ namespace Maple2.Trigger._02000410_bf {
             internal State전멸Dungeon실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                     context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
@@ -149,12 +149,12 @@ namespace Maple2.Trigger._02000410_bf {
                 context.DungeonMissionComplete(feature: "DungeonRankBalance_02", missionId: 24090013);
             }
 
-            public override TriggerState Execute() {
-                if (context.GetNpcDamageRate(spawnPointId: 102) >= 1.0) {
+            public override TriggerState? Execute() {
+                if (context.GetNpcDamageRate(spawnId: 102) >= 1.0) {
                     return new StateSuccessStartCinematic(context);
                 }
 
-                if (context.GetNpcDamageRate(spawnPointId: 102) < 1.0) {
+                if (context.GetNpcDamageRate(spawnId: 102) < 1.0) {
                     return new State실패StartCinematic(context);
                 }
 
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 3000, script: "$02000410_BF__ClearCheck__2$", voice: @"ko/Npc/00002182");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateSuccessCinematic01(context);
                 }
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 8000, script: "$02000410_BF__ClearCheck__3$", voice: @"ko/Npc/00002177");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new StateSuccessCinematic02_pre(context);
                 }
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateSuccessCinematic02(context);
                 }
@@ -229,8 +229,8 @@ namespace Maple2.Trigger._02000410_bf {
                 context.PlaySceneMovie(fileName: @"common\WorldInvasionScene6.usm", movieId: 1, skipType: "needAll");
             }
 
-            public override TriggerState Execute() {
-                if (context.WidgetCondition(type: WidgetType.SceneMovie, arg2: "IsStop", arg3: "1")) {
+            public override TriggerState? Execute() {
+                if (context.WidgetCondition(type: WidgetType.SceneMovie, condition: "IsStop", value: "1")) {
                     return new StateFinalSuccess처리(context);
                 }
 
@@ -252,7 +252,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 3000, script: "$02000410_BF__ClearCheck__4$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new State실패Cinematic01(context);
                 }
@@ -271,7 +271,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 8000, script: "$02000410_BF__ClearCheck__5$");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
                     return new State실패Cinematic02(context);
                 }
@@ -289,7 +289,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003795, illust: "infernog_nomal", duration: 4000, script: "$02000410_BF__ClearCheck__6$", voice: @"ko/Monster/60000722");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State실패Cinematic03(context);
                 }
@@ -307,7 +307,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003795, illust: "infernog_nomal", duration: 4000, script: "$02000410_BF__ClearCheck__7$", voice: @"ko/Monster/60000723");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State실패Cinematic05(context);
                 }
@@ -325,7 +325,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 4000, script: "$02000410_BF__ClearCheck__8$", voice: @"ko/Npc/00002165");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new State실패Cinematic06(context);
                 }
@@ -343,7 +343,7 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SideNpcTalk(npcId: 11003533, illust: "Bliche_closeEye", duration: 4000, script: "$02000410_BF__ClearCheck__9$", voice: @"ko/Npc/00002155");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     return new StateFinal실패처리(context);
                 }
@@ -358,16 +358,16 @@ namespace Maple2.Trigger._02000410_bf {
             internal StateFinalSuccess처리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {-1});
+                context.DestroyMonster(spawnIds: new []{-1});
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetAchievement(arg1: 750, arg2: "trigger", arg3: "infernogout");
-                context.SetAchievement(arg1: 750, arg2: "trigger", arg3: "ClearBalrogMagicBurster");
+                context.SetAchievement(triggerId: 750, type: "trigger", code: "infernogout");
+                context.SetAchievement(triggerId: 750, type: "trigger", code: "ClearBalrogMagicBurster");
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.DungeonClear();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnd(context);
                 }
@@ -382,14 +382,14 @@ namespace Maple2.Trigger._02000410_bf {
             internal StateFinal실패처리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {-1});
-                context.SetAchievement(arg1: 750, arg2: "trigger", arg3: "infernogout");
+                context.DestroyMonster(spawnIds: new []{-1});
+                context.SetAchievement(triggerId: 750, type: "trigger", code: "infernogout");
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.DungeonFail();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateEnd(context);
                 }
@@ -404,10 +404,10 @@ namespace Maple2.Trigger._02000410_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(isEnable: false);
+                context.DungeonEnableGiveUp(enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02000281_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {801}, arg2: false);
+                context.SetBreakable(triggerIds: new []{801}, enabled: false);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {181})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{181})) {
                     return new StateSetup발동(context);
                 }
 
@@ -22,12 +22,12 @@ namespace Maple2.Trigger._02000281_bf {
             internal StateSetup발동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(id: "30", arg2: 30, arg3: false);
-                context.SetBreakable(arg1: new[] {801}, arg2: true);
+                context.SetTimer(timerId: "30", seconds: 30, clearAtZero: false);
+                context.SetBreakable(triggerIds: new []{801}, enabled: true);
             }
 
-            public override TriggerState Execute() {
-                if (context.TimeExpired(arg1: "30")) {
+            public override TriggerState? Execute() {
+                if (context.TimeExpired(timerId: "30")) {
                     return new StateWait(context);
                 }
 

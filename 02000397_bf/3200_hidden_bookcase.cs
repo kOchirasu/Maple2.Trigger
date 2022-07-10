@@ -4,18 +4,18 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetLadder(arg1: 520, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 521, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 522, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 523, arg2: false, arg3: false, arg4: 0);
-                context.SetLadder(arg1: 524, arg2: false, arg3: false, arg4: 0);
-                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10001141}, arg2: 0);
+                context.SetEffect(triggerIds: new []{5002}, visible: false);
+                context.SetLadder(triggerId: 520, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 521, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 522, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 523, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetLadder(triggerId: 524, visible: false, animationEffect: false, animationDelay: 0);
+                context.SetMesh(triggerIds: new []{3200, 3201, 3202, 3203}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10001141}, state: 0);
                 context.SetUserValue(key: "HiddenRouteOpen", value: 0);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserValue(key: "HiddenRouteOpen") == 1) {
                     return new StateOpened(context);
                 }
@@ -34,12 +34,12 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateOpened(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3202}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10001141}, arg2: 1);
+                context.SetMesh(triggerIds: new []{3202}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10001141}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001141}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001141}, arg2: 0)) {
                     return new StateLadderOn(context);
                 }
 
@@ -53,18 +53,18 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateLadderOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetMesh(arg1: new[] {3203}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetLadder(arg1: 520, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 521, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 522, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 523, arg2: true, arg3: true, arg4: 2);
-                context.SetLadder(arg1: 524, arg2: true, arg3: true, arg4: 2);
-                context.SetMesh(arg1: new[] {3200}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
-                context.SetMesh(arg1: new[] {3201}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetEffect(triggerIds: new []{5002}, visible: true);
+                context.SetMesh(triggerIds: new []{3203}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetLadder(triggerId: 520, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 521, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 522, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 523, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetLadder(triggerId: 524, visible: true, animationEffect: true, animationDelay: 2);
+                context.SetMesh(triggerIds: new []{3200}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMesh(triggerIds: new []{3201}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
@@ -75,12 +75,12 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateClosed(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3202}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10001141}, arg2: 1);
+                context.SetMesh(triggerIds: new []{3202}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(interactIds: new []{10001141}, state: 1);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001141}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001141}, arg2: 0)) {
                     return new StateNothingHappened(context);
                 }
 
@@ -94,10 +94,10 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateNothingHappened(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3202}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(triggerIds: new []{3202}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 

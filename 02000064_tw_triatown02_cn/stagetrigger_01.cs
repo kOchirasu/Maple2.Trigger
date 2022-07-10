@@ -4,10 +4,10 @@ namespace Maple2.Trigger._02000064_tw_triatown02_cn {
             internal StateKickMusicAudience(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.KickMusicAudience(targetBoxId: 101, targetPortalId: 802);
+                context.KickMusicAudience(boxId: 101, portalId: 802);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateKickMusicAudience(context);
                 }

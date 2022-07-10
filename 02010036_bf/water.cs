@@ -4,11 +4,11 @@ namespace Maple2.Trigger._02010036_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 30, arg5: 2f);
+                context.SetMesh(triggerIds: new []{3001}, visible: true, arg3: 0, arg4: 30, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
-                if (context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (context.UserDetected(boxIds: new []{101})) {
                     return new State부서짐(context);
                 }
 
@@ -22,11 +22,11 @@ namespace Maple2.Trigger._02010036_bf {
             internal State부서짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 30, arg5: 2f);
+                context.SetMesh(triggerIds: new []{3001}, visible: false, arg3: 0, arg4: 30, arg5: 2f);
             }
 
-            public override TriggerState Execute() {
-                if (!context.UserDetected(arg1: new[] {101})) {
+            public override TriggerState? Execute() {
+                if (!context.UserDetected(boxIds: new []{101})) {
                     return new StateWait(context);
                 }
 

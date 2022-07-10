@@ -7,15 +7,15 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(id: "10000");
-                context.SetInteractObject(arg1: new[] {10001234, 10001235, 10001236, 10001237, 10001238}, arg2: 1);
-                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108});
+                context.ResetTimer(timerId: "10000");
+                context.SetInteractObject(interactIds: new []{10001234, 10001235, 10001236, 10001237, 10001238}, state: 1);
+                context.DestroyMonster(spawnIds: new []{101, 102, 103, 104, 105, 106, 107, 108});
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.GetUserCount() > 0) {
                     return new StateLoadingDelay(context);
                 }
@@ -30,10 +30,10 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateLoadingDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108}, arg2: false);
+                context.CreateMonster(spawnIds: new []{101, 102, 103, 104, 105, 106, 107, 108}, arg2: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new _checkuser10_guildraid.StateCheckUser10_GuildRaid(context, new StateDungeonStart(context));
                 }
@@ -48,11 +48,11 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(arg1: 903, arg2: true);
-                context.SetCinematicIntro();
+                context.CameraSelect(triggerId: 903, enable: true);
+                context.SetCinematicIntro(text: "");
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateShowCaption01(context);
                 }
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetSkip(state: new StateShowCaption01Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
                     return new StateShowCaption01Skip(context);
                 }
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateShowCaption02(context);
             }
 
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetSkip(state: new StateShowCaption02Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
                     return new StateShowCaption02Skip(context);
                 }
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetSkip();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateCloseCaptionSetting(context);
             }
 
@@ -134,10 +134,10 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.CloseCinematic();
-                context.CameraSelect(arg1: 903, arg2: false);
+                context.CameraSelect(triggerId: 903, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateDoorOpen(context);
                 }
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetUserValue(triggerId: 99, key: "CageDoorOpen", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateTalkStart(context);
                 }
@@ -172,10 +172,10 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 900, arg2: true);
+                context.CameraSelect(triggerId: 900, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateCinematicTalk01(context);
                 }
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetSkip(state: new StateCinematicTalk01Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateCinematicTalk01Skip(context);
                 }
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateCinematicTalk02(context);
             }
 
@@ -228,7 +228,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetSkip(state: new StateCinematicTalk02Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateCinematicTalk02Skip(context);
                 }
@@ -247,7 +247,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateTalkEnd(context);
             }
 
@@ -260,10 +260,10 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(arg1: 900, arg2: false);
+                context.CameraSelect(triggerId: 900, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     return new StateTimmerStart(context);
                 }
@@ -279,16 +279,16 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99, key: "MissionStart", value: 1);
-                context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetTimer(id: "10000", arg2: 300, arg3: true, arg4: true, arg5: 0);
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
+                context.SetTimer(timerId: "10000", seconds: 300, clearAtZero: true, display: true, arg5: 0);
             }
 
-            public override TriggerState Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001234}, arg2: 0) && context.ObjectInteracted(arg1: new[] {10001235}, arg2: 0) && context.ObjectInteracted(arg1: new[] {10001236}, arg2: 0) && context.ObjectInteracted(arg1: new[] {10001237}, arg2: 0) && context.ObjectInteracted(arg1: new[] {10001238}, arg2: 0)) {
+            public override TriggerState? Execute() {
+                if (context.ObjectInteracted(interactIds: new []{10001234}, arg2: 0) && context.ObjectInteracted(interactIds: new []{10001235}, arg2: 0) && context.ObjectInteracted(interactIds: new []{10001236}, arg2: 0) && context.ObjectInteracted(interactIds: new []{10001237}, arg2: 0) && context.ObjectInteracted(interactIds: new []{10001238}, arg2: 0)) {
                     return new StateMissionComplete(context);
                 }
 
-                if (context.TimeExpired(arg1: "10000")) {
+                if (context.TimeExpired(timerId: "10000")) {
                     return new StateMissionFail(context);
                 }
 
@@ -304,13 +304,13 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateMissionFail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(id: "10000");
+                context.ResetTimer(timerId: "10000");
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
-                context.SetEventUI(arg1: 5, script: "$02100001_BF__01_MAINMISSION__4$", arg3: 3000);
-                context.SetInteractObject(arg1: new[] {10001234, 10001235, 10001236, 10001237, 10001238}, arg2: 2);
+                context.SetEventUI(arg1: 5, script: "$02100001_BF__01_MAINMISSION__4$", duration: 3000);
+                context.SetInteractObject(interactIds: new []{10001234, 10001235, 10001236, 10001237, 10001238}, state: 2);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateMoveToCage(context);
                 }
@@ -325,10 +325,10 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateMoveToCage(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.MoveUser(arg1: 02100001, arg2: 10);
+                context.MoveUser(mapId: 02100001, portalId: 10);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     return new StateBadEndingStart(context);
                 }
@@ -345,10 +345,10 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 901, arg2: true);
+                context.CameraSelect(triggerId: 901, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateBadEndingTalk01(context);
                 }
@@ -367,7 +367,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetSkip(state: new StateBadEndingTalk01Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateBadEndingTalk01Skip(context);
                 }
@@ -386,7 +386,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateBadEndingEnd(context);
             }
 
@@ -399,10 +399,10 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(arg1: 901, arg2: false);
+                context.CameraSelect(triggerId: 901, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateDungeonFail(context);
                 }
@@ -420,7 +420,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.DungeonFail();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateBadEndingPortalOn(context);
                 }
@@ -438,7 +438,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuit(context);
                 }
@@ -453,15 +453,15 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateMissionComplete(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ResetTimer(id: "10000");
+                context.ResetTimer(timerId: "10000");
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
-                context.SetAchievement(arg1: 9902, arg2: "trigger", arg3: "Find02100001");
-                context.SetAchievement(arg1: 9902, arg2: "trigger", arg3: "guildraid_clear_1");
-                context.SetEventUI(arg1: 7, script: "$02100001_BF__01_MAINMISSION__6$", arg3: 3000);
+                context.SetAchievement(triggerId: 9902, type: "trigger", code: "Find02100001");
+                context.SetAchievement(triggerId: 9902, type: "trigger", code: "guildraid_clear_1");
+                context.SetEventUI(arg1: 7, script: "$02100001_BF__01_MAINMISSION__6$", duration: 3000);
                 context.SetUserValue(triggerId: 99, key: "MissionComplete", value: 1);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     return new StateHappyEndingStart(context);
                 }
@@ -478,10 +478,10 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(arg1: 902, arg2: true);
+                context.CameraSelect(triggerId: 902, enable: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateHappyEndingTalk01(context);
                 }
@@ -500,7 +500,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetSkip(state: new StateHappyEndingTalk01Skip(context));
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     return new StateHappyEndingTalk01Skip(context);
                 }
@@ -519,7 +519,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.RemoveCinematicTalk();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return new StateHappyEndingEnd(context);
             }
 
@@ -532,10 +532,10 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(arg1: 902, arg2: false);
+                context.CameraSelect(triggerId: 902, enable: false);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateDungeonSuccess(context);
                 }
@@ -553,7 +553,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.DungeonClear();
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateHappyEndingPortalOn(context);
                 }
@@ -571,7 +571,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetPortal(portalId: 3, visible: true, enabled: true, minimapVisible: true);
             }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     return new StateQuit(context);
                 }
@@ -587,7 +587,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() { }
 
-            public override TriggerState Execute() {
+            public override TriggerState? Execute() {
                 return null;
             }
 
