@@ -146,7 +146,7 @@ namespace Maple2.Trigger {
         public void SetSkip(TriggerState? state = default);
         public void SetSound(int triggerId, bool enabled);
         public void SetState(byte userTagId, string[] states, bool value);
-        public void SetTimer(string timerId, int seconds, bool autoRemove = true, bool display = true, int vOffset = 0, string type = "");
+        public void SetTimer(string timerId, int seconds, bool autoRemove = true, bool display = false, int vOffset = 0, string type = "");
         public void SetTimeScale(bool enabled, float startScale, float endScale, float duration, byte interpolator);
         public void SetUserValue(string key, int value, int triggerId = 0);
         public void SetUserValueFromDungeonRewardCount(string key, int dungeonRewardId);
