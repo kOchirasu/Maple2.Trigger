@@ -79,7 +79,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.SetBreakable(triggerIds: new []{4000}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000}, visible: false);
                 context.SetPortal(portalId: 91, visible: false, enabled: false, minimapVisible: false);
             }
 
@@ -100,10 +100,10 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 4);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CreateMonster(spawnIds: new []{1007, 1008}, arg2: false);
                 context.MoveUser(mapId: 52000086, portalId: 30);
-                context.CameraSelect(triggerId: 313, enable: true);
+                context.CameraSelect(triggerId: 313, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -123,8 +123,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnEnter() {
                 context.SetSkip(state: new StateStopCinematic(context));
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelect(triggerId: 314, enable: true);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.CameraSelect(triggerId: 314, enabled: true);
                 context.MoveNpc(spawnId: 1008, patrolName: "MS2PatrolData_1008A");
             }
 
@@ -161,7 +161,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State비에른Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 315, enable: true);
+                context.CameraSelect(triggerId: 315, enabled: true);
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", script: "$52000086_QD__HP50__1$", align: Align.Left, duration: 3000);
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", script: "$52000086_QD__HP50__2$", align: Align.Left, duration: 2000);
             }
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 316, enable: true);
+                context.CameraSelect(triggerId: 316, enabled: true);
                 context.VisibleMyPc(visible: false);
                 context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", script: "$52000086_QD__HP50__3$", align: Align.Right, duration: 3000);
             }
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.VisibleMyPc(visible: true);
-                context.CameraSelect(triggerId: 317, enable: true);
+                context.CameraSelect(triggerId: 317, enabled: true);
                 context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", script: "$52000086_QD__HP50__6$", align: Align.Right, duration: 4000);
                 context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", script: "$52000086_QD__HP50__7$", align: Align.Right, duration: 4000);
             }
@@ -259,7 +259,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State비에른Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 318, enable: true);
+                context.CameraSelect(triggerId: 318, enabled: true);
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", script: "$52000086_QD__HP50__8$", align: Align.Left, duration: 2000);
             }
 
@@ -278,7 +278,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 317, enable: true);
+                context.CameraSelect(triggerId: 317, enabled: true);
                 context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", script: "$52000086_QD__HP50__9$", align: Align.Right, duration: 2000);
             }
 
@@ -297,7 +297,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State비에른Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 312, enable: true);
+                context.CameraSelect(triggerId: 312, enabled: true);
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", script: "$52000086_QD__HP50__10$", align: Align.Right, duration: 5000);
             }
 
@@ -316,7 +316,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State비에른Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 318, enable: true);
+                context.CameraSelect(triggerId: 318, enabled: true);
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", script: "$52000086_QD__HP50__11$", align: Align.Left, duration: 4000);
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", script: "$52000086_QD__HP50__12$", align: Align.Left, duration: 4000);
             }
@@ -336,7 +336,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 317, enable: true);
+                context.CameraSelect(triggerId: 317, enabled: true);
                 context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", script: "$52000086_QD__HP50__13$", align: Align.Right, duration: 2000);
             }
 
@@ -356,7 +356,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{1008});
-                context.SetVisibleBreakableObject(triggerIds: new []{4000}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000}, visible: true);
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", script: "$52000086_QD__HP50__14$", align: Align.Left, duration: 2000);
                 context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", script: "$52000086_QD__HP50__15$", align: Align.Right, duration: 5000);
             }
@@ -376,9 +376,9 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다Script07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 319, enable: true);
+                context.CameraSelect(triggerId: 319, enabled: true);
                 context.CreateMonster(spawnIds: new []{1009}, arg2: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000}, visible: false);
                 context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", script: "$52000086_QD__HP50__16$", align: Align.Right, duration: 3000);
                 context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", script: "$52000086_QD__HP50__17$", align: Align.Right, duration: 5000);
                 context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", script: "$52000086_QD__HP50__18$", align: Align.Right, duration: 5000);
@@ -400,7 +400,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(spawnId: 1009, patrolName: "MS2PatrolData_1009A");
-                context.CameraSelect(triggerId: 320, enable: true);
+                context.CameraSelect(triggerId: 320, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -438,7 +438,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State암전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -459,7 +459,7 @@ namespace Maple2.Trigger._52000086_qd {
                 context.SetSkip();
                 context.VisibleMyPc(visible: true);
                 context.SetAiExtraData(key: "getBack", value: 1);
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(spawnIds: new []{1007, 1008, 1009});
                 context.CreateMonster(spawnIds: new []{2098}, arg2: false);
                 context.SetCinematicUI(type: 0);
@@ -521,7 +521,7 @@ namespace Maple2.Trigger._52000086_qd {
                 context.SetNpcEmotionLoop(spawnId: 1102, sequenceName: "Stun_A", duration: 999999999999f);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 4);
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -541,8 +541,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnEnter() {
                 context.SetSkip(state: new StateDeadStopCinematic(context));
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelect(triggerId: 321, enable: true);
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.CameraSelect(triggerId: 321, enabled: true);
                 context.MoveNpc(spawnId: 1101, patrolName: "MS2PatrolData_1101A");
             }
 
@@ -579,7 +579,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State비에른Script10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 322, enable: true);
+                context.CameraSelect(triggerId: 322, enabled: true);
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", script: "$52000086_QD__HP50__22$", align: Align.Left, duration: 3000);
             }
 
@@ -616,7 +616,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State비에른Script11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 323, enable: true);
+                context.CameraSelect(triggerId: 323, enabled: true);
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", script: "$52000086_QD__HP50__24$", align: Align.Left, duration: 4000);
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", script: "$52000086_QD__HP50__25$", align: Align.Left, duration: 2000);
             }
@@ -672,7 +672,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State비에른Script13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 322, enable: true);
+                context.CameraSelect(triggerId: 322, enabled: true);
                 context.SetNpcEmotionLoop(spawnId: 1102, sequenceName: "Idle_A", duration: 999999999999f);
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", script: "$52000086_QD__HP50__28$", align: Align.Left, duration: 5000);
             }
@@ -692,7 +692,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State비에른Script14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 324, enable: true);
+                context.CameraSelect(triggerId: 324, enabled: true);
                 context.MoveNpc(spawnId: 1102, patrolName: "MS2PatrolData_1102A");
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", script: "$52000086_QD__HP50__29$", align: Align.Left, duration: 3000);
             }
@@ -712,7 +712,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에드다이동03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 325, enable: true);
+                context.CameraSelect(triggerId: 325, enabled: true);
                 context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", script: "$52000086_QD__HP50__30$", align: Align.Right, duration: 3000);
             }
 
@@ -785,7 +785,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다Script14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 321, enable: true);
+                context.CameraSelect(triggerId: 321, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -803,7 +803,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에드다마저이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 4, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -822,7 +822,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 4, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(spawnIds: new []{1101, 1102});
                 context.CreateMonster(spawnIds: new []{10000, 10001, 10002});
                 context.SetCinematicUI(type: 0);
@@ -875,7 +875,7 @@ namespace Maple2.Trigger._52000086_qd {
                 context.SetActor(triggerId: 4004, visible: true, initialSequence: "Opened");
                 context.SetMesh(triggerIds: new []{3104}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetBreakable(triggerIds: new []{4000}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000}, visible: false);
                 context.MoveUser(mapId: 52000086, portalId: 30);
                 context.DestroyMonster(spawnIds: new []{1101, 1102});
                 context.CreateMonster(spawnIds: new []{10000, 10001, 10002});

@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52000121_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CreateMonster(spawnIds: new []{121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131}, arg2: false);
             }
 
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000121_qd {
             internal State위기상황00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{8000}, returnView: false);
                 context.SetSceneSkip(state: new State전투직전_스킵완료(context), arg2: "nextState");
             }
@@ -525,7 +525,7 @@ namespace Maple2.Trigger._52000121_qd {
             internal State암전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -583,7 +583,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{8041}, returnView: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -971,7 +971,7 @@ namespace Maple2.Trigger._52000121_qd {
             internal State암전02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1009,7 +1009,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{8040}, returnView: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(state: new State마노비치리타이어_스킵완료(context), arg2: "exit");
             }
 
@@ -1370,7 +1370,7 @@ namespace Maple2.Trigger._52000121_qd {
                 context.SetAchievement(triggerId: 9000, type: "trigger", code: "ManovichRetire");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1389,7 +1389,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override void OnEnter() {
                 context.MoveUser(mapId: 02000072, portalId: 1);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
             }
 
             public override TriggerState? Execute() {

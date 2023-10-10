@@ -111,7 +111,7 @@ namespace Maple2.Trigger._52000145_qd {
             internal StateStart_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -188,7 +188,7 @@ namespace Maple2.Trigger._52000145_qd {
             internal State하스터숙면_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -484,7 +484,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 25201455);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -524,7 +524,7 @@ namespace Maple2.Trigger._52000145_qd {
             internal State오스칼Spawn_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetPcEmotionSequence(sequenceNames: new []{"Emotion_Troubled_A"});
                 context.MoveNpc(spawnId: 103, patrolName: "MS2PatrolData_2001");
             }
@@ -934,7 +934,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {

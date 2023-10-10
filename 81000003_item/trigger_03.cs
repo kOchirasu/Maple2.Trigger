@@ -7,7 +7,7 @@ namespace Maple2.Trigger._81000003_item {
 
             public override void OnEnter() {
                 // wait.xml 시작 타이머 설정 UI
-                context.SetTimer(timerId: "59", seconds: 180, clearAtZero: true, display: true, arg5: -90);
+                context.SetTimer(timerId: "59", seconds: 180, autoRemove: true, display: true, vOffset: -90);
             }
 
             public override TriggerState? Execute() {
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._81000003_item {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999111, key: "gameStart", value: 1);
-                context.SetTimer(timerId: "160", seconds: 160, clearAtZero: false, display: true); // trigger_03.xml 시작 타이머 설정
+                context.SetTimer(timerId: "160", seconds: 160, autoRemove: false, display: true); // trigger_03.xml 시작 타이머 설정
                 context.SetMesh(triggerIds: new []{501, 502, 503, 504, 505, 506, 507, 508, 509}, visible: false);
                 context.SetInteractObject(interactIds: new []{10000224, 10000214}, state: 1);
                 context.StartMiniGame(isShowResultUI: false, boxId: 499, round: 1, type: MiniGame.UserCrazyRunners);

@@ -23,8 +23,8 @@ namespace Maple2.Trigger._52000113_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateQuit02(context), arg2: "exit");
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SpawnNpcRange(rangeId: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221}, isAutoTargeting: false);
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SpawnNpcRange(spawnIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221}, isAutoTargeting: false);
                 context.CreateMonster(spawnIds: new []{101}, arg2: false);
                 context.SetCinematicUI(type: 1);
                 context.MoveNpc(spawnId: 203, patrolName: "MS2PatrolData_203");
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._52000113_qd {
             internal StateCamera01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(pathIds: new []{1000, 1001}, returnView: false);
             }
 
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._52000113_qd {
             internal StateQuit01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override TriggerState? Execute() {
@@ -240,7 +240,7 @@ namespace Maple2.Trigger._52000113_qd {
             internal StateQuit02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUser(mapId: 02000062, portalId: 13);
             }
 

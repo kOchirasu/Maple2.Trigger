@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000051_tw_perion {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{101}, visible: true);
-                context.SetTimer(timerId: "1", seconds: 15, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 15, autoRemove: false);
             }
 
             public override TriggerState? Execute() {

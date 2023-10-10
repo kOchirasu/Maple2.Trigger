@@ -6,7 +6,7 @@ namespace Maple2.Trigger._02000388_bf {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CreateMonster(spawnIds: new []{301, 302, 303, 304, 305}, arg2: true);
                 context.SetActor(triggerId: 3001, visible: true, initialSequence: "Closed");
                 context.SetActor(triggerId: 3002, visible: true, initialSequence: "Closed");
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02000388_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8100, enable: true);
+                context.SetLocalCamera(cameraId: 8100, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02000388_bf {
             internal StateQuestDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8100, enable: true);
+                context.SetLocalCamera(cameraId: 8100, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._02000388_bf {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.CameraSelect(triggerId: 8006, enable: true);
+                context.CameraSelect(triggerId: 8006, enabled: true);
                 context.SetConversation(type: 1, spawnId: 102, script: "$02000388_BF__MAIN__2$", arg4: 3, arg5: 0);
                 context.SetConversation(type: 1, spawnId: 101, script: "$02000388_BF__MAIN__3$", arg4: 3, arg5: 3);
                 context.SetConversation(type: 1, spawnId: 102, script: "$02000388_BF__MAIN__4$", arg4: 3, arg5: 6);
@@ -247,7 +247,7 @@ namespace Maple2.Trigger._02000388_bf {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetLocalCamera(cameraId: 8100, enable: true);
+                context.SetLocalCamera(cameraId: 8100, enabled: true);
                 context.SetBreakable(triggerIds: new []{1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1817, 1818, 1819, 1820, 1821}, enabled: true);
                 context.SetEffect(triggerIds: new []{7101}, visible: true);
                 context.SetSkip();
@@ -272,7 +272,7 @@ namespace Maple2.Trigger._02000388_bf {
             internal StateBattle_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8100, enable: true);
+                context.SetLocalCamera(cameraId: 8100, enabled: true);
                 context.SetConversation(type: 1, spawnId: 102, script: "$02000388_BF__MAIN__8$", arg4: 2, arg5: 0);
                 context.SetConversation(type: 1, spawnId: 101, script: "$02000388_BF__MAIN__9$", arg4: 2, arg5: 1);
                 context.CreateMonster(spawnIds: new []{201, 202, 203, 204}, arg2: true);
@@ -294,7 +294,7 @@ namespace Maple2.Trigger._02000388_bf {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateOpen_door_03(context));
-                context.CameraSelect(triggerId: 8007, enable: true);
+                context.CameraSelect(triggerId: 8007, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_2005");
@@ -353,7 +353,7 @@ namespace Maple2.Trigger._02000388_bf {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetLocalCamera(cameraId: 8100, enable: true);
+                context.SetLocalCamera(cameraId: 8100, enabled: true);
                 context.SetSkip();
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
@@ -496,7 +496,7 @@ namespace Maple2.Trigger._02000388_bf {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateEnding_02(context));
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -515,7 +515,7 @@ namespace Maple2.Trigger._02000388_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{7104}, visible: true);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{8003, 8004, 8005, 8006}, returnView: false);
             }
 
@@ -535,7 +535,7 @@ namespace Maple2.Trigger._02000388_bf {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -571,9 +571,9 @@ namespace Maple2.Trigger._02000388_bf {
             internal StateEnding_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
-                context.SetLocalCamera(cameraId: 8100, enable: true);
+                context.SetLocalCamera(cameraId: 8100, enabled: true);
             }
 
             public override TriggerState? Execute() {

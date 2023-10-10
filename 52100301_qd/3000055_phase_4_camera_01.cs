@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52100301_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 690000, enable: false);
+                context.CameraSelect(triggerId: 690000, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52100301_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 690000, enable: true);
+                context.CameraSelect(triggerId: 690000, enabled: true);
             }
 
             public override TriggerState? Execute() {

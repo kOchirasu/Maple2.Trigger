@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000346_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(interactIds: new []{10000803}, state: 0);
-                context.SetSkill(triggerIds: new []{701}, arg2: false);
+                context.SetSkill(triggerIds: new []{701}, enabled: false);
             }
 
             public override TriggerState? Execute() {

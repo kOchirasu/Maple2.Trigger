@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() {
                 context.SetBreakable(triggerIds: new []{2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, visible: false);
                 context.SetUserValue(triggerId: 99990025, key: "MovePanel02", value: 0);
                 context.SetInteractObject(interactIds: new []{12000116}, state: 2);
             }
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02020062_bf {
             internal StateSetup이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(triggerIds: new []{2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, visible: true);
                 context.SetInteractObject(interactIds: new []{12000116}, state: 2);
             }
 

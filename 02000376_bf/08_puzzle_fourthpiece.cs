@@ -74,39 +74,39 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern02_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern03_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern04_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern05_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern06_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern07_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern08_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern09_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern10_Pick(context);
                 }
 
@@ -122,39 +122,39 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern01_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern03_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern04_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern05_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern06_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern07_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern08_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern09_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern10_Pick(context);
                 }
 
@@ -170,39 +170,39 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern01_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern02_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern04_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern05_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern06_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern07_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern08_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern09_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern10_Pick(context);
                 }
 
@@ -218,39 +218,39 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern01_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern02_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern03_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern05_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern06_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern07_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern08_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern09_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern10_Pick(context);
                 }
 
@@ -266,39 +266,39 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern01_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern02_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern03_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern04_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern06_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern07_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern08_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern09_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern10_Pick(context);
                 }
 
@@ -314,39 +314,39 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern01_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern02_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern03_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern04_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern05_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern07_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern08_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern09_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern10_Pick(context);
                 }
 
@@ -362,39 +362,39 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern01_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern02_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern03_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern04_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern05_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern06_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern08_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern09_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern10_Pick(context);
                 }
 
@@ -410,39 +410,39 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern01_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern02_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern03_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern04_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern05_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern06_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern07_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern09_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern10_Pick(context);
                 }
 
@@ -458,39 +458,39 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern01_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern02_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern03_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern04_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern05_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern06_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern07_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern08_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern10_Pick(context);
                 }
 
@@ -506,39 +506,39 @@ namespace Maple2.Trigger._02000376_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern01_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern02_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern03_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern04_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern05_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern06_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern07_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern08_Pick(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StatePattern09_Pick(context);
                 }
 

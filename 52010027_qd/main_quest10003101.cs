@@ -286,7 +286,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal State전투종료01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.MoveUser(mapId: 52010027, portalId: 6007);
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal State전투종료02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 11003431, script: "$52010027_QD__MAIN_QUEST10003101__14$", duration: 3000);
                 context.SetNpcEmotionLoop(spawnId: 803, sequenceName: "Stun_A", duration: 160000000f);
             }

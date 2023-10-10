@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02020008_bf {
 
             public override TriggerState? Execute() {
                 if (context.ObjectInteracted(interactIds: new []{12000077}, arg2: 0)) {
-                    context.SetTimer(timerId: "1", seconds: 120, clearAtZero: true, display: false, arg5: 0);
+                    context.SetTimer(timerId: "1", seconds: 120, autoRemove: true, display: false, vOffset: 0);
                     return new StateTouchingInNumericalOrder_Start_Delay(context);
                 }
 
@@ -304,7 +304,7 @@ namespace Maple2.Trigger._02020008_bf {
             internal StateTouchingInNumericalOrder_Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "10", seconds: 61, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "10", seconds: 61, autoRemove: true, display: false, vOffset: 0);
                 context.AddBuff(boxIds: new []{140001}, skillId: 71001042, level: 1, arg4: false, arg5: false);
                 context.SetEffect(triggerIds: new []{14200}, visible: true);
                 context.SetInteractObject(interactIds: new []{12000242}, state: 1);

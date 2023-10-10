@@ -264,7 +264,7 @@ namespace Maple2.Trigger._52020024_qd {
                 context.MoveUser(mapId: 52020024, portalId: 2);
                 context.CreateMonster(spawnIds: new []{201}, arg2: false);
                 context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_Michael");
-                context.CameraSelect(triggerId: 501, enable: true);
+                context.CameraSelect(triggerId: 501, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -302,7 +302,7 @@ namespace Maple2.Trigger._52020024_qd {
             internal StateCamera_미카엘Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 502, enable: true);
+                context.CameraSelect(triggerId: 502, enabled: true);
                 context.SetConversation(type: 1, spawnId: 201, script: "파편이 어쩌구~ 저쩌구~", arg4: 5);
             }
 
@@ -321,9 +321,9 @@ namespace Maple2.Trigger._52020024_qd {
             internal StateCamera_지진사태(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 503, enable: true);
+                context.CameraSelect(triggerId: 503, enabled: true);
                 context.SetConversation(type: 1, spawnId: 0, script: "왜...왜 이러지?", arg4: 4);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG\Common\Eff_Com_Vibrate_Lowamp.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG\Common\Eff_Com_Vibrate_Lowamp.xml");
             }
 
             public override TriggerState? Execute() {
@@ -342,8 +342,8 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 1, spawnId: 0, script: "으아아악!!!", arg4: 2);
-                context.CameraSelect(triggerId: 504, enable: true);
-                context.SetSkill(triggerIds: new []{1}, arg2: true);
+                context.CameraSelect(triggerId: 504, enabled: true);
+                context.SetSkill(triggerIds: new []{1}, enabled: true);
             }
 
             public override TriggerState? Execute() {

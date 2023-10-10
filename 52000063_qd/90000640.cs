@@ -66,10 +66,10 @@ namespace Maple2.Trigger._52000063_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11000168, script: "$52000063_QD__90000640__0$", arg4: 5);
             }
 
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._52000063_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 302, enable: false);
+                context.CameraSelect(triggerId: 302, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._52000063_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11000168, script: "$52000063_QD__90000640__4$", arg4: 3);
             }
 
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._52000063_qd {
             internal StateKScript03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 304, enable: true);
+                context.CameraSelect(triggerId: 304, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11000168, script: "$52000063_QD__90000640__5$", arg4: 2);
             }
 
@@ -227,7 +227,7 @@ namespace Maple2.Trigger._52000063_qd {
                 context.SetMesh(triggerIds: new []{3100}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3101}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.DestroyMonster(spawnIds: new []{1001, 1002});
-                context.CameraSelect(triggerId: 304, enable: false);
+                context.CameraSelect(triggerId: 304, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.ShowCountUI(text: "$52000063_QD__90000640__6$", stage: 1, count: 3);

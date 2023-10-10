@@ -23,14 +23,14 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateQuit(context), arg2: "exit");
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.MoveUser(mapId: 52000068, portalId: 3);
                 context.CreateMonster(spawnIds: new []{10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034, 13000, 13001, 13002, 13003, 13004, 13005, 13006, 13007}, arg2: false);
                 context.DestroyMonster(spawnIds: new []{11000, 11001, 11002, 11003, 11004, 11005, 11006, 11007}, arg2: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{5000, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012}, arg2: false);
-                context.SetSound(triggerId: 90001, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{5000, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012}, visible: false);
+                context.SetSound(triggerId: 90001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal StateCinematicPhase2Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
                 context.CameraSelectPath(pathIds: new []{15000, 15001}, returnView: false);
                 context.SetConversation(type: 2, spawnId: 11001966, script: "$52000068_QD__TRIA_SEIGE_MOVIE_02__0$", arg4: 7);
                 context.SetSkip(state: new StateCinematicPhase2Script01스킵(context));
@@ -696,7 +696,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal StateFadeOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
                 context.RemoveCinematicTalk();
             }
 

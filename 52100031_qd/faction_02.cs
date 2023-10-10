@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.AddBuff(boxIds: new []{199}, skillId: 70000107, level: 1, arg4: false, arg5: false);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.CreateMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1104}, arg2: false);
                 context.SetConversation(type: 1, spawnId: 1101, script: "$52100031_QD__FACTION_02__0$", arg4: 5, arg5: 0);
                 context.SetInteractObject(interactIds: new []{10002068}, state: 1);

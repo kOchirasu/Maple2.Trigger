@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{901, 902, 903}, visible: false, arg4: 0, arg5: 10f);
-                context.SetSkill(triggerIds: new []{2020}, arg2: true);
+                context.SetSkill(triggerIds: new []{2020}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new State관문_02_스킵(context));
-                context.CameraSelect(triggerId: 8001, enable: true);
+                context.CameraSelect(triggerId: 8001, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
             }
 
@@ -184,7 +184,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_01_개방_이벤트_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2001, 2002}, arg2: true);
+                context.SetSkill(triggerIds: new []{2001, 2002}, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
             }
 
@@ -203,7 +203,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_01_개방_이벤트_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2003}, arg2: true);
+                context.SetSkill(triggerIds: new []{2003}, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
             }
 
@@ -222,7 +222,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_01_개방_이벤트_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2004}, arg2: true);
+                context.SetSkill(triggerIds: new []{2004}, enabled: true);
                 context.SetTimer(timerId: "2", seconds: 2);
             }
 
@@ -245,7 +245,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_02_스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2001, 2002, 2003, 2004}, arg2: true);
+                context.SetSkill(triggerIds: new []{2001, 2002, 2003, 2004}, enabled: true);
                 context.SetSkip();
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetCinematicUI(type: 0);
@@ -269,7 +269,7 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
-                context.CameraSelect(triggerId: 8001, enable: false);
+                context.CameraSelect(triggerId: 8001, enabled: false);
                 context.ShowGuideSummary(entityId: 103, textId: 40011);
             }
 
@@ -355,7 +355,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_02_개방_이벤트_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2006}, arg2: true);
+                context.SetSkill(triggerIds: new []{2006}, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
             }
 
@@ -374,7 +374,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_02_개방_이벤트_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2007}, arg2: true);
+                context.SetSkill(triggerIds: new []{2007}, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
             }
 
@@ -393,7 +393,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_02_개방_이벤트_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2008}, arg2: true);
+                context.SetSkill(triggerIds: new []{2008}, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
             }
 
@@ -496,7 +496,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_03_개방_이벤트_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2009}, arg2: true);
+                context.SetSkill(triggerIds: new []{2009}, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
             }
 
@@ -515,7 +515,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_03_개방_이벤트_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2010}, arg2: true);
+                context.SetSkill(triggerIds: new []{2010}, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
             }
 
@@ -534,7 +534,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_03_개방_이벤트_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2011}, arg2: true);
+                context.SetSkill(triggerIds: new []{2011}, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
             }
 

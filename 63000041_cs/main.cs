@@ -538,7 +538,7 @@ namespace Maple2.Trigger._63000041_cs {
                 context.CameraSelectPath(pathIds: new []{8011, 8012}, returnView: false);
                 context.SetEffect(triggerIds: new []{7307}, visible: true);
                 context.AddCinematicTalk(npcId: 11001851, script: "$63000041_CS__MAIN__23$", duration: 4000, align: Align.Center);
-                context.SetOnetimeEffect(id: 1966, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_01_00001966.xml");
+                context.SetOnetimeEffect(id: 1966, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_01_00001966.xml");
                 context.ShowCaption(type: CaptionType.Name, scale: 2.3f, title: "$63000041_CS__MAIN__56$", script: "$63000041_CS__MAIN__57$", align: Align.Center | Align.Left, offsetRateX: -0.15f, duration: 4000);
             }
 
@@ -558,7 +558,7 @@ namespace Maple2.Trigger._63000041_cs {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11001851, script: "$63000041_CS__MAIN__24$", duration: 8000, align: Align.Center);
-                context.SetOnetimeEffect(id: 1967, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_02_00001967.xml");
+                context.SetOnetimeEffect(id: 1967, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_02_00001967.xml");
                 context.SetPcEmotionLoop(sequenceName: "Attack_Idle_A", duration: 10000f);
                 context.SetNpcEmotionLoop(spawnId: 102, sequenceName: "Attack_Idle_A", duration: 10000f);
             }
@@ -581,7 +581,7 @@ namespace Maple2.Trigger._63000041_cs {
                 context.CameraSelectPath(pathIds: new []{8013}, returnView: false);
                 context.SetEffect(triggerIds: new []{7309}, visible: true);
                 context.AddCinematicTalk(npcId: 11001851, script: "$63000041_CS__MAIN__25$", duration: 3000, align: Align.Center);
-                context.SetOnetimeEffect(id: 1968, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_03_00001968.xml");
+                context.SetOnetimeEffect(id: 1968, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_03_00001968.xml");
             }
 
             public override TriggerState? Execute() {
@@ -692,7 +692,7 @@ namespace Maple2.Trigger._63000041_cs {
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{8016, 8021}, returnView: false);
                 context.AddCinematicTalk(npcId: 11001851, script: "$63000041_CS__MAIN__28$", duration: 8000, align: Align.Center);
-                context.SetOnetimeEffect(id: 1969, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_04_00001969.xml");
+                context.SetOnetimeEffect(id: 1969, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_04_00001969.xml");
                 context.AddBalloonTalk(spawnId: 666, msg: "$63000041_CS__MAIN__29$", duration: 8000, delayTick: 0);
             }
 
@@ -715,7 +715,7 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetEffect(triggerIds: new []{7003, 7310}, visible: true);
                 context.AddCinematicTalk(npcId: 11001851, script: "$63000041_CS__MAIN__30$", duration: 5000, align: Align.Center);
                 context.AddBalloonTalk(spawnId: 666, msg: "$63000041_CS__MAIN__31$", duration: 5000, delayTick: 0);
-                context.SetOnetimeEffect(id: 1970, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_05_00001970.xml");
+                context.SetOnetimeEffect(id: 1970, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_05_00001970.xml");
             }
 
             public override TriggerState? Execute() {
@@ -777,7 +777,7 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetEffect(triggerIds: new []{7003, 7004, 7309}, visible: false);
                 context.AddCinematicTalk(npcId: 11001851, script: "$63000041_CS__MAIN__32$", duration: 5000, align: Align.Center);
                 context.AddBalloonTalk(spawnId: 666, msg: "$63000041_CS__MAIN__33$", duration: 5000, delayTick: 0);
-                context.SetOnetimeEffect(id: 1971, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_06_00001971.xml");
+                context.SetOnetimeEffect(id: 1971, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_06_00001971.xml");
             }
 
             public override TriggerState? Execute() {
@@ -814,7 +814,7 @@ namespace Maple2.Trigger._63000041_cs {
                 context.CameraSelectPath(pathIds: new []{8017}, returnView: false);
                 context.AddCinematicTalk(npcId: 11001851, script: "$63000041_CS__MAIN__34$", duration: 7500, align: Align.Center);
                 context.AddBalloonTalk(spawnId: 666, msg: "$63000041_CS__MAIN__35$", duration: 7500, delayTick: 500);
-                context.SetOnetimeEffect(id: 1972, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_07_00001972.xml");
+                context.SetOnetimeEffect(id: 1972, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_07_00001972.xml");
             }
 
             public override TriggerState? Execute() {
@@ -890,7 +890,7 @@ namespace Maple2.Trigger._63000041_cs {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11001851, script: "$63000041_CS__MAIN__37$", duration: 8000, align: Align.Center);
-                context.SetOnetimeEffect(id: 1973, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_08_00001973.xml");
+                context.SetOnetimeEffect(id: 1973, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_08_00001973.xml");
                 context.MoveNpc(spawnId: 666, patrolName: "MS2PatrolData_6663");
             }
 
@@ -928,7 +928,7 @@ namespace Maple2.Trigger._63000041_cs {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11001851, script: "$63000041_CS__MAIN__39$", duration: 4000, align: Align.Center);
-                context.SetOnetimeEffect(id: 1974, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_09_00001974.xml");
+                context.SetOnetimeEffect(id: 1974, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_09_00001974.xml");
             }
 
             public override TriggerState? Execute() {
@@ -966,7 +966,7 @@ namespace Maple2.Trigger._63000041_cs {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11001851, script: "$63000041_CS__MAIN__41$", duration: 6000, align: Align.Center);
-                context.SetOnetimeEffect(id: 1975, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_10_00001975.xml");
+                context.SetOnetimeEffect(id: 1975, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_10_00001975.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1005,7 +1005,7 @@ namespace Maple2.Trigger._63000041_cs {
             public override void OnEnter() {
                 context.MoveNpc(spawnId: 666, patrolName: "MS2PatrolData_6664");
                 context.AddCinematicTalk(npcId: 11001851, script: "$63000041_CS__MAIN__43$", duration: 6000, align: Align.Center);
-                context.SetOnetimeEffect(id: 1976, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_11_00001976.xml");
+                context.SetOnetimeEffect(id: 1976, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_11_00001976.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1043,7 +1043,7 @@ namespace Maple2.Trigger._63000041_cs {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11001851, script: "$63000041_CS__MAIN__44$", duration: 5000, align: Align.Center);
-                context.SetOnetimeEffect(id: 1977, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_12_00001977.xml");
+                context.SetOnetimeEffect(id: 1977, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_12_00001977.xml");
                 context.MoveNpc(spawnId: 888, patrolName: "MS2PatrolData_8801");
                 context.CameraSelectPath(pathIds: new []{8022}, returnView: false);
                 context.SetEffect(triggerIds: new []{7006}, visible: true);
@@ -1141,7 +1141,7 @@ namespace Maple2.Trigger._63000041_cs {
             internal StateGrowling(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1978, enable: true, path: @"BG/Common/Sound/Eff_Mob_Whale_Dead_01.xml");
+                context.SetOnetimeEffect(id: 1978, enabled: true, path: @"BG/Common/Sound/Eff_Mob_Whale_Dead_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1178,7 +1178,7 @@ namespace Maple2.Trigger._63000041_cs {
 
             public override void OnEnter() {
                 context.MoveNpc(spawnId: 705, patrolName: "MS2PatrolData_1134");
-                context.SetOnetimeEffect(id: 1979, enable: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
+                context.SetOnetimeEffect(id: 1979, enabled: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1235,7 +1235,7 @@ namespace Maple2.Trigger._63000041_cs {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, script: "$63000041_CS__MAIN__46$", duration: 3000);
-                context.SetOnetimeEffect(id: 1980, enable: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
+                context.SetOnetimeEffect(id: 1980, enabled: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1255,7 +1255,7 @@ namespace Maple2.Trigger._63000041_cs {
             public override void OnEnter() {
                 context.FaceEmotion(spawnId: 0, emotionName: "PC_Shy_Pain_3000");
                 context.AddCinematicTalk(npcId: 0, script: "$63000041_CS__MAIN__47$", duration: 3000);
-                context.SetOnetimeEffect(id: 1981, enable: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
+                context.SetOnetimeEffect(id: 1981, enabled: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1372,7 +1372,7 @@ namespace Maple2.Trigger._63000041_cs {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{706});
-                context.SetOnetimeEffect(id: 1982, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
+                context.SetOnetimeEffect(id: 1982, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1393,7 +1393,7 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.SetSound(triggerId: 7102, arg2: true);
+                context.SetSound(triggerId: 7102, enabled: true);
                 context.SetSceneSkip(state: new StateEnd_warp(context), arg2: "exit");
             }
 

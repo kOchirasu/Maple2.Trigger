@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02010052_bf {
                 context.HideGuideSummary(entityId: 200);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 80003, enable: true);
+                context.CameraSelect(triggerId: 80003, enabled: true);
                 context.SetConversation(type: 2, spawnId: 21800073, script: "$02010052_BF__TORCHLIGHT_04__1$", arg4: 2);
                 context.SetTimer(timerId: "2", seconds: 2);
                 context.SetSkip(state: new StateRun(context));
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 7);
-                context.CameraSelect(triggerId: 80003, enable: false);
+                context.CameraSelect(triggerId: 80003, enabled: false);
             }
         }
 

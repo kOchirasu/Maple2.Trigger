@@ -36,7 +36,7 @@ namespace Maple2.Trigger._99999841 {
             internal State70프로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 210, value: true);
+                context.SetDungeonVariable(id: 210, value: true);
             }
 
             public override TriggerState? Execute() {
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._99999841 {
             internal State50프로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 220, value: true);
+                context.SetDungeonVariable(id: 220, value: true);
             }
 
             public override TriggerState? Execute() {
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._99999841 {
             internal State30프로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 230, value: true);
+                context.SetDungeonVariable(id: 230, value: true);
             }
 
             public override TriggerState? Execute() {
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._99999841 {
             internal State10프로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 240, value: true);
+                context.SetDungeonVariable(id: 240, value: true);
             }
 
             public override TriggerState? Execute() {

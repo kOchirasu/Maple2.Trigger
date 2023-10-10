@@ -39,7 +39,7 @@ namespace Maple2.Trigger._52010017_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52010017_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._52010017_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._52010017_qd {
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.CameraSelect(triggerId: 302, enable: false);
+                    context.CameraSelect(triggerId: 302, enabled: false);
                     return new State체크포인트02(context);
                 }
 
@@ -222,7 +222,7 @@ namespace Maple2.Trigger._52010017_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001218, script: "$52010017_QD__MAIN__2$", arg4: 2);
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
                 context.CreateMonster(spawnIds: new []{2003}, arg2: true);
             }
 
@@ -243,7 +243,7 @@ namespace Maple2.Trigger._52010017_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 303, enable: false);
+                context.CameraSelect(triggerId: 303, enabled: false);
                 context.MoveNpc(spawnId: 1002, patrolName: "MS2PatrolData_1002_B");
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003_B");
                 context.MoveNpc(spawnId: 1004, patrolName: "MS2PatrolData_1004_B");
@@ -320,7 +320,7 @@ namespace Maple2.Trigger._52010017_qd {
             internal State둔바Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 304, enable: true);
+                context.CameraSelect(triggerId: 304, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11001217, script: "$52010017_QD__MAIN__3$", arg4: 2);
                 context.CreateMonster(spawnIds: new []{2004}, arg2: true);
             }
@@ -342,7 +342,7 @@ namespace Maple2.Trigger._52010017_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 304, enable: false);
+                context.CameraSelect(triggerId: 304, enabled: false);
                 context.MoveNpc(spawnId: 1002, patrolName: "MS2PatrolData_1002_C");
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003_C");
                 context.MoveNpc(spawnId: 1004, patrolName: "MS2PatrolData_1004_C");
@@ -419,7 +419,7 @@ namespace Maple2.Trigger._52010017_qd {
             internal State스타츠Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 305, enable: true);
+                context.CameraSelect(triggerId: 305, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11001292, script: "$52010017_QD__MAIN__4$", arg4: 2);
                 context.CreateMonster(spawnIds: new []{2005}, arg2: true);
             }
@@ -441,7 +441,7 @@ namespace Maple2.Trigger._52010017_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 305, enable: false);
+                context.CameraSelect(triggerId: 305, enabled: false);
                 context.MoveNpc(spawnId: 1002, patrolName: "MS2PatrolData_1002_D");
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003_D");
                 context.MoveNpc(spawnId: 1004, patrolName: "MS2PatrolData_1004_D");

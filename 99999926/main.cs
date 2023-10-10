@@ -54,11 +54,11 @@ namespace Maple2.Trigger._99999926 {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateBattle03A(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateBattle03B(context);
                 }
 

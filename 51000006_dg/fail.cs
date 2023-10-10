@@ -4,7 +4,7 @@ namespace Maple2.Trigger._51000006_dg {
             internal StateGameset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 8011, enable: false);
+                context.CameraSelect(triggerId: 8011, enabled: false);
             }
 
             public override TriggerState? Execute() {

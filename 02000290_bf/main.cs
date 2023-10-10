@@ -13,9 +13,9 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3011, 3012, 3013, 3014, 3015, 3016, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032, 3033, 3041, 3042, 3043, 3044, 3045, 3046, 3047, 3048, 3049, 3050, 3051, 3052, 3053}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(triggerIds: new []{5000}, visible: false);
                 context.DestroyMonster(spawnIds: new []{1001, 1002, 1003, 1004, 2001, 2002});
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 9991, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 9992, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 9991, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 9992, enabled: false);
             }
 
             public override TriggerState? Execute() {

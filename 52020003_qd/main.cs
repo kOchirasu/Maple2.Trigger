@@ -80,7 +80,7 @@ namespace Maple2.Trigger._52020003_qd {
             internal State흑성회전투_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(mapId: 52020003, portalId: 10);
             }
 
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._52020003_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -455,7 +455,7 @@ namespace Maple2.Trigger._52020003_qd {
             internal State암전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(mapId: 52020003, portalId: 11);
             }
 
@@ -493,7 +493,7 @@ namespace Maple2.Trigger._52020003_qd {
             internal State제이든Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 11003539, script: "…$MyPCName$?", duration: 3000, align: Align.Left);
                 context.SetSceneSkip(state: new State제이든Spawn_스킵완료(context), arg2: "exit");
             }
@@ -514,7 +514,7 @@ namespace Maple2.Trigger._52020003_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{8001}, returnView: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 11003541, script: "아주 시끄러운 소리가 난 것 같은데…", duration: 2000, align: Align.Left);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_PC_Walkin_01");
             }

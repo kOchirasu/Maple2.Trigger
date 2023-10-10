@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52000024_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.CameraSelect(triggerId: 8004, enable: false);
+                context.CameraSelect(triggerId: 8004, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._52000024_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 8005, enable: true);
+                context.CameraSelect(triggerId: 8005, enabled: true);
                 context.MoveUser(mapId: 52000024, portalId: 99);
             }
 
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._52000024_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{105});
-                context.CameraSelect(triggerId: 8005, enable: false);
+                context.CameraSelect(triggerId: 8005, enabled: false);
                 context.SetAchievement(triggerId: 701, type: "trigger", code: "PirateRiddenSea");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);

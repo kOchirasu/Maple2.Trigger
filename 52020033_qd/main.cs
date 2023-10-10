@@ -179,7 +179,7 @@ namespace Maple2.Trigger._52020033_qd {
 
             public override void OnEnter() {
                 context.MoveUser(mapId: 52020001, portalId: 1);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._52020033_qd {
             internal State소개_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(mapId: 52020033, portalId: 10);
             }
 
@@ -218,7 +218,7 @@ namespace Maple2.Trigger._52020033_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -319,7 +319,7 @@ namespace Maple2.Trigger._52020033_qd {
             internal State부유도_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(mapId: 52020033, portalId: 10);
             }
 
@@ -340,7 +340,7 @@ namespace Maple2.Trigger._52020033_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -490,7 +490,7 @@ namespace Maple2.Trigger._52020033_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{8011}, returnView: false);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
             }
 
             public override TriggerState? Execute() {
@@ -509,7 +509,7 @@ namespace Maple2.Trigger._52020033_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 9, script: @"나는 작은 낙하산 하나에 몸을 의지한 채\n짙은 안개 속으로 몸을 던졌다.");
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
             }
 
             public override TriggerState? Execute() {
@@ -586,7 +586,7 @@ namespace Maple2.Trigger._52020033_qd {
                 context.CameraReset(interpolationTime: 2.0f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
             }
 
             public override TriggerState? Execute() {
@@ -605,7 +605,7 @@ namespace Maple2.Trigger._52020033_qd {
 
             public override void OnEnter() {
                 context.MoveUser(mapId: 52020001, portalId: 1);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
             }
 
             public override TriggerState? Execute() {

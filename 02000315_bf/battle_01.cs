@@ -17,10 +17,10 @@ namespace Maple2.Trigger._02000315_bf {
                 context.SetMesh(triggerIds: new []{3110, 3210, 3310}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetAgent(triggerIds: new []{8000, 8001, 8002, 8003, 8004, 8005}, visible: true);
                 context.SetInteractObject(interactIds: new []{10001043, 10001044, 10001035}, state: 1);
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 991, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 992, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 993, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 991, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 992, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 993, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -147,8 +147,8 @@ namespace Maple2.Trigger._02000315_bf {
             internal State2ndBattle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 991, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 991, enabled: true);
                 context.CreateMonster(spawnIds: new []{904, 905, 906}, arg2: false);
             }
 
@@ -193,8 +193,8 @@ namespace Maple2.Trigger._02000315_bf {
             internal State3rdBattle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 991, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 993, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 991, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 993, enabled: true);
                 context.CreateMonster(spawnIds: new []{907, 908, 909}, arg2: false);
             }
 
@@ -241,8 +241,8 @@ namespace Maple2.Trigger._02000315_bf {
             internal StateBossBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 993, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 992, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 993, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 992, enabled: true);
             }
 
             public override TriggerState? Execute() {

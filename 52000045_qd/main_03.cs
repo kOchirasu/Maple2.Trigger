@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52000045_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.AddBuff(boxIds: new []{199}, skillId: 70000095, level: 1);
             }
 
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._52000045_qd {
                 context.MoveUser(mapId: 52000046, portalId: 2);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
             }
 
             public override TriggerState? Execute() {

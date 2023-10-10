@@ -134,7 +134,7 @@ namespace Maple2.Trigger._52010005_qd {
                 context.SetTimer(timerId: "5", seconds: 3);
                 context.DestroyMonster(spawnIds: new []{102});
                 context.CreateMonster(spawnIds: new []{104}, arg2: false);
-                context.CameraSelect(triggerId: 1001, enable: true);
+                context.CameraSelect(triggerId: 1001, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "7", seconds: 1);
-                context.CameraSelect(triggerId: 1001, enable: false);
+                context.CameraSelect(triggerId: 1001, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

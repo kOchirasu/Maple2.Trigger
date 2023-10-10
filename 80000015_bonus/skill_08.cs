@@ -20,7 +20,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{713, 714, 715, 716, 717, 718, 719}, arg2: false);
+                context.SetSkill(triggerIds: new []{713, 714, 715, 716, 717, 718, 719}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{713}, arg2: true);
+                context.SetSkill(triggerIds: new []{713}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{714}, arg2: true);
+                context.SetSkill(triggerIds: new []{714}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{715}, arg2: true);
+                context.SetSkill(triggerIds: new []{715}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{716}, arg2: true);
+                context.SetSkill(triggerIds: new []{716}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{717}, arg2: true);
+                context.SetSkill(triggerIds: new []{717}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{718}, arg2: true);
+                context.SetSkill(triggerIds: new []{718}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateSkill07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{719}, arg2: true);
+                context.SetSkill(triggerIds: new []{719}, enabled: true);
             }
 
             public override TriggerState? Execute() {

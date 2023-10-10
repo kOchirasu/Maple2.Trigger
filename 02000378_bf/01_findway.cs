@@ -165,43 +165,43 @@ namespace Maple2.Trigger._02000378_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRound01_PickRoute_Left(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRound01_PickRoute_Right(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRound01_PortalOn_04(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRound01_PortalOn_05(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRound01_PortalOn_06(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRound01_PortalOn_07(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRound01_PortalOn_08(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRound01_PortalOn_09(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRound01_PortalOn_10(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRound01_PortalOn_11(context);
                 }
 

@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02100000_bf {
             internal State리Spawn변경_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: true);
             }
 
             public override TriggerState? Execute() {

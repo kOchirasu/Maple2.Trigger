@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() {
                 context.AddBuff(boxIds: new []{916}, skillId: 70002105, level: 1, arg5: false);
-                context.SetTimer(timerId: "1", seconds: 5, clearAtZero: false, display: false);
+                context.SetTimer(timerId: "1", seconds: 5, autoRemove: false, display: false);
             }
 
             public override TriggerState? Execute() {

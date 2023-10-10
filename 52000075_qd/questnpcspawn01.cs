@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52000075_qd {
             public override void OnEnter() {
                 context.SetAgent(triggerIds: new []{8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017}, visible: false);
                 context.CreateMonster(spawnIds: new []{101, 201}, arg2: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._52000075_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -133,8 +133,8 @@ namespace Maple2.Trigger._52000075_qd {
             internal StateMobChange04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.CameraSelect(triggerId: 600, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._52000075_qd {
             internal StateMobTalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 600, enable: false);
+                context.CameraSelect(triggerId: 600, enabled: false);
                 context.DestroyMonster(spawnIds: new []{301});
             }
 

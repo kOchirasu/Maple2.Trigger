@@ -18,20 +18,20 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetMesh(triggerIds: new []{39101, 39102, 39103, 39104, 39105, 39106, 3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(triggerIds: new []{3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(triggerIds: new []{600, 601, 602, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6201, 6202, 6203, 6204, 6205}, visible: false);
-                context.SetSkill(triggerIds: new []{701, 702, 703, 704}, arg2: false);
+                context.SetSkill(triggerIds: new []{701, 702, 703, 704}, enabled: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetAgent(triggerIds: new []{901, 902, 903, 904}, visible: true);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetOnetimeEffect(id: 11, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
-                context.SetOnetimeEffect(id: 12, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
-                context.SetOnetimeEffect(id: 13, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
-                context.SetOnetimeEffect(id: 14, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
-                context.SetOnetimeEffect(id: 15, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
-                context.SetOnetimeEffect(id: 16, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
-                context.SetOnetimeEffect(id: 17, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
-                context.SetOnetimeEffect(id: 18, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
-                context.SetOnetimeEffect(id: 19, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
-                context.SetOnetimeEffect(id: 20, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 11, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
+                context.SetOnetimeEffect(id: 12, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
+                context.SetOnetimeEffect(id: 13, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
+                context.SetOnetimeEffect(id: 14, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
+                context.SetOnetimeEffect(id: 15, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
+                context.SetOnetimeEffect(id: 16, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
+                context.SetOnetimeEffect(id: 17, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
+                context.SetOnetimeEffect(id: 18, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
+                context.SetOnetimeEffect(id: 19, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
+                context.SetOnetimeEffect(id: 20, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
                 context.SetUserValue(key: "saveEveIntheDark", value: 0);
             }
 
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateQuestOnGoing02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 320, enable: true);
+                context.CameraSelect(triggerId: 320, enabled: true);
                 context.CreateMonster(spawnIds: new []{1310, 1410}, arg2: false);
             }
 
@@ -446,7 +446,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetSkip(state: new State레논구출종료(context));
                 context.DestroyMonster(spawnIds: new []{2001});
                 context.CreateMonster(spawnIds: new []{2002}, arg2: false);
@@ -523,7 +523,7 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
                 context.MoveNpc(spawnId: 2002, patrolName: "MS2PatrolData2002_AB");
                 context.ShowGuideSummary(entityId: 20003501, textId: 20003501, duration: 4000);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
@@ -567,7 +567,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override TriggerState? Execute() {
                 if (context.NpcDetected(boxId: 128, spawnIds: new []{2002})) {
-                    context.SetSkill(triggerIds: new []{701}, arg2: true);
+                    context.SetSkill(triggerIds: new []{701}, enabled: true);
                     context.SetEffect(triggerIds: new []{6201}, visible: true);
                     context.DestroyMonster(spawnIds: new []{2002});
                     context.CreateMonster(spawnIds: new []{2003}, arg2: false);
@@ -626,7 +626,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override TriggerState? Execute() {
                 if (context.NpcDetected(boxId: 130, spawnIds: new []{2003})) {
-                    context.SetSkill(triggerIds: new []{702}, arg2: true);
+                    context.SetSkill(triggerIds: new []{702}, enabled: true);
                     context.SetEffect(triggerIds: new []{6202}, visible: true);
                     context.DestroyMonster(spawnIds: new []{2003});
                     context.CreateMonster(spawnIds: new []{2004}, arg2: false);
@@ -683,7 +683,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override TriggerState? Execute() {
                 if (context.NpcDetected(boxId: 132, spawnIds: new []{2004})) {
-                    context.SetSkill(triggerIds: new []{703}, arg2: true);
+                    context.SetSkill(triggerIds: new []{703}, enabled: true);
                     context.SetEffect(triggerIds: new []{6203}, visible: true);
                     context.DestroyMonster(spawnIds: new []{2004});
                     context.CreateMonster(spawnIds: new []{2005}, arg2: false);
@@ -740,7 +740,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override TriggerState? Execute() {
                 if (context.NpcDetected(boxId: 134, spawnIds: new []{2005})) {
-                    context.SetSkill(triggerIds: new []{704}, arg2: true);
+                    context.SetSkill(triggerIds: new []{704}, enabled: true);
                     context.SetEffect(triggerIds: new []{6204}, visible: true);
                     context.DestroyMonster(spawnIds: new []{2005});
                     context.CreateMonster(spawnIds: new []{2007}, arg2: false);
@@ -795,7 +795,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetEffect(triggerIds: new []{602}, visible: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -849,7 +849,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal State레논Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11000064, script: "$02000349_BF__MAIN__7$", arg4: 4);
             }
 
@@ -868,7 +868,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal State카드반Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.SetConversation(type: 2, spawnId: 24001705, script: "$02000349_BF__MAIN__8$", arg4: 6);
             }
 
@@ -887,7 +887,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal State카드반Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.SetConversation(type: 2, spawnId: 24001705, script: "$02000349_BF__MAIN__9$", arg4: 8);
             }
 
@@ -906,7 +906,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal State카드반Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.CreateMonster(spawnIds: new []{1025, 1026}, arg2: false);
                 context.SetConversation(type: 2, spawnId: 24001705, script: "$02000349_BF__MAIN__10$", arg4: 7);
             }
@@ -949,8 +949,8 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 302, enable: false);
-                context.CameraSelect(triggerId: 303, enable: false);
+                context.CameraSelect(triggerId: 302, enabled: false);
+                context.CameraSelect(triggerId: 303, enabled: false);
                 context.MoveNpc(spawnId: 2006, patrolName: "MS2PatrolData2006_A");
             }
 
@@ -995,7 +995,7 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAgent(triggerIds: new []{901, 902, 903, 904}, visible: false);
                 context.SetMesh(triggerIds: new []{3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, visible: true, arg3: 0, arg4: 0, arg5: 2f);
             }
@@ -1018,7 +1018,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.DestroyMonster(spawnIds: new []{1025, 1026, 1099, 2006});
                 context.MoveUser(mapId: 52000076, portalId: 20, boxId: 100);
                 context.CreateMonster(spawnIds: new []{1200, 1300}, arg2: false);
-                context.CameraSelect(triggerId: 310, enable: true);
+                context.CameraSelect(triggerId: 310, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1036,7 +1036,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateBossNpcChange03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(spawnId: 1200, sequenceName: "Attack_Idle_A", duration: 15000f);
             }
 
@@ -1055,7 +1055,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateBossNpcChange04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 311, enable: true);
+                context.CameraSelect(triggerId: 311, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1075,7 +1075,7 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{1400}, arg2: false);
                 context.MoveNpc(spawnId: 1400, patrolName: "MS2PatrolData_1400");
-                context.CameraSelect(triggerId: 312, enable: true);
+                context.CameraSelect(triggerId: 312, enabled: true);
                 context.SetConversation(type: 1, spawnId: 1400, script: "$52000076_QD__MAIN__0$", arg4: 4, arg5: 2);
                 context.SetSceneSkip(state: new StateEvilKatvanLeave04(context), arg2: "nextState");
             }
@@ -1095,7 +1095,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveEnter02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 313, enable: true);
+                context.CameraSelect(triggerId: 313, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1134,7 +1134,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveEnter04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 11, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
+                context.SetOnetimeEffect(id: 11, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
                 context.SetConversation(type: 1, spawnId: 1200, script: "$52000076_QD__MAIN__3$", arg4: 2, arg5: 0);
             }
 
@@ -1147,7 +1147,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 11, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
+                context.SetOnetimeEffect(id: 11, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
             }
         }
 
@@ -1155,7 +1155,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 314, enable: true);
+                context.CameraSelect(triggerId: 314, enabled: true);
                 context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", script: "$52000076_QD__MAIN__4$", duration: 5000, align: Align.Center);
                 context.SetNpcEmotionSequence(spawnId: 1400, sequenceName: "Talk_A");
             }
@@ -1270,7 +1270,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTurnAround01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 315, enable: true);
+                context.CameraSelect(triggerId: 315, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1346,7 +1346,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 12, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
+                context.SetOnetimeEffect(id: 12, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
                 context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__8$", arg4: 7);
                 context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
@@ -1360,7 +1360,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 12, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
+                context.SetOnetimeEffect(id: 12, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
             }
         }
 
@@ -1383,7 +1383,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 13, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
+                context.SetOnetimeEffect(id: 13, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
                 context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__9$", arg4: 7);
                 context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
@@ -1397,7 +1397,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 13, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
+                context.SetOnetimeEffect(id: 13, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
             }
         }
 
@@ -1420,7 +1420,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 14, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
+                context.SetOnetimeEffect(id: 14, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
                 context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__10$", arg4: 6);
                 context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
@@ -1434,7 +1434,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 14, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
+                context.SetOnetimeEffect(id: 14, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
             }
         }
 
@@ -1596,7 +1596,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 15, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
+                context.SetOnetimeEffect(id: 15, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
                 context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__14$", arg4: 6);
                 context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
@@ -1610,7 +1610,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 15, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
+                context.SetOnetimeEffect(id: 15, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
             }
         }
 
@@ -1657,7 +1657,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelect(triggerId: 316, enable: true);
+                context.CameraSelect(triggerId: 316, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1675,7 +1675,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 16, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
+                context.SetOnetimeEffect(id: 16, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
                 context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__16$", arg4: 5);
                 context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
@@ -1689,7 +1689,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 16, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
+                context.SetOnetimeEffect(id: 16, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
             }
         }
 
@@ -1717,7 +1717,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 17, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
+                context.SetOnetimeEffect(id: 17, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
                 context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__17$", arg4: 6);
                 context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
@@ -1731,7 +1731,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 17, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
+                context.SetOnetimeEffect(id: 17, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
             }
         }
 
@@ -1759,7 +1759,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 18, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
+                context.SetOnetimeEffect(id: 18, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
                 context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__18$", arg4: 5);
             }
 
@@ -1772,7 +1772,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 18, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
+                context.SetOnetimeEffect(id: 18, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
             }
         }
 
@@ -1781,7 +1781,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelect(triggerId: 317, enable: true);
+                context.CameraSelect(triggerId: 317, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1855,7 +1855,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk31(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 19, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
+                context.SetOnetimeEffect(id: 19, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
                 context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__20$", arg4: 9);
                 context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
@@ -1869,7 +1869,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 19, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
+                context.SetOnetimeEffect(id: 19, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
             }
         }
 
@@ -1896,7 +1896,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk32(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
+                context.SetOnetimeEffect(id: 20, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
                 context.SetConversation(type: 2, spawnId: 24001705, script: "$52000076_QD__MAIN__21$", arg4: 6);
                 context.SetNpcEmotionSequence(spawnId: 1200, sequenceName: "Talk_A");
             }
@@ -1910,7 +1910,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 20, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
+                context.SetOnetimeEffect(id: 20, enabled: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
             }
         }
 
@@ -1993,7 +1993,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -2014,7 +2014,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.DestroyMonster(spawnIds: new []{1200, 1300, 1400});
                 context.MoveUser(mapId: 52000076, portalId: 30, boxId: 100);
                 context.CreateMonster(spawnIds: new []{1310, 1410}, arg2: false);
-                context.CameraSelect(triggerId: 320, enable: true);
+                context.CameraSelect(triggerId: 320, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2032,7 +2032,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StatePositionArrange02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -2262,7 +2262,7 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(spawnId: 1410, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
-                context.CameraSelect(triggerId: 321, enable: true);
+                context.CameraSelect(triggerId: 321, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2300,7 +2300,7 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.RemoveCinematicTalk();
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -2342,7 +2342,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {

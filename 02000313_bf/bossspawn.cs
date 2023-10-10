@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.CreateMonster(spawnIds: new []{1001, 2001}, arg2: false);
-                context.CameraSelect(triggerId: 30000, enable: true);
+                context.CameraSelect(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{5002}, visible: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000313_bf {
             }
 
             public override void OnExit() {
-                context.CameraSelect(triggerId: 30000, enable: false);
+                context.CameraSelect(triggerId: 30000, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
@@ -295,7 +295,7 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateBossSpawnCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 30001, enable: true);
+                context.CameraSelect(triggerId: 30001, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -355,7 +355,7 @@ namespace Maple2.Trigger._02000313_bf {
             }
 
             public override void OnExit() {
-                context.CameraSelect(triggerId: 30001, enable: false);
+                context.CameraSelect(triggerId: 30001, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.DestroyMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108});
@@ -443,7 +443,7 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuest코드확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
@@ -498,8 +498,8 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetSceneSkip(state: new StateQuestEndCinematic_이동(context), arg2: "exit");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 30000, enable: true);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.CameraSelect(triggerId: 30000, enabled: true);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 0, script: "$02000313_BF__BOSSSPAWN__44$", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003392, script: "$02000313_BF__BOSSSPAWN__45$", duration: 3000);
                 context.SetNpcEmotionLoop(spawnId: 205, sequenceName: "Stun_A", duration: 160000000f);
@@ -929,7 +929,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__79$", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__80$", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__81$", duration: 3000);
-                context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 101, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.DestroyMonster(spawnIds: new []{203, 204});
             }
 
@@ -949,7 +949,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{4020}, returnView: false);
-                context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 101, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetNpcEmotionSequence(spawnId: 205, sequenceName: "Attack_04_G");
                 context.AddCinematicTalk(npcId: 11003392, script: "$02000313_BF__BOSSSPAWN__82$", duration: 1500);
                 context.SetEffect(triggerIds: new []{5004}, visible: true);
@@ -974,7 +974,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.VisibleMyPc(visible: false);
                 context.AddCinematicTalk(npcId: 11003393, script: "$02000313_BF__BOSSSPAWN__83$", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003407, script: "$02000313_BF__BOSSSPAWN__84$", duration: 3000);
-                context.SetOnetimeEffect(id: 102, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 102, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetNpcEmotionSequence(spawnId: 205, sequenceName: "Attack_02_H");
             }
 
@@ -1016,7 +1016,7 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{4017}, returnView: false);
                 context.SetEffect(triggerIds: new []{5001}, visible: true);
-                context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 102, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetNpcEmotionSequence(spawnId: 205, sequenceName: "Dead_A");
                 context.SetNpcEmotionSequence(spawnId: 201, sequenceName: "Attack_01_B");
                 context.SetEffect(triggerIds: new []{5003, 5005}, visible: true);
@@ -1037,7 +1037,7 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_마지막전투_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(spawnIds: new []{201, 202, 205});
                 context.CreateMonster(spawnIds: new []{206, 207}, arg2: true);
                 context.SetEffect(triggerIds: new []{5001, 5003, 5004}, visible: false);
@@ -1063,8 +1063,8 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_마지막전투_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG\weather\Eff_monochrome_03.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG\weather\Eff_monochrome_03.xml");
                 context.CameraSelectPath(pathIds: new []{4021, 4022}, returnView: false);
             }
 
@@ -1083,8 +1083,8 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_마지막전투_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG\weather\Eff_monochrome_03.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG\weather\Eff_monochrome_03.xml");
                 context.SetCinematicUI(type: 9, script: "$02000313_BF__BOSSSPAWN__85$", arg3: false);
                 context.SetEffect(triggerIds: new []{5005, 5006}, visible: false);
             }

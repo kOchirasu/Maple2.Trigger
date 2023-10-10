@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000356_bf {
                 context.AddBuff(boxIds: new []{102}, skillId: 70000107, level: 1, arg4: false, arg5: false);
                 context.ShowGuideSummary(entityId: 20003563, textId: 20003563, duration: 4000);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000356_bf {
             internal StateCamera이동02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 304, enable: true);
+                context.CameraSelect(triggerId: 304, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._02000356_bf {
             internal StateCamera이동03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 305, enable: true);
+                context.CameraSelect(triggerId: 305, enabled: true);
                 context.ShowGuideSummary(entityId: 20003562, textId: 20003562, duration: 4000);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
             }
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._02000356_bf {
             internal StateInteractObjectWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 305, enable: false);
+                context.CameraSelect(triggerId: 305, enabled: false);
                 context.RemoveBuff(boxId: 102, skillId: 70000107);
             }
 
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._02000356_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{1099});
-                context.CameraSelect(triggerId: 306, enable: true);
+                context.CameraSelect(triggerId: 306, enabled: true);
                 context.AddBuff(boxIds: new []{102}, skillId: 70000107, level: 1, arg4: false, arg5: false);
                 context.ShowGuideSummary(entityId: 20003561, textId: 20003561, duration: 6000);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02000356_bf {
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.CameraSelect(triggerId: 306, enable: false);
+                    context.CameraSelect(triggerId: 306, enabled: false);
                     context.RemoveBuff(boxId: 102, skillId: 70000107);
                     return new StateEnd체크(context);
                 }

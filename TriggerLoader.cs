@@ -19,7 +19,7 @@ namespace Maple2.Trigger {
                 ConstructorInfo? constructor = type.GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new []{typeof(ITriggerContext)}, null);
 
                 // No matching constructor for dungeon_common
-                if (constructor == null || type.Namespace == null) {
+                if (constructor == null || type.Namespace == null || type.DeclaringType == null) {
                     continue;
                 }
 
@@ -28,7 +28,7 @@ namespace Maple2.Trigger {
                     scriptLookup[key] = new Dictionary<string, Func<ITriggerContext, TriggerState>>();
                 }
 
-                scriptLookup[key].Add(GetKey(type.Name), context => (TriggerState) constructor.Invoke(new object[]{context}));
+                scriptLookup[key].Add(GetKey(type.DeclaringType.Name), context => (TriggerState) constructor.Invoke(new object[]{context}));
             }
         }
 

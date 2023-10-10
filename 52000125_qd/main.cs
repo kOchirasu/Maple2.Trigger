@@ -7,10 +7,10 @@ namespace Maple2.Trigger._52000125_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{101}, arg2: true);
-                context.SetSound(triggerId: 7001, arg2: true);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetSound(triggerId: 7001, enabled: true);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -32,7 +32,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal StateFadein(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSceneSkip(state: new StateBattle_ready(context), arg2: "nextState");
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal StateBattle_ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal StateBattle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddBalloonTalk(spawnId: 601, msg: "$52000125_QD__MAIN__7$", duration: 3000, delayTick: 1000);
                 context.AddBalloonTalk(spawnId: 602, msg: "$52000125_QD__MAIN__8$", duration: 3000, delayTick: 3000);
                 context.SetCinematicUI(type: 0);
@@ -324,7 +324,7 @@ namespace Maple2.Trigger._52000125_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetAchievement(triggerId: 2001, type: "trigger", code: "markguard");
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -365,7 +365,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal StateEndcamera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -443,8 +443,8 @@ namespace Maple2.Trigger._52000125_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSound(triggerId: 7001, arg2: false);
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetSound(triggerId: 7001, enabled: false);
                 context.DestroyMonster(spawnIds: new []{304, 305, 306, 101});
                 context.CreateMonster(spawnIds: new []{102}, arg2: true);
                 context.SetCinematicUI(type: 0);

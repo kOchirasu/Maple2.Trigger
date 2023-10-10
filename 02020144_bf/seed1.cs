@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020144_bf {
                 context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
                 context.SetMesh(triggerIds: new []{9001, 9002, 9003, 9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(interactIds: new []{10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, state: 0);
-                context.SetSkill(triggerIds: new []{901, 902}, arg2: false);
+                context.SetSkill(triggerIds: new []{901, 902}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -198,7 +198,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State나무Creation1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{901, 902}, arg2: true);
+                context.SetSkill(triggerIds: new []{901, 902}, enabled: true);
                 context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 2);
                 context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
                 context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._02020144_bf {
                     context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
                     context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
                     context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 0);
-                    context.SetSkill(triggerIds: new []{901, 902}, arg2: false);
+                    context.SetSkill(triggerIds: new []{901, 902}, enabled: false);
                     context.SetUserValue(triggerId: 900009, key: "Seed", value: 0);
                     return new StateStart(context);
                 }
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._02020144_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900009, key: "Seed", value: 0);
                 context.AddBuff(boxIds: new []{1003}, skillId: 70002110, level: 1, arg5: false);
-                context.SetSkill(triggerIds: new []{901, 902}, arg2: false);
+                context.SetSkill(triggerIds: new []{901, 902}, enabled: false);
                 context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
                 context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
                 context.SetMesh(triggerIds: new []{9001, 9002, 9003, 9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);

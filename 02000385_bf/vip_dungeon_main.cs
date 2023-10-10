@@ -10,11 +10,11 @@ namespace Maple2.Trigger._02000385_bf {
                 context.SetEffect(triggerIds: new []{601, 602, 603}, visible: false);
                 context.MoveUser(mapId: 02000385, portalId: 1);
                 context.SetInteractObject(interactIds: new []{10001083, 10001084, 10001085}, state: 1);
-                context.CameraSelect(triggerId: 299, enable: true);
+                context.CameraSelect(triggerId: 299, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._02000385_bf {
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.CameraSelect(triggerId: 300, enable: true);
-                    context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                    context.CameraSelect(triggerId: 300, enabled: true);
+                    context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                     return new State캐릭터선택Wait(context);
                 }
 
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02000385_bf {
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.AddBuff(boxIds: new []{199}, skillId: 99910090, level: 1, arg4: false, arg5: false);
-                context.CameraSelect(triggerId: 311, enable: true);
+                context.CameraSelect(triggerId: 311, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._02000385_bf {
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{602}, visible: true);
                 context.AddBuff(boxIds: new []{199}, skillId: 99910100, level: 1, arg4: false, arg5: false);
-                context.CameraSelect(triggerId: 312, enable: true);
+                context.CameraSelect(triggerId: 312, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -123,7 +123,7 @@ namespace Maple2.Trigger._02000385_bf {
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{603}, visible: true);
                 context.AddBuff(boxIds: new []{199}, skillId: 99910110, level: 1, arg4: false, arg5: false);
-                context.CameraSelect(triggerId: 313, enable: true);
+                context.CameraSelect(triggerId: 313, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._02000385_bf {
                 context.PlaySystemSoundInBox(sound: "System_UI_Start_01");
                 context.CreateWidget(type: WidgetType.ScoreBoard);
                 context.WidgetAction(type: WidgetType.ScoreBoard, name: "OpenBoard", args: "1");
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._02000385_bf {
                 context.WidgetAction(type: WidgetType.ScoreBoard, name: "SetScore", args: "0"); // 점수 강제 설정
                 context.ShowCountUI(text: "$02000385_BF__VIP_DUNGEON_MAIN__0$", stage: 1, count: 3);
                 context.SetEventUI(arg1: 0, script: "1,5");
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -184,7 +184,7 @@ namespace Maple2.Trigger._02000385_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 9991001, key: "round1start", value: 1);
-                context.SetTimer(timerId: "30", seconds: 30, clearAtZero: false, display: true, arg5: 80);
+                context.SetTimer(timerId: "30", seconds: 30, autoRemove: false, display: true, vOffset: 80);
             }
 
             public override TriggerState? Execute() {
@@ -222,7 +222,7 @@ namespace Maple2.Trigger._02000385_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 9991001, key: "round2start", value: 1);
-                context.SetTimer(timerId: "30", seconds: 30, clearAtZero: false, display: true, arg5: 80);
+                context.SetTimer(timerId: "30", seconds: 30, autoRemove: false, display: true, vOffset: 80);
             }
 
             public override TriggerState? Execute() {
@@ -260,7 +260,7 @@ namespace Maple2.Trigger._02000385_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 9991001, key: "round3start", value: 1);
-                context.SetTimer(timerId: "30", seconds: 30, clearAtZero: false, display: true, arg5: 80);
+                context.SetTimer(timerId: "30", seconds: 30, autoRemove: false, display: true, vOffset: 80);
             }
 
             public override TriggerState? Execute() {
@@ -298,7 +298,7 @@ namespace Maple2.Trigger._02000385_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 9991001, key: "round4start", value: 1);
-                context.SetTimer(timerId: "30", seconds: 30, clearAtZero: false, display: true, arg5: 80);
+                context.SetTimer(timerId: "30", seconds: 30, autoRemove: false, display: true, vOffset: 80);
             }
 
             public override TriggerState? Execute() {
@@ -336,7 +336,7 @@ namespace Maple2.Trigger._02000385_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 9991001, key: "round5start", value: 1);
-                context.SetTimer(timerId: "30", seconds: 30, clearAtZero: false, display: true, arg5: 80);
+                context.SetTimer(timerId: "30", seconds: 30, autoRemove: false, display: true, vOffset: 80);
             }
 
             public override TriggerState? Execute() {
@@ -354,7 +354,7 @@ namespace Maple2.Trigger._02000385_bf {
             internal State게임종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetEventUI(arg1: 0, script: "0,0");
                 context.MoveUser(mapId: 02000385, portalId: 2);
             }

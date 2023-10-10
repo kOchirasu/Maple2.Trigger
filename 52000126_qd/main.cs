@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateTalk_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionSequence(spawnId: 202, sequenceName: "Talk_A");
                 context.AddCinematicTalk(npcId: 11003209, script: "$52000126_QD__MAIN__0$", duration: 2000, align: Align.Left);
                 context.CreateMonster(spawnIds: new []{301, 302, 303}, arg2: true);
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateTalk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7001, arg2: true);
+                context.SetSound(triggerId: 7001, enabled: true);
                 context.SetNpcEmotionSequence(spawnId: 202, sequenceName: "Bore_A");
                 context.AddCinematicTalk(npcId: 11003209, script: "$52000126_QD__MAIN__1$", duration: 2000, align: Align.Left);
                 context.MoveNpc(spawnId: 301, patrolName: "MS2PatrolData_3002");
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._52000126_qd {
                 context.CameraSelectPath(pathIds: new []{4005, 4006, 4007}, returnView: false);
                 context.AddCinematicTalk(npcId: 11003214, script: "$52000126_QD__MAIN__5$", duration: 3000, align: Align.Left);
                 context.SetEffect(triggerIds: new []{5001, 5002, 5003, 5004}, visible: true);
-                context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
+                context.SetOnetimeEffect(id: 20, enabled: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateBattle_ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -235,7 +235,7 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateBattle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 1.0f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
@@ -277,7 +277,7 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7001, arg2: false);
+                context.SetSound(triggerId: 7001, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);

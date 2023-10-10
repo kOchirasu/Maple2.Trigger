@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52000030_qd {
                 context.CreateWidget(type: WidgetType.SceneMovie);
                 context.WidgetAction(type: WidgetType.SceneMovie, name: "Clear");
                 context.PlaySceneMovie(fileName: "Nutaman_intro.swf", movieId: 1);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.CreateMonster(spawnIds: new []{1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014}, arg2: false);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._52000030_qd {
             internal State전투판으로이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
                 context.MoveUser(mapId: 52000030, portalId: 100);
             }
 

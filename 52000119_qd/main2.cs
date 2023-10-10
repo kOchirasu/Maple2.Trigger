@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52000119_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.DestroyMonster(spawnIds: new []{105, 106});
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{4006, 4007}, returnView: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUserPath(patrolName: "MS2PatrolData_3002");
                 context.FaceEmotion(spawnId: 0, emotionName: "Object_React_A");
             }
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._52000119_qd {
             internal StateScene_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7001, arg2: true);
+                context.SetSound(triggerId: 7001, enabled: true);
                 context.SetNpcEmotionSequence(spawnId: 106, sequenceName: "Attack_02_A");
                 context.AddCinematicTalk(npcId: 11003171, script: "$52000119_QD__MAIN2__8$", duration: 3000, align: Align.Left);
             }
@@ -310,9 +310,9 @@ namespace Maple2.Trigger._52000119_qd {
             internal StateFadeout_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSound(triggerId: 7001, arg2: false);
-                context.SetSound(triggerId: 7002, arg2: true);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetSound(triggerId: 7001, enabled: false);
+                context.SetSound(triggerId: 7002, enabled: true);
                 context.SetEffect(triggerIds: new []{5002}, visible: false);
                 context.DestroyMonster(spawnIds: new []{106});
                 context.CreateMonster(spawnIds: new []{998}, arg2: true);
@@ -376,7 +376,7 @@ namespace Maple2.Trigger._52000119_qd {
             internal StateFadeout_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7002, arg2: false);
+                context.SetSound(triggerId: 7002, enabled: false);
                 context.DestroyMonster(spawnIds: new []{998});
                 context.SetAchievement(type: "trigger", code: "jordysave2");
                 context.SetCinematicUI(type: 1);

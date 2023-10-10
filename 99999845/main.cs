@@ -8,7 +8,7 @@ namespace Maple2.Trigger._99999845 {
             public override void OnEnter() {
                 context.SetInteractObject(interactIds: new []{12000301, 12000302, 12000303, 12000304, 12000305, 12000306, 12000307, 12000308, 12000309, 12000310, 12000311, 12000312, 12000313, 12000314, 12000315, 12000316, 12000317, 12000318, 12000319, 12000320, 12000321, 12000322}, state: 2);
                 context.SetMesh(triggerIds: new []{1001, 1002, 1003, 1004, 1005, 1006, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 3001, 3002, 3003, 3004, 3005, 3006}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetVisibleBreakableObject(triggerIds: new []{1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022}, visible: false);
             }
 
             public override TriggerState? Execute() {
@@ -32,7 +32,7 @@ namespace Maple2.Trigger._99999845 {
             public override TriggerState? Execute() {
                 if (context.MonsterDead(spawnIds: new []{1101, 1103})) {
                     context.SetMesh(triggerIds: new []{1001, 1002, 1003, 1004, 1005, 1006, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 3001, 3002, 3003, 3004, 3005, 3006}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.SetVisibleBreakableObject(triggerIds: new []{1001, 1002, 1003}, arg2: true);
+                    context.SetVisibleBreakableObject(triggerIds: new []{1001, 1002, 1003}, visible: true);
                     context.SetInteractObject(interactIds: new []{12000301, 12000302, 12000303}, state: 1);
                     context.CreateMonster(spawnIds: new []{1104, 1105, 1106}, arg2: false);
                     return new StateCableOn_01(context);

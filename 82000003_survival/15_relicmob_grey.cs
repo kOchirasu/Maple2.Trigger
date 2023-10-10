@@ -46,43 +46,43 @@ namespace Maple2.Trigger._82000003_survival {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateMobSpawn01(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateMobSpawn02(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateMobSpawn03(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateMobSpawn04(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateMobSpawn05(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateMobSpawn06(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateMobSpawn07(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateMobSpawn08(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateMobSpawn09(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateMobSpawn10(context);
                 }
 

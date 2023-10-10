@@ -22,7 +22,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() {
                 context.SetCube(triggerIds: new []{5000, 5001, 5002, 5003, 5101, 5102, 5103, 5104, 5105, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311, 5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414, 5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512, 5601, 5602, 5603, 5604, 5605, 5606, 5607, 5608, 5609, 5610, 5611, 5612, 5613, 5614, 5615, 5616, 5617, 5618, 5619, 5620, 5621, 5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709, 5710, 5711, 5712, 5713, 5714, 5715, 5716, 5717, 5718, 5719, 5720, 5721, 5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809, 5810, 5811, 5812, 5813, 5814, 5815, 5816, 5817, 5818, 5819, 5820, 5821, 5822, 5901, 5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909, 5910, 5911, 5912, 5913, 5914, 5915, 51001, 51002, 51003, 51004, 51005, 51006, 51007, 51008, 51009, 51010, 51011, 51012, 51013, 51014, 51015, 51016, 51017, 51018, 51019, 51020, 51021, 51022, 51023, 51024}, visible: false);
-                context.CameraSelect(triggerId: 300, enable: true);
+                context.CameraSelect(triggerId: 300, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$51000001_DG__MAIN__0$");
                 context.SetSkip(state: new State튜토리얼시작(context));
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._51000001_dg {
             internal State1라운드Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._51000001_dg {
                 context.ArcadeSpringFarmSetInteractScore(interactId: 11000017, score: 10000);
                 context.ArcadeSpringFarmSpawnMonster(spawnId: new []{1001, 1002, 1003}, score: 5000);
                 context.ArcadeSpringFarmStartRound(uiDuration: 3000, round: 1, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
-                context.SetTimer(timerId: "100001", seconds: 120, clearAtZero: true, display: true, arg5: -30, arg6: "TR");
+                context.SetTimer(timerId: "100001", seconds: 120, autoRemove: true, display: true, vOffset: -30, type: "TR");
                 context.SetEventUI(arg1: 0, script: "1,5,1", boxId: 120);
             }
 
@@ -251,7 +251,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -272,7 +272,7 @@ namespace Maple2.Trigger._51000001_dg {
             internal State2라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "100002", seconds: 120, clearAtZero: true, display: true, arg5: -30, arg6: "TR");
+                context.SetTimer(timerId: "100002", seconds: 120, autoRemove: true, display: true, vOffset: -30, type: "TR");
                 context.SetCube(triggerIds: new []{5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209}, randomCount: 5, visible: true);
                 context.ArcadeSpringFarmSpawnMonster(spawnId: new []{1101, 1102, 1103, 1104}, score: 5000);
                 context.ArcadeSpringFarmStartRound(uiDuration: 3000, round: 2, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
@@ -358,7 +358,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -379,7 +379,7 @@ namespace Maple2.Trigger._51000001_dg {
             internal State3라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "100003", seconds: 120, clearAtZero: true, display: true, arg5: -30, arg6: "TR");
+                context.SetTimer(timerId: "100003", seconds: 120, autoRemove: true, display: true, vOffset: -30, type: "TR");
                 context.SetCube(triggerIds: new []{5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311}, randomCount: 6, visible: true);
                 context.ArcadeSpringFarmSpawnMonster(spawnId: new []{1201, 1202, 1203, 1204, 1205, 1206, 1207}, score: 5000);
                 context.ArcadeSpringFarmStartRound(uiDuration: 3000, round: 3, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
@@ -465,7 +465,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 304, enable: true);
+                context.CameraSelect(triggerId: 304, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -487,7 +487,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() {
                 context.SetCube(triggerIds: new []{5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414}, randomCount: 7, visible: true);
-                context.SetTimer(timerId: "100004", seconds: 120, clearAtZero: true, display: true, arg5: -30, arg6: "TR");
+                context.SetTimer(timerId: "100004", seconds: 120, autoRemove: true, display: true, vOffset: -30, type: "TR");
                 context.ArcadeSpringFarmSpawnMonster(spawnId: new []{1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308}, score: 5000);
                 context.ArcadeSpringFarmStartRound(uiDuration: 3000, round: 4, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, script: "4,5,1", boxId: 120);
@@ -572,7 +572,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 305, enable: true);
+                context.CameraSelect(triggerId: 305, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -594,7 +594,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() {
                 context.SetCube(triggerIds: new []{5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512}, randomCount: 6, visible: true);
-                context.SetTimer(timerId: "100005", seconds: 120, clearAtZero: true, display: true, arg5: -30, arg6: "TR");
+                context.SetTimer(timerId: "100005", seconds: 120, autoRemove: true, display: true, vOffset: -30, type: "TR");
                 context.ArcadeSpringFarmSpawnMonster(spawnId: new []{1401, 1402, 1403, 1404, 1405}, score: 5000);
                 context.ArcadeSpringFarmStartRound(uiDuration: 3000, round: 5, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, script: "5,5,1", boxId: 120);
@@ -679,7 +679,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 306, enable: true);
+                context.CameraSelect(triggerId: 306, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -701,7 +701,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() {
                 context.SetCube(triggerIds: new []{5601, 5602, 5603, 5604, 5605, 5606, 5607, 5608, 5609, 5610, 5611, 5612, 5613, 5614, 5615, 5616, 5617, 5618, 5619, 5620, 5621}, randomCount: 10, visible: true);
-                context.SetTimer(timerId: "100006", seconds: 120, clearAtZero: true, display: true, arg5: -30, arg6: "TR");
+                context.SetTimer(timerId: "100006", seconds: 120, autoRemove: true, display: true, vOffset: -30, type: "TR");
                 context.ArcadeSpringFarmSpawnMonster(spawnId: new []{1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508, 1509, 1510}, score: 5000);
                 context.ArcadeSpringFarmStartRound(uiDuration: 3000, round: 6, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, script: "6,10,6", boxId: 120);
@@ -786,7 +786,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 307, enable: true);
+                context.CameraSelect(triggerId: 307, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -808,7 +808,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() {
                 context.SetCube(triggerIds: new []{5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709, 5710, 5711, 5712, 5713, 5714, 5715, 5716, 5717, 5718, 5719, 5720, 5721}, randomCount: 12, visible: true);
-                context.SetTimer(timerId: "100007", seconds: 120, clearAtZero: true, display: true, arg5: -30, arg6: "TR");
+                context.SetTimer(timerId: "100007", seconds: 120, autoRemove: true, display: true, vOffset: -30, type: "TR");
                 context.ArcadeSpringFarmSpawnMonster(spawnId: new []{1601, 1602, 1603, 1604, 1605, 1606, 1607, 1608, 1609, 1610}, score: 5000);
                 context.ArcadeSpringFarmStartRound(uiDuration: 3000, round: 7, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, script: "7,10,6", boxId: 120);
@@ -893,7 +893,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 308, enable: true);
+                context.CameraSelect(triggerId: 308, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -915,7 +915,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() {
                 context.SetCube(triggerIds: new []{5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809, 5810, 5811, 5812, 5813, 5814, 5815, 5816, 5817, 5818, 5819, 5820, 5821, 5822}, randomCount: 12, visible: true);
-                context.SetTimer(timerId: "100008", seconds: 120, clearAtZero: true, display: true, arg5: -30, arg6: "TR");
+                context.SetTimer(timerId: "100008", seconds: 120, autoRemove: true, display: true, vOffset: -30, type: "TR");
                 context.ArcadeSpringFarmSpawnMonster(spawnId: new []{1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711}, score: 5000);
                 context.ArcadeSpringFarmStartRound(uiDuration: 3000, round: 8, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, script: "8,10,6", boxId: 120);
@@ -1000,7 +1000,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 309, enable: true);
+                context.CameraSelect(triggerId: 309, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1022,7 +1022,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() {
                 context.SetCube(triggerIds: new []{5901, 5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909, 5910, 5911, 5912, 5913, 5914, 5915}, randomCount: 8, visible: true);
-                context.SetTimer(timerId: "100009", seconds: 120, clearAtZero: true, display: true, arg5: -30, arg6: "TR");
+                context.SetTimer(timerId: "100009", seconds: 120, autoRemove: true, display: true, vOffset: -30, type: "TR");
                 context.ArcadeSpringFarmSpawnMonster(spawnId: new []{1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915}, score: 5000);
                 context.ArcadeSpringFarmStartRound(uiDuration: 3000, round: 9, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, script: "9,10,6", boxId: 120);
@@ -1107,7 +1107,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 310, enable: true);
+                context.CameraSelect(triggerId: 310, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1129,7 +1129,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() {
                 context.SetCube(triggerIds: new []{51001, 51002, 51003, 51004, 51005, 51006, 51007, 51008, 51009, 51010, 51011, 51012, 51013, 51014, 51015, 51016, 51017, 51018, 51019, 51020, 51021, 51022, 51023, 51024}, randomCount: 6, visible: true);
-                context.SetTimer(timerId: "100010", seconds: 120, clearAtZero: true, display: true, arg5: -30, arg6: "TR");
+                context.SetTimer(timerId: "100010", seconds: 120, autoRemove: true, display: true, vOffset: -30, type: "TR");
                 context.ArcadeSpringFarmSpawnMonster(spawnId: new []{2001}, score: 10000);
                 context.ArcadeSpringFarmSpawnMonster(spawnId: new []{2002, 2003, 2004, 2005}, score: 5000);
                 context.ArcadeSpringFarmStartRound(uiDuration: 3000, round: 10, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);

@@ -64,7 +64,7 @@ namespace Maple2.Trigger._63000042_cs {
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{102});
                 context.CreateMonster(spawnIds: new []{101}, arg2: false);
-                context.CameraSelect(triggerId: 500, enable: true);
+                context.CameraSelect(triggerId: 500, enabled: true);
                 context.SetPcEmotionLoop(sequenceName: "Down_Idle_D", duration: 6000f);
             }
 
@@ -158,8 +158,8 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateLookAround01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 500, enable: false);
-                context.CameraSelect(triggerId: 501, enable: true);
+                context.CameraSelect(triggerId: 500, enabled: false);
+                context.CameraSelect(triggerId: 501, enabled: true);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101");
                 context.SetPcEmotionLoop(sequenceName: "Sit_Ground_Idle_A", duration: 18000f);
             }
@@ -276,7 +276,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateSceneEnd02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 501, enable: false);
+                context.CameraSelect(triggerId: 501, enabled: false);
                 context.SetPcEmotionSequence(sequenceNames: new []{"Idle_A"});
             }
 

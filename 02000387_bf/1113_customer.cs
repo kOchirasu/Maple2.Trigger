@@ -202,52 +202,52 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000617(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000618(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000622(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     // return new StatePickItem_30000661(context);
                     return null;
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000662(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000664(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000665(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000666(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000667(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000670(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000681(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000684(context);
                 }
 

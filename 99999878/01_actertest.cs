@@ -6,7 +6,7 @@ namespace Maple2.Trigger._99999878 {
             public override void OnEnter() {
                 context.SetActor(triggerId: 1000, visible: true, initialSequence: "Closed");
                 context.SetBreakable(triggerIds: new []{2000}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{2000}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{2000}, visible: true);
             }
 
             public override TriggerState? Execute() {
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._99999878 {
             public override void OnEnter() {
                 context.SetActor(triggerId: 1000, visible: true, initialSequence: "Opened");
                 context.SetBreakable(triggerIds: new []{2000}, enabled: true);
-                context.SetVisibleBreakableObject(triggerIds: new []{2000}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{2000}, visible: true);
             }
 
             public override TriggerState? Execute() {
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._99999878 {
             public override void OnEnter() {
                 context.SetActor(triggerId: 1000, visible: false, initialSequence: "Opened");
                 context.SetBreakable(triggerIds: new []{2000}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{2000}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{2000}, visible: false);
             }
 
             public override TriggerState? Execute() {

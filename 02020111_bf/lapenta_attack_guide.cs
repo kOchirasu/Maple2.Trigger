@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02020111_bf {
             internal State어둠효과_FadeOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddBuff(boxIds: new []{1001}, skillId: 75000001, level: 1);
             }
 
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{200001, 200002, 200003, 200004, 200005, 200011, 200012, 200013, 200014, 200015, 200021, 200022, 200023, 200024, 200025, 200031, 200032, 200033, 200034, 200035}, visible: true);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddBuff(boxIds: new []{1001}, skillId: 75000001, level: 1);
             }
 

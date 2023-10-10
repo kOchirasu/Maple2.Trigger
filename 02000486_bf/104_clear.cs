@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000486_bf {
             public override void OnEnter() {
                 context.AddBuff(boxIds: new []{900}, skillId: 50002505, level: 1, arg4: true, arg5: false);
                 context.AddBuff(boxIds: new []{901}, skillId: 50002505, level: 1, arg4: true, arg5: false);
-                context.SetSkill(triggerIds: new []{1000049}, arg2: true);
+                context.SetSkill(triggerIds: new []{1000049}, enabled: true);
             }
 
             public override TriggerState? Execute() {

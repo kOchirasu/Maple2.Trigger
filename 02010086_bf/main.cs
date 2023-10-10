@@ -13,10 +13,10 @@ namespace Maple2.Trigger._02010086_bf {
                 context.CreateMonster(spawnIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209}, arg2: true);
                 context.SetMesh(triggerIds: new []{29991, 29992, 29993, 29994, 29995, 29996, 29997, 29998, 29999}, visible: false);
                 context.SetEffect(triggerIds: new []{7010, 7011, 7012}, visible: true);
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 991, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 992, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 993, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 991, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 992, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 993, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -215,8 +215,8 @@ namespace Maple2.Trigger._02010086_bf {
             internal State관문_03_개방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 991, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 991, enabled: true);
                 context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362, duration: 3000);
             }
@@ -305,8 +305,8 @@ namespace Maple2.Trigger._02010086_bf {
             internal State관문_05_개방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 991, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 992, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 991, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 992, enabled: true);
                 context.SetActor(triggerId: 5008, visible: true, initialSequence: "sf_quest_light_A01_Off");
                 context.SetActor(triggerId: 5009, visible: true, initialSequence: "sf_quest_light_A01_Off");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362, duration: 3000);
@@ -408,8 +408,8 @@ namespace Maple2.Trigger._02010086_bf {
             internal State관문_07_개방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 992, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 993, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 992, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 993, enabled: true);
                 context.SetMesh(triggerIds: new []{2021, 2022, 2023}, visible: false, arg4: 0, arg5: 0f);
                 context.ShowGuideSummary(entityId: 106, textId: 20003362, duration: 3000);
             }

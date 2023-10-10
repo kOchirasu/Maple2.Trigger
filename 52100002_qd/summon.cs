@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52100002_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 300, enable: true);
+                context.CameraSelect(triggerId: 300, enabled: true);
                 context.CreateMonster(spawnIds: new []{2002}, arg2: false);
                 context.SetEffect(triggerIds: new []{602}, visible: true);
                 context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", script: "$02000392_BF__SUMMON__0$", align: Align.Left, duration: 2000);
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._52100002_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 300, enable: true);
+                context.CameraSelect(triggerId: 300, enabled: true);
                 context.CreateMonster(spawnIds: new []{2102}, arg2: false);
                 context.SetEffect(triggerIds: new []{602}, visible: true);
                 context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", script: "$02000392_BF__SUMMON__0$", align: Align.Left, duration: 2000);

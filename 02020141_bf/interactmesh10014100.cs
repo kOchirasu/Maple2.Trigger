@@ -24,15 +24,15 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new StateWaitTick후에결정01(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new StateWaitTick후에결정02(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new StateWaitTick후에결정03(context);
                 }
 
@@ -108,11 +108,11 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 85f)) {
+                if (context.RandomCondition(rate: 85)) {
                     return new State탈것Spawn_실패(context);
                 }
 
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new State탈것Spawn_Success(context);
                 }
 

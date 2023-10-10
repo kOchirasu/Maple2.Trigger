@@ -8,7 +8,7 @@ namespace Maple2.Trigger._02010070_bf {
             public override void OnEnter() {
                 context.SetActor(triggerId: 800, visible: true, initialSequence: "Closed");
                 context.SetMesh(triggerIds: new []{699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(triggerIds: new []{7004}, arg2: false);
+                context.SetSkill(triggerIds: new []{7004}, enabled: false);
                 context.SetEffect(triggerIds: new []{7000, 7001, 7002, 7003, 7010, 7011, 7012}, visible: false);
                 context.DestroyMonster(spawnIds: new []{22201, 22202, 22203, 22204, 1000, 1001, 1002, 1003, 1004, 1005, 1006});
                 context.SetEffect(triggerIds: new []{95222}, visible: false);
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._02010070_bf {
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetEffect(triggerIds: new []{7001}, visible: true);
-                    context.SetSkill(triggerIds: new []{7004}, arg2: true);
+                    context.SetSkill(triggerIds: new []{7004}, enabled: true);
                     return new StateStart6(context);
                 }
 

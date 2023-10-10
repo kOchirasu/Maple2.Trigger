@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000382_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{7000}, arg2: false);
+                context.SetSkill(triggerIds: new []{7000}, enabled: false);
                 context.SetUserValue(key: "BossKill", value: 0);
             }
 
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000382_bf {
             internal StateBreakWall(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{7000}, arg2: true);
+                context.SetSkill(triggerIds: new []{7000}, enabled: true);
             }
 
             public override TriggerState? Execute() {

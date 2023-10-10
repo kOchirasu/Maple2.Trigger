@@ -28,12 +28,12 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3101}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateRandomB(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3102}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateRandomB(context);
                 }
@@ -50,12 +50,12 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3201}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateRandomC(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3202}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateRandomC(context);
                 }
@@ -72,12 +72,12 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3301}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateRandomD(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3302}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateRandomD(context);
                 }
@@ -94,12 +94,12 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3401}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateRandomE(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3402}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateRandomE(context);
                 }
@@ -116,12 +116,12 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3601, 3602}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateStart(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3603, 3604}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateStart(context);
                 }
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._80000014_bonus {
                 context.SetEventUI(arg1: 1, script: "$80000014_bonus__main__0$", duration: 5000);
                 context.ScoreBoardCreate(type: "ScoreBoardTopCenter", maxScore: 0);
                 context.ScoreBoardSetScore(score: false);
-                context.SpawnItemRange(rangeId: new []{9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019}, randomPickCount: 10);
+                context.SpawnItemRange(spawnIds: new []{9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019}, randomPickCount: 10);
             }
 
             public override TriggerState? Execute() {
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._80000014_bonus {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeId: new []{2001}, isAutoTargeting: false, score: 1500);
+                context.SpawnNpcRange(spawnIds: new []{2001}, isAutoTargeting: false, score: 1500);
             }
 
             public override TriggerState? Execute() {

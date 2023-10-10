@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52000056_qd {
                 context.MoveUser(mapId: 52000056, portalId: 3);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52000056_qd {
             internal State낙하시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52000056_qd {
             internal State낙하종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: false);
+                context.CameraSelect(triggerId: 302, enabled: false);
             }
 
             public override TriggerState? Execute() {

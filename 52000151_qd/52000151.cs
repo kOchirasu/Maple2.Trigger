@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52000151_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override TriggerState? Execute() {
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52000151_qd {
             internal State파토스SpawnCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CreateMonster(spawnIds: new []{202, 200, 201, 203}, arg2: false);
                 context.SetNpcEmotionLoop(spawnId: 202, sequenceName: "Stun_A", duration: 999999f);
                 context.FaceEmotion(spawnId: 201, emotionName: "Concerned");
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "exit");
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
             }
 
@@ -463,7 +463,7 @@ namespace Maple2.Trigger._52000151_qd {
             internal State파토스SpawnCinematic22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
                 context.MoveNpc(spawnId: 200, patrolName: "MS2PatrolData_anosTurn");
                 context.SetSceneSkip();
             }
@@ -483,13 +483,13 @@ namespace Maple2.Trigger._52000151_qd {
             internal State파토스SpawnCinematic23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
                 context.SetAchievement(triggerId: 10010, type: "trigger", code: "ProtectFinish");
                 context.SetNpcEmotionLoop(spawnId: 200, sequenceName: "Event_01_A", duration: 999999f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetSound(triggerId: 9000, arg2: true);
+                context.SetSound(triggerId: 9000, enabled: true);
                 context.DestroyMonster(spawnIds: new []{203});
             }
 
@@ -509,10 +509,10 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 4);
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
                 context.SetNpcEmotionLoop(spawnId: 200, sequenceName: "Event_01_A", duration: 999999f);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetSound(triggerId: 9000, arg2: true);
+                context.SetSound(triggerId: 9000, enabled: true);
                 context.DestroyMonster(spawnIds: new []{203});
             }
 

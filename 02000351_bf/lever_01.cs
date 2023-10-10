@@ -88,7 +88,7 @@ namespace Maple2.Trigger._02000351_bf {
             internal State열림_끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 8001, enable: false);
+                context.CameraSelect(triggerId: 8001, enabled: false);
             }
 
             public override TriggerState? Execute() {

@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{702}, arg2: false);
+                context.SetSkill(triggerIds: new []{702}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -22,14 +22,14 @@ namespace Maple2.Trigger._02000325_bf {
             internal StateSkill작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{702}, arg2: true);
+                context.SetSkill(triggerIds: new []{702}, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
                 context.SetEffect(triggerIds: new []{612}, visible: false);
             }
 
             public override TriggerState? Execute() {
                 if (context.TimeExpired(timerId: "1")) {
-                    context.SetSkill(triggerIds: new []{702}, arg2: false);
+                    context.SetSkill(triggerIds: new []{702}, enabled: false);
                     return new StateWait(context);
                 }
 

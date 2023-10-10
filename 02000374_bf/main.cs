@@ -266,7 +266,7 @@ namespace Maple2.Trigger._02000374_bf {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, script: "2,3");
-                context.CameraSelect(triggerId: 8001, enable: true);
+                context.CameraSelect(triggerId: 8001, enabled: true);
                 context.SetEffect(triggerIds: new []{7801, 7802}, visible: true);
                 context.SetEventUI(arg1: 1, script: "$02000374_BF__MAIN__28$", duration: 3000);
                 context.SetConversation(type: 1, spawnId: 110, script: "$02000374_BF__MAIN__29$", arg4: 3, arg5: 0);
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._02000374_bf {
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetSkill(triggerIds: new []{5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013}, arg2: true);
+                    context.SetSkill(triggerIds: new []{5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013}, enabled: true);
                     return new State2Round_Talk_02(context);
                 }
 
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._02000374_bf {
             }
 
             public override void OnExit() {
-                context.CameraSelect(triggerId: 8001, enable: false);
+                context.CameraSelect(triggerId: 8001, enabled: false);
                 context.SetEffect(triggerIds: new []{7001, 7002, 7003}, visible: true);
             }
         }
@@ -332,15 +332,15 @@ namespace Maple2.Trigger._02000374_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new State2Round_Spawn_A(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new State2Round_Spawn_B(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new State2Round_Spawn_C(context);
                 }
 
@@ -487,11 +487,11 @@ namespace Maple2.Trigger._02000374_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new State2Round_Spawn_A_B_02(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new State2Round_Spawn_A_C_02(context);
                 }
 
@@ -591,11 +591,11 @@ namespace Maple2.Trigger._02000374_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new State2Round_Spawn_B_A_02(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new State2Round_Spawn_B_C_02(context);
                 }
 
@@ -695,11 +695,11 @@ namespace Maple2.Trigger._02000374_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new State2Round_Spawn_C_A_02(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new State2Round_Spawn_C_B_02(context);
                 }
 

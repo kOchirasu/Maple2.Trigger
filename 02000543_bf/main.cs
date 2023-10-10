@@ -9,17 +9,17 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetAmbientLight(color: new Vector3(17f, 196f, 181f));
                 context.SetMesh(triggerIds: new []{5000, 5001}, visible: true);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: false);
                 context.SetEffect(triggerIds: new []{3000, 3002, 3001, 3003, 3004, 3005}, visible: false);
-                context.SetSkill(triggerIds: new []{4000, 4001}, arg2: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 102, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 104, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 105, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 106, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetSkill(triggerIds: new []{4000, 4001}, enabled: false);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 101, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 102, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 103, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 104, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 105, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 106, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -37,9 +37,9 @@ namespace Maple2.Trigger._02000543_bf {
             internal State뒤큐브날리기전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{4000}, arg2: true);
+                context.SetSkill(triggerIds: new []{4000}, enabled: true);
                 context.CreateMonster(spawnIds: new []{104, 105, 110}, arg2: false);
-                context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 101, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 4000, script: "$02000543_BF__MAIN__5$");
-                context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 101, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetEffect(triggerIds: new []{3002}, visible: true);
             }
 
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{110});
                 context.SetEventUI(arg1: 1, script: "$02000543_BF__MAIN__6$", duration: 3000);
-                context.SetOnetimeEffect(id: 104, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 104, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -268,7 +268,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State2단계시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 103, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -394,7 +394,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() {
                 context.SetAmbientLight(color: new Vector3(201f, 38f, 70f));
-                context.SetOnetimeEffect(id: 106, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 106, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetEventUI(arg1: 1, script: "$02000543_BF__MAIN__11$", duration: 3000);
                 context.DestroyMonster(spawnIds: new []{106, 107});
             }
@@ -475,8 +475,8 @@ namespace Maple2.Trigger._02000543_bf {
             internal State응접실문열기4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetSkill(triggerIds: new []{4001}, arg2: true);
+                context.SetOnetimeEffect(id: 102, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetSkill(triggerIds: new []{4001}, enabled: true);
                 context.SetEffect(triggerIds: new []{3003}, visible: false);
                 context.AddBalloonTalk(spawnId: 104, msg: "$02000543_BF__MAIN__15$", duration: 3500);
                 context.AddBalloonTalk(spawnId: 105, msg: "$02000543_BF__MAIN__16$", duration: 3500);
@@ -499,8 +499,8 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000543_BF__MAIN__17$");
                 context.DestroyMonster(spawnIds: new []{104, 105});
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -518,8 +518,8 @@ namespace Maple2.Trigger._02000543_bf {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 102, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 102, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 103, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -537,7 +537,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal StateBossSpawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 103, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.CreateMonster(spawnIds: new []{103}, arg2: true);
             }
 

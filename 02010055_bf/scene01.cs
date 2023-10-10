@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetEffect(triggerIds: new []{699}, visible: true);
                 context.SetConversation(type: 2, spawnId: 23000068, script: "$02010055_BF__SCENE01__0$", arg4: 4);
                 context.SetSkip(state: new State바르칸트Script2스킵(context));
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02010055_bf {
             internal State바르칸트Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetEffect(triggerIds: new []{699}, visible: true);
                 context.SetConversation(type: 2, spawnId: 23000068, script: "$02010055_BF__SCENE01__1$", arg4: 4);
                 context.SetSkip(state: new StateEndPrepare(context));
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02010055_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

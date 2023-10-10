@@ -1629,7 +1629,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetLocalCamera(cameraId: 301, enable: false);
+                    context.SetLocalCamera(cameraId: 301, enabled: false);
                     return new State완료보상(context);
                 }
 

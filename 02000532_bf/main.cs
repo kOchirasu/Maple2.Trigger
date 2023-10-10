@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02000532_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSceneSkip();
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._02000532_bf {
             public override void OnEnter() {
                 context.SetSceneSkip(state: new State목표(context), arg2: "nextState");
                 context.CameraSelectPath(pathIds: new []{604, 603}, returnView: true);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ShowCaption(type: CaptionType.Vertical, title: "$02000532_BF__MAIN__0$", script: "$02000532_BF__MAIN__1$", align: Align.Center | Align.Right, offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
             }
 

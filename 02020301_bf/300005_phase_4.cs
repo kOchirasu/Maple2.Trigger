@@ -87,8 +87,8 @@ namespace Maple2.Trigger._02020301_bf {
                 context.AddBuff(boxIds: new []{101}, skillId: 62100108, level: 1, arg4: true);
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300005_PHASE_4__3$", duration: 3176);
                 context.SetUserValue(key: "AI_Phase", value: 0);
-                context.SetVisibleBreakableObject(triggerIds: new []{5351, 5352, 5353, 5354, 5355, 5356, 5357, 5358, 5359, 5360, 5361, 5362, 5363, 5364, 5371, 5372, 5373, 5374, 5375, 5376, 5377, 5378, 5379, 5380, 5381, 5382, 5383, 5384}, arg2: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114, 5115, 5116, 5117, 5118, 5119, 5120, 5121, 5122, 5123, 5124, 5125, 5126, 5127, 5128, 5129, 5130, 5131, 5132, 5133, 5134, 5135, 5136, 5137, 5138, 5139, 5140}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{5351, 5352, 5353, 5354, 5355, 5356, 5357, 5358, 5359, 5360, 5361, 5362, 5363, 5364, 5371, 5372, 5373, 5374, 5375, 5376, 5377, 5378, 5379, 5380, 5381, 5382, 5383, 5384}, visible: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114, 5115, 5116, 5117, 5118, 5119, 5120, 5121, 5122, 5123, 5124, 5125, 5126, 5127, 5128, 5129, 5130, 5131, 5132, 5133, 5134, 5135, 5136, 5137, 5138, 5139, 5140}, visible: true);
                 context.SetBreakable(triggerIds: new []{5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114, 5115, 5116, 5117, 5118, 5119, 5120, 5121, 5122, 5123, 5124, 5125, 5126, 5127, 5128, 5129, 5130, 5131, 5132, 5133, 5134, 5135, 5136, 5137, 5138, 5139, 5140}, enabled: true);
             }
 
@@ -108,12 +108,12 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "AI_Phase", value: 0);
-                context.SetVisibleBreakableObject(triggerIds: new []{5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311, 5312, 5313, 5314, 5315, 5316, 5317, 5318, 5319, 5320, 5321, 5322, 5323, 5324, 5325, 5326, 5327, 5328, 5329, 5330, 5331, 5332, 5333, 5334, 5335, 5336, 5337, 5338, 5339, 5340}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311, 5312, 5313, 5314, 5315, 5316, 5317, 5318, 5319, 5320, 5321, 5322, 5323, 5324, 5325, 5326, 5327, 5328, 5329, 5330, 5331, 5332, 5333, 5334, 5335, 5336, 5337, 5338, 5339, 5340}, visible: true);
                 context.SetUserValue(triggerId: 3000051, key: "Phase_4_Interect_01", value: 1);
                 context.SetUserValue(triggerId: 3000052, key: "Phase_4_Interect_02", value: 1);
                 context.SetUserValue(triggerId: 3000053, key: "Phase_4_Interect_03", value: 1);
                 context.SetUserValue(triggerId: 3000054, key: "Phase_4_Interect_04", value: 1);
-                context.SetVisibleBreakableObject(triggerIds: new []{5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114, 5115, 5116, 5117, 5118, 5119, 5120, 5121, 5122, 5123, 5124, 5125, 5126, 5127, 5128, 5129, 5130, 5131, 5132, 5133, 5134, 5135, 5136, 5137, 5138, 5139, 5140}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114, 5115, 5116, 5117, 5118, 5119, 5120, 5121, 5122, 5123, 5124, 5125, 5126, 5127, 5128, 5129, 5130, 5131, 5132, 5133, 5134, 5135, 5136, 5137, 5138, 5139, 5140}, visible: false);
                 context.SetBreakable(triggerIds: new []{5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114, 5115, 5116, 5117, 5118, 5119, 5120, 5121, 5122, 5123, 5124, 5125, 5126, 5127, 5128, 5129, 5130, 5131, 5132, 5133, 5134, 5135, 5136, 5137, 5138, 5139, 5140}, enabled: false);
             }
 

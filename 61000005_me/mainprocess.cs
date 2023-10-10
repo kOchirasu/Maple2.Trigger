@@ -20,7 +20,7 @@ namespace Maple2.Trigger._61000005_me {
             internal State퍼즐Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetState(arg1: 1, arg2: new []{"퍼즐패턴1", "퍼즐패턴2", "퍼즐패턴3"}, arg3: true);
+                context.SetState(userTagId: 1, states: new []{"퍼즐패턴1", "퍼즐패턴2", "퍼즐패턴3"}, value: true);
                 context.SetMesh(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 201, 202, 203, 204, 205, 206, 207, 208, 211, 212, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494}, visible: true);
                 context.SetMesh(triggerIds: new []{501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 551, 552}, visible: false);
                 context.SetPortal(portalId: 101, visible: false, enabled: true, minimapVisible: false);
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._61000005_me {
             internal StateBeginWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetState(arg1: 1, arg2: new []{"퍼즐패턴1", "퍼즐패턴2", "퍼즐패턴3"}, arg3: true);
+                context.SetState(userTagId: 1, states: new []{"퍼즐패턴1", "퍼즐패턴2", "퍼즐패턴3"}, value: true);
                 context.SetMesh(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208}, visible: false);
                 context.SetPortal(portalId: 101, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 102, visible: false, enabled: false, minimapVisible: false);

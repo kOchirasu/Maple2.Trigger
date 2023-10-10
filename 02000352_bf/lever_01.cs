@@ -85,7 +85,7 @@ namespace Maple2.Trigger._02000352_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 113, textId: 40011);
-                context.CameraSelect(triggerId: 8001, enable: false);
+                context.CameraSelect(triggerId: 8001, enabled: false);
             }
 
             public override TriggerState? Execute() {

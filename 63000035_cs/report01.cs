@@ -7,9 +7,9 @@ namespace Maple2.Trigger._63000035_cs {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{5000, 5001, 6000, 6001}, visible: false);
-                context.SetSound(triggerId: 10000, arg2: false);
-                context.SetSound(triggerId: 10001, arg2: false);
-                context.SetSound(triggerId: 10002, arg2: false);
+                context.SetSound(triggerId: 10000, enabled: false);
+                context.SetSound(triggerId: 10001, enabled: false);
+                context.SetSound(triggerId: 10002, enabled: false);
                 context.SetMesh(triggerIds: new []{3000}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(triggerIds: new []{3001}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.CreateMonster(spawnIds: new []{101}, arg2: false);
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._63000035_cs {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.CameraSelect(triggerId: 500, enable: true);
+                context.CameraSelect(triggerId: 500, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -138,13 +138,13 @@ namespace Maple2.Trigger._63000035_cs {
             internal StateCameraWalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 10000, arg2: true);
-                context.SetSound(triggerId: 10001, arg2: true);
-                context.SetSound(triggerId: 10002, arg2: true);
+                context.SetSound(triggerId: 10000, enabled: true);
+                context.SetSound(triggerId: 10001, enabled: true);
+                context.SetSound(triggerId: 10002, enabled: true);
                 context.SetEffect(triggerIds: new []{5000}, visible: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 501, enable: true);
+                context.CameraSelect(triggerId: 501, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._63000035_cs {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 502, enable: true);
+                context.CameraSelect(triggerId: 502, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -276,7 +276,7 @@ namespace Maple2.Trigger._63000035_cs {
             internal StateMonitorOn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 503, enable: true);
+                context.CameraSelect(triggerId: 503, enabled: true);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101");
             }
 
@@ -328,7 +328,7 @@ namespace Maple2.Trigger._63000035_cs {
             internal StateKahnTalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 504, enable: true);
+                context.CameraSelect(triggerId: 504, enabled: true);
                 context.SetNpcEmotionSequence(spawnId: 101, sequenceName: "Bore_A");
             }
 
@@ -423,9 +423,9 @@ namespace Maple2.Trigger._63000035_cs {
             internal StatePCTeleport02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 10000, arg2: false);
-                context.SetSound(triggerId: 10001, arg2: false);
-                context.SetSound(triggerId: 10002, arg2: false);
+                context.SetSound(triggerId: 10000, enabled: false);
+                context.SetSound(triggerId: 10001, enabled: false);
+                context.SetSound(triggerId: 10002, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -461,7 +461,7 @@ namespace Maple2.Trigger._63000035_cs {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 504, enable: false);
+                context.CameraSelect(triggerId: 504, enabled: false);
             }
 
             public override TriggerState? Execute() {

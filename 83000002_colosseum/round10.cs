@@ -6,12 +6,12 @@ namespace Maple2.Trigger._83000002_colosseum {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 11000, arg2: false);
-                context.SetSound(triggerId: 11001, arg2: false);
-                context.SetSound(triggerId: 12000, arg2: false);
-                context.SetSound(triggerId: 12001, arg2: false);
-                context.SetSound(triggerId: 13000, arg2: false);
-                context.SetSound(triggerId: 13001, arg2: false);
+                context.SetSound(triggerId: 11000, enabled: false);
+                context.SetSound(triggerId: 11001, enabled: false);
+                context.SetSound(triggerId: 12000, enabled: false);
+                context.SetSound(triggerId: 12001, enabled: false);
+                context.SetSound(triggerId: 13000, enabled: false);
+                context.SetSound(triggerId: 13001, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._83000002_colosseum {
             internal State라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 11000, arg2: true);
-                context.SetSound(triggerId: 11001, arg2: true);
+                context.SetSound(triggerId: 11000, enabled: true);
+                context.SetSound(triggerId: 11001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -158,12 +158,12 @@ namespace Maple2.Trigger._83000002_colosseum {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.CreateMonster(spawnIds: new []{10000}, arg2: false);
                     return new State스폰대사(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.CreateMonster(spawnIds: new []{10001}, arg2: false);
                     return new State스폰대사(context);
                 }
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() {
                 context.AddBalloonTalk(spawnId: 110, msg: "$83000002_COLOSSEUM__ROUND10__3$", duration: 3000);
-                context.SetTimer(timerId: "LimitTimer", seconds: 180, clearAtZero: true);
+                context.SetTimer(timerId: "LimitTimer", seconds: 180, autoRemove: true);
                 context.SetNpcDuelHpBar(isOpen: true, spawnId: 110, durationTick: 180000, npcHpStep: 10);
             }
 
@@ -226,8 +226,8 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() {
                 context.LockMyPc(isLock: true);
-                context.SetSound(triggerId: 12000, arg2: true);
-                context.SetSound(triggerId: 12001, arg2: true);
+                context.SetSound(triggerId: 12000, enabled: true);
+                context.SetSound(triggerId: 12001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -247,8 +247,8 @@ namespace Maple2.Trigger._83000002_colosseum {
             internal StateFailRoundDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 13000, arg2: true);
-                context.SetSound(triggerId: 13001, arg2: true);
+                context.SetSound(triggerId: 13000, enabled: true);
+                context.SetSound(triggerId: 13001, enabled: true);
             }
 
             public override TriggerState? Execute() {

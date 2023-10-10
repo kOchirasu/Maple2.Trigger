@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{1200}, arg2: false);
+                context.SetSkill(triggerIds: new []{1200}, enabled: false);
                 context.SetEffect(triggerIds: new []{1201}, visible: false);
             }
 
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "2", seconds: 1);
-                context.SetSkill(triggerIds: new []{1200}, arg2: true);
+                context.SetSkill(triggerIds: new []{1200}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "3", seconds: 1);
-                context.SetSkill(triggerIds: new []{1200}, arg2: false);
+                context.SetSkill(triggerIds: new []{1200}, enabled: false);
                 context.SetEffect(triggerIds: new []{1201}, visible: false);
             }
 

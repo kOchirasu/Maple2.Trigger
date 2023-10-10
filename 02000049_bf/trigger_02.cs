@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000049_bf {
             internal State반항2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.SetInteractObject(interactIds: new []{10000286}, state: 2);
             }
 

@@ -57,7 +57,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal StateCameraEffect01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetSceneSkip(state: new StateQuit01(context), arg2: "nextState");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal StateCameraEffect02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(pathIds: new []{8000}, returnView: false);
             }
 
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
             }
 
             public override TriggerState? Execute() {
@@ -251,7 +251,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.MoveUser(mapId: 52010052, portalId: 1);
             }
 

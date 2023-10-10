@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02000281_bf {
                 context.SetCinematicUI(type: 3);
                 context.CreateMonster(spawnIds: new []{1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015}, arg2: false);
                 context.SetInteractObject(interactIds: new []{10000414}, state: 1);
-                context.CameraSelect(triggerId: 3001, enable: true);
+                context.CameraSelect(triggerId: 3001, enabled: true);
                 context.AddBuff(boxIds: new []{199}, skillId: 70000107, level: 1, arg4: false, arg5: false);
             }
 
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000281_bf {
             internal StateCamera이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 3002, enable: true);
+                context.CameraSelect(triggerId: 3002, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02000281_bf {
 
             public override void OnExit() {
                 context.RemoveBuff(boxId: 199, skillId: 70000107);
-                context.CameraSelect(triggerId: 3002, enable: false);
+                context.CameraSelect(triggerId: 3002, enabled: false);
             }
         }
 

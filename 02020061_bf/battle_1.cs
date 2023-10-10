@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02020061_bf {
                 context.StartCombineSpawn(groupId: new []{479}, isStart: false);
                 context.StartCombineSpawn(groupId: new []{480}, isStart: false);
                 context.StartCombineSpawn(groupId: new []{481}, isStart: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State스폰_1_SE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.StartCombineSpawn(groupId: new []{478}, isStart: true);
             }
 
@@ -123,7 +123,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State스폰_2_SE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -145,7 +145,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State스폰_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.StartCombineSpawn(groupId: new []{479}, isStart: true);
             }
 
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State스폰_3_SE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -190,7 +190,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State스폰_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.StartCombineSpawn(groupId: new []{480}, isStart: true);
             }
 
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State스폰_4_SE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -235,7 +235,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State스폰_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.StartCombineSpawn(groupId: new []{481}, isStart: true);
             }
 

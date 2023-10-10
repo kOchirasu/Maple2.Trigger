@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52000033_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StatePCWalkIn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StatePCWalkIn04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 602, enable: true);
+                context.CameraSelect(triggerId: 602, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -195,7 +195,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateBowAction02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 701, enable: true);
+                context.CameraSelect(triggerId: 701, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(patrolName: "MS2PatrolData_1001");
-                context.CameraSelect(triggerId: 700, enable: true);
+                context.CameraSelect(triggerId: 700, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -270,7 +270,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 700, enable: false);
+                context.CameraSelect(triggerId: 700, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -377,7 +377,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StatePCGoCenter04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 800, enable: true);
+                context.CameraSelect(triggerId: 800, enabled: true);
                 context.MoveUserPath(patrolName: "MS2PatrolData_1002");
             }
 
@@ -452,7 +452,7 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(patrolName: "MS2PatrolData_1003");
-                context.CameraSelect(triggerId: 801, enable: true);
+                context.CameraSelect(triggerId: 801, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -508,7 +508,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 801, enable: false);
+                context.CameraSelect(triggerId: 801, enabled: false);
             }
 
             public override TriggerState? Execute() {

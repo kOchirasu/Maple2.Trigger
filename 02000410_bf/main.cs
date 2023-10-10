@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnEnter() {
                 context.DungeonMoveLapTimeToNow(id: 1);
                 context.CreateMonster(spawnIds: new []{102}, arg2: true);
-                context.SetSound(triggerId: 8410, arg2: true);
+                context.SetSound(triggerId: 8410, enabled: true);
             }
 
             public override TriggerState? Execute() {

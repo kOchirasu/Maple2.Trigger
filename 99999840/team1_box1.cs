@@ -4,7 +4,7 @@ namespace Maple2.Trigger._99999840 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 901, value: false);
+                context.SetDungeonVariable(id: 901, value: false);
                 context.SetInteractObject(interactIds: new []{10002175}, state: 0, arg3: false);
             }
 
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._99999840 {
             internal State애디셔널_중첩1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 901, value: true);
+                context.SetDungeonVariable(id: 901, value: true);
                 context.AddBuff(boxIds: new []{9001}, skillId: 70002511, level: 1, arg5: false);
             }
 

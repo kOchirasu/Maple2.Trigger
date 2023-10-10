@@ -4,8 +4,8 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{705, 727}, arg2: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{7501, 7502, 7503, 7504}, arg2: false);
+                context.SetSkill(triggerIds: new []{705, 727}, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{7501, 7502, 7503, 7504}, visible: false);
                 context.SetBreakable(triggerIds: new []{7501, 7502, 7503, 7504}, enabled: false);
             }
 
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(triggerIds: new []{7501, 7502, 7503, 7504}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{7501, 7502, 7503, 7504}, visible: true);
             }
 
             public override TriggerState? Execute() {
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._80000015_bonus {
 
             public override void OnEnter() {
                 context.SetBreakable(triggerIds: new []{7501, 7502, 7503, 7504}, enabled: false);
-                context.SetSkill(triggerIds: new []{705, 727}, arg2: true);
+                context.SetSkill(triggerIds: new []{705, 727}, enabled: true);
             }
 
             public override TriggerState? Execute() {

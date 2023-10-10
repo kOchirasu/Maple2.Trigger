@@ -202,403 +202,403 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000617(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000618(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000619(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000620(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000621(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000622(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000623(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000624(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000625(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000626(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000627(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000628(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000629(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000630(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000631(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000632(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000633(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000634(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000635(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000636(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000637(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000638(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000639(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000640(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000641(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000642(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000643(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000644(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000645(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000646(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000647(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000648(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000649(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000650(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000651(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000652(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000653(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000654(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000655(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000656(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000657(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000658(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000659(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000660(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000661(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000662(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000663(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000664(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000665(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000666(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000667(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000668(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000669(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000670(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000671(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000672(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000673(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000674(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000675(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000676(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000677(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000678(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000679(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000680(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000681(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000682(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000683(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000684(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000685(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000686(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000687(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000688(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000689(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000690(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000691(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000692(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000693(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000694(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000695(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000696(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000697(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000698(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000699(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000700(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000701(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000702(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000703(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000704(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000705(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000706(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000707(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000708(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000709(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000710(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000711(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000712(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000713(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000714(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000715(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new StatePickItem_30000716(context);
                 }
 

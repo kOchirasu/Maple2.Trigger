@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000011_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "2", seconds: 2, clearAtZero: false);
+                context.SetTimer(timerId: "2", seconds: 2, autoRemove: false);
                 context.SetBreakable(triggerIds: new []{7000}, enabled: false);
             }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000011_bf {
             internal State이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "6", seconds: 6, clearAtZero: false);
+                context.SetTimer(timerId: "6", seconds: 6, autoRemove: false);
                 context.SetBreakable(triggerIds: new []{7000}, enabled: true);
             }
 

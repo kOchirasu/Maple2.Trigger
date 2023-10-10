@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52020014_qd {
                 context.SetPortal(portalId: 1, visible: false, enabled: false);
                 context.SetEffect(triggerIds: new []{5001}, visible: false);
                 context.SetMesh(triggerIds: new []{9101, 9102}, visible: true);
-                context.SetVisibleBreakableObject(triggerIds: new []{1}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{1}, visible: false);
                 context.SetMesh(triggerIds: new []{9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010}, visible: false);
                 context.SetLadder(triggerId: 10001, visible: false, animationEffect: false);
                 context.SetLadder(triggerId: 10002, visible: false, animationEffect: false);
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._52020014_qd {
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{5001}, visible: true);
                 context.SetMesh(triggerIds: new []{9102}, visible: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{1}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{1}, visible: true);
             }
 
             public override TriggerState? Execute() {
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._52020014_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new State이공간1차전투(context), arg2: "nextState");
-                context.CameraSelect(triggerId: 502, enable: true);
+                context.CameraSelect(triggerId: 502, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._52020014_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateCamera리셋(context), arg2: "nextState");
-                context.CameraSelect(triggerId: 501, enable: true);
+                context.CameraSelect(triggerId: 501, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetBreakable(triggerIds: new []{10001}, enabled: true);

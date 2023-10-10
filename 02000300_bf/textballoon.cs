@@ -26,19 +26,19 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new State20초(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new State25초(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new State30초(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new State35초(context);
                 }
 
@@ -146,19 +146,19 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateScript1(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateScript2(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateScript3(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateScript4(context);
                 }
 

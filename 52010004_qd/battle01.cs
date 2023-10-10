@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52010004_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "2", seconds: 2);
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._52010004_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetTimer(timerId: "13", seconds: 1);
-                context.CameraSelect(triggerId: 601, enable: false);
+                context.CameraSelect(triggerId: 601, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000294_bf {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.CreateMonster(spawnIds: new []{10000}, arg2: false);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.SetSkip(state: new StateGateOpen01(context));
             }
 
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._02000294_bf {
             internal StateGateOpen01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 600, enable: false);
+                context.CameraSelect(triggerId: 600, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetActor(triggerId: 900, visible: true, initialSequence: "Opened");

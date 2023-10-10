@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{8000, 8001}, arg2: false);
+                context.SetSkill(triggerIds: new []{8000, 8001}, enabled: false);
                 context.SetEffect(triggerIds: new []{7000, 7001}, visible: false);
             }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{8000}, arg2: true);
+                context.SetSkill(triggerIds: new []{8000}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{8001}, arg2: true);
+                context.SetSkill(triggerIds: new []{8001}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{8000}, arg2: true);
+                context.SetSkill(triggerIds: new []{8000}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{8000, 8001}, arg2: false);
+                context.SetSkill(triggerIds: new []{8000, 8001}, enabled: false);
                 context.SetEffect(triggerIds: new []{7000, 7001}, visible: false);
             }
 

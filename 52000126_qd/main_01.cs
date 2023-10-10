@@ -33,7 +33,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.MoveUser(mapId: 52000126, portalId: 6001);
-                context.SetSound(triggerId: 7002, arg2: true);
+                context.SetSound(triggerId: 7002, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.CreateMonster(spawnIds: new []{201}, arg2: true);

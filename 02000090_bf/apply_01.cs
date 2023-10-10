@@ -9,15 +9,15 @@ namespace Maple2.Trigger._02000090_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateWait1(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateWait2(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new StateWait3(context);
                 }
 

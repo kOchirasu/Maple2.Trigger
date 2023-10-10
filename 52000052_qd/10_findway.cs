@@ -203,11 +203,11 @@ namespace Maple2.Trigger._52000052_qd {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateRound10_PickRoute_Left(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateRound10_PickRoute_Right(context);
                 }
 

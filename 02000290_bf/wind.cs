@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{701}, arg2: false);
+                context.SetSkill(triggerIds: new []{701}, enabled: false);
                 context.SetEffect(triggerIds: new []{601, 602, 603, 604, 605}, visible: false);
             }
 
@@ -29,15 +29,15 @@ namespace Maple2.Trigger._02000290_bf {
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateASkillCast(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateBSkillCast(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new StateCSkillCast(context);
                 }
 
@@ -126,7 +126,7 @@ namespace Maple2.Trigger._02000290_bf {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.HideGuideSummary(entityId: 20002906);
                     context.SetEffect(triggerIds: new []{602, 603, 604, 605}, visible: true);
-                    context.SetSkill(triggerIds: new []{701}, arg2: true);
+                    context.SetSkill(triggerIds: new []{701}, enabled: true);
                     return new StateSkillRandom(context);
                 }
 

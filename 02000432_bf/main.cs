@@ -144,7 +144,7 @@ namespace Maple2.Trigger._02000432_bf {
 
             public override void OnEnter() {
                 context.AddBuff(boxIds: new []{701}, skillId: 49200003, level: 1, arg4: false, arg5: false);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -162,13 +162,13 @@ namespace Maple2.Trigger._02000432_bf {
             internal StateEndCinematicWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.MoveUser(mapId: 02000432, portalId: 2);
                 context.DestroyMonster(spawnIds: new []{1001, 1002, 2001, 2002, 2102});
                 context.CreateMonster(spawnIds: new []{1098, 1099}, arg2: false);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(spawnId: 1098, sequenceName: "Dead_B", duration: 3000000f);
                 context.SetNpcEmotionLoop(spawnId: 1099, sequenceName: "Dead_B", duration: 3000000f);
             }
@@ -263,7 +263,7 @@ namespace Maple2.Trigger._02000432_bf {
             internal State자매대화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
             }
 
             public override TriggerState? Execute() {

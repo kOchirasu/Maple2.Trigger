@@ -44,12 +44,12 @@ namespace Maple2.Trigger._52000063_qd {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 80f)) {
+                if (context.RandomCondition(rate: 80)) {
                     context.AddBuff(boxIds: new []{199}, skillId: 70000008, level: 1, arg4: false, arg5: false);
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     context.AddBuff(boxIds: new []{199}, skillId: 70000009, level: 1, arg4: false, arg5: false);
                     return new StateEnd(context);
                 }

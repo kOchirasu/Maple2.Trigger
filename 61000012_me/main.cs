@@ -20,7 +20,7 @@ namespace Maple2.Trigger._61000012_me {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
             }
 
             public override TriggerState? Execute() {

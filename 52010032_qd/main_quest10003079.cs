@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override TriggerState? Execute() {
                 if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{10003079}, questStates: new byte[]{1})) {
-                    context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                    context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                     return new StateReady(context);
                 }
 
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionSequence(spawnId: 401, sequenceName: "Talk_A");
                 context.MoveUser(mapId: 52010032, portalId: 6002);
                 context.AddCinematicTalk(npcId: 11003389, script: "$52010032_QD__MAIN_QUEST10003079__0$", duration: 3000);
@@ -279,7 +279,7 @@ namespace Maple2.Trigger._52010032_qd {
                 context.DestroyMonster(spawnIds: new []{302, 401});
                 context.CameraReset(interpolationTime: 0.5f);
                 context.SetAchievement(triggerId: 2001, type: "trigger", code: "Namid");
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {

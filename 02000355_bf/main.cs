@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000355_bf {
                 context.SetEffect(triggerIds: new []{600, 699}, visible: false);
                 context.SetMesh(triggerIds: new []{3999, 3900, 3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(triggerIds: new []{3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(triggerIds: new []{7001}, arg2: false);
+                context.SetSkill(triggerIds: new []{7001}, enabled: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
@@ -32,7 +32,7 @@ namespace Maple2.Trigger._02000355_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetEffect(triggerIds: new []{699}, visible: true);
             }
 
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02000355_bf {
             internal State카트반이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{7001}, arg2: true);
+                context.SetSkill(triggerIds: new []{7001}, enabled: true);
                 context.SetMesh(triggerIds: new []{3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.CameraSelectPath(pathIds: new []{301}, returnView: true);
             }
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._02000355_bf {
                     context.SetMesh(triggerIds: new []{3900}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.SetCinematicUI(type: 0);
                     context.SetCinematicUI(type: 2);
-                    context.CameraSelect(triggerId: 301, enable: false);
+                    context.CameraSelect(triggerId: 301, enabled: false);
                     context.ShowGuideSummary(entityId: 20003552, textId: 20003552, duration: 4000);
                     context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                     return new State카트반소멸(context);

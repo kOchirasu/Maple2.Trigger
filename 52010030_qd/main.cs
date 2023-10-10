@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52010030_qd {
 
             public override void OnEnter() {
                 context.VisibleMyPc(visible: false);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(triggerIds: new []{5001}, visible: false);
             }
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52010030_qd {
             internal State에바고르_독백_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(spawnId: 101, sequenceName: "Down_Idle_A", duration: 200000f);
                 context.SetCinematicUI(type: 9, script: "$52010030_QD__MAIN__0$", arg3: false);
                 context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");

@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02020143_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(enable: false);
+                context.DungeonEnableGiveUp(enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -183,7 +183,7 @@ namespace Maple2.Trigger._02020143_bf {
             internal State영상재생Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
             }
 

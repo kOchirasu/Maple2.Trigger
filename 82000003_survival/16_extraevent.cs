@@ -37,11 +37,11 @@ namespace Maple2.Trigger._82000003_survival {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 60f)) {
+                if (context.RandomCondition(rate: 60)) {
                     return new StateExtraEventOff(context);
                 }
 
-                if (context.RandomCondition(rate: 40f)) {
+                if (context.RandomCondition(rate: 40)) {
                     return new StateExtraEventOn(context);
                 }
 
@@ -1147,23 +1147,23 @@ namespace Maple2.Trigger._82000003_survival {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateExtraEvent01_Fast(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateExtraEvent02_MapHack(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateExtraEvent03_RobotSpawn(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateExtraEvent04_SkillCoolDownTimeReduce(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateExtraEvent05_NoMoreFarming(context);
                 }
 

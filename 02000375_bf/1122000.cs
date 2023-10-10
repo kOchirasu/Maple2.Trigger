@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000375_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 13500, arg2: false);
+                context.SetSound(triggerId: 13500, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000375_bf {
             internal StateBGM변경(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 13500, arg2: true);
+                context.SetSound(triggerId: 13500, enabled: true);
             }
 
             public override TriggerState? Execute() {

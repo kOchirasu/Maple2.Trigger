@@ -8,7 +8,7 @@ namespace Maple2.Trigger._02000483_bf {
                 context.SetInteractObject(interactIds: new []{10002046}, state: 0);
                 context.DestroyMonster(spawnIds: new []{940, 941, 942});
                 context.SetBreakable(triggerIds: new []{6200}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{6200}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{6200}, visible: false);
                 context.SetMesh(triggerIds: new []{3910}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(triggerIds: new []{3920}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(triggerIds: new []{5300}, visible: false);
@@ -114,7 +114,7 @@ namespace Maple2.Trigger._02000483_bf {
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{3910}, visible: false, arg3: 100, arg4: 0, arg5: 2f);
                 context.SetBreakable(triggerIds: new []{6200}, enabled: true);
-                context.SetVisibleBreakableObject(triggerIds: new []{6200}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{6200}, visible: true);
                 context.SetEffect(triggerIds: new []{5300}, visible: true);
             }
 
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._02000483_bf {
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{3920}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetBreakable(triggerIds: new []{6200}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{6200}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{6200}, visible: false);
             }
 
             public override TriggerState? Execute() {

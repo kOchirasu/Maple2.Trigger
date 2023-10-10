@@ -45,23 +45,23 @@ namespace Maple2.Trigger._52100053_qd {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateBehindFireplace(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateBehindBookcase(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateFindKeyFromFabricbox(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateFindKeyFromCandle(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateFindKeyFromDocument(context);
                 }
 

@@ -62,7 +62,7 @@ namespace Maple2.Trigger._61000029_me {
             internal StateWaitForEnterUser(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 60, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "1", seconds: 60, autoRemove: true, display: true);
             }
 
             public override TriggerState? Execute() {
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._61000029_me {
             internal StateBeInHidingTeams(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: true, display: true);
                 context.FieldGameMessage(custom: 1, type: "SetEventUI", arg1: 1, script: "$61000023_ME__61000023_MAIN__2$", duration: 30000);
                 context.FieldGameMessage(custom: 2, type: "SetEventUI", arg1: 1, script: "$61000023_ME__61000023_MAIN__3$", duration: 30000);
             }
@@ -177,7 +177,7 @@ namespace Maple2.Trigger._61000029_me {
             internal StateLookingForATeams(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 150, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "1", seconds: 150, autoRemove: true, display: true);
             }
 
             public override TriggerState? Execute() {

@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02020142_bf {
             internal State2Phase복격진행_안내DisplayGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{91}, arg2: true);
+                context.SetSkill(triggerIds: new []{91}, enabled: true);
                 context.ShowGuideSummary(entityId: 29200003, textId: 29200003);
             }
 

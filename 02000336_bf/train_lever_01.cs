@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000336_bf {
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362, duration: 3000);
                 context.SetMesh(triggerIds: new []{8050, 8051, 8052, 8053, 8054}, visible: false, arg4: 0, arg5: 10f);
-                context.SetSkill(triggerIds: new []{5806}, arg2: true);
+                context.SetSkill(triggerIds: new []{5806}, enabled: true);
                 context.SetMesh(triggerIds: new []{8055}, visible: false, arg4: 30, arg5: 0f);
                 context.SetMesh(triggerIds: new []{8111, 8112, 8113, 8114}, visible: false, arg4: 0, arg5: 10f);
             }

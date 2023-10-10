@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() {
                 context.MoveUser(mapId: 02020120, portalId: 9903);
-                context.SetSound(triggerId: 19601, arg2: true);
+                context.SetSound(triggerId: 19601, enabled: true);
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 23000113, illust: "Ishura_Dark_smile", script: "$02020120_BF__BOSSSPAWN__1$", duration: 7000, voice: @"ko/Npc/00002193");
                 context.DestroyMonster(spawnIds: new []{-1});
             }
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.SetSkill(triggerIds: new []{2222, 1212}, arg2: false);
+                    context.SetSkill(triggerIds: new []{2222, 1212}, enabled: false);
                     context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.DungeonClear();
                     context.DungeonSetEndTime();
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.SetSkill(triggerIds: new []{2222, 1212}, arg2: false);
+                    context.SetSkill(triggerIds: new []{2222, 1212}, enabled: false);
                     context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                     context.DungeonFail();
                     return new StateEnd(context);
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(portalId: 6302, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 6303, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 6304, visible: true, enabled: true, minimapVisible: true);
-                context.DungeonEnableGiveUp(enable: false);
+                context.DungeonEnableGiveUp(enabled: false);
             }
 
             public override TriggerState? Execute() {

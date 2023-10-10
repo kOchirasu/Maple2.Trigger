@@ -4,7 +4,7 @@ namespace Maple2.Trigger._80000012_bonus {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 8001, enable: true);
+                context.CameraSelect(triggerId: 8001, enabled: true);
             }
 
             public override TriggerState? Execute() {

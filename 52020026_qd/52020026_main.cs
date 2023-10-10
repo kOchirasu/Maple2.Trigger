@@ -211,7 +211,7 @@ namespace Maple2.Trigger._52020026_qd {
             public override void OnEnter() {
                 context.SetAgent(triggerIds: new []{9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016}, visible: false);
                 context.CreateMonster(spawnIds: new []{108}, arg2: true);
-                context.SetSkill(triggerIds: new []{1}, arg2: true);
+                context.SetSkill(triggerIds: new []{1}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -268,7 +268,7 @@ namespace Maple2.Trigger._52020026_qd {
             public override void OnEnter() {
                 context.SetAgent(triggerIds: new []{9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028, 9029, 9030, 9031, 9032}, visible: false);
                 context.CreateMonster(spawnIds: new []{111}, arg2: true);
-                context.SetSkill(triggerIds: new []{2}, arg2: true);
+                context.SetSkill(triggerIds: new []{2}, enabled: true);
             }
 
             public override TriggerState? Execute() {

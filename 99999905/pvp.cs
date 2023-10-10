@@ -4,7 +4,7 @@ namespace Maple2.Trigger._99999905 {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "30", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "30", seconds: 30, autoRemove: false);
                 context.SetMesh(triggerIds: new []{3001, 3002, 3003, 4001, 4002, 4003}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._99999905 {
             internal StatePvP(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 1, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 1, autoRemove: false);
                 context.SetPvpZone(boxId: 104, arg2: 3, duration: 600, additionalEffectId: 90001002, arg5: 3, boxIds: new []{1, 2, 101, 102, 103});
             }
 
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._99999905 {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "2", seconds: 2, clearAtZero: false);
+                context.SetTimer(timerId: "2", seconds: 2, autoRemove: false);
                 context.SetEventUI(arg1: 1, script: "$99999905__PVP__0$", duration: 2000);
             }
 
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._99999905 {
             internal State어나운스1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "4", seconds: 4, clearAtZero: false);
+                context.SetTimer(timerId: "4", seconds: 4, autoRemove: false);
                 context.SetEventUI(arg1: 1, script: "$99999905__PVP__1$", duration: 4000);
             }
 
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._99999905 {
             internal State어나운스2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "2", seconds: 2, clearAtZero: false);
+                context.SetTimer(timerId: "2", seconds: 2, autoRemove: false);
                 context.SetEventUI(arg1: 1, script: "$99999905__PVP__2$", duration: 2000);
             }
 
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._99999905 {
             internal State어나운스3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "3", seconds: 3, clearAtZero: false);
+                context.SetTimer(timerId: "3", seconds: 3, autoRemove: false);
                 context.ShowCountUI(text: "$99999905__PVP__3$", stage: 1, count: 3);
             }
 

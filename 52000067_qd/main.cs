@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.SetTimeScale(enable: false, startScale: 1f, endScale: 1f, duration: 0f, interpolator: 0);
+                context.SetTimeScale(enabled: false, startScale: 1f, endScale: 1f, duration: 0f, interpolator: 0);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetInteractObject(interactIds: new []{10001073}, state: 2);
                 context.SetEffect(triggerIds: new []{7005, 7001, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7110, 7111, 7112, 7113, 7114, 7115, 7116, 7301, 7302, 7303, 7304, 7305, 7306, 7307, 7308, 7309, 7310, 7117}, visible: false);
@@ -339,7 +339,7 @@ namespace Maple2.Trigger._52000067_qd {
             public override void OnEnter() {
                 context.SetActor(triggerId: 4001, visible: true, initialSequence: "Regen_A");
                 context.SetEffect(triggerIds: new []{7001}, visible: true);
-                context.SetTimeScale(enable: true, startScale: 1f, endScale: 0.1f, duration: 2.0f, interpolator: 2);
+                context.SetTimeScale(enabled: true, startScale: 1f, endScale: 0.1f, duration: 2.0f, interpolator: 2);
             }
 
             public override TriggerState? Execute() {
@@ -391,7 +391,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal StateScene_05_d(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimeScale(enable: true, startScale: 0.1f, endScale: 1f, duration: 1f, interpolator: 2);
+                context.SetTimeScale(enabled: true, startScale: 0.1f, endScale: 1f, duration: 1f, interpolator: 2);
                 context.CameraSelectPath(pathIds: new []{8099, 8005}, returnView: false);
             }
 
@@ -410,7 +410,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal StateScene_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimeScale(enable: false, startScale: 1f, endScale: 1f, duration: 1f, interpolator: 0);
+                context.SetTimeScale(enabled: false, startScale: 1f, endScale: 1f, duration: 1f, interpolator: 0);
                 context.CameraSelectPath(pathIds: new []{8005, 8006}, returnView: false);
                 context.SetActor(triggerId: 4001, visible: true, initialSequence: "Idle_A");
             }
@@ -430,7 +430,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal StateScene_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimeScale(enable: false, startScale: 0f, endScale: 0f, duration: 0f, interpolator: 0);
+                context.SetTimeScale(enabled: false, startScale: 0f, endScale: 0f, duration: 0f, interpolator: 0);
                 context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_2003");
                 context.SetConversation(type: 2, spawnId: 11001897, script: "$52000067_QD__MAIN__4$", arg4: 3);
             }
@@ -820,7 +820,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal StateEnding_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(triggerIds: new []{6300, 6301, 6302, 6303, 6304, 6305, 6306, 6307, 6308, 6309, 6310, 6311, 6312, 6313, 6314, 6315, 6316, 6317, 6318, 6319, 6320, 6321, 6322, 6323, 6324, 6325, 6326, 6327, 6328, 6329, 6330, 6331}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{6300, 6301, 6302, 6303, 6304, 6305, 6306, 6307, 6308, 6309, 6310, 6311, 6312, 6313, 6314, 6315, 6316, 6317, 6318, 6319, 6320, 6321, 6322, 6323, 6324, 6325, 6326, 6327, 6328, 6329, 6330, 6331}, visible: false);
                 context.RemoveBuff(boxId: 702, skillId: 99910070);
                 context.SetCinematicUI(type: 9, script: "$52000067_QD__MAIN__10$", arg3: false);
             }

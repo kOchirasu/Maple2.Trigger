@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000328_bf {
                 context.AddBuff(boxIds: new []{999998}, skillId: 70000107, level: 1, arg4: false, arg5: false);
                 context.ShowGuideSummary(entityId: 20003285, textId: 20003285, duration: 5000);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
-                context.CameraSelect(triggerId: 60000, enable: true);
+                context.CameraSelect(triggerId: 60000, enabled: true);
                 context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017}, visible: false, arg3: 500, arg4: 100, arg5: 1f);
             }
 
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000328_bf {
             internal StateCamera줌인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 60001, enable: true);
+                context.CameraSelect(triggerId: 60001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000328_bf {
                     context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                     context.ShowGuideSummary(entityId: 20003286, textId: 20003286, duration: 5000);
                     context.RemoveBuff(boxId: 999998, skillId: 70000107);
-                    context.CameraSelect(triggerId: 60001, enable: false);
+                    context.CameraSelect(triggerId: 60001, enabled: false);
                     return new State웨폰오브젝트Wait(context);
                 }
 
@@ -168,12 +168,12 @@ namespace Maple2.Trigger._02000328_bf {
                 context.SetLadder(triggerId: 7010, visible: true, animationEffect: true);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20003282, textId: 20003282);
-                context.CameraSelect(triggerId: 60002, enable: true);
+                context.CameraSelect(triggerId: 60002, enabled: true);
             }
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.CameraSelect(triggerId: 60002, enable: false);
+                    context.CameraSelect(triggerId: 60002, enabled: false);
                     return new StateBoss소환조건(context);
                 }
 
@@ -223,7 +223,7 @@ namespace Maple2.Trigger._02000328_bf {
                 context.ShowGuideSummary(entityId: 20003283, textId: 20003283, duration: 5000);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.AddBuff(boxIds: new []{999998}, skillId: 70000107, level: 1, arg4: false, arg5: false);
-                context.CameraSelect(triggerId: 60003, enable: true);
+                context.CameraSelect(triggerId: 60003, enabled: true);
                 context.CreateMonster(spawnIds: new []{1501}, arg2: true);
             }
 
@@ -243,7 +243,7 @@ namespace Maple2.Trigger._02000328_bf {
 
             public override void OnEnter() {
                 context.RemoveBuff(boxId: 999998, skillId: 70000107);
-                context.CameraSelect(triggerId: 60003, enable: false);
+                context.CameraSelect(triggerId: 60003, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -298,7 +298,7 @@ namespace Maple2.Trigger._02000328_bf {
             internal State진행6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 60002, enable: true);
+                context.CameraSelect(triggerId: 60002, enabled: true);
                 context.SetConversation(type: 1, spawnId: 2000, script: "$02000328_BF__MAIN__4$", arg4: 2);
             }
 
@@ -372,7 +372,7 @@ namespace Maple2.Trigger._02000328_bf {
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.CameraSelect(triggerId: 60002, enable: false);
+                    context.CameraSelect(triggerId: 60002, enabled: false);
                     return new State진행8(context);
                 }
 

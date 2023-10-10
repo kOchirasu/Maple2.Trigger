@@ -43,7 +43,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override TriggerState? Execute() {
                 if (context.MonsterDead(spawnIds: new []{1110})) {
-                    context.SetVisibleBreakableObject(triggerIds: new []{1013}, arg2: true);
+                    context.SetVisibleBreakableObject(triggerIds: new []{1013}, visible: true);
                     context.SetInteractObject(interactIds: new []{12000313}, state: 1);
                     context.CreateMonster(spawnIds: new []{1114, 1115, 1116}, arg2: false);
                     return new StateCableOn_13(context);
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override TriggerState? Execute() {
                 if (context.MonsterDead(spawnIds: new []{1111})) {
-                    context.SetVisibleBreakableObject(triggerIds: new []{1014, 1015}, arg2: true);
+                    context.SetVisibleBreakableObject(triggerIds: new []{1014, 1015}, visible: true);
                     context.SetInteractObject(interactIds: new []{12000314, 12000315}, state: 1);
                     context.CreateMonster(spawnIds: new []{1114, 1115, 1116}, arg2: false);
                     return new StateCableOn_14_15(context);
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override TriggerState? Execute() {
                 if (context.MonsterDead(spawnIds: new []{1112})) {
-                    context.SetVisibleBreakableObject(triggerIds: new []{1016, 1017}, arg2: true);
+                    context.SetVisibleBreakableObject(triggerIds: new []{1016, 1017}, visible: true);
                     context.SetInteractObject(interactIds: new []{12000316, 12000317}, state: 1);
                     context.CreateMonster(spawnIds: new []{1114, 1115, 1116}, arg2: false);
                     return new StateCableOn_16_17(context);
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override TriggerState? Execute() {
                 if (context.MonsterDead(spawnIds: new []{1113})) {
-                    context.SetVisibleBreakableObject(triggerIds: new []{1018}, arg2: true);
+                    context.SetVisibleBreakableObject(triggerIds: new []{1018}, visible: true);
                     context.SetInteractObject(interactIds: new []{12000318}, state: 1);
                     context.CreateMonster(spawnIds: new []{1114, 1115, 1116}, arg2: false);
                     return new StateCableOn_18(context);

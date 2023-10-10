@@ -22,27 +22,27 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateWarp_1(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateWarp_2(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateWarp_3(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateWarp_4(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateWarp_5(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateWarp_6(context);
                 }
 
@@ -172,27 +172,27 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateWarp2_1(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateWarp2_2(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateWarp2_3(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateWarp2_4(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateWarp2_5(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateWarp2_6(context);
                 }
 

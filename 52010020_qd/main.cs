@@ -146,7 +146,7 @@ namespace Maple2.Trigger._52010020_qd {
 
             public override void OnExit() {
                 context.SetAchievement(triggerId: 701, type: "trigger", code: "luanDialogue");
-                context.CameraSelect(triggerId: 8001, enable: false);
+                context.CameraSelect(triggerId: 8001, enabled: false);
                 context.MoveUser(mapId: 52010019, portalId: 2, boxId: 701);
             }
         }

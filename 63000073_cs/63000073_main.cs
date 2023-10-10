@@ -6,7 +6,7 @@ namespace Maple2.Trigger._63000073_cs {
             internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.CreateMonster(spawnIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117}, arg2: true);
                 context.SetLadder(triggerId: 6001, visible: false, animationEffect: false);
                 context.SetLadder(triggerId: 6002, visible: false, animationEffect: false);
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._63000073_cs {
             internal State전투만(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._63000073_cs {
             internal State보BossExit_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.SetSceneSkip(state: new State보BossExit_03(context), arg2: "nextState");
             }
 
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._63000073_cs {
             internal State보BossExit_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.ShowGuideSummary(entityId: 26300731, textId: 26300731);
@@ -231,7 +231,7 @@ namespace Maple2.Trigger._63000073_cs {
             internal State퀘완료가능재입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.CreateMonster(spawnIds: new []{122}, arg2: false);
@@ -259,7 +259,7 @@ namespace Maple2.Trigger._63000073_cs {
             internal State트렁크오픈_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.HideGuideSummary(entityId: 26300732);
@@ -299,7 +299,7 @@ namespace Maple2.Trigger._63000073_cs {
             internal State트렁크오픈_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.SetSceneSkip(state: new State에이든Exit_01(context), arg2: "nextState");
             }
 

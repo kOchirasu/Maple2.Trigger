@@ -239,7 +239,7 @@ namespace Maple2.Trigger._52000013_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "17", seconds: 8);
-                context.CameraSelect(triggerId: 905, enable: false);
+                context.CameraSelect(triggerId: 905, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

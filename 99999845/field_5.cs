@@ -28,7 +28,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override TriggerState? Execute() {
                 if (context.MonsterDead(spawnIds: new []{1117})) {
-                    context.SetVisibleBreakableObject(triggerIds: new []{1022}, arg2: true);
+                    context.SetVisibleBreakableObject(triggerIds: new []{1022}, visible: true);
                     context.SetInteractObject(interactIds: new []{12000322}, state: 1);
                     // return new StateCableOn_04(context);
                     return null;
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SetVisibleBreakableObject(triggerIds: new []{1004, 1005, 1006}, arg2: false);
+                    context.SetVisibleBreakableObject(triggerIds: new []{1004, 1005, 1006}, visible: false);
                 }
 
                 return null;

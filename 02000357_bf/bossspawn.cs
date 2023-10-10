@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000357_bf {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.CreateMonster(spawnIds: new []{99}, arg2: false);
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000357_bf {
             }
 
             public override void OnExit() {
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

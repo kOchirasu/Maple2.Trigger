@@ -45,11 +45,11 @@ namespace Maple2.Trigger._52100053_qd {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateBehindWoodbox(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateBehindWardrope(context);
                 }
 

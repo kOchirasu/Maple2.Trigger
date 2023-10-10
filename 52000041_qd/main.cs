@@ -418,7 +418,7 @@ namespace Maple2.Trigger._52000041_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.CreateMonster(spawnIds: new []{1000, 2000, 3000}, arg2: false);
                 context.SetNpcEmotionLoop(spawnId: 2000, sequenceName: "DownIdle_A", duration: 2000f);
                 context.SetNpcEmotionLoop(spawnId: 3000, sequenceName: "Talk_A", duration: 30000f);
@@ -439,7 +439,7 @@ namespace Maple2.Trigger._52000041_qd {
             internal StateNPC이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.MoveNpc(spawnId: 2000, patrolName: "MS2PatrolData_2000");
             }
 
@@ -740,7 +740,7 @@ namespace Maple2.Trigger._52000041_qd {
             internal StateNPC이동03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
                 context.MoveNpc(spawnId: 1000, patrolName: "MS2PatrolData_1000B");
             }
 
@@ -1058,7 +1058,7 @@ namespace Maple2.Trigger._52000041_qd {
             internal StateNPC이동04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.MoveNpc(spawnId: 3000, patrolName: "MS2PatrolData_3000");
             }
 
@@ -1078,7 +1078,7 @@ namespace Maple2.Trigger._52000041_qd {
             internal StateNPC이동05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: false);
+                context.CameraSelect(triggerId: 302, enabled: false);
                 context.MoveNpc(spawnId: 1000, patrolName: "MS2PatrolData_1000C");
             }
 

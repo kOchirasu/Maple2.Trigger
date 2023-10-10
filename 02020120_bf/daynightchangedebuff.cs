@@ -6,8 +6,8 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2222}, arg2: true);
-                context.SetSkill(triggerIds: new []{1212}, arg2: false);
+                context.SetSkill(triggerIds: new []{2222}, enabled: true);
+                context.SetSkill(triggerIds: new []{1212}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -72,8 +72,8 @@ namespace Maple2.Trigger._02020120_bf {
                 context.ChangeBackground(dds: "BG_RedLapenta_A.dds");
                 context.SetAmbientLight(color: new Vector3(226f, 197f, 211f));
                 context.SetDirectionalLight(diffuseColor: new Vector3(224f, 246f, 249f), specularColor: new Vector3(170f, 170f, 170f));
-                context.SetSkill(triggerIds: new []{2222}, arg2: true);
-                context.SetSkill(triggerIds: new []{1212}, arg2: false);
+                context.SetSkill(triggerIds: new []{2222}, enabled: true);
+                context.SetSkill(triggerIds: new []{1212}, enabled: false);
                 context.SetUserValue(key: "DayNightChange", value: 0);
             }
 
@@ -98,8 +98,8 @@ namespace Maple2.Trigger._02020120_bf {
                 context.ChangeBackground(dds: "BG_RedLapenta_A.dds");
                 context.SetAmbientLight(color: new Vector3(226f, 197f, 211f));
                 context.SetDirectionalLight(diffuseColor: new Vector3(224f, 246f, 249f), specularColor: new Vector3(170f, 170f, 170f));
-                context.SetSkill(triggerIds: new []{2222}, arg2: true);
-                context.SetSkill(triggerIds: new []{1212}, arg2: false);
+                context.SetSkill(triggerIds: new []{2222}, enabled: true);
+                context.SetSkill(triggerIds: new []{1212}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._02020120_bf {
                 context.ChangeBackground(dds: "BG_RedLapenta_B.dds");
                 context.SetAmbientLight(color: new Vector3(120f, 119f, 183f));
                 context.SetDirectionalLight(diffuseColor: new Vector3(193f, 100f, 119f), specularColor: new Vector3(170f, 170f, 170f));
-                context.SetSkill(triggerIds: new []{2222}, arg2: false);
-                context.SetSkill(triggerIds: new []{1212}, arg2: true);
+                context.SetSkill(triggerIds: new []{2222}, enabled: false);
+                context.SetSkill(triggerIds: new []{1212}, enabled: true);
                 context.SetUserValue(key: "DayNightChange", value: 0);
             }
 

@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000498_bf {
             internal StateFadeOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "곧 새로운 차원으로 당신을 안내 합니다.", duration: 3000);
                 context.SetEffect(triggerIds: new []{500, 501}, visible: true);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000498_bf {
             internal StateFadeIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ChangeBackground(dds: "BG_Lith_C.dds");
                 context.SetAmbientLight(color: new Vector3(199f, 207f, 214f));
                 context.SetDirectionalLight(diffuseColor: new Vector3(255f, 255f, 255f), specularColor: new Vector3(255f, 255f, 255f));

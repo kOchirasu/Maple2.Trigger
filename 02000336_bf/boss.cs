@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000336_bf {
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{7001}, visible: true);
                 context.SetMesh(triggerIds: new []{8041, 8042, 8043, 8044}, visible: false, arg4: 0, arg5: 10f);
-                context.SetSkill(triggerIds: new []{5801}, arg2: true);
+                context.SetSkill(triggerIds: new []{5801}, enabled: true);
                 context.CreateMonster(spawnIds: new []{181, 182, 183});
                 context.SetTimer(timerId: "2", seconds: 2, display: false);
             }
@@ -69,7 +69,7 @@ namespace Maple2.Trigger._02000336_bf {
                 context.DestroyMonster(spawnIds: new []{90});
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 8001, enable: true);
+                context.CameraSelect(triggerId: 8001, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11003124, script: "$02000336_BF__BOSS__0$", arg4: 3);
                 context.SetSkip(state: new State웨이홍_Script02(context));
                 context.SetTimer(timerId: "3", seconds: 3, display: false);
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._02000336_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 112, textId: 40009);
-                context.CameraSelect(triggerId: 8001, enable: false);
+                context.CameraSelect(triggerId: 8001, enabled: false);
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
             }
 

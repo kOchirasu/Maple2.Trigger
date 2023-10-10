@@ -320,7 +320,7 @@ namespace Maple2.Trigger._52000118_qd {
             internal StateTalk_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7001, arg2: true);
+                context.SetSound(triggerId: 7001, enabled: true);
                 context.SetNpcEmotionSequence(spawnId: 101, sequenceName: "Talk_A");
                 context.AddCinematicTalk(npcId: 11003167, script: "$52000118_QD__MAIN__14$", duration: 3000);
             }
@@ -341,7 +341,7 @@ namespace Maple2.Trigger._52000118_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{4005}, returnView: false);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -360,7 +360,7 @@ namespace Maple2.Trigger._52000118_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{4006}, returnView: false);
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override TriggerState? Execute() {

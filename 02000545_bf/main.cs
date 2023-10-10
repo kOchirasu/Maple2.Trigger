@@ -11,13 +11,13 @@ namespace Maple2.Trigger._02000545_bf {
                 context.SetEffect(triggerIds: new []{5001, 5002, 5003}, visible: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetEffect(triggerIds: new []{5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015}, visible: false);
-                context.SetSkill(triggerIds: new []{3000}, arg2: false);
-                context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 102, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 104, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 105, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 106, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetSkill(triggerIds: new []{3000}, enabled: false);
+                context.SetOnetimeEffect(id: 101, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 102, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 103, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 104, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 105, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 106, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 101, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.CameraSelectPath(pathIds: new []{7001}, returnView: false);
                 context.AddCinematicTalk(npcId: 11004687, script: "$02000545_BF__MAIN__6$", align: Align.Left, duration: 4000);
                 context.SetEffect(triggerIds: new []{5001}, visible: true);
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02000545_bf {
                 context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 2f);
                 context.SetEventUI(arg1: 1, script: "$02000545_BF__MAIN__7$", duration: 3000);
-                context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 103, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.CreateMonster(spawnIds: new []{401, 402, 403, 404, 405}, arg2: true);
                 context.DestroyMonster(spawnIds: new []{602, 603, 604, 605});
             }
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$02000545_BF__MAIN__10$", duration: 3000);
-                context.SetOnetimeEffect(id: 104, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 104, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.CreateMonster(spawnIds: new []{202}, arg2: true);
                 context.SetEffect(triggerIds: new []{5009}, visible: true);
             }
@@ -249,7 +249,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004706, illust: "PuppetBunnyBlue_normal", duration: 4000, script: "$02000545_BF__MAIN__13$");
-                context.SetOnetimeEffect(id: 106, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 106, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -313,7 +313,7 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2141, 2142}, visible: false);
                 context.SetEffect(triggerIds: new []{5001, 5012, 5013, 5014, 5015}, visible: true);
-                context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 102, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.AddCinematicTalk(npcId: 11004687, script: "$02000545_BF__MAIN__15$", align: Align.Left, duration: 3000);
                 context.SetMesh(triggerIds: new []{2999}, visible: true);
                 context.SetEffect(triggerIds: new []{5010}, visible: true);

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52000047_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{5000, 5001, 5100, 5101, 5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5210, 5220, 5221, 5300}, visible: false);
-                context.SetSkill(triggerIds: new []{7000, 7001, 7002}, arg2: false);
+                context.SetSkill(triggerIds: new []{7000, 7001, 7002}, enabled: false);
                 context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3100}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "VasaraTired", value: 0);
             }
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateLoadingDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 500, enable: true);
+                context.CameraSelect(triggerId: 500, enabled: true);
                 context.CreateMonster(spawnIds: new []{500, 501, 502, 503, 504, 505, 506, 507, 508, 509}, arg2: false);
             }
 
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._52000047_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 501, enable: true);
+                context.CameraSelect(triggerId: 501, enabled: true);
                 context.MoveUserPath(patrolName: "MS2PatrolData_1000");
             }
 
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._52000047_qd {
                 context.SetNpcEmotionLoop(spawnId: 502, sequenceName: "Talk_A", duration: 6000f);
                 context.SetNpcEmotionLoop(spawnId: 509, sequenceName: "Talk_A", duration: 6000f);
                 context.SetNpcEmotionSequence(spawnId: 503, sequenceName: "Bore_A");
-                context.CameraSelect(triggerId: 502, enable: true);
+                context.CameraSelect(triggerId: 502, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -333,7 +333,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateMafiaReadyToFight02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 503, enable: true);
+                context.CameraSelect(triggerId: 503, enabled: true);
                 context.SetPcEmotionSequence(sequenceNames: new []{"Striker_Bore_A"});
                 context.SetConversation(type: 1, spawnId: 0, script: "$52000047_QD__ACTION01__3$", arg4: 2, arg5: 1);
             }
@@ -353,7 +353,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateMafiaReadyToFight03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 504, enable: true);
+                context.CameraSelect(triggerId: 504, enabled: true);
                 context.ChangeMonster(removeSpawnId: 500, addSpawnId: 900);
                 context.ChangeMonster(removeSpawnId: 501, addSpawnId: 901);
                 context.ChangeMonster(removeSpawnId: 502, addSpawnId: 902);
@@ -383,7 +383,7 @@ namespace Maple2.Trigger._52000047_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 504, enable: false);
+                context.CameraSelect(triggerId: 504, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -461,7 +461,7 @@ namespace Maple2.Trigger._52000047_qd {
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{100}, arg2: false);
                 context.MoveNpc(spawnId: 100, patrolName: "MS2PatrolData_100");
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -500,7 +500,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateWeihongTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11000251, script: "$52000047_QD__ACTION01__4$", arg4: 4);
                 context.SetSkip(state: new StateWeihongTalk01Skip(context));
             }
@@ -573,7 +573,7 @@ namespace Maple2.Trigger._52000047_qd {
                 context.SetSkip();
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 602, enable: true);
+                context.CameraSelect(triggerId: 602, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -676,7 +676,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateMeetAgainWeihong05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 602, enable: false);
+                context.CameraSelect(triggerId: 602, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -753,7 +753,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StatePositionArrange02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 700, enable: true);
+                context.CameraSelect(triggerId: 700, enabled: true);
                 context.MoveUser(mapId: 52000047, portalId: 3, boxId: 9900);
             }
 
@@ -809,7 +809,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateWeihongStepBack02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 701, enable: true);
+                context.CameraSelect(triggerId: 701, enabled: true);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_102");
                 context.SetConversation(type: 1, spawnId: 101, script: "$52000047_QD__ACTION01__11$", arg4: 2, arg5: 1);
             }
@@ -829,7 +829,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StatePCTryToAttackWeihong01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 710, enable: true);
+                context.CameraSelect(triggerId: 710, enabled: true);
                 context.SetPcEmotionLoop(sequenceName: "Knuckle_Attack_Idle_A", duration: 1734f);
                 context.SetConversation(type: 1, spawnId: 0, script: "$52000047_QD__ACTION01__12$", arg4: 2, arg5: 0);
             }
@@ -849,7 +849,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StatePCTryToAttackWeihong02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 711, enable: true);
+                context.CameraSelect(triggerId: 711, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -922,7 +922,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateVasaraPush03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{7000}, arg2: true);
+                context.SetSkill(triggerIds: new []{7000}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -978,7 +978,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateSceneChange02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 720, enable: true);
+                context.CameraSelect(triggerId: 720, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1070,7 +1070,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateVasaraBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 720, enable: false);
+                context.CameraSelect(triggerId: 720, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.DestroyMonster(spawnIds: new []{201});
@@ -1150,7 +1150,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateVasaraTired02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 720, enable: true);
+                context.CameraSelect(triggerId: 720, enabled: true);
                 context.MoveUser(mapId: 52000047, portalId: 4, boxId: 9900);
                 context.DestroyMonster(spawnIds: new []{202});
                 context.CreateMonster(spawnIds: new []{203}, arg2: false);
@@ -1227,7 +1227,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateWeihongOrder01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 730, enable: true);
+                context.CameraSelect(triggerId: 730, enabled: true);
                 context.SetNpcEmotionSequence(spawnId: 101, sequenceName: "Talk_A");
             }
 
@@ -1286,7 +1286,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateMafiaMove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 731, enable: true);
+                context.CameraSelect(triggerId: 731, enabled: true);
                 context.MoveNpc(spawnId: 530, patrolName: "MS2PatrolData_530");
                 context.MoveNpc(spawnId: 535, patrolName: "MS2PatrolData_535");
                 context.MoveNpc(spawnId: 534, patrolName: "MS2PatrolData_534");
@@ -1400,7 +1400,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateVasaraPushAgain03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{7001}, arg2: true);
+                context.SetSkill(triggerIds: new []{7001}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1437,7 +1437,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateVasaraLastAttack01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{7002}, arg2: true);
+                context.SetSkill(triggerIds: new []{7002}, enabled: true);
                 context.SetEffect(triggerIds: new []{5300}, visible: true);
             }
 
@@ -1477,7 +1477,7 @@ namespace Maple2.Trigger._52000047_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{5221}, visible: true);
-                context.CameraSelect(triggerId: 731, enable: true);
+                context.CameraSelect(triggerId: 731, enabled: true);
                 context.SetMesh(triggerIds: new []{3100}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -1555,7 +1555,7 @@ namespace Maple2.Trigger._52000047_qd {
                 context.SetSkip();
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 731, enable: false);
+                context.CameraSelect(triggerId: 731, enabled: false);
                 context.SetEffect(triggerIds: new []{5221}, visible: true);
             }
 

@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetTimer(timerId: "3", seconds: 3);
                 context.SetSkip(state: new StateStopCinematic(context));
             }
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
             }
 
             public override TriggerState? Execute() {

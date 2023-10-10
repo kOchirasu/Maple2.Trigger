@@ -8,7 +8,7 @@ namespace Maple2.Trigger._52020017_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{5001, 5002}, visible: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -183,7 +183,7 @@ namespace Maple2.Trigger._52020017_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 11003624, script: "자, 그럼 극을 시작해볼까?", duration: 2800, illustId: "RobotMaidBrownHair_normal", align: Align.Center);
             }
 
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._52020017_qd {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetAmbientLight(color: new Vector3(1f, 1f, 1f));
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddBalloonTalk(spawnId: 0, msg: "!", duration: 2000, delayTick: 0);
             }
 

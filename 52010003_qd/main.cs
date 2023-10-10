@@ -30,7 +30,7 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() {
                 context.SetActor(triggerId: 2001, visible: true, initialSequence: "Sit_Down_A");
-                context.CameraSelect(triggerId: 8001, enable: true);
+                context.CameraSelect(triggerId: 8001, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.DestroyMonster(spawnIds: new []{101});
@@ -255,7 +255,7 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnExit() {
                 context.RemoveCinematicTalk();
-                context.CameraSelect(triggerId: 8001, enable: false);
+                context.CameraSelect(triggerId: 8001, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 7);
@@ -279,7 +279,7 @@ namespace Maple2.Trigger._52010003_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 8001, enable: true);
+                context.CameraSelect(triggerId: 8001, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.CreateMonster(spawnIds: new []{102});
@@ -676,7 +676,7 @@ namespace Maple2.Trigger._52010003_qd {
             }
 
             public override void OnExit() {
-                context.CameraSelect(triggerId: 8001, enable: false);
+                context.CameraSelect(triggerId: 8001, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 7);

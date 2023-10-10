@@ -23,7 +23,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.CreateMonster(spawnIds: new []{1001, 2001, 1002, 1003, 1004, 1005, 1006}, arg2: false);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52000029_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{601}, visible: true);
-                context.CameraSelect(triggerId: 3022, enable: true);
+                context.CameraSelect(triggerId: 3022, enabled: true);
                 context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_1001_A");
                 context.MoveNpc(spawnId: 1002, patrolName: "MS2PatrolData_1002_A");
             }
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal StateNPC이동2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003_A");
                 context.MoveNpc(spawnId: 1004, patrolName: "MS2PatrolData_1004_A");
                 context.MoveNpc(spawnId: 1005, patrolName: "MS2PatrolData_1005_A");
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal StateCamera이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal StateIshura이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 304, enable: true);
+                context.CameraSelect(triggerId: 304, enabled: true);
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003_B");
             }
 
@@ -235,7 +235,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal State홀슈타트Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 305, enable: true);
+                context.CameraSelect(triggerId: 305, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11001231, script: "$52000029_QD__MAIN__3$", arg4: 3, arg5: 0);
             }
 
@@ -254,7 +254,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal State홀슈타트도망(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 3055, enable: true);
+                context.CameraSelect(triggerId: 3055, enabled: true);
                 context.MoveNpc(spawnId: 2001, patrolName: "MS2PatrolData_2001_B");
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003_C");
             }
@@ -293,7 +293,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal StateNPC집결(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 306, enable: true);
+                context.CameraSelect(triggerId: 306, enabled: true);
                 context.MoveNpc(spawnId: 1007, patrolName: "MS2PatrolData_1007_B");
                 context.MoveNpc(spawnId: 1008, patrolName: "MS2PatrolData_1008_B");
                 context.MoveNpc(spawnId: 1009, patrolName: "MS2PatrolData_1009_B");
@@ -334,7 +334,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal State아노스Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 307, enable: true);
+                context.CameraSelect(triggerId: 307, enabled: true);
                 context.SetEffect(triggerIds: new []{607}, visible: true);
                 context.SetConversation(type: 2, spawnId: 11000032, script: "$52000029_QD__MAIN__5$", arg4: 4, arg5: 0);
             }
@@ -391,7 +391,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal StateIshuraScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 308, enable: true);
+                context.CameraSelect(triggerId: 308, enabled: true);
                 context.SetEffect(triggerIds: new []{603}, visible: true);
                 context.SetConversation(type: 2, spawnId: 11001244, script: "$52000029_QD__MAIN__8$", arg4: 2, arg5: 0);
             }
@@ -430,7 +430,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal StateIshuraScript04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 306, enable: true);
+                context.CameraSelect(triggerId: 306, enabled: true);
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003_D");
                 context.SetEffect(triggerIds: new []{605}, visible: true);
                 context.SetConversation(type: 2, spawnId: 11001244, script: "$52000029_QD__MAIN__10$", arg4: 6, arg5: 0);
@@ -489,7 +489,7 @@ namespace Maple2.Trigger._52000029_qd {
             public override void OnEnter() {
                 context.AddBuff(boxIds: new []{1007}, skillId: 71000004, level: 1, arg4: true, arg5: false);
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003_C");
-                context.CameraSelect(triggerId: 309, enable: true);
+                context.CameraSelect(triggerId: 309, enabled: true);
             }
 
             public override TriggerState? Execute() {

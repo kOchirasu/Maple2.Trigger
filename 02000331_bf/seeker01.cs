@@ -215,19 +215,19 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn01_1TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn01_2TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn01_3TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn01_4TimedCreation(context);
                 }
 
@@ -323,19 +323,19 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn01_5TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn01_6TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn01_7TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn01_8TimedCreation(context);
                 }
 
@@ -423,19 +423,19 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn01_9TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn01_10TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn01_11TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn01_12TimedCreation(context);
                 }
 
@@ -559,7 +559,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__900$");
-                context.CameraSelect(triggerId: 802, enable: true);
+                context.CameraSelect(triggerId: 802, enabled: true);
                 context.MoveNpc(spawnId: 100, patrolName: "MS2PatrolData_999");
             }
 
@@ -602,7 +602,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{777801}, visible: false);
-                context.CameraSelect(triggerId: 802, enable: false);
+                context.CameraSelect(triggerId: 802, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetSkip();
@@ -730,19 +730,19 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new State첫번째힌트발견01(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new State첫번째힌트발견02(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new State첫번째힌트발견03(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new State첫번째힌트발견04(context);
                 }
 
@@ -1238,19 +1238,19 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn02_1TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn02_2TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn02_3TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn02_4TimedCreation(context);
                 }
 
@@ -1426,23 +1426,23 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State두번째힌트발견01(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State두번째힌트발견02(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State두번째힌트발견03(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State두번째힌트발견04(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State두번째힌트발견05(context);
                 }
 
@@ -2583,23 +2583,23 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State세번째스위치출현01(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State세번째스위치출현02(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State세번째스위치출현03(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State세번째스위치출현04(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State세번째스위치출현05(context);
                 }
 
@@ -2629,7 +2629,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__901$");
-                context.CameraSelect(triggerId: 804, enable: true);
+                context.CameraSelect(triggerId: 804, enabled: true);
                 context.MoveNpc(spawnId: 100, patrolName: "MS2PatrolData_1007");
                 context.MoveNpc(spawnId: 200, patrolName: "MS2PatrolData_2006");
                 context.MoveNpc(spawnId: 300, patrolName: "MS2PatrolData_3004");
@@ -2651,7 +2651,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StopCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 804, enable: false);
+                context.CameraSelect(triggerId: 804, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetSkip(state: new State구출안내01_01(context));
@@ -2765,7 +2765,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__901$");
-                context.CameraSelect(triggerId: 804, enable: true);
+                context.CameraSelect(triggerId: 804, enabled: true);
                 context.MoveNpc(spawnId: 100, patrolName: "MS2PatrolData_1007");
                 context.MoveNpc(spawnId: 200, patrolName: "MS2PatrolData_2006");
                 context.MoveNpc(spawnId: 300, patrolName: "MS2PatrolData_3004");
@@ -2787,7 +2787,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StopCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 804, enable: false);
+                context.CameraSelect(triggerId: 804, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetSkip(state: new State구출안내02_01(context));
@@ -2901,7 +2901,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__901$");
-                context.CameraSelect(triggerId: 804, enable: true);
+                context.CameraSelect(triggerId: 804, enabled: true);
                 context.MoveNpc(spawnId: 100, patrolName: "MS2PatrolData_1007");
                 context.MoveNpc(spawnId: 200, patrolName: "MS2PatrolData_2006");
                 context.MoveNpc(spawnId: 300, patrolName: "MS2PatrolData_3004");
@@ -2923,7 +2923,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StopCinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 804, enable: false);
+                context.CameraSelect(triggerId: 804, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetSkip(state: new State구출안내03_01(context));
@@ -3037,7 +3037,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__901$");
-                context.CameraSelect(triggerId: 804, enable: true);
+                context.CameraSelect(triggerId: 804, enabled: true);
                 context.MoveNpc(spawnId: 100, patrolName: "MS2PatrolData_1007");
                 context.MoveNpc(spawnId: 200, patrolName: "MS2PatrolData_2006");
                 context.MoveNpc(spawnId: 300, patrolName: "MS2PatrolData_3004");
@@ -3059,7 +3059,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StopCinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 804, enable: false);
+                context.CameraSelect(triggerId: 804, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetSkip(state: new State구출안내04_01(context));
@@ -3173,7 +3173,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__901$");
-                context.CameraSelect(triggerId: 804, enable: true);
+                context.CameraSelect(triggerId: 804, enabled: true);
                 context.MoveNpc(spawnId: 100, patrolName: "MS2PatrolData_1007");
                 context.MoveNpc(spawnId: 200, patrolName: "MS2PatrolData_2006");
                 context.MoveNpc(spawnId: 300, patrolName: "MS2PatrolData_3004");
@@ -3195,7 +3195,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StopCinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 804, enable: false);
+                context.CameraSelect(triggerId: 804, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetSkip(state: new State구출안내05_01(context));
@@ -3514,19 +3514,19 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_1번대장Creation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_2번대장Creation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_3번대장Creation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_4번대장Creation(context);
                 }
 
@@ -3602,19 +3602,19 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_1번자코Creation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_2번자코Creation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_3번자코Creation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_4번자코Creation(context);
                 }
 
@@ -3726,19 +3726,19 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_5번대장Creation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_6번대장Creation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_7번대장Creation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_8번대장Creation(context);
                 }
 
@@ -3830,19 +3830,19 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_5번자코Creation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_6번자코Creation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_7번자코Creation(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateMonsterSpawn05_8번자코Creation(context);
                 }
 
@@ -3935,7 +3935,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetEffect(triggerIds: new []{7776}, visible: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__902$");
-                context.CameraSelect(triggerId: 800, enable: true);
+                context.CameraSelect(triggerId: 800, enabled: true);
                 context.SetSkip(state: new State추격StopCinematic01(context));
             }
 
@@ -3956,7 +3956,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$02000331_BF__Seeker01__803$", duration: 2000, boxId: 0);
                 context.SetEffect(triggerIds: new []{7771}, visible: true);
-                context.CameraSelect(triggerId: 800, enable: false);
+                context.CameraSelect(triggerId: 800, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetConversation(type: 1, spawnId: 100, script: "$02000331_BF__Seeker01__90$", arg4: 2);
@@ -4094,7 +4094,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__903$");
-                context.CameraSelect(triggerId: 806, enable: true);
+                context.CameraSelect(triggerId: 806, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4133,7 +4133,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째무너짐StopCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 806, enable: false);
+                context.CameraSelect(triggerId: 806, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetSkip(state: new State술래말풍선06(context));
@@ -4253,23 +4253,23 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State외다리스위치출현01(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State외다리스위치출현02(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State외다리스위치출현03(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State외다리스위치출현04(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State외다리스위치출현05(context);
                 }
 
@@ -4628,7 +4628,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__904$");
                 context.SetEffect(triggerIds: new []{777901}, visible: true);
-                context.CameraSelect(triggerId: 808, enable: true);
+                context.CameraSelect(triggerId: 808, enabled: true);
                 context.SetSkip(state: new StateBossSpawnCinematic중01(context));
             }
 
@@ -4686,7 +4686,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.ChangeMonster(removeSpawnId: 300, addSpawnId: 603);
                 context.ChangeMonster(removeSpawnId: 400, addSpawnId: 604);
                 context.ChangeMonster(removeSpawnId: 500, addSpawnId: 605);
-                context.CameraSelect(triggerId: 809, enable: true);
+                context.CameraSelect(triggerId: 809, enabled: true);
                 context.SetSkip(state: new StateBossSpawnCinematic중02Skip(context));
             }
 
@@ -4754,7 +4754,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBossSpawnCinematic중04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 809, enable: false);
+                context.CameraSelect(triggerId: 809, enabled: false);
                 context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__907$");
                 context.SetEffect(triggerIds: new []{777901}, visible: false);
                 context.SetEffect(triggerIds: new []{777902}, visible: true);
@@ -4776,7 +4776,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBossSpawnEndCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 808, enable: false);
+                context.CameraSelect(triggerId: 808, enabled: false);
                 context.SetSkip();
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
@@ -4820,23 +4820,23 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_1TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_2TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_3TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_4TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_5TimedCreation(context);
                 }
 
@@ -4943,23 +4943,23 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_6TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_7TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_8TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_9TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_10TimedCreation(context);
                 }
 
@@ -5081,23 +5081,23 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_11TimedCreation_01(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_12TimedCreation_01(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_13TimedCreation_01(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_14TimedCreation_01(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMonsterSpawn06_15TimedCreation_01(context);
                 }
 
@@ -6423,7 +6423,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 811, enable: true);
+                context.CameraSelect(triggerId: 811, enabled: true);
                 context.SetSkip(state: new StateBossCombatSetup04(context));
             }
 
@@ -6462,7 +6462,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBossCombatSetup04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 811, enable: false);
+                context.CameraSelect(triggerId: 811, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
@@ -6525,7 +6525,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetActor(triggerId: 97770, visible: false, initialSequence: "Closed");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3, script: "$02000331_BF__Seeker01__909$");
-                context.CameraSelect(triggerId: 812, enable: true);
+                context.CameraSelect(triggerId: 812, enabled: true);
                 context.SetSkip(state: new StateBoss도망Cinematic03(context));
             }
 
@@ -6565,7 +6565,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBoss도망Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 812, enable: false);
+                context.CameraSelect(triggerId: 812, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.ChangeMonster(removeSpawnId: 610, addSpawnId: 600);

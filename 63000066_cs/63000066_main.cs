@@ -74,7 +74,7 @@ namespace Maple2.Trigger._63000066_cs {
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 26300662);
                 context.SetEffect(triggerIds: new []{5001, 5002}, visible: false);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._63000066_cs {
             internal State마리엔Spawn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -351,7 +351,7 @@ namespace Maple2.Trigger._63000066_cs {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.FaceEmotion(spawnId: 0);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);

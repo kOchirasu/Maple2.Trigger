@@ -100,7 +100,7 @@ namespace Maple2.Trigger._99999931 {
             public override void OnEnter() {
                 context.SetTimer(timerId: "35", seconds: 1);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 112, 113, 115, 116, 118, 119, 121, 122, 124, 125, 130, 131, 132, 133, 134, 135, 136}, enabled: false);
-                context.SetSkill(triggerIds: new []{801, 802, 803, 804, 805, 806, 807, 812, 813, 815, 816, 818, 819, 821, 822, 824, 825, 830, 831, 832, 833, 834, 835, 836}, arg2: true);
+                context.SetSkill(triggerIds: new []{801, 802, 803, 804, 805, 806, 807, 812, 813, 815, 816, 818, 819, 821, 822, 824, 825, 830, 831, 832, 833, 834, 835, 836}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._99999931 {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "36", seconds: 2);
-                context.SetSkill(triggerIds: new []{801, 802, 803, 804, 805, 806, 807, 812, 813, 815, 816, 818, 819, 821, 822, 824, 825, 830, 831, 832, 833, 834, 835, 836}, arg2: false);
+                context.SetSkill(triggerIds: new []{801, 802, 803, 804, 805, 806, 807, 812, 813, 815, 816, 818, 819, 821, 822, 824, 825, 830, 831, 832, 833, 834, 835, 836}, enabled: false);
             }
 
             public override TriggerState? Execute() {

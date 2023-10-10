@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02020101_bf {
             internal State타이머1_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 20, clearAtZero: true, display: true, arg5: -40);
+                context.SetTimer(timerId: "1", seconds: 20, autoRemove: true, display: true, vOffset: -40);
             }
 
             public override TriggerState? Execute() {
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02020101_bf {
             internal State타이머2_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "2", seconds: 20, clearAtZero: true, display: true, arg5: -40);
+                context.SetTimer(timerId: "2", seconds: 20, autoRemove: true, display: true, vOffset: -40);
             }
 
             public override TriggerState? Execute() {
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._02020101_bf {
             internal State타이머3_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "3", seconds: 20, clearAtZero: true, display: true, arg5: -40);
+                context.SetTimer(timerId: "3", seconds: 20, autoRemove: true, display: true, vOffset: -40);
             }
 
             public override TriggerState? Execute() {

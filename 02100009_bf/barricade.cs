@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02100009_bf {
             internal StateCheckUser10_GuildRaid(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: true, display: false, vOffset: 0);
             }
 
             public override TriggerState? Execute() {
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._02100009_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 904, enable: true);
+                context.CameraSelect(triggerId: 904, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() {
                 context.CloseCinematic();
-                context.CameraSelect(triggerId: 904, enable: false);
+                context.CameraSelect(triggerId: 904, enabled: false);
             }
 
             public override TriggerState? Execute() {

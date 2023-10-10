@@ -38,7 +38,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.MoveUser(mapId: 52010027, portalId: 6007);
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal StateBossMonster는소멸Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(state: new State완료조건(context), arg2: "exit");
                 context.AddCinematicTalk(npcId: 11003469, script: "$52010027_QD__MAIN_QUEST10003102__0$", duration: 4000);
                 context.AddCinematicTalk(npcId: 11003469, script: "$52010027_QD__MAIN_QUEST10003102__1$", duration: 3000);

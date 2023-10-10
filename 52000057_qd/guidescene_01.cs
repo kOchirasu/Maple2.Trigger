@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52000057_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.CreateMonster(spawnIds: new []{1001}, arg2: false);
                 context.SetEffect(triggerIds: new []{601}, visible: true);
             }
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._52000057_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
             }
 
             public override TriggerState? Execute() {

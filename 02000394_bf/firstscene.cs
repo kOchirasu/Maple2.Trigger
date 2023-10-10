@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000394_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 3000, enable: false);
+                context.CameraSelect(triggerId: 3000, enabled: false);
             }
 
             public override TriggerState? Execute() {

@@ -24,35 +24,35 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 13f)) {
+                if (context.RandomCondition(rate: 13)) {
                     return new State10001258체크(context);
                 }
 
-                if (context.RandomCondition(rate: 13f)) {
+                if (context.RandomCondition(rate: 13)) {
                     return new State10001259체크(context);
                 }
 
-                if (context.RandomCondition(rate: 13f)) {
+                if (context.RandomCondition(rate: 13)) {
                     return new State10001260체크(context);
                 }
 
-                if (context.RandomCondition(rate: 13f)) {
+                if (context.RandomCondition(rate: 13)) {
                     return new State10001261체크(context);
                 }
 
-                if (context.RandomCondition(rate: 13f)) {
+                if (context.RandomCondition(rate: 13)) {
                     return new State10001262체크(context);
                 }
 
-                if (context.RandomCondition(rate: 13f)) {
+                if (context.RandomCondition(rate: 13)) {
                     return new State10001263체크(context);
                 }
 
-                if (context.RandomCondition(rate: 13f)) {
+                if (context.RandomCondition(rate: 13)) {
                     return new State10001264체크(context);
                 }
 
-                if (context.RandomCondition(rate: 13f)) {
+                if (context.RandomCondition(rate: 13)) {
                     return new State10001265체크(context);
                 }
 

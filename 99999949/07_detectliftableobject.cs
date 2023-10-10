@@ -80,11 +80,11 @@ namespace Maple2.Trigger._99999949 {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateAnswerIsWood01(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateAnswerIsRock01(context);
                 }
 

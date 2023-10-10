@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02100009_bf {
             internal State끝1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{1000049}, arg2: false);
+                context.SetSkill(triggerIds: new []{1000049}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() {
                 context.AddBuff(boxIds: new []{100000002}, skillId: 50000217, level: 1, arg4: true, arg5: false);
-                context.SetSkill(triggerIds: new []{1000049}, arg2: true);
+                context.SetSkill(triggerIds: new []{1000049}, enabled: true);
             }
 
             public override TriggerState? Execute() {

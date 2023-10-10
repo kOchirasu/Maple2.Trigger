@@ -323,7 +323,7 @@ namespace Maple2.Trigger._52000025_qd {
             }
 
             public override void OnExit() {
-                context.CameraSelect(triggerId: 8001, enable: false);
+                context.CameraSelect(triggerId: 8001, enabled: false);
             }
         }
 

@@ -9,9 +9,9 @@ namespace Maple2.Trigger._99999913 {
                 context.SetEffect(triggerIds: new []{4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800}, visible: false);
                 context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407, 3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607, 3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707, 3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(interactIds: new []{11000037, 11000039}, state: 1);
-                context.SetSound(triggerId: 20000, arg2: false);
-                context.SetSound(triggerId: 20001, arg2: false);
-                context.SightRange(enable: true, range: 3);
+                context.SetSound(triggerId: 20000, enabled: false);
+                context.SetSound(triggerId: 20001, enabled: false);
+                context.SightRange(enabled: true, range: 3);
             }
 
             public override TriggerState? Execute() {
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._99999913 {
             internal StateWait01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 60, clearAtZero: true, display: true, arg5: -80);
+                context.SetTimer(timerId: "1", seconds: 60, autoRemove: true, display: true, vOffset: -80);
                 context.SetEventUI(arg1: 1, script: @"잠시 기다려주세요.\n잠시 후 경기 시작점이 결정됩니다.", duration: 4000, boxId: 0);
                 context.WriteLog(logName: "Survival", @event: "Waiting_Start");
             }
@@ -361,7 +361,7 @@ namespace Maple2.Trigger._99999913 {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 5, key: "RareBoxOnCount", value: 1);
                 context.SetUserValue(triggerId: 2, key: "StartPatrol", value: 1);
-                context.SetSound(triggerId: 20000, arg2: true);
+                context.SetSound(triggerId: 20000, enabled: true);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.SetUserValue(triggerId: 4, key: "InvincibleOff", value: 1);
                 context.AddBuff(boxIds: new []{9000}, skillId: 71000053, level: 1, arg4: false, arg5: false);
@@ -393,8 +393,8 @@ namespace Maple2.Trigger._99999913 {
             internal StateGameStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 20000, arg2: false);
-                context.SetSound(triggerId: 20001, arg2: true);
+                context.SetSound(triggerId: 20000, enabled: false);
+                context.SetSound(triggerId: 20001, enabled: true);
                 context.SetUserValue(triggerId: 3, key: "StormStart", value: 1);
                 context.WriteLog(logName: "Survival", @event: "StormStart");
             }

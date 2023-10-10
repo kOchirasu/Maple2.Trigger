@@ -4,10 +4,10 @@ namespace Maple2.Trigger._99999949 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
-                context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
+                context.SetOnetimeEffect(id: 4, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._99999949 {
 
             public override void OnEnter() {
                 context.DebugString(message: "SetOnetimeEffect 2초 후에 시작됩니다.");
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
             }
 
             public override TriggerState? Execute() {
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._99999949 {
             internal StateSetOnetimeEffectReady02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
             }
 
             public override TriggerState? Execute() {
@@ -83,8 +83,8 @@ namespace Maple2.Trigger._99999949 {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.DebugString(message: "SetOnetimeEffect 재생");
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
-                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
+                context.SetOnetimeEffect(id: 4, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -104,8 +104,8 @@ namespace Maple2.Trigger._99999949 {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
-                context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
+                context.SetOnetimeEffect(id: 4, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.DebugString(message: "5초 후에 트리거가 리셋됩니다. 5번 영역 밖으로 나가세요.");
             }
 

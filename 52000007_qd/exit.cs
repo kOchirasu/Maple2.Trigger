@@ -20,7 +20,7 @@ namespace Maple2.Trigger._52000007_qd {
             internal State5초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "2", seconds: 2, clearAtZero: false);
+                context.SetTimer(timerId: "2", seconds: 2, autoRemove: false);
             }
 
             public override TriggerState? Execute() {
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._52000007_qd {
             internal State30초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "300", seconds: 300, clearAtZero: false);
+                context.SetTimer(timerId: "300", seconds: 300, autoRemove: false);
                 context.SetEventUI(arg1: 1, script: "$52000007_QD__EXIT__0$", duration: 4000);
             }
 

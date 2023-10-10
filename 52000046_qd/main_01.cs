@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52000046_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(state: new StateScene_10(context), arg2: "nextState");
             }
 
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52000046_qd {
             internal StateScene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._52000046_qd {
             internal StateScene_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip();
             }
 
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._52000046_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/Eff_jump_Landing.xml");
+                context.SetOnetimeEffect(id: 4, enabled: true, path: @"BG/Common/Eff_jump_Landing.xml");
             }
         }
 

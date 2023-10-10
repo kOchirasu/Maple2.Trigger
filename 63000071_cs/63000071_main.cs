@@ -40,7 +40,7 @@ namespace Maple2.Trigger._63000071_cs {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
             }
         }
 
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._63000071_cs {
             internal StateOpeningScene_1_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.SetEffect(triggerIds: new []{5000}, visible: false);
                 context.AddBalloonTalk(spawnId: 101, msg: "$63000071_CS__63000071_MAIN__0$", duration: 2500, delayTick: 1000);
                 context.SetNpcEmotionSequence(spawnId: 101, sequenceName: "Attack_01_A,Attack_01_B");
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._63000071_cs {
                 context.CreateMonster(spawnIds: new []{102}, arg2: false);
                 context.SetEffect(triggerIds: new []{5001}, visible: true);
                 context.CameraSelectPath(pathIds: new []{8002}, returnView: false);
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
             }
         }
 
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._63000071_cs {
             internal StateOpeningScene_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.SetEffect(triggerIds: new []{5001}, visible: false);
                 context.AddBalloonTalk(spawnId: 102, msg: "$63000071_CS__63000071_MAIN__4$", duration: 2500, delayTick: 500);
                 context.AddBalloonTalk(spawnId: 102, msg: "$63000071_CS__63000071_MAIN__5$", duration: 2500, delayTick: 4000);
@@ -184,7 +184,7 @@ namespace Maple2.Trigger._63000071_cs {
                 context.SetEffect(triggerIds: new []{5002, 5003}, visible: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 4);
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -248,7 +248,7 @@ namespace Maple2.Trigger._63000071_cs {
                 context.SetCinematicUI(type: 3);
                 context.VisibleMyPc(visible: false);
                 context.CameraSelectPath(pathIds: new []{8000, 8001}, returnView: false);
-                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 4, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.SetSceneSkip(state: new StateEndingskip_1(context), arg2: "exit");
                 context.SetEffect(triggerIds: new []{5004, 5005}, visible: false);
             }
@@ -268,7 +268,7 @@ namespace Maple2.Trigger._63000071_cs {
             internal StateEndingscene_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 4, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.AddBalloonTalk(spawnId: 104, msg: "$63000071_CS__63000071_MAIN__9$", duration: 2500, delayTick: 500);
                 context.AddBalloonTalk(spawnId: 103, msg: "$63000071_CS__63000071_MAIN__10$", duration: 2500, delayTick: 4000);
                 context.AddBalloonTalk(spawnId: 104, msg: "$63000071_CS__63000071_MAIN__11$", duration: 2500, delayTick: 8000);
@@ -394,7 +394,7 @@ namespace Maple2.Trigger._63000071_cs {
                 context.DestroyMonster(spawnIds: new []{103, 104});
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 4);
-                context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
+                context.SetOnetimeEffect(id: 4, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
             }
 
             public override TriggerState? Execute() {

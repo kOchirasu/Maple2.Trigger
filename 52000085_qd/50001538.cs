@@ -52,13 +52,13 @@ namespace Maple2.Trigger._52000085_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 2000, enable: false);
+                context.SetLocalCamera(cameraId: 2000, enabled: false);
                 context.SetNpcEmotionLoop(spawnId: 1001, sequenceName: "Attack_Idle_A", duration: 999999999999f);
                 context.SetPcEmotionLoop(sequenceName: "Attack_Idle_A", duration: 999999999999f);
                 context.SetSkip(state: new StateStopCinematic(context));
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 300, enable: true);
+                context.CameraSelect(triggerId: 300, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State트루카Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", script: "$52000085_QD__50001538__1$", align: Align.Left, duration: 6000);
             }
 
@@ -114,7 +114,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State에르다Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.MoveNpc(spawnId: 1002, patrolName: "MS2PatrolData_1002A");
                 context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", script: "$52000085_QD__50001538__2$", align: Align.Right, duration: 4000);
             }
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State트루카Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
                 context.SetNpcEmotionSequence(spawnId: 1003, sequenceName: "Talk_A");
                 context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", script: "$52000085_QD__50001538__4$", align: Align.Left, duration: 4000);
             }
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State에르다Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", script: "$52000085_QD__50001538__6$", align: Align.Right, duration: 3000);
             }
 
@@ -246,7 +246,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State트루카Script07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
                 context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", script: "$52000085_QD__50001538__9$", align: Align.Left, duration: 4000);
             }
 
@@ -283,7 +283,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State설눈이이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 304, enable: true);
+                context.CameraSelect(triggerId: 304, enabled: true);
                 context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_1001A");
             }
 
@@ -321,7 +321,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State트루카Script08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 305, enable: true);
+                context.CameraSelect(triggerId: 305, enabled: true);
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003B");
                 context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", script: "$52000085_QD__50001538__12$", align: Align.Left, duration: 3000);
             }
@@ -360,7 +360,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State홀슈타트Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 306, enable: true);
+                context.CameraSelect(triggerId: 306, enabled: true);
                 context.MoveNpc(spawnId: 1004, patrolName: "MS2PatrolData_1004A");
             }
 
@@ -379,7 +379,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State홀슈타트Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 307, enable: true);
+                context.CameraSelect(triggerId: 307, enabled: true);
                 context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", script: "$52000085_QD__50001538__14$", align: Align.Left, duration: 4000);
             }
 
@@ -398,7 +398,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State트루카Script10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 308, enable: true);
+                context.CameraSelect(triggerId: 308, enabled: true);
                 context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", script: "$52000085_QD__50001538__15$", align: Align.Right, duration: 5000);
             }
 
@@ -417,7 +417,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State홀슈타트Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 310, enable: true);
+                context.CameraSelect(triggerId: 310, enabled: true);
                 context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", script: "$52000085_QD__50001538__16$", align: Align.Left, duration: 4000);
             }
 
@@ -436,7 +436,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State트루카Script11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 308, enable: true);
+                context.CameraSelect(triggerId: 308, enabled: true);
                 context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", script: "$52000085_QD__50001538__17$", align: Align.Right, duration: 4000);
             }
 
@@ -455,7 +455,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State트루카Script12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 309, enable: true);
+                context.CameraSelect(triggerId: 309, enabled: true);
                 context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", script: "$52000085_QD__50001538__18$", align: Align.Right, duration: 5000);
             }
 
@@ -549,7 +549,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State설눈이이동02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 311, enable: true);
+                context.CameraSelect(triggerId: 311, enabled: true);
                 context.MoveUserPath(patrolName: "MS2PatrolData_PC");
                 context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_1001B");
             }
@@ -605,7 +605,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State에르다Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 312, enable: true);
+                context.CameraSelect(triggerId: 312, enabled: true);
                 context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", script: "$52000085_QD__50001538__21$", align: Align.Left, duration: 3000);
             }
 
@@ -643,7 +643,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(spawnId: 1002, sequenceName: "Attack_Idle_A", duration: 999999999999f);
-                context.CameraSelect(triggerId: 313, enable: true);
+                context.CameraSelect(triggerId: 313, enabled: true);
                 context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", script: "$52000085_QD__50001538__23$", align: Align.Left, duration: 4000);
             }
 
@@ -722,7 +722,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State암전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.MoveUser(mapId: 52000085, portalId: 98);
@@ -746,8 +746,8 @@ namespace Maple2.Trigger._52000085_qd {
             public override void OnEnter() {
                 context.SetSkip(state: new StateEndStopCinematic(context));
                 context.CreateMonster(spawnIds: new []{1005, 1006}, arg2: false);
-                context.CameraSelect(triggerId: 314, enable: true);
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.CameraSelect(triggerId: 314, enabled: true);
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -801,7 +801,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State에르다공중부양Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 315, enable: true);
+                context.CameraSelect(triggerId: 315, enabled: true);
                 context.SetNpcEmotionLoop(spawnId: 1006, sequenceName: "Attack_Idle_A", duration: 999999999999f);
                 context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", script: "$52000085_QD__50001538__26$", align: Align.Left, duration: 3000);
             }
@@ -861,7 +861,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State에르다공중부양중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 316, enable: true);
+                context.CameraSelect(triggerId: 316, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -880,7 +880,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{1006});
-                context.CameraSelect(triggerId: 317, enable: true);
+                context.CameraSelect(triggerId: 317, enabled: true);
                 context.SetConversation(type: 1, spawnId: 0, script: "$52000085_QD__50001538__28$", arg4: 3);
             }
 
@@ -918,7 +918,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal StatePC말풍선Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 318, enable: true);
+                context.CameraSelect(triggerId: 318, enabled: true);
                 context.SetConversation(type: 1, spawnId: 0, script: "$52000085_QD__50001538__30$", arg4: 3);
             }
 
@@ -1018,7 +1018,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateEndStopCinematic(context));
-                context.CameraSelect(triggerId: 319, enable: true);
+                context.CameraSelect(triggerId: 319, enabled: true);
                 context.AddCinematicTalk(npcId: 11003073, illustId: "11000404", script: "$52000085_QD__50001538__34$", align: Align.Right, duration: 6000);
             }
 

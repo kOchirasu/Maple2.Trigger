@@ -81,7 +81,7 @@ namespace Maple2.Trigger._61000010_me {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "99", seconds: 190, clearAtZero: false, display: true);
+                context.SetTimer(timerId: "99", seconds: 190, autoRemove: false, display: true);
                 context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003}, visible: false);
                 context.SetUserValue(triggerId: 999111, key: "gameStart", value: 1);
                 context.StartMiniGame(boxId: 199, round: 1, type: MiniGame.ShanghaiRunners);

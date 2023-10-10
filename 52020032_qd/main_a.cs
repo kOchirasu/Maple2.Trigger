@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52020032_qd {
             public override void OnEnter() {
                 context.SetActor(triggerId: 8001, visible: false, initialSequence: "Damg_Idle_B");
                 context.SetInteractObject(interactIds: new []{10001281}, state: 0);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
             }
 
             public override TriggerState? Execute() {
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._52020032_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(spawnId: 301, sequenceName: "Attack_01_B");
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
                 context.SetSceneSkip();
             }
 
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateBattle_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.5f);

@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000284_bf {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.CreateMonster(spawnIds: new []{2001}, arg2: false);
-                context.CameraSelect(triggerId: 3001, enable: true);
+                context.CameraSelect(triggerId: 3001, enabled: true);
                 context.SetSkip(state: new StateSetup(context));
             }
 
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000284_bf {
             public override void OnExit() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 3001, enable: false);
+                context.CameraSelect(triggerId: 3001, enabled: false);
             }
         }
 

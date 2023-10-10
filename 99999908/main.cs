@@ -8,7 +8,7 @@ namespace Maple2.Trigger._99999908 {
             public override void OnEnter() {
                 context.SetAmbientLight(color: new Vector3(1f, 1f, 1f));
                 context.SetDirectionalLight(diffuseColor: new Vector3(1f, 1f, 1f), specularColor: default);
-                context.SetTimer(timerId: "240", seconds: 240, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "240", seconds: 240, autoRemove: true, display: true);
             }
 
             public override TriggerState? Execute() {

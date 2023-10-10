@@ -70,7 +70,7 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.CameraSelect(triggerId: 500, enable: false);
+                context.CameraSelect(triggerId: 500, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -93,15 +93,15 @@ namespace Maple2.Trigger._99999925 {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateSwitch01(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateSwitch02(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateSwitch03(context);
                 }
 
@@ -183,7 +183,7 @@ namespace Maple2.Trigger._99999925 {
             internal StateBrokenWood(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{411, 412}, arg2: true);
+                context.SetSkill(triggerIds: new []{411, 412}, enabled: true);
             }
 
             public override TriggerState? Execute() {

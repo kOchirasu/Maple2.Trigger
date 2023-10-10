@@ -23,13 +23,13 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{6002}, visible: false);
-                context.SetSkill(triggerIds: new []{7001}, arg2: true);
+                context.SetSkill(triggerIds: new []{7001}, enabled: true);
                 context.SetTimer(timerId: "60", seconds: 60);
             }
 
             public override TriggerState? Execute() {
                 if (context.TimeExpired(timerId: "60")) {
-                    context.SetSkill(triggerIds: new []{7001}, arg2: false);
+                    context.SetSkill(triggerIds: new []{7001}, enabled: false);
                     context.SetEffect(triggerIds: new []{6002}, visible: false);
                     return new StateWaitStart(context);
                 }

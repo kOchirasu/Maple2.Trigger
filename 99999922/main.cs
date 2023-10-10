@@ -4,7 +4,7 @@ namespace Maple2.Trigger._99999922 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 99999, arg2: false);
+                context.SetSound(triggerId: 99999, enabled: false);
                 context.SetEffect(triggerIds: new []{100000001, 100000002, 100000003, 100000004, 100000005, 100000006}, visible: false);
                 context.SetMesh(triggerIds: new []{1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(triggerIds: new []{1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210, 1211}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._99999922 {
             internal StateStartCinematic_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 2000001, enable: true);
+                context.CameraSelect(triggerId: 2000001, enabled: true);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 1);
             }
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._99999922 {
             internal StateEndCinematic_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 2000001, enable: false);
+                context.CameraSelect(triggerId: 2000001, enabled: false);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 0);
             }
@@ -398,7 +398,7 @@ namespace Maple2.Trigger._99999922 {
             internal State다리Remove_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 99999, arg2: true);
+                context.SetSound(triggerId: 99999, enabled: true);
                 context.CreateMonster(spawnIds: new []{1002}, arg2: false);
                 context.SetMesh(triggerIds: new []{1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210, 1211}, visible: false, arg3: 100, arg4: 100, arg5: 0f);
                 context.SetEffect(triggerIds: new []{100000006}, visible: true);
@@ -435,8 +435,8 @@ namespace Maple2.Trigger._99999922 {
             internal StateStartCinematic_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 99999, arg2: false);
-                context.CameraSelect(triggerId: 2000002, enable: true);
+                context.SetSound(triggerId: 99999, enabled: false);
+                context.CameraSelect(triggerId: 2000002, enabled: true);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 1);
             }
@@ -508,7 +508,7 @@ namespace Maple2.Trigger._99999922 {
             internal StateEndCinematic_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 2000002, enable: false);
+                context.CameraSelect(triggerId: 2000002, enabled: false);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 0);
             }

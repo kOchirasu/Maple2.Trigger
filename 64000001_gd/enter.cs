@@ -35,7 +35,7 @@ namespace Maple2.Trigger._64000001_gd {
             internal State게임종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "999", seconds: 4, clearAtZero: false);
+                context.SetTimer(timerId: "999", seconds: 4, autoRemove: false);
             }
 
             public override TriggerState? Execute() {

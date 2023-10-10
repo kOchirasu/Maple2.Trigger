@@ -67,8 +67,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.DestroyMonster(spawnIds: new []{30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(interactIds: new []{12000507, 12000508}, state: 1);
                     context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113, 1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 103, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 106, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 103, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 106, enabled: true);
                     return new StateCableOn_07_08(context);
                 }
 
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.DestroyMonster(spawnIds: new []{30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(interactIds: new []{12000507, 12000508}, state: 1);
                     context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113, 1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 103, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 106, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 103, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 106, enabled: true);
                     return new StateCableOn_07_08(context);
                 }
 
@@ -125,8 +125,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.DestroyMonster(spawnIds: new []{30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(interactIds: new []{12000507, 12000508}, state: 1);
                     context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113, 1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 103, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 106, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 103, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 106, enabled: true);
                     return new StateCableOn_07_08(context);
                 }
 
@@ -149,8 +149,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.DestroyMonster(spawnIds: new []{30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(interactIds: new []{12000507, 12000508}, state: 1);
                     context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113, 1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 103, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 106, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 103, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 106, enabled: true);
                     return new StateCableOn_07_08(context);
                 }
 
@@ -196,8 +196,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.DestroyMonster(spawnIds: new []{30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(interactIds: new []{12000509, 12000510}, state: 1);
                     context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113, 1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 104, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 107, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 104, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 107, enabled: true);
                     return new StateCableOn_09_10(context);
                 }
 
@@ -225,8 +225,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.DestroyMonster(spawnIds: new []{30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(interactIds: new []{12000509, 12000510}, state: 1);
                     context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113, 1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 104, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 107, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 104, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 107, enabled: true);
                     return new StateCableOn_09_10(context);
                 }
 
@@ -254,8 +254,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.DestroyMonster(spawnIds: new []{30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(interactIds: new []{12000509, 12000510}, state: 1);
                     context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113, 1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 104, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 107, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 104, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 107, enabled: true);
                     return new StateCableOn_09_10(context);
                 }
 
@@ -278,8 +278,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.DestroyMonster(spawnIds: new []{30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(interactIds: new []{12000509, 12000510}, state: 1);
                     context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113, 1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 104, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 107, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 104, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 107, enabled: true);
                     return new StateCableOn_09_10(context);
                 }
 
@@ -325,8 +325,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.DestroyMonster(spawnIds: new []{30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(interactIds: new []{12000511, 12000512}, state: 1);
                     context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113, 1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 105, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 108, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 105, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 108, enabled: true);
                     return new StateCableOn_11_12(context);
                 }
 
@@ -354,8 +354,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.DestroyMonster(spawnIds: new []{30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(interactIds: new []{12000511, 12000512}, state: 1);
                     context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113, 1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 105, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 108, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 105, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 108, enabled: true);
                     return new StateCableOn_11_12(context);
                 }
 
@@ -383,8 +383,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.DestroyMonster(spawnIds: new []{30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(interactIds: new []{12000511, 12000512}, state: 1);
                     context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113, 1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 105, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 108, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 105, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 108, enabled: true);
                     return new StateCableOn_11_12(context);
                 }
 
@@ -407,8 +407,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.DestroyMonster(spawnIds: new []{30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(interactIds: new []{12000511, 12000512}, state: 1);
                     context.CreateMonster(spawnIds: new []{1110, 1111, 1112, 1113, 1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 105, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 108, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 105, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 108, enabled: true);
                     return new StateCableOn_11_12(context);
                 }
 

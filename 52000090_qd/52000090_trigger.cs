@@ -26,7 +26,7 @@ namespace Maple2.Trigger._52000090_qd {
             internal State20002272진행중일때(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeId: new []{1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010}, isAutoTargeting: false);
+                context.SpawnNpcRange(spawnIds: new []{1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010}, isAutoTargeting: false);
             }
 
             public override TriggerState? Execute() {
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._52000090_qd {
             internal State20002272진행중일때02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeId: new []{1011, 1012, 1013, 1014, 1015}, isAutoTargeting: false);
+                context.SpawnNpcRange(spawnIds: new []{1011, 1012, 1013, 1014, 1015}, isAutoTargeting: false);
             }
 
             public override TriggerState? Execute() {
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._52000090_qd {
             internal State20002272진행중일때03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeId: new []{1016, 1017, 1018, 1019, 1020}, isAutoTargeting: false);
+                context.SpawnNpcRange(spawnIds: new []{1016, 1017, 1018, 1019, 1020}, isAutoTargeting: false);
             }
 
             public override TriggerState? Execute() {
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._52000090_qd {
             internal State20002272진행중일때04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeId: new []{1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029}, isAutoTargeting: false);
+                context.SpawnNpcRange(spawnIds: new []{1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029}, isAutoTargeting: false);
             }
 
             public override TriggerState? Execute() {

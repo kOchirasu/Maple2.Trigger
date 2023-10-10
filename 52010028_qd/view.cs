@@ -4,8 +4,8 @@ namespace Maple2.Trigger._52010028_qd {
             internal State진동설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 301, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 401, enable: false, path: @"BG/sound/Eff_ShakeLand_01.xml");
+                context.SetOnetimeEffect(id: 301, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 401, enabled: false, path: @"BG/sound/Eff_ShakeLand_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -31,8 +31,8 @@ namespace Maple2.Trigger._52010028_qd {
             internal State흔들흔들(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 301, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 401, enable: true, path: @"BG/sound/Eff_ShakeLand_01.xml");
+                context.SetOnetimeEffect(id: 301, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 401, enabled: true, path: @"BG/sound/Eff_ShakeLand_01.xml");
             }
 
             public override TriggerState? Execute() {

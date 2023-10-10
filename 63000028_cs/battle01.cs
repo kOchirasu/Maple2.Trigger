@@ -10,7 +10,7 @@ namespace Maple2.Trigger._63000028_cs {
                 context.SetEffect(triggerIds: new []{5000, 5100, 6000, 6001, 6002, 6003, 6004, 6100, 6101, 6102}, visible: false);
                 context.SetAgent(triggerIds: new []{8000, 8001, 8002, 8003, 8004, 8005}, visible: true);
                 context.SetAgent(triggerIds: new []{8100, 8101, 8102, 8103, 8104, 8105, 8106, 8107, 8108, 8109, 8110, 8111, 8112, 8113, 8114, 8115}, visible: false);
-                context.SetSkill(triggerIds: new []{7000}, arg2: false);
+                context.SetSkill(triggerIds: new []{7000}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -114,7 +114,7 @@ namespace Maple2.Trigger._63000028_cs {
             public override void OnEnter() {
                 context.MoveUser(mapId: 63000028, portalId: 11, boxId: 9900);
                 context.CreateMonster(spawnIds: new []{104, 203}, arg2: false);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StatePCWakeUp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 500, enable: true);
+                context.CameraSelect(triggerId: 500, enabled: true);
                 context.SetSceneSkip(state: new StateTinChaiTalk02_CSkip(context), arg2: "nextState");
                 context.CreateMonster(spawnIds: new []{101, 900, 901, 902}, arg2: false);
             }
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateBattleING02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 501, enable: true);
+                context.CameraSelect(triggerId: 501, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -336,7 +336,7 @@ namespace Maple2.Trigger._63000028_cs {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetAgent(triggerIds: new []{8000, 8001, 8002, 8003, 8004, 8005}, visible: false);
-                context.CameraSelect(triggerId: 501, enable: false);
+                context.CameraSelect(triggerId: 501, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -521,7 +521,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateShadowWave02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.SetEffect(triggerIds: new []{5100}, visible: true);
             }
 
@@ -585,7 +585,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateShadowWave05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
                 context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_101");
                 context.MoveUserPath(patrolName: "MS2PatrolData_1002");
             }
@@ -662,7 +662,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateTinChaiDesperate01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 602, enable: true);
+                context.CameraSelect(triggerId: 602, enabled: true);
                 context.SetNpcEmotionLoop(spawnId: 102, sequenceName: "Attack_Idle_A", duration: 12000f);
                 context.SetPcEmotionLoop(sequenceName: "Orb_Attack_Idle_A", duration: 12000f);
                 context.SetEffect(triggerIds: new []{6001}, visible: true);
@@ -724,7 +724,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateJuntaApp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 700, enable: true);
+                context.CameraSelect(triggerId: 700, enabled: true);
                 context.DestroyMonster(spawnIds: new []{910, 911, 912, 913, 920, 921, 922, 923, 924, 930, 931, 932, 933, 940, 941, 942, 943, 944, 945, 950, 951, 952, 953, 960, 961, 962, 963, 964, 965});
                 context.CreateMonster(spawnIds: new []{970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998}, arg2: false);
             }
@@ -776,7 +776,7 @@ namespace Maple2.Trigger._63000028_cs {
             }
 
             public override void OnExit() {
-                context.SetSkill(triggerIds: new []{7000}, arg2: true);
+                context.SetSkill(triggerIds: new []{7000}, enabled: true);
             }
         }
 
@@ -826,7 +826,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateMeetJunta02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 701, enable: true);
+                context.CameraSelect(triggerId: 701, enabled: true);
                 context.SetNpcEmotionSequence(spawnId: 102, sequenceName: "Talk_A");
                 context.SetEffect(triggerIds: new []{6002}, visible: true);
                 context.SetConversation(type: 2, spawnId: 11001708, script: "$63000028_CS__BATTLE01__7$", arg4: 5);
@@ -882,7 +882,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateMeetJunta05_Cskip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 701, enable: true);
+                context.CameraSelect(triggerId: 701, enabled: true);
                 context.SetEffect(triggerIds: new []{5100}, visible: false);
                 context.DestroyMonster(spawnIds: new []{910, 911, 912, 913, 920, 921, 922, 923, 924, 930, 931, 932, 933, 940, 941, 942, 943, 944, 945, 950, 951, 952, 953, 960, 961, 962, 963, 964, 965});
                 context.MoveUserPath(patrolName: "MS2PatrolData_1003");
@@ -944,7 +944,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateMeetJunta06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 701, enable: false);
+                context.CameraSelect(triggerId: 701, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetAchievement(triggerId: 9900, type: "trigger", code: "complete_airstrikeofjunta");
@@ -1046,7 +1046,7 @@ namespace Maple2.Trigger._63000028_cs {
                 context.MoveUser(mapId: 63000028, portalId: 12, boxId: 9900);
                 context.DestroyMonster(spawnIds: new []{103, 202});
                 context.CreateMonster(spawnIds: new []{104, 203}, arg2: false);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.SetSceneSkip(state: new StateTimeToLeave05(context), arg2: "exit");
             }
 
@@ -1086,7 +1086,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateShadowWaveAgain03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
                 context.SetEffect(triggerIds: new []{5100, 6003}, visible: true);
                 context.SetConversation(type: 1, spawnId: 104, script: "$63000028_CS__BATTLE01__9$", arg4: 3, arg5: 1);
                 context.MoveNpc(spawnId: 104, patrolName: "MS2PatrolData_103");
@@ -1193,7 +1193,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateTimeToLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 602, enable: true);
+                context.CameraSelect(triggerId: 602, enabled: true);
                 context.SetEffect(triggerIds: new []{6004}, visible: true);
                 context.SetConversation(type: 2, spawnId: 11001708, script: "$63000028_CS__BATTLE01__11$", arg4: 4);
                 context.SetSceneSkip();
@@ -1251,7 +1251,7 @@ namespace Maple2.Trigger._63000028_cs {
 
             public override void OnEnter() {
                 context.MoveUserPath(patrolName: "MS2PatrolData_1005");
-                context.CameraSelect(triggerId: 602, enable: false);
+                context.CameraSelect(triggerId: 602, enabled: false);
                 context.RemoveCinematicTalk();
             }
 

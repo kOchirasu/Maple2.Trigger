@@ -38,19 +38,19 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new State4초간격(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new State5초간격(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new State6초간격(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new State7초간격(context);
                 }
 

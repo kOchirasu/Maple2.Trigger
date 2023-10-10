@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52000102_qd {
             internal State입장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CreateMonster(spawnIds: new []{200, 202}, arg2: false);
                 context.SetCinematicUI(type: 1);
                 context.MoveUserPath(patrolName: "MS2PatrolData_PC_Walk01");
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._52000102_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(pathIds: new []{4010, 4011}, returnView: false);
             }
 
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._52000102_qd {
             internal StateWait02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._52000102_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StatePC화남12(context), arg2: "exit");
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.MoveUser(mapId: 52000102, portalId: 10);
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._52000102_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(patrolName: "MS2PatrolData_Trun");
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.AddCinematicTalk(npcId: 11003148, illustId: "Anos_normal", script: "$52000102_QD__52000102__0$", duration: 4000, align: Align.Right);
                 context.CameraSelectPath(pathIds: new []{4000, 4001}, returnView: false);
             }
@@ -183,7 +183,7 @@ namespace Maple2.Trigger._52000102_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003148, illustId: "Anos_normal", script: "$52000102_QD__52000102__1$", duration: 2000, align: Align.Right);
-                context.SetSound(triggerId: 9005, arg2: true);
+                context.SetSound(triggerId: 9005, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -317,7 +317,7 @@ namespace Maple2.Trigger._52000102_qd {
             internal StatePC화남10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override TriggerState? Execute() {

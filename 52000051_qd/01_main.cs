@@ -52,7 +52,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateSetDarkness01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.CreateMonster(spawnIds: new []{800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826}, arg2: false);
                 context.CreateMonster(spawnIds: new []{950, 951, 952, 953, 955, 956, 957, 958, 959, 962, 963, 964, 967, 970, 974, 975, 976, 977, 978, 980, 981, 982}, arg2: false);
             }
@@ -161,7 +161,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcCinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
                 context.MoveNpc(spawnId: 100, patrolName: "MS2PatrolData_110");
                 context.MoveUserPath(patrolName: "MS2PatrolData_1001");
                 context.SetConversation(type: 2, spawnId: 11001708, script: "$52000051_QD__01_MAIN__2$", arg4: 3);
@@ -221,7 +221,7 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CameraSelect(triggerId: 601, enable: false);
+                context.CameraSelect(triggerId: 601, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetUserValue(triggerId: 9, key: "FindLotus", value: 1);

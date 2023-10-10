@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000293_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.SetSkip(state: new StateCameraWalk01(context));
             }
 
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02000293_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 600, enable: false);
+                context.CameraSelect(triggerId: 600, enabled: false);
                 context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004, 3005, 3006}, visible: false, arg3: 0, arg4: 100, arg5: 2f);
                 context.SetSkip();
             }
@@ -93,23 +93,23 @@ namespace Maple2.Trigger._02000293_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State1TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State2TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State3TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State4TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State5TimedCreation(context);
                 }
 

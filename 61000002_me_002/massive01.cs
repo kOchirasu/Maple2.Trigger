@@ -581,7 +581,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetLocalCamera(cameraId: 901, enable: false);
+                    context.SetLocalCamera(cameraId: 901, enabled: false);
                     return new State보상단계(context);
                 }
 

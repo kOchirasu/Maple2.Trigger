@@ -6,7 +6,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{6107, 6006}, visible: false);
                 context.SetAgent(triggerIds: new []{8100, 8101, 8102, 8103, 8104, 8105, 8106, 8107, 8108, 8109, 8110, 8111, 8112}, visible: false);
-                context.SetSkill(triggerIds: new []{7000}, arg2: false);
+                context.SetSkill(triggerIds: new []{7000}, enabled: false);
                 context.SetMesh(triggerIds: new []{3100}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "PushStart", value: 0);
             }
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StatePush01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{7000}, arg2: true);
+                context.SetSkill(triggerIds: new []{7000}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -65,11 +65,11 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateJuntaTalk01(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateTinChaiTalk01(context);
                 }
 

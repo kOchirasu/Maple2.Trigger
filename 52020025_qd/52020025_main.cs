@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52020025_qd {
             internal StateCamera_PC(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 501, enable: true);
+                context.CameraSelect(triggerId: 501, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._52020025_qd {
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_Bossmove");
                 context.SetNpcRotation(spawnId: 0, rotation: 180);
                 context.SetConversation(type: 1, spawnId: 0, script: "응??", arg4: 2);
-                context.CameraSelect(triggerId: 502, enable: true);
+                context.CameraSelect(triggerId: 502, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -123,7 +123,7 @@ namespace Maple2.Trigger._52020025_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{102}, arg2: false);
-                context.SetLocalCamera(cameraId: 511, enable: true);
+                context.SetLocalCamera(cameraId: 511, enabled: true);
                 context.MoveUserPath(patrolName: "MS2PatrolData_PCrun");
                 context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_Bossrun");
                 context.SetEventUI(arg1: 1, script: "무서운 몬스터로부터 도망치세요", duration: 4000, boxId: 0);
@@ -145,7 +145,7 @@ namespace Maple2.Trigger._52020025_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{102});
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG\Common\ScreenMask\Eff_CameraMasking_white.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG\Common\ScreenMask\Eff_CameraMasking_white.xml");
             }
 
             public override TriggerState? Execute() {

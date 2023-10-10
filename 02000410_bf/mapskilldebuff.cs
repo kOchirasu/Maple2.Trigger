@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{444, 666}, arg2: false);
+                context.SetSkill(triggerIds: new []{444, 666}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State1단계_70000103(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{444}, arg2: true);
+                context.SetSkill(triggerIds: new []{444}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State2단계_70000104(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{666}, arg2: true);
+                context.SetSkill(triggerIds: new []{666}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal StateSkill끄기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{444, 666}, arg2: false);
+                context.SetSkill(triggerIds: new []{444, 666}, enabled: false);
                 context.AddBuff(boxIds: new []{750}, skillId: 50004524, level: 1, arg4: false);
             }
 

@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 903, enable: true);
+                context.CameraSelect(triggerId: 903, enabled: true);
                 context.SetCinematicIntro(text: "");
             }
 
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.CloseCinematic();
-                context.CameraSelect(triggerId: 903, enable: false);
+                context.CameraSelect(triggerId: 903, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 900, enable: true);
+                context.CameraSelect(triggerId: 900, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -260,7 +260,7 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 900, enable: false);
+                context.CameraSelect(triggerId: 900, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99, key: "MissionStart", value: 1);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
-                context.SetTimer(timerId: "10000", seconds: 300, clearAtZero: true, display: true, arg5: 0);
+                context.SetTimer(timerId: "10000", seconds: 300, autoRemove: true, display: true, vOffset: 0);
             }
 
             public override TriggerState? Execute() {
@@ -345,7 +345,7 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -399,7 +399,7 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 901, enable: false);
+                context.CameraSelect(triggerId: 901, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -478,7 +478,7 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 902, enable: true);
+                context.CameraSelect(triggerId: 902, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -532,7 +532,7 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 902, enable: false);
+                context.CameraSelect(triggerId: 902, enabled: false);
             }
 
             public override TriggerState? Execute() {

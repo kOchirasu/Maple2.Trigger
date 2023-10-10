@@ -96,7 +96,7 @@ namespace Maple2.Trigger._52020002_qd {
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{120}, arg2: false);
                 context.SetMesh(triggerIds: new []{4001, 4002}, visible: false);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._52020002_qd {
             internal State제이든Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 11003540, illustId: "Jaiden_normal", script: @"안녕하세요? 제가 나타났습니다.\n연출은 제작 중이니 기다려 주세요.", duration: 3000);
                 context.SetNpcEmotionLoop(spawnId: 120, sequenceName: "Talk_A", duration: 3000f);
                 context.SetSkip(state: new State01_skip(context));
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._52020002_qd {
             public override void OnEnter() {
                 context.SetAchievement(triggerId: 9000, type: "trigger", code: "JaidenReportstoRadin");
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.VisibleMyPc(visible: true);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._52020002_qd {
                 context.DestroyMonster(spawnIds: new []{120});
                 context.CreateMonster(spawnIds: new []{121}, arg2: false);
                 context.SetMesh(triggerIds: new []{4001, 4002}, visible: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {

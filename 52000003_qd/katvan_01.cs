@@ -40,7 +40,7 @@ namespace Maple2.Trigger._52000003_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 101, enable: true);
+                context.CameraSelect(triggerId: 101, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }

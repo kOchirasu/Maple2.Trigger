@@ -24,19 +24,19 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StatePattern01Creation01(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StatePattern02Creation01(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StatePattern03Creation01(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StatePattern04Creation01(context);
                 }
 
@@ -584,19 +584,19 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateDelay01(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateDelay02(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateDelay03(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateDelay04(context);
                 }
 

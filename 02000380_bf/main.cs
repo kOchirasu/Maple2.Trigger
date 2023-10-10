@@ -208,7 +208,7 @@ namespace Maple2.Trigger._02000380_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StatePortal_10(context);
                 }
 
@@ -449,7 +449,7 @@ namespace Maple2.Trigger._02000380_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StatePortal_22(context);
                 }
 

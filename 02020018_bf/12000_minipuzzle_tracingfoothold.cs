@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02020018_bf {
 
             public override TriggerState? Execute() {
                 if (context.ObjectInteracted(interactIds: new []{12000075}, arg2: 0)) {
-                    context.SetTimer(timerId: "1", seconds: 120, clearAtZero: true, display: false, arg5: 0);
+                    context.SetTimer(timerId: "1", seconds: 120, autoRemove: true, display: false, vOffset: 0);
                     return new StateTracingFootHold_Start_Delay(context);
                 }
 
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02020018_bf {
                 context.SetEffect(triggerIds: new []{12100}, visible: true);
                 context.SetMesh(triggerIds: new []{12003}, visible: true, arg3: 0, arg4: 0, arg5: 1f);
                 context.SetInteractObject(interactIds: new []{12000223}, state: 1);
-                context.SetTimer(timerId: "2", seconds: 60, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "2", seconds: 60, autoRemove: true, display: false, vOffset: 0);
             }
 
             public override TriggerState? Execute() {

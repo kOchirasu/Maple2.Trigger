@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02020051_bf {
             internal State포션사용(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 60001, arg2: false);
+                context.SetSound(triggerId: 60001, enabled: false);
                 context.ResetTimer(timerId: "999");
                 context.SetUserValue(triggerId: 102, key: "Timmer", value: 2);
                 context.SetAmbientLight(color: new Vector3(198f, 255f, 205f));
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02020051_bf {
             internal State타이머(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "999", seconds: 10, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "999", seconds: 10, autoRemove: true, display: true);
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_surprise", script: "$02020051_BF__101_MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
                 context.RemoveBuff(boxId: 11, skillId: 90000900);
             }
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() {
                 context.ResetTimer(timerId: "999");
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._02020051_bf {
             internal StateFadeIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11003536, illust: "Neirin_surprise", script: "$02020051_BF__101_MAIN__1$", duration: 5684, voice: @"ko/Npc/00002201");
             }
 
@@ -107,31 +107,31 @@ namespace Maple2.Trigger._02020051_bf {
             internal State기간티카Spawn_렌덤조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 60001, arg2: true);
+                context.SetSound(triggerId: 60001, enabled: true);
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State기간티카Spawn_1(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State기간티카Spawn_2(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State기간티카Spawn_3(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State기간티카Spawn_4(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State기간티카Spawn_5(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State기간티카Spawn_6(context);
                 }
 

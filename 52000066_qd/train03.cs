@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateGetInTheTrain02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 700, enable: true);
+                context.SetLocalCamera(cameraId: 700, enabled: true);
                 context.HideGuideSummary(entityId: 25200664);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 25200665, textId: 25200665, duration: 2000);
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateGetInTheTrain04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 700, enable: false);
+                context.SetLocalCamera(cameraId: 700, enabled: false);
             }
 
             public override TriggerState? Execute() {

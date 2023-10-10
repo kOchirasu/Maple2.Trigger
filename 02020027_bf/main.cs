@@ -69,7 +69,7 @@ namespace Maple2.Trigger._02020027_bf {
             internal State유저Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 5003, enable: true);
+                context.CameraSelect(triggerId: 5003, enabled: true);
                 context.SetConversation(type: 1, spawnId: 0, script: "$02020027_BF__main__4$", arg4: 3, arg5: 0);
             }
 
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02020027_bf {
             internal StateCamera_메이슨설명2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 5004, enable: true);
+                context.CameraSelect(triggerId: 5004, enabled: true);
                 context.AddCinematicTalk(npcId: 24120006, illustId: "Mason_normal", script: "$02020027_BF__main__1$", duration: 4000, align: Align.Left);
             }
 

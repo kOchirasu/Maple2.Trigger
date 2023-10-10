@@ -153,7 +153,7 @@ namespace Maple2.Trigger._63000024_cs {
             internal StateLodingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 500, enable: true);
+                context.CameraSelect(triggerId: 500, enabled: true);
                 context.SetSceneSkip(state: new StateTinChaiTalk04_CSkip(context), arg2: "nextState");
             }
 
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._63000024_cs {
             internal StateLookAround04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 510, enable: true);
+                context.CameraSelect(triggerId: 510, enabled: true);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_105");
             }
 
@@ -304,7 +304,7 @@ namespace Maple2.Trigger._63000024_cs {
             internal StateLookAround06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 511, enable: true);
+                context.CameraSelect(triggerId: 511, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -322,7 +322,7 @@ namespace Maple2.Trigger._63000024_cs {
             internal StateLookAround07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_102");
             }
 
@@ -400,7 +400,7 @@ namespace Maple2.Trigger._63000024_cs {
                 context.MoveUser(mapId: 63000024, portalId: 10, boxId: 9900);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 600, enable: false);
+                context.CameraSelect(triggerId: 600, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -419,7 +419,7 @@ namespace Maple2.Trigger._63000024_cs {
                 context.MoveUser(mapId: 63000024, portalId: 10, boxId: 9900);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 600, enable: false);
+                context.CameraSelect(triggerId: 600, enabled: false);
             }
 
             public override TriggerState? Execute() {

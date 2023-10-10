@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{3200}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.DestroyMonster(spawnIds: new []{980, 981, 982, 983, 984, 985});
-                context.SetSkill(triggerIds: new []{7000}, arg2: false);
+                context.SetSkill(triggerIds: new []{7000}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetNpcEmotionSequence(spawnId: 983, sequenceName: "Attack_01_A");
                 context.SetNpcEmotionSequence(spawnId: 984, sequenceName: "Attack_01_A");
                 context.SetNpcEmotionSequence(spawnId: 985, sequenceName: "Attack_01_A");
-                context.SetSkill(triggerIds: new []{7000}, arg2: true);
+                context.SetSkill(triggerIds: new []{7000}, enabled: true);
             }
 
             public override TriggerState? Execute() {

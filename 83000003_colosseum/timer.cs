@@ -56,7 +56,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "LimitTimer", seconds: 180, clearAtZero: true);
+                context.SetTimer(timerId: "LimitTimer", seconds: 180, autoRemove: true);
             }
 
             public override TriggerState? Execute() {
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "LimitTimer2", seconds: 180, clearAtZero: true);
+                context.SetTimer(timerId: "LimitTimer2", seconds: 180, autoRemove: true);
             }
 
             public override TriggerState? Execute() {
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "LimitTimer3", seconds: 180, clearAtZero: true);
+                context.SetTimer(timerId: "LimitTimer3", seconds: 180, autoRemove: true);
             }
 
             public override TriggerState? Execute() {
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "LimitTimer4", seconds: 180, clearAtZero: true);
+                context.SetTimer(timerId: "LimitTimer4", seconds: 180, autoRemove: true);
             }
 
             public override TriggerState? Execute() {
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "LimitTimer5", seconds: 180, clearAtZero: true);
+                context.SetTimer(timerId: "LimitTimer5", seconds: 180, autoRemove: true);
             }
 
             public override TriggerState? Execute() {
@@ -234,7 +234,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "LimitTimer6", seconds: 180, clearAtZero: true);
+                context.SetTimer(timerId: "LimitTimer6", seconds: 180, autoRemove: true);
             }
 
             public override TriggerState? Execute() {
@@ -269,7 +269,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage7(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "LimitTimer7", seconds: 180, clearAtZero: true);
+                context.SetTimer(timerId: "LimitTimer7", seconds: 180, autoRemove: true);
             }
 
             public override TriggerState? Execute() {
@@ -304,7 +304,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "LimitTimer8", seconds: 300, clearAtZero: true);
+                context.SetTimer(timerId: "LimitTimer8", seconds: 300, autoRemove: true);
             }
 
             public override TriggerState? Execute() {
@@ -339,7 +339,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage9(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "LimitTimer9", seconds: 300, clearAtZero: true);
+                context.SetTimer(timerId: "LimitTimer9", seconds: 300, autoRemove: true);
             }
 
             public override TriggerState? Execute() {
@@ -374,7 +374,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateStage10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "LimitTimer10", seconds: 300, clearAtZero: true);
+                context.SetTimer(timerId: "LimitTimer10", seconds: 300, autoRemove: true);
             }
 
             public override TriggerState? Execute() {

@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 11, visible: true, enabled: true, minimapVisible: true);
-                context.DungeonEnableGiveUp(enable: true);
+                context.DungeonEnableGiveUp(enabled: true);
                 context.SetEventUI(arg1: 1, script: "$02020140_BF__BARRICADE__0$", duration: 3000);
             }
 

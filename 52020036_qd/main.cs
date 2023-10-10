@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52020036_qd {
 
             public override void OnEnter() {
                 context.SetQuestAccept(questId: 91000047);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.ShowCaption(type: CaptionType.Vertical, title: "$52020036_QD__MAIN__0$", script: "$52020036_QD__MAIN__1$", align: Align.Bottom | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 7000, scale: 2.5f);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
@@ -126,9 +126,9 @@ namespace Maple2.Trigger._52020036_qd {
             internal State전투상황비추기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 3003, enable: true);
+                context.CameraSelect(triggerId: 3003, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State오프닝크림슨발록비추기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 3015, enable: true);
+                context.CameraSelect(triggerId: 3015, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State콘대르SpawnCamera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 3002, enable: true);
+                context.CameraSelect(triggerId: 3002, enabled: true);
                 context.SetSceneSkip();
             }
 
@@ -292,7 +292,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State오프닝EndCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.DestroyMonster(spawnIds: new []{100});
                 context.CreateMonster(spawnIds: new []{101}, arg2: false);
                 context.SetCinematicUI(type: 0);
@@ -367,7 +367,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State침략자소탕Quest완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetQuestComplete(questId: 91000047);
                 context.SetQuestAccept(questId: 91000048);
                 context.SetCinematicUI(type: 1);
@@ -390,8 +390,8 @@ namespace Maple2.Trigger._52020036_qd {
             internal State티나비추기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelect(triggerId: 3004, enable: true);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.CameraSelect(triggerId: 3004, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -409,7 +409,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State티나Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.AddCinematicTalk(npcId: 11000136, illustId: "Tina_normal", script: "$52020036_QD__MAIN__4$", duration: 5000, align: Align.Right);
             }
 
@@ -482,7 +482,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State부상자옮기기대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetQuestComplete(questId: 91000048);
                 context.SetQuestAccept(questId: 91000049);
                 context.SideNpcTalk(npcId: 11003780, illust: "WhitewolfGirl_normal", duration: 5648, script: "$52020036_QD__main__14$", voice: @"ko/Npc/00002151");
@@ -503,7 +503,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State네이린팝업1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 7000, script: "$52020036_QD__main__15$", voice: @"ko/Npc/00002126");
             }
 
@@ -597,7 +597,7 @@ namespace Maple2.Trigger._52020036_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 3007, enable: true);
+                context.CameraSelect(triggerId: 3007, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -996,7 +996,7 @@ namespace Maple2.Trigger._52020036_qd {
             public override void OnEnter() {
                 context.SetInteractObject(interactIds: new []{12000043}, state: 0);
                 context.VisibleMyPc(visible: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.DestroyMonster(spawnIds: new []{-1});
                 context.SetQuestComplete(questId: 91000049);
             }
@@ -1034,10 +1034,10 @@ namespace Maple2.Trigger._52020036_qd {
             internal State엔딩크림슨발록비추기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 3015, enable: true);
+                context.CameraSelect(triggerId: 3015, enabled: true);
                 context.CreateMonster(spawnIds: new []{7000, 7001, 7002, 7003, 7004}, arg2: false);
             }
 
@@ -1115,7 +1115,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State엔딩Camera1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 3008, enable: true);
+                context.CameraSelect(triggerId: 3008, enabled: true);
                 context.MoveUser(mapId: 52020036, portalId: 2);
             }
 
@@ -1189,7 +1189,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State트리스탄SpawnCamera1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 3009, enable: true);
+                context.CameraSelect(triggerId: 3009, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1225,7 +1225,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State콘대르엔딩Camera1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 3010, enable: true);
+                context.CameraSelect(triggerId: 3010, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1243,7 +1243,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State콘대르엔딩Camera2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 3010, enable: true);
+                context.CameraSelect(triggerId: 3010, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1279,7 +1279,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State콘대르엔딩Camera3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 3012, enable: true);
+                context.CameraSelect(triggerId: 3012, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1316,7 +1316,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State트리스탄엔딩Camera2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 3009, enable: true);
+                context.CameraSelect(triggerId: 3009, enabled: true);
             }
 
             public override TriggerState? Execute() {

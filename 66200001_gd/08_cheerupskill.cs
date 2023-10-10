@@ -20,7 +20,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateCheerUpTimer_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 20, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 20, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {

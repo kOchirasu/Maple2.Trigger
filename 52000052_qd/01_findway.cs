@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 500, enable: true);
+                context.CameraSelect(triggerId: 500, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CameraSelect(triggerId: 500, enable: false);
+                context.CameraSelect(triggerId: 500, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -221,11 +221,11 @@ namespace Maple2.Trigger._52000052_qd {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateRound01_PickRoute_Left(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateRound01_PickRoute_Right(context);
                 }
 

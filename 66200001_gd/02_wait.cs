@@ -4,7 +4,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 90, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 90, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {

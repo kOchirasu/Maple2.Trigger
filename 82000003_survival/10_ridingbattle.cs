@@ -28,47 +28,47 @@ namespace Maple2.Trigger._82000003_survival {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRidingSpawn_Extra_none(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRidingSpawn_Extra_north(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRidingSpawn_Extra_south(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRidingSpawn_Extra_east(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRidingSpawn_Extra_west(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRidingSpawn_Extra_northsouth(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRidingSpawn_Extra_northeast(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRidingSpawn_Extra_northwest(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRidingSpawn_Extra_eastwest(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRidingSpawn_Extra_southeast(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateRidingSpawn_Extra_southwest(context);
                 }
 

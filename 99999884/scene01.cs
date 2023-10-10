@@ -26,7 +26,7 @@ namespace Maple2.Trigger._99999884 {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
             }
 

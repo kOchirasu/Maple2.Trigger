@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02010054_bf {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateGuide02스킵(context));
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -77,12 +77,12 @@ namespace Maple2.Trigger._02010054_bf {
             internal StateCamera이동02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
             }
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.CameraSelect(triggerId: 303, enable: false);
+                    context.CameraSelect(triggerId: 303, enabled: false);
                     return new StateGuide02종료(context);
                 }
 

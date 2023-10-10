@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000284_bf {
             public override void OnEnter() {
                 context.SetInteractObject(interactIds: new []{10000429}, state: 0);
                 context.SetMesh(triggerIds: new []{314, 315, 316, 317, 318, 319, 320}, visible: true, arg3: 0, arg4: 500, arg5: 0f);
-                context.SetTimer(timerId: "1500", seconds: 1500, clearAtZero: false, display: false);
+                context.SetTimer(timerId: "1500", seconds: 1500, autoRemove: false, display: false);
             }
 
             public override TriggerState? Execute() {

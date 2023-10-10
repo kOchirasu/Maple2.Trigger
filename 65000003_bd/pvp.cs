@@ -4,7 +4,7 @@ namespace Maple2.Trigger._65000003_bd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "60", seconds: 60, clearAtZero: false, display: true);
+                context.SetTimer(timerId: "60", seconds: 60, autoRemove: false, display: true);
             }
 
             public override TriggerState? Execute() {
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._65000003_bd {
             internal StatePvP(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 1, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 1, autoRemove: false);
                 context.SetAchievement(triggerId: 104, type: "trigger", code: "dailyquest_start");
                 context.GiveGuildExp(boxId: 0, type: 2);
                 context.SetPvpZone(boxId: 104, arg2: 3, duration: 600, additionalEffectId: 90001002, arg5: 3, boxIds: new []{1, 2, 101, 102, 103});
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._65000003_bd {
             internal State비김(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "3", seconds: 3, clearAtZero: false);
+                context.SetTimer(timerId: "3", seconds: 3, autoRemove: false);
             }
 
             public override TriggerState? Execute() {

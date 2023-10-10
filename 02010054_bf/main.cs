@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02010054_bf {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.AddBuff(boxIds: new []{199}, skillId: 70000107, level: 1, arg4: false, arg5: false);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetSkip(state: new State인트로Cinematic스킵(context));
             }
 
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02010054_bf {
             internal StateCinematic해제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
             }
 
             public override TriggerState? Execute() {

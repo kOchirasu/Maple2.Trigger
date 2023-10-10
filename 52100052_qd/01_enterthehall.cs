@@ -70,7 +70,7 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101");
                 context.AddCinematicTalk(npcId: 11001590, illustId: "11001590", script: "$52100052_QD__01_ENTERTHEHALL__0$", duration: 3000, align: Align.Left);
                 context.SetSkip(state: new StateBlackeyeApp02Skip(context));
@@ -143,7 +143,7 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
                 context.SetUserValue(triggerId: 2, key: "MobSpawn", value: 1);
             }
 
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_104");
             }
 
@@ -419,19 +419,19 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateNpcMonologue01(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateNpcMonologue02(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateNpcMonologue03(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateNpcMonologue04(context);
                 }
 

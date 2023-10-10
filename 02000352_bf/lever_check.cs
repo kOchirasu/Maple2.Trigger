@@ -121,7 +121,7 @@ namespace Maple2.Trigger._02000352_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 113, textId: 40011);
-                context.CameraSelect(triggerId: 8002, enable: false);
+                context.CameraSelect(triggerId: 8002, enabled: false);
                 context.SetTimer(timerId: "3", seconds: 3);
             }
 

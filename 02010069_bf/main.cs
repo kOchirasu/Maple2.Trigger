@@ -107,7 +107,7 @@ namespace Maple2.Trigger._02010069_bf {
             internal StateCinematic1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 999900, enable: true);
+                context.CameraSelect(triggerId: 999900, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -224,7 +224,7 @@ namespace Maple2.Trigger._02010069_bf {
             internal StateCinematic3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 999900, enable: false);
+                context.CameraSelect(triggerId: 999900, enabled: false);
                 context.MoveUser(mapId: 02010069, portalId: 2);
                 context.SetPortal(portalId: 2, visible: false, enabled: true, minimapVisible: false);
             }

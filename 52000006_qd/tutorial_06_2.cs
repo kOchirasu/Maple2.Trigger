@@ -76,7 +76,7 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "1", seconds: 1);
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
                 context.SetEffect(triggerIds: new []{402}, visible: true);
             }
 

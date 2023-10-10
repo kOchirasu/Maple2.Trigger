@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02100000_bf {
             internal StateCheckUser10_GuildRaid(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: true, display: false, vOffset: 0);
             }
 
             public override TriggerState? Execute() {
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._02100000_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 904, enable: true);
+                context.CameraSelect(triggerId: 904, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override void OnEnter() {
                 context.CloseCinematic();
-                context.CameraSelect(triggerId: 904, enable: false);
+                context.CameraSelect(triggerId: 904, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._02100000_bf {
                 context.AddBuff(boxIds: new []{101}, skillId: 70000133, level: 1, arg4: false, arg5: true);
                 context.SetEffect(triggerIds: new []{8001, 8002, 8003}, visible: false);
                 context.SetMesh(triggerIds: new []{80000}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(triggerIds: new []{910001, 910002, 910003, 910004, 910005, 910006, 910007, 910008, 910009, 910010, 910011, 910012, 910013, 910014, 910015, 910016, 910017, 910018, 910019, 910020, 920001, 920002, 920003, 920004, 920005, 920006, 920007, 920008, 920009, 920010, 920011, 920012, 920013, 920014, 920015, 930001, 930002, 930003, 930004, 930005, 930006, 930007, 930008, 930009, 930010, 930011, 930012, 930013, 930014, 930015, 930016, 940001, 940002, 940003, 940004, 940005, 940006, 940007, 940008, 940009, 940010, 940011, 940012, 940013, 940014, 940015, 940016, 940017, 940018, 940019, 940020, 940021, 940022, 940023, 940024}, arg2: true);
+                context.SetSkill(triggerIds: new []{910001, 910002, 910003, 910004, 910005, 910006, 910007, 910008, 910009, 910010, 910011, 910012, 910013, 910014, 910015, 910016, 910017, 910018, 910019, 910020, 920001, 920002, 920003, 920004, 920005, 920006, 920007, 920008, 920009, 920010, 920011, 920012, 920013, 920014, 920015, 930001, 930002, 930003, 930004, 930005, 930006, 930007, 930008, 930009, 930010, 930011, 930012, 930013, 930014, 930015, 930016, 940001, 940002, 940003, 940004, 940005, 940006, 940007, 940008, 940009, 940010, 940011, 940012, 940013, 940014, 940015, 940016, 940017, 940018, 940019, 940020, 940021, 940022, 940023, 940024}, enabled: true);
             }
 
             public override TriggerState? Execute() {

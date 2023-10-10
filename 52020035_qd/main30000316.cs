@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{4001}, returnView: false);
             }
 
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State라딘이야기01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(state: new StateSkip01(context), arg2: "exit");
                 context.ShowCaption(type: CaptionType.Vertical, title: "라딘의 막사", script: "$MyPCName$$pp:가,이$ 떠난 직후", align: Align.Center | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
             }
@@ -258,7 +258,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회입장전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 0f);
                 context.DestroyMonster(spawnIds: new []{101, 102});
             }
@@ -321,7 +321,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회입장_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{4032}, returnView: false);
                 context.AddCinematicTalk(npcId: 11003754, script: "이런곳까지 불러내다니... 다시봤구만, 나으리.", duration: 5000);
             }
@@ -784,7 +784,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State장면전환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 4, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {

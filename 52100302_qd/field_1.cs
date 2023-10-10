@@ -41,8 +41,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004582, illust: "Eone_serious", script: "$52100302_QD__FIELD_1__0$", duration: 5000);
                     context.SetInteractObject(interactIds: new []{12000504}, state: 1);
                     context.CreateMonster(spawnIds: new []{1107, 1108, 1109, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220, 1221, 1222, 1223, 1224, 30001, 30002, 30003, 30004}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 102, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 103, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 102, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 103, enabled: true);
                     return new StateCableOn_04(context);
                 }
 
@@ -62,8 +62,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004582, illust: "Eone_serious", script: "$52100302_QD__FIELD_1__1$", duration: 5000);
                     context.SetInteractObject(interactIds: new []{12000505}, state: 1);
                     context.CreateMonster(spawnIds: new []{1107, 1108, 1109, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220, 1221, 1222, 1223, 1224, 30001, 30002, 30003, 30004}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 102, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 104, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 102, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 104, enabled: true);
                     return new StateCableOn_05(context);
                 }
 
@@ -83,8 +83,8 @@ namespace Maple2.Trigger._52100302_qd {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004582, illust: "Eone_serious", script: "$52100302_QD__FIELD_1__2$", duration: 5000);
                     context.SetInteractObject(interactIds: new []{12000506}, state: 1);
                     context.CreateMonster(spawnIds: new []{1107, 1108, 1109, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220, 1221, 1222, 1223, 1224, 30001, 30002, 30003, 30004}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 102, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 105, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 102, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 105, enabled: true);
                     return new StateCableOn_06(context);
                 }
 

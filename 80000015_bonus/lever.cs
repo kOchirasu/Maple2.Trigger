@@ -4,7 +4,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{7101}, arg2: false);
+                context.SetSkill(triggerIds: new []{7101}, enabled: false);
                 context.SetInteractObject(interactIds: new []{10001314}, state: 1);
                 context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3005}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._80000015_bonus {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{6000}, visible: true);
-                context.SpawnNpcRange(rangeId: new []{2001}, isAutoTargeting: false, score: 1500);
+                context.SpawnNpcRange(spawnIds: new []{2001}, isAutoTargeting: false, score: 1500);
                 context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3005}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._80000015_bonus {
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetSkill(triggerIds: new []{7101}, arg2: true);
+                    context.SetSkill(triggerIds: new []{7101}, enabled: true);
                     return new StateEnd(context);
                 }
 

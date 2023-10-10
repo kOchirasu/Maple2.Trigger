@@ -50,11 +50,11 @@ namespace Maple2.Trigger._99999874 {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateInteractWithNpc_NpcTypeA_Setting(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateInteractWithNpc_NpcTypeB_Setting(context);
                 }
 
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._99999874 {
 
             public override TriggerState? Execute() {
                 if (context.ObjectInteracted(interactIds: new []{12000078}, arg2: 0)) {
-                    context.SetTimer(timerId: "1", seconds: 90, clearAtZero: true, display: false, arg5: 0);
+                    context.SetTimer(timerId: "1", seconds: 90, autoRemove: true, display: false, vOffset: 0);
                     return new StateInteractWithNpc_NpcTypeA_NpcSpawn(context);
                 }
 
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._99999874 {
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 2);
                 context.SetMesh(triggerIds: new []{15101, 15102}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.AddBuff(boxIds: new []{150001}, skillId: 71001052, level: 1, arg4: false, arg5: false);
-                context.SetTimer(timerId: "10", seconds: 60, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "10", seconds: 60, autoRemove: true, display: false, vOffset: 0);
                 context.SetUserValue(triggerId: 151001, key: "NPCKill", value: 1);
             }
 
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._99999874 {
 
             public override TriggerState? Execute() {
                 if (context.ObjectInteracted(interactIds: new []{12000093}, arg2: 0)) {
-                    context.SetTimer(timerId: "1", seconds: 90, clearAtZero: true, display: false, arg5: 0);
+                    context.SetTimer(timerId: "1", seconds: 90, autoRemove: true, display: false, vOffset: 0);
                     return new StateInteractWithNpc_NpcTypeB_NpcSpawn(context);
                 }
 
@@ -211,7 +211,7 @@ namespace Maple2.Trigger._99999874 {
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 2);
                 context.SetMesh(triggerIds: new []{15101, 15102}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.AddBuff(boxIds: new []{150001}, skillId: 71001052, level: 1, arg4: false, arg5: false);
-                context.SetTimer(timerId: "10", seconds: 60, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "10", seconds: 60, autoRemove: true, display: false, vOffset: 0);
                 context.SetUserValue(triggerId: 151001, key: "NPCKill", value: 1);
             }
 

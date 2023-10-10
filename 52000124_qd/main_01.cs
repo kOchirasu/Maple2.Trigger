@@ -29,7 +29,7 @@ namespace Maple2.Trigger._52000124_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(mapId: 52000124, portalId: 6002);
             }
 
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52000124_qd {
             internal StateScene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{4001, 4002}, returnView: false);
                 context.CreateMonster(spawnIds: new []{401, 402}, arg2: true);
                 context.AddCinematicTalk(npcId: 11000069, script: "$52000124_QD__MAIN_01__0$", duration: 2000, align: Align.Left);
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._52000124_qd {
             internal StateScene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7001, arg2: true);
+                context.SetSound(triggerId: 7001, enabled: true);
                 context.AddCinematicTalk(npcId: 11003304, script: "$52000124_QD__MAIN_01__2$", duration: 2000, align: Align.Left);
                 context.AddBalloonTalk(spawnId: 101, msg: "$52000124_QD__MAIN_01__3$", duration: 2000);
             }
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._52000124_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(spawnIds: new []{401, 402});
             }
 
@@ -218,7 +218,7 @@ namespace Maple2.Trigger._52000124_qd {
             internal StateBattle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 1.0f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
@@ -259,11 +259,11 @@ namespace Maple2.Trigger._52000124_qd {
             internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7001, arg2: false);
+                context.SetSound(triggerId: 7001, enabled: false);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetAchievement(triggerId: 2001, type: "trigger", code: "eveguard");
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -358,7 +358,7 @@ namespace Maple2.Trigger._52000124_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.CameraReset(interpolationTime: 1.0f);
                 context.SetCinematicUI(type: 0);

@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52010013_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 8001, enable: true);
+                context.CameraSelect(triggerId: 8001, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.CreateMonster(spawnIds: new []{104});
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._52010013_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 8002, enable: true);
+                context.CameraSelect(triggerId: 8002, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11001292, script: "$52010013_QD__MAIN__1$", arg4: 5);
                 context.SetSkip(state: new StateEvent_03_IdLE(context));
                 context.SetTimer(timerId: "5", seconds: 5);
@@ -338,8 +338,8 @@ namespace Maple2.Trigger._52010013_qd {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 7);
-                context.CameraSelect(triggerId: 8001, enable: false);
-                context.CameraSelect(triggerId: 8002, enable: false);
+                context.CameraSelect(triggerId: 8001, enabled: false);
+                context.CameraSelect(triggerId: 8002, enabled: false);
             }
         }
 

@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
                 context.SetMesh(triggerIds: new []{9001, 9002, 9003, 9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(interactIds: new []{10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, state: 0);
-                context.SetSkill(triggerIds: new []{901, 902}, arg2: false);
+                context.SetSkill(triggerIds: new []{901, 902}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -77,19 +77,19 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateSeedPattern1_1(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateSeedPattern1_2(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateSeedPattern1_3(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateSeedPattern1_4(context);
                 }
 
@@ -320,7 +320,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 0);
-                context.SetSkill(triggerIds: new []{901, 902}, arg2: true);
+                context.SetSkill(triggerIds: new []{901, 902}, enabled: true);
                 context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 2);
                 context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
                 context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
@@ -350,7 +350,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.AddBuff(boxIds: new []{1003}, skillId: 70002110, level: 1, arg5: false);
-                context.SetSkill(triggerIds: new []{901, 902}, arg2: false);
+                context.SetSkill(triggerIds: new []{901, 902}, enabled: false);
                 context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
                 context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
                 context.SetMesh(triggerIds: new []{9001, 9002, 9003, 9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -388,19 +388,19 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateBossHealthCheck3(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateSeedPattern2_1(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateSeedPattern2_2(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateSeedPattern2_3(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateSeedPattern2_4(context);
                 }
 
@@ -631,7 +631,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 0);
-                context.SetSkill(triggerIds: new []{901, 902}, arg2: true);
+                context.SetSkill(triggerIds: new []{901, 902}, enabled: true);
                 context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 2);
                 context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
                 context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
@@ -661,7 +661,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() {
                 context.AddBuff(boxIds: new []{1003}, skillId: 70002110, level: 1, arg5: false);
-                context.SetSkill(triggerIds: new []{901, 902}, arg2: false);
+                context.SetSkill(triggerIds: new []{901, 902}, enabled: false);
                 context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
                 context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
                 context.SetMesh(triggerIds: new []{9001, 9002, 9003, 9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -699,19 +699,19 @@ namespace Maple2.Trigger._02020101_bf {
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateSeedPattern3_1(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateSeedPattern3_2(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateSeedPattern3_3(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateSeedPattern3_4(context);
                 }
 
@@ -941,7 +941,7 @@ namespace Maple2.Trigger._02020101_bf {
             internal StateSeedPattern3_종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{901, 902}, arg2: true);
+                context.SetSkill(triggerIds: new []{901, 902}, enabled: true);
                 context.SetInteractObject(interactIds: new []{10002128, 10002129}, state: 2);
                 context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
                 context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_On");
@@ -972,7 +972,7 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnEnter() {
                 context.AddBuff(boxIds: new []{1003}, skillId: 70002110, level: 1, arg5: false);
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 9);
-                context.SetSkill(triggerIds: new []{901, 902}, arg2: false);
+                context.SetSkill(triggerIds: new []{901, 902}, enabled: false);
                 context.SetActor(triggerId: 1401, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
                 context.SetActor(triggerId: 1402, visible: true, initialSequence: "Interaction_lapentatree_A01_Off");
                 context.SetMesh(triggerIds: new []{9001, 9002, 9003, 9004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);

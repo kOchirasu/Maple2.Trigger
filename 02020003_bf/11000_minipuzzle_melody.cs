@@ -6,7 +6,7 @@ namespace Maple2.Trigger._02020003_bf {
             public override void OnEnter() {
                 context.ResetTimer(timerId: "1");
                 context.ResetTimer(timerId: "2");
-                context.EnableLocalCamera(isEnable: false);
+                context.EnableLocalCamera(enabled: false);
                 context.SetInteractObject(interactIds: new []{12000202, 12000074, 12000058, 12000059, 12000060, 12000061, 12000062, 12000063, 12000064, 12000065}, state: 2);
                 context.SetUserValue(key: "AnswerIsRight", value: 0);
                 context.SetUserValue(key: "AnswerIsWrong", value: 0);
@@ -44,13 +44,13 @@ namespace Maple2.Trigger._02020003_bf {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableLocalCamera(isEnable: true);
+                context.EnableLocalCamera(enabled: true);
                 context.SetInteractObject(interactIds: new []{12000074}, state: 1);
             }
 
             public override TriggerState? Execute() {
                 if (context.ObjectInteracted(interactIds: new []{12000074}, arg2: 0)) {
-                    context.SetTimer(timerId: "1", seconds: 120, clearAtZero: true, display: false, arg5: 0);
+                    context.SetTimer(timerId: "1", seconds: 120, autoRemove: true, display: false, vOffset: 0);
                     return new StateStartMelodyQuiz_Delay01(context);
                 }
 
@@ -121,83 +121,83 @@ namespace Maple2.Trigger._02020003_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern01(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern02(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern03(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern04(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern05(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern06(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern07(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern08(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern09(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern10(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern11(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern12(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern13(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern14(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern15(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern16(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern17(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern18(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern19(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateMelodyQuizPattern20(context);
                 }
 
@@ -794,7 +794,7 @@ namespace Maple2.Trigger._02020003_bf {
                 context.AddBuff(boxIds: new []{11901}, skillId: 71001012, level: 1, arg4: false, arg5: false);
                 context.SetEffect(triggerIds: new []{11300}, visible: true);
                 context.SetInteractObject(interactIds: new []{12000202}, state: 1);
-                context.SetTimer(timerId: "2", seconds: 60, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "2", seconds: 60, autoRemove: true, display: false, vOffset: 0);
             }
 
             public override TriggerState? Execute() {

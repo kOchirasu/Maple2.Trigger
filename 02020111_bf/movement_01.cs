@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02020111_bf {
                 context.SetPortal(portalId: 6, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 7, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 8, visible: false, enabled: false, minimapVisible: false);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() {
                 context.AddBuff(boxIds: new []{101}, skillId: 62100014, level: 1, arg4: true);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetEventUI(arg1: 1, script: "$02020111_BF__MOVEMENT_01__0$", duration: 3000);
                 context.SetAmbientLight(color: new Vector3(52f, 48f, 38f));
                 context.SetDirectionalLight(diffuseColor: default, specularColor: new Vector3(206f, 174f, 84f));
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02020111_bf {
             internal StateFadeIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnEnter() {
                 context.SetConversation(type: 1, spawnId: 101, script: "$02020111_BF__MOVEMENT_01__1$", arg4: 3, arg5: 0);
                 context.MoveNpcToPos(spawnId: 101, position: new Vector3(-3743f, 294f, 1651f), rotation: new Vector3(0f, 0f, 45f));
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAmbientLight(color: new Vector3(183f, 189f, 201f));
                 context.SetDirectionalLight(diffuseColor: new Vector3(192f, 210f, 211f), specularColor: new Vector3(170f, 170f, 170f));
                 context.AddBuff(boxIds: new []{1001}, skillId: 75000002, level: 1);

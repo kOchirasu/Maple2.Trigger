@@ -8,10 +8,10 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.CreateFieldGame(type: FieldGame.GuildVsGame);
                 context.UserTagSymbol(symbol1: "guild_game_blue", symbol2: "guild_game_red");
-                context.SetSound(triggerId: 10000, arg2: false);
-                context.SetSound(triggerId: 20000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 40000, arg2: false);
+                context.SetSound(triggerId: 10000, enabled: false);
+                context.SetSound(triggerId: 20000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 40000, enabled: false);
                 context.SetEffect(triggerIds: new []{8000, 8002, 8003, 8004, 8005}, visible: false);
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(triggerIds: new []{511, 512, 513, 514, 521, 522, 523, 524, 531, 532, 533, 534, 541, 542, 543, 544}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 9, key: "MoveToTeamPortal", value: 2);
                 context.MoveToPortal(userTagId: 1, portalId: 21);
                 context.MoveToPortal(userTagId: 2, portalId: 22);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
             }
 
@@ -171,8 +171,8 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, script: "0,0");
                 context.SetUserValue(triggerId: 10, key: "BannerCheckIn", value: 0);
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 10000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 10000, enabled: true);
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__0$", duration: 5000, boxId: 0);
                 context.SetAchievement(triggerId: 9000, type: "trigger", code: "guildminigame_start");
             }
@@ -383,8 +383,8 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__7$", duration: 3000, boxId: 0);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancetime_01");
-                context.SetSound(triggerId: 10000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 10000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
             }
 
@@ -403,37 +403,37 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR01DanceTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 20000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 20000, enabled: true);
                 context.SetUserValue(key: "DanceTime", value: 1);
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new StateDancePattern01(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new StateDancePattern02(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new StateDancePattern03(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new StateDancePattern0401(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new StateDancePattern0501(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateDancePattern0601(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateDancePattern0701(context);
                 }
 
@@ -531,8 +531,8 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__8$", duration: 1000);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancerandom_01");
-                context.SetSound(triggerId: 20000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 20000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
                 context.SetInteractObject(interactIds: new []{10001180}, state: 0);
             }
@@ -572,8 +572,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateDancePattern0404(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 20000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 20000, enabled: true);
                 context.PlaySystemSoundInBox(boxIds: new []{9001}, sound: "DDStop_Stage_Ready_01");
                 context.SetInteractObject(interactIds: new []{10001181}, state: 1);
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 42);
@@ -616,8 +616,8 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__10$", duration: 1000);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancerandom_02");
-                context.SetSound(triggerId: 20000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 20000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
                 context.SetInteractObject(interactIds: new []{10001181}, state: 0);
             }
@@ -657,8 +657,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateDancePattern0504(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 20000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 20000, enabled: true);
                 context.PlaySystemSoundInBox(boxIds: new []{9001}, sound: "DDStop_Stage_Ready_01");
                 context.SetInteractObject(interactIds: new []{10001180}, state: 1);
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 52);
@@ -701,8 +701,8 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__12$", duration: 1000);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancerandom_03");
-                context.SetSound(triggerId: 20000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 20000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
                 context.SetInteractObject(interactIds: new []{10001182}, state: 0);
             }
@@ -742,8 +742,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateDancePattern0604(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 20000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 20000, enabled: true);
                 context.PlaySystemSoundInBox(boxIds: new []{9001}, sound: "DDStop_Stage_Ready_01");
                 context.SetInteractObject(interactIds: new []{10001180}, state: 1);
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 62);
@@ -786,8 +786,8 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__14$", duration: 1000);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancerandom_04");
-                context.SetSound(triggerId: 20000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 20000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
                 context.SetInteractObject(interactIds: new []{10001180}, state: 0);
             }
@@ -827,8 +827,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateDancePattern0704(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 20000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 20000, enabled: true);
                 context.PlaySystemSoundInBox(boxIds: new []{9001}, sound: "DDStop_Stage_Ready_01");
                 context.SetInteractObject(interactIds: new []{10001182}, state: 1);
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 72);
@@ -883,8 +883,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR01_GameStartDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 20000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 20000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
             }
 
@@ -903,8 +903,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR01_GameStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 40000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 40000, enabled: true);
                 context.SetInteractObject(interactIds: new []{10001180, 10001181, 10001182, 10001183}, state: 2);
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__16$", duration: 4000);
             }
@@ -924,7 +924,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR01_GameTimerStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "11111", seconds: 20, clearAtZero: true, display: true, arg5: -40);
+                context.SetTimer(timerId: "11111", seconds: 20, autoRemove: true, display: true, vOffset: -40);
                 context.SetUserValue(triggerId: 8, key: "CheerUpTimer", value: 1);
                 context.SetUserValue(triggerId: 7, key: "GameGuide", value: 1);
             }
@@ -978,11 +978,11 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 80f)) {
+                if (context.RandomCondition(rate: 80)) {
                     return new StateG05P00_Random(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateG04P00_Random(context);
                 }
 
@@ -998,15 +998,15 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateG03P00_Random(context);
                 }
 
-                if (context.RandomCondition(rate: 60f)) {
+                if (context.RandomCondition(rate: 60)) {
                     return new StateG04P00_Random(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new StateG05P00_Random(context);
                 }
 
@@ -1022,15 +1022,15 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     return new StateG02P00_Random(context);
                 }
 
-                if (context.RandomCondition(rate: 60f)) {
+                if (context.RandomCondition(rate: 60)) {
                     return new StateG03P00_Random(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new StateG04P00_Random(context);
                 }
 
@@ -1046,11 +1046,11 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 60f)) {
+                if (context.RandomCondition(rate: 60)) {
                     return new StateG02P00_Random(context);
                 }
 
-                if (context.RandomCondition(rate: 40f)) {
+                if (context.RandomCondition(rate: 40)) {
                     return new StateG03P00_Random(context);
                 }
 
@@ -1066,11 +1066,11 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 70f)) {
+                if (context.RandomCondition(rate: 70)) {
                     return new StateG01P00_Random(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new StateG02P00_Random(context);
                 }
 
@@ -1086,203 +1086,203 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P01_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P02_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P03_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P04_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P05_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P06_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P07_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P08_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P09_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P10_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P11_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P12_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P13_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P14_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P15_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P16_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P17_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P18_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P19_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P20_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P21_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P22_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P23_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P24_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P25_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P26_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P27_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P28_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P29_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P30_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P31_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P32_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P33_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P34_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P35_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P36_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P37_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P38_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P39_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P40_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P41_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P42_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P43_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P44_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P45_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P46_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P47_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P48_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P49_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateG05P50_RoundCheckIn(context);
                 }
 
@@ -1298,163 +1298,163 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P01_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P02_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P03_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P04_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P05_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P06_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P07_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P08_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P09_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P10_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P11_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P12_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P13_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P14_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P15_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P16_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P17_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P18_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P19_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P20_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P21_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P22_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P23_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P24_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P25_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P26_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P27_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P28_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P29_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P30_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P31_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P32_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P33_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P34_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P35_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P36_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P37_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P38_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P39_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG04P40_RoundCheckIn(context);
                 }
 
@@ -1470,123 +1470,123 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P01_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P02_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P03_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P04_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P05_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P06_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P07_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P08_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P09_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P10_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P11_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P12_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P13_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P14_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P15_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P16_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P17_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P18_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P19_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P20_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P21_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P22_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P23_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P24_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P25_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P26_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P27_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P28_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P29_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG03P30_RoundCheckIn(context);
                 }
 
@@ -1602,123 +1602,123 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P01_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P02_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P03_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P04_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P05_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P06_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P07_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P08_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P09_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P10_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P11_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P12_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P13_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P14_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P15_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P16_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P17_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P18_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P19_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P20_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P21_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P22_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P23_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P24_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P25_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P26_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P27_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P28_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P29_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG02P30_RoundCheckIn(context);
                 }
 
@@ -1734,123 +1734,123 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P01_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P02_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P03_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P04_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P05_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P06_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P07_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P08_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P09_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P10_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P11_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P12_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P13_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P14_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P15_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P16_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P17_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P18_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P19_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P20_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P21_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P22_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P23_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P24_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P25_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P26_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P27_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P28_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P29_RoundCheckIn(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateG01P30_RoundCheckIn(context);
                 }
 
@@ -1901,7 +1901,7 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 901, enable: false);
+                context.CameraSelect(triggerId: 901, enabled: false);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
@@ -2137,8 +2137,8 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__24$", duration: 3000, boxId: 0);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancetime_02");
-                context.SetSound(triggerId: 40000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 40000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
             }
 
@@ -2157,37 +2157,37 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR02DanceTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 20000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 20000, enabled: true);
                 context.SetUserValue(key: "DanceTime", value: 2);
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new StateDancePattern01(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new StateDancePattern02(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new StateDancePattern03(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new StateDancePattern0401(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new StateDancePattern0501(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateDancePattern0601(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateDancePattern0701(context);
                 }
 
@@ -2201,8 +2201,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR02_GameStartDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 20000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 20000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
             }
 
@@ -2221,8 +2221,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR02_GameStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 40000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 40000, enabled: true);
                 context.SetInteractObject(interactIds: new []{10001180, 10001181, 10001182, 10001183}, state: 2);
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__25$", duration: 4000);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Round_02");
@@ -2243,7 +2243,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR02_GameTimerStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "11111", seconds: 20, clearAtZero: true, display: true, arg5: -40);
+                context.SetTimer(timerId: "11111", seconds: 20, autoRemove: true, display: true, vOffset: -40);
                 context.SetUserValue(triggerId: 8, key: "CheerUpTimer", value: 1);
                 context.SetUserValue(triggerId: 7, key: "GameGuide", value: 1);
             }
@@ -2332,7 +2332,7 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 901, enable: false);
+                context.CameraSelect(triggerId: 901, enabled: false);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
@@ -2499,8 +2499,8 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__32$", duration: 3000, boxId: 0);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancetime_03");
-                context.SetSound(triggerId: 40000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 40000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
             }
 
@@ -2519,37 +2519,37 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR03DanceTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 20000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 20000, enabled: true);
                 context.SetUserValue(key: "DanceTime", value: 3);
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new StateDancePattern01(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new StateDancePattern02(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new StateDancePattern03(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new StateDancePattern0401(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new StateDancePattern0501(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateDancePattern0601(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateDancePattern0701(context);
                 }
 
@@ -2563,8 +2563,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR03_GameStartDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 20000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 20000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
             }
 
@@ -2583,8 +2583,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR03_GameStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 40000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 40000, enabled: true);
                 context.SetInteractObject(interactIds: new []{10001180, 10001181, 10001182, 10001183}, state: 2);
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__33$", duration: 4000);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Round_03");
@@ -2605,7 +2605,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR03_GameTimerStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "11111", seconds: 20, clearAtZero: true, display: true, arg5: -40);
+                context.SetTimer(timerId: "11111", seconds: 20, autoRemove: true, display: true, vOffset: -40);
                 context.SetUserValue(triggerId: 8, key: "CheerUpTimer", value: 1);
                 context.SetUserValue(triggerId: 7, key: "GameGuide", value: 1);
             }
@@ -2694,7 +2694,7 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 901, enable: false);
+                context.CameraSelect(triggerId: 901, enabled: false);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
@@ -2861,8 +2861,8 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__40$", duration: 3000, boxId: 0);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancetime_04");
-                context.SetSound(triggerId: 40000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 40000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
             }
 
@@ -2881,37 +2881,37 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR04DanceTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 20000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 20000, enabled: true);
                 context.SetUserValue(key: "DanceTime", value: 4);
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateDancePattern01(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new StateDancePattern02(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateDancePattern03(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateDancePattern0401(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateDancePattern0501(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateDancePattern0601(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateDancePattern0701(context);
                 }
 
@@ -2925,8 +2925,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR04_GameStartDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 20000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 20000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
             }
 
@@ -2945,8 +2945,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR04_GameStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 40000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 40000, enabled: true);
                 context.SetInteractObject(interactIds: new []{10001180, 10001181, 10001182, 10001183}, state: 2);
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__41$", duration: 4000);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Round_04");
@@ -2967,7 +2967,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR04_GameTimerStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "11111", seconds: 20, clearAtZero: true, display: true, arg5: -40);
+                context.SetTimer(timerId: "11111", seconds: 20, autoRemove: true, display: true, vOffset: -40);
                 context.SetUserValue(triggerId: 8, key: "CheerUpTimer", value: 1);
                 context.SetUserValue(triggerId: 7, key: "GameGuide", value: 1);
             }
@@ -3056,7 +3056,7 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 901, enable: false);
+                context.CameraSelect(triggerId: 901, enabled: false);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
@@ -3241,8 +3241,8 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__48$", duration: 3000, boxId: 0);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancetime_05");
-                context.SetSound(triggerId: 40000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 40000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
             }
 
@@ -3261,37 +3261,37 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR05DanceTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 20000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 20000, enabled: true);
                 context.SetUserValue(key: "DanceTime", value: 5);
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new StateDancePattern01(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new StateDancePattern02(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new StateDancePattern03(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateDancePattern0401(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateDancePattern0501(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateDancePattern0601(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     return new StateDancePattern0701(context);
                 }
 
@@ -3305,8 +3305,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR05_GameStartDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 20000, arg2: false);
-                context.SetSound(triggerId: 30000, arg2: true);
+                context.SetSound(triggerId: 20000, enabled: false);
+                context.SetSound(triggerId: 30000, enabled: true);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
             }
 
@@ -3325,8 +3325,8 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR05_GameStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 30000, arg2: false);
-                context.SetSound(triggerId: 40000, arg2: true);
+                context.SetSound(triggerId: 30000, enabled: false);
+                context.SetSound(triggerId: 40000, enabled: true);
                 context.SetInteractObject(interactIds: new []{10001180, 10001181, 10001182, 10001183}, state: 2);
                 context.SetEventUI(arg1: 1, script: "$66200001_GD__01_MASSIVEMAIN__49$", duration: 4000);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Round_05");
@@ -3347,7 +3347,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR05_GameTimerStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "11111", seconds: 20, clearAtZero: true, display: true, arg5: -40);
+                context.SetTimer(timerId: "11111", seconds: 20, autoRemove: true, display: true, vOffset: -40);
                 context.SetUserValue(triggerId: 8, key: "CheerUpTimer", value: 1);
                 context.SetUserValue(triggerId: 7, key: "GameGuide", value: 1);
             }
@@ -3436,7 +3436,7 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 901, enable: false);
+                context.CameraSelect(triggerId: 901, enabled: false);
                 context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
                 context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
                 context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
@@ -3948,10 +3948,10 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.GuildVsGameEndGame();
                 context.UnSetMiniGameAreaForHack();
-                context.SetSound(triggerId: 40000, arg2: false);
+                context.SetSound(triggerId: 40000, enabled: false);
                 context.ShowEventResult(type: EventResultType.Notice, text: "$66200001_GD__01_MASSIVEMAIN__65$", duration: 10000, boxId: 9000, isOutSide: false);
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Ending_03");
-                context.SetSound(triggerId: 10000, arg2: false);
+                context.SetSound(triggerId: 10000, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -4004,7 +4004,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -4081,7 +4081,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -4158,7 +4158,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -4235,7 +4235,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -4312,7 +4312,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -4389,7 +4389,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -4466,7 +4466,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -4543,7 +4543,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -4620,7 +4620,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -4697,7 +4697,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -4774,7 +4774,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -4851,7 +4851,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -4928,7 +4928,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5005,7 +5005,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5082,7 +5082,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5159,7 +5159,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5236,7 +5236,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5313,7 +5313,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5390,7 +5390,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5467,7 +5467,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5544,7 +5544,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5621,7 +5621,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5698,7 +5698,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5775,7 +5775,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5852,7 +5852,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5929,7 +5929,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6006,7 +6006,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6083,7 +6083,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6160,7 +6160,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6237,7 +6237,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6314,7 +6314,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6391,7 +6391,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6468,7 +6468,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6545,7 +6545,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6622,7 +6622,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6699,7 +6699,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6776,7 +6776,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6853,7 +6853,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6930,7 +6930,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7007,7 +7007,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7084,7 +7084,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7161,7 +7161,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7238,7 +7238,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7315,7 +7315,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7392,7 +7392,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7469,7 +7469,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7546,7 +7546,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7623,7 +7623,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7700,7 +7700,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7777,7 +7777,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7854,7 +7854,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7931,7 +7931,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8008,7 +8008,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8085,7 +8085,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8162,7 +8162,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8239,7 +8239,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8316,7 +8316,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8393,7 +8393,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8470,7 +8470,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8547,7 +8547,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8624,7 +8624,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8701,7 +8701,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8778,7 +8778,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8855,7 +8855,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8932,7 +8932,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9009,7 +9009,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9086,7 +9086,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9163,7 +9163,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9240,7 +9240,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9317,7 +9317,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9394,7 +9394,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9471,7 +9471,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9548,7 +9548,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9625,7 +9625,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9702,7 +9702,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9779,7 +9779,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9856,7 +9856,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9933,7 +9933,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10010,7 +10010,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10087,7 +10087,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10164,7 +10164,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10241,7 +10241,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10318,7 +10318,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10395,7 +10395,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10472,7 +10472,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10549,7 +10549,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10626,7 +10626,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10703,7 +10703,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10780,7 +10780,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10857,7 +10857,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10934,7 +10934,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11011,7 +11011,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11088,7 +11088,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11165,7 +11165,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11242,7 +11242,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11319,7 +11319,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11396,7 +11396,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11473,7 +11473,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11550,7 +11550,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11627,7 +11627,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11704,7 +11704,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11781,7 +11781,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11858,7 +11858,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11935,7 +11935,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12012,7 +12012,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12089,7 +12089,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12166,7 +12166,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12243,7 +12243,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12320,7 +12320,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12397,7 +12397,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12474,7 +12474,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12551,7 +12551,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12628,7 +12628,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12705,7 +12705,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12782,7 +12782,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12859,7 +12859,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12936,7 +12936,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13013,7 +13013,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13090,7 +13090,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13167,7 +13167,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13244,7 +13244,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13321,7 +13321,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13398,7 +13398,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13475,7 +13475,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13552,7 +13552,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13629,7 +13629,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13706,7 +13706,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13783,7 +13783,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13860,7 +13860,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13937,7 +13937,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14014,7 +14014,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14091,7 +14091,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14168,7 +14168,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14245,7 +14245,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14322,7 +14322,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14399,7 +14399,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14476,7 +14476,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14553,7 +14553,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14630,7 +14630,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14707,7 +14707,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14784,7 +14784,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14861,7 +14861,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14938,7 +14938,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15015,7 +15015,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15092,7 +15092,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15169,7 +15169,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15246,7 +15246,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15323,7 +15323,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15400,7 +15400,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15477,7 +15477,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15554,7 +15554,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15631,7 +15631,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15708,7 +15708,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15785,7 +15785,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15862,7 +15862,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15939,7 +15939,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16016,7 +16016,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16093,7 +16093,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16170,7 +16170,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16247,7 +16247,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16324,7 +16324,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16401,7 +16401,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16478,7 +16478,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16555,7 +16555,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16632,7 +16632,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16709,7 +16709,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16786,7 +16786,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16863,7 +16863,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16940,7 +16940,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17017,7 +17017,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17094,7 +17094,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17171,7 +17171,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17248,7 +17248,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17325,7 +17325,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17402,7 +17402,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17479,7 +17479,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17556,7 +17556,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17633,7 +17633,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17710,7 +17710,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17787,7 +17787,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicUI(type: 3, script: "$66200001_GD__01_MASSIVEMAIN__66$");
                 context.PlaySystemSoundInBox(boxIds: new []{9000}, sound: "DJDD_Dancing_01");
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, visible: false, arg3: 2000, arg4: 0, arg5: 2f);

@@ -215,163 +215,163 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1스프링공격01(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1스프링공격02(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1스프링공격03(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1스프링공격04(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1스프링공격05(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1스프링공격06(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1스프링공격07(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1스프링공격08(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1스프링공격09(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1스프링공격10(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State1스프링공격11(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State1스프링공격12(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State1스프링공격13(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State1스프링공격14(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State1스프링공격15(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State1스프링공격16(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State1스프링공격17(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State1스프링공격18(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State1스프링공격19(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State1스프링공격20(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격21(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격22(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격23(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격24(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격25(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격26(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격27(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격28(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격29(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격30(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격31(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격32(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격33(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격34(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격35(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격36(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격37(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격38(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격39(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State1스프링공격40(context);
                 }
 
@@ -386,7 +386,7 @@ namespace Maple2.Trigger._66000002_gd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "19", seconds: 3);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: false);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -483,163 +483,163 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State2스프링공격01(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State2스프링공격02(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State2스프링공격03(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State2스프링공격04(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State2스프링공격05(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State2스프링공격06(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State2스프링공격07(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State2스프링공격08(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State2스프링공격09(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State2스프링공격10(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State2스프링공격11(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State2스프링공격12(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State2스프링공격13(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State2스프링공격14(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State2스프링공격15(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2스프링공격16(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2스프링공격17(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2스프링공격18(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2스프링공격19(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2스프링공격20(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격21(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격22(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격23(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격24(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격25(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2스프링공격26(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2스프링공격27(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2스프링공격28(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2스프링공격29(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2스프링공격30(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격31(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격32(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격33(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격34(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격35(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격36(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격37(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격38(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격39(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State2스프링공격40(context);
                 }
 
@@ -654,7 +654,7 @@ namespace Maple2.Trigger._66000002_gd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "23", seconds: 3);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: false);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -751,163 +751,163 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격01(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격02(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격03(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격04(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격05(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격06(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격07(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격08(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격09(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격10(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격11(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격12(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격13(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격14(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State3스프링공격15(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3스프링공격16(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3스프링공격17(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3스프링공격18(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3스프링공격19(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3스프링공격20(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State3스프링공격21(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State3스프링공격22(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State3스프링공격23(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State3스프링공격24(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State3스프링공격25(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3스프링공격26(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3스프링공격27(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3스프링공격28(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3스프링공격29(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3스프링공격30(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State3스프링공격31(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State3스프링공격32(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State3스프링공격33(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State3스프링공격34(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State3스프링공격35(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State3스프링공격36(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State3스프링공격37(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State3스프링공격38(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State3스프링공격39(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State3스프링공격40(context);
                 }
 
@@ -922,7 +922,7 @@ namespace Maple2.Trigger._66000002_gd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "27", seconds: 3);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: false);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -1019,163 +1019,163 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격01(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격02(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격03(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격04(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격05(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격06(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격07(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격08(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격09(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격10(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격11(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격12(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격13(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격14(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State4스프링공격15(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격16(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격17(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격18(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격19(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격20(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State4스프링공격21(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State4스프링공격22(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State4스프링공격23(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State4스프링공격24(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격25(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격26(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격27(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격28(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격29(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격30(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State4스프링공격31(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State4스프링공격32(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State4스프링공격33(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State4스프링공격34(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State4스프링공격35(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State4스프링공격36(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격37(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4스프링공격38(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State4스프링공격39(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State4스프링공격40(context);
                 }
 
@@ -1190,7 +1190,7 @@ namespace Maple2.Trigger._66000002_gd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "31", seconds: 3);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: false);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -1287,103 +1287,103 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State5스프링공격16(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State5스프링공격17(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State5스프링공격18(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State5스프링공격19(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State5스프링공격20(context);
                 }
 
-                if (context.RandomCondition(rate: 6f)) {
+                if (context.RandomCondition(rate: 6)) {
                     return new State5스프링공격21(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State5스프링공격22(context);
                 }
 
-                if (context.RandomCondition(rate: 6f)) {
+                if (context.RandomCondition(rate: 6)) {
                     return new State5스프링공격23(context);
                 }
 
-                if (context.RandomCondition(rate: 6f)) {
+                if (context.RandomCondition(rate: 6)) {
                     return new State5스프링공격24(context);
                 }
 
-                if (context.RandomCondition(rate: 6f)) {
+                if (context.RandomCondition(rate: 6)) {
                     return new State5스프링공격25(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State5스프링공격26(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State5스프링공격27(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State5스프링공격28(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State5스프링공격29(context);
                 }
 
-                if (context.RandomCondition(rate: 2f)) {
+                if (context.RandomCondition(rate: 2)) {
                     return new State5스프링공격30(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State5스프링공격31(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State5스프링공격32(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State5스프링공격33(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State5스프링공격34(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State5스프링공격35(context);
                 }
 
-                if (context.RandomCondition(rate: 4f)) {
+                if (context.RandomCondition(rate: 4)) {
                     return new State5스프링공격36(context);
                 }
 
-                if (context.RandomCondition(rate: 6f)) {
+                if (context.RandomCondition(rate: 6)) {
                     return new State5스프링공격37(context);
                 }
 
-                if (context.RandomCondition(rate: 6f)) {
+                if (context.RandomCondition(rate: 6)) {
                     return new State5스프링공격38(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State5스프링공격39(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State5스프링공격40(context);
                 }
 
@@ -1398,7 +1398,7 @@ namespace Maple2.Trigger._66000002_gd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "35", seconds: 3);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: false);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -1606,7 +1606,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{105, 106, 107, 108, 117, 118, 119, 120, 129, 130, 131, 132, 137, 138, 139, 140, 141, 142, 143, 144, 145, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{205, 206, 207, 208, 217, 218, 219, 220, 229, 230, 231, 232, 237, 238, 239, 240, 241, 242, 243, 244, 245, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{205, 206, 207, 208, 217, 218, 219, 220, 229, 230, 231, 232, 237, 238, 239, 240, 241, 242, 243, 244, 245, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1645,7 +1645,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 137, 138, 139, 140, 150, 151, 152, 153}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 237, 238, 239, 240, 250, 251, 252, 253}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 237, 238, 239, 240, 250, 251, 252, 253}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1684,7 +1684,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 109, 110, 111, 112, 113, 114, 115, 116, 121, 122, 123, 124, 129, 130, 131, 132, 141, 142, 143, 144, 145, 154, 155, 156, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 209, 210, 211, 212, 213, 214, 215, 216, 221, 222, 223, 224, 229, 230, 231, 232, 241, 242, 243, 244, 245, 254, 255, 256, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 209, 210, 211, 212, 213, 214, 215, 216, 221, 222, 223, 224, 229, 230, 231, 232, 241, 242, 243, 244, 245, 254, 255, 256, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1723,7 +1723,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{107, 117, 118, 119, 120, 121, 127, 128, 129, 133, 134, 135, 137, 138, 139, 147, 148, 149, 150, 151, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{207, 217, 218, 219, 220, 221, 227, 228, 229, 233, 234, 235, 237, 238, 239, 247, 248, 249, 250, 251, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{207, 217, 218, 219, 220, 221, 227, 228, 229, 233, 234, 235, 237, 238, 239, 247, 248, 249, 250, 251, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1762,7 +1762,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{104, 105, 108, 109, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 140, 141, 145, 146, 153, 154, 160, 161}, enabled: true);
-                context.SetSkill(triggerIds: new []{204, 205, 208, 209, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 240, 241, 245, 246, 253, 254, 260, 261}, arg2: true);
+                context.SetSkill(triggerIds: new []{204, 205, 208, 209, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 240, 241, 245, 246, 253, 254, 260, 261}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1801,7 +1801,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 120, 121, 128, 129, 131, 132, 133, 142, 143, 144, 145, 146, 155, 156, 157, 158, 159, 160, 161}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 220, 221, 228, 229, 231, 232, 233, 242, 243, 244, 245, 246, 255, 256, 257, 258, 259, 260, 261}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 220, 221, 228, 229, 231, 232, 233, 242, 243, 244, 245, 246, 255, 256, 257, 258, 259, 260, 261}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1840,7 +1840,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 111, 112, 115, 116, 117, 118, 119, 120, 121, 122, 127, 128, 129, 130, 131, 132, 133, 134, 137, 138, 143, 148, 149, 150, 151, 156, 157, 158, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 211, 212, 215, 216, 217, 218, 219, 220, 221, 222, 227, 228, 229, 230, 231, 232, 233, 234, 237, 238, 243, 248, 249, 250, 251, 256, 257, 258, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 211, 212, 215, 216, 217, 218, 219, 220, 221, 222, 227, 228, 229, 230, 231, 232, 233, 234, 237, 238, 243, 248, 249, 250, 251, 256, 257, 258, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1879,7 +1879,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 131, 132, 133, 134, 135, 136, 138, 139, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 155, 156}, enabled: true);
-                context.SetSkill(triggerIds: new []{207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 255, 256}, arg2: true);
+                context.SetSkill(triggerIds: new []{207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 255, 256}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1918,7 +1918,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 112, 113, 115, 116, 117, 118, 119, 122, 124, 125, 127, 130, 131, 132, 133, 134, 136, 137, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 215, 216, 217, 218, 219, 222, 224, 225, 227, 230, 231, 232, 233, 234, 236, 237, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 215, 216, 217, 218, 219, 222, 224, 225, 227, 230, 231, 232, 233, 234, 236, 237, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1957,7 +1957,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 106, 107, 110, 111, 112, 113, 114, 115, 118, 131, 134, 135, 136, 137, 138, 139, 142, 143, 144, 147, 148, 149, 150, 151, 152, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 210, 211, 212, 213, 214, 215, 218, 231, 234, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 210, 211, 212, 213, 214, 215, 218, 231, 234, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1996,7 +1996,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 112, 113, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 136, 137, 140, 141, 145, 146, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2035,7 +2035,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 107, 108, 113, 114, 115, 116, 119, 120, 125, 126, 127, 128, 131, 132, 138, 140, 142, 146, 147, 148, 149, 151, 153, 155, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 207, 208, 213, 214, 215, 216, 219, 220, 225, 226, 227, 228, 231, 232, 238, 240, 242, 246, 247, 248, 249, 251, 253, 255, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 207, 208, 213, 214, 215, 216, 219, 220, 225, 226, 227, 228, 231, 232, 238, 240, 242, 246, 247, 248, 249, 251, 253, 255, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2074,7 +2074,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 127, 129, 131, 133, 135, 137, 139, 141, 143, 145, 147, 149, 151, 153, 155, 157, 159, 161, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 205, 207, 209, 211, 213, 215, 217, 219, 221, 223, 225, 227, 229, 231, 233, 235, 237, 239, 241, 243, 245, 247, 249, 251, 253, 255, 257, 259, 261, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 205, 207, 209, 211, 213, 215, 217, 219, 221, 223, 225, 227, 229, 231, 233, 235, 237, 239, 241, 243, 245, 247, 249, 251, 253, 255, 257, 259, 261, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2113,7 +2113,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 106, 108, 109, 111, 114, 116, 117, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 132, 133, 135, 138, 139, 142, 143, 145, 146, 148, 150, 153, 154, 157, 159, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 206, 208, 209, 211, 214, 216, 217, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 232, 233, 235, 238, 239, 242, 243, 245, 246, 248, 250, 253, 254, 257, 259, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 206, 208, 209, 211, 214, 216, 217, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 232, 233, 235, 238, 239, 242, 243, 245, 246, 248, 250, 253, 254, 257, 259, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2152,7 +2152,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 105, 106, 109, 110, 111, 112, 115, 116, 117, 118, 119, 120, 123, 124, 125, 126, 127, 128, 131, 132, 133, 134, 137, 138, 140, 141, 143, 144, 145, 148, 149, 151, 153, 154, 156, 157, 158, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 209, 210, 211, 212, 215, 216, 217, 218, 219, 220, 223, 224, 225, 226, 227, 228, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 248, 249, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 209, 210, 211, 212, 215, 216, 217, 218, 219, 220, 223, 224, 225, 226, 227, 228, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 248, 249, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2191,7 +2191,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 140, 141, 145, 146, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2230,7 +2230,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 116, 119, 120, 121, 122, 125, 126, 127, 128, 129, 130, 131, 132, 135, 136, 138, 139, 140, 142, 143, 146, 147, 148, 149, 151, 152, 153, 155, 156, 157, 158, 159, 160, 161, 162}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 211, 212, 213, 214, 215, 216, 219, 220, 221, 222, 225, 226, 227, 228, 229, 230, 231, 232, 235, 236, 238, 239, 240, 242, 243, 246, 247, 248, 249, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 211, 212, 213, 214, 215, 216, 219, 220, 221, 222, 225, 226, 227, 228, 229, 230, 231, 232, 235, 236, 238, 239, 240, 242, 243, 246, 247, 248, 249, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2269,7 +2269,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 104, 105, 106, 107, 109, 110, 111, 113, 114, 116, 117, 118, 119, 121, 122, 123, 125, 126, 128, 129, 130, 131, 133, 134, 135, 138, 140, 142, 144, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 204, 205, 206, 207, 209, 210, 211, 213, 214, 216, 217, 218, 219, 221, 222, 223, 225, 226, 228, 229, 230, 231, 233, 234, 235, 238, 240, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 204, 205, 206, 207, 209, 210, 211, 213, 214, 216, 217, 218, 219, 221, 222, 223, 225, 226, 228, 229, 230, 231, 233, 234, 235, 238, 240, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2308,7 +2308,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 135, 138, 139, 142, 143, 144, 145, 146, 147, 148, 150, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 238, 239, 242, 243, 244, 245, 246, 247, 248, 250, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 238, 239, 242, 243, 244, 245, 246, 247, 248, 250, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2347,7 +2347,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 105, 106, 107, 108, 109, 110, 111, 112, 115, 116, 117, 118, 119, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 134, 137, 138, 140, 141, 143, 144, 145, 146, 147, 148, 149, 150, 151, 153, 154, 156, 157, 158, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 207, 208, 209, 210, 211, 212, 215, 216, 217, 218, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 207, 208, 209, 210, 211, 212, 215, 216, 217, 218, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2386,7 +2386,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 111, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 140, 141, 143, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 240, 241, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 240, 241, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2425,7 +2425,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 111, 112, 113, 114, 115, 116, 118, 119, 120, 121, 122, 123, 125, 126, 127, 128, 129, 130, 131, 132, 134, 135, 136, 138, 139, 140, 141, 142, 143, 145, 146, 147, 148, 149, 150, 151, 152, 153, 155, 156, 157, 158, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 211, 212, 213, 214, 215, 216, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 234, 235, 236, 238, 239, 240, 241, 242, 243, 245, 246, 247, 248, 249, 250, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 211, 212, 213, 214, 215, 216, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 234, 235, 236, 238, 239, 240, 241, 242, 243, 245, 246, 247, 248, 249, 250, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2464,7 +2464,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2503,7 +2503,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2542,7 +2542,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 112, 113, 114, 115, 116, 117, 118, 119, 120, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 142, 144, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 215, 216, 217, 218, 219, 220, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 215, 216, 217, 218, 219, 220, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2581,7 +2581,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 115, 116, 119, 120, 122, 124, 125, 127, 129, 130, 132, 133, 135, 136, 137, 138, 139, 142, 143, 144, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 215, 216, 219, 220, 222, 224, 225, 227, 229, 230, 232, 233, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 215, 216, 219, 220, 222, 224, 225, 227, 229, 230, 232, 233, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2620,7 +2620,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 110, 111, 112, 113, 114, 116, 117, 120, 121, 122, 123, 124, 125, 126, 127, 130, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 217, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 217, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2659,7 +2659,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 110, 111, 112, 113, 116, 118, 119, 120, 122, 123, 126, 127, 129, 130, 131, 133, 136, 137, 139, 140, 142, 145, 146, 147, 148, 149, 150, 151, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 210, 211, 212, 213, 216, 218, 219, 220, 222, 223, 226, 227, 229, 230, 231, 233, 236, 237, 239, 240, 242, 245, 246, 247, 248, 249, 250, 251, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 210, 211, 212, 213, 216, 218, 219, 220, 222, 223, 226, 227, 229, 230, 231, 233, 236, 237, 239, 240, 242, 245, 246, 247, 248, 249, 250, 251, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2698,7 +2698,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 109, 110, 112, 113, 115, 117, 118, 119, 120, 122, 124, 125, 127, 129, 130, 131, 132, 134, 136, 137, 138, 143, 146, 147, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 209, 210, 212, 213, 215, 217, 218, 219, 220, 222, 224, 225, 227, 229, 230, 231, 232, 234, 236, 237, 238, 243, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 209, 210, 212, 213, 215, 217, 218, 219, 220, 222, 224, 225, 227, 229, 230, 231, 232, 234, 236, 237, 238, 243, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2737,7 +2737,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 112, 113, 114, 115, 116, 117, 119, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 135, 136, 137, 139, 140, 141, 142, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 214, 215, 216, 217, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 235, 236, 237, 239, 240, 241, 242, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 214, 215, 216, 217, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 235, 236, 237, 239, 240, 241, 242, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2776,7 +2776,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 113, 115, 116, 117, 118, 119, 120, 121, 123, 124, 125, 126, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 213, 215, 216, 217, 218, 219, 220, 221, 223, 224, 225, 226, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 213, 215, 216, 217, 218, 219, 220, 221, 223, 224, 225, 226, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2815,7 +2815,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 131, 132, 133, 134, 135, 136, 137, 138, 140, 141, 143, 144, 145, 146, 147, 148, 149, 150, 152, 153, 154, 155, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 231, 232, 233, 234, 235, 236, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 231, 232, 233, 234, 235, 236, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2854,7 +2854,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 105, 106, 107, 108, 109, 111, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 156, 157, 158, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 205, 206, 207, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 256, 257, 258, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 205, 206, 207, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 256, 257, 258, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2893,7 +2893,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 110, 111, 112, 113, 114, 116, 118, 119, 121, 122, 123, 124, 125, 126, 127, 128, 130, 131, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 218, 219, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 218, 219, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2932,7 +2932,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 116, 117, 118, 122, 123, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 139, 140, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 216, 217, 218, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 216, 217, 218, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -2971,7 +2971,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 153, 154, 155, 156, 158, 159, 160, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3010,7 +3010,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3049,7 +3049,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3088,7 +3088,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 130, 132, 133, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 149, 150, 151, 152, 153, 154, 155, 156, 158, 159, 160, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3127,7 +3127,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{102, 103, 104, 105, 106, 107, 108, 109, 110, 112, 113, 114, 116, 117, 119, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 216, 217, 219, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 216, 217, 219, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3166,7 +3166,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{105, 106, 107, 108, 117, 118, 119, 120, 129, 130, 131, 132, 137, 138, 139, 140, 141, 142, 143, 144, 145, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{205, 206, 207, 208, 217, 218, 219, 220, 229, 230, 231, 232, 237, 238, 239, 240, 241, 242, 243, 244, 245, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{205, 206, 207, 208, 217, 218, 219, 220, 229, 230, 231, 232, 237, 238, 239, 240, 241, 242, 243, 244, 245, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3205,7 +3205,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 137, 138, 139, 140, 150, 151, 152, 153}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 237, 238, 239, 240, 250, 251, 252, 253}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 237, 238, 239, 240, 250, 251, 252, 253}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3244,7 +3244,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 109, 110, 111, 112, 113, 114, 115, 116, 121, 122, 123, 124, 129, 130, 131, 132, 141, 142, 143, 144, 145, 154, 155, 156, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 209, 210, 211, 212, 213, 214, 215, 216, 221, 222, 223, 224, 229, 230, 231, 232, 241, 242, 243, 244, 245, 254, 255, 256, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 209, 210, 211, 212, 213, 214, 215, 216, 221, 222, 223, 224, 229, 230, 231, 232, 241, 242, 243, 244, 245, 254, 255, 256, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3283,7 +3283,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{107, 117, 118, 119, 120, 121, 127, 128, 129, 133, 134, 135, 137, 138, 139, 147, 148, 149, 150, 151, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{207, 217, 218, 219, 220, 221, 227, 228, 229, 233, 234, 235, 237, 238, 239, 247, 248, 249, 250, 251, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{207, 217, 218, 219, 220, 221, 227, 228, 229, 233, 234, 235, 237, 238, 239, 247, 248, 249, 250, 251, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3322,7 +3322,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{104, 105, 108, 109, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 140, 141, 145, 146, 153, 154, 160, 161}, enabled: true);
-                context.SetSkill(triggerIds: new []{204, 205, 208, 209, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 240, 241, 245, 246, 253, 254, 260, 261}, arg2: true);
+                context.SetSkill(triggerIds: new []{204, 205, 208, 209, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 240, 241, 245, 246, 253, 254, 260, 261}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3361,7 +3361,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 120, 121, 128, 129, 131, 132, 133, 142, 143, 144, 145, 146, 155, 156, 157, 158, 159, 160, 161}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 220, 221, 228, 229, 231, 232, 233, 242, 243, 244, 245, 246, 255, 256, 257, 258, 259, 260, 261}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 220, 221, 228, 229, 231, 232, 233, 242, 243, 244, 245, 246, 255, 256, 257, 258, 259, 260, 261}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3400,7 +3400,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 111, 112, 115, 116, 117, 118, 119, 120, 121, 122, 127, 128, 129, 130, 131, 132, 133, 134, 137, 138, 143, 148, 149, 150, 151, 156, 157, 158, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 211, 212, 215, 216, 217, 218, 219, 220, 221, 222, 227, 228, 229, 230, 231, 232, 233, 234, 237, 238, 243, 248, 249, 250, 251, 256, 257, 258, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 211, 212, 215, 216, 217, 218, 219, 220, 221, 222, 227, 228, 229, 230, 231, 232, 233, 234, 237, 238, 243, 248, 249, 250, 251, 256, 257, 258, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3439,7 +3439,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 131, 132, 133, 134, 135, 136, 138, 139, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 155, 156}, enabled: true);
-                context.SetSkill(triggerIds: new []{207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 255, 256}, arg2: true);
+                context.SetSkill(triggerIds: new []{207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 255, 256}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3478,7 +3478,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 112, 113, 115, 116, 117, 118, 119, 122, 124, 125, 127, 130, 131, 132, 133, 134, 136, 137, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 215, 216, 217, 218, 219, 222, 224, 225, 227, 230, 231, 232, 233, 234, 236, 237, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 215, 216, 217, 218, 219, 222, 224, 225, 227, 230, 231, 232, 233, 234, 236, 237, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3517,7 +3517,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 106, 107, 110, 111, 112, 113, 114, 115, 118, 131, 134, 135, 136, 137, 138, 139, 142, 143, 144, 147, 148, 149, 150, 151, 152, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 210, 211, 212, 213, 214, 215, 218, 231, 234, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264, 236}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 210, 211, 212, 213, 214, 215, 218, 231, 234, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264, 236}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3556,7 +3556,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 112, 113, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 136, 137, 140, 141, 145, 146, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3595,7 +3595,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 107, 108, 113, 114, 115, 116, 119, 120, 125, 126, 127, 128, 131, 132, 138, 140, 142, 146, 147, 148, 149, 151, 153, 155, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 207, 208, 213, 214, 215, 216, 219, 220, 225, 226, 227, 228, 231, 232, 238, 240, 242, 246, 247, 248, 249, 251, 253, 255, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 207, 208, 213, 214, 215, 216, 219, 220, 225, 226, 227, 228, 231, 232, 238, 240, 242, 246, 247, 248, 249, 251, 253, 255, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3634,7 +3634,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 127, 129, 131, 133, 135, 137, 139, 141, 143, 145, 147, 149, 151, 153, 155, 157, 159, 161, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 205, 207, 209, 211, 213, 215, 217, 219, 221, 223, 225, 227, 229, 231, 233, 235, 237, 239, 241, 243, 245, 247, 249, 251, 253, 255, 257, 259, 261, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 205, 207, 209, 211, 213, 215, 217, 219, 221, 223, 225, 227, 229, 231, 233, 235, 237, 239, 241, 243, 245, 247, 249, 251, 253, 255, 257, 259, 261, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3673,7 +3673,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 106, 108, 109, 111, 114, 116, 117, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 132, 133, 135, 138, 139, 142, 143, 145, 146, 148, 150, 153, 154, 157, 159, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 206, 208, 209, 211, 214, 216, 217, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 232, 233, 235, 238, 239, 242, 243, 245, 246, 248, 250, 253, 254, 257, 259, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 206, 208, 209, 211, 214, 216, 217, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 232, 233, 235, 238, 239, 242, 243, 245, 246, 248, 250, 253, 254, 257, 259, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3712,7 +3712,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 105, 106, 109, 110, 111, 112, 115, 116, 117, 118, 119, 120, 123, 124, 125, 126, 127, 128, 131, 132, 133, 134, 137, 138, 140, 141, 143, 144, 145, 148, 149, 151, 153, 154, 156, 157, 158, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 209, 210, 211, 212, 215, 216, 217, 218, 219, 220, 223, 224, 225, 226, 227, 228, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 248, 249, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 209, 210, 211, 212, 215, 216, 217, 218, 219, 220, 223, 224, 225, 226, 227, 228, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 248, 249, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3751,7 +3751,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 140, 141, 145, 146, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3790,7 +3790,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 116, 119, 120, 121, 122, 125, 126, 127, 128, 129, 130, 131, 132, 135, 136, 138, 139, 140, 142, 143, 146, 147, 148, 149, 151, 152, 153, 155, 156, 157, 158, 159, 160, 161, 162}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 211, 212, 213, 214, 215, 216, 219, 220, 221, 222, 225, 226, 227, 228, 229, 230, 231, 232, 235, 236, 238, 239, 240, 242, 243, 246, 247, 248, 249, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 211, 212, 213, 214, 215, 216, 219, 220, 221, 222, 225, 226, 227, 228, 229, 230, 231, 232, 235, 236, 238, 239, 240, 242, 243, 246, 247, 248, 249, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3829,7 +3829,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 104, 105, 106, 107, 109, 110, 111, 113, 114, 116, 117, 118, 119, 121, 122, 123, 125, 126, 128, 129, 130, 131, 133, 134, 135, 138, 140, 142, 144, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 204, 205, 206, 207, 209, 210, 211, 213, 214, 216, 217, 218, 219, 221, 222, 223, 225, 226, 228, 229, 230, 231, 233, 234, 235, 238, 240, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 204, 205, 206, 207, 209, 210, 211, 213, 214, 216, 217, 218, 219, 221, 222, 223, 225, 226, 228, 229, 230, 231, 233, 234, 235, 238, 240, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3868,7 +3868,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 135, 138, 139, 142, 143, 144, 145, 146, 147, 148, 150, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 238, 239, 242, 243, 244, 245, 246, 247, 248, 250, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 238, 239, 242, 243, 244, 245, 246, 247, 248, 250, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3907,7 +3907,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 105, 106, 107, 108, 109, 110, 111, 112, 115, 116, 117, 118, 119, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 134, 137, 138, 140, 141, 143, 144, 145, 146, 147, 148, 149, 150, 151, 153, 154, 156, 157, 158, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 207, 208, 209, 210, 211, 212, 215, 216, 217, 218, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 207, 208, 209, 210, 211, 212, 215, 216, 217, 218, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3946,7 +3946,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 111, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 140, 141, 143, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 240, 241, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 240, 241, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -3985,7 +3985,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 111, 112, 113, 114, 115, 116, 118, 119, 120, 121, 122, 123, 125, 126, 127, 128, 129, 130, 131, 132, 134, 135, 136, 138, 139, 140, 141, 142, 143, 145, 146, 147, 148, 149, 150, 151, 152, 153, 155, 156, 157, 158, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 211, 212, 213, 214, 215, 216, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 234, 235, 236, 238, 239, 240, 241, 242, 243, 245, 246, 247, 248, 249, 250, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 211, 212, 213, 214, 215, 216, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 234, 235, 236, 238, 239, 240, 241, 242, 243, 245, 246, 247, 248, 249, 250, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4024,7 +4024,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4063,7 +4063,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4102,7 +4102,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 112, 113, 114, 115, 116, 117, 118, 119, 120, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 142, 144, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 215, 216, 217, 218, 219, 220, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 215, 216, 217, 218, 219, 220, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4141,7 +4141,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 115, 116, 119, 120, 122, 124, 125, 127, 129, 130, 132, 133, 135, 136, 137, 138, 139, 142, 143, 144, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 215, 216, 219, 220, 222, 224, 225, 227, 229, 230, 232, 233, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 215, 216, 219, 220, 222, 224, 225, 227, 229, 230, 232, 233, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4180,7 +4180,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 110, 111, 112, 113, 114, 116, 117, 120, 121, 122, 123, 124, 125, 126, 127, 130, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 217, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 217, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4219,7 +4219,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 110, 111, 112, 113, 116, 118, 119, 120, 122, 123, 126, 127, 129, 130, 131, 133, 136, 137, 139, 140, 142, 145, 146, 147, 148, 149, 150, 151, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 210, 211, 212, 213, 216, 218, 219, 220, 222, 223, 226, 227, 229, 230, 231, 233, 236, 237, 239, 240, 242, 245, 246, 247, 248, 249, 250, 251, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 210, 211, 212, 213, 216, 218, 219, 220, 222, 223, 226, 227, 229, 230, 231, 233, 236, 237, 239, 240, 242, 245, 246, 247, 248, 249, 250, 251, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4258,7 +4258,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 109, 110, 112, 113, 115, 117, 118, 119, 120, 122, 124, 125, 127, 129, 130, 131, 132, 134, 136, 137, 138, 143, 146, 147, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 209, 210, 212, 213, 215, 217, 218, 219, 220, 222, 224, 225, 227, 229, 230, 231, 232, 234, 236, 237, 238, 243, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 209, 210, 212, 213, 215, 217, 218, 219, 220, 222, 224, 225, 227, 229, 230, 231, 232, 234, 236, 237, 238, 243, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4297,7 +4297,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 112, 113, 114, 115, 116, 117, 119, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 135, 136, 137, 139, 140, 141, 142, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 214, 215, 216, 217, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 235, 236, 237, 239, 240, 241, 242, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 214, 215, 216, 217, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 235, 236, 237, 239, 240, 241, 242, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4336,7 +4336,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 113, 115, 116, 117, 118, 119, 120, 121, 123, 124, 125, 126, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 213, 215, 216, 217, 218, 219, 220, 221, 223, 224, 225, 226, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 213, 215, 216, 217, 218, 219, 220, 221, 223, 224, 225, 226, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4375,7 +4375,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 131, 132, 133, 134, 135, 136, 137, 138, 140, 141, 143, 144, 145, 146, 147, 148, 149, 150, 152, 153, 154, 155, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 231, 232, 233, 234, 235, 236, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 231, 232, 233, 234, 235, 236, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4414,7 +4414,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 105, 106, 107, 108, 109, 111, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 156, 157, 158, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 205, 206, 207, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 256, 257, 258, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 205, 206, 207, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 256, 257, 258, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4453,7 +4453,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 110, 111, 112, 113, 114, 116, 118, 119, 121, 122, 123, 124, 125, 126, 127, 128, 130, 131, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 218, 219, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 218, 219, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4492,7 +4492,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 116, 117, 118, 122, 123, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 139, 140, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 216, 217, 218, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 216, 217, 218, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4531,7 +4531,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 153, 154, 155, 156, 158, 159, 160, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4570,7 +4570,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4609,7 +4609,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4648,7 +4648,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 130, 132, 133, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 149, 150, 151, 152, 153, 154, 155, 156, 158, 159, 160, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4687,7 +4687,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{102, 103, 104, 105, 106, 107, 108, 109, 110, 112, 113, 114, 116, 117, 119, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 216, 217, 219, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 216, 217, 219, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4726,7 +4726,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{105, 106, 107, 108, 117, 118, 119, 120, 129, 130, 131, 132, 137, 138, 139, 140, 141, 142, 143, 144, 145, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{205, 206, 207, 208, 217, 218, 219, 220, 229, 230, 231, 232, 237, 238, 239, 240, 241, 242, 243, 244, 245, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{205, 206, 207, 208, 217, 218, 219, 220, 229, 230, 231, 232, 237, 238, 239, 240, 241, 242, 243, 244, 245, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4765,7 +4765,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 137, 138, 139, 140, 150, 151, 152, 153}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 237, 238, 239, 240, 250, 251, 252, 253}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 237, 238, 239, 240, 250, 251, 252, 253}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4804,7 +4804,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 109, 110, 111, 112, 113, 114, 115, 116, 121, 122, 123, 124, 129, 130, 131, 132, 141, 142, 143, 144, 145, 154, 155, 156, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 209, 210, 211, 212, 213, 214, 215, 216, 221, 222, 223, 224, 229, 230, 231, 232, 241, 242, 243, 244, 245, 254, 255, 256, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 209, 210, 211, 212, 213, 214, 215, 216, 221, 222, 223, 224, 229, 230, 231, 232, 241, 242, 243, 244, 245, 254, 255, 256, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4843,7 +4843,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{107, 117, 118, 119, 120, 121, 127, 128, 129, 133, 134, 135, 137, 138, 139, 147, 148, 149, 150, 151, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{207, 217, 218, 219, 220, 221, 227, 228, 229, 233, 234, 235, 237, 238, 239, 247, 248, 249, 250, 251, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{207, 217, 218, 219, 220, 221, 227, 228, 229, 233, 234, 235, 237, 238, 239, 247, 248, 249, 250, 251, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4882,7 +4882,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{104, 105, 108, 109, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 140, 141, 145, 146, 153, 154, 160, 161}, enabled: true);
-                context.SetSkill(triggerIds: new []{204, 205, 208, 209, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 240, 241, 245, 246, 253, 254, 260, 261}, arg2: true);
+                context.SetSkill(triggerIds: new []{204, 205, 208, 209, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 240, 241, 245, 246, 253, 254, 260, 261}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4921,7 +4921,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 120, 121, 128, 129, 131, 132, 133, 142, 143, 144, 145, 146, 155, 156, 157, 158, 159, 160, 161}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 220, 221, 228, 229, 231, 232, 233, 242, 243, 244, 245, 246, 255, 256, 257, 258, 259, 260, 261}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 220, 221, 228, 229, 231, 232, 233, 242, 243, 244, 245, 246, 255, 256, 257, 258, 259, 260, 261}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4960,7 +4960,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 111, 112, 115, 116, 117, 118, 119, 120, 121, 122, 127, 128, 129, 130, 131, 132, 133, 134, 137, 138, 143, 148, 149, 150, 151, 156, 157, 158, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 211, 212, 215, 216, 217, 218, 219, 220, 221, 222, 227, 228, 229, 230, 231, 232, 233, 234, 237, 238, 243, 248, 249, 250, 251, 256, 257, 258, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 211, 212, 215, 216, 217, 218, 219, 220, 221, 222, 227, 228, 229, 230, 231, 232, 233, 234, 237, 238, 243, 248, 249, 250, 251, 256, 257, 258, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -4999,7 +4999,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 131, 132, 133, 134, 135, 136, 138, 139, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 155, 156}, enabled: true);
-                context.SetSkill(triggerIds: new []{207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 255, 256}, arg2: true);
+                context.SetSkill(triggerIds: new []{207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 255, 256}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5038,7 +5038,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 112, 113, 115, 116, 117, 118, 119, 122, 124, 125, 127, 130, 131, 132, 133, 134, 136, 137, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 215, 216, 217, 218, 219, 222, 224, 225, 227, 230, 231, 232, 233, 234, 236, 237, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 215, 216, 217, 218, 219, 222, 224, 225, 227, 230, 231, 232, 233, 234, 236, 237, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5077,7 +5077,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 106, 107, 110, 111, 112, 113, 114, 115, 118, 131, 134, 135, 136, 137, 138, 139, 142, 143, 144, 147, 148, 149, 150, 151, 152, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 210, 211, 212, 213, 214, 215, 218, 231, 234, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 210, 211, 212, 213, 214, 215, 218, 231, 234, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5116,7 +5116,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 112, 113, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 136, 137, 140, 141, 145, 146, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5155,7 +5155,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 107, 108, 113, 114, 115, 116, 119, 120, 125, 126, 127, 128, 131, 132, 138, 140, 142, 146, 147, 148, 149, 151, 153, 155, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 207, 208, 213, 214, 215, 216, 219, 220, 225, 226, 227, 228, 231, 232, 238, 240, 242, 246, 247, 248, 249, 251, 253, 255, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 207, 208, 213, 214, 215, 216, 219, 220, 225, 226, 227, 228, 231, 232, 238, 240, 242, 246, 247, 248, 249, 251, 253, 255, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5194,7 +5194,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 127, 129, 131, 133, 135, 137, 139, 141, 143, 145, 147, 149, 151, 153, 155, 157, 159, 161, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 205, 207, 209, 211, 213, 215, 217, 219, 221, 223, 225, 227, 229, 231, 233, 235, 237, 239, 241, 243, 245, 247, 249, 251, 253, 255, 257, 259, 261, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 205, 207, 209, 211, 213, 215, 217, 219, 221, 223, 225, 227, 229, 231, 233, 235, 237, 239, 241, 243, 245, 247, 249, 251, 253, 255, 257, 259, 261, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5233,7 +5233,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 106, 108, 109, 111, 114, 116, 117, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 132, 133, 135, 138, 139, 142, 143, 145, 146, 148, 150, 153, 154, 157, 159, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 206, 208, 209, 211, 214, 216, 217, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 232, 233, 235, 238, 239, 242, 243, 245, 246, 248, 250, 253, 254, 257, 259, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 206, 208, 209, 211, 214, 216, 217, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 232, 233, 235, 238, 239, 242, 243, 245, 246, 248, 250, 253, 254, 257, 259, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5272,7 +5272,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 105, 106, 109, 110, 111, 112, 115, 116, 117, 118, 119, 120, 123, 124, 125, 126, 127, 128, 131, 132, 133, 134, 137, 138, 140, 141, 143, 144, 145, 148, 149, 151, 153, 154, 156, 157, 158, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 209, 210, 211, 212, 215, 216, 217, 218, 219, 220, 223, 224, 225, 226, 227, 228, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 248, 249, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 209, 210, 211, 212, 215, 216, 217, 218, 219, 220, 223, 224, 225, 226, 227, 228, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 248, 249, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5311,7 +5311,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 140, 141, 145, 146, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5350,7 +5350,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 116, 119, 120, 121, 122, 125, 126, 127, 128, 129, 130, 131, 132, 135, 136, 138, 139, 140, 142, 143, 146, 147, 148, 149, 151, 152, 153, 155, 156, 157, 158, 159, 160, 161, 162}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 211, 212, 213, 214, 215, 216, 219, 220, 221, 222, 225, 226, 227, 228, 229, 230, 231, 232, 235, 236, 238, 239, 240, 242, 243, 246, 247, 248, 249, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 211, 212, 213, 214, 215, 216, 219, 220, 221, 222, 225, 226, 227, 228, 229, 230, 231, 232, 235, 236, 238, 239, 240, 242, 243, 246, 247, 248, 249, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5389,7 +5389,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 104, 105, 106, 107, 109, 110, 111, 113, 114, 116, 117, 118, 119, 121, 122, 123, 125, 126, 128, 129, 130, 131, 133, 134, 135, 138, 140, 142, 144, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 204, 205, 206, 207, 209, 210, 211, 213, 214, 216, 217, 218, 219, 221, 222, 223, 225, 226, 228, 229, 230, 231, 233, 234, 235, 238, 240, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 204, 205, 206, 207, 209, 210, 211, 213, 214, 216, 217, 218, 219, 221, 222, 223, 225, 226, 228, 229, 230, 231, 233, 234, 235, 238, 240, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5428,7 +5428,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 135, 138, 139, 142, 143, 144, 145, 146, 147, 148, 150, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 238, 239, 242, 243, 244, 245, 246, 247, 248, 250, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 238, 239, 242, 243, 244, 245, 246, 247, 248, 250, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5467,7 +5467,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 105, 106, 107, 108, 109, 110, 111, 112, 115, 116, 117, 118, 119, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 134, 137, 138, 140, 141, 143, 144, 145, 146, 147, 148, 149, 150, 151, 153, 154, 156, 157, 158, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 207, 208, 209, 210, 211, 212, 215, 216, 217, 218, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 207, 208, 209, 210, 211, 212, 215, 216, 217, 218, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5506,7 +5506,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 111, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 140, 141, 143, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 240, 241, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 240, 241, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5545,7 +5545,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 111, 112, 113, 114, 115, 116, 118, 119, 120, 121, 122, 123, 125, 126, 127, 128, 129, 130, 131, 132, 134, 135, 136, 138, 139, 140, 141, 142, 143, 145, 146, 147, 148, 149, 150, 151, 152, 153, 155, 156, 157, 158, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 211, 212, 213, 214, 215, 216, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 234, 235, 236, 238, 239, 240, 241, 242, 243, 245, 246, 247, 248, 249, 250, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 211, 212, 213, 214, 215, 216, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 234, 235, 236, 238, 239, 240, 241, 242, 243, 245, 246, 247, 248, 249, 250, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5584,7 +5584,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5623,7 +5623,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5662,7 +5662,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 112, 113, 114, 115, 116, 117, 118, 119, 120, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 142, 144, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 215, 216, 217, 218, 219, 220, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 215, 216, 217, 218, 219, 220, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5701,7 +5701,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 115, 116, 119, 120, 122, 124, 125, 127, 129, 130, 132, 133, 135, 136, 137, 138, 139, 142, 143, 144, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 215, 216, 219, 220, 222, 224, 225, 227, 229, 230, 232, 233, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 215, 216, 219, 220, 222, 224, 225, 227, 229, 230, 232, 233, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5740,7 +5740,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 110, 111, 112, 113, 114, 116, 117, 120, 121, 122, 123, 124, 125, 126, 127, 130, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 217, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 217, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5779,7 +5779,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 110, 111, 112, 113, 116, 118, 119, 120, 122, 123, 126, 127, 129, 130, 131, 133, 136, 137, 139, 140, 142, 145, 146, 147, 148, 149, 150, 151, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 210, 211, 212, 213, 216, 218, 219, 220, 222, 223, 226, 227, 229, 230, 231, 233, 236, 237, 239, 240, 242, 245, 246, 247, 248, 249, 250, 251, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 210, 211, 212, 213, 216, 218, 219, 220, 222, 223, 226, 227, 229, 230, 231, 233, 236, 237, 239, 240, 242, 245, 246, 247, 248, 249, 250, 251, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5818,7 +5818,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 109, 110, 112, 113, 115, 117, 118, 119, 120, 122, 124, 125, 127, 129, 130, 131, 132, 134, 136, 137, 138, 143, 146, 147, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 209, 210, 212, 213, 215, 217, 218, 219, 220, 222, 224, 225, 227, 229, 230, 231, 232, 234, 236, 237, 238, 243, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 209, 210, 212, 213, 215, 217, 218, 219, 220, 222, 224, 225, 227, 229, 230, 231, 232, 234, 236, 237, 238, 243, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5857,7 +5857,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 112, 113, 114, 115, 116, 117, 119, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 135, 136, 137, 139, 140, 141, 142, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 214, 215, 216, 217, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 235, 236, 237, 239, 240, 241, 242, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 214, 215, 216, 217, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 235, 236, 237, 239, 240, 241, 242, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5896,7 +5896,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 113, 115, 116, 117, 118, 119, 120, 121, 123, 124, 125, 126, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 213, 215, 216, 217, 218, 219, 220, 221, 223, 224, 225, 226, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 213, 215, 216, 217, 218, 219, 220, 221, 223, 224, 225, 226, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5935,7 +5935,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 131, 132, 133, 134, 135, 136, 137, 138, 140, 141, 143, 144, 145, 146, 147, 148, 149, 150, 152, 153, 154, 155, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 231, 232, 233, 234, 235, 236, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 231, 232, 233, 234, 235, 236, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -5974,7 +5974,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 105, 106, 107, 108, 109, 111, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 156, 157, 158, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 205, 206, 207, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 256, 257, 258, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 205, 206, 207, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 256, 257, 258, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6013,7 +6013,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 110, 111, 112, 113, 114, 116, 118, 119, 121, 122, 123, 124, 125, 126, 127, 128, 130, 131, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 218, 219, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 218, 219, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6052,7 +6052,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 116, 117, 118, 122, 123, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 139, 140, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 216, 217, 218, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 216, 217, 218, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6091,7 +6091,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 153, 154, 155, 156, 158, 159, 160, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6130,7 +6130,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6169,7 +6169,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6208,7 +6208,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 130, 132, 133, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 149, 150, 151, 152, 153, 154, 155, 156, 158, 159, 160, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6247,7 +6247,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{102, 103, 104, 105, 106, 107, 108, 109, 110, 112, 113, 114, 116, 117, 119, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 216, 217, 219, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 216, 217, 219, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6286,7 +6286,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{105, 106, 107, 108, 117, 118, 119, 120, 129, 130, 131, 132, 137, 138, 139, 140, 141, 142, 143, 144, 145, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{205, 206, 207, 208, 217, 218, 219, 220, 229, 230, 231, 232, 237, 238, 239, 240, 241, 242, 243, 244, 245, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{205, 206, 207, 208, 217, 218, 219, 220, 229, 230, 231, 232, 237, 238, 239, 240, 241, 242, 243, 244, 245, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6325,7 +6325,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 137, 138, 139, 140, 150, 151, 152, 153}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 237, 238, 239, 240, 250, 251, 252, 253}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 237, 238, 239, 240, 250, 251, 252, 253}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6364,7 +6364,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 109, 110, 111, 112, 113, 114, 115, 116, 121, 122, 123, 124, 129, 130, 131, 132, 141, 142, 143, 144, 145, 154, 155, 156, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 209, 210, 211, 212, 213, 214, 215, 216, 221, 222, 223, 224, 229, 230, 231, 232, 241, 242, 243, 244, 245, 254, 255, 256, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 209, 210, 211, 212, 213, 214, 215, 216, 221, 222, 223, 224, 229, 230, 231, 232, 241, 242, 243, 244, 245, 254, 255, 256, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6403,7 +6403,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{107, 117, 118, 119, 120, 121, 127, 128, 129, 133, 134, 135, 137, 138, 139, 147, 148, 149, 150, 151, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{207, 217, 218, 219, 220, 221, 227, 228, 229, 233, 234, 235, 237, 238, 239, 247, 248, 249, 250, 251, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{207, 217, 218, 219, 220, 221, 227, 228, 229, 233, 234, 235, 237, 238, 239, 247, 248, 249, 250, 251, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6442,7 +6442,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{104, 105, 108, 109, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 140, 141, 145, 146, 153, 154, 160, 161}, enabled: true);
-                context.SetSkill(triggerIds: new []{204, 205, 208, 209, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 240, 241, 245, 246, 253, 254, 260, 261}, arg2: true);
+                context.SetSkill(triggerIds: new []{204, 205, 208, 209, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 240, 241, 245, 246, 253, 254, 260, 261}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6481,7 +6481,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 120, 121, 128, 129, 131, 132, 133, 142, 143, 144, 145, 146, 155, 156, 157, 158, 159, 160, 161}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 220, 221, 228, 229, 231, 232, 233, 242, 243, 244, 245, 246, 255, 256, 257, 258, 259, 260, 261}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 220, 221, 228, 229, 231, 232, 233, 242, 243, 244, 245, 246, 255, 256, 257, 258, 259, 260, 261}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6520,7 +6520,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 111, 112, 115, 116, 117, 118, 119, 120, 121, 122, 127, 128, 129, 130, 131, 132, 133, 134, 137, 138, 143, 148, 149, 150, 151, 156, 157, 158, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 211, 212, 215, 216, 217, 218, 219, 220, 221, 222, 227, 228, 229, 230, 231, 232, 233, 234, 237, 238, 243, 248, 249, 250, 251, 256, 257, 258, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 211, 212, 215, 216, 217, 218, 219, 220, 221, 222, 227, 228, 229, 230, 231, 232, 233, 234, 237, 238, 243, 248, 249, 250, 251, 256, 257, 258, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6559,7 +6559,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 131, 132, 133, 134, 135, 136, 138, 139, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 155, 156}, enabled: true);
-                context.SetSkill(triggerIds: new []{207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 255, 256}, arg2: true);
+                context.SetSkill(triggerIds: new []{207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 255, 256}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6598,7 +6598,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 112, 113, 115, 116, 117, 118, 119, 122, 124, 125, 127, 130, 131, 132, 133, 134, 136, 137, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 215, 216, 217, 218, 219, 222, 224, 225, 227, 230, 231, 232, 233, 234, 236, 237, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 215, 216, 217, 218, 219, 222, 224, 225, 227, 230, 231, 232, 233, 234, 236, 237, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6637,7 +6637,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 106, 107, 110, 111, 112, 113, 114, 115, 118, 131, 134, 135, 136, 137, 138, 139, 142, 143, 144, 147, 148, 149, 150, 151, 152, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 210, 211, 212, 213, 214, 215, 218, 231, 234, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 210, 211, 212, 213, 214, 215, 218, 231, 234, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6676,7 +6676,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 112, 113, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 136, 137, 140, 141, 145, 146, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6715,7 +6715,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 107, 108, 113, 114, 115, 116, 119, 120, 125, 126, 127, 128, 131, 132, 138, 140, 142, 146, 147, 148, 149, 151, 153, 155, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 207, 208, 213, 214, 215, 216, 219, 220, 225, 226, 227, 228, 231, 232, 238, 240, 242, 246, 247, 248, 249, 251, 253, 255, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 207, 208, 213, 214, 215, 216, 219, 220, 225, 226, 227, 228, 231, 232, 238, 240, 242, 246, 247, 248, 249, 251, 253, 255, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6754,7 +6754,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 127, 129, 131, 133, 135, 137, 139, 141, 143, 145, 147, 149, 151, 153, 155, 157, 159, 161, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 205, 207, 209, 211, 213, 215, 217, 219, 221, 223, 225, 227, 229, 231, 233, 235, 237, 239, 241, 243, 245, 247, 249, 251, 253, 255, 257, 259, 261, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 205, 207, 209, 211, 213, 215, 217, 219, 221, 223, 225, 227, 229, 231, 233, 235, 237, 239, 241, 243, 245, 247, 249, 251, 253, 255, 257, 259, 261, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6793,7 +6793,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 106, 108, 109, 111, 114, 116, 117, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 132, 133, 135, 138, 139, 142, 143, 145, 146, 148, 150, 153, 154, 157, 159, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 206, 208, 209, 211, 214, 216, 217, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 232, 233, 235, 238, 239, 242, 243, 245, 246, 248, 250, 253, 254, 257, 259, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 206, 208, 209, 211, 214, 216, 217, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 232, 233, 235, 238, 239, 242, 243, 245, 246, 248, 250, 253, 254, 257, 259, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6832,7 +6832,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 105, 106, 109, 110, 111, 112, 115, 116, 117, 118, 119, 120, 123, 124, 125, 126, 127, 128, 131, 132, 133, 134, 137, 138, 140, 141, 143, 144, 145, 148, 149, 151, 153, 154, 156, 157, 158, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 209, 210, 211, 212, 215, 216, 217, 218, 219, 220, 223, 224, 225, 226, 227, 228, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 248, 249, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 209, 210, 211, 212, 215, 216, 217, 218, 219, 220, 223, 224, 225, 226, 227, 228, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 248, 249, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6871,7 +6871,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 140, 141, 145, 146, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6910,7 +6910,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 116, 119, 120, 121, 122, 125, 126, 127, 128, 129, 130, 131, 132, 135, 136, 138, 139, 140, 142, 143, 146, 147, 148, 149, 151, 152, 153, 155, 156, 157, 158, 159, 160, 161, 162}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 211, 212, 213, 214, 215, 216, 219, 220, 221, 222, 225, 226, 227, 228, 229, 230, 231, 232, 235, 236, 238, 239, 240, 242, 243, 246, 247, 248, 249, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 211, 212, 213, 214, 215, 216, 219, 220, 221, 222, 225, 226, 227, 228, 229, 230, 231, 232, 235, 236, 238, 239, 240, 242, 243, 246, 247, 248, 249, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6949,7 +6949,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 104, 105, 106, 107, 109, 110, 111, 113, 114, 116, 117, 118, 119, 121, 122, 123, 125, 126, 128, 129, 130, 131, 133, 134, 135, 138, 140, 142, 144, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 204, 205, 206, 207, 209, 210, 211, 213, 214, 216, 217, 218, 219, 221, 222, 223, 225, 226, 228, 229, 230, 231, 233, 234, 235, 238, 240, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 204, 205, 206, 207, 209, 210, 211, 213, 214, 216, 217, 218, 219, 221, 222, 223, 225, 226, 228, 229, 230, 231, 233, 234, 235, 238, 240, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -6988,7 +6988,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 135, 138, 139, 142, 143, 144, 145, 146, 147, 148, 150, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 238, 239, 242, 243, 244, 245, 246, 247, 248, 250, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 238, 239, 242, 243, 244, 245, 246, 247, 248, 250, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7027,7 +7027,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 105, 106, 107, 108, 109, 110, 111, 112, 115, 116, 117, 118, 119, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 134, 137, 138, 140, 141, 143, 144, 145, 146, 147, 148, 149, 150, 151, 153, 154, 156, 157, 158, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 207, 208, 209, 210, 211, 212, 215, 216, 217, 218, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 207, 208, 209, 210, 211, 212, 215, 216, 217, 218, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7066,7 +7066,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 111, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 140, 141, 143, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 240, 241, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 240, 241, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7105,7 +7105,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 111, 112, 113, 114, 115, 116, 118, 119, 120, 121, 122, 123, 125, 126, 127, 128, 129, 130, 131, 132, 134, 135, 136, 138, 139, 140, 141, 142, 143, 145, 146, 147, 148, 149, 150, 151, 152, 153, 155, 156, 157, 158, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 211, 212, 213, 214, 215, 216, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 234, 235, 236, 238, 239, 240, 241, 242, 243, 245, 246, 247, 248, 249, 250, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 211, 212, 213, 214, 215, 216, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 234, 235, 236, 238, 239, 240, 241, 242, 243, 245, 246, 247, 248, 249, 250, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7144,7 +7144,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7183,7 +7183,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7222,7 +7222,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 112, 113, 114, 115, 116, 117, 118, 119, 120, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 142, 144, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 215, 216, 217, 218, 219, 220, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 215, 216, 217, 218, 219, 220, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7261,7 +7261,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 115, 116, 119, 120, 122, 124, 125, 127, 129, 130, 132, 133, 135, 136, 137, 138, 139, 142, 143, 144, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 215, 216, 219, 220, 222, 224, 225, 227, 229, 230, 232, 233, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 215, 216, 219, 220, 222, 224, 225, 227, 229, 230, 232, 233, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7300,7 +7300,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 110, 111, 112, 113, 114, 116, 117, 120, 121, 122, 123, 124, 125, 126, 127, 130, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 217, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 217, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7339,7 +7339,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 110, 111, 112, 113, 116, 118, 119, 120, 122, 123, 126, 127, 129, 130, 131, 133, 136, 137, 139, 140, 142, 145, 146, 147, 148, 149, 150, 151, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 210, 211, 212, 213, 216, 218, 219, 220, 222, 223, 226, 227, 229, 230, 231, 233, 236, 237, 239, 240, 242, 245, 246, 247, 248, 249, 250, 251, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 210, 211, 212, 213, 216, 218, 219, 220, 222, 223, 226, 227, 229, 230, 231, 233, 236, 237, 239, 240, 242, 245, 246, 247, 248, 249, 250, 251, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7378,7 +7378,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 109, 110, 112, 113, 115, 117, 118, 119, 120, 122, 124, 125, 127, 129, 130, 131, 132, 134, 136, 137, 138, 143, 146, 147, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 209, 210, 212, 213, 215, 217, 218, 219, 220, 222, 224, 225, 227, 229, 230, 231, 232, 234, 236, 237, 238, 243, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 209, 210, 212, 213, 215, 217, 218, 219, 220, 222, 224, 225, 227, 229, 230, 231, 232, 234, 236, 237, 238, 243, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7417,7 +7417,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 112, 113, 114, 115, 116, 117, 119, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 135, 136, 137, 139, 140, 141, 142, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 214, 215, 216, 217, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 235, 236, 237, 239, 240, 241, 242, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 214, 215, 216, 217, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 235, 236, 237, 239, 240, 241, 242, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7456,7 +7456,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 113, 115, 116, 117, 118, 119, 120, 121, 123, 124, 125, 126, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 213, 215, 216, 217, 218, 219, 220, 221, 223, 224, 225, 226, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 213, 215, 216, 217, 218, 219, 220, 221, 223, 224, 225, 226, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7495,7 +7495,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 131, 132, 133, 134, 135, 136, 137, 138, 140, 141, 143, 144, 145, 146, 147, 148, 149, 150, 152, 153, 154, 155, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 231, 232, 233, 234, 235, 236, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 231, 232, 233, 234, 235, 236, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7534,7 +7534,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 105, 106, 107, 108, 109, 111, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 156, 157, 158, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 205, 206, 207, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 256, 257, 258, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 205, 206, 207, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 256, 257, 258, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7573,7 +7573,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 110, 111, 112, 113, 114, 116, 118, 119, 121, 122, 123, 124, 125, 126, 127, 128, 130, 131, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 218, 219, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 218, 219, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7612,7 +7612,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 116, 117, 118, 122, 123, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 139, 140, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 216, 217, 218, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 216, 217, 218, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7651,7 +7651,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 153, 154, 155, 156, 158, 159, 160, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7690,7 +7690,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7729,7 +7729,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7768,7 +7768,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 130, 132, 133, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 149, 150, 151, 152, 153, 154, 155, 156, 158, 159, 160, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7807,7 +7807,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{102, 103, 104, 105, 106, 107, 108, 109, 110, 112, 113, 114, 116, 117, 119, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 216, 217, 219, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 216, 217, 219, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7846,7 +7846,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{105, 106, 107, 108, 117, 118, 119, 120, 129, 130, 131, 132, 137, 138, 139, 140, 141, 142, 143, 144, 145, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{205, 206, 207, 208, 217, 218, 219, 220, 229, 230, 231, 232, 237, 238, 239, 240, 241, 242, 243, 244, 245, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{205, 206, 207, 208, 217, 218, 219, 220, 229, 230, 231, 232, 237, 238, 239, 240, 241, 242, 243, 244, 245, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7885,7 +7885,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 137, 138, 139, 140, 150, 151, 152, 153}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 237, 238, 239, 240, 250, 251, 252, 253}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 237, 238, 239, 240, 250, 251, 252, 253}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7924,7 +7924,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 109, 110, 111, 112, 113, 114, 115, 116, 121, 122, 123, 124, 129, 130, 131, 132, 141, 142, 143, 144, 145, 154, 155, 156, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 209, 210, 211, 212, 213, 214, 215, 216, 221, 222, 223, 224, 229, 230, 231, 232, 241, 242, 243, 244, 245, 254, 255, 256, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 209, 210, 211, 212, 213, 214, 215, 216, 221, 222, 223, 224, 229, 230, 231, 232, 241, 242, 243, 244, 245, 254, 255, 256, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -7963,7 +7963,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{107, 117, 118, 119, 120, 121, 127, 128, 129, 133, 134, 135, 137, 138, 139, 147, 148, 149, 150, 151, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{207, 217, 218, 219, 220, 221, 227, 228, 229, 233, 234, 235, 237, 238, 239, 247, 248, 249, 250, 251, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{207, 217, 218, 219, 220, 221, 227, 228, 229, 233, 234, 235, 237, 238, 239, 247, 248, 249, 250, 251, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8002,7 +8002,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{104, 105, 108, 109, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 140, 141, 145, 146, 153, 154, 160, 161}, enabled: true);
-                context.SetSkill(triggerIds: new []{204, 205, 208, 209, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 240, 241, 245, 246, 253, 254, 260, 261}, arg2: true);
+                context.SetSkill(triggerIds: new []{204, 205, 208, 209, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 240, 241, 245, 246, 253, 254, 260, 261}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8041,7 +8041,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 120, 121, 128, 129, 131, 132, 133, 142, 143, 144, 145, 146, 155, 156, 157, 158, 159, 160, 161}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 220, 221, 228, 229, 231, 232, 233, 242, 243, 244, 245, 246, 255, 256, 257, 258, 259, 260, 261}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 220, 221, 228, 229, 231, 232, 233, 242, 243, 244, 245, 246, 255, 256, 257, 258, 259, 260, 261}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8080,7 +8080,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 111, 112, 115, 116, 117, 118, 119, 120, 121, 122, 127, 128, 129, 130, 131, 132, 133, 134, 137, 138, 143, 148, 149, 150, 151, 156, 157, 158, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 211, 212, 215, 216, 217, 218, 219, 220, 221, 222, 227, 228, 229, 230, 231, 232, 233, 234, 237, 238, 243, 248, 249, 250, 251, 256, 257, 258, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 211, 212, 215, 216, 217, 218, 219, 220, 221, 222, 227, 228, 229, 230, 231, 232, 233, 234, 237, 238, 243, 248, 249, 250, 251, 256, 257, 258, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8119,7 +8119,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 131, 132, 133, 134, 135, 136, 138, 139, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 155, 156}, enabled: true);
-                context.SetSkill(triggerIds: new []{207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 255, 256}, arg2: true);
+                context.SetSkill(triggerIds: new []{207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 255, 256}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8158,7 +8158,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 112, 113, 115, 116, 117, 118, 119, 122, 124, 125, 127, 130, 131, 132, 133, 134, 136, 137, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 215, 216, 217, 218, 219, 222, 224, 225, 227, 230, 231, 232, 233, 234, 236, 237, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 215, 216, 217, 218, 219, 222, 224, 225, 227, 230, 231, 232, 233, 234, 236, 237, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8197,7 +8197,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 106, 107, 110, 111, 112, 113, 114, 115, 118, 131, 134, 135, 136, 137, 138, 139, 142, 143, 144, 147, 148, 149, 150, 151, 152, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 210, 211, 212, 213, 214, 215, 218, 231, 234, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 210, 211, 212, 213, 214, 215, 218, 231, 234, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8236,7 +8236,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 112, 113, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 136, 137, 140, 141, 145, 146, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8275,7 +8275,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 107, 108, 113, 114, 115, 116, 119, 120, 125, 126, 127, 128, 131, 132, 138, 140, 142, 146, 147, 148, 149, 151, 153, 155, 157, 158, 159, 160}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 207, 208, 213, 214, 215, 216, 219, 220, 225, 226, 227, 228, 231, 232, 238, 240, 242, 246, 247, 248, 249, 251, 253, 255, 257, 258, 259, 260}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 207, 208, 213, 214, 215, 216, 219, 220, 225, 226, 227, 228, 231, 232, 238, 240, 242, 246, 247, 248, 249, 251, 253, 255, 257, 258, 259, 260}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8314,7 +8314,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 127, 129, 131, 133, 135, 137, 139, 141, 143, 145, 147, 149, 151, 153, 155, 157, 159, 161, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 205, 207, 209, 211, 213, 215, 217, 219, 221, 223, 225, 227, 229, 231, 233, 235, 237, 239, 241, 243, 245, 247, 249, 251, 253, 255, 257, 259, 261, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 205, 207, 209, 211, 213, 215, 217, 219, 221, 223, 225, 227, 229, 231, 233, 235, 237, 239, 241, 243, 245, 247, 249, 251, 253, 255, 257, 259, 261, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8353,7 +8353,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 106, 108, 109, 111, 114, 116, 117, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 132, 133, 135, 138, 139, 142, 143, 145, 146, 148, 150, 153, 154, 157, 159, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 206, 208, 209, 211, 214, 216, 217, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 232, 233, 235, 238, 239, 242, 243, 245, 246, 248, 250, 253, 254, 257, 259, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 206, 208, 209, 211, 214, 216, 217, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 232, 233, 235, 238, 239, 242, 243, 245, 246, 248, 250, 253, 254, 257, 259, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8392,7 +8392,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 105, 106, 109, 110, 111, 112, 115, 116, 117, 118, 119, 120, 123, 124, 125, 126, 127, 128, 131, 132, 133, 134, 137, 138, 140, 141, 143, 144, 145, 148, 149, 151, 153, 154, 156, 157, 158, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 209, 210, 211, 212, 215, 216, 217, 218, 219, 220, 223, 224, 225, 226, 227, 228, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 248, 249, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 209, 210, 211, 212, 215, 216, 217, 218, 219, 220, 223, 224, 225, 226, 227, 228, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 248, 249, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8431,7 +8431,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 140, 141, 145, 146, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 240, 241, 245, 246, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8470,7 +8470,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 116, 119, 120, 121, 122, 125, 126, 127, 128, 129, 130, 131, 132, 135, 136, 138, 139, 140, 142, 143, 146, 147, 148, 149, 151, 152, 153, 155, 156, 157, 158, 159, 160, 161, 162}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 211, 212, 213, 214, 215, 216, 219, 220, 221, 222, 225, 226, 227, 228, 229, 230, 231, 232, 235, 236, 238, 239, 240, 242, 243, 246, 247, 248, 249, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 211, 212, 213, 214, 215, 216, 219, 220, 221, 222, 225, 226, 227, 228, 229, 230, 231, 232, 235, 236, 238, 239, 240, 242, 243, 246, 247, 248, 249, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8509,7 +8509,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 104, 105, 106, 107, 109, 110, 111, 113, 114, 116, 117, 118, 119, 121, 122, 123, 125, 126, 128, 129, 130, 131, 133, 134, 135, 138, 140, 142, 144, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 204, 205, 206, 207, 209, 210, 211, 213, 214, 216, 217, 218, 219, 221, 222, 223, 225, 226, 228, 229, 230, 231, 233, 234, 235, 238, 240, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 204, 205, 206, 207, 209, 210, 211, 213, 214, 216, 217, 218, 219, 221, 222, 223, 225, 226, 228, 229, 230, 231, 233, 234, 235, 238, 240, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8548,7 +8548,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 135, 138, 139, 142, 143, 144, 145, 146, 147, 148, 150, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 238, 239, 242, 243, 244, 245, 246, 247, 248, 250, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 238, 239, 242, 243, 244, 245, 246, 247, 248, 250, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8587,7 +8587,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 105, 106, 107, 108, 109, 110, 111, 112, 115, 116, 117, 118, 119, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 134, 137, 138, 140, 141, 143, 144, 145, 146, 147, 148, 149, 150, 151, 153, 154, 156, 157, 158, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 207, 208, 209, 210, 211, 212, 215, 216, 217, 218, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 205, 206, 207, 208, 209, 210, 211, 212, 215, 216, 217, 218, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 234, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 251, 253, 254, 256, 257, 258, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8626,7 +8626,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 111, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 140, 141, 143, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 240, 241, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 240, 241, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8665,7 +8665,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 111, 112, 113, 114, 115, 116, 118, 119, 120, 121, 122, 123, 125, 126, 127, 128, 129, 130, 131, 132, 134, 135, 136, 138, 139, 140, 141, 142, 143, 145, 146, 147, 148, 149, 150, 151, 152, 153, 155, 156, 157, 158, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 211, 212, 213, 214, 215, 216, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 234, 235, 236, 238, 239, 240, 241, 242, 243, 245, 246, 247, 248, 249, 250, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 211, 212, 213, 214, 215, 216, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 234, 235, 236, 238, 239, 240, 241, 242, 243, 245, 246, 247, 248, 249, 250, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8704,7 +8704,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8743,7 +8743,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8782,7 +8782,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 112, 113, 114, 115, 116, 117, 118, 119, 120, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 142, 144, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 215, 216, 217, 218, 219, 220, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 215, 216, 217, 218, 219, 220, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8821,7 +8821,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 115, 116, 119, 120, 122, 124, 125, 127, 129, 130, 132, 133, 135, 136, 137, 138, 139, 142, 143, 144, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 215, 216, 219, 220, 222, 224, 225, 227, 229, 230, 232, 233, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 215, 216, 219, 220, 222, 224, 225, 227, 229, 230, 232, 233, 235, 236, 237, 238, 239, 242, 243, 244, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8860,7 +8860,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 110, 111, 112, 113, 114, 116, 117, 120, 121, 122, 123, 124, 125, 126, 127, 130, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 145, 146, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 217, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 217, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8899,7 +8899,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 108, 109, 110, 111, 112, 113, 116, 118, 119, 120, 122, 123, 126, 127, 129, 130, 131, 133, 136, 137, 139, 140, 142, 145, 146, 147, 148, 149, 150, 151, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 210, 211, 212, 213, 216, 218, 219, 220, 222, 223, 226, 227, 229, 230, 231, 233, 236, 237, 239, 240, 242, 245, 246, 247, 248, 249, 250, 251, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 208, 209, 210, 211, 212, 213, 216, 218, 219, 220, 222, 223, 226, 227, 229, 230, 231, 233, 236, 237, 239, 240, 242, 245, 246, 247, 248, 249, 250, 251, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8938,7 +8938,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 109, 110, 112, 113, 115, 117, 118, 119, 120, 122, 124, 125, 127, 129, 130, 131, 132, 134, 136, 137, 138, 143, 146, 147, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 209, 210, 212, 213, 215, 217, 218, 219, 220, 222, 224, 225, 227, 229, 230, 231, 232, 234, 236, 237, 238, 243, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 209, 210, 212, 213, 215, 217, 218, 219, 220, 222, 224, 225, 227, 229, 230, 231, 232, 234, 236, 237, 238, 243, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -8977,7 +8977,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 112, 113, 114, 115, 116, 117, 119, 121, 122, 123, 124, 125, 126, 127, 129, 130, 131, 132, 133, 135, 136, 137, 139, 140, 141, 142, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 214, 215, 216, 217, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 235, 236, 237, 239, 240, 241, 242, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 212, 213, 214, 215, 216, 217, 219, 221, 222, 223, 224, 225, 226, 227, 229, 230, 231, 232, 233, 235, 236, 237, 239, 240, 241, 242, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -9016,7 +9016,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 113, 115, 116, 117, 118, 119, 120, 121, 123, 124, 125, 126, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 213, 215, 216, 217, 218, 219, 220, 221, 223, 224, 225, 226, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 213, 215, 216, 217, 218, 219, 220, 221, 223, 224, 225, 226, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -9055,7 +9055,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 131, 132, 133, 134, 135, 136, 137, 138, 140, 141, 143, 144, 145, 146, 147, 148, 149, 150, 152, 153, 154, 155, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 231, 232, 233, 234, 235, 236, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 231, 232, 233, 234, 235, 236, 237, 238, 240, 241, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -9094,7 +9094,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 105, 106, 107, 108, 109, 111, 112, 113, 115, 116, 117, 118, 119, 120, 121, 122, 123, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 156, 157, 158, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 205, 206, 207, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 256, 257, 258, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 205, 206, 207, 208, 209, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 256, 257, 258, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -9133,7 +9133,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 110, 111, 112, 113, 114, 116, 118, 119, 121, 122, 123, 124, 125, 126, 127, 128, 130, 131, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 218, 219, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 210, 211, 212, 213, 214, 216, 218, 219, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -9172,7 +9172,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 116, 117, 118, 122, 123, 126, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 139, 140, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 216, 217, 218, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 216, 217, 218, 222, 223, 226, 227, 228, 229, 230, 231, 232, 233, 234, 236, 237, 238, 239, 240, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -9211,7 +9211,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 153, 154, 155, 156, 158, 159, 160, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -9250,7 +9250,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -9289,7 +9289,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 160, 161, 162, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 259, 260, 261, 262, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -9328,7 +9328,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 130, 132, 133, 135, 136, 137, 138, 139, 140, 141, 142, 144, 145, 146, 147, 149, 150, 151, 152, 153, 154, 155, 156, 158, 159, 160, 161, 162, 163}, enabled: true);
-                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, arg2: true);
+                context.SetSkill(triggerIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 230, 232, 233, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 249, 250, 251, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -9367,7 +9367,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "99", seconds: 2);
                 context.SetBreakable(triggerIds: new []{102, 103, 104, 105, 106, 107, 108, 109, 110, 112, 113, 114, 116, 117, 119, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164}, enabled: true);
-                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 216, 217, 219, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, arg2: true);
+                context.SetSkill(triggerIds: new []{202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 213, 214, 216, 217, 219, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264}, enabled: true);
             }
 
             public override TriggerState? Execute() {

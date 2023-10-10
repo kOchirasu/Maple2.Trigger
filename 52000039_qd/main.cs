@@ -169,7 +169,7 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 7001, enable: true);
+                context.CameraSelect(triggerId: 7001, enabled: true);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_2001");
                 context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_2002");
             }
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._52000039_qd {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetCinematicUI(type: 0);
                     context.SetCinematicUI(type: 2);
-                    context.CameraSelect(triggerId: 7001, enable: false);
+                    context.CameraSelect(triggerId: 7001, enabled: false);
                     return new StateStart_03(context);
                 }
 
@@ -262,7 +262,7 @@ namespace Maple2.Trigger._52000039_qd {
                 if (context.NpcDetected(boxId: 703, spawnIds: new []{122})) {
                     context.SetCinematicUI(type: 1);
                     context.SetCinematicUI(type: 3);
-                    context.CameraSelect(triggerId: 7002, enable: true);
+                    context.CameraSelect(triggerId: 7002, enabled: true);
                     context.MoveUser(mapId: 52000039, portalId: 3);
                     context.SetMesh(triggerIds: new []{6010}, visible: false);
                     return new StateScene_b_03(context);
@@ -298,7 +298,7 @@ namespace Maple2.Trigger._52000039_qd {
             internal StateScene_b_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 7003, enable: true);
+                context.CameraSelect(triggerId: 7003, enabled: true);
                 context.MoveNpc(spawnId: 122, patrolName: "MS2PatrolData_2008");
                 context.SetConversation(type: 1, spawnId: 122, script: "$52000039_QD__MAIN__3$", arg4: 3);
                 context.SetActor(triggerId: 3010, visible: true, initialSequence: "Idle_A");
@@ -360,7 +360,7 @@ namespace Maple2.Trigger._52000039_qd {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20020031, textId: 20020031);
-                context.CameraSelect(triggerId: 7003, enable: false);
+                context.CameraSelect(triggerId: 7003, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
@@ -513,7 +513,7 @@ namespace Maple2.Trigger._52000039_qd {
             internal StatePCPatrol02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 500, enable: true);
+                context.CameraSelect(triggerId: 500, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -570,7 +570,7 @@ namespace Maple2.Trigger._52000039_qd {
             internal StateLookAround02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 501, enable: true);
+                context.CameraSelect(triggerId: 501, enabled: true);
                 context.SetConversation(type: 1, spawnId: 0, script: "$52000039_QD__MAIN__8$", arg4: 2, arg5: 0);
                 context.MoveUserPath(patrolName: "MS2PatrolData_1001");
             }
@@ -609,7 +609,7 @@ namespace Maple2.Trigger._52000039_qd {
             internal StatePCFainted01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 502, enable: true);
+                context.CameraSelect(triggerId: 502, enabled: true);
                 context.SetPcEmotionSequence(sequenceNames: new []{"Down2_A,Down_Idle_A"});
             }
 
@@ -650,7 +650,7 @@ namespace Maple2.Trigger._52000039_qd {
 
             public override void OnEnter() {
                 context.MoveUser(mapId: 52000045, portalId: 2, boxId: 701);
-                context.CameraSelect(triggerId: 502, enable: false);
+                context.CameraSelect(triggerId: 502, enabled: false);
             }
 
             public override TriggerState? Execute() {

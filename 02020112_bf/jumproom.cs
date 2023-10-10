@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02020112_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: false);
                 context.SetEffect(triggerIds: new []{8005, 8006, 8007, 8008}, visible: false);
                 context.SetUserValue(triggerId: 99990009, key: "ButtonSuccess", value: 0);
                 context.SetUserValue(triggerId: 99990010, key: "ButtonSuccess", value: 0);
@@ -72,8 +72,8 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetActor(triggerId: 9907, visible: false, initialSequence: "Interaction_Lapentafoothold_A01_On");
                 context.SetActor(triggerId: 9908, visible: false, initialSequence: "Interaction_Lapentafoothold_A01_On");
                 context.CreateMonster(spawnIds: new []{152, 153, 154, 155}, arg2: false);
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: true);
             }
 
             public override TriggerState? Execute() {

@@ -30,7 +30,7 @@ namespace Maple2.Trigger._52100031_qd {
                 context.AddBuff(boxIds: new []{199}, skillId: 70000107, level: 1, arg4: false, arg5: false);
                 context.ShowGuideSummary(entityId: 20040103, textId: 20040103, duration: 3500);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.CreateMonster(spawnIds: new []{1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208}, arg2: false);
                 context.SetConversation(type: 1, spawnId: 1201, script: "$52100031_QD__FACTION_03__0$", arg4: 5, arg5: 0);
                 context.SetInteractObject(interactIds: new []{10002069}, state: 1);

@@ -190,7 +190,7 @@ namespace Maple2.Trigger._02010070_bf {
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetEffect(triggerIds: new []{70001}, visible: true);
-                    context.SetSkill(triggerIds: new []{70004}, arg2: true);
+                    context.SetSkill(triggerIds: new []{70004}, enabled: true);
                     return new StateStart6(context);
                 }
 

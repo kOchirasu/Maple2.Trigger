@@ -32,7 +32,7 @@ namespace Maple2.Trigger._61000022_me {
             internal StateCheerUpTimer_30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._61000022_me {
             internal StateCheerUpTimer_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 20, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 20, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._61000022_me {
             internal StateCheerUpTimer_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 15, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 15, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._61000022_me {
             internal StateCheerUpTimer_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 10, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 10, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {

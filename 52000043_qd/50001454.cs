@@ -55,7 +55,7 @@ namespace Maple2.Trigger._52000043_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 305, enable: true);
+                context.CameraSelect(triggerId: 305, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -714,7 +714,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal StatePC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 306, enable: true);
+                context.CameraSelect(triggerId: 306, enabled: true);
                 context.MoveUserPath(patrolName: "MS2PatrolData_PCG");
             }
 

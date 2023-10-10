@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000392_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 300, enable: true);
+                context.CameraSelect(triggerId: 300, enabled: true);
                 context.CreateMonster(spawnIds: new []{2002}, arg2: false);
                 context.SetEffect(triggerIds: new []{602}, visible: true);
                 context.SetConversation(type: 2, spawnId: 24003015, script: "$02000392_BF__SUMMON__0$", arg4: 2, arg5: 0);
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000392_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 300, enable: true);
+                context.CameraSelect(triggerId: 300, enabled: true);
                 context.CreateMonster(spawnIds: new []{2102}, arg2: false);
                 context.SetEffect(triggerIds: new []{602}, visible: true);
                 context.SetConversation(type: 2, spawnId: 24003015, script: "$02000392_BF__SUMMON__0$", arg4: 2, arg5: 0);

@@ -123,7 +123,7 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "20", seconds: 1);
                 context.CreateMonster(spawnIds: new []{301}, arg2: false);
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -233,7 +233,7 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetTimer(timerId: "30", seconds: 1);
-                context.CameraSelect(triggerId: 601, enable: false);
+                context.CameraSelect(triggerId: 601, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetAchievement(triggerId: 9000, type: "trigger", code: "catchjailbreaker");

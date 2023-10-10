@@ -6,7 +6,7 @@ namespace Maple2.Trigger._99999946 {
             public override void OnEnter() {
                 context.SetCube(triggerIds: new []{500, 501, 502, 503, 504, 505, 506, 507, 508, 509}, randomCount: 10, visible: false);
                 context.CreateMonster(spawnIds: new []{1001, 1002, 1003, 1004, 1005, 1006}, arg2: false);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
             }
 
             public override TriggerState? Execute() {

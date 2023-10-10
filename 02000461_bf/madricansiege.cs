@@ -15,7 +15,7 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SetUserValue(triggerId: 99999104, key: "Bosscannon04", value: 0);
                 context.SetUserValue(triggerId: 99999105, key: "Bosscannon05", value: 0);
                 context.SetAgent(triggerIds: new []{8001, 8002, 8003, 8004, 8005, 8006, 8101, 8102, 8103, 8104, 8105, 8106, 8201, 8202, 8203, 8204, 8205, 8206}, visible: true);
-                context.CameraSelect(triggerId: 300, enable: true);
+                context.CameraSelect(triggerId: 300, enabled: true);
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.CreateMonster(spawnIds: new []{2000, 2001}, arg2: false);
                 context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3004, 3101, 3102, 3103, 3104, 3105, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3801, 3802, 3803, 3804}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02000461_bf {
             internal State1차지원(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeId: new []{2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020}, isAutoTargeting: false);
+                context.SpawnNpcRange(spawnIds: new []{2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020}, isAutoTargeting: false);
                 context.CreateMonster(spawnIds: new []{2002, 2003, 2004, 2005}, arg2: false);
                 context.SetUserValue(triggerId: 99999101, key: "cannon01", value: 1);
             }
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._02000461_bf {
             internal State2차지원(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeId: new []{2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030}, isAutoTargeting: false);
+                context.SpawnNpcRange(spawnIds: new []{2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030}, isAutoTargeting: false);
             }
 
             public override TriggerState? Execute() {

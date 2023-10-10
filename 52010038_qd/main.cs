@@ -31,9 +31,9 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetCinematicUI(type: 3);
                 context.AddBuff(boxIds: new []{199}, skillId: 70000109, level: 1, arg4: false, arg5: false);
                 context.CreateMonster(spawnIds: new []{1805, 1806, 1201}, arg2: false);
-                context.SpawnNpcRange(rangeId: new []{1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, isAutoTargeting: false);
-                context.SpawnNpcRange(rangeId: new []{1101, 1102, 1103, 1104, 1105, 1106}, isAutoTargeting: false);
-                context.SpawnNpcRange(rangeId: new []{1801, 1802, 1803, 1804}, isAutoTargeting: false);
+                context.SpawnNpcRange(spawnIds: new []{1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, isAutoTargeting: false);
+                context.SpawnNpcRange(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106}, isAutoTargeting: false);
+                context.SpawnNpcRange(spawnIds: new []{1801, 1802, 1803, 1804}, isAutoTargeting: false);
                 context.SetSkip(state: new StateStart(context));
             }
 
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State2차폭탄방어(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "99", seconds: 60, clearAtZero: true, display: true, arg5: 80);
+                context.SetTimer(timerId: "99", seconds: 60, autoRemove: true, display: true, vOffset: 80);
                 context.SetUserValue(triggerId: 992003, key: "bombStart", value: 1);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateCamera304(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 304, enable: true);
+                context.CameraSelect(triggerId: 304, enabled: true);
                 context.SetSkip(state: new StateCinematic02종료(context));
             }
 
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateCamera302(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.SetSkip(state: new StateBossStopCinematic(context));
             }
 
@@ -297,7 +297,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", script: "$52010038_QD__MAIN__3$", duration: 5000, align: Align.Left);
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
                 context.SetSkip(state: new StateBossStopCinematic(context));
             }
 

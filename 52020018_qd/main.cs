@@ -6,9 +6,9 @@ namespace Maple2.Trigger._52020018_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/Eff_Fog_room.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG/Common/Eff_Fog_room.xml");
             }
 
             public override TriggerState? Execute() {
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._52020018_qd {
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
                 context.CreateMonster(spawnIds: new []{101, 102, 103, 104, 105, 106}, arg2: true);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.MoveUser(mapId: 52020018, portalId: 6001);
             }
@@ -159,7 +159,7 @@ namespace Maple2.Trigger._52020018_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
         }
 
@@ -191,9 +191,9 @@ namespace Maple2.Trigger._52020018_qd {
             internal StateEventScene_end(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/Eff_Fog_room.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/Eff_Fog_room.xml");
             }
 
             public override TriggerState? Execute() {
@@ -234,7 +234,7 @@ namespace Maple2.Trigger._52020018_qd {
                 context.SetCinematicUI(type: 2);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.SetEventUI(arg1: 1, script: "마리오네트들을 처치하고 이곳을 빠져나가자.", duration: 2000, boxId: 0);
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
             }
 
             public override TriggerState? Execute() {

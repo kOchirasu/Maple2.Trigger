@@ -42,15 +42,15 @@ namespace Maple2.Trigger._99999840 {
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new State유저이동1(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new State유저이동2(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new State유저이동3(context);
                 }
 

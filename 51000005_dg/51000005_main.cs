@@ -234,15 +234,15 @@ namespace Maple2.Trigger._51000005_dg {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State01_좌로돌아(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State02_뒤로돌아(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State03_우로돌아(context);
                 }
 
@@ -407,7 +407,7 @@ namespace Maple2.Trigger._51000005_dg {
             internal State진짜끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 8010, enable: true);
+                context.CameraSelect(triggerId: 8010, enabled: true);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.PlaySystemSoundInBox(sound: "System_PinkBeans_Arcade_Result_01");

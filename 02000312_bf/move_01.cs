@@ -8,7 +8,7 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetMesh(triggerIds: new []{3200, 3201, 3202, 3203}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetAgent(triggerIds: new []{8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007}, visible: true);
                 context.SetBreakable(triggerIds: new []{4000, 4001, 4002, 4003}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, visible: false);
                 context.SetEffect(triggerIds: new []{5003, 5002}, visible: false);
                 context.SetInteractObject(interactIds: new []{10001034}, state: 2);
                 context.SetUserValue(key: "BoardApp", value: 0);
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetMesh(triggerIds: new []{3100, 3101, 3102, 3103}, visible: false, arg3: 100, arg4: 0, arg5: 2f);
                 context.SetInteractObject(interactIds: new []{10001034}, state: 2);
                 context.SetBreakable(triggerIds: new []{4000, 4001, 4002, 4003}, enabled: true);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, visible: true);
             }
 
             public override TriggerState? Execute() {
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() {
                 context.SetBreakable(triggerIds: new []{4000, 4001, 4002, 4003}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, visible: false);
             }
 
             public override TriggerState? Execute() {

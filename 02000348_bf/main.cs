@@ -330,7 +330,7 @@ namespace Maple2.Trigger._02000348_bf {
                 context.CameraSelectPath(pathIds: new []{8811, 8810}, returnView: true);
                 context.SetEventUI(arg1: 1, script: "$02000348_BF__MAIN__13$", duration: 3000);
                 context.SetEffect(triggerIds: new []{7001}, visible: true);
-                context.SetSkill(triggerIds: new []{7702, 7703}, arg2: true);
+                context.SetSkill(triggerIds: new []{7702, 7703}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -453,7 +453,7 @@ namespace Maple2.Trigger._02000348_bf {
             internal StateClear_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 1, value: true);
+                context.SetDungeonVariable(id: 1, value: true);
                 context.ShowGuideSummary(entityId: 110, textId: 40009);
                 context.CameraSelectPath(pathIds: new []{8808}, returnView: true);
                 context.SetCinematicUI(type: 0);

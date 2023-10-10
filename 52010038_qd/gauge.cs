@@ -20,7 +20,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State게이지시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{700}, arg2: true);
+                context.SetSkill(triggerIds: new []{700}, enabled: true);
                 context.SetUserValue(triggerId: 999002, key: "GaugeStart", value: 1);
                 context.SetUserValue(triggerId: 991001, key: "GaugeStart", value: 1);
                 context.SetUserValue(triggerId: 991002, key: "GaugeStart", value: 1);

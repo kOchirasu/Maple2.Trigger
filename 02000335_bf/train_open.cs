@@ -88,7 +88,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{6920}, visible: true);
-                context.SetSkill(triggerIds: new []{5807, 5808, 5809}, arg2: true);
+                context.SetSkill(triggerIds: new []{5807, 5808, 5809}, enabled: true);
                 context.SetMesh(triggerIds: new []{7071, 7072, 7073, 7074}, visible: false, arg4: 15, arg5: 8f);
                 context.SetTimer(timerId: "1", seconds: 1);
             }

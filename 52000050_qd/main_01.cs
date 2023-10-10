@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52000050_qd {
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{7011}, visible: false);
                 context.SetBreakable(triggerIds: new []{9001, 9002, 9003, 9004, 9005}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{9001, 9002, 9003, 9004, 9005}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{9001, 9002, 9003, 9004, 9005}, visible: false);
                 context.SetMesh(triggerIds: new []{6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.CreateMonster(spawnIds: new []{101, 102, 103}, arg2: false);
             }
@@ -229,7 +229,7 @@ namespace Maple2.Trigger._52000050_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{8001}, returnView: false);
                 context.SetBreakable(triggerIds: new []{9001, 9002, 9003, 9004, 9005}, enabled: true);
-                context.SetVisibleBreakableObject(triggerIds: new []{9001, 9002, 9003, 9004, 9005}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{9001, 9002, 9003, 9004, 9005}, visible: true);
             }
 
             public override TriggerState? Execute() {
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._52000050_qd {
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetBreakable(triggerIds: new []{9001, 9002, 9003, 9004, 9005}, enabled: false);
-                    context.SetVisibleBreakableObject(triggerIds: new []{9001, 9002, 9003, 9004, 9005}, arg2: false);
+                    context.SetVisibleBreakableObject(triggerIds: new []{9001, 9002, 9003, 9004, 9005}, visible: false);
                     context.MoveNpc(spawnId: 122, patrolName: "MS2PatrolData_1203");
                     return new StateStart_02_h(context);
                 }

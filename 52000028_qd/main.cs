@@ -39,7 +39,7 @@ namespace Maple2.Trigger._52000028_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._52000028_qd {
             internal StateIshuraScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.SetEffect(triggerIds: new []{601}, visible: true);
                 context.SetConversation(type: 2, spawnId: 11001244, script: "$52000028_QD__MAIN__0$", arg4: 5, arg5: 0);
             }
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._52000028_qd {
 
             public override void OnExit() {
                 context.SetAchievement(triggerId: 101, type: "trigger", code: "BackstoryOfRune");
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

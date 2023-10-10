@@ -332,7 +332,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(spawnId: 1000, patrolName: "MS2PatrolData_1002");
-                context.CameraSelect(triggerId: 903, enable: false);
+                context.CameraSelect(triggerId: 903, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

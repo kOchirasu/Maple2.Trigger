@@ -8,11 +8,11 @@ namespace Maple2.Trigger._99999907 {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new State반응Wait(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateEnd(context);
                 }
 
@@ -46,17 +46,17 @@ namespace Maple2.Trigger._99999907 {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     context.AddBuff(boxIds: new []{199}, skillId: 70000008, level: 1, arg4: false, arg5: false);
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     context.AddBuff(boxIds: new []{199}, skillId: 70000008, level: 1, arg4: false, arg5: false);
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(rate: 40f)) {
+                if (context.RandomCondition(rate: 40)) {
                     context.AddBuff(boxIds: new []{199}, skillId: 70000008, level: 1, arg4: false, arg5: false);
                     return new StateEnd(context);
                 }

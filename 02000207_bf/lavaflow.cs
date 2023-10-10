@@ -61,11 +61,11 @@ namespace Maple2.Trigger._02000207_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 52f)) {
+                if (context.RandomCondition(rate: 52)) {
                     return new State3칸이동(context);
                 }
 
-                if (context.RandomCondition(rate: 48f)) {
+                if (context.RandomCondition(rate: 48)) {
                     return new State리턴(context);
                 }
 
@@ -112,11 +112,11 @@ namespace Maple2.Trigger._02000207_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 99f)) {
+                if (context.RandomCondition(rate: 99)) {
                     return new State2칸이동(context);
                 }
 
-                if (context.RandomCondition(rate: 1f)) {
+                if (context.RandomCondition(rate: 1)) {
                     return new State리턴(context);
                 }
 

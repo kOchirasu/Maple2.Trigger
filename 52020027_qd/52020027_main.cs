@@ -44,7 +44,7 @@ namespace Maple2.Trigger._52020027_qd {
                 context.SetNpcEmotionLoop(spawnId: 101, sequenceName: "Sit_Down_A", duration: 5000f);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 501, enable: true);
+                context.CameraSelect(triggerId: 501, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._52020027_qd {
             internal StateCamera_세리하Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 502, enable: true);
+                context.CameraSelect(triggerId: 502, enabled: true);
                 context.SetNpcRotation(spawnId: 101, rotation: 180);
                 context.SetConversation(type: 2, spawnId: 22000114, script: "여기까지 쫓아왔어?", arg4: 4);
             }

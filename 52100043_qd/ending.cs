@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52100043_qd {
             internal StateEnding_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -24,14 +24,14 @@ namespace Maple2.Trigger._52100043_qd {
             internal StateEnding_Camera_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 500, enable: false);
+                context.CameraSelect(triggerId: 500, enabled: false);
                 context.CameraSelectPath(pathIds: new []{500, 501}, returnView: false);
                 context.SetEffect(triggerIds: new []{5000, 5001, 5002, 5003, 5004, 5005}, visible: false);
                 context.SetMesh(triggerIds: new []{4993, 4994, 4995, 4996, 4997, 4998, 4999}, visible: false);
                 context.VisibleMyPc(visible: false);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CreateMonster(spawnIds: new []{600, 601, 602}, arg2: false);
                 context.SetMesh(triggerIds: new []{4993, 4994, 4995, 4996, 4997, 4998, 4999}, visible: true);
                 context.VisibleMyPc(visible: true);
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._52100043_qd {
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateNarration01(context));
-                context.CameraSelect(triggerId: 1000, enable: true);
+                context.CameraSelect(triggerId: 1000, enabled: true);
                 context.SetNpcEmotionSequence(spawnId: 602, sequenceName: "Talk_A");
                 context.AddCinematicTalk(npcId: 11001566, illustId: "11001566", script: "$52100043_QD__ENDING__0$", duration: 3000, align: Align.Left);
             }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._52100043_qd {
             internal StateEnding_Talk_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 1001, enable: true);
+                context.CameraSelect(triggerId: 1001, enabled: true);
                 context.SetNpcEmotionSequence(spawnId: 601, sequenceName: "Talk_A");
                 context.AddCinematicTalk(npcId: 11001567, illustId: "11001567", script: "$52100043_QD__ENDING__1$", duration: 3000, align: Align.Left);
             }
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._52100043_qd {
             internal StateEnding_Talk_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 1002, enable: true);
+                context.CameraSelect(triggerId: 1002, enabled: true);
                 context.SetNpcEmotionSequence(spawnId: 600, sequenceName: "Bore_A");
                 context.AddCinematicTalk(npcId: 11001568, illustId: "11001568", script: "$52100043_QD__ENDING__2$", duration: 5000, align: Align.Left);
             }
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._52100043_qd {
             internal State6000_del(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_blackfast.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_blackfast.xml");
                 context.DestroyMonster(spawnIds: new []{600});
                 context.CreateMonster(spawnIds: new []{700}, arg2: false);
             }
@@ -199,12 +199,12 @@ namespace Maple2.Trigger._52100043_qd {
             internal StateEnding_Talk_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_blackfast.xml");
-                context.CameraSelect(triggerId: 6000, enable: true);
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_blackfast.xml");
+                context.CameraSelect(triggerId: 6000, enabled: true);
                 context.MoveNpc(spawnId: 700, patrolName: "MS2PatrolData4");
                 context.AddCinematicTalk(npcId: 11001568, illustId: "11001568", script: "$52100043_QD__ENDING__6$", duration: 3000, align: Align.Left);
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
-                context.SetTimeScale(enable: true, startScale: 0.8f, endScale: 0.03f, duration: 3.0f, interpolator: 1);
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetTimeScale(enabled: true, startScale: 0.8f, endScale: 0.03f, duration: 3.0f, interpolator: 1);
                 context.SetEffect(triggerIds: new []{5002, 5006}, visible: true);
             }
 
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._52100043_qd {
             public override void OnEnter() {
                 context.SetSkip();
                 context.DestroyMonster(spawnIds: new []{-1});
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.SetCinematicUI(type: 9, script: "$52100043_QD__ENDING__7$");
             }
 

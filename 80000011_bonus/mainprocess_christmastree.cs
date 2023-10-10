@@ -45,7 +45,7 @@ namespace Maple2.Trigger._80000011_bonus {
                 context.SetLadder(triggerId: 202, visible: true, animationEffect: true);
                 context.SetLadder(triggerId: 203, visible: true, animationEffect: true);
                 context.SetLadder(triggerId: 204, visible: true, animationEffect: true);
-                context.SetTimer(timerId: "2", seconds: 30, clearAtZero: true, display: true, arg5: -90);
+                context.SetTimer(timerId: "2", seconds: 30, autoRemove: true, display: true, vOffset: -90);
                 context.ShowGuideSummary(entityId: 26300385, textId: 26300385);
             }
 

@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(interactIds: new []{10000440}, state: 0);
-                context.SetSkill(triggerIds: new []{701}, arg2: false);
+                context.SetSkill(triggerIds: new []{701}, enabled: false);
                 context.SetEffect(triggerIds: new []{440, 441, 442, 443, 460}, visible: false);
             }
 
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{440, 441, 442, 443, 460}, visible: true);
-                context.SetSkill(triggerIds: new []{701}, arg2: true);
+                context.SetSkill(triggerIds: new []{701}, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 2);
             }
 
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000254_bf {
             internal State스턴2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{701}, arg2: false);
+                context.SetSkill(triggerIds: new []{701}, enabled: false);
                 context.SetTimer(timerId: "1", seconds: 10);
             }
 

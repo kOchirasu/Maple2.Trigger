@@ -118,7 +118,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateFadeout(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CreateMonster(spawnIds: new []{601}, arg2: true);
             }
 
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._52000033_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7001, arg2: true);
+                context.SetSound(triggerId: 7001, enabled: true);
                 context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_closeEye", script: "$52000033_QD__AUDIENCEWITHEREB_03__6$", duration: 3000, delayTick: 0, align: Align.Left);
                 context.AddBalloonTalk(spawnId: 401, msg: "$52000033_QD__AUDIENCEWITHEREB_03__7$", duration: 3000);
             }
@@ -289,7 +289,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(spawnIds: new []{601});
                 context.CameraReset(interpolationTime: 1.0f);
                 context.SetCinematicUI(type: 0);

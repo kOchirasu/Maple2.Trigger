@@ -37,7 +37,7 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300004_PHASE_3__0$", duration: 3176);
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300004_PHASE_3__1$", duration: 3176);
                 context.SetUserValue(key: "AI_Phase", value: 0);
-                context.SetVisibleBreakableObject(triggerIds: new []{5171, 5172, 5173, 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5181, 5182, 5183, 5184, 5151, 5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161, 5162, 5163, 5164}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{5171, 5172, 5173, 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5181, 5182, 5183, 5184, 5151, 5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161, 5162, 5163, 5164}, visible: true);
                 context.SetBreakable(triggerIds: new []{5171, 5172, 5173, 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5181, 5182, 5183, 5184, 5151, 5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161, 5162, 5163, 5164}, enabled: true);
             }
 
@@ -57,9 +57,9 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "AI_Phase", value: 0);
-                context.SetVisibleBreakableObject(triggerIds: new []{5351, 5352, 5353, 5354, 5355, 5356, 5357, 5358, 5359, 5360, 5361, 5362, 5363, 5364, 5371, 5372, 5373, 5374, 5375, 5376, 5377, 5378, 5379, 5380, 5381, 5382, 5383, 5384}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{5351, 5352, 5353, 5354, 5355, 5356, 5357, 5358, 5359, 5360, 5361, 5362, 5363, 5364, 5371, 5372, 5373, 5374, 5375, 5376, 5377, 5378, 5379, 5380, 5381, 5382, 5383, 5384}, visible: true);
                 context.SetBreakable(triggerIds: new []{5171, 5172, 5173, 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5181, 5182, 5183, 5184, 5151, 5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161, 5162, 5163, 5164}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{5171, 5172, 5173, 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5181, 5182, 5183, 5184, 5151, 5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161, 5162, 5163, 5164}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{5171, 5172, 5173, 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5181, 5182, 5183, 5184, 5151, 5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161, 5162, 5163, 5164}, visible: false);
             }
 
             public override TriggerState? Execute() {

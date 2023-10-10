@@ -202,7 +202,7 @@ namespace Maple2.Trigger._52020020_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(type: 4);
-                context.SetSound(triggerId: 7001, arg2: true);
+                context.SetSound(triggerId: 7001, enabled: true);
                 context.SetPcEmotionLoop(sequenceName: "Idle_A", duration: 100f);
                 context.CreateMonster(spawnIds: new []{201}, arg2: true);
             }
@@ -224,7 +224,7 @@ namespace Maple2.Trigger._52020020_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {

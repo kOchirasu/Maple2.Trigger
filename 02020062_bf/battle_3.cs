@@ -51,15 +51,15 @@ namespace Maple2.Trigger._02020062_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateBoss소환1(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateBoss소환2(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateBoss소환3(context);
                 }
 

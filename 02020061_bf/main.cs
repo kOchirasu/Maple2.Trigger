@@ -9,10 +9,10 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 2, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 3, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 4, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 2, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 3, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 4, enabled: false);
                 context.ResetTimer(timerId: "1");
                 context.ResetTimer(timerId: "2");
                 context.ResetTimer(timerId: "3");
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnEnter() {
                 context.SetAchievement(triggerId: 9002, type: "trigger", code: "corps_battle");
                 context.SetEventUI(arg1: 1, script: "$02020061_BF__MAIN__0$", duration: 5000);
-                context.CameraSelect(triggerId: 999, enable: true);
+                context.CameraSelect(triggerId: 999, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -112,16 +112,16 @@ namespace Maple2.Trigger._02020061_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 2, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 3, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 4, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 2, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 3, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 4, enabled: true);
                 context.CameraReset(interpolationTime: 1f);
                 context.SetEffect(triggerIds: new []{2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016}, visible: false);
                 context.SetMesh(triggerIds: new []{1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048}, visible: false);
                 context.SetEventUI(arg1: 0, script: "1,3");
                 context.SetEventUI(arg1: 1, script: "$02020061_BF__MAIN__2$", duration: 5000);
-                context.SetTimer(timerId: "1", seconds: 180, clearAtZero: true, display: true, arg5: 60);
+                context.SetTimer(timerId: "1", seconds: 180, autoRemove: true, display: true, vOffset: 60);
                 context.ShadowExpeditionOpenBossGauge(maxGaugePoint: 800);
                 context.SetUserValue(triggerId: 99990002, key: "SpawnStart", value: 1);
                 context.SetActor(triggerId: 1901, visible: false, initialSequence: "Idle_A");
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SetEventUI(arg1: 0, script: "2,3");
                 context.ResetTimer(timerId: "1");
                 context.SetUserValue(triggerId: 99990003, key: "ObjectPhase", value: 1);
-                context.SetTimer(timerId: "2", seconds: 180, clearAtZero: true, display: true, arg5: 60);
+                context.SetTimer(timerId: "2", seconds: 180, autoRemove: true, display: true, vOffset: 60);
             }
 
             public override TriggerState? Execute() {
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._02020061_bf {
                 context.ResetTimer(timerId: "2");
                 context.SetEventUI(arg1: 0, script: "3,3");
                 context.SetUserValue(triggerId: 99990008, key: "BossPhase", value: 1);
-                context.SetTimer(timerId: "3", seconds: 180, clearAtZero: true, display: true, arg5: 60);
+                context.SetTimer(timerId: "3", seconds: 180, autoRemove: true, display: true, vOffset: 60);
             }
 
             public override TriggerState? Execute() {

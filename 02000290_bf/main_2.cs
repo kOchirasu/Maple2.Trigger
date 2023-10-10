@@ -68,9 +68,9 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetLadder(triggerId: 534, visible: true, animationEffect: true);
                 context.SetLadder(triggerId: 535, visible: true, animationEffect: true);
                 context.SetLadder(triggerId: 536, visible: true, animationEffect: true);
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 9991, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 9992, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 9991, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 9992, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -225,9 +225,9 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnEnter() {
                 context.SetActor(triggerId: 3120, visible: false, initialSequence: "Opened");
                 context.SetMesh(triggerIds: new []{3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132}, visible: false, arg3: 0, arg4: 200, arg5: 2f);
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 9991, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 9992, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 9991, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 9992, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -265,7 +265,7 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 801, enable: true);
+                context.CameraSelect(triggerId: 801, enabled: true);
                 context.SetTimer(timerId: "3", seconds: 3);
                 context.SetMesh(triggerIds: new []{3500, 3501, 3502, 3503, 3504}, visible: false, arg3: 0, arg4: 300, arg5: 3f);
                 context.SetSkip(state: new StateStopCinematic(context));
@@ -302,7 +302,7 @@ namespace Maple2.Trigger._02000290_bf {
             internal State공주구출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 801, enable: false);
+                context.CameraSelect(triggerId: 801, enabled: false);
                 context.SetEffect(triggerIds: new []{5000}, visible: true);
                 context.ShowGuideSummary(entityId: 20002904, textId: 20002904);
                 context.SetInteractObject(interactIds: new []{10000464}, state: 1);

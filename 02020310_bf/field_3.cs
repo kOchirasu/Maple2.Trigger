@@ -65,9 +65,9 @@ namespace Maple2.Trigger._02020310_bf {
                     context.SetAiExtraData(key: "BossDie", value: 2);
                     context.SetInteractObject(interactIds: new []{12000313}, state: 1);
                     context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 106, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 108, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 109, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 106, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 108, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 109, enabled: true);
                     return new StateCableOn_13(context);
                 }
 
@@ -87,9 +87,9 @@ namespace Maple2.Trigger._02020310_bf {
                     context.SetAiExtraData(key: "BossDie", value: 2);
                     context.SetInteractObject(interactIds: new []{12000313}, state: 1);
                     context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 106, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 108, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 109, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 106, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 108, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 109, enabled: true);
                     return new StateCableOn_13(context);
                 }
 
@@ -130,9 +130,9 @@ namespace Maple2.Trigger._02020310_bf {
                     context.SetAiExtraData(key: "BossDie", value: 2);
                     context.SetInteractObject(interactIds: new []{12000314, 12000315}, state: 1);
                     context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 106, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 107, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 110, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 106, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 107, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 110, enabled: true);
                     return new StateCableOn_14_15(context);
                 }
 
@@ -152,9 +152,9 @@ namespace Maple2.Trigger._02020310_bf {
                     context.SetAiExtraData(key: "BossDie", value: 2);
                     context.SetInteractObject(interactIds: new []{12000314, 12000315}, state: 1);
                     context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 106, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 107, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 110, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 106, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 107, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 110, enabled: true);
                     return new StateCableOn_14_15(context);
                 }
 
@@ -195,8 +195,8 @@ namespace Maple2.Trigger._02020310_bf {
                     context.SetAiExtraData(key: "BossDie", value: 2);
                     context.SetInteractObject(interactIds: new []{12000316, 12000317}, state: 1);
                     context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 107, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 111, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 107, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 111, enabled: true);
                     return new StateCableOn_16_17(context);
                 }
 
@@ -216,8 +216,8 @@ namespace Maple2.Trigger._02020310_bf {
                     context.SetAiExtraData(key: "BossDie", value: 2);
                     context.SetInteractObject(interactIds: new []{12000316, 12000317}, state: 1);
                     context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 107, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 111, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 107, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 111, enabled: true);
                     return new StateCableOn_16_17(context);
                 }
 
@@ -258,8 +258,8 @@ namespace Maple2.Trigger._02020310_bf {
                     context.SetAiExtraData(key: "BossDie", value: 2);
                     context.SetInteractObject(interactIds: new []{12000318}, state: 1);
                     context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 108, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 112, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 108, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 112, enabled: true);
                     return new StateCableOn_18(context);
                 }
 
@@ -279,8 +279,8 @@ namespace Maple2.Trigger._02020310_bf {
                     context.SetAiExtraData(key: "BossDie", value: 2);
                     context.SetInteractObject(interactIds: new []{12000318}, state: 1);
                     context.CreateMonster(spawnIds: new []{1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
-                    context.EnableSpawnPointPc(spawnId: 108, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 112, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 108, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 112, enabled: true);
                     return new StateCableOn_18(context);
                 }
 
@@ -321,7 +321,7 @@ namespace Maple2.Trigger._02020310_bf {
                 }
 
                 if (context.ObjectInteracted(interactIds: new []{12000315}, arg2: 0)) {
-                    context.SetVisibleBreakableObject(triggerIds: new []{1016}, arg2: false);
+                    context.SetVisibleBreakableObject(triggerIds: new []{1016}, visible: false);
                     context.SetInteractObject(interactIds: new []{12000314, 12000315}, state: 0);
                     context.SetMesh(triggerIds: new []{1130001, 1130002, 1130003, 1130004, 1130005, 1130006, 1130007, 1130008, 1130009, 1130010}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateCableDelay_15(context);

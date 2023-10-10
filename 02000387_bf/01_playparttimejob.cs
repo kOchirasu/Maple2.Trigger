@@ -307,15 +307,15 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup3003(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup3007(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup3011(context);
                 }
 
@@ -333,15 +333,15 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup2002(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup2006(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup2010(context);
                 }
 
@@ -359,32 +359,32 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     // return new StateNpcGroup4205(context);
                     return null;
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup4208(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup4212(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup4216(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup4220(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup4224(context);
                 }
 
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup4228(context);
                 }
 
@@ -402,27 +402,27 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup1101(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup1105(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup1109(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup1113(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup1117(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup1121(context);
                 }
 
@@ -492,27 +492,27 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup2102(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup2106(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup2110(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup2114(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup2118(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup2122(context);
                 }
 
@@ -530,31 +530,31 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup3203(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup3207(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup3211(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup3215(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup3219(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup3223(context);
                 }
 
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup3227(context);
                 }
 
@@ -572,15 +572,15 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup1001(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup1005(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup1009(context);
                 }
 
@@ -598,27 +598,27 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup4104(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup4108(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup4112(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup4116(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup4120(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup4124(context);
                 }
 
@@ -636,31 +636,31 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup2202(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup2206(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup2210(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup2214(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup2218(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup2222(context);
                 }
 
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup2226(context);
                 }
 
@@ -678,27 +678,27 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup3103(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup3107(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup3111(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup3115(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup3119(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup3123(context);
                 }
 
@@ -716,31 +716,31 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup1201(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup1205(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup1209(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup1213(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup1217(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup1221(context);
                 }
 
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup1225(context);
                 }
 
@@ -758,15 +758,15 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup4004(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup4008(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup4012(context);
                 }
 
@@ -836,27 +836,27 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup4104(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup4108(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup4112(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup4116(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup4120(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup4124(context);
                 }
 
@@ -874,31 +874,31 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup2202(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup2206(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup2210(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup2214(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup2218(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup2222(context);
                 }
 
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup2226(context);
                 }
 
@@ -916,15 +916,15 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup3003(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup3007(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup3011(context);
                 }
 
@@ -942,15 +942,15 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup1001(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup1005(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup1009(context);
                 }
 
@@ -968,15 +968,15 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup2002(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup2006(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup2010(context);
                 }
 
@@ -994,31 +994,31 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup4204(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup4208(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup4212(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup4216(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup4220(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup4224(context);
                 }
 
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup4228(context);
                 }
 
@@ -1036,27 +1036,27 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup3103(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup3107(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup3111(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup3115(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup3119(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup3123(context);
                 }
 
@@ -1074,27 +1074,27 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup1101(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup1105(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup1109(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup1113(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup1117(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup1121(context);
                 }
 
@@ -1112,31 +1112,31 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup1201(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup1205(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup1209(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup1213(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup1217(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup1221(context);
                 }
 
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup1225(context);
                 }
 
@@ -1154,15 +1154,15 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup4004(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup4008(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateNpcGroup4012(context);
                 }
 
@@ -1180,27 +1180,27 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup2102(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup2106(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup2110(context);
                 }
 
-                if (context.RandomCondition(rate: 17f)) {
+                if (context.RandomCondition(rate: 17)) {
                     return new StateNpcGroup2114(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup2118(context);
                 }
 
-                if (context.RandomCondition(rate: 16f)) {
+                if (context.RandomCondition(rate: 16)) {
                     return new StateNpcGroup2122(context);
                 }
 
@@ -1218,31 +1218,31 @@ namespace Maple2.Trigger._02000387_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup3203(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup3207(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup3211(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup3215(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup3219(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new StateNpcGroup3223(context);
                 }
 
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new StateNpcGroup3227(context);
                 }
 

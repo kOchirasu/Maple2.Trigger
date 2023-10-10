@@ -140,83 +140,83 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3001소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3002소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3003소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3004소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3005소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3006소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3007소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3008소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3009소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3010소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3011소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3012소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3013소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3014소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3015소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3016소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3017소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3018소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3019소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3020소환(context);
                 }
 
@@ -686,83 +686,83 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3001SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3002SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3003SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3004SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3005SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3006SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3007SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3008SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3009SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3010SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3011SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3012SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3013SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3014SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3015SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3016SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3017SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3018SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3019SummonCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3020SummonCheck(context);
                 }
 
@@ -1614,83 +1614,83 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3001SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3002SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3003SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3004SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3005SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3006SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3007SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3008SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3009SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3010SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3011SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3012SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3013SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3014SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3015SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3016SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3017SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3018SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3019SummonCheck2(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3020SummonCheck2(context);
                 }
 

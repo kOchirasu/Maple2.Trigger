@@ -62,39 +62,39 @@ namespace Maple2.Trigger._80000013_bonus {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State1TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State2TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State3TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State4TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State5TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State6TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State7TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State8TimedCreation(context);
                 }
 
-                if (context.RandomCondition(rate: 3f)) {
+                if (context.RandomCondition(rate: 3)) {
                     return new State9TimedCreation(context);
                 }
 

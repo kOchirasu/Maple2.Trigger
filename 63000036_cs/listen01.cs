@@ -51,7 +51,7 @@ namespace Maple2.Trigger._63000036_cs {
 
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{101, 102}, arg2: false);
-                context.CameraSelect(triggerId: 500, enable: true);
+                context.CameraSelect(triggerId: 500, enabled: true);
                 context.SetSceneSkip(state: new StateDialogueSkip03(context), arg2: "exit");
             }
 
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._63000036_cs {
             internal StateCameraWalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 501, enable: true);
+                context.CameraSelect(triggerId: 501, enabled: true);
             }
 
             public override TriggerState? Execute() {

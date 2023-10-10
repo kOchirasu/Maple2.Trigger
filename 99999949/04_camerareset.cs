@@ -59,7 +59,7 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "600번 카메라 선택");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 603, enable: true);
+                context.CameraSelect(triggerId: 603, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._99999949 {
 
             public override void OnEnter() {
                 context.DebugString(message: "602번 카메라 선택");
-                context.CameraSelect(triggerId: 604, enable: true);
+                context.CameraSelect(triggerId: 604, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "모든 카메라 리셋");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 604, enable: false);
+                context.CameraSelect(triggerId: 604, enabled: false);
             }
 
             public override TriggerState? Execute() {

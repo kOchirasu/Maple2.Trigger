@@ -22,8 +22,8 @@ namespace Maple2.Trigger._52000131_qd {
             internal State침대로이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_0sec.xml");
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_0sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(mapId: 52000131, portalId: 99);
                 context.SetCinematicUI(type: 1);
             }
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52000131_qd {
                 context.SetPcEmotionLoop(sequenceName: "Sit_Ground_Idle_A", duration: 80000f);
                 context.FaceEmotion(spawnId: 0, emotionName: "Think_A");
                 context.CameraSelectPath(pathIds: new []{8001}, returnView: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_0sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_0sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal StateFadeIn1_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -560,7 +560,7 @@ namespace Maple2.Trigger._52000131_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {

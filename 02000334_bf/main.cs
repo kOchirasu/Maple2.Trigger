@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetInteractObject(interactIds: new []{13000012}, state: 2);
                 context.SetEffect(triggerIds: new []{98001, 98002, 98003, 98004, 98005, 98006, 90021, 90022}, visible: false);
                 context.SetEffect(triggerIds: new []{98031}, visible: true);
-                context.CameraSelect(triggerId: 8000, enable: true);
+                context.CameraSelect(triggerId: 8000, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() {
                 context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
                 context.CreateMonster(spawnIds: new []{199}, arg2: true);
-                context.CameraSelect(triggerId: 8001, enable: true);
+                context.CameraSelect(triggerId: 8001, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
                 context.CreateMonster(spawnIds: new []{401, 402, 403, 404, 405, 406, 801, 802, 803, 804, 805, 806, 807, 808, 809}, arg2: true);
                 context.SetMesh(triggerIds: new []{6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016}, visible: true);
@@ -275,7 +275,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{90022}, visible: true);
-                context.CameraSelect(triggerId: 8000, enable: true);
+                context.CameraSelect(triggerId: 8000, enabled: true);
                 context.CreateMonster(spawnIds: new []{150, 151}, arg2: false);
                 context.SetTimer(timerId: "60", seconds: 60, display: true);
             }
@@ -644,7 +644,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateClear_보상_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 8003, enable: true);
+                context.CameraSelect(triggerId: 8003, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetConversation(type: 2, spawnId: 11000015, script: "$02000334_BF__MAIN__18$", arg4: 3);

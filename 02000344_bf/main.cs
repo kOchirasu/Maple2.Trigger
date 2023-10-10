@@ -532,7 +532,7 @@ namespace Maple2.Trigger._02000344_bf {
                 context.DungeonClear();
                 context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
                 context.SetAchievement(type: "trigger", code: "ClearTVProgram");
-                context.SetDungeonVariable(varId: 2, value: true);
+                context.SetDungeonVariable(id: 2, value: true);
                 context.ShowGuideSummary(entityId: 110, textId: 40009);
                 context.CameraSelectPath(pathIds: new []{8010}, returnView: true);
                 context.SetCinematicUI(type: 0);

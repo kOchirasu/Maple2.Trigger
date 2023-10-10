@@ -19,7 +19,7 @@ namespace Maple2.Trigger._99999840 {
             internal StatePortal열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: true);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: true);
                 context.SetInteractObject(interactIds: new []{10002183}, state: 1, arg3: false);
             }
 
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990010, key: "PCmove", value: 0);
-                context.SetTimer(timerId: "2", seconds: 60, clearAtZero: true);
+                context.SetTimer(timerId: "2", seconds: 60, autoRemove: true);
                 context.SetInteractObject(interactIds: new []{10002183}, state: 2, arg3: false);
             }
 

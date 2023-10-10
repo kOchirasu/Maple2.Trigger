@@ -4,9 +4,9 @@ namespace Maple2.Trigger._02020100_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 2, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 3, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 2, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 3, enabled: false);
                 context.SetUserValue(triggerId: 99990002, key: "Seed1start", value: 0);
                 context.SetUserValue(triggerId: 99990003, key: "Seed2start", value: 0);
                 context.SetUserValue(triggerId: 99990004, key: "Seed3start", value: 0);
@@ -170,8 +170,8 @@ namespace Maple2.Trigger._02020100_bf {
             internal StateSeed1Enabled(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: true);
                 context.SetUserValue(triggerId: 99990002, key: "Seed1start", value: 1);
             }
 
@@ -231,8 +231,8 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override void OnEnter() {
                 context.SetAgent(triggerIds: new []{9023, 9024}, visible: false);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 2, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 2, enabled: true);
                 context.SetUserValue(triggerId: 99990002, key: "Seed1start", value: 2);
                 context.SetUserValue(triggerId: 99990003, key: "Seed2start", value: 1);
                 context.SetMesh(triggerIds: new []{1005, 1006}, visible: true, arg3: 0, arg4: 250, arg5: 3f);
@@ -339,8 +339,8 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(interactIds: new []{10002122}, state: 1);
-                context.EnableSpawnPointPc(spawnId: 2, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 3, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 2, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 3, enabled: true);
                 context.CreateMonster(spawnIds: new []{121, 122, 123, 124}, arg2: false);
                 context.SetBreakable(triggerIds: new []{5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5011, 5012, 5013, 5014, 5015, 5016, 5017, 5018, 5019}, enabled: true);
             }

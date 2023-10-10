@@ -129,7 +129,7 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.CreateMonster(spawnIds: new []{1002, 1003, 1004}, arg2: false);
                 context.SetSkip(state: new StateNPC이동(context));
             }
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 302, enable: false);
+                context.CameraSelect(triggerId: 302, enabled: false);
                 context.MoveNpc(spawnId: 1002, patrolName: "MS2PatrolData_A");
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_A");
                 context.MoveNpc(spawnId: 1004, patrolName: "MS2PatrolData_A");

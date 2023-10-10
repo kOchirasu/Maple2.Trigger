@@ -4,9 +4,9 @@ namespace Maple2.Trigger._99999841 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 811, value: false);
-                context.SetDungeonVariable(varId: 812, value: false);
-                context.SetDungeonVariable(varId: 813, value: false);
+                context.SetDungeonVariable(id: 811, value: false);
+                context.SetDungeonVariable(id: 812, value: false);
+                context.SetDungeonVariable(id: 813, value: false);
             }
 
             public override TriggerState? Execute() {
@@ -70,15 +70,15 @@ namespace Maple2.Trigger._99999841 {
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateA지역(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new StateB지역(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new StateC지역(context);
                 }
 
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._99999841 {
 
                 if (context.MonsterDead(spawnIds: new []{801})) {
                     context.SetEventUI(arg1: 1, script: "상대팀에 이동속도 감소 디Buff를 겁니다.", duration: 5000);
-                    context.SetDungeonVariable(varId: 811, value: true);
+                    context.SetDungeonVariable(id: 811, value: true);
                     return new StateDelay(context);
                 }
 
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._99999841 {
 
                 if (context.MonsterDead(spawnIds: new []{802})) {
                     context.SetEventUI(arg1: 1, script: "상대팀에 공격력 감소 디Buff를 겁니다.", duration: 5000);
-                    context.SetDungeonVariable(varId: 812, value: true);
+                    context.SetDungeonVariable(id: 812, value: true);
                     return new StateDelay(context);
                 }
 
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._99999841 {
 
                 if (context.MonsterDead(spawnIds: new []{803})) {
                     context.SetEventUI(arg1: 1, script: "상대팀에 체력 감소 디Buff를 겁니다.", duration: 5000);
-                    context.SetDungeonVariable(varId: 813, value: true);
+                    context.SetDungeonVariable(id: 813, value: true);
                     return new StateDelay(context);
                 }
 
@@ -189,9 +189,9 @@ namespace Maple2.Trigger._99999841 {
                 }
 
                 if (context.TimeExpired(timerId: "1")) {
-                    context.SetDungeonVariable(varId: 811, value: false);
-                    context.SetDungeonVariable(varId: 812, value: false);
-                    context.SetDungeonVariable(varId: 813, value: false);
+                    context.SetDungeonVariable(id: 811, value: false);
+                    context.SetDungeonVariable(id: 812, value: false);
+                    context.SetDungeonVariable(id: 813, value: false);
                     return new StateWait(context);
                 }
 

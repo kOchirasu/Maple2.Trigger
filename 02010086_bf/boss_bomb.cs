@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02010086_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{6001, 6002, 6003, 6004}, arg2: true);
+                context.SetSkill(triggerIds: new []{6001, 6002, 6003, 6004}, enabled: true);
                 context.SetEffect(triggerIds: new []{6010, 6011, 6012}, visible: true);
             }
 

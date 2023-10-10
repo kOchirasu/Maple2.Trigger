@@ -6,7 +6,7 @@ namespace Maple2.Trigger._81000001_item {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "59", seconds: 180, clearAtZero: true, display: true, arg5: -90);
+                context.SetTimer(timerId: "59", seconds: 180, autoRemove: true, display: true, vOffset: -90);
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
                 context.SetMesh(triggerIds: new []{301, 302, 303}, visible: true, arg3: 0, arg4: 0);
                 context.SetMesh(triggerIds: new []{3101, 3102, 3201, 3202, 3301, 3302, 3401, 3402, 3403, 3404}, visible: false, arg3: 0, arg4: 0);
@@ -30,13 +30,13 @@ namespace Maple2.Trigger._81000001_item {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3101}, visible: true, arg3: 0, arg4: 0);
                     context.SetEffect(triggerIds: new []{71011, 71012}, visible: true);
                     return new StateRandom블록02(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3102}, visible: true, arg3: 0, arg4: 0);
                     context.SetEffect(triggerIds: new []{71021, 71022}, visible: true);
                     return new StateRandom블록02(context);
@@ -54,13 +54,13 @@ namespace Maple2.Trigger._81000001_item {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3201}, visible: true, arg3: 0, arg4: 0);
                     context.SetEffect(triggerIds: new []{72011}, visible: true);
                     return new StateRandom블록03(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3202}, visible: true, arg3: 0, arg4: 0);
                     context.SetEffect(triggerIds: new []{72021}, visible: true);
                     return new StateRandom블록03(context);
@@ -78,13 +78,13 @@ namespace Maple2.Trigger._81000001_item {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3301}, visible: true, arg3: 0, arg4: 0);
                     context.SetEffect(triggerIds: new []{73011}, visible: true);
                     return new StateRandom블록04(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3302}, visible: true, arg3: 0, arg4: 0);
                     context.SetEffect(triggerIds: new []{73021, 73022, 73023}, visible: true);
                     return new StateRandom블록04(context);
@@ -102,12 +102,12 @@ namespace Maple2.Trigger._81000001_item {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3401, 3402}, visible: true, arg3: 0, arg4: 0);
                     return new StateStartConditionCheck(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     context.SetMesh(triggerIds: new []{3403, 3404}, visible: true, arg3: 0, arg4: 0);
                     return new StateStartConditionCheck(context);
                 }
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._81000001_item {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999111, key: "gameStart", value: 1);
-                context.SetTimer(timerId: "180", seconds: 180, clearAtZero: false, display: true);
+                context.SetTimer(timerId: "180", seconds: 180, autoRemove: false, display: true);
             }
 
             public override TriggerState? Execute() {

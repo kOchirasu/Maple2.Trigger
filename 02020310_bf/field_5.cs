@@ -31,10 +31,10 @@ namespace Maple2.Trigger._02020310_bf {
                 if (context.MonsterDead(spawnIds: new []{1117, 1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508, 1509, 1510, 1511, 1512, 1513})) {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004607, illust: "Neirin_normal", script: "$02020310_BF__FIELD_5__0$", duration: 5000);
                     context.SetInteractObject(interactIds: new []{12000400, 12000401, 12000402, 12000403}, state: 1);
-                    context.EnableSpawnPointPc(spawnId: 113, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 114, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 115, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 116, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 113, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 114, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 115, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 116, enabled: true);
                     return new StateArcheon_On(context);
                 }
 
@@ -99,8 +99,8 @@ namespace Maple2.Trigger._02020310_bf {
                     context.PatrolConditionUser(patrolName: "MS2PatrolData_06", patrolIndex: 6, additionalEffectId: 73000006);
                     context.PatrolConditionUser(patrolName: "MS2PatrolData_07", patrolIndex: 7, additionalEffectId: 73000007);
                     context.PatrolConditionUser(patrolName: "MS2PatrolData_08", patrolIndex: 8, additionalEffectId: 73000008);
-                    context.EnableSpawnPointPc(spawnId: 116, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 117, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 116, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 117, enabled: true);
                     context.SetPortal(portalId: 10000, visible: true, enabled: true, minimapVisible: true);
                     return new StateArcheon_Move2_1(context);
                 }

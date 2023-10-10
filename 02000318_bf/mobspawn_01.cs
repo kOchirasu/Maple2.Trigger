@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000318_bf {
                 context.PlaySystemSoundInBox(boxIds: new []{102}, sound: "System_ShowGuideSummary_01");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.SetSkip(state: new StateCameraWalk01(context));
             }
 
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateCameraWalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 600, enable: false);
+                context.CameraSelect(triggerId: 600, enabled: false);
                 context.SetSkip();
             }
 

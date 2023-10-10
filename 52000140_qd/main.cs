@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetEffect(triggerIds: new []{5001}, visible: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal StateCameraCinematic_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{8002}, returnView: false);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal StateCameraCinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -222,7 +222,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal State졸개퇴치완료_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.HideGuideSummary(entityId: 25201401);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
@@ -265,7 +265,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal State졸개퇴치완료_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -588,7 +588,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal State투르카Combat_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.HideGuideSummary(entityId: 25201402);
@@ -610,7 +610,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal State투르카Combat_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{8002}, returnView: false);
                 context.DestroyMonster(spawnIds: new []{106});
                 context.CreateMonster(spawnIds: new []{102}, arg2: false);
@@ -634,7 +634,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal State3차삼자대화_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 11003329, script: "$52000140_QD__MAIN__22$", duration: 2500, align: Align.Right);
                 context.AddCinematicTalk(npcId: 11003329, script: "$52000140_QD__MAIN__23$", duration: 2500, align: Align.Right);
             }
@@ -731,7 +731,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal StatePC의부상_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetPcEmotionLoop(sequenceName: "Down_Idle_A", duration: 10000f);
                 context.SetEffect(triggerIds: new []{5001}, visible: false);
             }
@@ -751,7 +751,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal StatePC의부상_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{8004, 8005}, returnView: false);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_2007");
             }
@@ -771,7 +771,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal StatePC의부상_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {

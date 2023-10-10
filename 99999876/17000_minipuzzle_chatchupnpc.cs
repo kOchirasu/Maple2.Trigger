@@ -57,7 +57,7 @@ namespace Maple2.Trigger._99999876 {
             internal StateChatchUpNpc(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: true, display: false, vOffset: 0);
                 context.ChangeMonster(removeSpawnId: 17101, addSpawnId: 17102);
             }
 

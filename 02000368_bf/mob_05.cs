@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000368_bf {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{3005}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(triggerIds: new []{7501}, arg2: false);
+                context.SetSkill(triggerIds: new []{7501}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000368_bf {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{3005}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(triggerIds: new []{7501}, arg2: true);
+                context.SetSkill(triggerIds: new []{7501}, enabled: true);
                 context.CreateMonster(spawnIds: new []{502}, arg2: false);
             }
 

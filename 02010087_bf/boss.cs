@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02010087_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 8002, enable: true);
+                context.CameraSelect(triggerId: 8002, enabled: true);
                 context.SetMesh(triggerIds: new []{6001, 6002, 6003, 6004}, visible: false, arg4: 0, arg5: 10f);
                 context.SetEffect(triggerIds: new []{7308}, visible: true);
                 context.SetTimer(timerId: "2", seconds: 2, display: false);
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{7306}, visible: true);
-                context.SetSkill(triggerIds: new []{8306, 8307}, arg2: true);
+                context.SetSkill(triggerIds: new []{8306, 8307}, enabled: true);
                 context.SetTimer(timerId: "2", seconds: 2, display: false);
             }
 
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02010087_bf {
             internal State폭발후(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 8002, enable: false);
+                context.CameraSelect(triggerId: 8002, enabled: false);
                 context.PlaySystemSoundInBox(sound: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 111, textId: 20003371);
             }
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{199});
-                context.CameraSelect(triggerId: 8001, enable: true);
+                context.CameraSelect(triggerId: 8001, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11003125, script: "$02010087_BF__BOSS__0$", arg4: 3);
                 context.SetSkip(state: new State웨이홍_Script02(context));
                 context.SetTimer(timerId: "3", seconds: 3, display: false);
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._02010087_bf {
             internal StateEnd_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 8001, enable: false);
+                context.CameraSelect(triggerId: 8001, enabled: false);
                 context.SetConversation(type: 1, spawnId: 199, script: "$02000337_BF__BOSS__3$", arg4: 3, arg5: 2);
                 context.SetPortal(portalId: 10, visible: true, enabled: true, minimapVisible: true);
             }

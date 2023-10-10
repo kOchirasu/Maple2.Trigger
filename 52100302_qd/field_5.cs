@@ -31,10 +31,10 @@ namespace Maple2.Trigger._52100302_qd {
                 if (context.MonsterDead(spawnIds: new []{1117, 1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508, 1509, 1510, 1511, 1512, 1513})) {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004607, illust: "Neirin_normal", script: "$52100302_QD__FIELD_5__0$", duration: 5000);
                     context.SetInteractObject(interactIds: new []{12000600}, state: 1);
-                    context.EnableSpawnPointPc(spawnId: 113, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 114, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 115, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 116, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 113, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 114, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 115, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 116, enabled: true);
                     return new StateArcheon_On(context);
                 }
 
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._52100302_qd {
                 if (context.MonsterDead(spawnIds: new []{10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029})) {
                     context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11004582, illust: "Eone_serious", script: "$52100302_QD__FIELD_5__2$", duration: 5000);
                     context.PatrolConditionUser(patrolName: "MS2PatrolData_05", patrolIndex: 5, additionalEffectId: 73000005);
-                    context.EnableSpawnPointPc(spawnId: 116, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 117, isEnable: true);
+                    context.EnableSpawnPointPc(spawnId: 116, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 117, enabled: true);
                     context.SetPortal(portalId: 10000, visible: true, enabled: true, minimapVisible: true);
                     return new StateArcheon_Move2_1(context);
                 }
@@ -175,7 +175,7 @@ namespace Maple2.Trigger._52100302_qd {
             internal State마를레네_Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
                 context.CreateMonster(spawnIds: new []{999}, arg2: false);
                 context.CameraSelectPath(pathIds: new []{4001}, returnView: false);
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._52100302_qd {
             internal State마를레네_Cinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(pathIds: new []{4002}, returnView: false);
             }
 
@@ -257,7 +257,7 @@ namespace Maple2.Trigger._52100302_qd {
             internal State마를레네_Cinematic_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -275,7 +275,7 @@ namespace Maple2.Trigger._52100302_qd {
             internal State마를레네_Cinematic_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);

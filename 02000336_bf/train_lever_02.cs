@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000336_bf {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{8021, 8022, 8023, 8024}, visible: false, arg4: 0, arg5: 10f);
-                context.SetSkill(triggerIds: new []{5807}, arg2: true);
+                context.SetSkill(triggerIds: new []{5807}, enabled: true);
                 context.SetMesh(triggerIds: new []{8205}, visible: false, arg4: 30, arg5: 0f);
                 context.SetMesh(triggerIds: new []{8211, 8212, 8213, 8214}, visible: false, arg4: 0, arg5: 10f);
             }

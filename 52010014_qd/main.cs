@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52010014_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 8001, enable: true);
+                context.CameraSelect(triggerId: 8001, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetTimer(timerId: "3", seconds: 3);
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._52010014_qd {
             internal StateEvent_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 8001, enable: false);
+                context.CameraSelect(triggerId: 8001, enabled: false);
             }
 
             public override TriggerState? Execute() {

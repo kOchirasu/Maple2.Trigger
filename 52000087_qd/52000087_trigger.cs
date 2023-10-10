@@ -33,7 +33,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State카르카르시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override TriggerState? Execute() {
@@ -921,7 +921,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State20002265_완료Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUser(mapId: 52000087, portalId: 10);
                 context.SetCinematicUI(type: 1);
             }
@@ -941,7 +941,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State20002265_완료Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(pathIds: new []{2002, 2003, 2004}, returnView: false);
             }
 
@@ -1076,7 +1076,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State20002266_완료Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.MoveUser(mapId: 52000087, portalId: 10);
@@ -1097,7 +1097,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State20002266_완료Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(pathIds: new []{2005, 2006}, returnView: false);
             }
 
@@ -1187,7 +1187,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUser(mapId: 52000087, portalId: 10);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
@@ -1282,9 +1282,9 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그Cinematic06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 90000, arg2: true);
+                context.SetSound(triggerId: 90000, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000087_QD__52000087_TRIGGER__29$", arg4: 6);
-                context.SetOnetimeEffect(id: 2007, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_01_00002007.xml");
+                context.SetOnetimeEffect(id: 2007, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_01_00002007.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic06스킵(context));
             }
 
@@ -1319,7 +1319,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000087_QD__52000087_TRIGGER__30$", arg4: 6);
-                context.SetOnetimeEffect(id: 2008, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_02_00002008.xml");
+                context.SetOnetimeEffect(id: 2008, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_02_00002008.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic07스킵(context));
             }
 
@@ -1354,7 +1354,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000087_QD__52000087_TRIGGER__31$", arg4: 9);
-                context.SetOnetimeEffect(id: 2009, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_03_00002009.xml");
+                context.SetOnetimeEffect(id: 2009, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_03_00002009.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic08스킵(context));
             }
 
@@ -1410,7 +1410,7 @@ namespace Maple2.Trigger._52000087_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000087_QD__52000087_TRIGGER__33$", arg4: 5);
-                context.SetOnetimeEffect(id: 2010, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_04_00002010.xml");
+                context.SetOnetimeEffect(id: 2010, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_04_00002010.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic10스킵(context));
             }
 
@@ -1445,7 +1445,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000087_QD__52000087_TRIGGER__34$", arg4: 5);
-                context.SetOnetimeEffect(id: 2011, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_05_00002011.xml");
+                context.SetOnetimeEffect(id: 2011, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_05_00002011.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic11스킵(context));
             }
 
@@ -1519,7 +1519,7 @@ namespace Maple2.Trigger._52000087_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000087_QD__52000087_TRIGGER__37$", arg4: 5);
-                context.SetOnetimeEffect(id: 2012, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_06_00002012.xml");
+                context.SetOnetimeEffect(id: 2012, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_06_00002012.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic13b스킵(context));
             }
 
@@ -1554,7 +1554,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000087_QD__52000087_TRIGGER__38$", arg4: 5);
-                context.SetOnetimeEffect(id: 2013, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_07_00002013.xml");
+                context.SetOnetimeEffect(id: 2013, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_07_00002013.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic14스킵(context));
             }
 
@@ -1589,7 +1589,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000087_QD__52000087_TRIGGER__39$", arg4: 6);
-                context.SetOnetimeEffect(id: 2014, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_08_00002014.xml");
+                context.SetOnetimeEffect(id: 2014, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_08_00002014.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic15스킵(context));
             }
 
@@ -1624,7 +1624,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000087_QD__52000087_TRIGGER__40$", arg4: 5);
-                context.SetOnetimeEffect(id: 2015, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_09_00002015.xml");
+                context.SetOnetimeEffect(id: 2015, enabled: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_09_00002015.xml");
                 context.SetSkip(state: new State챕터10에필로그Cinematic16스킵(context));
             }
 
@@ -1782,7 +1782,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.MoveUser(mapId: 02000025, portalId: 2);

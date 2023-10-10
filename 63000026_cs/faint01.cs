@@ -4,7 +4,7 @@ namespace Maple2.Trigger._63000026_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 10000, arg2: false);
+                context.SetSound(triggerId: 10000, enabled: false);
                 context.SetEffect(triggerIds: new []{5000, 5100, 5101, 5102, 5103, 5104, 5105, 5106, 5107, 5300, 5400, 6000, 6001, 6002, 6003}, visible: false);
                 context.SetAgent(triggerIds: new []{8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007}, visible: true);
                 context.SetAgent(triggerIds: new []{8100, 8101}, visible: false);
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._63000026_cs {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.CameraSelect(triggerId: 500, enable: true);
+                context.CameraSelect(triggerId: 500, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -141,8 +141,8 @@ namespace Maple2.Trigger._63000026_cs {
             internal StateTinChaiComeIn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 501, enable: true);
-                context.SetSound(triggerId: 10000, arg2: true);
+                context.CameraSelect(triggerId: 501, enabled: true);
+                context.SetSound(triggerId: 10000, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._63000026_cs {
             internal StateTinChaiComeIn04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 502, enable: true);
+                context.CameraSelect(triggerId: 502, enabled: true);
                 context.SetSceneSkip(state: new StatePCTeleport03(context), arg2: "exit");
             }
 
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._63000026_cs {
                 context.MoveNpc(spawnId: 913, patrolName: "MS2PatrolData_913");
                 context.MoveNpc(spawnId: 914, patrolName: "MS2PatrolData_914");
                 context.MoveNpc(spawnId: 915, patrolName: "MS2PatrolData_915");
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._63000026_cs {
             internal StateDarkShadowApp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -322,7 +322,7 @@ namespace Maple2.Trigger._63000026_cs {
             internal StateDarkShadowApp03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 602, enable: true);
+                context.CameraSelect(triggerId: 602, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -438,7 +438,7 @@ namespace Maple2.Trigger._63000026_cs {
             internal StatePCFaint01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 702, enable: true);
+                context.CameraSelect(triggerId: 702, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -517,7 +517,7 @@ namespace Maple2.Trigger._63000026_cs {
             internal StateTinChaiGoToFight01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 710, enable: true);
+                context.CameraSelect(triggerId: 710, enabled: true);
                 context.MoveNpc(spawnId: 103, patrolName: "MS2PatrolData_104");
             }
 
@@ -615,7 +615,7 @@ namespace Maple2.Trigger._63000026_cs {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 721, enable: false);
+                context.CameraSelect(triggerId: 721, enabled: false);
                 context.MoveUser(mapId: 63000027, portalId: 1, boxId: 9900);
             }
 

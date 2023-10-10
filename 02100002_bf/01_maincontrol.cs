@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateShowCaption03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 900, enable: true);
+                context.CameraSelect(triggerId: 900, enabled: true);
                 context.SetCinematicIntro(text: "$02100002_BF__01_MAINCONTROL__2$");
                 context.SetSkip(state: new StateShowCaption03Skip(context));
             }
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateShowCaption04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 901, enable: true);
+                context.CameraSelect(triggerId: 901, enabled: true);
                 context.SetCinematicIntro(text: "$02100002_BF__01_MAINCONTROL__3$");
                 context.SetSkip(state: new StateShowCaption04Skip(context));
             }
@@ -243,7 +243,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateShowCaption05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 902, enable: true);
+                context.CameraSelect(triggerId: 902, enabled: true);
                 context.SetCinematicIntro(text: "$02100002_BF__01_MAINCONTROL__4$");
                 context.SetSkip(state: new StateShowCaption05Skip(context));
             }
@@ -374,7 +374,7 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99, key: "MissionStart", value: 1);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
-                context.SetTimer(timerId: "10000", seconds: 600, clearAtZero: true, display: true, arg5: 0);
+                context.SetTimer(timerId: "10000", seconds: 600, autoRemove: true, display: true, vOffset: 0);
             }
 
             public override TriggerState? Execute() {
@@ -454,7 +454,7 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 909, enable: true);
+                context.CameraSelect(triggerId: 909, enabled: true);
                 context.PlaySystemSoundInBox(sound: "GuildRaid_RainbowSlimeFactory_Result_01");
                 context.MoveUser(mapId: 02100002, portalId: 2, boxId: 9901);
             }
@@ -474,7 +474,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateBadEndingSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 908, enable: true);
+                context.CameraSelect(triggerId: 908, enabled: true);
                 context.SetEffect(triggerIds: new []{5002}, visible: true);
                 context.CreateMonster(spawnIds: new []{2000}, arg2: false);
             }
@@ -518,7 +518,7 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 909, enable: true);
+                context.CameraSelect(triggerId: 909, enabled: true);
                 context.PlaySystemSoundInBox(sound: "GuildRaid_RainbowSlimeFactory_Result_01");
                 context.MoveUser(mapId: 02100002, portalId: 2, boxId: 9901);
             }
@@ -538,7 +538,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateHappyEndingSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 908, enable: true);
+                context.CameraSelect(triggerId: 908, enabled: true);
                 context.SetEffect(triggerIds: new []{5001}, visible: true);
                 context.CreateMonster(spawnIds: new []{1000}, arg2: false);
             }

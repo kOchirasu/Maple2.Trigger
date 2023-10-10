@@ -8,7 +8,7 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnEnter() {
                 context.CreateWidget(type: WidgetType.Guide);
                 context.SetPortal(portalId: 1, visible: true, enabled: false, minimapVisible: true);
-                context.SetSkill(triggerIds: new []{900, 901, 902, 903, 904, 905, 906, 907}, arg2: false);
+                context.SetSkill(triggerIds: new []{900, 901, 902, 903, 904, 905, 906, 907}, enabled: false);
                 context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(triggerIds: new []{3004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(triggerIds: new []{5011, 5012, 5013, 5014, 5015, 5000, 5001, 5012, 5013, 5020, 5021, 5022, 5023, 5024, 5025, 5026, 5027, 5028, 5040, 5041, 5042, 5043, 5044, 5045, 5046, 5047, 5048, 5050, 5051, 5052, 5060, 5061, 5062, 5063, 5064, 5065, 5066, 5080, 5090}, visible: false);
@@ -513,7 +513,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State다리Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
                 context.SetEffect(triggerIds: new []{5080}, visible: true);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_1002");
             }
@@ -533,7 +533,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State다리Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: false);
+                context.CameraSelect(triggerId: 601, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
@@ -594,7 +594,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State다리붕괴02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{902, 906}, arg2: true);
+                context.SetSkill(triggerIds: new []{902, 906}, enabled: true);
                 context.SetEffect(triggerIds: new []{5090}, visible: true);
             }
 
@@ -609,7 +609,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State다리붕괴03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{900, 904, 901, 905}, arg2: true);
+                context.SetSkill(triggerIds: new []{900, 904, 901, 905}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -623,7 +623,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State다리붕괴04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{903}, arg2: true);
+                context.SetSkill(triggerIds: new []{903}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -637,7 +637,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State다리붕괴05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{907}, arg2: true);
+                context.SetSkill(triggerIds: new []{907}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -649,7 +649,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void OnExit() {
-                context.SetSkill(triggerIds: new []{901, 902, 903}, arg2: false);
+                context.SetSkill(triggerIds: new []{901, 902, 903}, enabled: false);
                 context.SetMesh(triggerIds: new []{3001, 3004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
         }

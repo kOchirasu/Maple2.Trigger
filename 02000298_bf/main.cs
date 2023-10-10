@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.CameraSelect(triggerId: 300, enable: true);
+                context.CameraSelect(triggerId: 300, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(interactIds: new []{10000372}, state: 1);
                 context.ShowGuideSummary(entityId: 20002980, textId: 20002980, duration: 5000);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal StateDungeonGuideCamera이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnEnter() {
                 context.RemoveBuff(boxId: 199, skillId: 70000107);
                 context.DestroyMonster(spawnIds: new []{2099});
-                context.CameraSelect(triggerId: 302, enable: false);
+                context.CameraSelect(triggerId: 302, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetEffect(triggerIds: new []{601}, visible: true);
@@ -179,83 +179,83 @@ namespace Maple2.Trigger._02000298_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1279소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1238소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1358소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1489소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1567소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State1679소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2389소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2347소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2478소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2456소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2569소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State2678소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3458소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3589소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3679소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State3789소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State4567소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State4578소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State4689소환(context);
                 }
 
-                if (context.RandomCondition(rate: 5f)) {
+                if (context.RandomCondition(rate: 5)) {
                     return new State4789소환(context);
                 }
 

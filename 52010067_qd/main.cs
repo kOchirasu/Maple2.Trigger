@@ -61,7 +61,7 @@ namespace Maple2.Trigger._52010067_qd {
             internal StateCinematic02_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override TriggerState? Execute() {
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._52010067_qd {
             internal StateCinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 4, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override TriggerState? Execute() {
@@ -235,7 +235,7 @@ namespace Maple2.Trigger._52010067_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{3002, 3003}, returnView: false);
-                context.SetTimeScale(enable: true, startScale: 0.1f, endScale: 0.1f, duration: 3.5f, interpolator: 1);
+                context.SetTimeScale(enabled: true, startScale: 0.1f, endScale: 0.1f, duration: 3.5f, interpolator: 1);
             }
 
             public override TriggerState? Execute() {
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._52010067_qd {
             internal State피격씬04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
+                context.SetOnetimeEffect(id: 4, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
             }
 
             public override TriggerState? Execute() {

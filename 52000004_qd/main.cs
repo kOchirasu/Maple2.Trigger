@@ -74,7 +74,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "3", seconds: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetSkip(state: new StateStopCinematic(context));
             }
 

@@ -64,7 +64,7 @@ namespace Maple2.Trigger._02010049_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.SetSkip(state: new StateCameraWalk02(context));
             }
 
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02010049_bf {
             internal StateCameraWalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 600, enable: false);
+                context.CameraSelect(triggerId: 600, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetSkip();
@@ -269,7 +269,7 @@ namespace Maple2.Trigger._02010049_bf {
                 context.MoveNpc(spawnId: 400, patrolName: "MS2PatrolData_399");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -305,7 +305,7 @@ namespace Maple2.Trigger._02010049_bf {
             internal State퇴장Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: false);
+                context.CameraSelect(triggerId: 601, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

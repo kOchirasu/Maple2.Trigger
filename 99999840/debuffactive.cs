@@ -28,7 +28,7 @@ namespace Maple2.Trigger._99999840 {
             internal StateReduceMoveSpeed(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 811, value: false);
+                context.SetDungeonVariable(id: 811, value: false);
                 context.SetEventUI(arg1: 1, script: "이동속도 감소 디Buff에 걸립니다.", duration: 5000);
                 context.AddBuff(boxIds: new []{9001}, skillId: 70002581, level: 1, arg5: false);
             }
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._99999840 {
             internal StateReduceAttack(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 812, value: false);
+                context.SetDungeonVariable(id: 812, value: false);
                 context.SetEventUI(arg1: 1, script: "공격력 감소 디Buff에 걸립니다.", duration: 5000);
                 context.AddBuff(boxIds: new []{9001}, skillId: 70002591, level: 1, arg5: false);
             }
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._99999840 {
             internal StateReduceHealth(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 813, value: false);
+                context.SetDungeonVariable(id: 813, value: false);
                 context.SetEventUI(arg1: 1, script: "체력 감소 디Buff에 걸립니다.", duration: 5000);
                 context.AddBuff(boxIds: new []{9001}, skillId: 70002601, level: 1, arg5: false);
             }

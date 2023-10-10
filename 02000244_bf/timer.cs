@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000244_bf {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{798, 799}, visible: false);
-                context.SetTimer(timerId: "89", seconds: 3, clearAtZero: false);
+                context.SetTimer(timerId: "89", seconds: 3, autoRemove: false);
             }
 
             public override TriggerState? Execute() {

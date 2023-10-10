@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 300, enable: true);
+                context.CameraSelect(triggerId: 300, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new State1차어나운스03(context));
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.CameraSelect(triggerId: 300, enable: false);
+                context.CameraSelect(triggerId: 300, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetEventUI(arg1: 0, script: "1,3");
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State1차웨이브(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "120", seconds: 120, clearAtZero: false, display: true, arg5: 0);
+                context.SetTimer(timerId: "120", seconds: 120, autoRemove: false, display: true, vOffset: 0);
                 context.CreateMonster(spawnIds: new []{900}, arg2: false);
             }
 
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State2차웨이브(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "120", seconds: 120, clearAtZero: false, display: true);
+                context.SetTimer(timerId: "120", seconds: 120, autoRemove: false, display: true);
                 context.CreateMonster(spawnIds: new []{901}, arg2: false);
             }
 
@@ -391,7 +391,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State3차웨이브(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "120", seconds: 120, clearAtZero: false, display: true);
+                context.SetTimer(timerId: "120", seconds: 120, autoRemove: false, display: true);
                 context.CreateMonster(spawnIds: new []{902}, arg2: false);
             }
 
@@ -470,23 +470,23 @@ namespace Maple2.Trigger._02000066_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State3차승리Cinematic01(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State3차승리Cinematic02(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State3차승리Cinematic03(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State3차승리Cinematic04(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State3차승리Cinematic05(context);
                 }
 
@@ -658,31 +658,31 @@ namespace Maple2.Trigger._02000066_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new State실패Cinematic01(context);
                 }
 
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     return new State실패Cinematic02(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new State실패Cinematic03(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new State실패Cinematic04(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new State실패Cinematic05(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new State실패Cinematic06(context);
                 }
 
-                if (context.RandomCondition(rate: 14f)) {
+                if (context.RandomCondition(rate: 14)) {
                     return new State실패Cinematic07(context);
                 }
 

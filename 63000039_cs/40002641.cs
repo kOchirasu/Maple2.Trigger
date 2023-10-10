@@ -70,7 +70,7 @@ namespace Maple2.Trigger._63000039_cs {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.MoveNpc(spawnId: 1001, patrolName: "MS2PatrolData_1001");
                 context.MoveNpc(spawnId: 1002, patrolName: "MS2PatrolData_1002");
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003");
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._63000039_cs {
             internal StatePC말풍선(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.SetConversation(type: 1, spawnId: 0, script: "$63000039_CS__40002641__2$", arg4: 4, arg5: 0);
                 context.SetAchievement(triggerId: 199, type: "trigger", code: "SaveBackstreetPeople");
             }
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._63000039_cs {
             internal State유저이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: false);
+                context.CameraSelect(triggerId: 302, enabled: false);
                 context.MoveUser(mapId: 02000275, portalId: 30);
             }
 

@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02000254_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetTimer(timerId: "1", seconds: 1);
             }
 
@@ -375,7 +375,7 @@ namespace Maple2.Trigger._02000254_bf {
             internal State벨라Script5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetSceneSkip(state: new State벨라이동2(context), arg2: "nextState");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
@@ -462,7 +462,7 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "1", seconds: 3);
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
                 context.CreateMonster(spawnIds: new []{106});
                 context.CreateMonster(spawnIds: new []{103});
             }
@@ -501,8 +501,8 @@ namespace Maple2.Trigger._02000254_bf {
             internal State끝2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 301, enable: false);
-                context.CameraSelect(triggerId: 303, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
+                context.CameraSelect(triggerId: 303, enabled: false);
                 context.SetMesh(triggerIds: new []{3002}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);

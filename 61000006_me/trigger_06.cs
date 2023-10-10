@@ -18,7 +18,7 @@ namespace Maple2.Trigger._61000006_me {
             public override void OnEnter() {
                 context.SetInteractObject(interactIds: new []{10000226, 10000227, 10000228, 10000229, 10000230, 10000231}, state: 1);
                 context.SetEffect(triggerIds: new []{711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722}, visible: false);
-                context.SetSkill(triggerIds: new []{811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928}, arg2: false);
+                context.SetSkill(triggerIds: new []{811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._61000006_me {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetState(arg1: 1, arg2: new []{"미로패턴01", "미로패턴02", "미로패턴03"}, arg3: false);
-                context.SetState(arg1: 2, arg2: new []{"점프패턴01", "점프패턴02"}, arg3: false);
+                context.SetState(userTagId: 1, states: new []{"미로패턴01", "미로패턴02", "미로패턴03"}, value: false);
+                context.SetState(userTagId: 2, states: new []{"점프패턴01", "점프패턴02"}, value: false);
                 context.SetTimer(timerId: "89", seconds: 5);
             }
 
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._61000006_me {
             internal StateLever(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetState(arg1: 1, arg2: new []{"미로패턴01", "미로패턴02", "미로패턴03"}, arg3: false);
-                context.SetState(arg1: 2, arg2: new []{"점프패턴01", "점프패턴02"}, arg3: false);
+                context.SetState(userTagId: 1, states: new []{"미로패턴01", "미로패턴02", "미로패턴03"}, value: false);
+                context.SetState(userTagId: 2, states: new []{"점프패턴01", "점프패턴02"}, value: false);
                 context.SetMesh(triggerIds: new []{527, 528, 529}, visible: true);
             }
 
@@ -139,13 +139,13 @@ namespace Maple2.Trigger._61000006_me {
                 context.SetEffect(triggerIds: new []{719}, visible: true);
                 context.SetEffect(triggerIds: new []{720, 721}, visible: false);
                 context.SetEffect(triggerIds: new []{722}, visible: true);
-                context.SetSkill(triggerIds: new []{811, 812, 813}, arg2: true);
-                context.SetSkill(triggerIds: new []{814, 815, 816, 817, 818, 819}, arg2: false);
-                context.SetSkill(triggerIds: new []{820, 821, 822, 823, 824, 825}, arg2: true);
-                context.SetSkill(triggerIds: new []{826, 827, 828, 911, 912, 913}, arg2: false);
-                context.SetSkill(triggerIds: new []{914, 915, 916, 917, 918, 919}, arg2: true);
-                context.SetSkill(triggerIds: new []{920, 921, 922, 923, 924, 925}, arg2: false);
-                context.SetSkill(triggerIds: new []{926, 927, 928}, arg2: true);
+                context.SetSkill(triggerIds: new []{811, 812, 813}, enabled: true);
+                context.SetSkill(triggerIds: new []{814, 815, 816, 817, 818, 819}, enabled: false);
+                context.SetSkill(triggerIds: new []{820, 821, 822, 823, 824, 825}, enabled: true);
+                context.SetSkill(triggerIds: new []{826, 827, 828, 911, 912, 913}, enabled: false);
+                context.SetSkill(triggerIds: new []{914, 915, 916, 917, 918, 919}, enabled: true);
+                context.SetSkill(triggerIds: new []{920, 921, 922, 923, 924, 925}, enabled: false);
+                context.SetSkill(triggerIds: new []{926, 927, 928}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -167,16 +167,16 @@ namespace Maple2.Trigger._61000006_me {
                 context.SetEffect(triggerIds: new []{719}, visible: true);
                 context.SetEffect(triggerIds: new []{720, 721}, visible: false);
                 context.SetEffect(triggerIds: new []{722}, visible: true);
-                context.SetSkill(triggerIds: new []{811, 812, 813}, arg2: false);
-                context.SetSkill(triggerIds: new []{814, 815, 816}, arg2: true);
-                context.SetSkill(triggerIds: new []{817, 818, 819}, arg2: false);
-                context.SetSkill(triggerIds: new []{820, 821, 822, 823, 824, 825}, arg2: true);
-                context.SetSkill(triggerIds: new []{826, 827, 828}, arg2: false);
-                context.SetSkill(triggerIds: new []{911, 912, 913}, arg2: true);
-                context.SetSkill(triggerIds: new []{914, 915, 916}, arg2: false);
-                context.SetSkill(triggerIds: new []{917, 918, 919}, arg2: true);
-                context.SetSkill(triggerIds: new []{920, 921, 922, 923, 924, 925}, arg2: false);
-                context.SetSkill(triggerIds: new []{926, 927, 928}, arg2: true);
+                context.SetSkill(triggerIds: new []{811, 812, 813}, enabled: false);
+                context.SetSkill(triggerIds: new []{814, 815, 816}, enabled: true);
+                context.SetSkill(triggerIds: new []{817, 818, 819}, enabled: false);
+                context.SetSkill(triggerIds: new []{820, 821, 822, 823, 824, 825}, enabled: true);
+                context.SetSkill(triggerIds: new []{826, 827, 828}, enabled: false);
+                context.SetSkill(triggerIds: new []{911, 912, 913}, enabled: true);
+                context.SetSkill(triggerIds: new []{914, 915, 916}, enabled: false);
+                context.SetSkill(triggerIds: new []{917, 918, 919}, enabled: true);
+                context.SetSkill(triggerIds: new []{920, 921, 922, 923, 924, 925}, enabled: false);
+                context.SetSkill(triggerIds: new []{926, 927, 928}, enabled: true);
             }
 
             public override TriggerState? Execute() {

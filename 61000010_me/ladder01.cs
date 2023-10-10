@@ -25,19 +25,19 @@ namespace Maple2.Trigger._61000010_me {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     context.SetLadder(triggerId: 701, visible: true, animationEffect: true);
                     context.SetLadder(triggerId: 702, visible: true, animationEffect: true);
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     context.SetLadder(triggerId: 711, visible: true, animationEffect: true);
                     context.SetLadder(triggerId: 712, visible: true, animationEffect: true);
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     context.SetLadder(triggerId: 721, visible: true, animationEffect: true);
                     context.SetLadder(triggerId: 722, visible: true, animationEffect: true);
                     return new StateEnd(context);

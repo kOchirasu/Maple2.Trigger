@@ -38,7 +38,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override TriggerState? Execute() {
                 if (context.MonsterDead(spawnIds: new []{1114})) {
-                    context.SetVisibleBreakableObject(triggerIds: new []{1019}, arg2: true);
+                    context.SetVisibleBreakableObject(triggerIds: new []{1019}, visible: true);
                     context.SetInteractObject(interactIds: new []{12000319}, state: 1);
                     context.CreateMonster(spawnIds: new []{1117}, arg2: false);
                     return new StateCableOn_19(context);
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override TriggerState? Execute() {
                 if (context.MonsterDead(spawnIds: new []{1115})) {
-                    context.SetVisibleBreakableObject(triggerIds: new []{1020}, arg2: true);
+                    context.SetVisibleBreakableObject(triggerIds: new []{1020}, visible: true);
                     context.SetInteractObject(interactIds: new []{12000320}, state: 1);
                     context.CreateMonster(spawnIds: new []{1117}, arg2: false);
                     return new StateCableOn_20(context);
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override TriggerState? Execute() {
                 if (context.MonsterDead(spawnIds: new []{1116})) {
-                    context.SetVisibleBreakableObject(triggerIds: new []{1021}, arg2: true);
+                    context.SetVisibleBreakableObject(triggerIds: new []{1021}, visible: true);
                     context.SetInteractObject(interactIds: new []{12000321}, state: 1);
                     context.CreateMonster(spawnIds: new []{1117}, arg2: false);
                     return new StateCableOn_21(context);

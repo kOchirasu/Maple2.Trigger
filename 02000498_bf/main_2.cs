@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{610, 620, 603, 6110, 6111, 6112, 6113, 6201}, visible: false);
-                context.SetSkill(triggerIds: new []{703}, arg2: false);
+                context.SetSkill(triggerIds: new []{703}, enabled: false);
                 context.SetMesh(triggerIds: new []{3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232, 3233, 3234, 3235}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -126,7 +126,7 @@ namespace Maple2.Trigger._02000498_bf {
             internal State8라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "30", seconds: 30, clearAtZero: true, display: true, arg5: 80);
+                context.SetTimer(timerId: "30", seconds: 30, autoRemove: true, display: true, vOffset: 80);
                 context.CreateMonster(spawnIds: new []{108099}, arg2: false);
             }
 
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._02000498_bf {
             public override TriggerState? Execute() {
                 if (context.TimeExpired(timerId: "3")) {
                     context.SetEffect(triggerIds: new []{620}, visible: true);
-                    context.SetSkill(triggerIds: new []{703}, arg2: true);
+                    context.SetSkill(triggerIds: new []{703}, enabled: true);
                     context.SetMesh(triggerIds: new []{3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232, 3233, 3234, 3235}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.SetEventUI(arg1: 0, script: "0,0");
                     return new StateEnd(context);

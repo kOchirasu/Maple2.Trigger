@@ -4,7 +4,7 @@ namespace Maple2.Trigger._99999905 {
             internal State시간표확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "10", seconds: 10, clearAtZero: false);
+                context.SetTimer(timerId: "10", seconds: 10, autoRemove: false);
                 context.SetEventUI(arg1: 1, script: "$99999905__WAIT__0$", duration: 5000, boxId: 0);
             }
 
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._99999905 {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "88", seconds: 1200, clearAtZero: false);
+                context.SetTimer(timerId: "88", seconds: 1200, autoRemove: false);
             }
 
             public override TriggerState? Execute() {

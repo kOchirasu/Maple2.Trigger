@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52000049_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{8099}, arg2: false);
+                context.SetSkill(triggerIds: new []{8099}, enabled: false);
                 context.CreateMonster(spawnIds: new []{301, 302, 303, 304, 305, 306}, arg2: false);
                 context.SetMesh(triggerIds: new []{2116, 2201, 2202, 2203, 2204, 2205, 2206}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
@@ -351,7 +351,7 @@ namespace Maple2.Trigger._52000049_qd {
 
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 700)) {
-                    context.SetSkill(triggerIds: new []{8099}, arg2: true);
+                    context.SetSkill(triggerIds: new []{8099}, enabled: true);
                     context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_2021");
                     context.MoveNpc(spawnId: 202, patrolName: "MS2PatrolData_2022");
                     context.MoveNpc(spawnId: 203, patrolName: "MS2PatrolData_2023");

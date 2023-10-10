@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52020005_qd {
 
             public override void OnEnter() {
                 context.MoveUser(mapId: 52020004, portalId: 1);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -281,7 +281,7 @@ namespace Maple2.Trigger._52020005_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -395,7 +395,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal State일어나05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 11003667, illustId: "Krantz_normal", script: @"이 자의 운명이라면 받아들여야 할 터…. \n그것이 세상의 아름다운 섭리입니다.", duration: 3000);
                 context.SetNpcEmotionLoop(spawnId: 102, sequenceName: "Talk_A", duration: 3000f);
             }
@@ -434,7 +434,7 @@ namespace Maple2.Trigger._52020005_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{8000}, returnView: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 11003572, illustId: "Eone_normal", script: "…눈을 떴군.", duration: 2000);
                 context.SetPcEmotionLoop(sequenceName: "Emotion_Surprise_A", duration: 3000f);
                 context.SetNpcEmotionLoop(spawnId: 101, sequenceName: "Talk_A", duration: 3000f);
@@ -476,7 +476,7 @@ namespace Maple2.Trigger._52020005_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
@@ -499,7 +499,7 @@ namespace Maple2.Trigger._52020005_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.MoveUser(mapId: 52020005, portalId: 10);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(state: new StatePCExit_스킵완료(context), arg2: "nextState");
             }
 
@@ -520,7 +520,7 @@ namespace Maple2.Trigger._52020005_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{8000}, returnView: false);
                 context.MoveUserPath(patrolName: "MS2PatrolData_PC_Walkout");
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -659,7 +659,7 @@ namespace Maple2.Trigger._52020005_qd {
                 context.CameraReset(interpolationTime: 2.0f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.SetAchievement(triggerId: 9000, type: "trigger", code: "PrincessAndHerKnight");
             }
 
@@ -680,7 +680,7 @@ namespace Maple2.Trigger._52020005_qd {
             public override void OnEnter() {
                 context.MoveUser(mapId: 02020013, portalId: 10);
                 context.VisibleMyPc(visible: true);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
             }
 
             public override TriggerState? Execute() {

@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000409_bf {
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
                     context.SetEventUI(arg1: 1, script: "$DUNGEON__GIVEUP__TIME__0$", duration: 3000);
-                    context.DungeonEnableGiveUp(enable: true);
+                    context.DungeonEnableGiveUp(enabled: true);
                     return new StateEnd(context);
                 }
 

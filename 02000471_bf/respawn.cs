@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn_timer1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "respawntimer1", seconds: 120, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "respawntimer1", seconds: 120, autoRemove: true, display: false, vOffset: 0);
             }
 
             public override TriggerState? Execute() {
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn_timer2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "respawntimer2", seconds: 120, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "respawntimer2", seconds: 120, autoRemove: true, display: false, vOffset: 0);
             }
 
             public override TriggerState? Execute() {
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn_timer3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "respawntimer3", seconds: 120, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "respawntimer3", seconds: 120, autoRemove: true, display: false, vOffset: 0);
             }
 
             public override TriggerState? Execute() {
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn_timer4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "respawntimer4", seconds: 120, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "respawntimer4", seconds: 120, autoRemove: true, display: false, vOffset: 0);
             }
 
             public override TriggerState? Execute() {
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateRespawn_timer5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "respawntimer5", seconds: 120, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "respawntimer5", seconds: 120, autoRemove: true, display: false, vOffset: 0);
             }
 
             public override TriggerState? Execute() {

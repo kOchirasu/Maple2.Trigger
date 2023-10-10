@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330, 3331, 3332, 3333, 3334, 3335, 3336, 3337, 3338, 3339, 3340, 3341, 3342, 3343, 3344}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(triggerIds: new []{704}, arg2: false);
+                context.SetSkill(triggerIds: new []{704}, enabled: false);
                 context.SetEffect(triggerIds: new []{630, 620, 6301}, visible: false);
             }
 
@@ -234,7 +234,7 @@ namespace Maple2.Trigger._02000350_bf {
             public override TriggerState? Execute() {
                 if (context.TimeExpired(timerId: "3")) {
                     context.SetEffect(triggerIds: new []{630}, visible: true);
-                    context.SetSkill(triggerIds: new []{704}, arg2: true);
+                    context.SetSkill(triggerIds: new []{704}, enabled: true);
                     context.SetMesh(triggerIds: new []{3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330, 3331, 3332, 3333, 3334, 3335, 3336, 3337, 3338, 3339, 3340, 3341, 3342, 3343, 3344}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateEnd(context);
                 }

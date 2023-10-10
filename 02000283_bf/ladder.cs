@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000283_bf {
                 context.SetLadder(triggerId: 512, visible: true, animationEffect: true);
                 context.SetLadder(triggerId: 513, visible: true, animationEffect: true);
                 context.SetLadder(triggerId: 514, visible: true, animationEffect: true);
-                context.SetTimer(timerId: "10", seconds: 10, clearAtZero: false, display: false);
+                context.SetTimer(timerId: "10", seconds: 10, autoRemove: false, display: false);
             }
 
             public override TriggerState? Execute() {

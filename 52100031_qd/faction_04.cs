@@ -29,7 +29,7 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetCinematicUI(type: 3);
                 context.DestroyMonster(spawnIds: new []{2902});
                 context.AddBuff(boxIds: new []{199}, skillId: 70000107, level: 1, arg4: false, arg5: false);
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
                 context.CreateMonster(spawnIds: new []{1300}, arg2: true);
                 context.CreateMonster(spawnIds: new []{1301, 1302, 1303, 1304, 1305}, arg2: false);
                 context.SetConversation(type: 1, spawnId: 1301, script: "$52100031_QD__FACTION_04__0$", arg4: 5, arg5: 0);

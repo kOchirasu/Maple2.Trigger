@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02000224_bf {
                 context.SetSceneSkip(state: new State아르마노말썽_스킵완료(context), arg2: "exit");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._02000224_bf {
 
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{8001}, returnView: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetConversation(type: 2, spawnId: 11003243, script: "$02000224_BF__MAIN__18$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(spawnId: 103, sequenceName: "Bore_C", duration: 3000f);
             }

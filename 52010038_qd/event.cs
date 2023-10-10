@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.SetAgent(triggerIds: new []{8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013}, visible: true);
-                context.SetSkill(triggerIds: new []{710, 711}, arg2: false);
+                context.SetSkill(triggerIds: new []{710, 711}, enabled: false);
                 context.SetEffect(triggerIds: new []{6110, 6111, 6298}, visible: false);
                 context.SetActor(triggerId: 220, visible: false);
                 context.SetActor(triggerId: 221, visible: false);
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{710}, arg2: true);
+                context.SetSkill(triggerIds: new []{710}, enabled: true);
                 context.SetEffect(triggerIds: new []{6110}, visible: true);
                 context.CreateMonster(spawnIds: new []{2012, 2013, 2014, 2015}, arg2: true);
             }
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetActor(triggerId: 220, visible: true, initialSequence: "Attack_02_A");
                 context.SetActor(triggerId: 221, visible: true, initialSequence: "Attack_02_A");
                 context.SetActor(triggerId: 222, visible: true, initialSequence: "Attack_02_A");
-                context.SetSkill(triggerIds: new []{711}, arg2: true);
+                context.SetSkill(triggerIds: new []{711}, enabled: true);
                 context.SetEffect(triggerIds: new []{6298}, visible: false);
                 context.SetEffect(triggerIds: new []{6111}, visible: true);
             }

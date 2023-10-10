@@ -12,9 +12,9 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetUserValue(triggerId: 99990005, key: "elevator", value: 0);
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetInteractObject(interactIds: new []{10002185}, state: 0);
-                context.EnableSpawnPointPc(spawnId: 100, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 101, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 102, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 100, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 101, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 102, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -161,9 +161,9 @@ namespace Maple2.Trigger._02020300_bf {
             public override TriggerState? Execute() {
                 if (context.UserDetected(boxIds: new []{711})) {
                     context.SetUserValue(triggerId: 99990005, key: "elevator", value: 1);
-                    context.EnableSpawnPointPc(spawnId: 100, isEnable: false);
-                    context.EnableSpawnPointPc(spawnId: 101, isEnable: true);
-                    context.EnableSpawnPointPc(spawnId: 102, isEnable: false);
+                    context.EnableSpawnPointPc(spawnId: 100, enabled: false);
+                    context.EnableSpawnPointPc(spawnId: 101, enabled: true);
+                    context.EnableSpawnPointPc(spawnId: 102, enabled: false);
                     return new State레이저_Pattern_시작(context);
                 }
 
@@ -290,9 +290,9 @@ namespace Maple2.Trigger._02020300_bf {
             internal State지뢰방_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 100, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 101, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 102, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 100, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 101, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 102, enabled: true);
                 context.SetActor(triggerId: 9002, visible: true, initialSequence: "sf_fi_funct_darkdoor_A01_end");
                 context.SetActor(triggerId: 9003, visible: true, initialSequence: "sf_fi_funct_darkdoor_A01_end");
                 context.SetActor(triggerId: 9004, visible: true, initialSequence: "sf_fi_funct_darkdoor_A01_end");

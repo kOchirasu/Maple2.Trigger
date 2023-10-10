@@ -50,8 +50,8 @@ namespace Maple2.Trigger._99999875 {
                 }
 
                 if (context.ObjectInteracted(interactIds: new []{12000079}, arg2: 0)) {
-                    context.SetTimer(timerId: "10", seconds: 90, clearAtZero: true, display: false, arg5: 0);
-                    context.SetTimer(timerId: "1", seconds: 15, clearAtZero: true, display: false, arg5: 0);
+                    context.SetTimer(timerId: "10", seconds: 90, autoRemove: true, display: false, vOffset: 0);
+                    context.SetTimer(timerId: "1", seconds: 15, autoRemove: true, display: false, vOffset: 0);
                     return new StateTimeTrial_StartDelay(context);
                 }
 
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._99999875 {
             public override TriggerState? Execute() {
                 if (context.CheckAnyUserAdditionalEffect(boxId: 16100, additionalEffectId: 71001271, level: 1)) {
                     context.AddBuff(boxIds: new []{160001}, skillId: 71001062, level: 1, arg4: false, arg5: false);
-                    context.SetTimer(timerId: "100", seconds: 60, clearAtZero: true, display: false, arg5: 0);
+                    context.SetTimer(timerId: "100", seconds: 60, autoRemove: true, display: false, vOffset: 0);
                     return new StateTimeTrial_Success(context);
                 }
 
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._99999875 {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{16201}, visible: true);
-                context.SetTimer(timerId: "1", seconds: 15, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "1", seconds: 15, autoRemove: true, display: false, vOffset: 0);
                 context.SetInteractObject(interactIds: new []{12000098}, state: 0);
             }
 

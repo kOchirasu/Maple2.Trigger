@@ -44,7 +44,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateGameGuideR1_30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 29, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 29, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateGameGuideR2_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 19, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 19, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateGameGuideR3_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 14, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 14, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateGameGuideR4_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 9, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 9, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateGameGuideR5_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 9, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 9, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateGambleGuideR4_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 14, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 14, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {
@@ -256,7 +256,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateJackpotGuideR4_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 19, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 19, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {

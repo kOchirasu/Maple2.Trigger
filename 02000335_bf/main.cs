@@ -10,9 +10,9 @@ namespace Maple2.Trigger._02000335_bf {
                 context.CreateMonster(spawnIds: new []{101, 102, 103, 104, 106, 107, 111, 120, 121, 124, 125, 131, 132, 133, 134, 135, 140, 143, 144, 145, 147, 148}, arg2: false);
                 context.CreateMonster(spawnIds: new []{201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217}, arg2: false);
                 context.SetEffect(triggerIds: new []{6901, 6902, 6903, 6904, 6905, 6906}, visible: false);
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 991, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 992, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 991, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 992, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -183,8 +183,8 @@ namespace Maple2.Trigger._02000335_bf {
             internal State관문_02_개방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 991, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 991, enabled: true);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362);
                 context.SetMesh(triggerIds: new []{6111, 6112, 6113, 6114, 6115, 6116, 6117, 6118}, visible: false, arg4: 0, arg5: 10f);

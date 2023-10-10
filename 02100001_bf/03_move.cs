@@ -6,7 +6,7 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() {
                 context.SetInteractObject(interactIds: new []{10001242}, state: 1);
                 context.SetBreakable(triggerIds: new []{4501}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{4501}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{4501}, visible: true);
             }
 
             public override TriggerState? Execute() {

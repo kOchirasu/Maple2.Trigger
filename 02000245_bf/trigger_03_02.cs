@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000245_bf {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{801}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(triggerIds: new []{7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020}, arg2: true);
+                context.SetSkill(triggerIds: new []{7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020}, enabled: true);
                 context.SetEffect(triggerIds: new []{901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920}, visible: true);
             }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000245_bf {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{801}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(triggerIds: new []{7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020}, arg2: false);
+                context.SetSkill(triggerIds: new []{7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020}, enabled: false);
                 context.SetEffect(triggerIds: new []{901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920}, visible: false);
             }
 

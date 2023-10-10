@@ -26,7 +26,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal StateStartCinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 4, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State라딘과대화시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 4, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(state: new StateSkip_1(context), arg2: "exit");
                 context.AddCinematicTalk(npcId: 11003753, script: "자네도 알겠지만 수호군이 크리티아스에 쉽게 오지는 못할걸세.", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003753, script: @"Reinforcements을 소집하는데도 시간이 걸리겠지만\n우리가 포털 수리 및 방어 시스템을 무력화시키지 않는다면\n결국 또 다른 많은 희생을 치루게 되겠지.", duration: 4500);
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal StateCamera이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 5, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 5, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CreateMonster(spawnIds: new []{111}, arg2: false, arg3: 0);
                 context.CreateMonster(spawnIds: new []{115}, arg2: false, arg3: 0);
                 context.CreateMonster(spawnIds: new []{112}, arg2: false, arg3: 0);
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._52020035_qd {
                 context.MoveNpc(spawnId: 113, patrolName: "MS2PatrolData_3003");
                 context.MoveNpc(spawnId: 114, patrolName: "MS2PatrolData_3004");
                 context.MoveNpc(spawnId: 115, patrolName: "MS2PatrolData_3005");
-                context.SetOnetimeEffect(id: 9, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 9, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 0, script: @"<font size='40'>흑성회?!</font>", duration: 6000);
             }
 
@@ -414,7 +414,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와의동맹에대하여3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 4028, enable: true);
+                context.CameraSelect(triggerId: 4028, enabled: true);
                 context.AddCinematicTalk(npcId: 11003753, script: @"$MyPCName$, 자네의 마음은 이해하네.\n자네 말대로 흑성회는 신뢰할 수없는, 적이나 다름없는 이들이지.", duration: 4000);
                 context.AddCinematicTalk(npcId: 11003753, script: @"그러나 지금은 냉정하게 판단할 때일세.\n지금 우리는 자원도 부족하고 아무런 지원도 받을 수 없는 상황이네.", duration: 4000);
                 context.AddCinematicTalk(npcId: 11003753, script: @"누군가의 힘을 빌려 수호군이 안전하게 크리티아스에 도착하고\n어둠의 세력으로부터 이곳을 지켜낼 수만 있다면…", duration: 4000);
@@ -436,7 +436,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와의동맹에대하여4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 4029, enable: true);
+                context.CameraSelect(triggerId: 4029, enabled: true);
                 context.AddCinematicTalk(npcId: 0, script: "……네, 알겠습니다.", duration: 2000);
                 context.AddCinematicTalk(npcId: 0, script: @"하지만 언제 우리를 배신할지 모르는 자들이에요.\n절대 경계를 늦춰서는 안될 겁니다.", duration: 4000);
             }
@@ -456,7 +456,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와의동맹에대하여5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 4028, enable: true);
+                context.CameraSelect(triggerId: 4028, enabled: true);
                 context.AddCinematicTalk(npcId: 11003753, script: @"이해해줘서 고맙군.\n그럼 웨이 홍, 약속한 정보는 가져왔나?", duration: 4000);
             }
 
@@ -674,7 +674,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State정보전달하기4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 7, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 7, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAchievement(triggerId: 702, type: "trigger", code: "MeetRadin");
                 context.CameraReset(interpolationTime: 0f);
                 context.SetCinematicUI(type: 0);
@@ -728,7 +728,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 7, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 7, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.DestroyMonster(spawnIds: new []{110});

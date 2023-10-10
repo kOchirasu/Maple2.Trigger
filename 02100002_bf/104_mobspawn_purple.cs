@@ -215,15 +215,15 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 100f, description: "Normal")) {
+                if (context.RandomCondition(rate: 100, description: "Normal")) {
                     return new StateSpawn_Normal(context);
                 }
 
-                if (context.RandomCondition(rate: 5f, description: "Eater")) {
+                if (context.RandomCondition(rate: 5, description: "Eater")) {
                     return new StateSpawn_Eater(context);
                 }
 
-                if (context.RandomCondition(rate: 10f, description: "Runner")) {
+                if (context.RandomCondition(rate: 10, description: "Runner")) {
                     return new StateSpawn_Runner(context);
                 }
 

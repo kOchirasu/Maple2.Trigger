@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02100004_bf {
             internal StateCheckUser10_GuildRaid(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "99", seconds: 30, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "99", seconds: 30, autoRemove: true, display: false, vOffset: 0);
             }
 
             public override TriggerState? Execute() {
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._02100004_bf {
                 context.SetEffect(triggerIds: new []{601}, visible: false);
                 context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "1,10");
-                context.SetTimer(timerId: "1", seconds: 20, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "1", seconds: 20, autoRemove: true, display: true);
             }
 
             public override TriggerState? Execute() {
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{601}, visible: false);
-                context.SetTimer(timerId: "2", seconds: 20, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "2", seconds: 20, autoRemove: true, display: true);
                 context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "2,10");
             }
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{601}, visible: false);
-                context.SetTimer(timerId: "3", seconds: 20, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "3", seconds: 20, autoRemove: true, display: true);
                 context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "3,10");
             }
@@ -313,7 +313,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{601}, visible: false);
-                context.SetTimer(timerId: "4", seconds: 20, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "4", seconds: 20, autoRemove: true, display: true);
                 context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "4,10");
             }
@@ -360,7 +360,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{601}, visible: false);
-                context.SetTimer(timerId: "5", seconds: 20, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "5", seconds: 20, autoRemove: true, display: true);
                 context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "5,10");
             }
@@ -407,7 +407,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{601}, visible: false);
-                context.SetTimer(timerId: "6", seconds: 20, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "6", seconds: 20, autoRemove: true, display: true);
                 context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "6,10");
             }
@@ -454,7 +454,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{601}, visible: false);
-                context.SetTimer(timerId: "7", seconds: 20, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "7", seconds: 20, autoRemove: true, display: true);
                 context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "7,10");
             }
@@ -501,7 +501,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{601}, visible: false);
-                context.SetTimer(timerId: "8", seconds: 20, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "8", seconds: 20, autoRemove: true, display: true);
                 context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "8,10");
             }
@@ -548,7 +548,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{601}, visible: false);
-                context.SetTimer(timerId: "9", seconds: 20, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "9", seconds: 20, autoRemove: true, display: true);
                 context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "9,10");
             }
@@ -595,7 +595,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{601}, visible: false);
-                context.SetTimer(timerId: "10", seconds: 150, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "10", seconds: 150, autoRemove: true, display: true);
                 context.MoveRandomUser(mapId: 02100004, portalId: 99, triggerId: 101, count: 1);
                 context.SetEventUI(arg1: 0, script: "10,10");
                 context.SetUserValue(triggerId: 999995, key: "LastRoundStart", value: 1);

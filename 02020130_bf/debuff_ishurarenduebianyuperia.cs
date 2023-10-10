@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02020130_bf {
             internal State1셋트전투판스킬TriggerSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{1301, 1302, 1303}, arg2: true);
+                context.SetSkill(triggerIds: new []{1301, 1302, 1303}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "IshuraFirstSetEnd", value: 0);
-                context.SetSkill(triggerIds: new []{1301}, arg2: false);
+                context.SetSkill(triggerIds: new []{1301}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "RenduebianFirstSetEnd", value: 0);
-                context.SetSkill(triggerIds: new []{1302}, arg2: false);
+                context.SetSkill(triggerIds: new []{1302}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "YuperiaFirstSetEnd", value: 0);
-                context.SetSkill(triggerIds: new []{1303}, arg2: false);
+                context.SetSkill(triggerIds: new []{1303}, enabled: false);
             }
 
             public override TriggerState? Execute() {

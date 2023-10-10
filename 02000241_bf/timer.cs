@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000241_bf {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "88", seconds: 5, clearAtZero: false);
+                context.SetTimer(timerId: "88", seconds: 5, autoRemove: false);
                 context.SetEffect(triggerIds: new []{2001}, visible: true);
                 context.SetEventUI(arg1: 1, script: "$02000241_BF__TIMER__0$", duration: 5000, boxId: 0);
             }
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02000241_bf {
             internal State어나운스1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "88", seconds: 5, clearAtZero: false);
+                context.SetTimer(timerId: "88", seconds: 5, autoRemove: false);
                 context.SetEffect(triggerIds: new []{2002}, visible: true);
                 context.SetEventUI(arg1: 1, script: "$02000241_BF__TIMER__1$", duration: 5000, boxId: 0);
             }

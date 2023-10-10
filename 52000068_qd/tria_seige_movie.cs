@@ -23,11 +23,11 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateNPC이동(context), arg2: "nextState");
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetSkill(triggerIds: new []{701}, arg2: true);
+                context.SetSkill(triggerIds: new []{701}, enabled: true);
                 context.SetActor(triggerId: 11010, visible: true, initialSequence: "Dead_A");
                 context.SetActor(triggerId: 11010, visible: true, initialSequence: "Dead_A");
                 context.SetActor(triggerId: 16000, visible: true, initialSequence: "Stun_A");
@@ -44,9 +44,9 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetActor(triggerId: 16011, visible: true, initialSequence: "Idle_A");
                 context.SetActor(triggerId: 16012, visible: true, initialSequence: "Stun_A");
                 context.CreateMonster(spawnIds: new []{10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034}, arg2: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{5000, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{5000, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012}, visible: false);
                 context.CreateMonster(spawnIds: new []{11000, 11001, 11002, 11003, 11004, 11005, 11006, 11007, 11009}, arg2: false);
-                context.SetSound(triggerId: 90000, arg2: true);
+                context.SetSound(triggerId: 90000, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._52000068_qd {
             internal StateLoadingDelayB1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
             }
 
             public override TriggerState? Execute() {
@@ -265,8 +265,8 @@ namespace Maple2.Trigger._52000068_qd {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.5f);

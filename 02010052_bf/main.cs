@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02010052_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 80001, enable: true);
+                context.CameraSelect(triggerId: 80001, enabled: true);
                 context.SetConversation(type: 2, spawnId: 21800073, script: "$02010052_BF__MAIN__1$", arg4: 3);
                 context.MoveNpc(spawnId: 991, patrolName: "MS2PatrolData_1001");
                 context.SetSkip(state: new StateEvent_01_02(context));
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 7);
-                context.CameraSelect(triggerId: 80001, enable: false);
+                context.CameraSelect(triggerId: 80001, enabled: false);
             }
         }
 
@@ -222,7 +222,7 @@ namespace Maple2.Trigger._02010052_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 80002, enable: true);
+                context.CameraSelect(triggerId: 80002, enabled: true);
                 context.SetConversation(type: 2, spawnId: 21800073, script: "$02010052_BF__MAIN__5$", arg4: 3);
                 context.MoveNpc(spawnId: 993, patrolName: "MS2PatrolData_1004");
                 context.SetSkip(state: new StateEvent_03_02(context));
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 7);
-                context.CameraSelect(triggerId: 80002, enable: false);
+                context.CameraSelect(triggerId: 80002, enabled: false);
             }
         }
 

@@ -4,7 +4,7 @@ namespace Maple2.Trigger._99999841 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 1, value: false);
+                context.SetDungeonVariable(id: 1, value: false);
                 context.SetUserValue(triggerId: 99990002, key: "Team2Battle", value: 0);
                 context.SetUserValue(triggerId: 99990003, key: "Start", value: 0);
                 context.SetUserValue(triggerId: 99990004, key: "Start", value: 0);
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._99999841 {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varId: 1, value: true);
+                context.SetDungeonVariable(id: 1, value: true);
                 context.SetEventUI(arg1: 1, script: @"경기 시작!\n당신은 B팀입니다.", duration: 3000);
                 context.SetUserValue(triggerId: 99990002, key: "Team2Battle", value: 1);
                 context.SetUserValue(triggerId: 99990003, key: "Start", value: 1);

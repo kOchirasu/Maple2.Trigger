@@ -29,7 +29,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.CameraSelect(triggerId: 500, enable: true);
+                context.CameraSelect(triggerId: 500, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateQuestOngoing01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 500, enable: false);
+                context.CameraSelect(triggerId: 500, enabled: false);
                 context.DestroyMonster(spawnIds: new []{201, 301});
                 context.CreateMonster(spawnIds: new []{202, 302}, arg2: false);
             }
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateQuestOngoing11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 500, enable: false);
+                context.CameraSelect(triggerId: 500, enabled: false);
                 context.DestroyMonster(spawnIds: new []{201, 301});
                 context.CreateMonster(spawnIds: new []{202, 302}, arg2: false);
             }
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateWalkWithJacey02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 501, enable: true);
+                context.CameraSelect(triggerId: 501, enabled: true);
                 context.MoveUserPath(patrolName: "MS2PatrolData_1000");
             }
 
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._63000023_cs {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -591,7 +591,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetNpcEmotionSequence(spawnId: 301, sequenceName: "Idle_A");
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -651,7 +651,7 @@ namespace Maple2.Trigger._63000023_cs {
             internal StateTalkJacey02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 700, enable: true);
+                context.CameraSelect(triggerId: 700, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -815,7 +815,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.RemoveCinematicTalk();
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 702, enable: false);
+                context.CameraSelect(triggerId: 702, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -946,7 +946,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetEffect(triggerIds: new []{6000}, visible: false);
                 context.SetEffect(triggerIds: new []{6001}, visible: true);
                 context.MoveUser(mapId: 63000023, portalId: 2, boxId: 9900);
-                context.CameraSelect(triggerId: 800, enable: true);
+                context.CameraSelect(triggerId: 800, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -1003,7 +1003,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.CameraSelect(triggerId: 800, enable: false);
+                context.CameraSelect(triggerId: 800, enabled: false);
             }
 
             public override TriggerState? Execute() {

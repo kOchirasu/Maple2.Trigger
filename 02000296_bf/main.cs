@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02000296_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._02000296_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: false);
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: false);
+                context.CameraSelect(triggerId: 601, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -227,7 +227,7 @@ namespace Maple2.Trigger._02000296_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 601, enable: false);
+                context.CameraSelect(triggerId: 601, enabled: false);
                 context.DestroyMonster(spawnIds: new []{5013});
                 context.SetMesh(triggerIds: new []{1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209}, visible: false, arg3: 500, arg4: 100, arg5: 5f);
                 context.SetMesh(triggerIds: new []{1101}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._02000296_bf {
 
             public override void OnEnter() {
                 context.SetAgent(triggerIds: new []{1300, 1301}, visible: true);
-                context.PlaySystemSoundInBox(boxIds: new []{9001}, sound: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01", boxIds: 9001);
                 context.ShowGuideSummary(entityId: 20002961, textId: 20002961);
                 context.SetConversation(type: 1, spawnId: 5006, script: "$02000296_BF__MAIN__6$", arg4: 4, arg5: 0);
             }
@@ -331,7 +331,7 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateBossBattle03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(boxIds: new []{9001}, sound: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01", boxIds: 9001);
                 context.ShowGuideSummary(entityId: 20002963, textId: 20002963, duration: 5000);
             }
 

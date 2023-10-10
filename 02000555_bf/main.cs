@@ -203,7 +203,7 @@ namespace Maple2.Trigger._02000555_bf {
             internal StateStage1_완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{61}, arg2: true);
+                context.SetSkill(triggerIds: new []{61}, enabled: true);
                 context.SetEffect(triggerIds: new []{8801}, visible: true);
                 context.SetMesh(triggerIds: new []{4001}, visible: false);
                 context.SetEffect(triggerIds: new []{8100, 8101, 8102, 8103, 8104}, visible: true);
@@ -224,7 +224,7 @@ namespace Maple2.Trigger._02000555_bf {
             internal StateStage2_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{61}, arg2: false);
+                context.SetSkill(triggerIds: new []{61}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -311,7 +311,7 @@ namespace Maple2.Trigger._02000555_bf {
             internal StateStage2_완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{62}, arg2: true);
+                context.SetSkill(triggerIds: new []{62}, enabled: true);
                 context.SetEffect(triggerIds: new []{8802}, visible: true);
                 context.SetMesh(triggerIds: new []{4002}, visible: false);
                 context.SetEffect(triggerIds: new []{8200, 8201, 8202, 8203}, visible: true);
@@ -332,7 +332,7 @@ namespace Maple2.Trigger._02000555_bf {
             internal StateStage3_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{62}, arg2: false);
+                context.SetSkill(triggerIds: new []{62}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -386,7 +386,7 @@ namespace Maple2.Trigger._02000555_bf {
             internal StateStage3_완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{63}, arg2: true);
+                context.SetSkill(triggerIds: new []{63}, enabled: true);
                 context.SetEffect(triggerIds: new []{8803}, visible: true);
                 context.SetMesh(triggerIds: new []{4003}, visible: false);
                 context.SetEffect(triggerIds: new []{8300, 8301, 8302, 8303, 8304}, visible: true);
@@ -407,7 +407,7 @@ namespace Maple2.Trigger._02000555_bf {
             internal StateStage4_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{63}, arg2: false);
+                context.SetSkill(triggerIds: new []{63}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -460,7 +460,7 @@ namespace Maple2.Trigger._02000555_bf {
             internal StateStage4_완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{64}, arg2: true);
+                context.SetSkill(triggerIds: new []{64}, enabled: true);
                 context.SetEffect(triggerIds: new []{8804}, visible: true);
                 context.SetMesh(triggerIds: new []{4004}, visible: false);
                 context.SetEffect(triggerIds: new []{8400, 8401, 8402, 8403, 8404, 8405, 8406, 8407, 8408, 8409, 8410, 8411, 8412, 8413, 8414, 8415, 8416, 8417, 8418, 8419, 8420, 8421, 8422, 8423, 8424, 8425, 8426}, visible: true);
@@ -481,7 +481,7 @@ namespace Maple2.Trigger._02000555_bf {
             internal StateStage5_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{64}, arg2: false);
+                context.SetSkill(triggerIds: new []{64}, enabled: false);
             }
 
             public override TriggerState? Execute() {

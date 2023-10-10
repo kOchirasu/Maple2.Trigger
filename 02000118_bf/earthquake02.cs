@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000118_bf {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "1", seconds: 1);
-                context.SetSkill(triggerIds: new []{2005, 2006, 2007, 2008}, arg2: true);
+                context.SetSkill(triggerIds: new []{2005, 2006, 2007, 2008}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000118_bf {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "2", seconds: 10);
-                context.SetSkill(triggerIds: new []{2005, 2006, 2007, 2008}, arg2: false);
+                context.SetSkill(triggerIds: new []{2005, 2006, 2007, 2008}, enabled: false);
             }
 
             public override TriggerState? Execute() {

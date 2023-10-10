@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02100009_bf {
             public override void OnEnter() {
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: true);
                 context.SetPortal(portalId: 4, visible: true, enabled: true, minimapVisible: true);
-                context.SetTimer(timerId: "10000", seconds: 300, clearAtZero: true, display: true, arg5: 0);
+                context.SetTimer(timerId: "10000", seconds: 300, autoRemove: true, display: true, vOffset: 0);
             }
 
             public override TriggerState? Execute() {

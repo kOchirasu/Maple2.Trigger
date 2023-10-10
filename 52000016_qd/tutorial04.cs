@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52000016_qd {
             public override void OnEnter() {
                 context.SetAgent(triggerIds: new []{10000, 10001, 10002, 10003, 10004, 10005, 10010, 10006, 10007, 10008, 10009}, visible: true);
                 context.SetEffect(triggerIds: new []{6000, 7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7010, 7020, 7011, 7021, 7030, 7040, 7050}, visible: false);
-                context.SetSkill(triggerIds: new []{910, 911, 912, 913, 914}, arg2: false);
+                context.SetSkill(triggerIds: new []{910, 911, 912, 913, 914}, enabled: false);
                 context.SetMesh(triggerIds: new []{2000, 3000, 3001}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(triggerIds: new []{4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015, 4020, 4021, 4022, 4023, 4024, 4025, 4026, 4027}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(interactIds: new []{10000825}, state: 0);
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State막힌길발견01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._52000016_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "1", seconds: 1);
-                context.SetSkill(triggerIds: new []{910, 911, 912, 913, 914}, arg2: true);
+                context.SetSkill(triggerIds: new []{910, 911, 912, 913, 914}, enabled: true);
                 context.SetEffect(triggerIds: new []{7010, 7020}, visible: true);
             }
 
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._52000016_qd {
             public override void OnExit() {
                 context.RemoveCinematicTalk();
                 context.SetEffect(triggerIds: new []{7010, 7020}, visible: false);
-                context.SetSkill(triggerIds: new []{910, 911, 912, 913, 914}, arg2: false);
+                context.SetSkill(triggerIds: new []{910, 911, 912, 913, 914}, enabled: false);
             }
         }
 
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State돌치우기안내03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: false);
+                context.CameraSelect(triggerId: 601, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
@@ -364,7 +364,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetTimer(timerId: "13", seconds: 3);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 602, enable: true);
+                context.CameraSelect(triggerId: 602, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11001249, script: "$52000016_QD__TUTORIAL04__7$", arg4: 3);
                 context.SetEffect(triggerIds: new []{6104}, visible: true);
             }
@@ -658,7 +658,7 @@ namespace Maple2.Trigger._52000016_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "24", seconds: 1);
-                context.CameraSelect(triggerId: 606, enable: true);
+                context.CameraSelect(triggerId: 606, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -764,9 +764,9 @@ namespace Maple2.Trigger._52000016_qd {
             public override void OnEnter() {
                 context.SetTimer(timerId: "30", seconds: 1);
                 context.SetCinematicUI(type: 4);
-                context.CameraSelect(triggerId: 606, enable: false);
-                context.CameraSelect(triggerId: 602, enable: false);
-                context.CameraSelect(triggerId: 603, enable: false);
+                context.CameraSelect(triggerId: 606, enabled: false);
+                context.CameraSelect(triggerId: 602, enabled: false);
+                context.CameraSelect(triggerId: 603, enabled: false);
                 context.SetEffect(triggerIds: new []{8203, 8303, 8202, 8302}, visible: false);
             }
 
@@ -792,9 +792,9 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetTimer(timerId: "30", seconds: 1);
                 context.CreateMonster(spawnIds: new []{102}, arg2: true);
                 context.SetCinematicUI(type: 4);
-                context.CameraSelect(triggerId: 606, enable: false);
-                context.CameraSelect(triggerId: 602, enable: false);
-                context.CameraSelect(triggerId: 603, enable: false);
+                context.CameraSelect(triggerId: 606, enabled: false);
+                context.CameraSelect(triggerId: 602, enabled: false);
+                context.CameraSelect(triggerId: 603, enabled: false);
                 context.SetEffect(triggerIds: new []{8203, 8303, 8202, 8302}, visible: false);
             }
 
@@ -819,7 +819,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetCinematicUI(type: 4);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 605, enable: true);
+                context.CameraSelect(triggerId: 605, enabled: true);
                 context.SetInteractObject(interactIds: new []{10000825}, state: 1);
                 context.SetEffect(triggerIds: new []{7030}, visible: true);
             }
@@ -862,7 +862,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal State다리만들기01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 605, enable: false);
+                context.CameraSelect(triggerId: 605, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.DestroyMonster(spawnIds: new []{301, 210, 211, 212, 213, 214, 215, 216, 217, 310, 311, 312, 313});
@@ -970,7 +970,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetTimer(timerId: "42", seconds: 1);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 604, enable: true);
+                context.CameraSelect(triggerId: 604, enabled: true);
                 context.SetSceneSkip(state: new State마무리Cinematic08(context), arg2: "nextState");
                 context.CreateMonster(spawnIds: new []{401}, arg2: true);
             }
@@ -1246,7 +1246,7 @@ namespace Maple2.Trigger._52000016_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "50", seconds: 1);
-                context.CameraSelect(triggerId: 604, enable: false);
+                context.CameraSelect(triggerId: 604, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

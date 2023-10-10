@@ -51,7 +51,7 @@ namespace Maple2.Trigger._52010021_qd {
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_2002");
                 context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_2004");
                 context.MoveNpc(spawnId: 103, patrolName: "MS2PatrolData_2003");
-                context.CameraSelect(triggerId: 8001, enable: true);
+                context.CameraSelect(triggerId: 8001, enabled: true);
                 context.SetTimer(timerId: "3", seconds: 3);
             }
 
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52010021_qd {
             }
 
             public override void OnExit() {
-                context.CameraSelect(triggerId: 8001, enable: true);
+                context.CameraSelect(triggerId: 8001, enabled: true);
             }
         }
 

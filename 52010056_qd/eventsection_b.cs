@@ -126,7 +126,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override void OnExit() {
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
-                context.SetSound(triggerId: 7001, arg2: false);
+                context.SetSound(triggerId: 7001, enabled: false);
             }
         }
     }

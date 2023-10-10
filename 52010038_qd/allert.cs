@@ -40,7 +40,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State이펙트시퀀스01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{701, 704}, arg2: true);
+                context.SetSkill(triggerIds: new []{701, 704}, enabled: true);
                 context.SetEffect(triggerIds: new []{6101, 6104}, visible: true);
             }
 
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State이펙트시퀀스02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{707, 708}, arg2: true);
+                context.SetSkill(triggerIds: new []{707, 708}, enabled: true);
                 context.SetEffect(triggerIds: new []{6107, 6108}, visible: true);
             }
 
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() {
                 context.SetAmbientLight(color: new Vector3(232f, 92f, 53f));
                 context.SetDirectionalLight(diffuseColor: new Vector3(41f, 21f, 18f), specularColor: new Vector3(130f, 130f, 130f));
-                context.SetSkill(triggerIds: new []{702, 706}, arg2: true);
+                context.SetSkill(triggerIds: new []{702, 706}, enabled: true);
                 context.SetEffect(triggerIds: new []{6102, 6106}, visible: true);
             }
 
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State경보(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{709}, arg2: true);
+                context.SetSkill(triggerIds: new []{709}, enabled: true);
                 context.SetEffect(triggerIds: new []{6109}, visible: true);
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 8000, script: "$52010038_QD__allert__0$", voice: @"ko/Npc/00002104");
                 context.SetEffect(triggerIds: new []{6000}, visible: true);
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State이펙트시퀀스04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{703, 705}, arg2: true);
+                context.SetSkill(triggerIds: new []{703, 705}, enabled: true);
                 context.SetEffect(triggerIds: new []{6103, 6105}, visible: true);
             }
 

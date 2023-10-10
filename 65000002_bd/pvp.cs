@@ -5,7 +5,7 @@ namespace Maple2.Trigger._65000002_bd {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.SetTimer(timerId: "60", seconds: 60, clearAtZero: false, display: true);
+                context.SetTimer(timerId: "60", seconds: 60, autoRemove: false, display: true);
                 context.SetEffect(triggerIds: new []{601, 602}, visible: false);
             }
 
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._65000002_bd {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "6", seconds: 6, clearAtZero: false);
+                context.SetTimer(timerId: "6", seconds: 6, autoRemove: false);
                 context.PlaySystemSoundInBox(sound: "BD_PVP_00");
                 context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__0$", duration: 6000);
             }
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._65000002_bd {
             internal State어나운스1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "6", seconds: 6, clearAtZero: false);
+                context.SetTimer(timerId: "6", seconds: 6, autoRemove: false);
                 context.PlaySystemSoundInBox(sound: "BD_PVP_01");
                 context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__1$", duration: 6000);
             }
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._65000002_bd {
             internal State어나운스2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "6", seconds: 6, clearAtZero: false);
+                context.SetTimer(timerId: "6", seconds: 6, autoRemove: false);
                 context.PlaySystemSoundInBox(sound: "BD_PVP_02");
                 context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__2$", duration: 6000, boxId: 101);
             }
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._65000002_bd {
             internal State어나운스3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "3", seconds: 3, clearAtZero: false);
+                context.SetTimer(timerId: "3", seconds: 3, autoRemove: false);
                 context.PlaySystemSoundInBox(sound: "BD_PVP_03");
                 context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__3$", duration: 3000);
                 context.SetEffect(triggerIds: new []{601}, visible: true);
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._65000002_bd {
                 context.GiveGuildExp(boxId: 0, type: 2);
                 context.AddBuff(boxIds: new []{101}, skillId: 70000088, level: 1, arg4: false, arg5: false);
                 context.AddBuff(boxIds: new []{101}, skillId: 70000089, level: 1, arg4: false, arg5: false);
-                context.SetTimer(timerId: "1", seconds: 1, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 1, autoRemove: false);
             }
 
             public override TriggerState? Execute() {
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._65000002_bd {
             internal State경기종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "4", seconds: 4, clearAtZero: false);
+                context.SetTimer(timerId: "4", seconds: 4, autoRemove: false);
                 context.PlaySystemSoundInBox(sound: "BD_PVP_04");
                 context.SetEventUI(arg1: 1, script: "$65000002_BD__PVP__4$", duration: 3000, boxId: 101);
                 context.SetEffect(triggerIds: new []{602}, visible: true);
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._65000002_bd {
             internal State비김(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "3", seconds: 3, clearAtZero: false);
+                context.SetTimer(timerId: "3", seconds: 3, autoRemove: false);
             }
 
             public override TriggerState? Execute() {

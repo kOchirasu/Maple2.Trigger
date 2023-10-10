@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02020023_bf {
             internal StateCamera_블리체Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 505, enable: true);
+                context.CameraSelect(triggerId: 505, enabled: true);
             }
 
             public override TriggerState? Execute() {

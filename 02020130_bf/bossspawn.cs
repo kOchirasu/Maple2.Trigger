@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetPortal(portalId: 21, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 22, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 23, visible: true, enabled: true, minimapVisible: true);
-                context.DungeonEnableGiveUp(enable: false);
+                context.DungeonEnableGiveUp(enabled: false);
             }
 
             public override TriggerState? Execute() {

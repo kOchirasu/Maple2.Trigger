@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52000116_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._52000116_qd {
 
             public override void OnEnter() {
                 context.MoveUser(mapId: 52000116, portalId: 2);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
                 context.CreateMonster(spawnIds: new []{102}, arg2: true);
                 context.CameraSelectPath(pathIds: new []{4003}, returnView: false);
             }
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._52000116_qd {
             internal StateJordyhelp(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
                 context.SetConversation(type: 2, spawnId: 11001838, script: "$52000116_QD__MAIN__1$", arg4: 1, arg5: 0);
                 context.MoveNpc(spawnId: 102, patrolName: "MS2PatrolData_3002");
             }

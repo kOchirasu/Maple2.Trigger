@@ -32,7 +32,7 @@ namespace Maple2.Trigger._99999942 {
             internal State유저Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 15, clearAtZero: false, display: true);
+                context.SetTimer(timerId: "1", seconds: 15, autoRemove: false, display: true);
             }
 
             public override TriggerState? Execute() {
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._99999942 {
             internal State유저이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 5, clearAtZero: false, display: true);
+                context.SetTimer(timerId: "1", seconds: 5, autoRemove: false, display: true);
                 context.MoveUser(mapId: 99999942, portalId: 2);
             }
 

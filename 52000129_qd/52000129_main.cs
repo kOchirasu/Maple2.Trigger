@@ -191,7 +191,7 @@ namespace Maple2.Trigger._52000129_qd {
             internal StateFadeOut_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.HideGuideSummary(entityId: 25201291);
                 context.HideGuideSummary(entityId: 25201292);
                 context.HideGuideSummary(entityId: 25201293);
@@ -234,7 +234,7 @@ namespace Maple2.Trigger._52000129_qd {
             internal StateFadeIn_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMaskEff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMaskEff_fadein_1sec.xml");
                 context.SetPcEmotionSequence(sequenceNames: new []{"Talk_A"});
                 context.SetSceneSkip(state: new State마무리(context), arg2: "exit");
             }
@@ -312,7 +312,7 @@ namespace Maple2.Trigger._52000129_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_0sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_0sec.xml");
             }
 
             public override TriggerState? Execute() {

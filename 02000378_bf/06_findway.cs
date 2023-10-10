@@ -120,11 +120,11 @@ namespace Maple2.Trigger._02000378_bf {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateRound06_PickRoute_Left(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateRound06_PickRoute_Right(context);
                 }
 

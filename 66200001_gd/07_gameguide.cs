@@ -20,7 +20,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateGameGuide_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 19, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 19, autoRemove: true, display: false);
             }
 
             public override TriggerState? Execute() {

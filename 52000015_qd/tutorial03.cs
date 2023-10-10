@@ -138,7 +138,7 @@ namespace Maple2.Trigger._52000015_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "6", seconds: 3);
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
                 context.SetCinematicUI(type: 4);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
@@ -328,7 +328,7 @@ namespace Maple2.Trigger._52000015_qd {
             internal StateIshura대화04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: false);
+                context.CameraSelect(triggerId: 601, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

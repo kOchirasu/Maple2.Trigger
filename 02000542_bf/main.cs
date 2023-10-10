@@ -5,14 +5,14 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: false);
                 context.SetInteractObject(interactIds: new []{10003142}, state: 1);
                 context.SetInteractObject(interactIds: new []{10003143}, state: 0);
                 context.SetMesh(triggerIds: new []{601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636}, visible: true);
-                context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 102, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 101, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 102, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 103, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "$02000542_BF__MAIN__2$");
                 context.DestroyMonster(spawnIds: new []{112});
-                context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 101, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetMesh(triggerIds: new []{609}, visible: false);
             }
 
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._02000542_bf {
             internal StateMobCreation하기1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 101, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.CreateMonster(spawnIds: new []{101}, arg2: false);
             }
 
@@ -203,7 +203,7 @@ namespace Maple2.Trigger._02000542_bf {
             internal State감옥문부시기3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 102, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetMesh(triggerIds: new []{604}, visible: false);
                 context.DestroyMonster(spawnIds: new []{113});
             }
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._02000542_bf {
             internal StateCinematicNPCSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 102, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 102, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.CreateMonster(spawnIds: new []{105, 111}, arg2: false);
                 context.AddBalloonTalk(spawnId: 105, msg: "$02000542_BF__MAIN__9$", duration: 3500);
                 context.AddBalloonTalk(spawnId: 105, msg: "$02000542_BF__MAIN__10$", duration: 4500, delayTick: 3500);
@@ -307,8 +307,8 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{114});
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: true);
                 context.CreateMonster(spawnIds: new []{106, 107, 108, 109, 117, 118, 119, 120}, arg2: false);
             }
 
@@ -327,7 +327,7 @@ namespace Maple2.Trigger._02000542_bf {
             internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 103, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.AddBalloonTalk(spawnId: 117, msg: "$02000542_BF__MAIN__15$", duration: 8500, delayTick: 500);
                 context.AddBalloonTalk(spawnId: 118, msg: "$02000542_BF__MAIN__16$", duration: 8500, delayTick: 1000);
                 context.AddBalloonTalk(spawnId: 119, msg: "$02000542_BF__MAIN__17$", duration: 8500, delayTick: 1000);
@@ -350,7 +350,7 @@ namespace Maple2.Trigger._02000542_bf {
             internal StateBossSpawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 103, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.CreateMonster(spawnIds: new []{110}, arg2: false);
             }
 
@@ -406,7 +406,7 @@ namespace Maple2.Trigger._02000542_bf {
             internal StatePortal열기3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 103, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetMesh(triggerIds: new []{601, 602}, visible: false);
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
                 context.DestroyMonster(spawnIds: new []{115});

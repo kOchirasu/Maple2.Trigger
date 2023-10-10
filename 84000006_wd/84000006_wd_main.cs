@@ -28,7 +28,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateEntryDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 40, clearAtZero: true, display: false);
+                context.SetTimer(timerId: "1", seconds: 40, autoRemove: true, display: false);
                 context.CreateMonster(spawnIds: new []{101}, arg2: false);
             }
 
@@ -297,13 +297,13 @@ namespace Maple2.Trigger._84000006_wd {
             public override TriggerState? Execute() {
                 if (context.MonsterDead(spawnIds: new []{201})) {
                     context.AddBalloonTalk(spawnId: 201, msg: "$84000006_WD__84000006_WD_MAIN__14$", duration: 3000, delayTick: 1000);
-                    context.SetTimer(timerId: "4", seconds: 20, clearAtZero: false, display: false);
+                    context.SetTimer(timerId: "4", seconds: 20, autoRemove: false, display: false);
                     return new StatePinata_Kill(context);
                 }
 
                 if (context.TimeExpired(timerId: "3")) {
                     context.AddBalloonTalk(spawnId: 201, msg: "$84000006_WD__84000006_WD_MAIN__15$", duration: 3000, delayTick: 1000);
-                    context.SetTimer(timerId: "4", seconds: 20, clearAtZero: false, display: false);
+                    context.SetTimer(timerId: "4", seconds: 20, autoRemove: false, display: false);
                     return new StatePinata_noKill(context);
                 }
 
@@ -434,10 +434,10 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetUserValue(triggerId: 1001, key: "Conder", value: 1);
                 context.AddBuff(boxIds: new []{9002}, skillId: 99940042, level: 1, arg4: false, arg5: true);
                 context.SetEventUI(arg1: 1, script: "$84000006_WD__84000006_WD_MAIN__24$", duration: 3000);
-                context.SetTimer(timerId: "5", seconds: 150, clearAtZero: false, display: true);
+                context.SetTimer(timerId: "5", seconds: 150, autoRemove: false, display: true);
                 context.AddBalloonTalk(spawnId: 101, msg: "$84000006_WD__84000006_WD_MAIN__25$", duration: 5000, delayTick: 3000);
                 context.AddBalloonTalk(spawnId: 103, msg: "$84000006_WD__84000006_WD_MAIN__26$", duration: 5000, delayTick: 3000);
-                context.SetPhotoStudio(isEnable: true);
+                context.SetPhotoStudio(enabled: true);
             }
 
             public override TriggerState? Execute() {

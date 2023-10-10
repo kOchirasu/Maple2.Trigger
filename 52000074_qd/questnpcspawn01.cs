@@ -149,7 +149,7 @@ namespace Maple2.Trigger._52000074_qd {
                 context.SetSceneSkip(state: new StateTalkEnd01(context), arg2: "exit");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._52000074_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.CameraSelect(triggerId: 600, enable: false);
+                context.CameraSelect(triggerId: 600, enabled: false);
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 0);
             }

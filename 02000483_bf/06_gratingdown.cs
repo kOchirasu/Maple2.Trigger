@@ -9,9 +9,9 @@ namespace Maple2.Trigger._02000483_bf {
                 context.SetMesh(triggerIds: new []{6300, 6301, 6302, 6303, 6304, 6305}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(triggerIds: new []{3901}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetBreakable(triggerIds: new []{6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011}, visible: false);
                 context.SetBreakable(triggerIds: new []{6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111}, visible: false);
                 context.SetAgent(triggerIds: new []{8000, 8001, 8002}, visible: false);
                 context.SetUserValue(key: "BlockEnable", value: 0);
             }
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02000483_bf {
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{6300, 6301, 6302, 6303, 6304, 6305}, visible: false, arg3: 100, arg4: 0, arg5: 2f);
                 context.SetBreakable(triggerIds: new []{6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011}, enabled: true);
-                context.SetVisibleBreakableObject(triggerIds: new []{6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011}, visible: true);
             }
 
             public override TriggerState? Execute() {
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._02000483_bf {
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{6200, 6201, 6202, 6203, 6204, 6205, 6206, 6207, 6208, 6209, 6210, 6211}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetBreakable(triggerIds: new []{6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011}, visible: false);
             }
 
             public override TriggerState? Execute() {
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02000483_bf {
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{6200, 6201, 6202, 6203, 6204, 6205, 6206, 6207, 6208, 6209, 6210, 6211}, visible: false, arg3: 100, arg4: 0, arg5: 2f);
                 context.SetBreakable(triggerIds: new []{6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111}, enabled: true);
-                context.SetVisibleBreakableObject(triggerIds: new []{6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111}, visible: true);
             }
 
             public override TriggerState? Execute() {
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._02000483_bf {
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{6300, 6301, 6302, 6303, 6304, 6305}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetBreakable(triggerIds: new []{6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111}, visible: false);
             }
 
             public override TriggerState? Execute() {

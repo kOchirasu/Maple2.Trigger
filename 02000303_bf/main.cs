@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.SetSkip(state: new State또다른StopCinematic(context));
             }
 
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02000303_bf {
             internal StateCamera이동2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.SetSkip(state: new State또다른StopCinematic(context));
             }
 
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._02000303_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{2001});
-                context.CameraSelect(triggerId: 302, enable: false);
+                context.CameraSelect(triggerId: 302, enabled: false);
                 context.SetMesh(triggerIds: new []{3005}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);

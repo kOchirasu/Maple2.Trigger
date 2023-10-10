@@ -20,7 +20,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State다리흔들기Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{910, 911, 912, 913}, arg2: false);
+                context.SetSkill(triggerIds: new []{910, 911, 912, 913}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -35,7 +35,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "1", seconds: 42);
-                context.SetSkill(triggerIds: new []{910, 911, 912, 913}, arg2: true);
+                context.SetSkill(triggerIds: new []{910, 911, 912, 913}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{910, 911, 912, 913}, arg2: false);
+                context.SetSkill(triggerIds: new []{910, 911, 912, 913}, enabled: false);
             }
 
             public override TriggerState? Execute() {

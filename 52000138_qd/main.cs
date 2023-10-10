@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7101, arg2: true);
+                context.SetSound(triggerId: 7101, enabled: true);
                 context.SetActor(triggerId: 4001, visible: true, initialSequence: "Closed");
                 context.SetActor(triggerId: 4002, visible: true, initialSequence: "Closed");
                 context.SetActor(triggerId: 4003, visible: true, initialSequence: "Closed");
@@ -63,8 +63,8 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG\weather\Eff_monochrome_03.xml");
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/Sound/Eff_ Object_Train_alert.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG\weather\Eff_monochrome_03.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/Sound/Eff_ Object_Train_alert.xml");
                 context.SetAmbientLight(color: default);
                 context.SetAmbientLight(color: new Vector3(1f, 1f, 1f));
                 context.AddBuff(boxIds: new []{701}, skillId: 99910230, level: 1, arg4: false, arg5: true);
@@ -99,8 +99,8 @@ namespace Maple2.Trigger._52000138_qd {
                 context.SetActor(triggerId: 1027, visible: true, initialSequence: "sf_quest_light_A01_On");
                 context.SetActor(triggerId: 1028, visible: true, initialSequence: "sf_quest_light_A01_On");
                 context.SetConversation(type: 1, spawnId: 101, script: "$52000138_QD__MAIN__1$", arg4: 3, arg5: 0);
-                context.SetSound(triggerId: 10000, arg2: true);
-                context.SetSound(triggerId: 7002, arg2: true);
+                context.SetSound(triggerId: 10000, enabled: true);
+                context.SetSound(triggerId: 7002, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -493,7 +493,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal StatePlot(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7102, arg2: true);
+                context.SetSound(triggerId: 7102, enabled: true);
                 context.SetConversation(type: 1, spawnId: 122, script: "$52000138_QD__MAIN__13$", arg4: 3, arg5: 4);
                 context.MoveNpc(spawnId: 122, patrolName: "MS2PatrolData_2001");
             }

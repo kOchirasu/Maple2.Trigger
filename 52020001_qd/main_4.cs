@@ -132,7 +132,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{10051}, visible: true);
-                context.SetSkill(triggerIds: new []{6007}, arg2: true);
+                context.SetSkill(triggerIds: new []{6007}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -279,7 +279,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State타이머시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "110", seconds: 360, clearAtZero: true, display: true, arg5: 80);
+                context.SetTimer(timerId: "110", seconds: 360, autoRemove: true, display: true, vOffset: 80);
             }
 
             public override TriggerState? Execute() {

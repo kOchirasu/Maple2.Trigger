@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000040_bf {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{301, 302, 303}, visible: true, arg3: 0, arg4: 500, arg5: 2f);
-                context.SetTimer(timerId: "3", seconds: 3, clearAtZero: false, display: false);
+                context.SetTimer(timerId: "3", seconds: 3, autoRemove: false, display: false);
             }
 
             public override TriggerState? Execute() {
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000040_bf {
             internal State재사용Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "10", seconds: 10, clearAtZero: false, display: false);
+                context.SetTimer(timerId: "10", seconds: 10, autoRemove: false, display: false);
             }
 
             public override TriggerState? Execute() {

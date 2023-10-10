@@ -7,10 +7,10 @@ namespace Maple2.Trigger._52100022_qd {
                 context.DestroyMonster(spawnIds: new []{901, 902, 903});
                 context.SetPortal(portalId: 10, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 11, visible: false, enabled: false, minimapVisible: false);
-                context.EnableSpawnPointPc(spawnId: 10000, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 10001, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 10002, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 10003, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 10000, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 10001, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 10002, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 10003, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateBoss01SpawnDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 10000, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 10001, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 10000, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 10001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52100022_qd {
                 context.SetUserValue(triggerId: 1122330, key: "AgentOff", value: 1);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 501, enable: true);
+                context.CameraSelect(triggerId: 501, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateBoss01Talk01Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 502, enable: true);
+                context.CameraSelect(triggerId: 502, enabled: true);
                 context.RemoveCinematicTalk();
                 context.SetSkip();
             }
@@ -157,8 +157,8 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateBoss02SpawnDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 10000, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 10002, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 10000, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 10002, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._52100022_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 511, enable: true);
+                context.CameraSelect(triggerId: 511, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -233,7 +233,7 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateBoss02Talk01Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 512, enable: true);
+                context.CameraSelect(triggerId: 512, enabled: true);
                 context.RemoveCinematicTalk();
                 context.SetSkip();
             }
@@ -294,8 +294,8 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateBoss03SpawnDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 10000, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 10003, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 10000, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 10003, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -317,7 +317,7 @@ namespace Maple2.Trigger._52100022_qd {
                 context.SetUserValue(triggerId: 1122330, key: "AgentOff", value: 1);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 521, enable: true);
+                context.CameraSelect(triggerId: 521, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -354,7 +354,7 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateBoss03Talk01Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 522, enable: true);
+                context.CameraSelect(triggerId: 522, enabled: true);
                 context.RemoveCinematicTalk();
                 context.SetSkip();
             }

@@ -23,27 +23,27 @@ namespace Maple2.Trigger._99999910 {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 12f)) {
+                if (context.RandomCondition(rate: 12)) {
                     return new StatePattern_a_01(context);
                 }
 
-                if (context.RandomCondition(rate: 12f)) {
+                if (context.RandomCondition(rate: 12)) {
                     return new StatePattern_b_01(context);
                 }
 
-                if (context.RandomCondition(rate: 12f)) {
+                if (context.RandomCondition(rate: 12)) {
                     return new StatePattern_c_01(context);
                 }
 
-                if (context.RandomCondition(rate: 12f)) {
+                if (context.RandomCondition(rate: 12)) {
                     return new StatePattern_d_01(context);
                 }
 
-                if (context.RandomCondition(rate: 6f)) {
+                if (context.RandomCondition(rate: 6)) {
                     return new StatePattern_e_01(context);
                 }
 
-                if (context.RandomCondition(rate: 6f)) {
+                if (context.RandomCondition(rate: 6)) {
                     return new StatePattern_f_01(context);
                 }
 

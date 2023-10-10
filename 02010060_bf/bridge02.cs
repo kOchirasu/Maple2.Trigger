@@ -4,7 +4,7 @@ namespace Maple2.Trigger._02010060_bf {
             internal StateNPC감지Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{702}, arg2: false);
+                context.SetSkill(triggerIds: new []{702}, enabled: false);
                 context.SetEffect(triggerIds: new []{611}, visible: false);
                 context.SetMesh(triggerIds: new []{3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232, 3233, 3234, 3235, 3236, 3237, 3238, 3239, 3240, 3241, 3242, 3243, 3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(interactIds: new []{10000919}, state: 2);
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02010060_bf {
             internal StateInteractObjectWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{702}, arg2: true);
+                context.SetSkill(triggerIds: new []{702}, enabled: true);
                 context.SetInteractObject(interactIds: new []{10000919}, state: 1);
             }
 

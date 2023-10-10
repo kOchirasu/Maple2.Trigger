@@ -224,7 +224,7 @@ namespace Maple2.Trigger._02000552_bf {
             internal State게임오버(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(enable: false);
+                context.DungeonEnableGiveUp(enabled: false);
                 context.AddBuff(boxIds: new []{701}, skillId: 50000266, level: 1, arg4: false, arg5: false);
                 context.AddBuff(boxIds: new []{702}, skillId: 50000266, level: 1, arg4: false, arg5: false);
             }

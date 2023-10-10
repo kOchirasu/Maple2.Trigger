@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$02020140_BF__BARRICADE__0$", duration: 3000);
-                context.DungeonEnableGiveUp(enable: true);
+                context.DungeonEnableGiveUp(enabled: true);
             }
 
             public override TriggerState? Execute() {

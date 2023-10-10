@@ -54,7 +54,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, script: "6,6", duration: 0, boxId: 0);
-                context.CameraSelect(triggerId: 8002, enable: true);
+                context.CameraSelect(triggerId: 8002, enabled: true);
             }
 
             public override TriggerState? Execute() {

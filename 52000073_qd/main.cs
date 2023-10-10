@@ -23,8 +23,8 @@ namespace Maple2.Trigger._52000073_qd {
             internal State레논Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG\weather\Eff_monochrome_03.xml");
-                context.SetSound(triggerId: 7001, arg2: true);
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG\weather\Eff_monochrome_03.xml");
+                context.SetSound(triggerId: 7001, enabled: true);
                 context.DestroyMonster(spawnIds: new []{101});
                 context.VisibleMyPc(visible: false);
                 context.SetAmbientLight(color: default);
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._52000073_qd {
             internal State상황파악(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7002, arg2: true);
+                context.SetSound(triggerId: 7002, enabled: true);
                 context.CameraSelectPath(pathIds: new []{8006}, returnView: false);
                 context.SetConversation(type: 1, spawnId: 301, script: "$52000073_QD__MAIN__3$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(spawnId: 301, sequenceName: "Sit_down_A", duration: 5000f);
@@ -295,7 +295,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{301});
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -329,7 +329,7 @@ namespace Maple2.Trigger._52000073_qd {
             internal StateCamera시점변경(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{8008}, returnView: false);
             }
 
@@ -385,7 +385,7 @@ namespace Maple2.Trigger._52000073_qd {
             internal State의미심장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 4, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 11001024, script: "$52000073_QD__MAIN__14$", duration: 3000, align: Align.Center);
                 context.SetSceneSkip();
             }

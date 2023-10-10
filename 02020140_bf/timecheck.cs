@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetPortal(portalId: 47, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 48, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 49, visible: true, enabled: true, minimapVisible: true);
-                context.SetSound(triggerId: 140140, arg2: true);
+                context.SetSound(triggerId: 140140, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02020140_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(enable: false);
+                context.DungeonEnableGiveUp(enabled: false);
             }
 
             public override TriggerState? Execute() {

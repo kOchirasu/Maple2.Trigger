@@ -8,7 +8,7 @@ namespace Maple2.Trigger._52000149_qd {
                 context.SetEffect(triggerIds: new []{6001, 6002}, visible: true);
                 context.SetNpcEmotionLoop(spawnId: 111, sequenceName: "Sit_Down_A", duration: 99999999f);
                 context.SetNpcEmotionLoop(spawnId: 112, sequenceName: "Event_02_Idle", duration: 99999999f);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._52000149_qd {
             internal StateBasic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._52000149_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.MoveUser(mapId: 52000149, portalId: 10);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._52000149_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{111, 112});
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {

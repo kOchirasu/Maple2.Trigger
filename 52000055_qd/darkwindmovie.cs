@@ -23,7 +23,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 6002, visible: false, enabled: false, minimapVisible: false);
-                context.SetOnetimeEffect(id: 11100101, enable: true, path: @"BG/Common/Sound/Eff_Object_CityWar_ComputerRoom_01.xml");
+                context.SetOnetimeEffect(id: 11100101, enabled: true, path: @"BG/Common/Sound/Eff_Object_CityWar_ComputerRoom_01.xml");
                 context.MoveUser(mapId: 52000055, portalId: 1);
             }
 
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCameraEffect01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
             }
 
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCameraEffect03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelect(triggerId: 101, enable: true);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.CameraSelect(triggerId: 101, enabled: true);
                 context.MoveUserPath(patrolName: "MS2PatrolData_PC");
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_Katvan");
                 context.SetSceneSkip(state: new StateQuit(context), arg2: "exit");
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCameraEffect4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 102, enable: true);
+                context.CameraSelect(triggerId: 102, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCameraEffect5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override TriggerState? Execute() {
@@ -135,8 +135,8 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCameraEffect6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelect(triggerId: 103, enable: true);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.CameraSelect(triggerId: 103, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCameraEffect7(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 104, enable: true);
+                context.CameraSelect(triggerId: 104, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCameraEffect8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(pathIds: new []{119, 120}, returnView: true);
                 context.SetCinematicUI(type: 3);
             }
@@ -192,10 +192,10 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCameraEffect9(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 11100102, enable: true, path: @"BG/Common/Sound/Eff_Object_CityWar_SystemWarningAlarm_01.xml");
-                context.SetOnetimeEffect(id: 02100267, enable: true, path: @"BG/Common/Sound/Eff_Object_CityWar_ComputerSignal_01.xml");
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetOnetimeEffect(id: 100, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_AI_00001876.xml");
+                context.SetOnetimeEffect(id: 11100102, enabled: true, path: @"BG/Common/Sound/Eff_Object_CityWar_SystemWarningAlarm_01.xml");
+                context.SetOnetimeEffect(id: 02100267, enabled: true, path: @"BG/Common/Sound/Eff_Object_CityWar_ComputerSignal_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 100, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000055_AI_00001876.xml");
                 context.SetConversation(type: 2, spawnId: 11001896, script: "$52000055_QD__DARKWINDMOVIE__0$", arg4: 7);
             }
 
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetOnetimeEffect(id: 11100102, enable: false, path: @"BG/Common/Sound/Eff_Object_CityWar_SystemWarningAlarm_01.xml");
+                context.SetOnetimeEffect(id: 11100102, enabled: false, path: @"BG/Common/Sound/Eff_Object_CityWar_SystemWarningAlarm_01.xml");
                 context.CameraSelectPath(pathIds: new []{106, 128}, returnView: true);
             }
 
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001878.xml");
+                context.SetOnetimeEffect(id: 101, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001878.xml");
                 context.SetConversation(type: 2, spawnId: 11001897, script: "$52000055_QD__DARKWINDMOVIE__1$", arg4: 5);
             }
 
@@ -264,7 +264,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 03500148, enable: true, path: @"BG/Common/Sound/Eff_Object_CityWar_KeyboardTyping_01.xml");
+                context.SetOnetimeEffect(id: 03500148, enabled: true, path: @"BG/Common/Sound/Eff_Object_CityWar_KeyboardTyping_01.xml");
                 context.SetConversation(type: 2, spawnId: 11000259, script: "$52000055_QD__DARKWINDMOVIE__2$", arg4: 5);
             }
 
@@ -331,8 +331,8 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCameraEffect109(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 11100103, enable: true, path: @"BG/Common/Sound/Eff_Object_CityWar_SystemErrorAlarm_01.xml");
-                context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_AI_00001877.xml");
+                context.SetOnetimeEffect(id: 11100103, enabled: true, path: @"BG/Common/Sound/Eff_Object_CityWar_SystemErrorAlarm_01.xml");
+                context.SetOnetimeEffect(id: 102, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000055_AI_00001877.xml");
                 context.SetConversation(type: 2, spawnId: 11001896, script: "$52000055_QD__DARKWINDMOVIE__4$", arg4: 5);
             }
 
@@ -352,7 +352,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetOnetimeEffect(id: 11100103, enable: false, path: @"BG/Common/Sound/Eff_Object_CityWar_SystemErrorAlarm_01.xml");
+                context.SetOnetimeEffect(id: 11100103, enabled: false, path: @"BG/Common/Sound/Eff_Object_CityWar_SystemErrorAlarm_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -366,7 +366,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 105, enable: true);
+                context.CameraSelect(triggerId: 105, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11000259, script: "$52000055_QD__DARKWINDMOVIE__5$", arg4: 5);
             }
 
@@ -399,9 +399,9 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCameraEffect13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 112, enable: true);
+                context.CameraSelect(triggerId: 112, enabled: true);
                 context.CameraSelectPath(pathIds: new []{112, 113}, returnView: true);
-                context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001879.xml");
+                context.SetOnetimeEffect(id: 103, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001879.xml");
                 context.SetConversation(type: 2, spawnId: 11001897, script: "$52000055_QD__DARKWINDMOVIE__6$", arg4: 5);
             }
 
@@ -434,7 +434,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 114, enable: true);
+                context.CameraSelect(triggerId: 114, enabled: true);
                 context.CameraSelectPath(pathIds: new []{114, 115}, returnView: true);
                 context.SetConversation(type: 2, spawnId: 11000259, script: "$52000055_QD__DARKWINDMOVIE__7$", arg4: 5);
             }
@@ -501,7 +501,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 104, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001880.xml");
+                context.SetOnetimeEffect(id: 104, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001880.xml");
                 context.SetConversation(type: 2, spawnId: 11001897, script: "$52000055_QD__DARKWINDMOVIE__9$", arg4: 5);
             }
 
@@ -520,7 +520,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 115, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001964.xml");
+                context.SetOnetimeEffect(id: 115, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001964.xml");
                 context.SetConversation(type: 2, spawnId: 11001897, script: "$52000055_QD__DARKWINDMOVIE__10$", arg4: 5);
             }
 
@@ -553,7 +553,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 118, enable: true);
+                context.CameraSelect(triggerId: 118, enabled: true);
                 context.CameraSelectPath(pathIds: new []{121, 122}, returnView: true);
             }
 
@@ -586,8 +586,8 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 105, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001881.xml");
-                context.CameraSelect(triggerId: 122, enable: true);
+                context.SetOnetimeEffect(id: 105, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001881.xml");
+                context.CameraSelect(triggerId: 122, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11001897, script: "$52000055_QD__DARKWINDMOVIE__11$", arg4: 5);
             }
 
@@ -653,7 +653,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk27(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 106, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001882.xml");
+                context.SetOnetimeEffect(id: 106, enabled: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001882.xml");
                 context.CameraSelectPath(pathIds: new []{123, 124}, returnView: true);
                 context.SetConversation(type: 2, spawnId: 11001897, script: "$52000055_QD__DARKWINDMOVIE__13$", arg4: 5);
             }
@@ -687,7 +687,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk29(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
                 context.RemoveCinematicTalk();
                 context.SetSceneSkip();
             }

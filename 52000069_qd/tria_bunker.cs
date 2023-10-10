@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52000069_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAgent(triggerIds: new []{8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019, 8020, 8021}, visible: true);
                 context.CreateMonster(spawnIds: new []{1000, 1001, 1002, 1003, 1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1201, 1202, 1203, 2001, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: false);
             }
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._52000069_qd {
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetSceneSkip(state: new StateStopCinematic(context));
-                    context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                    context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                     return new StateCamera이동(context);
                 }
 
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.AddCinematicTalk(npcId: 11000064, illustId: "Lennon_normal", script: "$52000069_QD__TRIA_BUNKER__0$", duration: 9195, align: Align.Left);
             }
 
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.AddBuff(boxIds: new []{199}, skillId: 70000109, level: 1, arg4: false, arg5: false);
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1003A");
@@ -95,9 +95,9 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 11100101, enable: true, path: @"BG/Common/Sound/Eff_Object_Devlin_Appear_01.xml ");
+                context.SetOnetimeEffect(id: 11100101, enabled: true, path: @"BG/Common/Sound/Eff_Object_Devlin_Appear_01.xml ");
                 context.SetNpcEmotionSequence(spawnId: 2001, sequenceName: "AttackReady_A");
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._52000069_qd {
             internal State프레이Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
                 context.SetNpcEmotionSequence(spawnId: 2003, sequenceName: "Bore_A");
                 context.AddCinematicTalk(npcId: 11000119, illustId: "Fray_serious", script: "$52000069_QD__TRIA_BUNKER__2$", duration: 4000, align: Align.Center);
                 context.SetSceneSkip(state: new State대사스킵용01(context));
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.CameraSelect(triggerId: 304, enable: true);
+                context.CameraSelect(triggerId: 304, enabled: true);
                 context.SetAgent(triggerIds: new []{8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019, 8020, 8021}, visible: false);
             }
 
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 304, enable: false);
+                context.CameraSelect(triggerId: 304, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._52000069_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.AddBuff(boxIds: new []{199}, skillId: 70000107, level: 1, arg4: false, arg5: false);
-                context.CameraSelect(triggerId: 305, enable: true);
+                context.CameraSelect(triggerId: 305, enabled: true);
                 context.SetConversation(type: 1, spawnId: 1004, script: "$52000069_QD__TRIA_BUNKER__3$", arg4: 4, arg5: 0);
                 context.SetConversation(type: 1, spawnId: 1005, script: "$52000069_QD__TRIA_BUNKER__4$", arg4: 4, arg5: 0);
                 context.MoveNpc(spawnId: 1004, patrolName: "MS2PatrolData_1004A");
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._52000069_qd {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.RemoveBuff(boxId: 199, skillId: 70000107);
-                context.CameraSelect(triggerId: 305, enable: false);
+                context.CameraSelect(triggerId: 305, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -278,7 +278,7 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -320,7 +320,7 @@ namespace Maple2.Trigger._52000069_qd {
                 context.SetSceneSkip(state: new StateNPC교체2(context), arg2: "nextState");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 306, enable: true);
+                context.CameraSelect(triggerId: 306, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -338,9 +338,9 @@ namespace Maple2.Trigger._52000069_qd {
             internal State에레브Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionSequence(spawnId: 1000, sequenceName: "Talk_A");
-                context.SetSound(triggerId: 90000, arg2: true);
+                context.SetSound(triggerId: 90000, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11000075, script: "$52000069_QD__TRIA_BUNKER__5$", arg4: 4);
             }
 
@@ -378,7 +378,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001975, script: "$52000069_QD__TRIA_BUNKER__7$", arg4: 4);
-                context.SetOnetimeEffect(id: 1991, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_02_00001991.xml");
+                context.SetOnetimeEffect(id: 1991, enabled: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_02_00001991.xml");
             }
 
             public override TriggerState? Execute() {
@@ -396,7 +396,7 @@ namespace Maple2.Trigger._52000069_qd {
             internal State에레브Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 90000, arg2: false);
+                context.SetSound(triggerId: 90000, enabled: false);
                 context.AddCinematicTalk(npcId: 11000075, illustId: "Ereb_surprise", script: "$52000069_QD__TRIA_BUNKER__8$", duration: 4000, align: Align.Center);
             }
 
@@ -416,7 +416,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{601}, visible: true);
-                context.CameraSelect(triggerId: 307, enable: true);
+                context.CameraSelect(triggerId: 307, enabled: true);
                 context.CreateMonster(spawnIds: new []{2000}, arg2: false, arg3: 4000);
             }
 
@@ -457,7 +457,7 @@ namespace Maple2.Trigger._52000069_qd {
             internal State광역마법(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 4, enabled: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.MoveNpc(spawnId: 2000, patrolName: "MS2PatrolData_2000A");
                 context.SetEffect(triggerIds: new []{609, 602, 603, 604, 605, 606}, visible: true);
             }
@@ -477,7 +477,7 @@ namespace Maple2.Trigger._52000069_qd {
             internal State처맞음(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 4, enabled: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.SetNpcEmotionSequence(spawnId: 1006, sequenceName: "Damg_A");
                 context.SetNpcEmotionSequence(spawnId: 1007, sequenceName: "Damg_A");
                 context.SetNpcEmotionSequence(spawnId: 1009, sequenceName: "Damg_A");
@@ -520,7 +520,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{1001, 1002});
-                context.CameraSelect(triggerId: 309, enable: true);
+                context.CameraSelect(triggerId: 309, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -538,7 +538,7 @@ namespace Maple2.Trigger._52000069_qd {
             internal State마드리아워킹(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 308, enable: true);
+                context.CameraSelect(triggerId: 308, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -557,8 +557,8 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000069_QD__TRIA_BUNKER__9$", arg4: 7);
-                context.SetOnetimeEffect(id: 1992, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_03_00001992.xml");
-                context.CameraSelect(triggerId: 310, enable: true);
+                context.SetOnetimeEffect(id: 1992, enabled: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_03_00001992.xml");
+                context.CameraSelect(triggerId: 310, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -577,7 +577,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11000075, illustId: "Ereb_serious", script: "$52000069_QD__TRIA_BUNKER__10$", duration: 3000, align: Align.Center);
-                context.CameraSelect(triggerId: 311, enable: true);
+                context.CameraSelect(triggerId: 311, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -596,7 +596,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000069_QD__TRIA_BUNKER__11$", arg4: 12);
-                context.SetOnetimeEffect(id: 1993, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_04_00001993.xml");
+                context.SetOnetimeEffect(id: 1993, enabled: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_04_00001993.xml");
             }
 
             public override TriggerState? Execute() {
@@ -615,7 +615,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000069_QD__TRIA_BUNKER__12$", arg4: 11);
-                context.SetOnetimeEffect(id: 1994, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_05_00001994.xml");
+                context.SetOnetimeEffect(id: 1994, enabled: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_05_00001994.xml");
             }
 
             public override TriggerState? Execute() {
@@ -634,7 +634,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000069_QD__TRIA_BUNKER__13$", arg4: 8);
-                context.SetOnetimeEffect(id: 1995, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_06_00001995.xml");
+                context.SetOnetimeEffect(id: 1995, enabled: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_06_00001995.xml");
             }
 
             public override TriggerState? Execute() {
@@ -653,7 +653,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(spawnId: 1000, sequenceName: "Damg_A");
-                context.CameraSelect(triggerId: 315, enable: true);
+                context.CameraSelect(triggerId: 315, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -690,7 +690,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(spawnId: 1000, sequenceName: "Damg_Idle_B", duration: 999999999f);
-                context.CameraSelect(triggerId: 312, enable: true);
+                context.CameraSelect(triggerId: 312, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -708,7 +708,7 @@ namespace Maple2.Trigger._52000069_qd {
             internal State마드리아놀람(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 314, enable: true);
+                context.CameraSelect(triggerId: 314, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -726,7 +726,7 @@ namespace Maple2.Trigger._52000069_qd {
             internal StateCamera눈속임(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 312, enable: true);
+                context.CameraSelect(triggerId: 312, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -744,9 +744,9 @@ namespace Maple2.Trigger._52000069_qd {
             internal State에레브Buff2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 313, enable: true);
+                context.CameraSelect(triggerId: 313, enabled: true);
                 context.SetNpcEmotionSequence(spawnId: 1000, sequenceName: "Spell_A");
-                context.SetOnetimeEffect(id: 02100287, enable: true, path: @"BG/Common/Sound/Eff_System_Chapter8_Destruction_of_Ereb_01.xml");
+                context.SetOnetimeEffect(id: 02100287, enabled: true, path: @"BG/Common/Sound/Eff_System_Chapter8_Destruction_of_Ereb_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -765,7 +765,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{608}, visible: true);
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
             }
 
             public override TriggerState? Execute() {
@@ -784,7 +784,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000069_QD__TRIA_BUNKER__14$", arg4: 7);
-                context.SetOnetimeEffect(id: 1996, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_07_00001996.xml");
+                context.SetOnetimeEffect(id: 1996, enabled: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_07_00001996.xml");
             }
 
             public override TriggerState? Execute() {
@@ -803,7 +803,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(type: 2, spawnId: 11001820, script: "$52000069_QD__TRIA_BUNKER__15$", arg4: 3);
-                context.SetOnetimeEffect(id: 1997, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_08_00001997.xml");
+                context.SetOnetimeEffect(id: 1997, enabled: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_08_00001997.xml");
             }
 
             public override TriggerState? Execute() {
@@ -828,7 +828,7 @@ namespace Maple2.Trigger._52000069_qd {
                 context.DestroyMonster(spawnIds: new []{1000, 1006, 1007, 1009, 2000, 1001, 1002});
                 context.MoveUser(mapId: 52000069, portalId: 2);
                 context.CreateMonster(spawnIds: new []{1000, 1006, 1007, 1010, 1011, 1001, 1002, 9999}, arg2: false);
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
             }
 
             public override TriggerState? Execute() {
@@ -846,10 +846,10 @@ namespace Maple2.Trigger._52000069_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAchievement(triggerId: 91000, type: "trigger", code: "TriaSeigeClear");
-                context.SetSound(triggerId: 90000, arg2: true);
-                context.CameraSelect(triggerId: 313, enable: false);
+                context.SetSound(triggerId: 90000, enabled: true);
+                context.CameraSelect(triggerId: 313, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

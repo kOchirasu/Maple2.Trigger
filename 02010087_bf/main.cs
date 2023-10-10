@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{7301}, visible: true);
-                context.SetSkill(triggerIds: new []{8301}, arg2: true);
+                context.SetSkill(triggerIds: new []{8301}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{7302}, visible: true);
-                context.SetSkill(triggerIds: new []{8302}, arg2: true);
+                context.SetSkill(triggerIds: new []{8302}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{7303, 7304}, visible: true);
-                context.SetSkill(triggerIds: new []{8303, 8304}, arg2: true);
+                context.SetSkill(triggerIds: new []{8303, 8304}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{7305}, visible: true);
-                context.SetSkill(triggerIds: new []{8305}, arg2: true);
+                context.SetSkill(triggerIds: new []{8305}, enabled: true);
             }
 
             public override TriggerState? Execute() {

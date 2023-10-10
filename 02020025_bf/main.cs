@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02020025_bf {
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{202});
                 context.SetConversation(type: 1, spawnId: 0, script: "$02020025_BF__main__5$", arg4: 5, arg5: 0);
-                context.CameraSelect(triggerId: 503, enable: true);
+                context.CameraSelect(triggerId: 503, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02020025_bf {
             internal State유저Cinematic_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 504, enable: true);
+                context.CameraSelect(triggerId: 504, enabled: true);
             }
 
             public override TriggerState? Execute() {

@@ -206,7 +206,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal StateSuccessCinematic02_pre(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -359,7 +359,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{-1});
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAchievement(triggerId: 750, type: "trigger", code: "infernogout");
                 context.SetAchievement(triggerId: 750, type: "trigger", code: "ClearBalrogMagicBurster");
                 context.SetPortal(portalId: 1, visible: true, enabled: true, minimapVisible: true);
@@ -404,7 +404,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(enable: false);
+                context.DungeonEnableGiveUp(enabled: false);
             }
 
             public override TriggerState? Execute() {

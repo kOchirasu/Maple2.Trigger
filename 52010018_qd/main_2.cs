@@ -38,7 +38,7 @@ namespace Maple2.Trigger._52010018_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 302, enable: true);
+                context.CameraSelect(triggerId: 302, enabled: true);
                 context.DestroyMonster(spawnIds: new []{1005});
                 context.CreateMonster(spawnIds: new []{1007}, arg2: false);
                 context.MoveNpc(spawnId: 1007, patrolName: "MS2PatrolData_1007_A");
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._52010018_qd {
                 if (context.WaitTick(waitTick: 2500)) {
                     context.SetCinematicUI(type: 0);
                     context.SetCinematicUI(type: 2);
-                    context.CameraSelect(triggerId: 302, enable: false);
+                    context.CameraSelect(triggerId: 302, enabled: false);
                     context.DestroyMonster(spawnIds: new []{1007});
                     context.SetAchievement(triggerId: 100, type: "trigger", code: "BacktoDrakenheim");
                     return new StateEnd(context);

@@ -8,15 +8,15 @@ namespace Maple2.Trigger._52000027_qd {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State1Pattern(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State2Pattern(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State3Pattern(context);
                 }
 

@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{200035, 200036}, visible: true);
                 context.SetInteractObject(interactIds: new []{10003103}, state: 1);
-                context.SetVisibleBreakableObject(triggerIds: new []{5530}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{5530}, visible: false);
             }
 
             public override TriggerState? Execute() {

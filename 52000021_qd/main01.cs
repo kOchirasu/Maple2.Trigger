@@ -31,7 +31,7 @@ namespace Maple2.Trigger._52000021_qd {
                 context.SetTimer(timerId: "1", seconds: 2);
                 context.SetMesh(triggerIds: new []{5000, 5001, 5002}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(triggerIds: new []{6100}, visible: true);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.CreateMonster(spawnIds: new []{101, 201, 301}, arg2: true);
                 context.SetEffect(triggerIds: new []{6200, 6300, 6201, 6301}, visible: true);
                 context.SetCinematicUI(type: 1);
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._52000021_qd {
             internal State주문석반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 602, enable: false);
+                context.CameraSelect(triggerId: 602, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._52000021_qd {
                 context.SetTimer(timerId: "10", seconds: 1);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 603, enable: true);
+                context.CameraSelect(triggerId: 603, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -203,7 +203,7 @@ namespace Maple2.Trigger._52000021_qd {
                 context.SetTimer(timerId: "12", seconds: 2);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 603, enable: false);
+                context.CameraSelect(triggerId: 603, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -381,7 +381,7 @@ namespace Maple2.Trigger._52000021_qd {
                 context.SetMesh(triggerIds: new []{4000, 4001, 4002, 4003}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 610, enable: true);
+                context.CameraSelect(triggerId: 610, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -422,7 +422,7 @@ namespace Maple2.Trigger._52000021_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "32", seconds: 3);
-                context.CameraSelect(triggerId: 611, enable: true);
+                context.CameraSelect(triggerId: 611, enabled: true);
                 context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_201");
             }
 
@@ -506,7 +506,7 @@ namespace Maple2.Trigger._52000021_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 611, enable: false);
+                context.CameraSelect(triggerId: 611, enabled: false);
                 context.SetAchievement(triggerId: 9900, type: "trigger", code: "EscapeHallstatt");
                 context.SetMesh(triggerIds: new []{5000, 5001, 5002}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }

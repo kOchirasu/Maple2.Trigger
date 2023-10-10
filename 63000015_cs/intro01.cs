@@ -7,7 +7,7 @@ namespace Maple2.Trigger._63000015_cs {
 
             public override void OnEnter() {
                 context.CreateWidget(type: WidgetType.Guide);
-                context.SetSound(triggerId: 10000, arg2: false);
+                context.SetSound(triggerId: 10000, enabled: false);
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(triggerIds: new []{5100, 5101, 5000, 5001, 5002, 5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 6000, 8000, 8001, 8002, 8003, 8004, 8005}, visible: false);
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._63000015_cs {
             internal StateStandAside10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 10000, arg2: true);
+                context.SetSound(triggerId: 10000, enabled: true);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._63000015_cs {
             internal StateStandAside20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 10000, arg2: true);
+                context.SetSound(triggerId: 10000, enabled: true);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -213,10 +213,10 @@ namespace Maple2.Trigger._63000015_cs {
             internal StateWeiHongTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 10000, arg2: true);
+                context.SetSound(triggerId: 10000, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.SetEffect(triggerIds: new []{6000}, visible: true);
             }
 
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._63000015_cs {
             internal StateWeiHongTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
                 context.SetConversation(type: 2, spawnId: 11000251, script: "$63000015_CS__INTRO01__0$", arg4: 6);
                 context.SetEffect(triggerIds: new []{8000}, visible: true);
                 context.SetSkip(state: new StateWeiHongTalk03(context));
@@ -335,7 +335,7 @@ namespace Maple2.Trigger._63000015_cs {
                 context.SetEffect(triggerIds: new []{8002}, visible: false);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 601, enable: false);
+                context.CameraSelect(triggerId: 601, enabled: false);
                 context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -472,7 +472,7 @@ namespace Maple2.Trigger._63000015_cs {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 602, enable: true);
+                context.CameraSelect(triggerId: 602, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -656,7 +656,7 @@ namespace Maple2.Trigger._63000015_cs {
                 context.CreateMonster(spawnIds: new []{102}, arg2: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 602, enable: false);
+                context.CameraSelect(triggerId: 602, enabled: false);
             }
 
             public override TriggerState? Execute() {

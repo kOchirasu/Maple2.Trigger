@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{40001, 6001}, arg2: false);
+                context.SetSkill(triggerIds: new []{40001, 6001}, enabled: false);
                 context.SetInteractObject(interactIds: new []{10002001, 10002002, 10002003}, state: 2);
                 context.CreateMonster(spawnIds: new []{6000020}, arg2: false);
                 context.SetEffect(triggerIds: new []{10090, 10091, 10092}, visible: false);
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State인트로_Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 2000012, enable: true);
+                context.CameraSelect(triggerId: 2000012, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{10014}, visible: true);
-                context.SetSkill(triggerIds: new []{6001}, arg2: true);
+                context.SetSkill(triggerIds: new []{6001}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 0);
-                context.CameraSelect(triggerId: 2000012, enable: false);
+                context.CameraSelect(triggerId: 2000012, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State타이머시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "100", seconds: 180, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "100", seconds: 180, autoRemove: true, display: true);
             }
 
             public override TriggerState? Execute() {
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal StateMonsterSpawn_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{40001}, arg2: true);
+                context.SetSkill(triggerIds: new []{40001}, enabled: true);
                 context.CreateMonster(spawnIds: new []{6000001, 6000002, 6000003}, arg2: false);
             }
 
@@ -317,7 +317,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State스위치CreationCinematic_Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 2000003, enable: true);
+                context.CameraSelect(triggerId: 2000003, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -355,7 +355,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 2);
                 context.SetCinematicUI(type: 0);
-                context.CameraSelect(triggerId: 2000003, enable: false);
+                context.CameraSelect(triggerId: 2000003, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -413,7 +413,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State발사_CameraCinematic_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 2000001, enable: true);
+                context.CameraSelect(triggerId: 2000001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -525,7 +525,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{10023}, visible: true);
-                context.SetSkill(triggerIds: new []{6002}, arg2: true);
+                context.SetSkill(triggerIds: new []{6002}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -544,7 +544,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{10024}, visible: true);
-                context.SetSkill(triggerIds: new []{6002}, arg2: true);
+                context.SetSkill(triggerIds: new []{6002}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -563,7 +563,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{10025}, visible: true);
-                context.SetSkill(triggerIds: new []{6002}, arg2: true);
+                context.SetSkill(triggerIds: new []{6002}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -582,7 +582,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{10021}, visible: true);
-                context.SetSkill(triggerIds: new []{6002}, arg2: true);
+                context.SetSkill(triggerIds: new []{6002}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -601,7 +601,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{10026}, visible: true);
-                context.SetSkill(triggerIds: new []{6002}, arg2: true);
+                context.SetSkill(triggerIds: new []{6002}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -620,7 +620,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{10027}, visible: true);
-                context.SetSkill(triggerIds: new []{6002}, arg2: true);
+                context.SetSkill(triggerIds: new []{6002}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -639,7 +639,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{10022}, visible: true);
-                context.SetSkill(triggerIds: new []{6003}, arg2: true);
+                context.SetSkill(triggerIds: new []{6003}, enabled: true);
             }
 
             public override TriggerState? Execute() {

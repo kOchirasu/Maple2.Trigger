@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000314_bf {
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003140, textId: 20003140, duration: 4000);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.AddBuff(boxIds: new []{102}, skillId: 70000107, level: 1, arg4: false, arg5: false);
                 context.CreateMonster(spawnIds: new []{99}, arg2: false);
                 context.SetSkip(state: new StateEnd체크(context));
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000314_bf {
             }
 
             public override void OnExit() {
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
                 context.RemoveBuff(boxId: 102, skillId: 70000107);
             }
         }

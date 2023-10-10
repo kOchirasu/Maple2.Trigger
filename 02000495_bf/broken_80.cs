@@ -5,7 +5,7 @@ namespace Maple2.Trigger._02000495_bf {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(triggerIds: new []{701}, arg2: false);
+                context.SetSkill(triggerIds: new []{701}, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02000495_bf {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{3000, 3001, 3002, 3003}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(triggerIds: new []{701}, arg2: true);
+                context.SetSkill(triggerIds: new []{701}, enabled: true);
             }
 
             public override TriggerState? Execute() {

@@ -132,8 +132,8 @@ namespace Maple2.Trigger._52010027_qd {
                 context.CameraReset(interpolationTime: 0f);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 0, script: "$52010027_QD__MAIN__8$", duration: 3000);
                 context.AddCinematicTalk(npcId: 0, script: "$52010027_QD__MAIN__9$", duration: 3000);
                 context.SetPcEmotionLoop(sequenceName: "Attack_Idle_A", duration: 10000f);

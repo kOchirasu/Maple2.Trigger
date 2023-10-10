@@ -62,7 +62,7 @@ namespace Maple2.Trigger._84000015_wd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(type: 1);
                 context.WeddingMoveUser(type: WeddingEntryType.Guest, mapId: 84000015, portalIds: new []{22, 23}, boxId: 701);
                 context.WeddingMoveUser(type: WeddingEntryType.Guest, mapId: 84000015, portalIds: new []{22, 23}, boxId: 703);
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._84000015_wd {
             internal State주례줌인01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(pathIds: new []{8002, 8001}, returnView: false);
             }
 
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._84000015_wd {
             internal State시선돌리기01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._84000015_wd {
             internal State입장Prepare01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{8009}, returnView: false);
                 context.SetCinematicUI(type: 1);
             }

@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02020019_bf {
             internal StateCamera_네이린설명1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 503, enable: true);
+                context.CameraSelect(triggerId: 503, enabled: true);
                 context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", script: "$02020019_BF__02020019_main__0$", duration: 4000, align: Align.Left);
                 context.SetNpcEmotionLoop(spawnId: 101, sequenceName: "Talk_A", duration: 6300f);
             }

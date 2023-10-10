@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52020030_qd {
             internal State천공의탑전경보여주기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._52020030_qd {
             internal State천공의탑전경보여주기02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{4008, 4010}, returnView: false);
                 context.ShowCaption(type: CaptionType.Vertical, title: "천공의 탑", script: "크리티아스 마법 연구소", align: Align.Center | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
             }
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52020030_qd {
             internal State천공의탑전경보여주기03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(mapId: 52020030, portalId: 6006);
             }
 
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52020030_qd {
             internal State천공의탑전경보여주기04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 0f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);

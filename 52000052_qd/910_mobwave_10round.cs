@@ -63,23 +63,23 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State1stWaveDirection10(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State1stWaveDirection20(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State1stWaveDirection30(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State1stWaveDirection40(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State1stWaveDirection50(context);
                 }
 
@@ -315,15 +315,15 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State1stWaveDelay7000(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State1stWaveDelay8000(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State1stWaveDelay9000(context);
                 }
 
@@ -421,23 +421,23 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State2ndWaveDirection10(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State2ndWaveDirection20(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State2ndWaveDirection30(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State2ndWaveDirection40(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State2ndWaveDirection50(context);
                 }
 
@@ -673,15 +673,15 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State2ndWaveDelay5000(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State2ndWaveDelay6000(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State2ndWaveDelay7000(context);
                 }
 
@@ -771,23 +771,23 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State3rdWaveDirection10(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State3rdWaveDirection20(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State3rdWaveDirection30(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State3rdWaveDirection40(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State3rdWaveDirection50(context);
                 }
 
@@ -1023,15 +1023,15 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State3rdWaveDelay3000(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State3rdWaveDelay4000(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State3rdWaveDelay5000(context);
                 }
 
@@ -1121,23 +1121,23 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State4thWaveDirection10(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State4thWaveDirection20(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State4thWaveDirection30(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State4thWaveDirection40(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new State4thWaveDirection50(context);
                 }
 

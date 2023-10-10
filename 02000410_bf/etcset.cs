@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02000410_bf {
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 28000)) {
                     context.SetEventUI(arg1: 1, script: "$02000410_BF__BARRICADE_GIVEUP_0$", duration: 5000);
-                    context.DungeonEnableGiveUp(enable: true);
+                    context.DungeonEnableGiveUp(enabled: true);
                     return new State입구PortalRemove(context);
                 }
 

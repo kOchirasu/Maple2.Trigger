@@ -49,12 +49,12 @@ namespace Maple2.Trigger._03000013_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 90f)) {
+                if (context.RandomCondition(rate: 90)) {
                     context.SetInteractObject(interactIds: new []{11000008}, state: 1);
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(rate: 10f)) {
+                if (context.RandomCondition(rate: 10)) {
                     context.SetInteractObject(interactIds: new []{11000009}, state: 1);
                     return new StateEnd(context);
                 }

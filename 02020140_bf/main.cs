@@ -534,7 +534,7 @@ namespace Maple2.Trigger._02020140_bf {
             internal State2Phase복격진행_안내DisplayGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{91}, arg2: true);
+                context.SetSkill(triggerIds: new []{91}, enabled: true);
                 context.ShowGuideSummary(entityId: 29200003, textId: 29200003);
             }
 
@@ -598,7 +598,7 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetPortal(portalId: 318, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 428, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 338, visible: true, enabled: true, minimapVisible: true);
-                context.SetSound(triggerId: 140140, arg2: true);
+                context.SetSound(triggerId: 140140, enabled: true);
                 context.DestroyMonster(spawnIds: new []{1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119, 2120});
                 context.DestroyMonster(spawnIds: new []{1201, 1202, 1203, 1204, 1205, 2201, 2202, 2203, 2204, 2205, 3201, 3202, 3203, 3204, 3205, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315});
             }
@@ -642,7 +642,7 @@ namespace Maple2.Trigger._02020140_bf {
             internal StateEnd안내메시지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{92}, arg2: true);
+                context.SetSkill(triggerIds: new []{92}, enabled: true);
                 context.DestroyMonster(spawnIds: new []{-1});
                 context.ShowGuideSummary(entityId: 29200004, textId: 29200004);
             }
@@ -754,7 +754,7 @@ namespace Maple2.Trigger._02020140_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(enable: false);
+                context.DungeonEnableGiveUp(enabled: false);
             }
 
             public override TriggerState? Execute() {

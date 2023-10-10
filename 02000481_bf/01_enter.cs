@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02000481_bf {
                 context.SetMesh(triggerIds: new []{3200, 3201}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(triggerIds: new []{3300, 3301, 3302, 3303}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetBreakable(triggerIds: new []{4000, 4001, 4002, 4003}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, visible: false);
                 context.SetInteractObject(interactIds: new []{10002025}, state: 0);
             }
 
@@ -188,7 +188,7 @@ namespace Maple2.Trigger._02000481_bf {
                 context.ShowGuideSummary(entityId: 20039502, textId: 20039502, duration: 4000);
                 context.SetMesh(triggerIds: new []{3300, 3301, 3302, 3303}, visible: false, arg3: 500, arg4: 0, arg5: 0f);
                 context.SetBreakable(triggerIds: new []{4000, 4001, 4002, 4003}, enabled: true);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, visible: true);
             }
 
             public override TriggerState? Execute() {
@@ -227,7 +227,7 @@ namespace Maple2.Trigger._02000481_bf {
 
             public override void OnEnter() {
                 context.SetBreakable(triggerIds: new []{4000, 4001, 4002, 4003}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000, 4001, 4002, 4003}, visible: false);
                 context.CreateMonster(spawnIds: new []{911, 912, 913}, arg2: false);
             }
 

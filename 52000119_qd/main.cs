@@ -337,7 +337,7 @@ namespace Maple2.Trigger._52000119_qd {
             internal StateBossscene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7001, arg2: true);
+                context.SetSound(triggerId: 7001, enabled: true);
                 context.SetNpcEmotionLoop(spawnId: 105, sequenceName: "Sit_Down_A", duration: 150000f);
                 context.SetConversation(type: 2, spawnId: 11003187, script: "$52000119_QD__MAIN__13$", arg4: 3, arg5: 0);
             }
@@ -484,8 +484,8 @@ namespace Maple2.Trigger._52000119_qd {
             internal StateFadeout_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7001, arg2: false);
-                context.SetSound(triggerId: 7002, arg2: true);
+                context.SetSound(triggerId: 7001, enabled: false);
+                context.SetSound(triggerId: 7002, enabled: true);
                 context.DestroyMonster(spawnIds: new []{106});
                 context.CreateMonster(spawnIds: new []{997}, arg2: true);
                 context.SetCinematicUI(type: 1);
@@ -548,7 +548,7 @@ namespace Maple2.Trigger._52000119_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7002, arg2: false);
+                context.SetSound(triggerId: 7002, enabled: false);
                 context.AddBalloonTalk(spawnId: 104, msg: "$52000119_QD__MAIN__23$", duration: 2000, delayTick: 0);
             }
 

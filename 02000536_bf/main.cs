@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02000536_bf {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSceneSkip();
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02000536_bf {
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateBattleStart(context), arg2: "nextState");
                 context.CameraSelectPath(pathIds: new []{7000, 7003}, returnView: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ShowCaption(type: CaptionType.Vertical, title: "$02000536_BF__MAIN__0$", script: "$02000536_BF__MAIN__1$", align: Align.Center | Align.Right, offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
             }
 

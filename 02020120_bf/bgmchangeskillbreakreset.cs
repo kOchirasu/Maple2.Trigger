@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02020120_bf {
             internal StateSkill브레이크신호Wait_BGM교체(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 19600, arg2: true);
+                context.SetSound(triggerId: 19600, enabled: true);
             }
 
             public override TriggerState? Execute() {

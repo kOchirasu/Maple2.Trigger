@@ -117,7 +117,7 @@ namespace Maple2.Trigger._52000005_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetTimer(timerId: "10", seconds: 1);
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -254,8 +254,8 @@ namespace Maple2.Trigger._52000005_qd {
 
             public override void OnEnter() {
                 context.SetAchievement(triggerId: 9001, type: "trigger", code: "Lumieragon_History");
-                context.CameraSelect(triggerId: 601, enable: false);
-                context.CameraSelect(triggerId: 602, enable: false);
+                context.CameraSelect(triggerId: 601, enabled: false);
+                context.CameraSelect(triggerId: 602, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

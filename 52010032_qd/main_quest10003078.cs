@@ -11,7 +11,7 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override TriggerState? Execute() {
                 if (context.QuestUserDetected(boxIds: new []{2001}, questIds: new []{10003078}, questStates: new byte[]{2})) {
-                    context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                    context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                     return new StateReady(context);
                 }
 
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._52010032_qd {
             internal State무르파고스이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUserPath(patrolName: "MS2PatrolData_3005");
                 context.MoveNpc(spawnId: 301, patrolName: "MS2PatrolData_3003");
                 context.MoveNpc(spawnId: 302, patrolName: "MS2PatrolData_3004");

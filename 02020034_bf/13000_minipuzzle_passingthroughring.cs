@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02020034_bf {
 
             public override TriggerState? Execute() {
                 if (context.ObjectInteracted(interactIds: new []{12000076}, arg2: 0)) {
-                    context.SetTimer(timerId: "1", seconds: 120, clearAtZero: true, display: false, arg5: 0);
+                    context.SetTimer(timerId: "1", seconds: 120, autoRemove: true, display: false, vOffset: 0);
                     return new StatePassingThroughRing_Start_Delay(context);
                 }
 
@@ -225,7 +225,7 @@ namespace Maple2.Trigger._02020034_bf {
 
             public override void OnEnter() {
                 context.AddBuff(boxIds: new []{130001}, skillId: 71001032, level: 1, arg4: false, arg5: false);
-                context.SetTimer(timerId: "10", seconds: 61, clearAtZero: true, display: false, arg5: 0);
+                context.SetTimer(timerId: "10", seconds: 61, autoRemove: true, display: false, vOffset: 0);
                 context.SetEffect(triggerIds: new []{13200}, visible: true);
                 context.SetMesh(triggerIds: new []{13300}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(interactIds: new []{12000233}, state: 1);

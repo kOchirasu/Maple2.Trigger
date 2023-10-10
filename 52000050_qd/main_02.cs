@@ -11,7 +11,7 @@ namespace Maple2.Trigger._52000050_qd {
                 context.SetInteractObject(interactIds: new []{10000478}, state: 1);
                 context.SetEffect(triggerIds: new []{7010}, visible: false);
                 context.SetBreakable(triggerIds: new []{9010, 9011, 9012, 9013, 9014}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{9010, 9011, 9012, 9013, 9014}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{9010, 9011, 9012, 9013, 9014}, visible: false);
             }
 
             public override TriggerState? Execute() {
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._52000050_qd {
 
             public override void OnEnter() {
                 context.SetBreakable(triggerIds: new []{9010, 9011, 9012, 9013, 9014}, enabled: true);
-                context.SetVisibleBreakableObject(triggerIds: new []{9010, 9011, 9012, 9013, 9014}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{9010, 9011, 9012, 9013, 9014}, visible: true);
             }
 
             public override TriggerState? Execute() {
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._52000050_qd {
             public override TriggerState? Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.SetBreakable(triggerIds: new []{9010, 9011, 9012, 9013, 9014}, enabled: false);
-                    context.SetVisibleBreakableObject(triggerIds: new []{9010, 9011, 9012, 9013, 9014}, arg2: false);
+                    context.SetVisibleBreakableObject(triggerIds: new []{9010, 9011, 9012, 9013, 9014}, visible: false);
                     return new StateStart_c_07(context);
                 }
 

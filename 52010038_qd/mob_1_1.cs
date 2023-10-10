@@ -14,9 +14,9 @@ namespace Maple2.Trigger._52010038_qd {
             }
 
             public override void OnExit() {
-                context.SpawnNpcRange(rangeId: new []{2001, 2002, 2003, 2004}, isAutoTargeting: true);
-                context.SpawnNpcRange(rangeId: new []{2001, 2002, 2003, 2004}, isAutoTargeting: true);
-                context.SpawnNpcRange(rangeId: new []{2001, 2002, 2003, 2004}, isAutoTargeting: true);
+                context.SpawnNpcRange(spawnIds: new []{2001, 2002, 2003, 2004}, isAutoTargeting: true);
+                context.SpawnNpcRange(spawnIds: new []{2001, 2002, 2003, 2004}, isAutoTargeting: true);
+                context.SpawnNpcRange(spawnIds: new []{2001, 2002, 2003, 2004}, isAutoTargeting: true);
                 context.CreateMonster(spawnIds: new []{2011}, arg2: true);
             }
         }
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{2011}, arg2: true);
-                context.SpawnNpcRange(rangeId: new []{2001, 2002, 2003, 2004}, isAutoTargeting: true, randomPickCount: 1);
+                context.SpawnNpcRange(spawnIds: new []{2001, 2002, 2003, 2004}, isAutoTargeting: true, randomPickCount: 1);
             }
 
             public override TriggerState? Execute() {
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{2011}, arg2: true);
-                context.SpawnNpcRange(rangeId: new []{2001, 2002, 2003, 2004}, isAutoTargeting: true, randomPickCount: 1);
+                context.SpawnNpcRange(spawnIds: new []{2001, 2002, 2003, 2004}, isAutoTargeting: true, randomPickCount: 1);
             }
 
             public override TriggerState? Execute() {

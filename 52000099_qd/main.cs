@@ -57,11 +57,11 @@ namespace Maple2.Trigger._52000099_qd {
                 context.RemoveBuff(boxId: 701, skillId: 99910180);
                 context.SetActor(triggerId: 3101, visible: false, initialSequence: "Attack_Idle_A");
                 context.SetActor(triggerId: 3102, visible: false, initialSequence: "Attack_Idle_A");
-                context.SetLocalCamera(cameraId: 8017, enable: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, arg2: true);
+                context.SetLocalCamera(cameraId: 8017, enabled: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, visible: true);
                 context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004}, visible: false);
                 context.CreateMonster(spawnIds: new []{101}, arg2: true);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetEffect(triggerIds: new []{7001, 7002, 7003}, visible: false);
                 context.SetEffect(triggerIds: new []{7004}, visible: true);
                 context.DestroyMonster(spawnIds: new []{-1});
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._52000099_qd {
                 context.CameraSelectPath(pathIds: new []{8001, 8002, 8003}, returnView: false);
                 context.MoveUserPath(patrolName: "MS2PatrolData_2001");
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_2002");
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal StateScene_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSkip();
             }
 
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._52000099_qd {
                 context.ShowGuideSummary(entityId: 25200991, textId: 25200991, duration: 5000);
                 context.CreateMonster(spawnIds: new []{201, 202, 205, 204}, arg2: true);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
@@ -286,7 +286,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal StateScene_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, visible: false);
                 context.AddBalloonTalk(spawnId: 101, msg: "$52000099_QD__MAIN__24$", duration: 3000);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_2007");
             }
@@ -344,7 +344,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal StateScene_12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.DestroyMonster(spawnIds: new []{101});
@@ -367,9 +367,9 @@ namespace Maple2.Trigger._52000099_qd {
 
             public override void OnEnter() {
                 context.MoveUser(mapId: 52000099, portalId: 2);
-                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, visible: true);
                 context.CameraSelectPath(pathIds: new []{8011, 8012}, returnView: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -407,7 +407,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal StatePhase_b_scene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAchievement(triggerId: 701, type: "trigger", code: "Defence1Clear");
                 context.MoveNpc(spawnId: 123, patrolName: "MS2PatrolData_2102");
                 context.MoveUser(mapId: 52000099, portalId: 2);
@@ -472,7 +472,7 @@ namespace Maple2.Trigger._52000099_qd {
                 context.DestroyMonster(spawnIds: new []{122}, arg2: true);
                 context.DestroyMonster(spawnIds: new []{123}, arg2: true);
                 context.CreateMonster(spawnIds: new []{124}, arg2: true);
-                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, visible: false);
                 context.AddBuff(boxIds: new []{701}, skillId: 71000007, level: 1, arg4: false, arg5: false);
                 context.AddBuff(boxIds: new []{701}, skillId: 71000008, level: 1, arg4: false, arg5: false);
                 context.SetMesh(triggerIds: new []{3001, 3003, 3004}, visible: true);
@@ -480,7 +480,7 @@ namespace Maple2.Trigger._52000099_qd {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.SetLocalCamera(cameraId: 8017, enable: true);
+                context.SetLocalCamera(cameraId: 8017, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -498,7 +498,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal StatePhase_b_scene_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "81", seconds: 81, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "81", seconds: 81, autoRemove: true, display: true);
                 context.ShowGuideSummary(entityId: 25200993, textId: 25200993);
                 context.CreateMonster(spawnIds: new []{208}, arg2: true);
             }
@@ -752,14 +752,14 @@ namespace Maple2.Trigger._52000099_qd {
             internal StatePhase_b_scene_end(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, visible: true);
                 context.SetMesh(triggerIds: new []{3001, 3002, 3003, 3004}, visible: false);
                 context.HideGuideSummary(entityId: 25200993);
-                context.SetLocalCamera(cameraId: 8017, enable: false);
+                context.SetLocalCamera(cameraId: 8017, enabled: false);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StatePhase_b_skip_1(context));
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(mapId: 52000099, portalId: 3);
                 context.SetAchievement(triggerId: 701, type: "trigger", code: "Defence2Clear");
             }
@@ -780,7 +780,7 @@ namespace Maple2.Trigger._52000099_qd {
 
             public override void OnEnter() {
                 context.SetPcEmotionSequence(sequenceNames: new []{"Emotion_Disappoint_Idle_A", "Emotion_Disappoint_Idle_A", "Emotion_Disappoint_Idle_A", "Emotion_Disappoint_Idle_A"});
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{8018, 8017}, returnView: false);
             }
 
@@ -1255,7 +1255,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal StatePhase_c_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1273,16 +1273,16 @@ namespace Maple2.Trigger._52000099_qd {
             internal StatePhase_c_16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270, 3101, 3102}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270, 3101, 3102}, visible: false);
                 context.CreateMonster(spawnIds: new []{201, 202, 205, 204, 211, 212, 215, 214, 215, 216, 217, 218}, arg2: true);
                 context.AddBuff(boxIds: new []{701}, skillId: 99910180, level: 1, arg4: false, arg5: false);
                 context.DestroyMonster(spawnIds: new []{103});
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.SetTimer(timerId: "82", seconds: 82, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "82", seconds: 82, autoRemove: true, display: true);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetLocalCamera(cameraId: 8023, enable: true);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetLocalCamera(cameraId: 8023, enabled: true);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1309,8 +1309,8 @@ namespace Maple2.Trigger._52000099_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetLocalCamera(cameraId: 8023, enable: false);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetLocalCamera(cameraId: 8023, enabled: false);
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1421,7 +1421,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal StatePhase_b_skip_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(mapId: 52000099, portalId: 3);
             }
 
@@ -1440,16 +1440,16 @@ namespace Maple2.Trigger._52000099_qd {
             internal StatePhase_b_skip_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270, 3101, 3102}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270, 3101, 3102}, visible: false);
                 context.CreateMonster(spawnIds: new []{201, 202, 205, 204, 211, 212, 215, 214, 215, 216, 217, 218}, arg2: true);
                 context.AddBuff(boxIds: new []{701}, skillId: 99910180, level: 1, arg4: false, arg5: false);
                 context.DestroyMonster(spawnIds: new []{103});
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.SetTimer(timerId: "82", seconds: 82, clearAtZero: true, display: true);
+                context.SetTimer(timerId: "82", seconds: 82, autoRemove: true, display: true);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetLocalCamera(cameraId: 8023, enable: true);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetLocalCamera(cameraId: 8023, enabled: true);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1477,8 +1477,8 @@ namespace Maple2.Trigger._52000099_qd {
                 context.SetSkip();
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetLocalCamera(cameraId: 8023, enable: false);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetLocalCamera(cameraId: 8023, enabled: false);
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1511,7 +1511,7 @@ namespace Maple2.Trigger._52000099_qd {
             public override void OnEnter() {
                 context.SetActor(triggerId: 3101, visible: false);
                 context.SetActor(triggerId: 3102, visible: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, visible: false);
                 context.DestroyMonster(spawnIds: new []{-1});
             }
 
@@ -1739,8 +1739,8 @@ namespace Maple2.Trigger._52000099_qd {
             internal StatePhase_end(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8023, enable: false);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetLocalCamera(cameraId: 8023, enabled: false);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -1773,7 +1773,7 @@ namespace Maple2.Trigger._52000099_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAchievement(triggerId: 701, type: "trigger", code: "AlonRpClear");
                 context.CameraReset(interpolationTime: 0.0f);
                 context.MoveUser(mapId: 52000099, portalId: 2);

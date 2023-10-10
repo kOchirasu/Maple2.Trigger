@@ -25,8 +25,8 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override void OnEnter() {
                 context.MoveUser(mapId: 52020028, portalId: 6002);
-                context.SetOnetimeEffect(id: 1000, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1000, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52020028_qd {
             internal State아크로폴리스내부확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ShowCaption(type: CaptionType.Vertical, title: "아크로폴리스", script: "고대 크리티아스 지식의 안식처", align: Align.Center | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
                 context.CameraSelectPath(pathIds: new []{4002, 4003, 4004}, returnView: false);
                 context.AddCinematicTalk(npcId: 0, script: "여기가 아크로폴리스...", duration: 3000);
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{5003}, visible: false);
-                context.SetOnetimeEffect(id: 1000, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 1000, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.AddCinematicTalk(npcId: 22000117, script: "자격이 없는 자, 즉시 처단한다.", duration: 3000);
             }
 
@@ -220,7 +220,7 @@ namespace Maple2.Trigger._52020028_qd {
                 context.SetCinematicUI(type: 3);
                 context.CameraSelectPath(pathIds: new []{4007}, returnView: false);
                 context.AddBalloonTalk(spawnId: 0, msg: "아니 대화가 전혀 안 통하잖아!", duration: 2000, delayTick: 0);
-                context.SetOnetimeEffect(id: 1000, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 1000, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -257,12 +257,12 @@ namespace Maple2.Trigger._52020028_qd {
             internal StateSpawnCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1000, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 1000, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.CameraSelectPath(pathIds: new []{4005}, returnView: false);
                 context.SetEffect(triggerIds: new []{5001}, visible: true);
                 context.CreateMonster(spawnIds: new []{101}, arg2: false);
                 context.ShowCaption(type: CaptionType.Vertical, title: "아르케온", script: "아크로폴리스의 수호자", align: Align.Center | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
-                context.SetOnetimeEffect(id: 1001, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 1001, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -299,7 +299,7 @@ namespace Maple2.Trigger._52020028_qd {
             internal State아르케온Spawn4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1001, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 1001, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0f);
@@ -322,7 +322,7 @@ namespace Maple2.Trigger._52020028_qd {
             internal StateNextStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }
@@ -360,7 +360,7 @@ namespace Maple2.Trigger._52020028_qd {
             internal State위치이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 0, script: "휴... 힘든 싸움이었어.", duration: 3000);
                 context.AddCinematicTalk(npcId: 0, script: "중요한 시설인가보군, 이런 괴물같은 녀석이 지키고 있는 것을 보니...", duration: 3000);
             }
@@ -401,7 +401,7 @@ namespace Maple2.Trigger._52020028_qd {
             internal State이오네독백Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.VisibleMyPc(visible: false);
@@ -423,7 +423,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{102}, arg2: false);
-                context.CameraSelect(triggerId: 4011, enable: true);
+                context.CameraSelect(triggerId: 4011, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -442,7 +442,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(pathIds: new []{4011, 4008}, returnView: false);
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ShowCaption(type: CaptionType.Vertical, title: "이오네", script: "크리티아스의 왕녀", align: Align.Center | Align.Left, offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
                 context.AddCinematicTalk(npcId: 11003760, script: "그 동안 수고 했어요. 아르케온.", duration: 3000);
             }
@@ -482,7 +482,7 @@ namespace Maple2.Trigger._52020028_qd {
             internal StateWarpPrepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 4, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
             }

@@ -200,7 +200,7 @@ namespace Maple2.Trigger._02000551_bf {
             internal State게임오버(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DungeonEnableGiveUp(enable: false);
+                context.DungeonEnableGiveUp(enabled: false);
                 context.SetPortal(portalId: 21, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 22, visible: true, enabled: true, minimapVisible: true);
                 context.SetPortal(portalId: 23, visible: true, enabled: true, minimapVisible: true);

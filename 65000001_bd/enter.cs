@@ -5,7 +5,7 @@ namespace Maple2.Trigger._65000001_bd {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
-                context.SetTimer(timerId: "60", seconds: 60, clearAtZero: false, display: true);
+                context.SetTimer(timerId: "60", seconds: 60, autoRemove: false, display: true);
                 context.SetEffect(triggerIds: new []{601}, visible: false);
             }
 
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._65000001_bd {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "6", seconds: 6, clearAtZero: false);
+                context.SetTimer(timerId: "6", seconds: 6, autoRemove: false);
                 context.PlaySystemSoundInBox(sound: "BD_Enter_00");
                 context.SetEventUI(arg1: 1, script: "$65000001_BD__ENTER__0$", duration: 6000, boxId: 101);
             }
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._65000001_bd {
             internal State어나운스1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "3", seconds: 3, clearAtZero: false);
+                context.SetTimer(timerId: "3", seconds: 3, autoRemove: false);
                 context.PlaySystemSoundInBox(sound: "BD_Enter_01");
                 context.SetEventUI(arg1: 1, script: "$65000001_BD__ENTER__1$", duration: 3000, boxId: 101);
             }
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._65000001_bd {
             internal StatePvP(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "3", seconds: 3, clearAtZero: false);
+                context.SetTimer(timerId: "3", seconds: 3, autoRemove: false);
             }
 
             public override TriggerState? Execute() {
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._65000001_bd {
             internal State비김(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "3", seconds: 3, clearAtZero: false);
+                context.SetTimer(timerId: "3", seconds: 3, autoRemove: false);
             }
 
             public override TriggerState? Execute() {

@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000191_bf {
             internal StateSkill작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{302, 303}, arg2: true);
+                context.SetSkill(triggerIds: new []{302, 303}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000191_bf {
             internal StateTriggerReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{302, 303}, arg2: false);
+                context.SetSkill(triggerIds: new []{302, 303}, enabled: false);
                 context.SetTimer(timerId: "1", seconds: 1);
             }
 

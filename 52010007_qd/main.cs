@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52010007_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.CreateMonster(spawnIds: new []{1002, 1003, 1004}, arg2: false);
             }
 
@@ -286,7 +286,7 @@ namespace Maple2.Trigger._52010007_qd {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.SetCinematicUI(type: 0);
                     context.SetCinematicUI(type: 2);
-                    context.CameraSelect(triggerId: 301, enable: false);
+                    context.CameraSelect(triggerId: 301, enabled: false);
                     context.SetAchievement(triggerId: 100, type: "trigger", code: "Find_Lamestone");
                     return new StateEnd(context);
                 }

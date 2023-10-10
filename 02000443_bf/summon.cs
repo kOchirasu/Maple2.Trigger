@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal StateSpecial_1_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8001, enable: true);
+                context.SetLocalCamera(cameraId: 8001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal StateSpecial_2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8001, enable: false);
+                context.SetLocalCamera(cameraId: 8001, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal StateSpecial_2_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8001, enable: true);
+                context.SetLocalCamera(cameraId: 8001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal StateSpecial_3_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8001, enable: false);
+                context.SetLocalCamera(cameraId: 8001, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal StateSpecial_3_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8001, enable: true);
+                context.SetLocalCamera(cameraId: 8001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal StateSpecial_4_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8001, enable: false);
+                context.SetLocalCamera(cameraId: 8001, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal StateSpecial_4_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8001, enable: true);
+                context.SetLocalCamera(cameraId: 8001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal StateSpecial_5_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8001, enable: false);
+                context.SetLocalCamera(cameraId: 8001, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal StateSpecial_5_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8001, enable: true);
+                context.SetLocalCamera(cameraId: 8001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetLocalCamera(cameraId: 8001, enable: false);
+                context.SetLocalCamera(cameraId: 8001, enabled: false);
             }
 
             public override TriggerState? Execute() {

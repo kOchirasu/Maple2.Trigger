@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000297_bf {
                 context.SetMesh(triggerIds: new []{107}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 888888, enable: true);
+                context.CameraSelect(triggerId: 888888, enabled: true);
                 context.MoveNpc(spawnId: 1004, patrolName: "MS2PatrolData1");
                 context.SetSkip(state: new StateStopCinematic(context));
             }
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._02000297_bf {
                 context.SetSkip();
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 888888, enable: false);
+                context.CameraSelect(triggerId: 888888, enabled: false);
                 context.SetMesh(triggerIds: new []{107, 31000, 31001, 31002, 31003, 31004, 31005}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.CreateMonster(spawnIds: new []{6200}, arg2: false);
                 context.DestroyMonster(spawnIds: new []{1003, 1002, 1001, 1004});
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._02000297_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 888888, enable: true);
+                context.CameraSelect(triggerId: 888888, enabled: true);
                 context.DestroyMonster(spawnIds: new []{1006});
                 context.CreateMonster(spawnIds: new []{1007}, arg2: false);
                 context.MoveNpc(spawnId: 1007, patrolName: "MS2PatrolData5");
@@ -299,7 +299,7 @@ namespace Maple2.Trigger._02000297_bf {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetSkip();
-                context.CameraSelect(triggerId: 888888, enable: false);
+                context.CameraSelect(triggerId: 888888, enabled: false);
                 context.DestroyMonster(spawnIds: new []{1005, 1008, 1007});
                 context.SetAchievement(triggerId: 9001, type: "trigger", code: "ClearKatramusSecond");
             }

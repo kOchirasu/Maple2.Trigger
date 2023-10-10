@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000177_bf {
             internal StateHorus_01_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{3001}, arg2: true);
+                context.SetSkill(triggerIds: new []{3001}, enabled: true);
             }
 
             public override TriggerState? Execute() {

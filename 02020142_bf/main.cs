@@ -551,7 +551,7 @@ namespace Maple2.Trigger._02020142_bf {
             internal StateEnd안내메시지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{92}, arg2: true);
+                context.SetSkill(triggerIds: new []{92}, enabled: true);
                 context.DestroyMonster(spawnIds: new []{-1});
                 context.ShowGuideSummary(entityId: 29200004, textId: 29200004);
             }

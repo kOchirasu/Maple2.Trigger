@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52000073_qd {
                 context.SetActor(triggerId: 3000, visible: true, initialSequence: "Closed");
                 context.SetMesh(triggerIds: new []{2000}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetBreakable(triggerIds: new []{4000}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000}, visible: false);
                 context.SetInteractObject(interactIds: new []{10001082}, state: 1);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.SetBreakable(triggerIds: new []{4000}, enabled: true);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000}, arg2: true);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000}, visible: true);
                 context.SetMesh(triggerIds: new []{2000}, visible: false, arg3: 0, arg4: 0, arg5: 3f);
             }
 
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.SetBreakable(triggerIds: new []{4000}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000}, visible: false);
                 context.SetMesh(triggerIds: new []{2000}, visible: true, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetInteractObject(interactIds: new []{10001082}, state: 1);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);

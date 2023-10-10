@@ -62,7 +62,7 @@ namespace Maple2.Trigger._52000034_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 301, enable: true);
+                context.CameraSelect(triggerId: 301, enabled: true);
                 context.DestroyMonster(spawnIds: new []{2001, 2002, 2003});
                 context.CreateMonster(spawnIds: new []{1001, 1002, 1003}, arg2: false);
             }
@@ -352,7 +352,7 @@ namespace Maple2.Trigger._52000034_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CameraSelect(triggerId: 301, enable: false);
+                context.CameraSelect(triggerId: 301, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.DestroyMonster(spawnIds: new []{1003});

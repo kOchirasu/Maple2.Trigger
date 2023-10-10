@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 103, key: "Gauge", value: 100);
-                context.SetTimer(timerId: "100100", seconds: 15, clearAtZero: true);
+                context.SetTimer(timerId: "100100", seconds: 15, autoRemove: true);
                 context.SetActor(triggerId: 4003, visible: true, initialSequence: "Interaction_tankorange_A01_100");
                 context.SetActor(triggerId: 4103, visible: true, initialSequence: "Interaction_tankorange_A01_100");
             }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 103, key: "Gauge", value: 75);
                 context.ResetTimer(timerId: "100100");
-                context.SetTimer(timerId: "10075", seconds: 15, clearAtZero: true);
+                context.SetTimer(timerId: "10075", seconds: 15, autoRemove: true);
                 context.SetActor(triggerId: 4003, visible: true, initialSequence: "Interaction_tankorange_A01_75");
                 context.SetActor(triggerId: 4103, visible: true, initialSequence: "Interaction_tankorange_A01_75");
             }
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 103, key: "Gauge", value: 50);
                 context.ResetTimer(timerId: "10075");
-                context.SetTimer(timerId: "10050", seconds: 15, clearAtZero: true);
+                context.SetTimer(timerId: "10050", seconds: 15, autoRemove: true);
                 context.SetActor(triggerId: 4003, visible: true, initialSequence: "Interaction_tankorange_A01_50");
                 context.SetActor(triggerId: 4103, visible: true, initialSequence: "Interaction_tankorange_A01_50");
             }
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 103, key: "Gauge", value: 25);
                 context.ResetTimer(timerId: "10050");
-                context.SetTimer(timerId: "10025", seconds: 15, clearAtZero: true);
+                context.SetTimer(timerId: "10025", seconds: 15, autoRemove: true);
                 context.SetActor(triggerId: 4003, visible: true, initialSequence: "Interaction_tankorange_A01_25");
                 context.SetActor(triggerId: 4103, visible: true, initialSequence: "Interaction_tankorange_A01_25");
             }

@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02000336_bf {
                 context.ShowGuideSummary(entityId: 105, textId: 20003361);
                 context.CreateMonster(spawnIds: new []{191, 192, 193, 194, 195, 196, 197, 198}, arg2: false);
                 context.SetEffect(triggerIds: new []{7002}, visible: true);
-                context.SetSkill(triggerIds: new []{5803, 5804, 5805}, arg2: true);
+                context.SetSkill(triggerIds: new []{5803, 5804, 5805}, enabled: true);
             }
 
             public override TriggerState? Execute() {

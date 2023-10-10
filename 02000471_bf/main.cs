@@ -116,7 +116,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip(state: new StateBoss(context), arg2: "exit");
-                context.SetSound(triggerId: 9900, arg2: true);
+                context.SetSound(triggerId: 9900, enabled: true);
                 context.DestroyMonster(spawnIds: new []{201, 202, 203, 204, 205, 206});
                 context.SetEffect(triggerIds: new []{7999}, visible: false);
                 context.CreateMonster(spawnIds: new []{311, 312, 313, 314, 315, 316, 2000}, arg2: false);
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetUserValue(triggerId: 2040321, key: "SpawnCheck", value: 1);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateBoss_scene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(pathIds: new []{8006, 8007}, returnView: false);
             }
 
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetEventUI(arg1: 1, script: "$02000471_BF__MAIN__0$", duration: 3000);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -233,7 +233,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateDungeonClear_ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 9900, arg2: false);
+                context.SetSound(triggerId: 9900, enabled: false);
                 context.SetUserValue(triggerId: 2040324, key: "respawn", value: 2);
                 context.DestroyMonster(spawnIds: new []{301, 302, 303, 304, 305, 306});
             }

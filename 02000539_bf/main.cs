@@ -11,18 +11,18 @@ namespace Maple2.Trigger._02000539_bf {
                 context.SetLadder(triggerId: 604, visible: false, animationEffect: false);
                 context.SetLadder(triggerId: 605, visible: false, animationEffect: false);
                 context.SetLadder(triggerId: 606, visible: false, animationEffect: false);
-                context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 102, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 104, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 105, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetOnetimeEffect(id: 106, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 101, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 102, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 103, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 104, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 105, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 106, enabled: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetMesh(triggerIds: new []{904, 905, 906, 907, 908, 909}, visible: true);
                 context.SetMesh(triggerIds: new []{910, 911, 912, 913, 921, 914, 915, 922, 916, 917, 918, 919, 920, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937}, visible: false);
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 2, isEnable: false);
-                context.SetSkill(triggerIds: new []{2000}, arg2: false);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 2, enabled: false);
+                context.SetSkill(triggerIds: new []{2000}, enabled: false);
                 context.SetEffect(triggerIds: new []{3000, 3001, 3002, 3003, 3004}, visible: false);
             }
 
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{904, 905, 906, 907, 908, 909}, visible: false);
-                context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 101, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -228,7 +228,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal State다리만들기1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 102, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetMesh(triggerIds: new []{910, 911}, visible: true);
             }
 
@@ -341,8 +341,8 @@ namespace Maple2.Trigger._02000539_bf {
                 context.CreateMonster(spawnIds: new []{202}, arg2: false);
                 context.CreateMonster(spawnIds: new []{111, 1111, 1112, 112, 1121}, arg2: true);
                 context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000, script: "$02000539_BF__MAIN__5$");
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -433,7 +433,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000539_BF__MAIN__8$");
-                context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 103, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetMesh(triggerIds: new []{928, 929, 930, 931, 932, 933, 934, 935, 936, 937}, visible: true);
                 context.SetLadder(triggerId: 604, visible: true, animationEffect: true);
                 context.SetLadder(triggerId: 605, visible: true, animationEffect: true);
@@ -489,7 +489,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal State벽부시기3단계(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 105, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 105, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetMesh(triggerIds: new []{938, 939, 940, 941, 942, 943}, visible: false);
             }
 
@@ -509,10 +509,10 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000, script: "$02000539_BF__MAIN__9$");
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 2, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 2, enabled: true);
                 context.CreateMonster(spawnIds: new []{119}, arg2: true);
-                context.SetOnetimeEffect(id: 106, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
+                context.SetOnetimeEffect(id: 106, enabled: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override TriggerState? Execute() {
@@ -531,7 +531,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{3002, 3003, 3004}, visible: true);
-                context.SetSkill(triggerIds: new []{2000}, arg2: true);
+                context.SetSkill(triggerIds: new []{2000}, enabled: true);
             }
 
             public override TriggerState? Execute() {

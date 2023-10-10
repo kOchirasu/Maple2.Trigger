@@ -15,11 +15,11 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetPortal(portalId: 1, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 3, visible: false, enabled: false, minimapVisible: false);
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 2, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 3, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 4, isEnable: false);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 2, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 3, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 4, enabled: false);
                 context.SetUserValue(triggerId: 99990002, key: "Battle_1_SpawnStart", value: 0);
                 context.SetUserValue(triggerId: 99990003, key: "Battle_2_Start", value: 0);
                 context.SetUserValue(triggerId: 99990004, key: "Battle_3_Start", value: 0);
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02020065_bf {
             public override void OnEnter() {
                 context.SetAchievement(triggerId: 9002, type: "trigger", code: "corps_battle");
                 context.SetEventUI(arg1: 1, script: "$02020065_BF__MAIN__0$", duration: 5000);
-                context.CameraSelect(triggerId: 998, enable: true);
+                context.CameraSelect(triggerId: 998, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -125,11 +125,11 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetEventUI(arg1: 1, script: "$02020065_BF__MAIN__2$", duration: 5000);
                 context.CreateMonster(spawnIds: new []{801}, arg2: false);
                 context.SetUserValue(triggerId: 99990002, key: "Battle_1_SpawnStart", value: 1);
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 2, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 3, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 4, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 2, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 3, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 4, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetEventUI(arg1: 0, script: "3,3");
                 context.SideNpcTalk(type: SideNpcTalkType.Talk, npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020065_BF__MAIN__4$");
                 context.SetUserValue(triggerId: 99990004, key: "Battle_3_Start", value: 1);
-                context.SetTimer(timerId: "1", seconds: 180, clearAtZero: true, display: true, arg5: 60);
+                context.SetTimer(timerId: "1", seconds: 180, autoRemove: true, display: true, vOffset: 60);
             }
 
             public override TriggerState? Execute() {

@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State세번째전투끝나고(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 6, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 6, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State세번째전투끝나고2_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 6, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 6, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetEffect(triggerIds: new []{5001}, visible: true);
                 context.FaceEmotion(spawnId: 0, emotionName: "defaultBattle");
                 context.SetPcEmotionLoop(sequenceName: "Idle_A", duration: 5000f);
@@ -159,7 +159,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State천공의탑으로이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 7, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 7, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(mapId: 52020030, portalId: 6001);
             }
 

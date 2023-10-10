@@ -93,7 +93,7 @@ namespace Maple2.Trigger._99999908 {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120});
-                context.SpawnNpcRange(rangeId: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120}, isAutoTargeting: false, randomPickCount: 3, score: 100);
+                context.SpawnNpcRange(spawnIds: new []{101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120}, isAutoTargeting: false, randomPickCount: 3, score: 100);
                 context.AddBuff(boxIds: new []{701}, skillId: 99910221, level: 1, arg4: false, arg5: false);
             }
 

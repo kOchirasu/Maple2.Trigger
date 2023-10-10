@@ -28,22 +28,22 @@ namespace Maple2.Trigger._51000001_dg {
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     context.SetMesh(triggerIds: new []{3701}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateA지역(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     context.SetMesh(triggerIds: new []{3702}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateB지역(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     context.SetMesh(triggerIds: new []{3703}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateC지역(context);
                 }
 
-                if (context.RandomCondition(rate: 25f)) {
+                if (context.RandomCondition(rate: 25)) {
                     context.SetMesh(triggerIds: new []{3704}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                     return new StateD지역(context);
                 }
@@ -130,22 +130,22 @@ namespace Maple2.Trigger._51000001_dg {
                     return new StateEnd(context);
                 }
 
-                if (context.RandomCondition(rate: 40f)) {
+                if (context.RandomCondition(rate: 40)) {
                     context.AddBuff(boxIds: new []{199}, skillId: 49179051, level: 1, arg4: false, arg5: false);
                     return new StateWaitTime(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     context.AddBuff(boxIds: new []{199}, skillId: 70000085, level: 1, arg5: false);
                     return new StateWaitTime(context);
                 }
 
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     context.AddBuff(boxIds: new []{199}, skillId: 49179061, level: 1, arg4: false, arg5: false);
                     return new StateWaitTime(context);
                 }
 
-                if (context.RandomCondition(rate: 15f)) {
+                if (context.RandomCondition(rate: 15)) {
                     context.AddBuff(boxIds: new []{199}, skillId: 49179071, level: 1, arg4: false, arg5: false);
                     return new StateWaitTime(context);
                 }

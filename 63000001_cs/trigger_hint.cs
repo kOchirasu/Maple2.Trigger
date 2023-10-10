@@ -5,7 +5,7 @@ namespace Maple2.Trigger._63000001_cs {
 
             public override void OnEnter() {
                 context.SetRandomMesh(triggerIds: new []{801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818}, visible: true, meshCount: 2, arg4: 0, delay: 1000);
-                context.SetTimer(timerId: "99", seconds: 3, clearAtZero: false);
+                context.SetTimer(timerId: "99", seconds: 3, autoRemove: false);
             }
 
             public override TriggerState? Execute() {
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._63000001_cs {
 
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818}, visible: false);
-                context.SetTimer(timerId: "41", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "41", seconds: 30, autoRemove: false);
             }
 
             public override TriggerState? Execute() {

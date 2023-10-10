@@ -8,11 +8,11 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
                 context.SetPortal(portalId: 13, visible: false, enabled: false, minimapVisible: false);
                 context.SetMesh(triggerIds: new []{3000, 3001}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Ending_Chord_01.xml");
-                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/Sound/Eff_System_Dark_Ending_Chord_01.xml");
+                context.SetOnetimeEffect(id: 3, enabled: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 4, enabled: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 5, enabled: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -67,8 +67,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateCameraWalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelect(triggerId: 800, enable: true);
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.CameraSelect(triggerId: 800, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateCameraWalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 801, enable: true);
+                context.CameraSelect(triggerId: 801, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateCameraWalk04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Ending_Chord_01.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/Sound/Eff_System_Dark_Ending_Chord_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -142,8 +142,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateCameraShot01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 802, enable: true);
-                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.CameraSelect(triggerId: 802, enabled: true);
+                context.SetOnetimeEffect(id: 3, enabled: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -161,8 +161,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateCameraShot02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 803, enable: true);
-                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.CameraSelect(triggerId: 803, enabled: true);
+                context.SetOnetimeEffect(id: 4, enabled: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -180,8 +180,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateCameraShot03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 804, enable: true);
-                context.SetOnetimeEffect(id: 5, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.CameraSelect(triggerId: 804, enabled: true);
+                context.SetOnetimeEffect(id: 5, enabled: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override TriggerState? Execute() {
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateCameraFadeIn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -217,8 +217,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateCameraFadeOut01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelect(triggerId: 804, enable: false);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.CameraSelect(triggerId: 804, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
@@ -300,7 +300,7 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.MoveUserPath(patrolName: "MS2PatrolData_1200");
-                context.CameraSelect(triggerId: 810, enable: true);
+                context.CameraSelect(triggerId: 810, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateFindDoor03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 811, enable: true);
+                context.CameraSelect(triggerId: 811, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -411,7 +411,7 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 811, enable: false);
+                context.CameraSelect(triggerId: 811, enabled: false);
                 context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01");
                 context.SetEventUI(arg1: 1, script: "$52000037_QD__LOOKINTO_RUNEBLADER_11__0$", duration: 3000, boxId: 0);
             }

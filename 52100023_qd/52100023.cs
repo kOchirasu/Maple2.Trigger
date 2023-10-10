@@ -5,7 +5,7 @@ namespace Maple2.Trigger._52100023_qd {
 
             public override void OnEnter() {
                 context.SetBreakable(triggerIds: new []{4000}, enabled: false);
-                context.SetVisibleBreakableObject(triggerIds: new []{4000}, arg2: false);
+                context.SetVisibleBreakableObject(triggerIds: new []{4000}, visible: false);
                 context.CreateMonster(spawnIds: new []{1101}, arg2: false);
             }
 

@@ -13,7 +13,7 @@ namespace Maple2.Trigger._02000379_bf {
                 context.SetMeshAnimation(triggerIds: new []{3001, 3002}, visible: false, arg3: 0, arg4: 0);
                 context.SetMesh(triggerIds: new []{3100, 3101, 3102, 3103, 3104, 3105, 3106, 3200, 3201, 3202, 3203, 3204, 3205, 3206}, visible: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(triggerIds: new []{3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(triggerIds: new []{2000, 2001, 2002}, arg2: false);
+                context.SetSkill(triggerIds: new []{2000, 2001, 2002}, enabled: false);
                 context.SetAgent(triggerIds: new []{8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011}, visible: true);
             }
 
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02000379_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.SetConversation(type: 1, spawnId: 101, script: "$02000379_BF__FAKELAOZ01__0$", arg4: 3, arg5: 1);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_101");
                 context.MoveNpc(spawnId: 201, patrolName: "MS2PatrolData_201");
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02000379_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.SetConversation(type: 1, spawnId: 201, script: "$02000379_BF__FAKELAOZ01__1$", arg4: 3, arg5: 0);
                 context.SetSkip(state: new StateCameraAct04(context));
             }
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._02000379_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 600, enable: false);
+                context.CameraSelect(triggerId: 600, enabled: false);
                 context.SetSkip();
             }
 
@@ -195,7 +195,7 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateCollapseBridge01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2000}, arg2: true);
+                context.SetSkill(triggerIds: new []{2000}, enabled: true);
                 context.SetEffect(triggerIds: new []{5100}, visible: true);
             }
 
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateCollapseBridge02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2001}, arg2: true);
+                context.SetSkill(triggerIds: new []{2001}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateCollapseBridge03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{2002}, arg2: true);
+                context.SetSkill(triggerIds: new []{2002}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -268,7 +268,7 @@ namespace Maple2.Trigger._02000379_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
                 context.SetSkip(state: new StateCameraAct13(context));
             }
 
@@ -309,7 +309,7 @@ namespace Maple2.Trigger._02000379_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 601, enable: false);
+                context.CameraSelect(triggerId: 601, enabled: false);
                 context.SetSkip();
             }
 
@@ -330,7 +330,7 @@ namespace Maple2.Trigger._02000379_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 602, enable: true);
+                context.CameraSelect(triggerId: 602, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -387,7 +387,7 @@ namespace Maple2.Trigger._02000379_bf {
 
             public override void OnEnter() {
                 context.SetAgent(triggerIds: new []{8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011}, visible: false);
-                context.CameraSelect(triggerId: 602, enable: false);
+                context.CameraSelect(triggerId: 602, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetSkip();
@@ -471,7 +471,7 @@ namespace Maple2.Trigger._02000379_bf {
                 context.SetEffect(triggerIds: new []{5300}, visible: true);
                 context.SetRandomMesh(triggerIds: new []{3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323}, visible: true, meshCount: 24, arg4: 100, delay: 70);
                 context.SetMesh(triggerIds: new []{3202, 3203, 3204, 3100, 3101, 3102, 3103, 3104, 3105, 3106}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CameraSelect(triggerId: 700, enable: true);
+                context.CameraSelect(triggerId: 700, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetSkip(state: new StateLampLightUp02(context));
@@ -563,7 +563,7 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateTimeToLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 700, enable: false);
+                context.CameraSelect(triggerId: 700, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.SetSkip();

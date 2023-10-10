@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{200001, 200002, 200003, 200004, 200005, 200011, 200012, 200013, 200014, 200015, 200021, 200022, 200023, 200024, 200025, 200031, 200032, 200033, 200034, 200035}, visible: false);
-                context.SetSkill(triggerIds: new []{5002}, arg2: true);
+                context.SetSkill(triggerIds: new []{5002}, enabled: true);
                 context.AddBuff(boxIds: new []{101}, skillId: 62100026, level: 1, arg4: true);
                 context.AddBuff(boxIds: new []{1001}, skillId: 75000002, level: 1);
                 context.AddBuff(boxIds: new []{1002}, skillId: 75000002, level: 1);

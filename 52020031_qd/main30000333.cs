@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째SetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 0, script: "천공의 심장을 돌려줘.", duration: 3000);
                 context.MoveNpc(spawnId: 101, patrolName: "MS2PatrolData_3003");
             }
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째Cinematic전투Prepare_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 5, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 5, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override TriggerState? Execute() {
@@ -195,7 +195,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째Cinematic전투Prepare1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 5, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CreateMonster(spawnIds: new []{601}, arg2: false);
                 context.SetEventUI(arg1: 1, script: "하렌을 처치하세요!", duration: 2000, boxId: 0);
                 context.AddBalloonTalk(spawnId: 601, msg: "숨통을 끊어주마.", duration: 3000, delayTick: 3000);
@@ -216,7 +216,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째Cinematic전투종료1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 6, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 6, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 0.5f);
                 context.MoveUser(mapId: 52020031, portalId: 6001);
                 context.DestroyMonster(spawnIds: new []{601});
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째Cinematic전투종료2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 6, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 6, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

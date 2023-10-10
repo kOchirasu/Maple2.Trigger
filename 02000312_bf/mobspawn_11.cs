@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetEffect(triggerIds: new []{5000}, visible: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.SetSkip(state: new StateCameraWalk01(context));
             }
 
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000312_bf {
             internal StateCameraWalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 600, enable: false);
+                context.CameraSelect(triggerId: 600, enabled: false);
                 context.SetSkip();
             }
 
@@ -216,15 +216,15 @@ namespace Maple2.Trigger._02000312_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 60f)) {
+                if (context.RandomCondition(rate: 60)) {
                     return new StateMobWaveDelay01(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMobWaveDelay02(context);
                 }
 
-                if (context.RandomCondition(rate: 20f)) {
+                if (context.RandomCondition(rate: 20)) {
                     return new StateMobWaveDelay03(context);
                 }
 

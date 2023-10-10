@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000133_ad {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, script: "$02000133_AD__BOARD__0$", duration: 4000, boxId: 101);
-                context.SetTimer(timerId: "5", seconds: 5, clearAtZero: false);
+                context.SetTimer(timerId: "5", seconds: 5, autoRemove: false);
             }
 
             public override TriggerState? Execute() {

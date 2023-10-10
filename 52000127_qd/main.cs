@@ -7,8 +7,8 @@ namespace Maple2.Trigger._52000127_qd {
 
             public override void OnEnter() {
                 context.VisibleMyPc(visible: false);
-                context.SetSound(triggerId: 7001, arg2: false);
-                context.SetSound(triggerId: 7002, arg2: false);
+                context.SetSound(triggerId: 7001, enabled: false);
+                context.SetSound(triggerId: 7002, enabled: false);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._52000127_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._52000127_qd {
                 context.VisibleMyPc(visible: true);
                 context.CameraSelectPath(pathIds: new []{4002}, returnView: false);
                 context.MoveUser(mapId: 52000127, portalId: 6001);
-                context.SetSound(triggerId: 7001, arg2: true);
+                context.SetSound(triggerId: 7001, enabled: true);
                 context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
@@ -207,9 +207,9 @@ namespace Maple2.Trigger._52000127_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSound(triggerId: 7001, arg2: false);
-                context.SetSound(triggerId: 7002, arg2: true);
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetSound(triggerId: 7001, enabled: false);
+                context.SetSound(triggerId: 7002, enabled: true);
                 context.SetPcEmotionLoop(sequenceName: "Sit_Ground_Idle_A", duration: 21000f);
                 context.FaceEmotion(spawnId: 0, emotionName: "Stun");
             }
@@ -347,7 +347,7 @@ namespace Maple2.Trigger._52000127_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
                 context.CameraReset(interpolationTime: 1.0f);
@@ -364,7 +364,7 @@ namespace Maple2.Trigger._52000127_qd {
             internal StateOpen(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.VisibleMyPc(visible: true);
@@ -386,7 +386,7 @@ namespace Maple2.Trigger._52000127_qd {
             internal StateOpen2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 2, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }

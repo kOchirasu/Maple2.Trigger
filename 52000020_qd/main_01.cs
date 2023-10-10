@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52000020_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7001, arg2: true);
+                context.SetSound(triggerId: 7001, enabled: true);
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.SetCinematicUI(type: 4);
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000020_qd {
             internal StateCamera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelect(triggerId: 4001, enable: false);
+                context.CameraSelect(triggerId: 4001, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -222,9 +222,9 @@ namespace Maple2.Trigger._52000020_qd {
             internal StateBattle_ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7001, arg2: false);
-                context.SetSound(triggerId: 7002, arg2: true);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetSound(triggerId: 7001, enabled: false);
+                context.SetSound(triggerId: 7002, enabled: true);
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(spawnIds: new []{301, 401, 402, 403});
             }
 
@@ -243,7 +243,7 @@ namespace Maple2.Trigger._52000020_qd {
             internal StateBattle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 1.0f);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
@@ -285,7 +285,7 @@ namespace Maple2.Trigger._52000020_qd {
             internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 7002, arg2: false);
+                context.SetSound(triggerId: 7002, enabled: false);
             }
 
             public override TriggerState? Execute() {

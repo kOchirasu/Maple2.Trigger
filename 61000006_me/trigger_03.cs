@@ -83,7 +83,7 @@ namespace Maple2.Trigger._61000006_me {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999111, key: "gameStart", value: 1);
-                context.SetTimer(timerId: "160", seconds: 160, clearAtZero: false, display: true);
+                context.SetTimer(timerId: "160", seconds: 160, autoRemove: false, display: true);
                 context.SetMesh(triggerIds: new []{501, 502, 503, 504, 505, 506, 507, 508, 509}, visible: false);
                 context.SetInteractObject(interactIds: new []{10000224, 10000214}, state: 1);
                 context.SetAchievement(triggerId: 402, type: "trigger", code: "dailyquest_start");

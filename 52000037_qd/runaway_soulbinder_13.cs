@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 603, enable: true);
+                context.CameraSelect(triggerId: 603, enabled: true);
                 context.MoveUser(mapId: 52000037, portalId: 11);
             }
 
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{211, 212, 213}, arg2: false);
-                context.CameraSelect(triggerId: 604, enable: true);
+                context.CameraSelect(triggerId: 604, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.SetPortal(portalId: 2, visible: true, enabled: true, minimapVisible: true);
-                context.CameraSelect(triggerId: 605, enable: true);
+                context.CameraSelect(triggerId: 605, enabled: true);
                 context.MoveUserPath(patrolName: "MS2PatrolData_PC1102C");
             }
 

@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02020145_bf {
             public override void OnEnter() {
                 context.SetConversation(type: 1, spawnId: 101, script: "$02020111_BF__MOVEMENT_01__1$", arg4: 3, arg5: 0);
                 context.DestroyMonster(spawnIds: new []{121, 122, 123, 124, 125, 131, 132, 133, 134});
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAmbientLight(color: new Vector3(183f, 189f, 201f));
                 context.SetDirectionalLight(diffuseColor: new Vector3(192f, 210f, 211f), specularColor: new Vector3(170f, 170f, 170f));
                 context.AddBuff(boxIds: new []{1001}, skillId: 75000002, level: 1);

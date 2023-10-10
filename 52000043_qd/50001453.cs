@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52000043_qd {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
                 context.CreateMonster(spawnIds: new []{2100, 2101}, arg2: false);
-                context.CameraSelect(triggerId: 303, enable: true);
+                context.CameraSelect(triggerId: 303, enabled: true);
                 context.MoveNpc(spawnId: 1003, patrolName: "MS2PatrolData_1004A");
                 context.MoveNpc(spawnId: 2003, patrolName: "MS2PatrolData_2004A");
             }
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._52000043_qd {
                 context.SetAgent(triggerIds: new []{9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007}, visible: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
-                context.CameraSelect(triggerId: 303, enable: false);
+                context.CameraSelect(triggerId: 303, enabled: false);
             }
 
             public override TriggerState? Execute() {

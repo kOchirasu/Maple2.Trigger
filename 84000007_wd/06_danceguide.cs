@@ -62,11 +62,11 @@ namespace Maple2.Trigger._84000007_wd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateDanceGuideP11_01(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateDanceGuideP12_01(context);
                 }
 
@@ -82,11 +82,11 @@ namespace Maple2.Trigger._84000007_wd {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateDanceGuideP21_01(context);
                 }
 
-                if (context.RandomCondition(rate: 50f)) {
+                if (context.RandomCondition(rate: 50)) {
                     return new StateDanceGuideP22_01(context);
                 }
 

@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000292_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(type: 1);
                 context.SetCinematicUI(type: 3);
-                context.CameraSelect(triggerId: 600, enable: true);
+                context.CameraSelect(triggerId: 600, enabled: true);
                 context.SetSkip(state: new StateCameraWalk03(context));
             }
 
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._02000292_bf {
             public override void OnEnter() {
                 context.CreateMonster(spawnIds: new []{1110}, arg2: false);
                 context.MoveNpc(spawnId: 1110, patrolName: "MS2PatrolData_1110");
-                context.CameraSelect(triggerId: 601, enable: true);
+                context.CameraSelect(triggerId: 601, enabled: true);
                 context.SetSkip(state: new StateCameraWalk03(context));
             }
 
@@ -103,8 +103,8 @@ namespace Maple2.Trigger._02000292_bf {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.CameraSelect(triggerId: 601, enable: false);
-                context.CameraSelect(triggerId: 600, enable: false);
+                context.CameraSelect(triggerId: 601, enabled: false);
+                context.CameraSelect(triggerId: 600, enabled: false);
                 context.SetCinematicUI(type: 0);
                 context.SetCinematicUI(type: 2);
             }
@@ -145,7 +145,7 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateDungeonPlay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(boxIds: new []{9001}, sound: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01", boxIds: 9001);
                 context.ShowGuideSummary(entityId: 20002922, textId: 20002922, duration: 5000);
                 context.SetActor(triggerId: 101, visible: false, initialSequence: "Opened");
                 context.SetMesh(triggerIds: new []{105, 106, 107, 108}, visible: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateDungeonPlay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(boxIds: new []{9001}, sound: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01", boxIds: 9001);
                 context.ShowGuideSummary(entityId: 20002924, textId: 20002924);
             }
 

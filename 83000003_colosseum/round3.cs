@@ -7,12 +7,12 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 11000, arg2: false);
-                context.SetSound(triggerId: 11001, arg2: false);
-                context.SetSound(triggerId: 12000, arg2: false);
-                context.SetSound(triggerId: 12001, arg2: false);
-                context.SetSound(triggerId: 13000, arg2: false);
-                context.SetSound(triggerId: 13001, arg2: false);
+                context.SetSound(triggerId: 11000, enabled: false);
+                context.SetSound(triggerId: 11001, enabled: false);
+                context.SetSound(triggerId: 12000, enabled: false);
+                context.SetSound(triggerId: 12001, enabled: false);
+                context.SetSound(triggerId: 13000, enabled: false);
+                context.SetSound(triggerId: 13001, enabled: false);
             }
 
             public override TriggerState? Execute() {
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal State라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 11000, arg2: true);
-                context.SetSound(triggerId: 11001, arg2: true);
+                context.SetSound(triggerId: 11000, enabled: true);
+                context.SetSound(triggerId: 11001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() {
                 context.AddBalloonTalk(spawnId: 103, msg: "$83000002_COLOSSEUM__ROUND3__3$", duration: 3000);
-                context.SetTimer(timerId: "LimitTimer", seconds: 60, clearAtZero: true);
+                context.SetTimer(timerId: "LimitTimer", seconds: 60, autoRemove: true);
                 context.SetNpcDuelHpBar(isOpen: true, spawnId: 103, durationTick: 60000, npcHpStep: 10);
             }
 
@@ -201,8 +201,8 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() {
                 context.LockMyPc(isLock: true);
-                context.SetSound(triggerId: 12000, arg2: true);
-                context.SetSound(triggerId: 12001, arg2: true);
+                context.SetSound(triggerId: 12000, enabled: true);
+                context.SetSound(triggerId: 12001, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -222,8 +222,8 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal StateFailRoundDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSound(triggerId: 13000, arg2: true);
-                context.SetSound(triggerId: 13001, arg2: true);
+                context.SetSound(triggerId: 13000, enabled: true);
+                context.SetSound(triggerId: 13001, enabled: true);
             }
 
             public override TriggerState? Execute() {

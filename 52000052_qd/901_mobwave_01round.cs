@@ -70,15 +70,15 @@ namespace Maple2.Trigger._52000052_qd {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State1stWaveDelay3000(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State1stWaveDelay4000(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State1stWaveDelay5000(context);
                 }
 
@@ -179,15 +179,15 @@ namespace Maple2.Trigger._52000052_qd {
             }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State2ndWaveDelay3000(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State2ndWaveDelay4000(context);
                 }
 
-                if (context.RandomCondition(rate: 30f)) {
+                if (context.RandomCondition(rate: 30)) {
                     return new State2ndWaveDelay5000(context);
                 }
 

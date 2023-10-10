@@ -58,19 +58,19 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new State1번(context);
                 }
 
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new State2번(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new State3번(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new State4번(context);
                 }
 
@@ -86,15 +86,15 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new State2번(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new State3번(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new State4번(context);
                 }
 
@@ -110,15 +110,15 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new State1번(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new State3번(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new State4번(context);
                 }
 
@@ -134,15 +134,15 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new State1번(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new State2번(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new State4번(context);
                 }
 
@@ -158,15 +158,15 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnEnter() { }
 
             public override TriggerState? Execute() {
-                if (context.RandomCondition(rate: 33f)) {
+                if (context.RandomCondition(rate: 33)) {
                     return new State1번(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new State2번(context);
                 }
 
-                if (context.RandomCondition(rate: 34f)) {
+                if (context.RandomCondition(rate: 34)) {
                     return new State3번(context);
                 }
 
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{8041}, visible: false);
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.CreateMonster(spawnIds: new []{3001});
             }
 
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State12번(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.SetInteractObject(interactIds: new []{10001052}, state: 1);
             }
 
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{8042}, visible: false);
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.CreateMonster(spawnIds: new []{3002});
             }
 
@@ -305,7 +305,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State22번(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.SetInteractObject(interactIds: new []{10001051}, state: 1);
             }
 
@@ -355,7 +355,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{8044}, visible: false);
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.CreateMonster(spawnIds: new []{3003});
             }
 
@@ -380,7 +380,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State32번(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.SetInteractObject(interactIds: new []{10001050}, state: 1);
             }
 
@@ -430,7 +430,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{8043}, visible: false);
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.CreateMonster(spawnIds: new []{3004});
             }
 
@@ -455,7 +455,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State42번(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.SetInteractObject(interactIds: new []{10001053}, state: 1);
             }
 
@@ -480,7 +480,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State끝1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.SetInteractObject(interactIds: new []{10001050, 10001051, 10001052, 10001053}, state: 2);
                 context.SetBreakable(triggerIds: new []{901, 902, 903, 904, 1901, 1902, 1903, 1904, 2901, 2902, 2903, 2904, 3901, 3902, 3903, 3904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 2905, 2906, 2907, 2908, 2909, 2910, 2911, 2912, 2913, 2914, 2915, 2916, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913, 3914, 3915, 3916}, enabled: false);
             }
@@ -500,7 +500,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State끝2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.SetInteractObject(interactIds: new []{10001050, 10001051, 10001052, 10001053}, state: 2);
                 context.SetBreakable(triggerIds: new []{901, 902, 903, 904, 1901, 1902, 1903, 1904, 2901, 2902, 2903, 2904, 3901, 3902, 3903, 3904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 2905, 2906, 2907, 2908, 2909, 2910, 2911, 2912, 2913, 2914, 2915, 2916, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913, 3914, 3915, 3916}, enabled: false);
             }
@@ -520,7 +520,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State끝3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.SetInteractObject(interactIds: new []{10001050, 10001051, 10001052, 10001053}, state: 2);
                 context.SetBreakable(triggerIds: new []{901, 902, 903, 904, 1901, 1902, 1903, 1904, 2901, 2902, 2903, 2904, 3901, 3902, 3903, 3904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 2905, 2906, 2907, 2908, 2909, 2910, 2911, 2912, 2913, 2914, 2915, 2916, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913, 3914, 3915, 3916}, enabled: false);
             }
@@ -540,7 +540,7 @@ namespace Maple2.Trigger._02000253_bf {
             internal State끝4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(timerId: "1", seconds: 30, clearAtZero: false);
+                context.SetTimer(timerId: "1", seconds: 30, autoRemove: false);
                 context.SetInteractObject(interactIds: new []{10001050, 10001051, 10001052, 10001053}, state: 2);
                 context.SetBreakable(triggerIds: new []{901, 902, 903, 904, 1901, 1902, 1903, 1904, 2901, 2902, 2903, 2904, 3901, 3902, 3903, 3904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 2905, 2906, 2907, 2908, 2909, 2910, 2911, 2912, 2913, 2914, 2915, 2916, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913, 3914, 3915, 3916}, enabled: false);
             }

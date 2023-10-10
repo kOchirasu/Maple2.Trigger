@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 1, enabled: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.SetActor(triggerId: 8001, visible: false, initialSequence: "Attack_Idle_A");
                 context.SetEffect(triggerIds: new []{5001, 5002, 5003, 5004}, visible: false);
             }
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._52020011_qd {
 
             public override void OnEnter() {
                 context.SetEffect(triggerIds: new []{5003, 5004}, visible: true);
-                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
+                context.SetOnetimeEffect(id: 1, enabled: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.AddBalloonTalk(spawnId: 0, msg: "!", duration: 2000, delayTick: 0);
             }
 

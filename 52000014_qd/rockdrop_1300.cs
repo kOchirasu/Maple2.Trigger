@@ -4,7 +4,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{1300, 1302, 1304}, arg2: false);
+                context.SetSkill(triggerIds: new []{1300, 1302, 1304}, enabled: false);
                 context.SetEffect(triggerIds: new []{1301, 1303, 1305}, visible: false);
             }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State낙하01완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(triggerIds: new []{1300}, arg2: true);
+                context.SetSkill(triggerIds: new []{1300}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "3", seconds: 2);
-                context.SetSkill(triggerIds: new []{1302}, arg2: true);
+                context.SetSkill(triggerIds: new []{1302}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "4", seconds: 1);
-                context.SetSkill(triggerIds: new []{1304}, arg2: true);
+                context.SetSkill(triggerIds: new []{1304}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(timerId: "5", seconds: 2);
-                context.SetSkill(triggerIds: new []{1300, 1302, 1304}, arg2: false);
+                context.SetSkill(triggerIds: new []{1300, 1302, 1304}, enabled: false);
                 context.SetEffect(triggerIds: new []{1301, 1303, 1305}, visible: false);
             }
 

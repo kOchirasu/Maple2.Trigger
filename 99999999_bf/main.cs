@@ -6,14 +6,14 @@ namespace Maple2.Trigger._99999999_bf {
             public override void OnEnter() {
                 context.SetMesh(triggerIds: new []{5000, 8900, 8901, 8902, 8903, 8904, 8905}, visible: true);
                 context.SetEffect(triggerIds: new []{8000, 8001}, visible: false);
-                context.SetSkill(triggerIds: new []{9000}, arg2: false);
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 2, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 3, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 4, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 5, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 6, isEnable: false);
+                context.SetSkill(triggerIds: new []{9000}, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: true);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 2, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 3, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 4, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 5, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 6, enabled: false);
                 context.SetPortal(portalId: 2, visible: false, enabled: false, minimapVisible: false);
             }
 
@@ -108,8 +108,8 @@ namespace Maple2.Trigger._99999999_bf {
             internal State702시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 0, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: true);
                 context.CreateMonster(spawnIds: new []{102, 1022, 1023, 1024, 1025}, arg2: true);
                 context.SideNpcTalk(npcId: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000, script: "인간? 이게 얼마 만에 맡아보는 인간 냄새인지... 아주 향긋하군. 천천히 어둠 속으로 내려오라고.");
             }
@@ -166,8 +166,8 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(spawnIds: new []{1026});
-                context.EnableSpawnPointPc(spawnId: 1, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 2, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 1, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 2, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -241,8 +241,8 @@ namespace Maple2.Trigger._99999999_bf {
             internal State704시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 2, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 3, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 2, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 3, enabled: true);
                 context.CreateMonster(spawnIds: new []{104, 1041, 1042, 1043, 1044}, arg2: false);
             }
 
@@ -298,8 +298,8 @@ namespace Maple2.Trigger._99999999_bf {
             internal State705시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 3, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 4, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 3, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 4, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -356,7 +356,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "여기 들어온 순간...");
-                context.SetSkill(triggerIds: new []{9000}, arg2: true);
+                context.SetSkill(triggerIds: new []{9000}, enabled: true);
             }
 
             public override TriggerState? Execute() {
@@ -375,8 +375,8 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "어둠을 만나게 되면... 다신 올라올 수 없어.");
-                context.EnableSpawnPointPc(spawnId: 4, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 5, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 4, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 5, enabled: true);
                 context.CreateMonster(spawnIds: new []{106, 1061, 1063, 1064, 1065}, arg2: true);
             }
 
@@ -414,8 +414,8 @@ namespace Maple2.Trigger._99999999_bf {
             internal State707시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnId: 5, isEnable: false);
-                context.EnableSpawnPointPc(spawnId: 6, isEnable: true);
+                context.EnableSpawnPointPc(spawnId: 5, enabled: false);
+                context.EnableSpawnPointPc(spawnId: 6, enabled: true);
                 context.CreateMonster(spawnIds: new []{108}, arg2: true);
                 context.SideNpcTalk(npcId: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000, script: "캬하하! 여기까지 오다니, 재미있겠는걸. 네 영혼도 여기에 묶어주마.");
             }

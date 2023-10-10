@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateLadderOff01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(boxIds: new []{9001}, sound: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundInBox(sound: "System_ShowGuideSummary_01", boxIds: 9001);
                 context.ShowGuideSummary(entityId: 20002921, textId: 20002921, duration: 5000);
                 context.SetInteractObject(interactIds: new []{10001063}, state: 1);
             }
